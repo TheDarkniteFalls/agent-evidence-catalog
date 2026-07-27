@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.example.patchpilot",
+  "slug": "patchpilot-2-4-1",
+  "name": "PatchPilot",
+  "category": "Local coding agent",
+  "summary": "Inspects a selected repository, proposes code changes, runs allowlisted project tests, and prepares a patch.",
+  "publisher": {
+    "name": "Synthetic Workshop Ltd",
+    "ownership": { "status": "declared", "method": "synthetic example; no real ownership check performed" }
+  },
+  "version": {
+    "number": "2.4.1",
+    "sourceRevision": "1111111111111111111111111111111111111111",
+    "artifact": {
+      "kind": "oci",
+      "uri": "oci://registry.example/synthetic-workshop/patchpilot@sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    }
+  },
+  "delivery": { "mode": "local", "sourceAvailability": "public" },
+  "interoperability": {
+    "a2a": null,
+    "agentSkills": [{ "name": "repo-maintenance", "status": "declared" }],
+    "mcpServers": [
+      { "name": "io.example.git-read", "status": "declared" },
+      { "name": "io.example.test-runner", "status": "declared" }
+    ],
+    "oci": {
+      "image": "registry.example/synthetic-workshop/patchpilot",
+      "digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "provenanceStatus": "declared",
+      "sbomStatus": "declared"
+    }
+  },
+  "permissionDeclaration": {
+    "issuedAt": "2026-07-20T03:00:00Z",
+    "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "signatureStatus": "declared",
+    "mode": "local",
+    "actions": {
+      "read": { "scope": "selected-only", "description": "Selected repository files", "confirmation": "none", "reversibility": "not-applicable", "status": "declared" },
+      "draft": { "scope": "selected-only", "description": "Patch proposal in the selected worktree", "confirmation": "none", "reversibility": "reversible", "status": "declared" },
+      "change": { "scope": "selected-only", "description": "Write selected worktree files and run allowlisted tests", "confirmation": "exact", "reversibility": "reversible", "status": "declared" },
+      "communicate": { "scope": "none", "description": "No push, merge, or issue update without a separate confirmed integration", "confirmation": "always-forbidden", "reversibility": "not-applicable", "status": "declared" },
+      "spend": { "scope": "none", "description": "No paid resource authority", "confirmation": "not-applicable", "reversibility": "not-applicable", "status": "not-applicable" }
+    },
+    "files": { "read": "Selected repository", "write": "Selected worktree only", "forbidden": "Paths outside the selected worktree", "enforcementStatus": "declared" },
+    "processes": { "scope": "allowlisted", "generatedCode": true, "boundary": "Allowlisted build and test commands", "enforcementStatus": "declared" },
+    "network": { "scope": "allowlisted", "destinations": "Package registries and source host", "dataSent": "Dependency names, revisions, and authenticated Git requests after confirmation", "enforcementStatus": "declared" },
+    "credentials": { "type": "Short-lived Git token", "scopes": "Repository push only after confirmation", "storage": "Process memory", "lifetime": "Single confirmed operation", "exportRisk": "unknown" },
+    "dataHandling": { "categories": "Source code and test output", "leavesEnvironment": "Dependency and source requests only", "retention": "Worktree changes persist until the user reverts or commits them", "deletionRoute": "Revert or delete the local worktree changes", "trainingUse": "Not declared" },
+    "delegation": { "mayCallAgents": false, "policy": "No downstream agents", "downstreamPinned": null },
+    "gaps": ["Network allowlist was read from configuration, not independently enforced.", "Windows behavior has not been evaluated."],
+    "invalidatedBy": ["Agent version, artifact digest, command allowlist, network policy, or Git credential scope change"],
+    "reviewedAt": "2026-07-20"
+  },
+  "evidenceReceipts": [
+    {
+      "displayStatus": "observed",
+      "statement": {
+        "_type": "https://in-toto.io/Statement/v1",
+        "subject": [{ "name": "registry.example/synthetic-workshop/patchpilot", "digest": { "sha256": "1111111111111111111111111111111111111111111111111111111111111111" } }],
+        "predicateType": "https://agent-evidence-catalog.example/attestations/agent-evaluation/v1",
+        "predicate": {
+          "receiptVersion": "1.0",
+          "agent": { "profileId": "dev.example.patchpilot", "name": "PatchPilot", "version": "2.4.1", "source": { "uri": "https://git.example/synthetic-workshop/patchpilot", "revision": "1111111111111111111111111111111111111111" } },
+          "evaluation": {
+            "suite": { "name": "synthetic-repository-repairs", "version": "1.3.0", "sourceUri": "https://git.example/evaluations/repository-repairs", "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+            "startedAt": "2026-07-20T03:10:00Z",
+            "finishedAt": "2026-07-20T03:44:00Z",
+            "runner": { "type": "independent-ci", "identity": "synthetic-evaluator:repository-repairs", "workflowUri": "https://ci.example/runs/patchpilot-241" },
+            "environment": { "operatingSystem": "ubuntu-24.04", "architecture": "x86_64", "isolation": "ephemeral container", "networkPolicy": "fixture source host only", "dependencyLockDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" },
+            "tests": [{ "id": "repair.aggregate", "claim": "The agent completes the disclosed synthetic repair set.", "result": "fail", "expected": "All 40 repair tasks complete within the suite timeout.", "observed": "36 of 40 tasks passed; four timed out.", "evidenceRefs": ["repair-report"], "limitations": ["Synthetic tasks do not establish patch security or desirability."] }],
+            "summary": { "result": "fail", "total": 1, "passed": 0, "failed": 1, "errors": 0, "skipped": 0 }
+          },
+          "permissionsDeclaration": { "uri": "https://git.example/synthetic-workshop/patchpilot/blob/1111111/PERMISSIONS.md", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "issuedAt": "2026-07-20T03:00:00Z" },
+          "evidence": [{ "id": "repair-report", "uri": "https://evidence.example/patchpilot/2.4.1/repair-report.json", "mediaType": "application/json", "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" }],
+          "limitations": ["Independent CI evaluated the named artifact and fixtures only.", "A passing repair task would not prove the generated patch is secure."],
+          "validity": { "evaluatedAt": "2026-07-20T03:44:00Z", "revalidateAfter": "2026-08-20T03:44:00Z", "invalidatedBy": ["agent-version-change", "artifact-digest-change", "permission-declaration-change", "evaluation-suite-change", "dependency-version-change", "manual-revocation"] }
+        }
+      }
+    }
+  ],
+  "verificationEvidence": [],
+  "limitations": ["Windows has not been tested.", "Generated patches still require human review."],
+  "selectionCue": "Strong provenance and local control; materially broad filesystem and process authority."
+}

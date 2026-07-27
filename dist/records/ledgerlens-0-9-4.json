@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.example.ledgerlens",
+  "slug": "ledgerlens-0-9-4",
+  "name": "LedgerLens",
+  "category": "Local data-analysis agent",
+  "summary": "Analyzes selected CSV and XLSX files locally and writes a reconciliation report to a chosen output folder.",
+  "publisher": { "name": "Plain Figures Collective", "ownership": { "status": "declared", "method": "synthetic example; no real ownership check performed" } },
+  "version": {
+    "number": "0.9.4",
+    "sourceRevision": "5555555555555555555555555555555555555555",
+    "artifact": { "kind": "oci", "uri": "oci://registry.example/plain-figures/ledgerlens@sha256:5555555555555555555555555555555555555555555555555555555555555555", "sha256": "5555555555555555555555555555555555555555555555555555555555555555" }
+  },
+  "delivery": { "mode": "local", "sourceAvailability": "public" },
+  "interoperability": {
+    "a2a": null,
+    "agentSkills": [
+      { "name": "spreadsheet-validation", "status": "declared" },
+      { "name": "variance-analysis", "status": "declared" }
+    ],
+    "mcpServers": [],
+    "oci": { "image": "registry.example/plain-figures/ledgerlens", "digest": "sha256:5555555555555555555555555555555555555555555555555555555555555555", "provenanceStatus": "declared", "sbomStatus": "declared" }
+  },
+  "permissionDeclaration": {
+    "issuedAt": "2026-07-23T05:00:00Z",
+    "digest": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "signatureStatus": "declared",
+    "mode": "local",
+    "actions": {
+      "read": { "scope": "selected-only", "description": "User-selected CSV and XLSX inputs", "confirmation": "none", "reversibility": "not-applicable", "status": "declared" },
+      "draft": { "scope": "selected-only", "description": "Reconciliation report in memory", "confirmation": "none", "reversibility": "reversible", "status": "declared" },
+      "change": { "scope": "selected-only", "description": "Write reports to the selected output directory", "confirmation": "exact", "reversibility": "reversible", "status": "declared" },
+      "communicate": { "scope": "none", "description": "No external communication", "confirmation": "not-applicable", "reversibility": "not-applicable", "status": "not-applicable" },
+      "spend": { "scope": "none", "description": "No paid resource authority", "confirmation": "not-applicable", "reversibility": "not-applicable", "status": "not-applicable" }
+    },
+    "files": { "read": "Selected CSV and XLSX files", "write": "Selected output directory", "forbidden": "All unselected paths", "enforcementStatus": "declared" },
+    "processes": { "scope": "allowlisted", "generatedCode": false, "boundary": "Containerized spreadsheet analysis only", "enforcementStatus": "observed" },
+    "network": { "scope": "none", "destinations": "None", "dataSent": "None", "enforcementStatus": "observed" },
+    "credentials": { "type": "None", "scopes": "None", "storage": "Not applicable", "lifetime": "Not applicable", "exportRisk": "no" },
+    "dataHandling": { "categories": "Selected financial workbooks", "leavesEnvironment": "No data leaves the evaluated local container", "retention": "Temporary files deleted at session end; outputs persist in the selected folder", "deletionRoute": "Delete local output files", "trainingUse": "No external model" },
+    "delegation": { "mayCallAgents": false, "policy": "No downstream agents", "downstreamPinned": null },
+    "gaps": ["Network-disabled behavior was observed in the test container, not every installation.", "Two locale-specific decimal formats failed."],
+    "invalidatedBy": ["Agent version, OCI digest, file policy, dependency lock, or network configuration change"],
+    "reviewedAt": "2026-07-23"
+  },
+  "evidenceReceipts": [
+    {
+      "displayStatus": "observed",
+      "statement": {
+        "_type": "https://in-toto.io/Statement/v1",
+        "subject": [{ "name": "registry.example/plain-figures/ledgerlens", "digest": { "sha256": "5555555555555555555555555555555555555555555555555555555555555555" } }],
+        "predicateType": "https://agent-evidence-catalog.example/attestations/agent-evaluation/v1",
+        "predicate": {
+          "receiptVersion": "1.0",
+          "agent": { "profileId": "dev.example.ledgerlens", "name": "LedgerLens", "version": "0.9.4", "source": { "uri": "https://git.example/plain-figures/ledgerlens", "revision": "5555555555555555555555555555555555555555" } },
+          "evaluation": {
+            "suite": { "name": "synthetic-workbook-reconciliation", "version": "1.4.0", "sourceUri": "https://git.example/evaluations/workbook-reconciliation", "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+            "startedAt": "2026-07-23T05:10:00Z",
+            "finishedAt": "2026-07-23T05:32:00Z",
+            "runner": { "type": "independent-ci", "identity": "synthetic-evaluator:workbooks" },
+            "environment": { "operatingSystem": "ubuntu-24.04", "architecture": "x86_64", "isolation": "network-disabled container", "networkPolicy": "no egress", "dependencyLockDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+            "tests": [{ "id": "reconciliation.aggregate", "claim": "The agent correctly reconciles the disclosed workbook set.", "result": "fail", "expected": "All 50 synthetic workbooks reconcile correctly.", "observed": "48 of 50 reconciled; two locale-specific decimal formats failed.", "evidenceRefs": ["workbook-report"], "limitations": ["Synthetic fixtures do not replace qualified financial review."] }],
+            "summary": { "result": "fail", "total": 1, "passed": 0, "failed": 1, "errors": 0, "skipped": 0 }
+          },
+          "permissionsDeclaration": { "uri": "https://git.example/plain-figures/ledgerlens/blob/5555555/PERMISSIONS.md", "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "issuedAt": "2026-07-23T05:00:00Z" },
+          "evidence": [{ "id": "workbook-report", "uri": "https://evidence.example/ledgerlens/0.9.4/reconciliation.json", "mediaType": "application/json", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }],
+          "limitations": ["Financial interpretation still requires qualified human review.", "The no-egress result applies to the evaluated container."],
+          "validity": { "evaluatedAt": "2026-07-23T05:32:00Z", "revalidateAfter": "2026-08-23T05:32:00Z", "invalidatedBy": ["agent-version-change", "artifact-digest-change", "permission-declaration-change", "evaluation-suite-change", "dependency-version-change", "manual-revocation"] }
+        }
+      }
+    }
+  ],
+  "verificationEvidence": [],
+  "limitations": ["Two locale-specific decimal formats failed.", "Financial interpretation requires qualified human review."],
+  "selectionCue": "Strong local-data posture and reproducibility; domain correctness has known locale gaps."
+}

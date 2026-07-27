@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.example.researchrouter",
+  "slug": "researchrouter-0-7-0",
+  "name": "ResearchRouter",
+  "category": "Multi-agent research coordinator",
+  "summary": "Delegates research subtasks to declared A2A agents and returns a cited synthesis with a delegation trace.",
+  "publisher": { "name": "Open Inquiry Example Foundation", "ownership": { "status": "declared", "method": "synthetic example; no real ownership check performed" } },
+  "version": {
+    "number": "0.7.0",
+    "sourceRevision": "abababababababababababababababababababab",
+    "artifact": { "kind": "oci", "uri": "oci://registry.example/open-inquiry/researchrouter@sha256:abababababababababababababababababababababababababababababababab", "sha256": "abababababababababababababababababababababababababababababababab" }
+  },
+  "delivery": { "mode": "hosted", "sourceAvailability": "public" },
+  "interoperability": {
+    "a2a": { "protocolVersion": "1.0", "cardUri": "https://agents.example/researchrouter/.well-known/agent-card.json", "cardSha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "status": "declared" },
+    "agentSkills": [
+      { "name": "plan-research", "status": "declared" },
+      { "name": "delegate-subtasks", "status": "declared" },
+      { "name": "synthesize-with-provenance", "status": "declared" }
+    ],
+    "mcpServers": [{ "name": "io.example.public-web-retrieval", "status": "declared" }],
+    "oci": { "image": "registry.example/open-inquiry/researchrouter", "digest": "sha256:abababababababababababababababababababababababababababababababab", "provenanceStatus": "declared", "sbomStatus": "declared" }
+  },
+  "permissionDeclaration": {
+    "issuedAt": "2026-07-22T10:00:00Z",
+    "digest": "4444444444444444444444444444444444444444444444444444444444444444",
+    "signatureStatus": "declared",
+    "mode": "hosted",
+    "actions": {
+      "read": { "scope": "broad", "description": "Public web sources and responses from declared downstream agents", "confirmation": "none", "reversibility": "not-applicable", "status": "declared" },
+      "draft": { "scope": "selected-only", "description": "Cited research synthesis and delegation trace", "confirmation": "none", "reversibility": "reversible", "status": "declared" },
+      "change": { "scope": "none", "description": "No business-system or user-data writes", "confirmation": "not-applicable", "reversibility": "not-applicable", "status": "declared" },
+      "communicate": { "scope": "allowlisted", "description": "Delegate research fragments to declared A2A agents", "confirmation": "none", "reversibility": "difficult", "status": "declared" },
+      "spend": { "scope": "allowlisted", "description": "US$2 declared default task ceiling; enforcement unknown", "confirmation": "none", "reversibility": "difficult", "status": "unknown" }
+    },
+    "files": { "read": "None by default", "write": "None by default", "forbidden": "All local files unless a future profile declares otherwise", "enforcementStatus": "declared" },
+    "processes": { "scope": "none", "generatedCode": false, "boundary": "Hosted orchestration only", "enforcementStatus": "declared" },
+    "network": { "scope": "allowlisted", "destinations": "Declared A2A endpoints, public-web MCP server, and model endpoint", "dataSent": "Research request fragments, retrieved sources, and intermediate summaries", "enforcementStatus": "declared" },
+    "credentials": { "type": "Scoped downstream service tokens", "scopes": "One token per declared A2A or MCP service", "storage": "Provider secret store", "lifetime": "Task-scoped where supported", "exportRisk": "unknown" },
+    "dataHandling": { "categories": "Research prompts, source excerpts, and intermediate synthesis", "leavesEnvironment": "Request fragments go to multiple downstream providers", "retention": "Each downstream provider's policy applies; aggregate retention is unknown", "deletionRoute": "Provider-specific deletion routes", "trainingUse": "Mixed downstream declarations" },
+    "delegation": { "mayCallAgents": true, "policy": "DocScout plus two declared synthetic specialist agents", "downstreamPinned": false },
+    "gaps": ["One downstream agent version is unpinned.", "Cost-ceiling enforcement was declared but not demonstrated.", "Downstream retention and authority policies compound."],
+    "invalidatedBy": ["Agent version, artifact, Agent Card, downstream agent, MCP server, model, delegation policy, or cost policy change"],
+    "reviewedAt": "2026-07-22"
+  },
+  "evidenceReceipts": [
+    {
+      "displayStatus": "observed",
+      "statement": {
+        "_type": "https://in-toto.io/Statement/v1",
+        "subject": [{ "name": "registry.example/open-inquiry/researchrouter", "digest": { "sha256": "abababababababababababababababababababababababababababababababab" } }],
+        "predicateType": "https://agent-evidence-catalog.example/attestations/agent-evaluation/v1",
+        "predicate": {
+          "receiptVersion": "1.0",
+          "agent": { "profileId": "org.example.researchrouter", "name": "ResearchRouter", "version": "0.7.0", "source": { "uri": "https://git.example/open-inquiry/researchrouter", "revision": "abababababababababababababababababababab" }, "a2aCard": { "uri": "https://agents.example/researchrouter/.well-known/agent-card.json", "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "protocolVersion": "1.0" } },
+          "evaluation": {
+            "suite": { "name": "delegation-trace-completeness", "version": "1.0.0", "sourceUri": "https://git.example/evaluations/delegation-trace", "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" },
+            "startedAt": "2026-07-22T10:10:00Z",
+            "finishedAt": "2026-07-22T10:35:00Z",
+            "runner": { "type": "independent-ci", "identity": "synthetic-evaluator:multi-agent-trace" },
+            "environment": { "operatingSystem": "ubuntu-24.04", "architecture": "x86_64", "isolation": "isolated orchestration tenant", "networkPolicy": "declared A2A and retrieval fixtures only", "dependencyLockDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" },
+            "tests": [{ "id": "trace.aggregate", "claim": "Every downstream delegation appears in the returned trace.", "result": "fail", "expected": "All 30 fixture traces identify every downstream call and version.", "observed": "28 of 30 traces were complete; one downstream agent was also unpinned.", "evidenceRefs": ["trace-report"], "limitations": ["The fixtures use synthetic downstream agents."] }],
+            "summary": { "result": "fail", "total": 1, "passed": 0, "failed": 1, "errors": 0, "skipped": 0 }
+          },
+          "permissionsDeclaration": { "uri": "https://git.example/open-inquiry/researchrouter/blob/abababa/PERMISSIONS.md", "sha256": "4444444444444444444444444444444444444444444444444444444444444444", "issuedAt": "2026-07-22T10:00:00Z" },
+          "evidence": [{ "id": "trace-report", "uri": "https://evidence.example/researchrouter/0.7.0/traces.json", "mediaType": "application/json", "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }],
+          "limitations": ["Downstream authority and data policies are not collapsed into this coordinator receipt.", "A separate citation observation supported 42 of 50 claims."],
+          "validity": { "evaluatedAt": "2026-07-22T10:35:00Z", "revalidateAfter": "2026-08-22T10:35:00Z", "invalidatedBy": ["agent-version-change", "artifact-digest-change", "agent-card-digest-change", "permission-declaration-change", "evaluation-suite-change", "dependency-version-change", "model-revision-change", "manual-revocation"] }
+        }
+      }
+    }
+  ],
+  "verificationEvidence": [],
+  "limitations": ["An unpinned downstream agent can change behavior without a ResearchRouter release.", "Request fragments are transmitted to multiple providers."],
+  "selectionCue": "Useful composition with a wide dependency, data-sharing, and version-pinning surface."
+}

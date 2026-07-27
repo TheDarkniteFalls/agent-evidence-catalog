@@ -1,0 +1,504 @@
+#!/usr/bin/env node
+
+import { createHash } from "node:crypto";
+import { copyFile, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { dirname, extname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
+const CATALOG = join(ROOT, "catalog");
+const DIST = join(ROOT, "dist");
+const STATUSES = new Set(["verified", "observed", "declared", "stale", "unknown", "not-applicable"]);
+const ACTION_SCOPES = new Set(["none", "selected-only", "allowlisted", "broad", "unknown"]);
+const CONFIRMATIONS = new Set(["none", "exact", "before-external-action", "always-forbidden", "not-applicable", "unknown"]);
+const REVERSIBILITY = new Set(["reversible", "difficult", "not-applicable", "unknown"]);
+const RUNNERS = new Set(["publisher-ci", "independent-ci", "local-reproduction"]);
+const TEST_RESULTS = new Set(["pass", "fail", "error", "skipped"]);
+const INVALIDATORS = new Set([
+  "agent-version-change",
+  "artifact-digest-change",
+  "agent-card-digest-change",
+  "permission-declaration-change",
+  "evaluation-suite-change",
+  "dependency-version-change",
+  "model-revision-change",
+  "manual-revocation"
+]);
+const SHA256 = /^[a-f0-9]{64}$/;
+const PROFILE_ID = /^[a-z0-9]+(?:[.-][a-z0-9]+)+$/;
+const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*-[0-9]+-[0-9]+-[0-9]+$/;
+const SEMVER = /^[0-9]+\.[0-9]+\.[0-9]+(?:[-+][0-9A-Za-z.-]+)?$/;
+
+function isObject(value) {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+function isoDate(value) {
+  return typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00Z`));
+}
+
+function isoDateTime(value) {
+  return typeof value === "string" && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(value) && !Number.isNaN(Date.parse(value));
+}
+
+function uri(value) {
+  if (typeof value !== "string") return false;
+  try {
+    const parsed = new URL(value);
+    return ["https:", "oci:"].includes(parsed.protocol);
+  } catch {
+    return false;
+  }
+}
+
+function validator() {
+  const errors = [];
+  const check = (condition, path, message) => {
+    if (!condition) errors.push(`${path}: ${message}`);
+  };
+  const text = (value, path) => check(typeof value === "string" && value.trim().length > 0, path, "must be a non-empty string");
+  const list = (value, path, allowEmpty = true) => {
+    check(Array.isArray(value), path, "must be an array");
+    if (Array.isArray(value) && !allowEmpty) check(value.length > 0, path, "must contain at least one item");
+  };
+  const keys = (value, expected, path) => {
+    if (!isObject(value)) {
+      errors.push(`${path}: must be an object`);
+      return;
+    }
+    const actual = Object.keys(value).sort();
+    const wanted = [...expected].sort();
+    check(JSON.stringify(actual) === JSON.stringify(wanted), path, `keys must be exactly ${wanted.join(", ")}`);
+  };
+  return { errors, check, text, list, keys };
+}
+
+function pointerEscape(value) {
+  return String(value).replaceAll("~", "~0").replaceAll("/", "~1");
+}
+
+function collectVerifiedClaims(value, path = "") {
+  if (value === "verified") return [path];
+  if (Array.isArray(value)) return value.flatMap((item, index) => collectVerifiedClaims(item, `${path}/${index}`));
+  if (!isObject(value)) return [];
+  return Object.entries(value).flatMap(([key, item]) => {
+    if (path === "" && key === "verificationEvidence") return [];
+    return collectVerifiedClaims(item, `${path}/${pointerEscape(key)}`);
+  });
+}
+
+function valueAtPointer(value, pointer) {
+  if (typeof pointer !== "string" || !pointer.startsWith("/")) return undefined;
+  return pointer.slice(1).split("/").reduce((current, segment) => {
+    if (current === undefined || current === null) return undefined;
+    const key = segment.replaceAll("~1", "/").replaceAll("~0", "~");
+    return current[key];
+  }, value);
+}
+
+function validateVerificationEvidence(profile, fileName, v) {
+  const references = profile.verificationEvidence;
+  v.list(references, `${fileName}.verificationEvidence`);
+  const supportedClaims = new Set();
+  if (Array.isArray(references)) references.forEach((reference, index) => {
+    const path = `${fileName}.verificationEvidence[${index}]`;
+    v.keys(reference, ["claimPath", "uri", "sha256", "verifiedAt", "verifier", "method"], path);
+    if (!isObject(reference)) return;
+    v.check(typeof reference.claimPath === "string" && reference.claimPath.startsWith("/"), `${path}.claimPath`, "must be a JSON Pointer beginning with /");
+    v.check(!supportedClaims.has(reference.claimPath), `${path}.claimPath`, "must be unique");
+    supportedClaims.add(reference.claimPath);
+    v.check(valueAtPointer(profile, reference.claimPath) === "verified", `${path}.claimPath`, "must identify a field whose value is verified");
+    v.check(uri(reference.uri) && reference.uri.startsWith("https://"), `${path}.uri`, "must be an inspectable HTTPS URI");
+    v.check(SHA256.test(reference.sha256 ?? ""), `${path}.sha256`, "must be a lowercase SHA-256 digest");
+    v.check(isoDateTime(reference.verifiedAt), `${path}.verifiedAt`, "must be an RFC 3339 UTC timestamp");
+    v.text(reference.verifier, `${path}.verifier`);
+    v.text(reference.method, `${path}.method`);
+  });
+  for (const claimPath of collectVerifiedClaims(profile)) {
+    v.check(supportedClaims.has(claimPath), `${fileName}${claimPath}`, "verified status requires matching inspectable verificationEvidence");
+  }
+}
+
+function validateAction(action, path, v) {
+  v.keys(action, ["scope", "description", "confirmation", "reversibility", "status"], path);
+  if (!isObject(action)) return;
+  v.check(ACTION_SCOPES.has(action.scope), `${path}.scope`, "invalid action scope");
+  v.text(action.description, `${path}.description`);
+  v.check(CONFIRMATIONS.has(action.confirmation), `${path}.confirmation`, "invalid confirmation boundary");
+  v.check(REVERSIBILITY.has(action.reversibility), `${path}.reversibility`, "invalid reversibility");
+  v.check(STATUSES.has(action.status), `${path}.status`, "invalid evidence status");
+}
+
+function validatePermission(declaration, path, v) {
+  v.keys(declaration, [
+    "issuedAt", "digest", "signatureStatus", "mode", "actions", "files", "processes", "network",
+    "credentials", "dataHandling", "delegation", "gaps", "invalidatedBy", "reviewedAt"
+  ], path);
+  if (!isObject(declaration)) return;
+  v.check(isoDateTime(declaration.issuedAt), `${path}.issuedAt`, "must be an RFC 3339 UTC timestamp");
+  v.check(SHA256.test(declaration.digest ?? ""), `${path}.digest`, "must be a lowercase SHA-256 digest");
+  v.check(STATUSES.has(declaration.signatureStatus), `${path}.signatureStatus`, "invalid evidence status");
+  v.check(["local", "hosted", "hybrid", "unknown"].includes(declaration.mode), `${path}.mode`, "invalid operating mode");
+  v.keys(declaration.actions, ["read", "draft", "change", "communicate", "spend"], `${path}.actions`);
+  if (isObject(declaration.actions)) {
+    for (const verb of ["read", "draft", "change", "communicate", "spend"]) {
+      validateAction(declaration.actions[verb], `${path}.actions.${verb}`, v);
+    }
+  }
+  v.keys(declaration.files, ["read", "write", "forbidden", "enforcementStatus"], `${path}.files`);
+  if (isObject(declaration.files)) {
+    for (const field of ["read", "write", "forbidden"]) v.text(declaration.files[field], `${path}.files.${field}`);
+    v.check(STATUSES.has(declaration.files.enforcementStatus), `${path}.files.enforcementStatus`, "invalid evidence status");
+  }
+  v.keys(declaration.processes, ["scope", "generatedCode", "boundary", "enforcementStatus"], `${path}.processes`);
+  if (isObject(declaration.processes)) {
+    v.check(["none", "allowlisted", "broad", "unknown"].includes(declaration.processes.scope), `${path}.processes.scope`, "invalid process scope");
+    v.check([true, false, null].includes(declaration.processes.generatedCode), `${path}.processes.generatedCode`, "must be true, false, or null");
+    v.text(declaration.processes.boundary, `${path}.processes.boundary`);
+    v.check(STATUSES.has(declaration.processes.enforcementStatus), `${path}.processes.enforcementStatus`, "invalid evidence status");
+  }
+  v.keys(declaration.network, ["scope", "destinations", "dataSent", "enforcementStatus"], `${path}.network`);
+  if (isObject(declaration.network)) {
+    v.check(["none", "allowlisted", "broad", "unknown"].includes(declaration.network.scope), `${path}.network.scope`, "invalid network scope");
+    v.text(declaration.network.destinations, `${path}.network.destinations`);
+    v.text(declaration.network.dataSent, `${path}.network.dataSent`);
+    v.check(STATUSES.has(declaration.network.enforcementStatus), `${path}.network.enforcementStatus`, "invalid evidence status");
+  }
+  v.keys(declaration.credentials, ["type", "scopes", "storage", "lifetime", "exportRisk"], `${path}.credentials`);
+  if (isObject(declaration.credentials)) {
+    for (const field of ["type", "scopes", "storage", "lifetime"]) v.text(declaration.credentials[field], `${path}.credentials.${field}`);
+    v.check(["no", "possible", "unknown"].includes(declaration.credentials.exportRisk), `${path}.credentials.exportRisk`, "invalid export risk");
+  }
+  v.keys(declaration.dataHandling, ["categories", "leavesEnvironment", "retention", "deletionRoute", "trainingUse"], `${path}.dataHandling`);
+  if (isObject(declaration.dataHandling)) {
+    for (const field of ["categories", "leavesEnvironment", "retention", "deletionRoute", "trainingUse"]) v.text(declaration.dataHandling[field], `${path}.dataHandling.${field}`);
+  }
+  v.keys(declaration.delegation, ["mayCallAgents", "policy", "downstreamPinned"], `${path}.delegation`);
+  if (isObject(declaration.delegation)) {
+    v.check([true, false, null].includes(declaration.delegation.mayCallAgents), `${path}.delegation.mayCallAgents`, "must be true, false, or null");
+    v.text(declaration.delegation.policy, `${path}.delegation.policy`);
+    v.check([true, false, null].includes(declaration.delegation.downstreamPinned), `${path}.delegation.downstreamPinned`, "must be true, false, or null");
+  }
+  v.list(declaration.gaps, `${path}.gaps`, false);
+  if (Array.isArray(declaration.gaps)) declaration.gaps.forEach((item, index) => v.text(item, `${path}.gaps[${index}]`));
+  v.list(declaration.invalidatedBy, `${path}.invalidatedBy`, false);
+  if (Array.isArray(declaration.invalidatedBy)) {
+    declaration.invalidatedBy.forEach((item, index) => v.text(item, `${path}.invalidatedBy[${index}]`));
+    v.check(new Set(declaration.invalidatedBy).size === declaration.invalidatedBy.length, `${path}.invalidatedBy`, "must not contain duplicates");
+  }
+  v.check(isoDate(declaration.reviewedAt), `${path}.reviewedAt`, "must be an ISO date");
+}
+
+function validateReceipt(wrapper, profile, path, v) {
+  v.keys(wrapper, ["displayStatus", "statement"], path);
+  if (!isObject(wrapper)) return;
+  v.check(["observed", "stale"].includes(wrapper.displayStatus), `${path}.displayStatus`, "must be observed or stale");
+  const statement = wrapper.statement;
+  v.keys(statement, ["_type", "subject", "predicateType", "predicate"], `${path}.statement`);
+  if (!isObject(statement)) return;
+  v.check(statement._type === "https://in-toto.io/Statement/v1", `${path}.statement._type`, "must use in-toto Statement v1");
+  v.check(statement.predicateType === "https://agent-evidence-catalog.example/attestations/agent-evaluation/v1", `${path}.statement.predicateType`, "unexpected predicate type");
+  v.list(statement.subject, `${path}.statement.subject`, false);
+  v.check(Array.isArray(statement.subject) && statement.subject.length === 1, `${path}.statement.subject`, "must contain exactly one subject");
+  const subject = statement.subject?.[0];
+  v.keys(subject, ["name", "digest"], `${path}.statement.subject[0]`);
+  if (isObject(subject)) {
+    v.text(subject.name, `${path}.statement.subject[0].name`);
+    v.keys(subject.digest, ["sha256"], `${path}.statement.subject[0].digest`);
+    v.check(SHA256.test(subject.digest?.sha256 ?? ""), `${path}.statement.subject[0].digest.sha256`, "must be a lowercase SHA-256 digest");
+  }
+  const predicate = statement.predicate;
+  v.keys(predicate, ["receiptVersion", "agent", "evaluation", "permissionsDeclaration", "evidence", "limitations", "validity"], `${path}.statement.predicate`);
+  if (!isObject(predicate)) return;
+  v.check(predicate.receiptVersion === "1.0", `${path}.statement.predicate.receiptVersion`, "must equal 1.0");
+  const agent = predicate.agent;
+  const agentKeys = isObject(agent) ? Object.keys(agent) : [];
+  v.check(isObject(agent) && ["profileId", "name", "version"].every((key) => agentKeys.includes(key)), `${path}.statement.predicate.agent`, "must include profileId, name, and version");
+  if (isObject(agent)) {
+    v.check(agent.profileId === profile.id, `${path}.statement.predicate.agent.profileId`, "must match profile id");
+    v.check(agent.name === profile.name, `${path}.statement.predicate.agent.name`, "must match profile name");
+    v.check(SEMVER.test(agent.version ?? ""), `${path}.statement.predicate.agent.version`, "must be a semantic version");
+    if (agent.source !== undefined) {
+      v.keys(agent.source, ["uri", "revision"], `${path}.statement.predicate.agent.source`);
+      v.check(uri(agent.source?.uri), `${path}.statement.predicate.agent.source.uri`, "must be an HTTPS or OCI URI");
+      v.text(agent.source?.revision, `${path}.statement.predicate.agent.source.revision`);
+    }
+    if (agent.a2aCard !== undefined) {
+      v.keys(agent.a2aCard, ["uri", "sha256", "protocolVersion"], `${path}.statement.predicate.agent.a2aCard`);
+      v.check(uri(agent.a2aCard?.uri), `${path}.statement.predicate.agent.a2aCard.uri`, "must be an HTTPS URI");
+      v.check(SHA256.test(agent.a2aCard?.sha256 ?? ""), `${path}.statement.predicate.agent.a2aCard.sha256`, "must be a lowercase SHA-256 digest");
+      v.text(agent.a2aCard?.protocolVersion, `${path}.statement.predicate.agent.a2aCard.protocolVersion`);
+    }
+  }
+  const exactVersion = agent?.version === profile.version.number;
+  const exactDigest = subject?.digest?.sha256 === profile.version.artifact.sha256;
+  if (wrapper.displayStatus === "observed") {
+    v.check(exactVersion && exactDigest, path, "observed receipt must match the profile version and artifact digest exactly");
+  } else {
+    v.check(!exactVersion || !exactDigest, path, "stale receipt must visibly differ by version or digest");
+  }
+  const evaluation = predicate.evaluation;
+  v.keys(evaluation, ["suite", "startedAt", "finishedAt", "runner", "environment", "tests", "summary"], `${path}.statement.predicate.evaluation`);
+  if (isObject(evaluation)) {
+    v.keys(evaluation.suite, ["name", "version", "sourceUri", "revision"], `${path}.statement.predicate.evaluation.suite`);
+    if (isObject(evaluation.suite)) {
+      v.text(evaluation.suite.name, `${path}.statement.predicate.evaluation.suite.name`);
+      v.check(SEMVER.test(evaluation.suite.version ?? ""), `${path}.statement.predicate.evaluation.suite.version`, "must be a semantic version");
+      v.check(uri(evaluation.suite.sourceUri), `${path}.statement.predicate.evaluation.suite.sourceUri`, "must be an HTTPS URI");
+      v.text(evaluation.suite.revision, `${path}.statement.predicate.evaluation.suite.revision`);
+    }
+    v.check(isoDateTime(evaluation.startedAt), `${path}.statement.predicate.evaluation.startedAt`, "must be an RFC 3339 UTC timestamp");
+    v.check(isoDateTime(evaluation.finishedAt), `${path}.statement.predicate.evaluation.finishedAt`, "must be an RFC 3339 UTC timestamp");
+    v.check(Date.parse(evaluation.finishedAt) >= Date.parse(evaluation.startedAt), `${path}.statement.predicate.evaluation`, "finishedAt must not precede startedAt");
+    v.keys(evaluation.runner, evaluation.runner?.workflowUri === undefined ? ["type", "identity"] : ["type", "identity", "workflowUri"], `${path}.statement.predicate.evaluation.runner`);
+    if (isObject(evaluation.runner)) {
+      v.check(RUNNERS.has(evaluation.runner.type), `${path}.statement.predicate.evaluation.runner.type`, "invalid runner type");
+      v.text(evaluation.runner.identity, `${path}.statement.predicate.evaluation.runner.identity`);
+      if (evaluation.runner.workflowUri !== undefined) v.check(uri(evaluation.runner.workflowUri), `${path}.statement.predicate.evaluation.runner.workflowUri`, "must be an HTTPS URI");
+    }
+    const environmentKeys = evaluation.environment?.dependencyLockDigest === undefined
+      ? ["operatingSystem", "architecture", "isolation", "networkPolicy"]
+      : ["operatingSystem", "architecture", "isolation", "networkPolicy", "dependencyLockDigest"];
+    v.keys(evaluation.environment, environmentKeys, `${path}.statement.predicate.evaluation.environment`);
+    if (isObject(evaluation.environment)) {
+      for (const field of ["operatingSystem", "architecture", "isolation", "networkPolicy"]) v.text(evaluation.environment[field], `${path}.statement.predicate.evaluation.environment.${field}`);
+      if (evaluation.environment.dependencyLockDigest !== undefined) v.check(SHA256.test(evaluation.environment.dependencyLockDigest), `${path}.statement.predicate.evaluation.environment.dependencyLockDigest`, "must be a lowercase SHA-256 digest");
+    }
+    v.list(evaluation.tests, `${path}.statement.predicate.evaluation.tests`, false);
+    const testIds = new Set();
+    if (Array.isArray(evaluation.tests)) evaluation.tests.forEach((test, index) => {
+      const testPath = `${path}.statement.predicate.evaluation.tests[${index}]`;
+      v.keys(test, ["id", "claim", "result", "expected", "observed", "evidenceRefs", "limitations"], testPath);
+      if (!isObject(test)) return;
+      for (const field of ["id", "claim", "expected", "observed"]) v.text(test[field], `${testPath}.${field}`);
+      v.check(!testIds.has(test.id), `${testPath}.id`, "must be unique in the receipt");
+      testIds.add(test.id);
+      v.check(TEST_RESULTS.has(test.result), `${testPath}.result`, "invalid test result");
+      v.list(test.evidenceRefs, `${testPath}.evidenceRefs`);
+      v.list(test.limitations, `${testPath}.limitations`);
+    });
+    v.keys(evaluation.summary, ["result", "total", "passed", "failed", "errors", "skipped"], `${path}.statement.predicate.evaluation.summary`);
+    if (isObject(evaluation.summary) && Array.isArray(evaluation.tests)) {
+      const counts = { pass: 0, fail: 0, error: 0, skipped: 0 };
+      evaluation.tests.forEach((test) => { if (counts[test.result] !== undefined) counts[test.result] += 1; });
+      v.check(evaluation.summary.total === evaluation.tests.length, `${path}.statement.predicate.evaluation.summary.total`, "must equal the number of test entries");
+      v.check(evaluation.summary.passed === counts.pass, `${path}.statement.predicate.evaluation.summary.passed`, "does not match test entries");
+      v.check(evaluation.summary.failed === counts.fail, `${path}.statement.predicate.evaluation.summary.failed`, "does not match test entries");
+      v.check(evaluation.summary.errors === counts.error, `${path}.statement.predicate.evaluation.summary.errors`, "does not match test entries");
+      v.check(evaluation.summary.skipped === counts.skipped, `${path}.statement.predicate.evaluation.summary.skipped`, "does not match test entries");
+      const expectedResult = counts.error > 0 ? "error" : counts.fail > 0 ? "fail" : "pass";
+      v.check(evaluation.summary.result === expectedResult, `${path}.statement.predicate.evaluation.summary.result`, `must be ${expectedResult}`);
+    }
+  }
+  v.keys(predicate.permissionsDeclaration, ["uri", "sha256", "issuedAt"], `${path}.statement.predicate.permissionsDeclaration`);
+  if (isObject(predicate.permissionsDeclaration)) {
+    v.check(uri(predicate.permissionsDeclaration.uri), `${path}.statement.predicate.permissionsDeclaration.uri`, "must be an HTTPS URI");
+    v.check(predicate.permissionsDeclaration.sha256 === profile.permissionDeclaration.digest, `${path}.statement.predicate.permissionsDeclaration.sha256`, "must match the profile declaration digest");
+    v.check(predicate.permissionsDeclaration.issuedAt === profile.permissionDeclaration.issuedAt, `${path}.statement.predicate.permissionsDeclaration.issuedAt`, "must match the profile declaration timestamp");
+  }
+  v.list(predicate.evidence, `${path}.statement.predicate.evidence`);
+  const evidenceIds = new Set();
+  if (Array.isArray(predicate.evidence)) predicate.evidence.forEach((reference, index) => {
+    const refPath = `${path}.statement.predicate.evidence[${index}]`;
+    v.keys(reference, ["id", "uri", "mediaType", "sha256"], refPath);
+    if (!isObject(reference)) return;
+    v.text(reference.id, `${refPath}.id`);
+    v.check(!evidenceIds.has(reference.id), `${refPath}.id`, "must be unique in the receipt");
+    evidenceIds.add(reference.id);
+    v.check(uri(reference.uri), `${refPath}.uri`, "must be an HTTPS URI");
+    v.text(reference.mediaType, `${refPath}.mediaType`);
+    v.check(SHA256.test(reference.sha256 ?? ""), `${refPath}.sha256`, "must be a lowercase SHA-256 digest");
+  });
+  if (Array.isArray(evaluation?.tests)) evaluation.tests.forEach((test, testIndex) => {
+    test.evidenceRefs?.forEach((ref) => v.check(evidenceIds.has(ref), `${path}.statement.predicate.evaluation.tests[${testIndex}].evidenceRefs`, `unknown evidence reference ${ref}`));
+  });
+  v.list(predicate.limitations, `${path}.statement.predicate.limitations`, false);
+  if (Array.isArray(predicate.limitations)) predicate.limitations.forEach((item, index) => v.text(item, `${path}.statement.predicate.limitations[${index}]`));
+  v.keys(predicate.validity, ["evaluatedAt", "revalidateAfter", "invalidatedBy"], `${path}.statement.predicate.validity`);
+  if (isObject(predicate.validity)) {
+    v.check(isoDateTime(predicate.validity.evaluatedAt), `${path}.statement.predicate.validity.evaluatedAt`, "must be an RFC 3339 UTC timestamp");
+    v.check(isoDateTime(predicate.validity.revalidateAfter), `${path}.statement.predicate.validity.revalidateAfter`, "must be an RFC 3339 UTC timestamp");
+    v.check(Date.parse(predicate.validity.revalidateAfter) > Date.parse(predicate.validity.evaluatedAt), `${path}.statement.predicate.validity`, "revalidateAfter must follow evaluatedAt");
+    v.list(predicate.validity.invalidatedBy, `${path}.statement.predicate.validity.invalidatedBy`, false);
+    if (Array.isArray(predicate.validity.invalidatedBy)) predicate.validity.invalidatedBy.forEach((item, index) => v.check(INVALIDATORS.has(item), `${path}.statement.predicate.validity.invalidatedBy[${index}]`, "invalid invalidation reason"));
+  }
+}
+
+function validateProfile(profile, fileName = "profile.json") {
+  const v = validator();
+  v.keys(profile, [
+    "schemaVersion", "id", "slug", "name", "category", "summary", "publisher", "version", "delivery",
+    "interoperability", "permissionDeclaration", "evidenceReceipts", "verificationEvidence", "limitations", "selectionCue"
+  ], fileName);
+  if (!isObject(profile)) return v.errors;
+  v.check(profile.schemaVersion === "1.0", `${fileName}.schemaVersion`, "must equal 1.0");
+  v.check(PROFILE_ID.test(profile.id ?? ""), `${fileName}.id`, "must be a reverse-domain style identifier");
+  v.check(SLUG.test(profile.slug ?? ""), `${fileName}.slug`, "must end with a hyphenated semantic version");
+  v.check(fileName === "profile.json" || fileName === `${profile.slug}.json`, `${fileName}.slug`, "must match the file name");
+  for (const field of ["name", "category", "summary", "selectionCue"]) v.text(profile[field], `${fileName}.${field}`);
+  v.keys(profile.publisher, ["name", "ownership"], `${fileName}.publisher`);
+  if (isObject(profile.publisher)) {
+    v.text(profile.publisher.name, `${fileName}.publisher.name`);
+    v.keys(profile.publisher.ownership, ["status", "method"], `${fileName}.publisher.ownership`);
+    if (isObject(profile.publisher.ownership)) {
+      v.check(STATUSES.has(profile.publisher.ownership.status), `${fileName}.publisher.ownership.status`, "invalid evidence status");
+      v.text(profile.publisher.ownership.method, `${fileName}.publisher.ownership.method`);
+    }
+  }
+  const versionKeys = profile.version?.sourceRevision === undefined ? ["number", "artifact"] : ["number", "sourceRevision", "artifact"];
+  v.keys(profile.version, versionKeys, `${fileName}.version`);
+  if (isObject(profile.version)) {
+    v.check(SEMVER.test(profile.version.number ?? ""), `${fileName}.version.number`, "must be a semantic version");
+    if (profile.version.sourceRevision !== undefined) v.text(profile.version.sourceRevision, `${fileName}.version.sourceRevision`);
+    v.keys(profile.version.artifact, ["kind", "uri", "sha256"], `${fileName}.version.artifact`);
+    if (isObject(profile.version.artifact)) {
+      v.check(["oci", "source-archive", "hosted-release"].includes(profile.version.artifact.kind), `${fileName}.version.artifact.kind`, "invalid artifact kind");
+      v.check(uri(profile.version.artifact.uri), `${fileName}.version.artifact.uri`, "must be an HTTPS or OCI URI");
+      v.check(SHA256.test(profile.version.artifact.sha256 ?? ""), `${fileName}.version.artifact.sha256`, "must be a lowercase SHA-256 digest");
+    }
+  }
+  v.keys(profile.delivery, ["mode", "sourceAvailability"], `${fileName}.delivery`);
+  if (isObject(profile.delivery)) {
+    v.check(["local", "hosted", "hybrid", "unknown"].includes(profile.delivery.mode), `${fileName}.delivery.mode`, "invalid delivery mode");
+    v.check(["public", "private", "unavailable", "unknown"].includes(profile.delivery.sourceAvailability), `${fileName}.delivery.sourceAvailability`, "invalid source availability");
+  }
+  v.keys(profile.interoperability, ["a2a", "agentSkills", "mcpServers", "oci"], `${fileName}.interoperability`);
+  if (isObject(profile.interoperability)) {
+    if (profile.interoperability.a2a !== null) {
+      v.keys(profile.interoperability.a2a, ["protocolVersion", "cardUri", "cardSha256", "status"], `${fileName}.interoperability.a2a`);
+      if (isObject(profile.interoperability.a2a)) {
+        v.text(profile.interoperability.a2a.protocolVersion, `${fileName}.interoperability.a2a.protocolVersion`);
+        v.check(uri(profile.interoperability.a2a.cardUri), `${fileName}.interoperability.a2a.cardUri`, "must be an HTTPS URI");
+        v.check(SHA256.test(profile.interoperability.a2a.cardSha256 ?? ""), `${fileName}.interoperability.a2a.cardSha256`, "must be a lowercase SHA-256 digest");
+        v.check(STATUSES.has(profile.interoperability.a2a.status), `${fileName}.interoperability.a2a.status`, "invalid evidence status");
+      }
+    }
+    for (const collection of ["agentSkills", "mcpServers"]) {
+      v.list(profile.interoperability[collection], `${fileName}.interoperability.${collection}`);
+      if (Array.isArray(profile.interoperability[collection])) profile.interoperability[collection].forEach((item, index) => {
+        v.keys(item, ["name", "status"], `${fileName}.interoperability.${collection}[${index}]`);
+        if (isObject(item)) {
+          v.text(item.name, `${fileName}.interoperability.${collection}[${index}].name`);
+          v.check(STATUSES.has(item.status), `${fileName}.interoperability.${collection}[${index}].status`, "invalid evidence status");
+        }
+      });
+    }
+    if (profile.interoperability.oci !== null) {
+      v.keys(profile.interoperability.oci, ["image", "digest", "provenanceStatus", "sbomStatus"], `${fileName}.interoperability.oci`);
+      if (isObject(profile.interoperability.oci)) {
+        v.text(profile.interoperability.oci.image, `${fileName}.interoperability.oci.image`);
+        v.check(/^sha256:[a-f0-9]{64}$/.test(profile.interoperability.oci.digest ?? ""), `${fileName}.interoperability.oci.digest`, "must include a SHA-256 digest");
+        v.check(STATUSES.has(profile.interoperability.oci.provenanceStatus), `${fileName}.interoperability.oci.provenanceStatus`, "invalid evidence status");
+        v.check(STATUSES.has(profile.interoperability.oci.sbomStatus), `${fileName}.interoperability.oci.sbomStatus`, "invalid evidence status");
+      }
+    }
+  }
+  validatePermission(profile.permissionDeclaration, `${fileName}.permissionDeclaration`, v);
+  v.check(profile.permissionDeclaration?.mode === profile.delivery?.mode, `${fileName}.permissionDeclaration.mode`, "must match delivery mode");
+  v.list(profile.evidenceReceipts, `${fileName}.evidenceReceipts`, false);
+  if (Array.isArray(profile.evidenceReceipts)) profile.evidenceReceipts.forEach((receipt, index) => validateReceipt(receipt, profile, `${fileName}.evidenceReceipts[${index}]`, v));
+  validateVerificationEvidence(profile, fileName, v);
+  v.list(profile.limitations, `${fileName}.limitations`, false);
+  if (Array.isArray(profile.limitations)) profile.limitations.forEach((item, index) => v.text(item, `${fileName}.limitations[${index}]`));
+  return v.errors;
+}
+
+async function loadProfiles() {
+  const names = (await readdir(CATALOG)).filter((name) => extname(name) === ".json").sort();
+  const loaded = [];
+  for (const name of names) {
+    const raw = await readFile(join(CATALOG, name), "utf8");
+    let profile;
+    try {
+      profile = JSON.parse(raw);
+    } catch (error) {
+      throw new Error(`${name}: invalid JSON: ${error.message}`);
+    }
+    loaded.push({ name, raw, profile });
+  }
+  return loaded;
+}
+
+async function validateCatalog() {
+  const loaded = await loadProfiles();
+  const errors = [];
+  const keys = new Set();
+  const slugs = new Set();
+  for (const item of loaded) {
+    errors.push(...validateProfile(item.profile, item.name));
+    const key = `${item.profile.id}@${item.profile.version?.number}`;
+    if (keys.has(key)) errors.push(`${item.name}: duplicate agent-version key ${key}`);
+    keys.add(key);
+    if (slugs.has(item.profile.slug)) errors.push(`${item.name}: duplicate slug ${item.profile.slug}`);
+    slugs.add(item.profile.slug);
+  }
+  if (loaded.length === 0) errors.push("catalog: must contain at least one profile");
+  if (errors.length) throw new Error(errors.join("\n"));
+  return loaded;
+}
+
+async function commandValidate() {
+  const loaded = await validateCatalog();
+  const receipts = loaded.reduce((total, item) => total + item.profile.evidenceReceipts.length, 0);
+  process.stdout.write(`PASS ${loaded.length} profiles, ${receipts} version-specific receipts\n`);
+}
+
+async function commandTest() {
+  const loaded = await validateCatalog();
+  const baseline = loaded.find((item) => item.profile.id === "com.example.calendarbridge") ?? loaded[0];
+  const broken = structuredClone(baseline.profile);
+  broken.version.number = "latest";
+  broken.evidenceReceipts[0].statement.predicate.evaluation.summary.total += 1;
+  broken.publisher.ownership.status = "verified";
+  const errors = validateProfile(broken);
+  if (!errors.some((error) => error.includes("semantic version"))) throw new Error("negative test failed to detect an invalid version");
+  if (!errors.some((error) => error.includes("number of test entries"))) throw new Error("negative test failed to detect receipt arithmetic drift");
+  if (!errors.some((error) => error.includes("verified status requires"))) throw new Error("negative test failed to reject an unsupported verified status");
+  process.stdout.write(`PASS validator accepts catalog and rejects ${errors.length} deliberate contract violations\n`);
+}
+
+async function commandBuild() {
+  const loaded = await validateCatalog();
+  await rm(DIST, { recursive: true, force: true });
+  await mkdir(join(DIST, "records"), { recursive: true });
+  await mkdir(join(DIST, "schemas"), { recursive: true });
+  for (const source of ["index.html", "compare.html", "styles.css", "app.js"]) {
+    await copyFile(join(ROOT, "site", source), join(DIST, source));
+  }
+  for (const source of ["agent-record-v1.schema.json", "evidence-receipt-predicate-v1.schema.json"]) {
+    await copyFile(join(ROOT, "schemas", source), join(DIST, "schemas", source));
+  }
+  for (const source of ["PERMISSION_DECLARATION.md", "CONTRIBUTING.md", "CORRECTIONS.md", "LICENSE"]) {
+    await copyFile(join(ROOT, source), join(DIST, source));
+  }
+  const profiles = loaded.map((item) => item.profile).sort((a, b) => a.name.localeCompare(b.name));
+  const safeJson = JSON.stringify(profiles).replaceAll("<", "\\u003c");
+  await writeFile(join(DIST, "catalog-data.js"), `window.CATALOG_PROFILES = ${safeJson};\n`, "utf8");
+  for (const item of loaded) await copyFile(join(CATALOG, item.name), join(DIST, "records", item.name));
+  const manifest = {
+    schemaVersion: "1.0",
+    profileCount: profiles.length,
+    records: loaded.map((item) => ({
+      id: item.profile.id,
+      version: item.profile.version.number,
+      file: `records/${item.name}`,
+      fileSha256: createHash("sha256").update(item.raw).digest("hex")
+    }))
+  };
+  await writeFile(join(DIST, "build-manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+  process.stdout.write(`PASS built ${profiles.length} profiles to ${DIST}\n`);
+}
+
+const command = process.argv[2];
+try {
+  if (command === "validate") await commandValidate();
+  else if (command === "test") await commandTest();
+  else if (command === "build") await commandBuild();
+  else {
+    process.stderr.write("Usage: node scripts/catalog.mjs <validate|test|build>\n");
+    process.exitCode = 2;
+  }
+} catch (error) {
+  process.stderr.write(`FAIL\n${error.message}\n`);
+  process.exitCode = 1;
+}

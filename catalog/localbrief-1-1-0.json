@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.example.localbrief",
+  "slug": "localbrief-1-1-0",
+  "name": "LocalBrief",
+  "category": "Local meeting-transcription agent",
+  "summary": "Transcribes a selected audio file locally and writes Markdown minutes and an action list beside the source.",
+  "publisher": { "name": "Quiet Room Examples", "ownership": { "status": "declared", "method": "synthetic example; no real ownership check performed" } },
+  "version": {
+    "number": "1.1.0",
+    "sourceRevision": "9999999999999999999999999999999999999999",
+    "artifact": { "kind": "oci", "uri": "oci://registry.example/quiet-room/localbrief@sha256:9999999999999999999999999999999999999999999999999999999999999999", "sha256": "9999999999999999999999999999999999999999999999999999999999999999" }
+  },
+  "delivery": { "mode": "local", "sourceAvailability": "public" },
+  "interoperability": {
+    "a2a": null,
+    "agentSkills": [{ "name": "meeting-minutes", "status": "declared" }],
+    "mcpServers": [],
+    "oci": { "image": "registry.example/quiet-room/localbrief", "digest": "sha256:9999999999999999999999999999999999999999999999999999999999999999", "provenanceStatus": "declared", "sbomStatus": "declared" }
+  },
+  "permissionDeclaration": {
+    "issuedAt": "2026-07-24T09:00:00Z",
+    "digest": "3333333333333333333333333333333333333333333333333333333333333333",
+    "signatureStatus": "declared",
+    "mode": "local",
+    "actions": {
+      "read": { "scope": "selected-only", "description": "One user-selected audio file", "confirmation": "none", "reversibility": "not-applicable", "status": "declared" },
+      "draft": { "scope": "selected-only", "description": "Proposed speaker labels, minutes, and action list", "confirmation": "none", "reversibility": "reversible", "status": "declared" },
+      "change": { "scope": "selected-only", "description": "Write Markdown outputs to the selected directory", "confirmation": "exact", "reversibility": "reversible", "status": "declared" },
+      "communicate": { "scope": "none", "description": "No external communication", "confirmation": "not-applicable", "reversibility": "not-applicable", "status": "not-applicable" },
+      "spend": { "scope": "none", "description": "No paid resource authority after the local model is downloaded", "confirmation": "not-applicable", "reversibility": "not-applicable", "status": "not-applicable" }
+    },
+    "files": { "read": "Selected audio file", "write": "Selected output directory", "forbidden": "All unselected paths", "enforcementStatus": "declared" },
+    "processes": { "scope": "allowlisted", "generatedCode": false, "boundary": "Local speech model and text formatter", "enforcementStatus": "observed" },
+    "network": { "scope": "allowlisted", "destinations": "Model registry during initial download only", "dataSent": "Model identifier only; no audio or transcript", "enforcementStatus": "observed" },
+    "credentials": { "type": "None", "scopes": "None", "storage": "Not applicable", "lifetime": "Not applicable", "exportRisk": "no" },
+    "dataHandling": { "categories": "Audio, transcript, names, and meeting content", "leavesEnvironment": "No user content leaves the evaluated device", "retention": "Transcripts and minutes persist until the user deletes them", "deletionRoute": "Delete local outputs", "trainingUse": "No external training use" },
+    "delegation": { "mayCallAgents": false, "policy": "No downstream agents", "downstreamPinned": null },
+    "gaps": ["Evidence is English-only and overlapping-speech performance is weak.", "Recording consent is outside the agent's enforcement boundary."],
+    "invalidatedBy": ["Agent version, OCI digest, speech model, file policy, or network policy change"],
+    "reviewedAt": "2026-07-24"
+  },
+  "evidenceReceipts": [
+    {
+      "displayStatus": "observed",
+      "statement": {
+        "_type": "https://in-toto.io/Statement/v1",
+        "subject": [{ "name": "registry.example/quiet-room/localbrief", "digest": { "sha256": "9999999999999999999999999999999999999999999999999999999999999999" } }],
+        "predicateType": "https://agent-evidence-catalog.example/attestations/agent-evaluation/v1",
+        "predicate": {
+          "receiptVersion": "1.0",
+          "agent": { "profileId": "dev.example.localbrief", "name": "LocalBrief", "version": "1.1.0", "source": { "uri": "https://git.example/quiet-room/localbrief", "revision": "9999999999999999999999999999999999999999" } },
+          "evaluation": {
+            "suite": { "name": "local-transcription-quality", "version": "1.0.0", "sourceUri": "https://git.example/evaluations/transcription-quality", "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+            "startedAt": "2026-07-24T09:10:00Z",
+            "finishedAt": "2026-07-24T09:40:00Z",
+            "runner": { "type": "independent-ci", "identity": "synthetic-evaluator:local-audio" },
+            "environment": { "operatingSystem": "macos-15", "architecture": "arm64", "isolation": "no-egress local sandbox", "networkPolicy": "no network after model download", "dependencyLockDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+            "tests": [{ "id": "transcription.wer", "claim": "Word error rate is within the disclosed 12 percent threshold.", "result": "pass", "expected": "Word error rate is 12 percent or lower on the disclosed synthetic English set.", "observed": "Word error rate was 9.8 percent; speaker attribution was 84 percent on two-speaker fixtures.", "evidenceRefs": ["transcription-report"], "limitations": ["English-only fixtures with limited overlapping speech."] }],
+            "summary": { "result": "pass", "total": 1, "passed": 1, "failed": 0, "errors": 0, "skipped": 0 }
+          },
+          "permissionsDeclaration": { "uri": "https://git.example/quiet-room/localbrief/blob/9999999/PERMISSIONS.md", "sha256": "3333333333333333333333333333333333333333333333333333333333333333", "issuedAt": "2026-07-24T09:00:00Z" },
+          "evidence": [{ "id": "transcription-report", "uri": "https://evidence.example/localbrief/1.1.0/transcription.json", "mediaType": "application/json", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }],
+          "limitations": ["The receipt does not cover recording consent or organizational retention policy.", "Initial model download requires network access."],
+          "validity": { "evaluatedAt": "2026-07-24T09:40:00Z", "revalidateAfter": "2026-08-24T09:40:00Z", "invalidatedBy": ["agent-version-change", "artifact-digest-change", "permission-declaration-change", "evaluation-suite-change", "dependency-version-change", "model-revision-change", "manual-revocation"] }
+        }
+      }
+    }
+  ],
+  "verificationEvidence": [],
+  "limitations": ["English-only evidence and weak overlapping-speech performance.", "Users remain responsible for recording consent and transcript storage."],
+  "selectionCue": "Strong privacy and provenance posture; narrower language and speaker performance."
+}

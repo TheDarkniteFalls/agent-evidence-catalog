@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.example.designforge",
+  "slug": "designforge-2-2-0",
+  "name": "DesignForge",
+  "category": "Hosted design-production agent",
+  "summary": "Turns a brief and selected reference images into draft graphics and exports selected assets as a download bundle.",
+  "publisher": { "name": "Blue Orchard Studio", "ownership": { "status": "declared", "method": "synthetic example; no real ownership check performed" } },
+  "version": {
+    "number": "2.2.0",
+    "artifact": { "kind": "hosted-release", "uri": "https://agents.example/designforge/releases/2.2.0", "sha256": "7777777777777777777777777777777777777777777777777777777777777777" }
+  },
+  "delivery": { "mode": "hosted", "sourceAvailability": "unavailable" },
+  "interoperability": {
+    "a2a": { "protocolVersion": "1.0", "cardUri": "https://agents.example/designforge/.well-known/agent-card.json", "cardSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "status": "declared" },
+    "agentSkills": [
+      { "name": "generate-concepts", "status": "declared" },
+      { "name": "apply-brand-kit", "status": "declared" },
+      { "name": "export-assets", "status": "declared" }
+    ],
+    "mcpServers": [{ "name": "com.example.image-generation", "status": "declared" }],
+    "oci": null
+  },
+  "permissionDeclaration": {
+    "issuedAt": "2026-07-15T07:00:00Z",
+    "digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "signatureStatus": "declared",
+    "mode": "hosted",
+    "actions": {
+      "read": { "scope": "selected-only", "description": "Selected briefs, reference images, and brand assets", "confirmation": "none", "reversibility": "not-applicable", "status": "declared" },
+      "draft": { "scope": "selected-only", "description": "Draft graphic concepts", "confirmation": "none", "reversibility": "reversible", "status": "declared" },
+      "change": { "scope": "selected-only", "description": "Create selected export files in a download bundle", "confirmation": "exact", "reversibility": "reversible", "status": "declared" },
+      "communicate": { "scope": "none", "description": "Cannot publish to social platforms or contact people", "confirmation": "always-forbidden", "reversibility": "not-applicable", "status": "declared" },
+      "spend": { "scope": "allowlisted", "description": "Hosted image generation within a publisher-declared task limit", "confirmation": "none", "reversibility": "difficult", "status": "declared" }
+    },
+    "files": { "read": "User-selected uploads", "write": "Generated download bundle", "forbidden": "Unselected local files and social publishing destinations", "enforcementStatus": "declared" },
+    "processes": { "scope": "none", "generatedCode": false, "boundary": "Hosted image generation; no user-visible process control", "enforcementStatus": "unknown" },
+    "network": { "scope": "allowlisted", "destinations": "Image-model provider and asset storage", "dataSent": "Brief, selected images, brand assets, and generated outputs", "enforcementStatus": "declared" },
+    "credentials": { "type": "Provider-held service credentials", "scopes": "Image generation and asset storage", "storage": "Provider secret store", "lifetime": "Provider managed", "exportRisk": "unknown" },
+    "dataHandling": { "categories": "Reference images, brand assets, and creative briefs", "leavesEnvironment": "Selected uploads go to the hosted service and image-model provider", "retention": "Uploads retained for 30 days unless manually deleted", "deletionRoute": "Delete assets in provider settings", "trainingUse": "Declared no; policy only" },
+    "delegation": { "mayCallAgents": false, "policy": "No downstream agents declared", "downstreamPinned": null },
+    "gaps": ["No public source, SBOM, or build provenance is available.", "Training-use and deletion claims are policy statements, not technical observations."],
+    "invalidatedBy": ["Agent version, Agent Card, model, asset-storage policy, retention policy, or export pipeline change"],
+    "reviewedAt": "2026-07-15"
+  },
+  "evidenceReceipts": [
+    {
+      "displayStatus": "observed",
+      "statement": {
+        "_type": "https://in-toto.io/Statement/v1",
+        "subject": [{ "name": "agents.example/designforge/releases/2.2.0", "digest": { "sha256": "7777777777777777777777777777777777777777777777777777777777777777" } }],
+        "predicateType": "https://agent-evidence-catalog.example/attestations/agent-evaluation/v1",
+        "predicate": {
+          "receiptVersion": "1.0",
+          "agent": { "profileId": "com.example.designforge", "name": "DesignForge", "version": "2.2.0", "a2aCard": { "uri": "https://agents.example/designforge/.well-known/agent-card.json", "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "protocolVersion": "1.0" } },
+          "evaluation": {
+            "suite": { "name": "design-export-compatibility", "version": "1.0.0", "sourceUri": "https://git.example/evaluations/design-exports", "revision": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" },
+            "startedAt": "2026-07-15T07:10:00Z",
+            "finishedAt": "2026-07-15T07:20:00Z",
+            "runner": { "type": "independent-ci", "identity": "synthetic-evaluator:design-exports" },
+            "environment": { "operatingSystem": "hosted-fixture", "architecture": "service-api", "isolation": "isolated asset tenant", "networkPolicy": "image endpoint and fixture storage only" },
+            "tests": [{ "id": "exports.open", "claim": "Generated files open in the disclosed target applications.", "result": "pass", "expected": "All 20 export fixtures open successfully.", "observed": "20 of 20 files opened correctly.", "evidenceRefs": ["export-report"], "limitations": ["Brand-color adherence was 17 of 20 in a separate observation."] }],
+            "summary": { "result": "pass", "total": 1, "passed": 1, "failed": 0, "errors": 0, "skipped": 0 }
+          },
+          "permissionsDeclaration": { "uri": "https://agents.example/designforge/2.2.0/PERMISSIONS.md", "sha256": "1111111111111111111111111111111111111111111111111111111111111111", "issuedAt": "2026-07-15T07:00:00Z" },
+          "evidence": [{ "id": "export-report", "uri": "https://evidence.example/designforge/2.2.0/exports.json", "mediaType": "application/json", "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" }],
+          "limitations": ["No source-to-runtime provenance is available.", "The receipt does not evaluate copyright, confidentiality, or brand suitability."],
+          "validity": { "evaluatedAt": "2026-07-15T07:20:00Z", "revalidateAfter": "2026-08-15T07:20:00Z", "invalidatedBy": ["agent-version-change", "artifact-digest-change", "agent-card-digest-change", "permission-declaration-change", "evaluation-suite-change", "model-revision-change", "manual-revocation"] }
+        }
+      }
+    }
+  ],
+  "verificationEvidence": [],
+  "limitations": ["Uploaded assets leave the user's environment and persist for up to 30 days.", "Copyright and brand-suitability judgment remains with the user."],
+  "selectionCue": "Low direct external authority; meaningful confidentiality and provenance uncertainty."
+}

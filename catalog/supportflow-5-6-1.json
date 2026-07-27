@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.example.supportflow",
+  "slug": "supportflow-5-6-1",
+  "name": "SupportFlow",
+  "category": "Customer-support agent",
+  "summary": "Reads support tickets and sends replies autonomously for allowlisted low-risk categories.",
+  "publisher": { "name": "Helpful Systems Example Inc.", "ownership": { "status": "declared", "method": "synthetic example; no real ownership check performed" } },
+  "version": {
+    "number": "5.6.1",
+    "artifact": { "kind": "oci", "uri": "oci://registry.example/helpful-systems/supportflow@sha256:8888888888888888888888888888888888888888888888888888888888888888", "sha256": "8888888888888888888888888888888888888888888888888888888888888888" }
+  },
+  "delivery": { "mode": "hosted", "sourceAvailability": "private" },
+  "interoperability": {
+    "a2a": { "protocolVersion": "1.0", "cardUri": "https://agents.example/supportflow/.well-known/agent-card.json", "cardSha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "status": "declared" },
+    "agentSkills": [
+      { "name": "answer-known-question", "status": "declared" },
+      { "name": "request-missing-details", "status": "declared" },
+      { "name": "escalate-sensitive-case", "status": "declared" }
+    ],
+    "mcpServers": [
+      { "name": "com.example.helpdesk", "status": "declared" },
+      { "name": "com.example.knowledge", "status": "declared" }
+    ],
+    "oci": { "image": "registry.example/helpful-systems/supportflow", "digest": "sha256:8888888888888888888888888888888888888888888888888888888888888888", "provenanceStatus": "unknown", "sbomStatus": "declared" }
+  },
+  "permissionDeclaration": {
+    "issuedAt": "2026-07-19T08:00:00Z",
+    "digest": "2222222222222222222222222222222222222222222222222222222222222222",
+    "signatureStatus": "declared",
+    "mode": "hosted",
+    "actions": {
+      "read": { "scope": "broad", "description": "Support tickets, customer history, and approved knowledge", "confirmation": "none", "reversibility": "not-applicable", "status": "declared" },
+      "draft": { "scope": "broad", "description": "Customer replies and internal notes", "confirmation": "none", "reversibility": "reversible", "status": "declared" },
+      "change": { "scope": "allowlisted", "description": "Write internal notes and update ticket status to pending or resolved", "confirmation": "none", "reversibility": "difficult", "status": "declared" },
+      "communicate": { "scope": "allowlisted", "description": "Send customer replies autonomously in allowlisted categories", "confirmation": "none", "reversibility": "difficult", "status": "observed" },
+      "spend": { "scope": "unknown", "description": "Hosted model and helpdesk usage without a declared task ceiling", "confirmation": "unknown", "reversibility": "unknown", "status": "unknown" }
+    },
+    "files": { "read": "None on the user's device", "write": "None on the user's device", "forbidden": "All local files", "enforcementStatus": "declared" },
+    "processes": { "scope": "none", "generatedCode": false, "boundary": "Hosted support workflow only", "enforcementStatus": "unknown" },
+    "network": { "scope": "allowlisted", "destinations": "Helpdesk, knowledge service, and model endpoint", "dataSent": "Ticket text, customer history, knowledge excerpts, and replies", "enforcementStatus": "declared" },
+    "credentials": { "type": "Delegated helpdesk service account", "scopes": "Read tickets, write notes, send replies, and update status", "storage": "Provider secret store", "lifetime": "Provider managed and revocable", "exportRisk": "unknown" },
+    "dataHandling": { "categories": "Customer PII, ticket history, and support content", "leavesEnvironment": "Ticket data goes to the hosted service and model provider", "retention": "Customer PII and evaluation logs retained for 30 days", "deletionRoute": "Organization administrator or provider request", "trainingUse": "Declared no" },
+    "delegation": { "mayCallAgents": false, "policy": "No downstream agents declared", "downstreamPinned": null },
+    "gaps": ["Source-to-artifact provenance is unknown because source is private.", "Evaluation fixtures were English-only.", "Cost controls are unknown."],
+    "invalidatedBy": ["Agent version, artifact, helpdesk scopes, category allowlist, model, knowledge source, or retention policy change"],
+    "reviewedAt": "2026-07-19"
+  },
+  "evidenceReceipts": [
+    {
+      "displayStatus": "observed",
+      "statement": {
+        "_type": "https://in-toto.io/Statement/v1",
+        "subject": [{ "name": "registry.example/helpful-systems/supportflow", "digest": { "sha256": "8888888888888888888888888888888888888888888888888888888888888888" } }],
+        "predicateType": "https://agent-evidence-catalog.example/attestations/agent-evaluation/v1",
+        "predicate": {
+          "receiptVersion": "1.0",
+          "agent": { "profileId": "com.example.supportflow", "name": "SupportFlow", "version": "5.6.1", "a2aCard": { "uri": "https://agents.example/supportflow/.well-known/agent-card.json", "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "protocolVersion": "1.0" } },
+          "evaluation": {
+            "suite": { "name": "autonomous-support-policy", "version": "2.1.0", "sourceUri": "https://git.example/evaluations/support-policy", "revision": "ffffffffffffffffffffffffffffffffffffffff" },
+            "startedAt": "2026-07-19T08:10:00Z",
+            "finishedAt": "2026-07-19T08:36:00Z",
+            "runner": { "type": "independent-ci", "identity": "synthetic-evaluator:support-policy" },
+            "environment": { "operatingSystem": "hosted-fixture", "architecture": "service-api", "isolation": "isolated helpdesk tenant", "networkPolicy": "fixture helpdesk, knowledge, and model endpoints" },
+            "tests": [{ "id": "reply-policy.aggregate", "claim": "Autonomous replies comply with the disclosed low-risk policy.", "result": "fail", "expected": "All 100 fixtures comply with the policy.", "observed": "92 of 100 complied; eight policy violations were recorded.", "evidenceRefs": ["policy-report"], "limitations": ["Fixtures are synthetic and English-only."] }],
+            "summary": { "result": "fail", "total": 1, "passed": 0, "failed": 1, "errors": 0, "skipped": 0 }
+          },
+          "permissionsDeclaration": { "uri": "https://agents.example/supportflow/5.6.1/PERMISSIONS.md", "sha256": "2222222222222222222222222222222222222222222222222222222222222222", "issuedAt": "2026-07-19T08:00:00Z" },
+          "evidence": [{ "id": "policy-report", "uri": "https://evidence.example/supportflow/5.6.1/policy.json", "mediaType": "application/json", "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" }],
+          "limitations": ["Eight policy failures per 100 synthetic replies may be unacceptable for many deployments.", "The receipt does not establish suitability for a specific organization's policy."],
+          "validity": { "evaluatedAt": "2026-07-19T08:36:00Z", "revalidateAfter": "2026-08-19T08:36:00Z", "invalidatedBy": ["agent-version-change", "artifact-digest-change", "agent-card-digest-change", "permission-declaration-change", "evaluation-suite-change", "model-revision-change", "manual-revocation"] }
+        }
+      }
+    }
+  ],
+  "verificationEvidence": [],
+  "limitations": ["Eight policy failures per 100 synthetic replies may be unacceptable.", "Autonomous messages affect customers and brand reputation."],
+  "selectionCue": "Strong evidence volume but consequential autonomous authority; requires local policy review."
+}

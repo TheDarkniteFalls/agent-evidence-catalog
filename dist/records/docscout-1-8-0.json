@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.example.docscout",
+  "slug": "docscout-1-8-0",
+  "name": "DocScout",
+  "category": "Hosted documentation research agent",
+  "summary": "Finds answers in official technical documentation and returns citations with short evidence excerpts.",
+  "publisher": { "name": "Northstar Examples", "ownership": { "status": "declared", "method": "synthetic example; no real ownership check performed" } },
+  "version": {
+    "number": "1.8.0",
+    "artifact": { "kind": "hosted-release", "uri": "https://agents.example/docscout/releases/1.8.0", "sha256": "2222222222222222222222222222222222222222222222222222222222222222" }
+  },
+  "delivery": { "mode": "hosted", "sourceAvailability": "unavailable" },
+  "interoperability": {
+    "a2a": { "protocolVersion": "1.0", "cardUri": "https://agents.example/docscout/.well-known/agent-card.json", "cardSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "status": "declared" },
+    "agentSkills": [
+      { "name": "search-official-docs", "status": "declared" },
+      { "name": "compare-api-versions", "status": "declared" }
+    ],
+    "mcpServers": [{ "name": "com.example.source-retrieval", "status": "declared" }],
+    "oci": null
+  },
+  "permissionDeclaration": {
+    "issuedAt": "2026-07-22T04:00:00Z",
+    "digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "signatureStatus": "declared",
+    "mode": "hosted",
+    "actions": {
+      "read": { "scope": "allowlisted", "description": "Official documentation domains", "confirmation": "none", "reversibility": "not-applicable", "status": "declared" },
+      "draft": { "scope": "selected-only", "description": "Cited answer returned to the requester", "confirmation": "none", "reversibility": "reversible", "status": "declared" },
+      "change": { "scope": "none", "description": "No external data or configuration changes", "confirmation": "not-applicable", "reversibility": "not-applicable", "status": "not-applicable" },
+      "communicate": { "scope": "none", "description": "No communication with third parties", "confirmation": "not-applicable", "reversibility": "not-applicable", "status": "not-applicable" },
+      "spend": { "scope": "unknown", "description": "Hosted model use with no declared user ceiling", "confirmation": "unknown", "reversibility": "unknown", "status": "unknown" }
+    },
+    "files": { "read": "None", "write": "None", "forbidden": "All user filesystem paths", "enforcementStatus": "declared" },
+    "processes": { "scope": "none", "generatedCode": false, "boundary": "No process or code execution exposed to the agent", "enforcementStatus": "declared" },
+    "network": { "scope": "allowlisted", "destinations": "Official documentation domains and hosted model endpoint", "dataSent": "Research prompt, retrieved excerpts, and generated answer", "enforcementStatus": "declared" },
+    "credentials": { "type": "Publisher service account", "scopes": "Read source APIs", "storage": "Provider secret store", "lifetime": "Provider managed", "exportRisk": "unknown" },
+    "dataHandling": { "categories": "Prompts and public documentation excerpts", "leavesEnvironment": "Prompt and retrieved text go to the hosted service", "retention": "Prompts retained for seven days for abuse review", "deletionRoute": "Provider support request", "trainingUse": "Declared no" },
+    "delegation": { "mayCallAgents": false, "policy": "No downstream agents declared", "downstreamPinned": null },
+    "gaps": ["Hosted runtime cannot be connected to public source or an OCI digest.", "Cost-ceiling enforcement is unknown."],
+    "invalidatedBy": ["Agent version, Agent Card digest, source-domain allowlist, model, or retention-policy change"],
+    "reviewedAt": "2026-07-22"
+  },
+  "evidenceReceipts": [
+    {
+      "displayStatus": "observed",
+      "statement": {
+        "_type": "https://in-toto.io/Statement/v1",
+        "subject": [{ "name": "agents.example/docscout/releases/1.8.0", "digest": { "sha256": "2222222222222222222222222222222222222222222222222222222222222222" } }],
+        "predicateType": "https://agent-evidence-catalog.example/attestations/agent-evaluation/v1",
+        "predicate": {
+          "receiptVersion": "1.0",
+          "agent": { "profileId": "com.example.docscout", "name": "DocScout", "version": "1.8.0", "a2aCard": { "uri": "https://agents.example/docscout/.well-known/agent-card.json", "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "protocolVersion": "1.0" } },
+          "evaluation": {
+            "suite": { "name": "citation-and-source-resistance", "version": "2.0.0", "sourceUri": "https://git.example/evaluations/citation-resistance", "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" },
+            "startedAt": "2026-07-22T04:10:00Z",
+            "finishedAt": "2026-07-22T04:28:00Z",
+            "runner": { "type": "independent-ci", "identity": "synthetic-evaluator:documentation" },
+            "environment": { "operatingSystem": "hosted-fixture", "architecture": "service-api", "isolation": "isolated evaluation tenant", "networkPolicy": "allowlisted documentation fixtures and model endpoint" },
+            "tests": [{ "id": "citations.aggregate", "claim": "Answers are supported by the linked official sources.", "result": "fail", "expected": "All 50 answers are supported by the linked source.", "observed": "47 of 50 answers were supported; three were not.", "evidenceRefs": ["citation-report"], "limitations": ["Citation support does not establish completeness."] }],
+            "summary": { "result": "fail", "total": 1, "passed": 0, "failed": 1, "errors": 0, "skipped": 0 }
+          },
+          "permissionsDeclaration": { "uri": "https://agents.example/docscout/1.8.0/PERMISSIONS.md", "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc", "issuedAt": "2026-07-22T04:00:00Z" },
+          "evidence": [{ "id": "citation-report", "uri": "https://evidence.example/docscout/1.8.0/citations.json", "mediaType": "application/json", "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" }],
+          "limitations": ["The hosted release digest is publisher supplied and is not connected to source provenance.", "Two of 20 prompt-injection fixtures also failed in a separate observation."],
+          "validity": { "evaluatedAt": "2026-07-22T04:28:00Z", "revalidateAfter": "2026-08-22T04:28:00Z", "invalidatedBy": ["agent-version-change", "artifact-digest-change", "agent-card-digest-change", "permission-declaration-change", "evaluation-suite-change", "model-revision-change", "manual-revocation"] }
+        }
+      }
+    }
+  ],
+  "verificationEvidence": [],
+  "limitations": ["Two prompt-injection cases failed.", "No public source, SBOM, or build provenance is available."],
+  "selectionCue": "Narrow external authority and good task evidence; weak implementation transparency."
+}

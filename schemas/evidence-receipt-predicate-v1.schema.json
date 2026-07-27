@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-evidence-catalog.example/schemas/evidence-receipt-predicate-v1.schema.json",
+  "title": "Agent Evidence Catalog evaluation predicate v1",
+  "description": "Catalog data contract carried inside an in-toto Statement v1. It is not a signing system or an ecosystem standard.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receiptVersion",
+    "agent",
+    "evaluation",
+    "permissionsDeclaration",
+    "evidence",
+    "limitations",
+    "validity"
+  ],
+  "properties": {
+    "receiptVersion": { "const": "1.0" },
+    "agent": { "$ref": "#/$defs/agent" },
+    "evaluation": { "$ref": "#/$defs/evaluation" },
+    "permissionsDeclaration": { "$ref": "#/$defs/contentReference" },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/evidenceReference" }
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "validity": { "$ref": "#/$defs/validity" }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "contentReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uri", "sha256", "issuedAt"],
+      "properties": {
+        "uri": { "type": "string", "format": "uri" },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "issuedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uri", "revision"],
+      "properties": {
+        "uri": { "type": "string", "format": "uri" },
+        "revision": { "type": "string", "minLength": 7 }
+      }
+    },
+    "a2aCard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uri", "sha256", "protocolVersion"],
+      "properties": {
+        "uri": { "type": "string", "format": "uri" },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "protocolVersion": { "type": "string", "minLength": 1 }
+      }
+    },
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profileId", "name", "version"],
+      "properties": {
+        "profileId": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "source": { "$ref": "#/$defs/source" },
+        "a2aCard": { "$ref": "#/$defs/a2aCard" }
+      }
+    },
+    "suite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "sourceUri", "revision"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "sourceUri": { "type": "string", "format": "uri" },
+        "revision": { "type": "string", "minLength": 7 }
+      }
+    },
+    "runner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "identity"],
+      "properties": {
+        "type": {
+          "enum": ["publisher-ci", "independent-ci", "local-reproduction"]
+        },
+        "identity": { "type": "string", "minLength": 1 },
+        "workflowUri": { "type": "string", "format": "uri" }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operatingSystem", "architecture", "isolation", "networkPolicy"],
+      "properties": {
+        "operatingSystem": { "type": "string", "minLength": 1 },
+        "architecture": { "type": "string", "minLength": 1 },
+        "isolation": { "type": "string", "minLength": 1 },
+        "networkPolicy": { "type": "string", "minLength": 1 },
+        "dependencyLockDigest": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "test": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "claim", "result", "expected", "observed", "evidenceRefs", "limitations"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "claim": { "type": "string", "minLength": 1 },
+        "result": { "enum": ["pass", "fail", "error", "skipped"] },
+        "expected": { "type": "string", "minLength": 1 },
+        "observed": { "type": "string", "minLength": 1 },
+        "evidenceRefs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "limitations": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result", "total", "passed", "failed", "errors", "skipped"],
+      "properties": {
+        "result": { "enum": ["pass", "fail", "error"] },
+        "total": { "type": "integer", "minimum": 1 },
+        "passed": { "type": "integer", "minimum": 0 },
+        "failed": { "type": "integer", "minimum": 0 },
+        "errors": { "type": "integer", "minimum": 0 },
+        "skipped": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["suite", "startedAt", "finishedAt", "runner", "environment", "tests", "summary"],
+      "properties": {
+        "suite": { "$ref": "#/$defs/suite" },
+        "startedAt": { "type": "string", "format": "date-time" },
+        "finishedAt": { "type": "string", "format": "date-time" },
+        "runner": { "$ref": "#/$defs/runner" },
+        "environment": { "$ref": "#/$defs/environment" },
+        "tests": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/test" }
+        },
+        "summary": { "$ref": "#/$defs/summary" }
+      }
+    },
+    "evidenceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "uri", "mediaType", "sha256"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "uri": { "type": "string", "format": "uri" },
+        "mediaType": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "validity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evaluatedAt", "revalidateAfter", "invalidatedBy"],
+      "properties": {
+        "evaluatedAt": { "type": "string", "format": "date-time" },
+        "revalidateAfter": { "type": "string", "format": "date-time" },
+        "invalidatedBy": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "agent-version-change",
+              "artifact-digest-change",
+              "agent-card-digest-change",
+              "permission-declaration-change",
+              "evaluation-suite-change",
+              "dependency-version-change",
+              "model-revision-change",
+              "manual-revocation"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
