@@ -8,6 +8,8 @@ All included agents, publishers, identities, endpoints, digests, results, and po
 
 Initial publication status: synthetic reference only. Real-agent profile intake is not open. It may open later only after a private reporting route and review process are documented; no review or response is promised.
 
+`docs/real-agent-mvp-pilot.md` describes a proposal-only, maintainer-curated path for testing whether real profiles would help a small engineering team choose a locally runnable coding agent. It does not open intake or claim that any named agent has been evaluated.
+
 ## What is here
 
 - `catalog/*.json` — one reviewable record per exact agent version.
@@ -16,6 +18,7 @@ Initial publication status: synthetic reference only. Real-agent profile intake 
 - `verificationEvidence` — inspectable references required whenever a real claim uses the `verified` status; synthetic examples intentionally contain none.
 - `PERMISSION_DECLARATION.md` — the human-readable authority vocabulary used by every profile.
 - `CORRECTIONS.md` — public-safe correction, removal, and revocation process.
+- `docs/real-agent-mvp-pilot.md` — proposed policy, safe fixture, evidence contract, governance gates, and acceptance metrics for a first real-agent pilot.
 - `LICENSE` — Apache License 2.0 for this package and accepted contributions.
 - `site/` — dependency-free catalog and comparison UI.
 - `scripts/catalog.mjs` — deterministic validator, negative-path self-test, and static builder.
