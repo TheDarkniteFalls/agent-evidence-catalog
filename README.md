@@ -1,14 +1,16 @@
 # Agent Evidence Catalog
 
-A small, static publication package for comparing exact agent versions by authority, evidence, and known gaps.
+A small, static research index for researchers, builders and maintainers who need to answer: which exact coding-agent version or service surface is current, what do official publisher sources say about it, and what remains unknown?
 
-This package deliberately has no accounts, database server, hosted execution, submission form, analytics, or deployment configuration. Git is the database. A pull request that adds, corrects, or removes one versioned JSON record is the only submission path.
+The fastest reading path is to search for a product, confirm the current identity and applicability note, then inspect the attributed publisher claims and sources. The catalog presents exact identities, authority boundaries, lifecycle state and known gaps; it is not a buying guide or a claim about observed agent behavior.
 
-All included agents, publishers, identities, endpoints, digests, results, and policies are synthetic. They have no affiliation with or endorsement from any real person, organization, standards body, or platform. No profile is a recommendation or a general safety claim.
+This package deliberately has no accounts, database server, hosted execution, submission form, analytics, or deployment configuration. Git is the data store, but public intake is closed and the current real-agent work is maintainer-curated only.
 
-Initial publication status: synthetic reference only. Real-agent profile intake is not open. It may open later only after a private reporting route and review process are documented; no review or response is promised.
+The real-agent research preview is the canonical v0.1 product. Its source projection lives under `drafts/real-agent-catalog/research-preview/`, and the static build presents it from the primary landing page and `research-preview/` route. The earlier `catalog/` and generated catalog pages remain a clearly labeled secondary synthetic reference. Real-product records report attributed documentation, not observed behavior, independent verification, endorsement, ranking, recommendation, certification, or a general safety claim. Product names and marks belong to their owners; inclusion does not imply affiliation.
 
-`docs/real-agent-mvp-pilot.md` describes a proposal-only, maintainer-curated path for testing whether real profiles would help a small engineering team choose a locally runnable coding agent. It does not open intake or claim that any named agent has been evaluated.
+Publication status: Research Preview v0.1 is a local, unpublished release candidate. It presents exactly 16 current surfaces by default and retains five superseded records plus the GitLab 18.8 historical milestone in explicit history. The validated current transitions are Cline 4.1.3, GitLab Duo Developer Flow 19.2.1-ee, Zed 1.13.1, Claude Code 2.1.220 and Codex CLI 0.146.0; all predecessor dossiers and records remain preserved. An operational private reporting route is deferred to `ROADMAP.md` and is required before sensitive evidence or open intake, not before this static public-source preview. Real-agent intake is not open, and no review or response is promised.
+
+`docs/claims-first-mvp.md` records the accepted claims-first direction: catalog attributable publisher sources first and defer maintainer-run agent evaluation. The research preview applies that method to real products without installing or running them and gives zero independent-test credit. The secondary synthetic reference includes a clearly labeled fictional PatchPilot example, and `docs/real-agent-mvp-pilot.md` remains a deferred optional validation design. Neither document opens intake.
 
 ## What is here
 
@@ -18,21 +20,25 @@ Initial publication status: synthetic reference only. Real-agent profile intake 
 - `verificationEvidence` — inspectable references required whenever a real claim uses the `verified` status; synthetic examples intentionally contain none.
 - `PERMISSION_DECLARATION.md` — the human-readable authority vocabulary used by every profile.
 - `CORRECTIONS.md` — public-safe correction, removal, and revocation process.
-- `docs/real-agent-mvp-pilot.md` — proposed policy, safe fixture, evidence contract, governance gates, and acceptance metrics for a first real-agent pilot.
+- `docs/claims-first-mvp.md` — claims-first product boundary, minimum future claim record, provenance rules, and deferred validation layer.
+- `docs/real-agent-mvp-pilot.md` — deferred evaluation policy, safe fixture, evidence contract, governance gates, and acceptance metrics.
+- `drafts/real-agent-catalog/research-preview/` — additive real-agent currentness, watcher and preview data; the accepted dossiers and records remain unchanged.
+- `RESEARCH_PREVIEW.md`, `PUBLICATION_READINESS.md`, and `ROADMAP.md` — research-preview method, release decision and future work.
+- `fixtures/real-agent-pilot/` and `scripts/pilot-fixture.mjs` — synthetic source templates plus a dependency-free disposable fixture generator/self-test; see `docs/synthetic-pilot-fixture.md`.
 - `LICENSE` — Apache License 2.0 for this package and accepted contributions.
-- `site/` — dependency-free catalog and comparison UI.
+- `site/` — dependency-free Research Preview v0.1 landing page, real-agent browser and secondary synthetic reference.
 - `scripts/catalog.mjs` — deterministic validator, negative-path self-test, and static builder.
 - `dist/` — generated static publication output after `build`.
 
 ## Validate and build
 
-Requires Node.js 20 or later. The commands use only the Node standard library, make no network calls, and write only the generated `dist/` directory during the build.
+Requires Node.js 20 or later. The complete maintainer gate uses only the Node and Python standard libraries, makes no product or model calls, and writes only deterministic generated outputs and local release-control receipts.
 
 ```sh
-node scripts/catalog.mjs validate
-node scripts/catalog.mjs test
-node scripts/catalog.mjs build
+node scripts/research-preview-v0.1.mjs validate
 ```
+
+The command validates the full preserved research stack, rebuilds the source-derived preview and `dist/`, checks a deterministic double build, and validates the exact release manifest and browser-QA receipt. It also validates the secondary synthetic PatchPilot example and still rejects any production `claims/` directory.
 
 The built site works from a static file host. For a local HTTP preview only:
 
@@ -42,17 +48,13 @@ python3 -m http.server 4173 -d dist
 
 Then open `http://localhost:4173/`. This preview server is not an application backend.
 
-## Submission model
+## Synthetic pilot fixture
 
-There is no web upload path.
+The Real-Agent MVP scaffold can be generated and verified without installing or running an agent, calling a model, or using a network service. It contains synthetic test data only. See [`docs/synthetic-pilot-fixture.md`](docs/synthetic-pilot-fixture.md) for commands, boundaries, and limitations.
 
-1. Fork or check out the Git repository.
-2. Copy one existing file in `catalog/` and change every identity, version, digest, declaration, and receipt to the exact submitted version.
-3. Run `node scripts/catalog.mjs validate` and `node scripts/catalog.mjs test`.
-4. Open a pull request using `.github/PULL_REQUEST_TEMPLATE.md`.
-5. Reviewers inspect the diff, named evidence, unknowns, exact-version linkage, and every `verified` claim before merging.
+## Intake boundary
 
-Changing an agent version means adding a new record with a new slug, such as `inboxdraft-3-2-0.json`. A correction to an existing record is an explicit pull request. Revocation removes the record from the active catalog in an explained pull request; Git history preserves the earlier record. See `CORRECTIONS.md`.
+There is no web upload path and no open real-agent submission path. Research-preview records are selected and maintained by the named repository maintainer. Public-safe corrections may be proposed through the repository only after publication and only within the boundaries in `CORRECTIONS.md`. The repository is not equipped to receive sensitive reports; a private route is a future roadmap requirement before sensitive evidence or open intake. No contribution, correction, or report creates a response-time commitment.
 
 ## Standards boundary
 
@@ -76,7 +78,7 @@ Evaluation outcome and evidence provenance are separate. `PASS` or `FAIL` descri
 
 ## License
 
-The package is licensed under Apache-2.0. Contributions intentionally submitted for inclusion are accepted under the same license; see `CONTRIBUTING.md`. Names and marks are not licensed as endorsements, and every bundled profile is fictional.
+The package is licensed under Apache-2.0. Contributions intentionally submitted for inclusion are accepted under the same license; see `CONTRIBUTING.md`. Names and marks are not licensed as endorsements. Synthetic-reference profiles are fictional; real-agent records are attributed publisher-source research with the boundaries above.
 
 ## Maintenance and cost shape
 

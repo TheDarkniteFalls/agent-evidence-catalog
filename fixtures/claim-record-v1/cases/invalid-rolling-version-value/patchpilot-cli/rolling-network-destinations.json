@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.example.patchpilot.cli.rolling-network-destinations",
+  "slug": "rolling-network-destinations",
+  "subject": {
+    "id": "dev.example.patchpilot",
+    "name": "PatchPilot",
+    "publisher": "Synthetic Workshop Ltd",
+    "surface": {
+      "kind": "cli",
+      "name": "PatchPilot CLI",
+      "slug": "patchpilot-cli"
+    }
+  },
+  "claim": {
+    "category": "network",
+    "statement": "The publisher's rolling documentation lists a synthetic model endpoint as the only named destination."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Synthetic Workshop Ltd"
+  },
+  "source": {
+    "uri": "https://docs.synthetic.example/patchpilot/network",
+    "title": "PatchPilot network destinations",
+    "locator": "Allowed destinations",
+    "publishedAt": null,
+    "capturedAt": "2026-07-30T00:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": "current"
+    },
+    "configuration": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "named",
+      "values": ["synthetic-model-v1"]
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["local"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-30",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-30",
+    "recheckAfter": "2026-10-28",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-change",
+      "model-change"
+    ]
+  },
+  "limitations": [
+    "The source is rolling documentation and is not tied to an exact executable."
+  ],
+  "unknowns": [
+    "Version applicability is unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

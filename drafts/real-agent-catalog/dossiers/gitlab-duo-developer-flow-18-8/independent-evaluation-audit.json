@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "independent-evaluation-admission-audit/0.1-draft",
+  "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+  "asOf": "2026-08-01",
+  "candidate": null,
+  "decision": "no-candidate-passed-exact-applicability-gates",
+  "includedInGeneratedRecord": false,
+  "gates": {
+    "evaluatorIndependence": { "status": "unresolved", "note": "No candidate evaluation advanced to a complete evaluator-independence audit." },
+    "exactReleaseApplicability": { "status": "fail", "note": "No candidate pinned GitLab 18.8.0-ee or a defensibly equivalent hosted service revision." },
+    "exactOfferingApplicability": { "status": "fail", "note": "No candidate pinned GitLab.com, Self-Managed or Dedicated deployment applicability." },
+    "exactRunnerApplicability": { "status": "fail", "note": "No candidate pinned runner provider, version, executor, image and sandbox configuration." },
+    "exactModelApplicability": { "status": "fail", "note": "No candidate pinned model, provider, checkpoint and effective namespace selection." },
+    "exactConfigurationApplicability": { "status": "fail", "note": "No candidate pinned agent-config, trigger, composite identity, feature flags and background approval policy." },
+    "disclosureCompleteness": { "status": "unresolved", "note": "No candidate advanced to a complete funding, relationship and conflict disclosure audit." },
+    "publicArtifacts": { "status": "unresolved", "note": "No exactly applicable candidate advanced to a public artifacts and receipt audit." }
+  },
+  "boundary": "The absence of admitted evidence is not a claim that no independent evaluation exists."
+}

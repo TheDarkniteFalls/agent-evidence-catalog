@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0",
+  "synthetic": true,
+  "contractVersion": "1.0",
+  "asOf": "2026-07-30",
+  "selectedCaseIds": [
+    "valid-contradiction-pair",
+    "valid-resolved-scope-difference"
+  ],
+  "recordCount": 4,
+  "schema": {
+    "path": "schemas/claim-record-v1.schema.json",
+    "sha256": "e59b736330b6c548030ccde8c50eab5a0f51336de0b3200affcf24013ee3c088"
+  },
+  "assets": [
+    {
+      "path": "agent-app.js",
+      "sha256": "dbe919147658cd218135887d911da01b27b196508d8afb006cf9422bd65ccf4a"
+    },
+    {
+      "path": "agent-dossier.js",
+      "sha256": "cafec867f7ec86ee27dd147f57a3d8baf20eee42c52e46eae85fa834f927fc4a"
+    },
+    {
+      "path": "agent-dossier.json",
+      "sha256": "2643f983d536ab7fc109bed7967d6f3febb5530b0339b34c54488f87ac26c1b0"
+    },
+    {
+      "path": "agent.html",
+      "sha256": "4d7c2b67710a53795a518e77b56957fe656ab1fe0e13c626955a49688d7327ce"
+    },
+    {
+      "path": "claims-app.js",
+      "sha256": "aeb867f8c74853b8548f080b60fc395acfda3a4e5714151d1c21fd5b05d5eb90"
+    },
+    {
+      "path": "claims-data.js",
+      "sha256": "91f77684a989cc08ab0c60e42c0d1c2ca938aa607d95a2a81a1383f6a086fc82"
+    },
+    {
+      "path": "claims-shared.js",
+      "sha256": "585182091d915ff6f4ec02fcb8ff2f9aab721f3395cfc7c5fb3e8124c6993030"
+    },
+    {
+      "path": "claims.css",
+      "sha256": "279da62cdf47d18a1d524aa30e39dc68cfd9d3571158754955d6cfeb5398c6ab"
+    },
+    {
+      "path": "claims.html",
+      "sha256": "d0195a6d3e3b03fa30ad2d3ffa8a344e08549f54a8685f754de192edada1c64e"
+    },
+    {
+      "path": "report-app.js",
+      "sha256": "0a572396b6af435368fee46b3c02f82afbccbb984ab8553d36acc1ddba8de4ea"
+    },
+    {
+      "path": "report.html",
+      "sha256": "130c3ea66596c183fd84183357bb674f3f9fe72244d686523418453a07383a77"
+    },
+    {
+      "path": "styles.css",
+      "sha256": "f9cf510a25689db21dd0588a593f91712bc62ed32908f5b7f4acb2c098bfa581"
+    }
+  ],
+  "records": [
+    {
+      "id": "dev.example.patchpilot.cli.mutating-command-approval",
+      "sourceCase": "valid-contradiction-pair",
+      "outputPath": "claim-records/patchpilot-cli/mutating-command-approval.json",
+      "sha256": "89baca6feb92d4309893cd72ed81677bc8831ebe9af2af833445f4fd3178b4a6"
+    },
+    {
+      "id": "dev.example.patchpilot.cli.unconfirmed-command-report",
+      "sourceCase": "valid-contradiction-pair",
+      "outputPath": "claim-records/patchpilot-cli/unconfirmed-command-report.json",
+      "sha256": "502bbd823e603dc1091cdf4ca0a3e3ce12dca569c394506120a03b3dff9d694b"
+    },
+    {
+      "id": "dev.example.patchpilot.cli.network-destination-2-4-1",
+      "sourceCase": "valid-resolved-scope-difference",
+      "outputPath": "claim-records/patchpilot-cli/network-destination-2-4-1.json",
+      "sha256": "f45773423342bb287c96edb3a8e0f46e6bedc88b075d0c2b4a8c197e083e1ac7"
+    },
+    {
+      "id": "dev.example.patchpilot.cli.network-destination-2-5-0",
+      "sourceCase": "valid-resolved-scope-difference",
+      "outputPath": "claim-records/patchpilot-cli/network-destination-2-5-0.json",
+      "sha256": "fdb52dabd55fa1117f3a486fc50a8c3fdfe4ddba1e21d9665f14808cd9403f13"
+    }
+  ]
+}

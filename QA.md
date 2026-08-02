@@ -5,12 +5,44 @@
 Run from the package root:
 
 ```sh
-node --check scripts/catalog.mjs
-node --check site/app.js
-node scripts/catalog.mjs validate
-node scripts/catalog.mjs test
-node scripts/catalog.mjs build
+node scripts/research-preview-v0.1.mjs validate
 ```
+
+This is the complete Research Preview v0.1 gate. It rebuilds source-only
+dossiers before generated successors, performs a deterministic double
+source-to-`dist/` build, runs the complete validator suite, checks preservation,
+lifecycle, watcher baselines, documentation, publisher source links, the exact
+release manifest, git diff health, the public-lane scan and the digest-bound
+browser receipt below.
+
+## Research Preview v0.1 browser verification
+
+Checked 2026-08-02 with the Codex in-app browser against a loopback-only
+`python3 -m http.server` bound to a loopback-only interface on port 4173. The browser loaded and
+rendered the site even though the separately managed shell could not connect
+through its own `curl` path; the verified listener and rendered result identify
+that as a shell-path limitation, not a site failure.
+
+- The canonical landing page leads with the real-agent Research Preview v0.1
+  and labels the synthetic catalog as a secondary reference.
+- Desktop and mobile both reached the primary research-preview route, showed 16
+  current cards and kept six history records collapsed until explicit action.
+- Desktop search `Codex` returned only OpenAI Codex CLI; mobile search `Cline`
+  returned only Cline; both reset to all 16 current cards.
+- The history control exposed exactly five superseded records and the GitLab
+  18.8 historical milestone.
+- The mobile landing summaries stack vertically; neither journey introduced
+  body-level horizontal overflow.
+- Browser console warnings and errors were zero on both journeys.
+- Method, release-readiness, roadmap and correction footer targets were present
+  and match files copied into the static build.
+
+The checked file digests and structured observations are recorded in
+`drafts/research-preview-release/browser-qa-receipt.json`. The complete gate
+fails if the landing page, preview page or preview data changes without a new
+rendered-browser review.
+
+## Retained synthetic-reference verification
 
 Expected catalog result:
 

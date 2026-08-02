@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "research-preview-browser-qa/0.1",
+  "artifactType": "local-rendered-browser-qa-receipt",
+  "asOf": "2026-08-02",
+  "checkedAt": "2026-08-02T08:14:26Z",
+  "browser": "Codex In-app Browser",
+  "server": {
+    "url": "http://localhost:4173/",
+    "binding": "loopback-only",
+    "listenerVerified": true,
+    "renderedPageLoaded": true,
+    "externalNetworkUsed": false
+  },
+  "sourceDigests": {
+    "landingHtmlSha256": "7835d14626ba20bac588b82571e2a4c536f1d28d34d76f9398b17facb85f9d6c",
+    "previewHtmlSha256": "953fad82ad29c491ab6474b0cfb99f5c0cd35f4af3dbed1f3dc848e6cec65095",
+    "previewDataSha256": "ecec67a63f4413e6928ea6f2b1e1fd6f6cb09e355b31fd05049b37e23bc25a3d"
+  },
+  "journeys": {
+    "desktop": {
+      "result": "PASS",
+      "requestedViewport": { "width": 1440, "height": 1000 },
+      "reportedViewport": { "width": 1600, "height": 1111 },
+      "canonicalLandingReached": true,
+      "primaryPreviewLinkWorked": true,
+      "currentCards": 16,
+      "historyInitiallyCollapsed": true,
+      "historyCardsAfterToggle": 6,
+      "searchQuery": "Codex",
+      "searchResultCards": 1,
+      "searchResultName": "OpenAI Codex CLI",
+      "filterResetToCurrentCards": 16,
+      "bodyHorizontalOverflow": false,
+      "consoleErrors": 0,
+      "consoleWarnings": 0,
+      "visualInspection": "PASS"
+    },
+    "mobile": {
+      "result": "PASS",
+      "requestedViewport": { "width": 390, "height": 844 },
+      "reportedViewport": { "width": 433, "height": 938 },
+      "canonicalLandingReached": true,
+      "primaryPreviewLinkWorked": true,
+      "landingSummaryCardsStacked": true,
+      "currentCards": 16,
+      "historyInitiallyCollapsed": true,
+      "historyCardsAfterToggle": 6,
+      "searchQuery": "Cline",
+      "searchResultCards": 1,
+      "searchResultName": "Cline",
+      "filterResetToCurrentCards": 16,
+      "bodyHorizontalOverflow": false,
+      "consoleErrors": 0,
+      "consoleWarnings": 0,
+      "visualInspection": "PASS"
+    }
+  },
+  "footerTargetsInspected": [
+    "RESEARCH_PREVIEW.md",
+    "PUBLICATION_READINESS.md",
+    "ROADMAP.md",
+    "CORRECTIONS.md"
+  ],
+  "boundaries": {
+    "screenshotsRetainedInPublication": false,
+    "agentProductsInstalledOrRun": false,
+    "publisherClaimsReverifiedByBrowser": false,
+    "independentEvidenceCreated": false
+  }
+}

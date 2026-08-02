@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.proxy-routing-0-146-0",
+  "slug": "proxy-routing-0-146-0",
+  "subject": { "id": "com.openai.codex.cli", "name": "OpenAI Codex CLI", "publisher": "OpenAI", "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-146-0" } },
+  "claim": { "category": "authority.network-proxy", "statement": "The 0.146.0 release reports fixes for applying configured proxies across authentication, plugin downloads, MCP authentication, remote execution, WebSockets, redirects and LM Studio paths." },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": { "uri": "https://github.com/openai/codex/releases/tag/rust-v0.146.0", "title": "OpenAI Codex 0.146.0 release", "locator": "Bug fixes: configured proxy routing across networked paths", "publishedAt": "2026-07-29T01:42:51Z", "capturedAt": "2026-08-02T01:40:08Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "0.146.0" }, "configuration": { "scope": "alternatives", "values": ["proxy unconfigured", "proxy configured"] }, "platform": { "scope": "unspecified", "values": [] }, "model": { "scope": "unspecified", "values": [] }, "deployment": { "scope": "named", "values": ["configuration-dependent Codex network paths"] } },
+  "lifecycle": { "status": "active", "changedAt": "2026-07-29", "reason": null },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-10-31", "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "manual-review"] },
+  "limitations": ["A release-note fix does not prove a proxy was configured or that every subprocess and protocol is covered.", "Each named path retains its own authentication, destination and side-effect boundary."],
+  "unknowns": ["The effective proxy configuration, rules, DNS handling, destinations and enforcement completeness are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

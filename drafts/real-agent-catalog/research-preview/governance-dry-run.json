@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "research-preview-governance-dry-run/0.1",
+  "artifactType": "synthetic-correction-and-revocation-dry-run",
+  "synthetic": true,
+  "asOf": "2026-08-02",
+  "externalStateChanged": false,
+  "fixture": {
+    "recordId": "example.patchpilot.cli.9-9-9",
+    "surfaceKey": "example.patchpilot.cli.stable",
+    "source": "https://example.invalid/patchpilot/9.9.9",
+    "initialStatus": "current"
+  },
+  "steps": [
+    {
+      "id": "public-safe-correction",
+      "input": "A synthetic publisher correction changes a bounded release-date field.",
+      "decision": "accept-correction",
+      "activeRecordAfter": "example.patchpilot.cli.9-9-9-corrected",
+      "historyRetained": true,
+      "sensitiveMaterialPublished": false,
+      "note": "The corrected synthetic record receives a new immutable identity; the original remains explainable in history."
+    },
+    {
+      "id": "evidence-revocation",
+      "input": "The synthetic source authority withdraws the only support for the active record.",
+      "decision": "revoke-active-record",
+      "activeRecordAfter": null,
+      "historyRetained": true,
+      "sensitiveMaterialPublished": false,
+      "note": "The surface becomes a visible current-record gap; no older record is promoted automatically."
+    }
+  ],
+  "expectedOutcome": {
+    "activeRecordCount": 0,
+    "historyRecordCount": 2,
+    "currentGapVisible": true,
+    "privateRouteRequiredForSensitiveMaterial": true,
+    "responseTimePromised": false
+  }
+}

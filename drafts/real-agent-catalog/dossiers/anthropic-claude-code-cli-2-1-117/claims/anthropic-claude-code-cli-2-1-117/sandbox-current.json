@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.sandbox-current",
+  "slug": "sandbox-current",
+  "subject": { "id": "com.anthropic.claude-code.cli", "name": "Claude Code CLI", "publisher": "Anthropic PBC", "surface": { "kind": "cli", "name": "Claude Code CLI", "slug": "anthropic-claude-code-cli-2-1-117" } },
+  "claim": { "category": "sandbox.network", "statement": "Anthropic's current sandbox documentation says the Bash sandbox can enforce filesystem and network boundaries through operating-system controls, offers auto-allow and regular-permissions modes, and by default may fall back to unsandboxed execution when the sandbox is unavailable." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Anthropic PBC" },
+  "source": { "uri": "https://code.claude.com/docs/en/sandboxing", "title": "Configure the sandboxed Bash tool", "locator": "Get started, Choose a mode, and fallback behavior", "publishedAt": null, "capturedAt": "2026-08-01T06:18:27Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["sandbox enabled", "auto-allow", "regular permissions", "allowUnsandboxedCommands", "failIfUnavailable"] }, "platform": { "scope": "named", "values": ["macOS", "Linux", "WSL2"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["local Claude Code CLI Bash tool"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher sandbox documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["sandbox-default-change", "platform-support-change"] },
+  "limitations": ["The documentation does not prove that sandboxing was enabled or enforced in any session, including version 2.1.117."],
+  "unknowns": ["Dependencies, mode, allowlists, filesystem paths, network policy, fallback and enforcement result are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

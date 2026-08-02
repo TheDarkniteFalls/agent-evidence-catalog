@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.trigger-paths-current",
+  "slug": "trigger-paths-current",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "trigger.invocation",
+    "statement": "GitLab's current documentation describes distinct Developer Flow invocation paths through a configured mention, assignment to the Duo Developer service account, the Implement work item control and, from GitLab 19.2 behind a feature flag, Agentic Chat."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+    "title": "Developer Flow",
+    "locator": "Use the flow and Agentic Chat history sections",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01; Agentic Chat path introduced 19.2" },
+    "configuration": { "scope": "alternatives", "values": ["Mention event configured", "Assign event configured", "Implement work item UI", "Agentic Chat with agentic_foundational_flow_tool enabled"] },
+    "platform": { "scope": "alternatives", "values": ["issue or merge request discussion", "issue assignment", "work item UI", "Agentic Chat"] },
+    "model": { "scope": "configuration-dependent", "values": [] },
+    "deployment": { "scope": "configuration-dependent", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-06-18", "reason": "Current documentation includes a later Agentic Chat path separately marked as introduced in 19.2." },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["documentation-change", "trigger-change", "feature-flag-change"]
+  },
+  "limitations": [
+    "The four invocation paths have different release and configuration scopes and are not interchangeable.",
+    "The Agentic Chat path postdates 18.8 and is not evidence about the exact 18.8.0-ee source release."
+  ],
+  "unknowns": [
+    "The enabled trigger events, selected service account and effective feature flags are unknown.",
+    "The exact current UI and backend revision for each offering are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

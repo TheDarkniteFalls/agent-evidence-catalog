@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.permissions-current",
+  "slug": "permissions-current",
+  "subject": { "id": "com.anthropic.claude-code.cli", "name": "Claude Code CLI", "publisher": "Anthropic PBC", "surface": { "kind": "cli", "name": "Claude Code CLI", "slug": "anthropic-claude-code-cli-2-1-117" } },
+  "claim": { "category": "approval-authority", "statement": "Anthropic's current permissions documentation separates ordered deny, ask and allow rules from permission modes including default, acceptEdits, plan, auto, dontAsk and bypassPermissions." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Anthropic PBC" },
+  "source": { "uri": "https://code.claude.com/docs/en/permissions", "title": "Configure permissions", "locator": "Permission system, Manage permissions, and Permission modes", "publishedAt": null, "capturedAt": "2026-08-01T06:18:27Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["default", "acceptEdits", "plan", "auto", "dontAsk", "bypassPermissions", "deny/ask/allow rules"] }, "platform": { "scope": "unresolved", "values": [] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["Claude Code CLI"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling permission reference; some labels and modes require later client versions." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["permission-mode-change", "rule-precedence-change"] },
+  "limitations": ["The page explicitly includes behaviors requiring versions later than 2.1.117, so this claim is not exact-version applicability."],
+  "unknowns": ["The effective mode, rules, settings source, managed policy and workspace trust state are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

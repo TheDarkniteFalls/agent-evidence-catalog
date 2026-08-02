@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.openhands.cli.local-persistence-current",
+  "slug": "local-persistence-current",
+  "subject": {
+    "id": "org.openhands.cli",
+    "name": "OpenHands",
+    "publisher": "OpenHands",
+    "surface": { "kind": "cli", "name": "OpenHands CLI", "slug": "openhands-cli" }
+  },
+  "claim": {
+    "category": "data-handling",
+    "statement": "The publisher's current command reference lists ~/.openhands/conversations as the local conversation-history location and identifies separate files under ~/.openhands for agent settings, CLI preferences and MCP server configuration."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenHands" },
+  "source": {
+    "uri": "https://docs.openhands.dev/openhands/usage/cli/command-reference",
+    "title": "OpenHands CLI command reference",
+    "locator": "Configuration Files",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T21:47:27Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "named", "values": ["local OpenHands CLI"] },
+    "platform": { "scope": "multiple", "values": ["Linux", "macOS", "Windows through WSL"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["local OpenHands CLI"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "platform-change", "manual-review"]
+  },
+  "limitations": [
+    "This is rolling publisher documentation, not a filesystem inspection of version 1.16.0.",
+    "A documented local path does not establish file permissions, encryption, retention duration, deletion completeness or absence of other storage."
+  ],
+  "unknowns": [
+    "The exact event, prompt, tool-call, observation and secret content retained in a particular conversation is unknown.",
+    "Automatic cleanup, secure deletion and backup behavior are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

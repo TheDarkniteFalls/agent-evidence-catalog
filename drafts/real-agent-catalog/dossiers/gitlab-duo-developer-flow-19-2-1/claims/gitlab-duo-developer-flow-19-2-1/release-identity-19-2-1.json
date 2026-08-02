@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.developer-flow.release-identity-19-2-1",
+  "slug": "release-identity-19-2-1",
+  "subject": {
+    "id": "com.gitlab.duo.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitLab Duo Developer Flow",
+      "slug": "gitlab-duo-developer-flow-19-2-1"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "GitLab's protected v19.2.1-ee tag resolves to commit 8cb614f3c9f0242582886f260763fa45d19768ab, and the official patch release identifies 19.2.1 as the successor patch for the 19.2 release line."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "GitLab, Inc."
+  },
+  "source": {
+    "uri": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-1-released/",
+    "title": "GitLab Patch Release 19.2.1",
+    "locator": "Release announcement and affected 19.2 before 19.2.1 versions",
+    "publishedAt": "2026-07-29T00:00:00Z",
+    "capturedAt": "2026-08-02T06:58:22Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "19.2.1-ee"
+    },
+    "configuration": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "GitLab 19.2 release line"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-29",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The exact source tag does not freeze the Agent Platform service, runner or model backend."
+  ],
+  "unknowns": [
+    "The exact rolling service and execution revision remain unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

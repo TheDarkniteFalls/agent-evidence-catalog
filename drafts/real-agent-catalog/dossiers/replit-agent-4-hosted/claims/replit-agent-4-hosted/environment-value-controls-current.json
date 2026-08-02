@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.replit.agent.hosted.secrets-current",
+  "slug": "secrets-current",
+  "subject": { "id": "com.replit.agent.hosted", "name": "Replit Agent", "publisher": "Replit", "surface": { "kind": "hosted-service", "name": "Replit Agent hosted workspace", "slug": "replit-agent-4-hosted" } },
+  "claim": { "category": "credential-boundary", "statement": "Replit's current Secrets documentation distinguishes App-level and Account-level encrypted environment-variable secrets, requires an Account secret to be linked to an App before use there, and documents role-dependent name and value visibility." },
+  "provenance": { "kind": "publisher-policy", "claimant": "Replit" },
+  "source": { "uri": "https://docs.replit.com/core-concepts/project-editor/app-setup/secrets", "title": "Secrets — Replit", "locator": "Features; Manage Account Secrets; Managing secrets visibility", "publishedAt": null, "capturedAt": "2026-08-01T06:29:56Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["App-level secret", "Account-level secret", "link to App", "collaborator role", "organization Owner role", "deployment type"] }, "platform": { "scope": "named", "values": ["Replit App", "Project Editor"] }, "model": { "scope": "not-applicable", "values": [] }, "deployment": { "scope": "named", "values": ["all deployment types except Static Deployments"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher security documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["secret-scope-change", "role-policy-change", "deployment-support-change"] },
+  "limitations": ["Workspace secret storage and role visibility do not prove which values an Agent task or generated application can access."],
+  "unknowns": ["Secret values, link state, roles, deployment propagation, access logs and Agent access are unknown."],
+  "relationships": [], "validationRefs": []
+}

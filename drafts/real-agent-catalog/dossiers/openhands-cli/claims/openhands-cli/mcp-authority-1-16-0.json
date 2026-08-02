@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.openhands.cli.mcp-authority-1-16-0",
+  "slug": "mcp-authority-1-16-0",
+  "subject": {
+    "id": "org.openhands.cli",
+    "name": "OpenHands",
+    "publisher": "OpenHands",
+    "surface": { "kind": "cli", "name": "OpenHands CLI", "slug": "openhands-cli" }
+  },
+  "claim": {
+    "category": "interoperability",
+    "statement": "The publisher's README at tag 1.16.0 states that OpenHands CLI can add, enable and disable MCP servers using HTTP, SSE or stdio transports, extending the tools available to the agent."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenHands" },
+  "source": {
+    "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+    "title": "OpenHands CLI README at tag 1.16.0",
+    "locator": "Features — MCP Servers",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T21:47:27Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "1.16.0" },
+    "configuration": { "scope": "multiple", "values": ["MCP disabled or unconfigured", "one or more enabled MCP servers"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["local OpenHands CLI"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "This records publisher-described extensibility, not the behavior or trustworthiness of any MCP server.",
+    "The authority, credentials, network destinations and side effects of enabled MCP tools are configuration-specific."
+  ],
+  "unknowns": [
+    "Which MCP servers, transports, headers, environment variables and credentials a particular session exposes are unknown.",
+    "Whether confirmation coverage differs among built-in and MCP-provided tools was not tested."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

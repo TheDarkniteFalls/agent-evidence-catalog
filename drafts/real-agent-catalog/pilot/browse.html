@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unpublished sixteen-record real-agent evidence catalog pilot.">
+  <title>Browse unpublished real-agent evidence · Agent Evidence Catalog</title>
+  <link rel="stylesheet" href="styles.css?v=discovery1">
+</head>
+<body data-page="browse">
+  <a class="skip-link" href="#main">Skip to records</a>
+  <header class="site-header">
+    <a class="brand" href="browse.html">Agent Evidence Catalog <small>research draft</small></a>
+    <nav aria-label="Pilot navigation">
+      <a class="active" aria-current="page" href="browse.html">Browse</a>
+      <a href="compare.html">Compare</a>
+      <a href="detail.html">Details</a>
+      <a href="../../cline-vscode-extension/catalog-pilot/browse.html">Cline baseline</a>
+    </nav>
+  </header>
+  <aside class="boundary-banner" aria-label="Research boundary">
+    <strong>Unpublished · not independently tested.</strong> Publisher-attributed public claims are not observed behavior. No score, ranking or recommendation.
+  </aside>
+  <main id="main">
+    <section class="hero compact-hero" aria-labelledby="browse-title">
+      <p class="eyebrow">Sixteen real surfaces · separate from the synthetic catalog</p>
+      <h1 id="browse-title">Browse evidence, not winners.</h1>
+      <p>Filter exact records by evidence-backed identity and applicability. Shortlist up to four records without calculating fit or suitability.</p>
+    </section>
+    <section class="boundary-grid" aria-label="Catalog boundary summary">
+      <div><span>Records</span><strong>16 exact dossiers</strong></div>
+      <div><span>Claim source</span><strong>Publisher-attributed</strong></div>
+      <div><span>Independent tests</span><strong>0 across this pilot</strong></div>
+      <div><span>Publication</span><strong>Draft lane only</strong></div>
+    </section>
+    <section aria-labelledby="records-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Evidence registry</p><h2 id="records-title">Unpublished real-agent records</h2></div>
+        <span id="resultCount" class="result-count" aria-live="polite"></span>
+      </div>
+      <div class="filters" aria-label="Evidence-backed browse filters">
+        <label class="search"><span>Search evidence and aliases</span><input id="searchFilter" type="search" placeholder="Canonical name, sourced alias, unresolved alias or claim text"></label>
+        <label><span>Surface</span><select id="surfaceFilter"><option value="all">All surfaces</option><option value="ide-extension">IDE extension</option><option value="desktop-app">Desktop app</option><option value="cli">CLI</option><option value="hosted-service">Hosted service</option></select></label>
+        <label><span>Applicability</span><select id="applicabilityFilter"><option value="all">Any supported scope</option><option value="exact-version">Has exact-version claims</option><option value="release-line">Has release-line claims</option><option value="rolling-current">Has rolling-current claims</option><option value="configuration-dependent">Has configuration-scoped claims</option></select></label>
+        <label><span>Evidence boundary</span><select id="testingFilter"><option value="all">Any boundary</option><option value="not-tested">Not independently tested</option></select></label>
+      </div>
+      <div class="catalog-shell">
+        <div class="table-scroll">
+          <table class="catalog-table">
+            <thead><tr><th scope="col">Shortlist</th><th scope="col">Agent and exact surface</th><th scope="col">Release and artifact</th><th scope="col">Claim applicability</th><th scope="col">Evidence boundary</th></tr></thead>
+            <tbody id="catalogRows"></tbody>
+          </table>
+        </div>
+        <aside id="recordPreview" class="record-preview" aria-live="polite"></aside>
+      </div>
+    </section>
+  </main>
+  <aside id="shortlistBar" class="shortlist-bar" aria-label="Persistent exact-record shortlist" hidden>
+    <div><strong>Exact-record shortlist</strong><span id="shortlistStatus">0 of 4 selected</span></div>
+    <div id="shortlistItems" class="shortlist-items"></div>
+    <a class="button" href="compare.html">Compare evidence</a>
+  </aside>
+  <footer><p>Unpublished public-source research. The accepted Cline-only pilot remains available as a separate comparison baseline.</p></footer>
+  <script src="catalog-data.js"></script>
+  <script src="discovery-data.js"></script>
+  <script src="discovery-expanded-data.js"></script>
+  <script src="app.js?v=discovery1"></script>
+</body>
+</html>

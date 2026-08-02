@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.agent-config-current",
+  "slug": "agent-config-current",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "configuration.execution",
+    "statement": "GitLab's current documentation says CI/CD flow execution reads .gitlab/duo/agent-config.yml from the project's default branch and can configure the image, setup script, network policy and cache; setup scripts run before the Secure Runtime and can access flow environment variables and identity tokens."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+    "title": "Configure flow execution",
+    "locator": "Configure CI/CD execution, Create the agent configuration file and Configure setup scripts",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "composable", "values": ["default-branch agent-config.yml", "container image", "setup_script", "network_policy", "cache"] },
+    "platform": { "scope": "named", "values": ["CI/CD flow execution"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "alternatives", "values": ["GitLab-hosted runner", "user-managed runner"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["documentation-change", "configuration-schema-change", "secure-runtime-change"]
+  },
+  "limitations": [
+    "Setup scripts execute outside the Secure Runtime boundary and therefore cannot be described as sandboxed by that control.",
+    "The default-branch configuration source gives repository maintainers authority over the execution environment and requires separate branch-protection analysis."
+  ],
+  "unknowns": [
+    "The selected image, setup commands, network policy, cache, variables and branch protections are unknown.",
+    "The exact agent-config schema and behavior at GitLab 18.8.0-ee are not pinned by this rolling page."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

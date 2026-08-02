@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.zed.agent.native.tool-presets-current-stable-1-12-1",
+  "slug": "tool-presets-current-stable-1-12-1",
+  "subject": {
+    "id": "com.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Native Zed Agent",
+      "slug": "zed-agent-stable-1-12-1"
+    }
+  },
+  "claim": {
+    "category": "authority.tools",
+    "statement": "Current official documentation says Zed Agent tool availability is controlled by Write, Ask, Minimal or custom Agent Profiles, independently from tool approval behavior."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://zed.dev/docs/ai/agent-profiles",
+    "title": "Agent Profiles - Zed Docs",
+    "locator": "Built-in profiles and profile configuration",
+    "publishedAt": null,
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Write",
+        "Ask",
+        "Minimal",
+        "custom"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "native Zed Agent"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The active profile and enabled tools were not observed."
+  ],
+  "unknowns": [
+    "The active profile, selected model and enabled built-in or MCP tools are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

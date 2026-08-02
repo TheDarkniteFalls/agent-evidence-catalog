@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.developer-capabilities-current",
+  "slug": "developer-capabilities-current",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "capability.development-workflow",
+    "statement": "GitLab's current documentation says the Developer Flow can create a draft merge request from an issue, iterate on review feedback, research implementation approaches, split a large merge request and resolve merge conflicts."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+    "title": "Developer Flow",
+    "locator": "Overview task list",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "named", "values": ["Allow foundational flows enabled", "Developer flow enabled", "eligible project role", "service-account push rules", "hosted or user-managed runner"] },
+    "platform": { "scope": "alternatives", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated"] },
+    "model": { "scope": "configuration-dependent", "values": [] },
+    "deployment": { "scope": "named", "values": ["repository-integrated background flow"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["documentation-change", "capability-change", "prerequisite-change"]
+  },
+  "limitations": [
+    "These are publisher-attributed capabilities, not catalog-observed behavior or successful task receipts.",
+    "The list is rolling-current and must not be projected into the exact 18.8.0-ee source revision."
+  ],
+  "unknowns": [
+    "Which tasks were available under each offering and patch release are unknown.",
+    "Task success, output quality, repository compatibility and side effects were not independently evaluated."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

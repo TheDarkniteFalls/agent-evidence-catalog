@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.secure-mode-release-2026-02-13",
+  "slug": "secure-mode-release-2026-02-13",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "security.network", "statement": "Cognition's February 13, 2026 release note says Secure Mode became available to non-enterprise organizations and that enabling it removes Devin's native internet deployment capabilities." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/release-notes/overview", "title": "Recent Updates", "locator": "February 13, 2026 — Secure Mode for All Organizations", "publishedAt": "2026-02-13T00:00:00Z", "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "service milestone, 2026-02-13" },
+    "configuration": { "scope": "mutually-exclusive", "values": ["Secure Mode enabled", "Secure Mode disabled"] },
+    "platform": { "scope": "named", "values": ["Devin organization"] },
+    "model": { "scope": "unresolved", "values": [] },
+    "deployment": { "scope": "unresolved", "values": [] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["secure-mode-change", "network-policy-change", "availability-change"] },
+  "limitations": ["The release note names one consequence and does not define a complete egress, browser, proxy, MCP or repository network policy."],
+  "unknowns": ["The effective Secure Mode setting, destinations, exceptions, enforcement and residual network capabilities are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.openhands.cli.always-ask-confirmation-1-16-0",
+  "slug": "always-ask-confirmation-1-16-0",
+  "subject": {
+    "id": "org.openhands.cli",
+    "name": "OpenHands",
+    "publisher": "OpenHands",
+    "surface": { "kind": "cli", "name": "OpenHands CLI", "slug": "openhands-cli" }
+  },
+  "claim": {
+    "category": "authority.change",
+    "statement": "The publisher's README at tag 1.16.0 describes the default OpenHands CLI confirmation mode as asking for confirmation on each action."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenHands" },
+  "source": {
+    "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+    "title": "OpenHands CLI README at tag 1.16.0",
+    "locator": "Features — Confirmation Modes — default",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T21:47:27Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "1.16.0" },
+    "configuration": { "scope": "documented-default", "values": ["always-ask confirmation mode"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["local OpenHands CLI session"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "manual-review"]
+  },
+  "limitations": [
+    "This exact-version publisher statement was not tested against an installed CLI.",
+    "The statement does not enumerate every event that the implementation treats as an action or establish that every consequential side effect is intercepted."
+  ],
+  "unknowns": [
+    "The effective confirmation mode of a particular session is unknown.",
+    "Confirmation coverage for hooks, MCP tools, subagents, cloud delegation and command side effects was not tested."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "org.openhands.cli.always-approve-confirmation-1-16-0",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because always-ask and always-approve are mutually exclusive confirmation configurations."
+    },
+    {
+      "type": "contradicts",
+      "targetClaimId": "org.openhands.cli.llm-approve-confirmation-1-16-0",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because always-ask and LLM-based approval are mutually exclusive confirmation configurations."
+    }
+  ],
+  "validationRefs": []
+}

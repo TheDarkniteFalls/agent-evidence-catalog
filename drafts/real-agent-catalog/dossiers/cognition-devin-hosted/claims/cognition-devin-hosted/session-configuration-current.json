@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.session-configuration-current",
+  "slug": "session-configuration-current",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "runtime.session", "statement": "The current v3 create-session reference exposes normal, fast, lite, ultra and fusion session modes; permits an explicit built-in platform or outpost pool; and says an omitted or inherited placement follows a parent Devin's platform and outpost pool or otherwise uses the organization default." },
+  "provenance": { "kind": "publisher-declared", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/api-reference/v3/sessions/post-organizations-sessions", "title": "Create Session", "locator": "Body — devin_mode and platform; response — child_session_ids and parent_session_id", "publishedAt": null, "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "v3 API captured 2026-08-01" },
+    "configuration": { "scope": "alternatives", "values": ["normal", "fast", "lite", "ultra", "fusion", "organization default", "parent inheritance", "built-in platform", "outpost pool"] },
+    "platform": { "scope": "alternatives", "values": ["organization-default platform", "parent-inherited platform and outpost", "explicit built-in platform", "explicit outpost pool"] },
+    "model": { "scope": "configuration-dependent", "values": [] },
+    "deployment": { "scope": "configuration-dependent", "values": ["organization platform configuration", "outpost pool"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-08-15", "invalidatedBy": ["api-schema-change", "mode-change", "platform-change", "inheritance-change"] },
+  "limitations": ["The API reference documents selectable inputs and inheritance rules; it does not establish which values any session used."],
+  "unknowns": ["The session mode, feature flags, parent ID, platform, outpost, organization default and VM image are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

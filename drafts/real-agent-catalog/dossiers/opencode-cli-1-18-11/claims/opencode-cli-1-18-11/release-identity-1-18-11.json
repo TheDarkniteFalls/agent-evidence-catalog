@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.release-identity-1-18-11",
+  "slug": "release-identity-1-18-11",
+  "subject": { "id": "com.anomaly.opencode.cli", "name": "OpenCode CLI", "publisher": "Anomaly Innovations, Inc.", "surface": { "kind": "cli", "name": "OpenCode CLI/TUI", "slug": "opencode-cli-1-18-11" } },
+  "claim": { "category": "release.identity", "statement": "The official OpenCode repository release page identifies immutable release v1.18.11, published on 2026-08-01, at source revision 012c2f57f976489d88bd4598a056b4bdcdd428ee." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Anomaly Innovations, Inc." },
+  "source": { "uri": "https://github.com/anomalyco/opencode/releases/tag/v1.18.11", "title": "OpenCode v1.18.11 release", "locator": "Release heading, immutable-release badge, publication time, tag and linked commit", "publishedAt": "2026-08-01T11:44:00Z", "capturedAt": "2026-08-01T20:54:30Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "1.18.11" }, "configuration": { "scope": "all", "values": [] }, "platform": { "scope": "unresolved", "values": [] }, "model": { "scope": "not-applicable", "values": [] }, "deployment": { "scope": "named", "values": ["publisher source release"] } },
+  "lifecycle": { "status": "historical", "changedAt": "2026-08-01", "reason": "Exact released CLI source identity retained as a bounded artifact reference." },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-11-02", "invalidatedBy": ["release-metadata-correction", "tag-retargeting"] },
+  "limitations": ["No release asset, package, container or platform build was downloaded, hashed, installed or run."],
+  "unknowns": ["The installed artifact, platform, packaging path, dependency set and artifact digest are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

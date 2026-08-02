@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unpublished real-agent catalog pilot derived from the accepted Cline public-source dossier.">
+  <title>Unpublished real-agent pilot · Agent Evidence Catalog</title>
+  <link rel="stylesheet" href="pilot.css?v=pilot3">
+</head>
+<body data-page="pilot-browse">
+  <a class="skip-link" href="#main">Skip to pilot record</a>
+  <header class="site-header">
+    <a class="brand" href="browse.html">Agent Evidence Catalog</a>
+    <nav aria-label="Pilot navigation">
+      <a class="active" aria-current="page" href="browse.html">Browse</a>
+      <a href="compare.html">Compare</a>
+      <a href="detail.html">Cline detail</a>
+      <a href="../report.html">Source report</a>
+    </nav>
+  </header>
+  <aside class="pilot-banner" aria-label="Unpublished pilot boundary">
+    <strong>Unpublished real-agent pilot.</strong> This isolated draft contains one Cline record and is not mixed with the synthetic catalog.
+  </aside>
+
+  <main id="main">
+    <section class="intro" aria-labelledby="browse-title">
+      <h1 id="browse-title">Browse real-agent evidence</h1>
+      <p>One attributed public-source dossier is mapped here to test the catalog structure. It is not a product test, ranking or recommendation.</p>
+    </section>
+
+    <section class="boundary-panel" aria-label="Evidence and publication boundary">
+      <div><span>Record</span><strong>Cline VS Code extension 4.1.2</strong></div>
+      <div><span>Evidence basis</span><strong>Publisher-attributed public sources</strong></div>
+      <div><span>Independent testing</span><strong>Not independently tested</strong></div>
+      <div><span>Publication</span><strong>Unpublished</strong></div>
+    </section>
+
+    <section class="catalog-results" aria-labelledby="records-title">
+      <div class="section-heading-row">
+        <div><h2 id="records-title">Unpublished records</h2><p>Filters describe source coverage and applicability; they do not calculate suitability.</p></div>
+        <span id="resultCount" class="result-count" aria-live="polite"></span>
+      </div>
+      <div class="catalog-controls" aria-label="Real-agent pilot filters">
+        <label class="search-control"><span>Search</span><input id="pilotSearch" type="search" placeholder="Search name, surface, claimant or claim text"></label>
+        <label><span>Surface</span><select id="surfaceFilter"><option value="all">All surfaces</option><option value="ide-extension">IDE extension</option></select></label>
+        <label><span>Claim coverage</span><select id="scopeFilter"><option value="all">All claim scopes</option><option value="exact-version">Has exact-version claims</option><option value="rolling-current">Has rolling-current claims</option><option value="configuration-dependent">Has configuration-dependent claims</option></select></label>
+        <label><span>Independent testing</span><select id="testingFilter"><option value="all">Any testing boundary</option><option value="not-tested">Not independently tested</option></select></label>
+      </div>
+
+      <div class="catalog-shell">
+        <div class="table-scroll">
+          <table class="catalog-table">
+            <thead><tr><th scope="col">Compare</th><th scope="col">Agent and surface</th><th scope="col">Applicability</th><th scope="col">Evidence basis</th><th scope="col">Boundary</th></tr></thead>
+            <tbody id="pilotRows"></tbody>
+          </table>
+        </div>
+        <aside id="pilotPreview" class="profile-detail" aria-live="polite" aria-label="Selected real-agent pilot record"></aside>
+      </div>
+    </section>
+  </main>
+
+  <aside id="pilotShortlist" class="shortlist-bar" aria-label="Unpublished real-agent shortlist" hidden>
+    <div><strong>Unpublished shortlist</strong><span id="shortlistStatus">0 of 4 selected</span></div>
+    <div id="shortlistItems" class="shortlist-items"></div>
+    <a class="outline-button" href="compare.html">Review comparison structure</a>
+  </aside>
+
+  <footer><p>Unpublished public-source research. No install, run, contact, intake, ranking, recommendation, certification or publication action exists here.</p></footer>
+  <script src="pilot-data.js"></script>
+  <script src="pilot-app.js?v=pilot1"></script>
+</body>
+</html>

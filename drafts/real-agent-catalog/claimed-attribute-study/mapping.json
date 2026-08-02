@@ -1,0 +1,753 @@
+{
+  "schemaVersion": "claimed-attribute-mapping/0.1-study",
+  "status": "unpublished-design-study",
+  "taxonomyPath": "taxonomy.json",
+  "asOf": "2026-08-01",
+  "mappingRule": "The states array follows taxonomy.attributeOrder exactly. Evidence references may point only to claims and configuration axes in the same accepted record.",
+  "records": [
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-117",
+      "comparisonFrame": "interactive-cli",
+      "states": [
+        "unknown", "claimed", "claimed", "unknown", "conditional", "conditional", "unknown", "unknown", "unknown",
+        "unknown", "unknown", "unknown", "not-applicable", "not-applicable", "not-applicable", "conditional",
+        "conditional", "unknown", "not-applicable", "conditional", "conditional", "conditional", "unknown", "unknown",
+        "unknown", "not-applicable", "not-applicable"
+      ],
+      "evidence": {
+        "cap.file-modify": {
+          "claimIds": ["com.anthropic.claude-code.cli.cli-surface-current"]
+        },
+        "cap.command-execution": {
+          "claimIds": ["com.anthropic.claude-code.cli.cli-surface-current"]
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.anthropic.claude-code.cli.agent-mcp-2-1-117"],
+          "axisIds": ["agent-mcp"],
+          "note": "Scoped to main-thread sessions started through --agent with agent-frontmatter MCP configuration."
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.model-persistence-2-1-117",
+            "com.anthropic.claude-code.cli.model-routing-current"
+          ],
+          "axisIds": ["model-route"],
+          "note": "The exact persistence claim and rolling route alternatives remain separate."
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.anthropic.claude-code.cli.permissions-current"],
+          "axisIds": ["permission-mode"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["com.anthropic.claude-code.cli.permissions-current"],
+          "axisIds": ["permission-mode"]
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": ["com.anthropic.claude-code.cli.permissions-current"],
+          "axisIds": ["permission-mode"],
+          "note": "Ordered deny, ask and allow rules are rolling-current claims."
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": ["com.anthropic.claude-code.cli.sandbox-current"],
+          "axisIds": ["sandbox-mode"]
+        },
+        "authority.network-restriction": {
+          "claimIds": ["com.anthropic.claude-code.cli.sandbox-current"],
+          "axisIds": ["sandbox-mode"]
+        }
+      }
+    },
+    {
+      "recordId": "com.cline.bot.vscode-extension.4-1-2",
+      "comparisonFrame": "interactive-ide",
+      "states": [
+        "unknown", "claimed", "claimed", "claimed", "conditional", "conditional", "unknown", "unknown", "unknown",
+        "unknown", "unknown", "unknown", "not-applicable", "not-applicable", "not-applicable", "conditional",
+        "conditional", "unknown", "not-applicable", "conditional", "unknown", "unknown", "unknown", "conditional",
+        "unknown", "not-applicable", "not-applicable"
+      ],
+      "evidence": {
+        "cap.file-modify": {
+          "claimIds": ["com.cline.bot.vscode-extension.publisher-described-capabilities-4-1-2"]
+        },
+        "cap.command-execution": {
+          "claimIds": ["com.cline.bot.vscode-extension.publisher-described-capabilities-4-1-2"]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": ["com.cline.bot.vscode-extension.publisher-described-capabilities-4-1-2"]
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.cline.bot.vscode-extension.yolo-auto-approval"],
+          "axisIds": ["approval-mode"],
+          "note": "MCP is named in the rolling YOLO authority claim; no exact effective MCP configuration is known."
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.byok-user-content-path",
+            "com.cline.bot.vscode-extension.cline-key-user-content-path"
+          ],
+          "axisIds": ["model-key-path"]
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.cline.bot.vscode-extension.manual-approval-before-changes"],
+          "axisIds": ["approval-mode"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.selective-auto-approval",
+            "com.cline.bot.vscode-extension.yolo-auto-approval"
+          ],
+          "axisIds": ["approval-mode"]
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.selective-auto-approval",
+            "com.cline.bot.vscode-extension.yolo-auto-approval"
+          ],
+          "axisIds": ["approval-mode"]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.byok-user-content-path",
+            "com.cline.bot.vscode-extension.cline-key-user-content-path"
+          ],
+          "axisIds": ["model-key-path"]
+        }
+      }
+    },
+    {
+      "recordId": "com.cognition.devin.hosted.rolling",
+      "comparisonFrame": "hosted-background",
+      "states": [
+        "unknown", "unknown", "unknown", "conditional", "conditional", "explicit-limitation", "conditional", "claimed",
+        "conditional", "conditional", "unknown", "unknown", "conditional", "conditional", "conditional", "conditional",
+        "conditional", "conditional", "unknown", "conditional", "conditional", "conditional", "conditional", "conditional",
+        "conditional", "conditional", "conditional"
+      ],
+      "evidence": {
+        "cap.browser-or-web-tool": {
+          "claimIds": ["com.cognition.devin.desktop-qa-approval-2-2"],
+          "axisIds": ["desktop-qa-approval"],
+          "note": "Scoped to the Devin 2.2 Desktop Testing release claim and not silently rolled forward."
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.cognition.devin.bypass-approval-current"],
+          "axisIds": ["action-approval"],
+          "note": "The scheduled-session example names MCP tools; the effective tool set is unresolved."
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["com.cognition.devin.compound-system-current"],
+          "note": "The admitted publisher claim explicitly says the documented enterprise deployments do not support third-party LLM API keys; it does not identify an exact model."
+        },
+        "cap.nonwriting-plan-stage": {
+          "claimIds": ["com.cognition.devin.interactive-plan-approval-current"],
+          "axisIds": ["plan-control"]
+        },
+        "cap.background-or-async-execution": {
+          "claimIds": ["com.cognition.devin.deployment-architecture-current"]
+        },
+        "cap.parallel-or-child-execution": {
+          "claimIds": ["com.cognition.devin.bypass-approval-current"],
+          "axisIds": ["action-approval"]
+        },
+        "cap.automated-checks": {
+          "claimIds": ["com.cognition.devin.desktop-qa-approval-2-2"],
+          "axisIds": ["desktop-qa-approval"]
+        },
+        "cap.native-branch-output": {
+          "claimIds": ["com.cognition.devin.github-authority-current"],
+          "axisIds": ["github-repository-scope"]
+        },
+        "cap.native-pull-request-output": {
+          "claimIds": ["com.cognition.devin.github-authority-current"],
+          "axisIds": ["github-repository-scope"]
+        },
+        "cap.native-pull-request-feedback": {
+          "claimIds": ["com.cognition.devin.github-authority-current"],
+          "axisIds": ["github-repository-scope"]
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.cognition.devin.safe-mode-action-approval-current"],
+          "axisIds": ["action-approval"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["com.cognition.devin.bypass-approval-current"],
+          "axisIds": ["action-approval"]
+        },
+        "authority.plan-approval": {
+          "claimIds": ["com.cognition.devin.interactive-plan-approval-current"],
+          "axisIds": ["plan-control"]
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": [
+            "com.cognition.devin.safe-mode-action-approval-current",
+            "com.cognition.devin.bypass-approval-current"
+          ],
+          "axisIds": ["action-approval"]
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": ["com.cognition.devin.deployment-architecture-current"],
+          "axisIds": ["offering"]
+        },
+        "authority.network-restriction": {
+          "claimIds": ["com.cognition.devin.secure-mode-release-2026-02-13"],
+          "axisIds": ["network-mode"]
+        },
+        "authority.repository-scope": {
+          "claimIds": ["com.cognition.devin.github-authority-current"],
+          "axisIds": ["github-repository-scope"]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": ["com.cognition.devin.service-user-attribution-current"],
+          "axisIds": ["caller-principal"]
+        },
+        "authority.execution-principal": {
+          "claimIds": ["com.cognition.devin.service-user-attribution-current"],
+          "axisIds": ["caller-principal", "session-attribution"]
+        },
+        "authority.execution-environment-selection": {
+          "claimIds": [
+            "com.cognition.devin.deployment-architecture-current",
+            "com.cognition.devin.session-configuration-current"
+          ],
+          "axisIds": ["offering", "session-placement"]
+        },
+        "authority.scheduled-or-event-trigger": {
+          "claimIds": ["com.cognition.devin.bypass-approval-current"],
+          "note": "The admitted example is specifically a scheduled-session workflow."
+        }
+      }
+    },
+    {
+      "recordId": "com.cursor.ide.foreground-agent.3-14",
+      "comparisonFrame": "interactive-ide",
+      "states": [
+        "conditional", "conditional", "conditional", "conditional", "conditional", "conditional", "conditional", "unknown",
+        "unknown", "unknown", "conditional", "unknown", "not-applicable", "not-applicable", "not-applicable", "conditional",
+        "conditional", "unknown", "not-applicable", "conditional", "conditional", "unknown", "unknown", "unknown", "unknown",
+        "not-applicable", "not-applicable"
+      ],
+      "evidence": {
+        "cap.file-read": {
+          "claimIds": ["com.cursor.ide.foreground-agent.tool-inventory-current"],
+          "axisIds": ["enabled-tools", "interaction-mode"]
+        },
+        "cap.file-modify": {
+          "claimIds": [
+            "com.cursor.ide.foreground-agent.agent-modes-current",
+            "com.cursor.ide.foreground-agent.tool-inventory-current"
+          ],
+          "axisIds": ["interaction-mode", "enabled-tools"]
+        },
+        "cap.command-execution": {
+          "claimIds": ["com.cursor.ide.foreground-agent.native-terminal-current"],
+          "axisIds": ["enabled-tools"]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": ["com.cursor.ide.foreground-agent.tool-inventory-current"],
+          "axisIds": ["enabled-tools"]
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.cursor.ide.foreground-agent.mcp-approval-current"],
+          "axisIds": ["mcp-state", "enabled-tools"]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["com.cursor.ide.foreground-agent.cursor-router-current"],
+          "axisIds": ["model-selection"]
+        },
+        "cap.nonwriting-plan-stage": {
+          "claimIds": ["com.cursor.ide.foreground-agent.agent-modes-current"],
+          "axisIds": ["interaction-mode"],
+          "note": "The admitted claim explicitly describes Ask as read-only exploration."
+        },
+        "cap.delegated-remote-execution": {
+          "claimIds": ["com.cursor.ide.foreground-agent.agents-window-targets-3-0"],
+          "axisIds": ["foreground-target"],
+          "note": "Only local, worktree and remote-SSH foreground targets are credited; Cursor Cloud Agents remain a separate surface."
+        },
+        "authority.action-confirmation": {
+          "claimIds": [
+            "com.cursor.ide.foreground-agent.mcp-approval-current",
+            "com.cursor.ide.foreground-agent.auto-review-3-6"
+          ],
+          "axisIds": ["mcp-state", "run-mode", "auto-review-path"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": [
+            "com.cursor.ide.foreground-agent.mcp-approval-current",
+            "com.cursor.ide.foreground-agent.auto-review-current"
+          ],
+          "axisIds": ["mcp-state", "run-mode", "auto-review-path"]
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": [
+            "com.cursor.ide.foreground-agent.tool-inventory-current",
+            "com.cursor.ide.foreground-agent.mcp-approval-current"
+          ],
+          "axisIds": ["enabled-tools", "mcp-state"]
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": ["com.cursor.ide.foreground-agent.auto-review-3-6"],
+          "axisIds": ["auto-review-path"]
+        }
+      }
+    },
+    {
+      "recordId": "com.github.copilot.cloud-agent.rolling",
+      "comparisonFrame": "repository-integrated",
+      "states": [
+        "claimed", "claimed", "claimed", "conditional", "claimed", "conditional", "unknown", "claimed", "unknown",
+        "claimed", "unknown", "unknown", "claimed", "claimed", "unknown", "explicit-limitation", "claimed", "unknown",
+        "unknown", "conditional", "unknown", "conditional", "claimed", "conditional", "conditional", "conditional", "claimed"
+      ],
+      "evidence": {
+        "cap.file-read": {
+          "claimIds": ["com.github.copilot.cloud-agent.ephemeral-actions-environment-current"]
+        },
+        "cap.file-modify": {
+          "claimIds": ["com.github.copilot.cloud-agent.ephemeral-actions-environment-current"]
+        },
+        "cap.command-execution": {
+          "claimIds": ["com.github.copilot.cloud-agent.ephemeral-actions-environment-current"]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": ["com.github.copilot.cloud-agent.mcp-tool-authority-current"],
+          "axisIds": ["mcp-tool-surface"],
+          "note": "The default Playwright MCP server is the admitted web-oriented path."
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.github.copilot.cloud-agent.mcp-tool-authority-current"]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["com.github.copilot.cloud-agent.model-selection-current"],
+          "axisIds": ["model-choice"]
+        },
+        "cap.background-or-async-execution": {
+          "claimIds": ["com.github.copilot.cloud-agent.ga-milestone-2025-09-25"]
+        },
+        "cap.automated-checks": {
+          "claimIds": ["com.github.copilot.cloud-agent.ephemeral-actions-environment-current"]
+        },
+        "cap.native-branch-output": {
+          "claimIds": ["com.github.copilot.cloud-agent.branch-first-current"]
+        },
+        "cap.native-pull-request-output": {
+          "claimIds": ["com.github.copilot.cloud-agent.ga-milestone-2025-09-25"]
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.github.copilot.cloud-agent.mcp-tool-authority-current"],
+          "note": "The publisher explicitly says available MCP tools are used autonomously without asking; this limitation is scoped to MCP tool use."
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["com.github.copilot.cloud-agent.mcp-tool-authority-current"]
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": ["com.github.copilot.cloud-agent.mcp-tool-authority-current"],
+          "axisIds": ["mcp-tool-surface"]
+        },
+        "authority.network-restriction": {
+          "claimIds": [
+            "com.github.copilot.cloud-agent.default-firewall-current",
+            "com.github.copilot.cloud-agent.configurable-firewall-current"
+          ],
+          "axisIds": ["network-policy"]
+        },
+        "authority.repository-scope": {
+          "claimIds": [
+            "com.github.copilot.cloud-agent.automation-authority-2026-06-02",
+            "com.github.copilot.cloud-agent.agents-secrets-current"
+          ]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": ["com.github.copilot.cloud-agent.agents-secrets-current"],
+          "axisIds": ["resource-credentials"]
+        },
+        "authority.execution-principal": {
+          "claimIds": ["com.github.copilot.cloud-agent.agents-secrets-current"],
+          "axisIds": ["resource-credentials"],
+          "note": "The publisher identifies the default repository-limited Copilot authentication token; no human identity is inferred."
+        },
+        "authority.execution-environment-selection": {
+          "claimIds": [
+            "com.github.copilot.cloud-agent.ephemeral-actions-environment-current",
+            "com.github.copilot.cloud-agent.self-hosted-runner-current"
+          ],
+          "axisIds": ["execution-runner"]
+        },
+        "authority.scheduled-or-event-trigger": {
+          "claimIds": ["com.github.copilot.cloud-agent.automation-authority-2026-06-02"]
+        }
+      }
+    },
+    {
+      "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+      "comparisonFrame": "repository-integrated",
+      "states": [
+        "unknown", "unknown", "unknown", "unknown", "unknown", "conditional", "unknown", "claimed", "unknown",
+        "unknown", "unknown", "conditional", "unknown", "claimed", "claimed", "explicit-limitation", "unresolved", "unknown",
+        "unknown", "unresolved", "conditional", "conditional", "conditional", "conditional", "conditional", "conditional", "conditional"
+      ],
+      "evidence": {
+        "cap.model-or-provider-selection": {
+          "claimIds": [
+            "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+            "com.gitlab.duo-agent-platform.developer-flow.model-selection-current"
+          ],
+          "axisIds": ["model-selection"],
+          "note": "Current selection alternatives are documented, while the effective 18.8 model remains unknown."
+        },
+        "cap.background-or-async-execution": {
+          "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.flow-executor-current"]
+        },
+        "cap.environment-bootstrap": {
+          "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.agent-config-current"],
+          "axisIds": ["agent-config"]
+        },
+        "cap.native-pull-request-output": {
+          "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.developer-capabilities-current"]
+        },
+        "cap.native-pull-request-feedback": {
+          "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.developer-capabilities-current"]
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.security-controls-current"],
+          "note": "The publisher explicitly states that human-in-the-loop approval is not applied to flows."
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.background-tool-governance-19-3"],
+          "axisIds": ["background-tool-authority"],
+          "note": "Always Allow is documented only from 19.3 behind a feature flag; exact 18.8 behavior remains unresolved."
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": [
+            "com.gitlab.duo-agent-platform.developer-flow.background-tool-governance-19-3",
+            "com.gitlab.duo-agent-platform.developer-flow.security-controls-current"
+          ],
+          "axisIds": ["background-tool-authority"],
+          "note": "The 19.3 governance alternatives and exact 18.8 authority cannot be reconciled."
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": [
+            "com.gitlab.duo-agent-platform.developer-flow.agent-config-current",
+            "com.gitlab.duo-agent-platform.developer-flow.security-controls-current"
+          ],
+          "axisIds": ["execution-sandbox"]
+        },
+        "authority.network-restriction": {
+          "claimIds": [
+            "com.gitlab.duo-agent-platform.developer-flow.agent-config-current",
+            "com.gitlab.duo-agent-platform.developer-flow.security-controls-current"
+          ],
+          "axisIds": ["agent-config", "execution-sandbox"]
+        },
+        "authority.repository-scope": {
+          "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.composite-identity-current"],
+          "axisIds": ["execution-identity", "offering"]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.agent-config-current"],
+          "axisIds": ["agent-config"]
+        },
+        "authority.execution-principal": {
+          "claimIds": [
+            "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8",
+            "com.gitlab.duo-agent-platform.developer-flow.composite-identity-current"
+          ],
+          "axisIds": ["execution-identity"]
+        },
+        "authority.execution-environment-selection": {
+          "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current"],
+          "axisIds": ["offering", "runner-provider", "runner-executor"]
+        },
+        "authority.scheduled-or-event-trigger": {
+          "claimIds": [
+            "com.gitlab.duo-agent-platform.developer-flow.trigger-framework-ga-18-8",
+            "com.gitlab.duo-agent-platform.developer-flow.trigger-paths-current"
+          ],
+          "axisIds": ["trigger-path"]
+        }
+      }
+    },
+    {
+      "recordId": "com.google.jules.hosted.rolling",
+      "comparisonFrame": "repository-integrated",
+      "states": [
+        "unknown", "claimed", "conditional", "unknown", "conditional", "unknown", "claimed", "claimed", "unknown",
+        "unknown", "unknown", "conditional", "conditional", "conditional", "conditional", "unknown", "unknown", "claimed",
+        "conditional", "conditional", "unknown", "unknown", "conditional", "conditional", "conditional", "unknown", "conditional"
+      ],
+      "evidence": {
+        "cap.file-modify": {
+          "claimIds": ["com.google.jules.hosted.fresh-task-vm-current"]
+        },
+        "cap.command-execution": {
+          "claimIds": ["com.google.jules.hosted.environment-bootstrap-current"],
+          "axisIds": ["environment-bootstrap"]
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.google.jules.hosted.mcp-support-2026-02-02"],
+          "axisIds": ["mcp-tool-surface"]
+        },
+        "cap.nonwriting-plan-stage": {
+          "claimIds": ["com.google.jules.hosted.plan-approval-current"]
+        },
+        "cap.background-or-async-execution": {
+          "claimIds": ["com.google.jules.hosted.fresh-task-vm-current"]
+        },
+        "cap.environment-bootstrap": {
+          "claimIds": ["com.google.jules.hosted.environment-bootstrap-current"],
+          "axisIds": ["environment-bootstrap"]
+        },
+        "cap.native-branch-output": {
+          "claimIds": ["com.google.jules.hosted.publish-output-current"],
+          "axisIds": ["task-output-route"]
+        },
+        "cap.native-pull-request-output": {
+          "claimIds": ["com.google.jules.hosted.publish-output-current"],
+          "axisIds": ["task-output-route"]
+        },
+        "cap.native-pull-request-feedback": {
+          "claimIds": ["com.google.jules.hosted.pr-feedback-2025-09-23"],
+          "axisIds": ["pull-request-feedback-mode"]
+        },
+        "authority.plan-approval": {
+          "claimIds": ["com.google.jules.hosted.plan-approval-current"]
+        },
+        "authority.output-application-approval": {
+          "claimIds": ["com.google.jules.hosted.publish-output-current"],
+          "axisIds": ["task-output-route"],
+          "note": "The documented human action is publication of completed changes, not proof of code correctness."
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": ["com.google.jules.hosted.mcp-support-2026-02-02"],
+          "axisIds": ["mcp-tool-surface"],
+          "note": "Only selected supported MCP service connections are established."
+        },
+        "authority.repository-scope": {
+          "claimIds": ["com.google.jules.hosted.repository-branch-scope-current"],
+          "axisIds": ["repository-authorization"]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": ["com.google.jules.hosted.mcp-support-2026-02-02"],
+          "axisIds": ["mcp-tool-surface"]
+        },
+        "authority.execution-principal": {
+          "claimIds": ["com.google.jules.hosted.publish-output-current"],
+          "axisIds": ["task-output-route"],
+          "note": "The claim distinguishes commit and pull-request attribution by publication route."
+        },
+        "authority.scheduled-or-event-trigger": {
+          "claimIds": ["com.google.jules.hosted.pr-feedback-2025-09-23"],
+          "axisIds": ["pull-request-feedback-mode"]
+        }
+      }
+    },
+    {
+      "recordId": "com.openai.codex.cli.0-90-0",
+      "comparisonFrame": "interactive-cli",
+      "states": [
+        "unknown", "unknown", "conditional", "unknown", "conditional", "conditional", "unknown", "unknown", "conditional",
+        "unknown", "unknown", "unknown", "not-applicable", "not-applicable", "not-applicable", "conditional", "conditional",
+        "unknown", "not-applicable", "unknown", "conditional", "conditional", "unknown", "unknown", "unknown", "not-applicable",
+        "not-applicable"
+      ],
+      "evidence": {
+        "cap.command-execution": {
+          "claimIds": ["com.openai.codex.cli.approval-policies-0-90-0"],
+          "axisIds": ["approval-policy"]
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.openai.codex.cli.connectors-0-90-0"],
+          "axisIds": ["connector-surface"]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["com.openai.codex.cli.model-provider-configuration-0-90-0"],
+          "axisIds": ["model-provider"]
+        },
+        "cap.parallel-or-child-execution": {
+          "claimIds": ["com.openai.codex.cli.ephemeral-thread-provenance-0-90-0"],
+          "note": "The release claim establishes spawned-thread provenance, not effective concurrency or task quality."
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.openai.codex.cli.approval-policies-0-90-0"],
+          "axisIds": ["approval-policy"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["com.openai.codex.cli.approval-policies-0-90-0"],
+          "axisIds": ["approval-policy"]
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": ["com.openai.codex.cli.sandbox-modes-0-90-0"],
+          "axisIds": ["sandbox-mode"]
+        },
+        "authority.network-restriction": {
+          "claimIds": [
+            "com.openai.codex.cli.network-proxy-0-90-0",
+            "com.openai.codex.cli.sandbox-modes-0-90-0"
+          ],
+          "axisIds": ["network-proxy", "workspace-network", "sandbox-mode"]
+        }
+      }
+    },
+    {
+      "recordId": "com.replit.agent.hosted.agent-4",
+      "comparisonFrame": "hosted-background",
+      "states": [
+        "unknown", "conditional", "unknown", "conditional", "claimed", "conditional", "claimed", "claimed", "claimed",
+        "conditional", "unknown", "unknown", "unknown", "unknown", "unknown", "unknown", "unknown", "claimed", "claimed",
+        "unknown", "conditional", "unknown", "unknown", "conditional", "unknown", "unknown", "unknown"
+      ],
+      "evidence": {
+        "cap.file-modify": {
+          "claimIds": ["com.replit.agent.hosted.plan-build-current"],
+          "axisIds": ["interaction-mode", "plan-approval"]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": ["com.replit.agent.hosted.app-testing-current"],
+          "axisIds": ["app-testing", "agent-mode"]
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.replit.agent.hosted.agent-4-capabilities"]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["com.replit.agent.hosted.model-selection-current"],
+          "axisIds": ["model-selection", "agent-mode"]
+        },
+        "cap.nonwriting-plan-stage": {
+          "claimIds": ["com.replit.agent.hosted.plan-build-current"]
+        },
+        "cap.background-or-async-execution": {
+          "claimIds": ["com.replit.agent.hosted.background-tasks-current"]
+        },
+        "cap.parallel-or-child-execution": {
+          "claimIds": ["com.replit.agent.hosted.agent-4-capabilities"]
+        },
+        "cap.automated-checks": {
+          "claimIds": ["com.replit.agent.hosted.app-testing-current"],
+          "axisIds": ["app-testing", "agent-mode"]
+        },
+        "authority.plan-approval": {
+          "claimIds": ["com.replit.agent.hosted.plan-build-current"]
+        },
+        "authority.output-application-approval": {
+          "claimIds": ["com.replit.agent.hosted.background-tasks-current"]
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": ["com.replit.agent.hosted.background-tasks-current"],
+          "axisIds": ["background-task-start", "background-task-output"],
+          "note": "The admitted claim describes isolated background tasks; no general service sandbox is inferred."
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": ["com.replit.agent.hosted.secrets-current"],
+          "axisIds": ["secret-scope"]
+        }
+      }
+    },
+    {
+      "recordId": "dev.zed.agent.native.1-13-1",
+      "comparisonFrame": "interactive-ide",
+      "states": [
+        "unknown", "unknown", "conditional", "conditional", "conditional", "conditional", "unknown", "unknown", "unknown",
+        "unknown", "unknown", "unknown", "not-applicable", "not-applicable", "not-applicable", "conditional", "conditional",
+        "unknown", "not-applicable", "conditional", "conditional", "conditional", "unknown", "conditional", "unknown",
+        "not-applicable", "not-applicable"
+      ],
+      "evidence": {
+        "cap.command-execution": {
+          "claimIds": ["dev.zed.agent.capabilities-current"],
+          "axisIds": ["agent-profile"]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": ["dev.zed.agent.sandbox-current"],
+          "axisIds": ["sandbox-state"],
+          "note": "The admitted publisher claim specifically names fetch actions."
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": [
+            "dev.zed.agent.capabilities-current",
+            "dev.zed.agent.profiles-current"
+          ],
+          "axisIds": ["agent-profile"]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["dev.zed.agent.model-privacy-current"],
+          "axisIds": ["model-route"]
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["dev.zed.agent.tool-permissions-current"],
+          "axisIds": ["tool-permission"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["dev.zed.agent.tool-permissions-current"],
+          "axisIds": ["tool-permission"]
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": [
+            "dev.zed.agent.profiles-current",
+            "dev.zed.agent.tool-permissions-current"
+          ],
+          "axisIds": ["agent-profile", "tool-permission"]
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": ["dev.zed.agent.sandbox-current"],
+          "axisIds": ["sandbox-state"]
+        },
+        "authority.network-restriction": {
+          "claimIds": ["dev.zed.agent.sandbox-current"],
+          "axisIds": ["sandbox-state"]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": ["dev.zed.agent.model-privacy-current"],
+          "axisIds": ["model-route"]
+        }
+      }
+    },
+    {
+      "recordId": "org.openhands.cli.1-16-0",
+      "comparisonFrame": "interactive-cli",
+      "states": [
+        "unknown", "unknown", "unknown", "unknown", "conditional", "conditional", "unknown", "conditional", "unknown",
+        "unknown", "conditional", "unknown", "not-applicable", "not-applicable", "not-applicable", "conditional", "conditional",
+        "unknown", "not-applicable", "conditional", "unknown", "unknown", "unknown", "conditional", "unknown", "not-applicable",
+        "not-applicable"
+      ],
+      "evidence": {
+        "cap.external-tool-protocol": {
+          "claimIds": ["org.openhands.cli.mcp-authority-1-16-0"],
+          "axisIds": ["mcp-tool-surface"]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["org.openhands.cli.configuration-storage-1-16-0"],
+          "axisIds": ["llm-configuration-source"]
+        },
+        "cap.background-or-async-execution": {
+          "claimIds": ["org.openhands.cli.cloud-delegation-current"],
+          "axisIds": ["execution-location"]
+        },
+        "cap.delegated-remote-execution": {
+          "claimIds": ["org.openhands.cli.cloud-delegation-current"],
+          "axisIds": ["execution-location"]
+        },
+        "authority.action-confirmation": {
+          "claimIds": [
+            "org.openhands.cli.always-ask-confirmation-1-16-0",
+            "org.openhands.cli.llm-approve-confirmation-1-16-0"
+          ],
+          "axisIds": ["confirmation-mode"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["org.openhands.cli.always-approve-confirmation-1-16-0"],
+          "axisIds": ["confirmation-mode"]
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": ["org.openhands.cli.mcp-authority-1-16-0"],
+          "axisIds": ["mcp-tool-surface"]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": ["org.openhands.cli.configuration-storage-1-16-0"],
+          "axisIds": ["llm-configuration-source"]
+        }
+      }
+    }
+  ]
+}

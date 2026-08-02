@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin-desktop.cascade.release-identity-3-6-27",
+  "slug": "release-identity-3-6-27",
+  "subject": { "id": "com.cognition.devin-desktop.cascade", "name": "Cascade in Devin Desktop", "publisher": "Cognition AI, Inc.", "surface": { "kind": "desktop-app", "name": "Cascade in Devin Desktop", "slug": "cascade-devin-desktop-3-6-27" } },
+  "claim": { "category": "identity.release", "statement": "Cognition's official Devin Desktop release index identifies v3.6.27 as an August 1, 2026 release and exposes platform-specific download URLs whose paths share build token 0becb483ee8498d49deadf6aefe8c24f58b8007e and artifact version 3.6.27." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/desktop/releases#v3-6-27", "title": "Devin Desktop releases", "locator": "v3.6.27 — Aug 1, 2026; platform download links", "publishedAt": "2026-08-01", "capturedAt": "2026-08-01T22:13:40Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "3.6.27" }, "configuration": { "scope": "unresolved", "values": ["platform-specific artifact"] }, "platform": { "scope": "named", "values": ["macOS arm64", "macOS x64", "Windows arm64", "Windows x64", "Linux x64"] }, "model": { "scope": "not-applicable", "values": [] }, "deployment": { "scope": "named", "values": ["Devin Desktop client artifact family"] } },
+  "lifecycle": { "status": "current", "changedAt": "2026-08-01", "reason": "Exact publisher release entry." },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": null, "invalidatedBy": ["publisher-release-entry-correction", "artifact-url-change"] },
+  "limitations": ["The release page is a live index even though the artifact URLs are version/build-token specific.", "No artifact was downloaded, hashed, installed or run, and the build token is not represented as a source revision or cryptographic digest."],
+  "unknowns": ["The installed platform artifact, package digest, signing identity, dependency set and source-to-binary correspondence are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

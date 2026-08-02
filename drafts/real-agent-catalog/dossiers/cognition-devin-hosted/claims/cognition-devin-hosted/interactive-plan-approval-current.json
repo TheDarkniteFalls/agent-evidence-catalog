@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.interactive-plan-approval-current",
+  "slug": "interactive-plan-approval-current",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "authority.approval", "statement": "Cognition's current Interactive Planning documentation says Devin waits thirty seconds for feedback by default before automatically proceeding, permits the timing behavior to be adjusted, and offers a Wait for my approval control that prevents autonomous execution until plan feedback is supplied." },
+  "provenance": { "kind": "publisher-declared", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/work-with-devin/interactive-planning", "title": "Interactive Planning", "locator": "Waiting for Approval", "publishedAt": null, "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "mutually-exclusive", "values": ["timed feedback then automatic proceed", "Wait for my approval"] },
+    "platform": { "scope": "named", "values": ["interactive Devin session"] },
+    "model": { "scope": "configuration-dependent", "values": [] },
+    "deployment": { "scope": "unresolved", "values": [] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-08-15", "invalidatedBy": ["planning-flow-change", "default-timeout-change", "approval-setting-change"] },
+  "limitations": ["The documentation describes plan-stage interaction and does not establish later tool, repository, QA or merge approval."],
+  "unknowns": ["The effective setting, plan contents, feedback, approver and approval event are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

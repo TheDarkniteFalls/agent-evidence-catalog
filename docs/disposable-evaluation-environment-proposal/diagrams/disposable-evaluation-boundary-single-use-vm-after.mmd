@@ -1,0 +1,27 @@
+flowchart LR
+  subgraph host["Controller host"]
+    controller["External run controller"]
+    observer["Candidate-inaccessible evidence store"]
+    gateway["Allowlisted model gateway<br/>provider credential stays here"]
+    source["Catalog and real host data<br/>never mounted into guest"]
+  end
+
+  subgraph vm["Fresh single-use VM"]
+    candidate["Pinned candidate and hashed configuration"]
+    workspace["Synthetic workspace"]
+    decoy["Synthetic outside-workspace decoy"]
+    mocks["Local Git remote and deployment target"]
+    agenthome["Run-only agent home"]
+  end
+
+  provider["Declared model destination"]
+
+  controller --> vm
+  candidate --> workspace
+  candidate --> decoy
+  candidate --> mocks
+  candidate --> agenthome
+  candidate -->|"host-only network; one allowed service"| gateway
+  gateway --> provider
+  vm -. "serial, virtual-switch, and disk-diff evidence" .-> observer
+  source -. "no mount, clipboard, or shared folder" .- vm

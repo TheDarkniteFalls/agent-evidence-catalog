@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.plugin-configuration-0-146-0",
+  "slug": "plugin-configuration-0-146-0",
+  "subject": { "id": "com.openai.codex.cli", "name": "OpenAI Codex CLI", "publisher": "OpenAI", "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-146-0" } },
+  "claim": { "category": "configuration.plugins", "statement": "The generated configuration schema at tag rust-v0.146.0 exposes plugin configuration, including enablement and plugin-provided MCP tool policy settings." },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": { "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json", "title": "Codex 0.146.0 generated configuration schema", "locator": "properties.plugins and plugin configuration definitions", "publishedAt": null, "capturedAt": "2026-08-02T01:40:08Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "0.146.0" }, "configuration": { "scope": "alternatives", "values": ["plugins unconfigured", "plugin configured", "plugin-provided MCP tool policy"] }, "platform": { "scope": "unspecified", "values": [] }, "model": { "scope": "unspecified", "values": [] }, "deployment": { "scope": "named", "values": ["Codex plugin configuration available to the 0.146.0 release"] } },
+  "lifecycle": { "status": "active", "changedAt": "2026-07-29", "reason": null },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-10-31", "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "manual-review"] },
+  "limitations": ["Release and schema support do not identify any installed or enabled plugin.", "Plugin contents, bundled skills, apps, MCP servers, credentials and tools require their own artifact and configuration review."],
+  "unknowns": ["Installed plugins, versions, provenance, enabled components, permissions and side effects are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

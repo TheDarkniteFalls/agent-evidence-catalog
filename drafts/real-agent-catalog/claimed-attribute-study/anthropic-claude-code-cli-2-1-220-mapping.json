@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "claimed-attribute-mapping/0.1-study-extension",
+  "status": "unpublished-current-record-overlay",
+  "taxonomyPath": "taxonomy.json",
+  "baseMappingPath": "mapping.json",
+  "priorOverlayPath": "openai-codex-cli-0-146-0-mapping.json",
+  "asOf": "2026-08-02",
+  "mappingRule": "This additive mapping uses the completed taxonomy unchanged. The states array follows taxonomy.attributeOrder exactly, evidence references stay within this record, conditional states retain named applicability boundaries, and no independent-test credit or suitability calculation is introduced.",
+  "records": [
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-220",
+      "comparisonFrame": "interactive-cli",
+      "states": [
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "unknown",
+        "unknown",
+        "conditional",
+        "unknown",
+        "unknown",
+        "unknown",
+        "not-applicable",
+        "not-applicable",
+        "not-applicable",
+        "conditional",
+        "conditional",
+        "unknown",
+        "not-applicable",
+        "conditional",
+        "conditional",
+        "conditional",
+        "unknown",
+        "conditional",
+        "unknown",
+        "not-applicable",
+        "not-applicable"
+      ],
+      "evidence": {
+        "cap.file-read": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.tools-current-2-1-220"
+          ],
+          "axisIds": [
+            "permission-mode"
+          ]
+        },
+        "cap.file-modify": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.tools-current-2-1-220"
+          ],
+          "axisIds": [
+            "permission-mode"
+          ]
+        },
+        "cap.command-execution": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.tools-current-2-1-220",
+            "com.anthropic.claude-code.cli.sandbox-current-2-1-220"
+          ],
+          "axisIds": [
+            "permission-mode",
+            "sandbox-mode"
+          ]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.tools-current-2-1-220"
+          ],
+          "axisIds": [
+            "permission-mode"
+          ]
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.mcp-current-2-1-220"
+          ],
+          "axisIds": [
+            "extension-surface"
+          ]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.authentication-routes-current-2-1-220",
+            "com.anthropic.claude-code.cli.model-routing-current-2-1-220"
+          ],
+          "axisIds": [
+            "authentication-route",
+            "model-route"
+          ]
+        },
+        "cap.parallel-or-child-execution": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.tools-current-2-1-220",
+            "com.anthropic.claude-code.cli.extensions-current-2-1-220"
+          ],
+          "axisIds": [
+            "extension-surface"
+          ],
+          "note": "Credit is limited to the rolling documented subagent paths; no child execution was observed."
+        },
+        "authority.action-confirmation": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.permissions-current-2-1-220"
+          ],
+          "axisIds": [
+            "permission-mode"
+          ]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.permissions-current-2-1-220",
+            "com.anthropic.claude-code.cli.sandbox-current-2-1-220"
+          ],
+          "axisIds": [
+            "permission-mode",
+            "sandbox-mode"
+          ]
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.permissions-current-2-1-220"
+          ],
+          "axisIds": [
+            "permission-mode"
+          ]
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.sandbox-current-2-1-220"
+          ],
+          "axisIds": [
+            "sandbox-mode"
+          ]
+        },
+        "authority.network-restriction": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.sandbox-current-2-1-220"
+          ],
+          "axisIds": [
+            "sandbox-mode"
+          ]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": [
+            "com.anthropic.claude-code.cli.authentication-routes-current-2-1-220",
+            "com.anthropic.claude-code.cli.mcp-current-2-1-220"
+          ],
+          "axisIds": [
+            "authentication-route",
+            "extension-surface"
+          ],
+          "note": "Authentication routes and MCP credentials remain distinct configuration boundaries; their effective scope was not observed."
+        }
+      }
+    }
+  ]
+}

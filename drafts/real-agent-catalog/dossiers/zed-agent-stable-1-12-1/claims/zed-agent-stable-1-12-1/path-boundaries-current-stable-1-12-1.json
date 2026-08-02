@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.zed.agent.native.path-boundaries-current-stable-1-12-1",
+  "slug": "path-boundaries-current-stable-1-12-1",
+  "subject": {
+    "id": "com.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Native Zed Agent",
+      "slug": "zed-agent-stable-1-12-1"
+    }
+  },
+  "claim": {
+    "category": "identity.surface-boundary",
+    "statement": "Current official documentation separates the native Zed Agent from ACP External Agents and terminal-backed Terminal Threads, which usually own their own runtime, authentication, model, tools and configuration."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://zed.dev/docs/ai/agents",
+    "title": "Agents - Zed Docs",
+    "locator": "Agent path comparison",
+    "publishedAt": null,
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Zed Agent",
+        "External Agent",
+        "Terminal Thread"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Zed Agent Panel and Threads Sidebar"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "External and terminal paths are boundary context, not capabilities attributed to the native record."
+  ],
+  "unknowns": [
+    "The agent path selected in a particular thread is unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

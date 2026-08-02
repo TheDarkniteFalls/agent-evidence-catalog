@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-evidence-catalog.example/drafts/real-agent-discovery-v0.schema.json",
+  "title": "Unpublished real-agent identity discovery draft",
+  "description": "A separate alias and evidence-gap annotation layer over immutable accepted real-agent records. It does not alter evidence, score products or open intake.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "artifactType", "unpublished", "synthetic", "asOf", "interpretationBoundary", "entries"],
+  "properties": {
+    "schemaVersion": { "const": "real-agent-discovery/0.1-draft" },
+    "artifactType": { "const": "unpublished-real-agent-discovery-index" },
+    "unpublished": { "const": true },
+    "synthetic": { "const": false },
+    "asOf": { "$ref": "#/$defs/date" },
+    "interpretationBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonicalIdentity", "sourcedAlias", "unresolvedAlias", "evidenceGap", "resolver", "recordsModified"],
+      "properties": {
+        "canonicalIdentity": { "$ref": "#/$defs/text" },
+        "sourcedAlias": { "$ref": "#/$defs/text" },
+        "unresolvedAlias": { "$ref": "#/$defs/text" },
+        "evidenceGap": { "$ref": "#/$defs/text" },
+        "resolver": { "$ref": "#/$defs/text" },
+        "recordsModified": { "const": false }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/discoveryEntry" }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$", "maxLength": 240 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 200 },
+    "text": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "shortText": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "date": { "type": "string", "format": "date" },
+    "canonicalValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "recordPath"],
+      "properties": {
+        "value": { "$ref": "#/$defs/shortText" },
+        "recordPath": { "type": "string", "pattern": "^/identity/(?:publisher/name|agent/name|surface/name)$" }
+      }
+    },
+    "canonicalIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publisher", "product", "surface"],
+      "properties": {
+        "publisher": { "$ref": "#/$defs/canonicalValue" },
+        "product": { "$ref": "#/$defs/canonicalValue" },
+        "surface": { "$ref": "#/$defs/canonicalValue" }
+      }
+    },
+    "sourcedAlias": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "value", "kind", "scope", "status", "sourceIds", "claimIds", "note"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "value": { "$ref": "#/$defs/shortText" },
+        "kind": { "enum": ["product-name", "surface-name", "historical-name", "family-name", "package-name", "release-label", "other"] },
+        "scope": { "enum": ["current", "historical", "exact-version", "release-line", "family", "other"] },
+        "status": { "const": "publisher-sourced" },
+        "sourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "claimIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "unresolvedAlias": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "value", "kind", "status", "sourceIds", "claimIds", "confusableCandidateIds", "note"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "value": { "$ref": "#/$defs/shortText" },
+        "kind": { "enum": ["ambiguous-family-name", "ambiguous-surface-name", "historical-link", "possible-evaluation-name", "other"] },
+        "status": { "const": "unresolved-possible-alias" },
+        "sourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "claimIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "confusableCandidateIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "evidenceRefs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceIds", "claimIds", "dossierUnknownNumbers"],
+      "properties": {
+        "sourceIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "claimIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "dossierUnknownNumbers": { "type": "array", "uniqueItems": true, "items": { "type": "integer", "minimum": 1 } }
+      }
+    },
+    "evidenceGap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "category", "status", "resolvableBy", "summary", "evidenceRefs", "note"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "category": { "enum": ["identity", "release", "service-revision", "artifact", "runtime", "offering", "configuration", "model", "approval-authority", "independent-evaluation", "other"] },
+        "status": { "enum": ["unavailable", "unresolved", "not-applicable", "not-yet-researched"] },
+        "resolvableBy": { "enum": ["publisher-evidence", "independent-evaluation", "either"] },
+        "summary": { "$ref": "#/$defs/shortText" },
+        "evidenceRefs": { "$ref": "#/$defs/evidenceRefs" },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "discoveryEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recordId", "canonicalIdentity", "sourcedAliases", "unresolvedAliases", "evidenceGaps"],
+      "properties": {
+        "recordId": { "$ref": "#/$defs/id" },
+        "canonicalIdentity": { "$ref": "#/$defs/canonicalIdentity" },
+        "sourcedAliases": { "type": "array", "items": { "$ref": "#/$defs/sourcedAlias" } },
+        "unresolvedAliases": { "type": "array", "items": { "$ref": "#/$defs/unresolvedAlias" } },
+        "evidenceGaps": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/evidenceGap" } }
+      }
+    }
+  }
+}

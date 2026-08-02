@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.release-identity-4-1-2",
+  "slug": "release-identity-4-1-2",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension"
+    }
+  },
+  "claim": {
+    "category": "identity",
+    "statement": "At the publisher's release commit, the VS Code package metadata identifies the product as Cline version 4.1.2, authored by Cline Bot Inc. and published under the extension publisher identifier saoudrizwan."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://github.com/cline/cline/blob/644e84173724b50d6a248f813d01c7f1dad9ecf2/apps/vscode/package.json",
+    "title": "Cline VS Code package metadata at release commit 644e8417",
+    "locator": "name, displayName, version, author and publisher",
+    "publishedAt": "2026-07-31T05:02:40Z",
+    "capturedAt": "2026-07-31T10:37:35Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "4.1.2"
+    },
+    "configuration": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["VS Code extension"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-31",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-31",
+    "recheckAfter": "2026-10-29",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-unavailable",
+      "claimant-correction",
+      "product-version-change",
+      "product-surface-change"
+    ]
+  },
+  "limitations": [
+    "This is publisher-controlled release metadata, not an independently verified artifact identity.",
+    "The catalog did not install the extension or compare a Marketplace VSIX with this source revision."
+  ],
+  "unknowns": [
+    "The digest and contents of the Marketplace artifact were not established.",
+    "The active Legacy or Next extension variant for any particular 4.1.2 installation is unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.model-service-milestone-2026-04-24", "slug": "model-service-milestone-2026-04-24",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Agent mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Agent mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "service.model-milestone", "statement": "Lovable's 2026-04-24 changelog entry says its Agent incorporated Claude Opus 4.6 and records Cloud region-selection changes in the same dated service update." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/changelog?page=1", "title": "Lovable changelog", "locator": "Apr 24, 2026 — Opus 4.6 and Lovable Cloud updates", "publishedAt": "2026-04-24T00:00:00Z", "capturedAt": "2026-08-01T10:46:26Z", "snapshot": null },
+  "applicability": { "version": { "kind": "release-line", "value": "2026-04-24 hosted service milestone" }, "configuration": { "scope": "named", "values": ["publisher-managed Agent model route", "Lovable Cloud region selection"] }, "platform": { "scope": "named", "values": ["Lovable hosted service"] }, "model": { "scope": "named", "values": ["Claude Opus 4.6 incorporated into Agent"] }, "deployment": { "scope": "named", "values": ["Lovable hosted service"] } },
+  "lifecycle": { "status": "historical", "changedAt": "2026-04-24T00:00:00Z", "reason": "Dated service milestone; continued applicability is unresolved." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["model-routing-change", "changelog-correction"] },
+  "limitations": ["The statement does not identify exclusive use, endpoint revision, routing policy, inference configuration or current continued applicability."],
+  "unknowns": ["Current model mix, provider endpoint, routing and regional applicability are unknown."],
+  "relationships": [], "validationRefs": []
+}
+

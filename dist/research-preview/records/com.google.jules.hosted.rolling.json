@@ -1,0 +1,1692 @@
+{
+  "schemaVersion": "real-agent-dossier/0.1-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-01",
+  "sourceDossier": {
+    "path": "dossiers/google-jules/dossier-source.json",
+    "sha256": "79c065ac7db22d529816f1157bf3f315d1b559e3241a5657a4db1572e6a4bfb4",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.google.jules.hosted.rolling",
+    "agent": {
+      "id": "com.google.jules.hosted",
+      "name": "Google Jules"
+    },
+    "publisher": {
+      "id": "google-publisher",
+      "name": "Google"
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Jules",
+      "slug": "google-jules",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Google-hosted rolling service",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "fresh Jules task VM",
+          "task VM restored from a repository environment snapshot"
+        ],
+        "note": "No task was started and Google does not expose a public backend build identity for the rolling service. The effective VM image, snapshot, model, region and session implementation remain unresolved."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "out-of-beta-milestone-2025-08-06",
+        "kind": "hosted-release",
+        "identityStatus": "exact",
+        "uri": "https://jules.google/docs/changelog/2025-08-06/",
+        "ecosystem": "Google-hosted Jules service",
+        "version": "2025-08-06 out-of-beta milestone",
+        "digest": null,
+        "note": "Exact dated publisher milestone stating Jules was no longer in beta; it is not a backend build or downloadable artifact."
+      },
+      {
+        "id": "pr-feedback-milestone-2025-09-23",
+        "kind": "hosted-release",
+        "identityStatus": "exact",
+        "uri": "https://jules.google/docs/changelog/2025-09-23/",
+        "ecosystem": "Google-hosted Jules service",
+        "version": "2025-09-23 PR feedback milestone",
+        "digest": null,
+        "note": "Exact dated publisher milestone for pull-request feedback modes; it is not a backend build."
+      },
+      {
+        "id": "mcp-support-milestone-2026-02-02",
+        "kind": "hosted-release",
+        "identityStatus": "exact",
+        "uri": "https://jules.google/docs/changelog/2026-02-02/",
+        "ecosystem": "Google-hosted Jules service",
+        "version": "2026-02-02 MCP support milestone",
+        "digest": null,
+        "note": "Exact dated publisher milestone for selected MCP service connections; it is not a backend build."
+      },
+      {
+        "id": "rolling-jules-service-runtime",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://jules.google/docs",
+        "ecosystem": "Google-hosted Jules service",
+        "version": null,
+        "digest": null,
+        "note": "Current documentation does not expose an immutable backend build, deployed model revision, VM image digest or session artifact."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "google-publisher",
+        "name": "Google",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-out-of-beta-2025-08-06",
+      "uri": "https://jules.google/docs/changelog/2025-08-06/",
+      "title": "Jules is out of beta!",
+      "locator": "Dated heading; Overview, first paragraph",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "google-publisher",
+      "publishedAt": "2025-08-06T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T23:24:57Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Dated Jules changelog milestone; no service artifact or backend build was available to capture."
+      }
+    },
+    {
+      "id": "source-public-beta-current",
+      "uri": "https://jules.google/docs/faq/",
+      "title": "Jules FAQ",
+      "locator": "What is Jules?, final sentence",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "google-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T23:24:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling Google-hosted FAQ captured without an archive digest; its Public Beta wording conflicts with the dated out-of-beta milestone."
+      }
+    },
+    {
+      "id": "source-fresh-task-vm-current",
+      "uri": "https://jules.google/docs/faq/",
+      "title": "Jules FAQ",
+      "locator": "How does Jules work under the hood?",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "google-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T23:24:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling Google-hosted FAQ captured without an archive digest; its Public Beta wording conflicts with the dated out-of-beta milestone."
+      }
+    },
+    {
+      "id": "source-environment-bootstrap-current",
+      "uri": "https://jules.google/docs/environment/",
+      "title": "Jules environment setup",
+      "locator": "Overview; Add a setup script; Test your setup script; Environment Snapshots",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "google-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T23:24:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling Google-hosted environment documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-plan-approval-current",
+      "uri": "https://jules.google/docs",
+      "title": "Jules getting started",
+      "locator": "Starting your first task, steps 1-5 and final sentence",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "google-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T23:24:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling Google-hosted getting-started documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-repository-branch-scope-current",
+      "uri": "https://jules.google/docs/tasks-repos/",
+      "title": "Managing Jules tasks and repositories",
+      "locator": "Managing repositories; Selecting a repo; Granting access to more repos",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "google-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T23:24:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling Google-hosted repository-management documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-publish-output-current",
+      "uri": "https://jules.google/docs/code/",
+      "title": "Reviewing code changes in Jules",
+      "locator": "Pushing to GitHub",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "google-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T23:24:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling Google-hosted code-review documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-internet-enabled-vm-current",
+      "uri": "https://jules.google/docs/faq/",
+      "title": "Jules FAQ",
+      "locator": "How does Jules run code, and what should I know about security?",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "google-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T23:24:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling Google-hosted FAQ captured without an archive digest; its Public Beta wording conflicts with the dated out-of-beta milestone."
+      }
+    },
+    {
+      "id": "source-mcp-support-2026-02-02",
+      "uri": "https://jules.google/docs/changelog/2026-02-02/",
+      "title": "MCP support comes to Jules",
+      "locator": "Overview; Getting started; Focus on Security",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "google-publisher",
+      "publishedAt": "2026-02-02T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T23:24:57Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Dated Jules changelog milestone for selected MCP connections; its initial server list is not treated as a current exhaustive list."
+      }
+    },
+    {
+      "id": "source-pr-feedback-2025-09-23",
+      "uri": "https://jules.google/docs/changelog/2025-09-23/",
+      "title": "Jules Acts on PR Feedback",
+      "locator": "Overview, all three paragraphs",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "google-publisher",
+      "publishedAt": "2025-09-23T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T23:24:57Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Dated Jules changelog milestone for pull-request feedback behavior and Reactive Mode."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "No Google account, GitHub repository, task, VM or service setting was inspected. Publisher-documented alternatives remain separate and no effective configuration is inferred.",
+    "axes": [
+      {
+        "id": "environment-bootstrap",
+        "label": "Environment bootstrap",
+        "scope": "unresolved",
+        "alternatives": [
+          {
+            "id": "inferred-setup",
+            "label": "Jules-inferred setup",
+            "claimIds": [
+              "com.google.jules.hosted.environment-bootstrap-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "repository-setup-script",
+            "label": "Repository setup script",
+            "claimIds": [
+              "com.google.jules.hosted.environment-bootstrap-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "environment-snapshot",
+            "label": "Successful saved environment snapshot",
+            "claimIds": [
+              "com.google.jules.hosted.environment-bootstrap-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The effective setup path, commands, snapshot state and restoration behavior for a particular repository are unknown."
+        ]
+      },
+      {
+        "id": "plan-control",
+        "label": "Pre-change plan control",
+        "scope": "unresolved",
+        "alternatives": [
+          {
+            "id": "interactive-plan-approval",
+            "label": "Interactive plan review and approval",
+            "claimIds": [
+              "com.google.jules.hosted.plan-approval-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The applicability of plan approval to scheduled tasks, APIs and other entry points is unknown."
+        ]
+      },
+      {
+        "id": "repository-authorization",
+        "label": "GitHub repository authorization",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "all-repositories",
+            "label": "All repositories authorized",
+            "claimIds": [
+              "com.google.jules.hosted.repository-branch-scope-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "specific-repositories"
+            ]
+          },
+          {
+            "id": "specific-repositories",
+            "label": "Specific repositories authorized",
+            "claimIds": [
+              "com.google.jules.hosted.repository-branch-scope-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "all-repositories"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective GitHub App installation scope, authorized repositories, selected branch and organization policies are unknown."
+        ]
+      },
+      {
+        "id": "task-output-route",
+        "label": "Task output route",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "publish-branch",
+            "label": "Publish branch",
+            "claimIds": [
+              "com.google.jules.hosted.publish-output-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "publish-pull-request"
+            ]
+          },
+          {
+            "id": "publish-pull-request",
+            "label": "Publish pull request",
+            "claimIds": [
+              "com.google.jules.hosted.publish-output-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "publish-branch"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The selected route, repository permissions, branch protections and resulting GitHub state are unknown."
+        ]
+      },
+      {
+        "id": "mcp-tool-surface",
+        "label": "MCP tool surface",
+        "scope": "unresolved",
+        "alternatives": [
+          {
+            "id": "selected-mcp-service",
+            "label": "Selected supported MCP service connected with API key",
+            "claimIds": [
+              "com.google.jules.hosted.mcp-support-2026-02-02"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The current supported services, configured connections, tool permissions, API keys, destinations and autonomous calls are unknown."
+        ]
+      },
+      {
+        "id": "pull-request-feedback-mode",
+        "label": "Pull-request feedback mode",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "default-feedback-mode",
+            "label": "Default feedback mode",
+            "claimIds": [
+              "com.google.jules.hosted.pr-feedback-2025-09-23"
+            ],
+            "mutuallyExclusiveWith": [
+              "reactive-feedback-mode"
+            ]
+          },
+          {
+            "id": "reactive-feedback-mode",
+            "label": "Reactive Mode requiring @Jules",
+            "claimIds": [
+              "com.google.jules.hosted.pr-feedback-2025-09-23"
+            ],
+            "mutuallyExclusiveWith": [
+              "default-feedback-mode"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The current mode, eligible commenters, event filtering and authorization checks are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "com.google.jules.hosted.out-of-beta-2025-08-06",
+      "rawRecordPath": "dossiers/google-jules/claims/google-jules/out-of-beta-2025-08-06.json",
+      "rawRecordSha256": "b6081c586c76c13d3b79793dc7b10afbef52bc782a7d9128af267cc4b1f29389",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.jules.hosted.out-of-beta-2025-08-06",
+        "slug": "out-of-beta-2025-08-06",
+        "subject": {
+          "id": "com.google.jules.hosted",
+          "name": "Google Jules",
+          "publisher": "Google",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Jules",
+            "slug": "google-jules"
+          }
+        },
+        "claim": {
+          "category": "identity",
+          "statement": "Google's dated 6 August 2025 Jules changelog says Jules was no longer in beta on that date."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://jules.google/docs/changelog/2025-08-06/",
+          "title": "Jules is out of beta!",
+          "locator": "Dated heading; Overview, first paragraph",
+          "publishedAt": "2025-08-06T00:00:00Z",
+          "capturedAt": "2026-07-31T23:24:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "2025-08-06 out-of-beta milestone"
+          },
+          "configuration": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Google-hosted Jules service"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Jules web service"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2025-08-06",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "claimant-withdrawal",
+            "product-surface-change",
+            "contradictory-source",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The dated milestone establishes a publisher statement about lifecycle, not a backend build or immutable service artifact.",
+          "The current FAQ uses a conflicting Public Beta label; the catalog has not found a publisher correction that resolves the relationship."
+        ],
+        "unknowns": [
+          "Whether Google intended the current FAQ to supersede, qualify or accidentally regress the 2025 lifecycle statement is unknown.",
+          "The exact service implementation deployed on 6 August 2025 is unknown."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "com.google.jules.hosted.public-beta-current",
+            "extent": "full",
+            "status": "active",
+            "resolution": null,
+            "note": "The dated publisher statement says Jules is no longer in beta, while the current publisher FAQ says Jules is in Public Beta; no attributable correction or scope explanation resolves the lifecycle disagreement."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "google-publisher",
+      "sourceId": "source-out-of-beta-2025-08-06",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity"
+      ],
+      "personaIds": [
+        "adopter",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.google.jules.hosted.public-beta-current",
+      "rawRecordPath": "dossiers/google-jules/claims/google-jules/public-beta-current.json",
+      "rawRecordSha256": "10e9916a7523e95173895ef9f060d47cc107848c154adba0f0b2ffe7742bcaa0",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.jules.hosted.public-beta-current",
+        "slug": "public-beta-current",
+        "subject": {
+          "id": "com.google.jules.hosted",
+          "name": "Google Jules",
+          "publisher": "Google",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Jules",
+            "slug": "google-jules"
+          }
+        },
+        "claim": {
+          "category": "identity",
+          "statement": "Google's current Jules FAQ says Jules is currently in Public Beta."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://jules.google/docs/faq/",
+          "title": "Jules FAQ",
+          "locator": "What is Jules?, final sentence",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T23:24:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Google-hosted Jules service"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Jules web service"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "claimant-withdrawal",
+            "product-surface-change",
+            "contradictory-source",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The FAQ is rolling documentation and does not identify when its Public Beta wording was added or last reviewed.",
+          "The label is publisher-attributed and was not independently verified."
+        ],
+        "unknowns": [
+          "Whether the current wording is intentional, stale or limited to an unstated region, plan, account cohort or surface is unknown.",
+          "The current backend build and release state for any particular Jules task are unknown."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "com.google.jules.hosted.out-of-beta-2025-08-06",
+            "extent": "full",
+            "status": "active",
+            "resolution": null,
+            "note": "The current publisher FAQ says Jules is in Public Beta, while the dated publisher changelog says Jules is no longer in beta; no attributable correction or scope explanation resolves the lifecycle disagreement."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "google-publisher",
+      "sourceId": "source-public-beta-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity"
+      ],
+      "personaIds": [
+        "adopter",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.google.jules.hosted.fresh-task-vm-current",
+      "rawRecordPath": "dossiers/google-jules/claims/google-jules/fresh-task-vm-current.json",
+      "rawRecordSha256": "2b6cc5bf664c5db242aa0d95fc8c5fc1d6f76186e539ca1c8dbdcacc3cfe201b",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.jules.hosted.fresh-task-vm-current",
+        "slug": "fresh-task-vm-current",
+        "subject": {
+          "id": "com.google.jules.hosted",
+          "name": "Google Jules",
+          "publisher": "Google",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Jules",
+            "slug": "google-jules"
+          }
+        },
+        "claim": {
+          "category": "delivery",
+          "statement": "Google's current Jules FAQ says each task runs in a fresh virtual machine where Jules clones the repository, installs dependencies and makes prompt-directed changes."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://jules.google/docs/faq/",
+          "title": "Jules FAQ",
+          "locator": "How does Jules work under the hood?",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T23:24:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "documented-default",
+            "values": [
+              "fresh task virtual machine"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Google-hosted Jules service"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "cloud task VM"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The word fresh is a publisher description; the catalog did not inspect VM creation, teardown, reuse or isolation.",
+          "Repository cloning, dependency installation and changes were not observed."
+        ],
+        "unknowns": [
+          "The VM image digest, region, tenancy, hardware, retention, isolation and teardown behavior are unknown.",
+          "The credentials, repository permissions and subprocess authority available inside a real task are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "google-publisher",
+      "sourceId": "source-fresh-task-vm-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "execution"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.google.jules.hosted.environment-bootstrap-current",
+      "rawRecordPath": "dossiers/google-jules/claims/google-jules/environment-bootstrap-current.json",
+      "rawRecordSha256": "4c32223b9c302bdcd692fe6e12265842cdb31fc5a74e9800f6eaa3f098cca2a2",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.jules.hosted.environment-bootstrap-current",
+        "slug": "environment-bootstrap-current",
+        "subject": {
+          "id": "com.google.jules.hosted",
+          "name": "Google Jules",
+          "publisher": "Google",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Jules",
+            "slug": "google-jules"
+          }
+        },
+        "claim": {
+          "category": "process",
+          "statement": "Google's current environment guide says Jules can infer setup for simple repositories or run a repository-specific setup script, and a successful Run and Snapshot stores an environment snapshot for future tasks on that repository."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://jules.google/docs/environment/",
+          "title": "Jules environment setup",
+          "locator": "Overview; Add a setup script; Test your setup script; Environment Snapshots",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T23:24:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "inferred environment setup",
+              "repository setup script",
+              "successful environment snapshot"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Ubuntu Jules task VM"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "multiple",
+            "values": [
+              "fresh task environment",
+              "repository environment snapshot"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "platform-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The guide describes setup paths but does not establish which path a particular repository will use.",
+          "No setup script was submitted and no snapshot was created or inspected."
+        ],
+        "unknowns": [
+          "Snapshot contents, encryption, retention, invalidation, tenant isolation and restoration completeness are unknown.",
+          "The exact commands inferred by Jules and the side effects of a repository setup script are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "google-publisher",
+      "sourceId": "source-environment-bootstrap-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "execution"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.google.jules.hosted.plan-approval-current",
+      "rawRecordPath": "dossiers/google-jules/claims/google-jules/plan-approval-current.json",
+      "rawRecordSha256": "92f1b933a56a037d172905dfb881c385211cb27107f44b57bc5d6f80d2003b64",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.jules.hosted.plan-approval-current",
+        "slug": "plan-approval-current",
+        "subject": {
+          "id": "com.google.jules.hosted",
+          "name": "Google Jules",
+          "publisher": "Google",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Jules",
+            "slug": "google-jules"
+          }
+        },
+        "claim": {
+          "category": "authority.change",
+          "statement": "Google's current getting-started guide says a submitted Jules task generates a plan that the user can review and approve before code changes are made."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://jules.google/docs",
+          "title": "Jules getting started",
+          "locator": "Starting your first task, steps 1-5 and final sentence",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T23:24:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "documented-default",
+            "values": [
+              "interactive plan review and approval"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Jules web task flow"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "user-submitted repository task"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The statement describes the getting-started task flow and does not prove that every Jules invocation mode requires plan approval.",
+          "The catalog did not submit a task or test which side effects can occur before approval."
+        ],
+        "unknowns": [
+          "Plan auto-approval, scheduled-task and API behavior are outside this claim's documented configuration.",
+          "The completeness of the plan relative to later file, command, network or tool actions is unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "google-publisher",
+      "sourceId": "source-plan-approval-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "control"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.google.jules.hosted.repository-branch-scope-current",
+      "rawRecordPath": "dossiers/google-jules/claims/google-jules/repository-branch-scope-current.json",
+      "rawRecordSha256": "19b156ad843f1324456869bca91a7c9bcedca6be2b2d03d6ad1557f929ab63e4",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.jules.hosted.repository-branch-scope-current",
+        "slug": "repository-branch-scope-current",
+        "subject": {
+          "id": "com.google.jules.hosted",
+          "name": "Google Jules",
+          "publisher": "Google",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Jules",
+            "slug": "google-jules"
+          }
+        },
+        "claim": {
+          "category": "authority.read",
+          "statement": "Google's current Jules documentation says Jules can access only repositories explicitly allowed through GitHub, and a user selects an authorized repository and branch when starting a task."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://jules.google/docs/tasks-repos/",
+          "title": "Managing Jules tasks and repositories",
+          "locator": "Managing repositories; Selecting a repo; Granting access to more repos",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T23:24:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "all repositories authorized in GitHub",
+              "specific repositories authorized in GitHub",
+              "selected task branch"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitHub-connected Jules web service"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "authorized repository task"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "platform-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The source describes repository selection and access configuration, not the exact token scopes or every GitHub permission granted.",
+          "No repository authorization or branch selection was inspected."
+        ],
+        "unknowns": [
+          "The effective GitHub App installation permissions, token scopes, organization policies and branch protections are unknown.",
+          "The repository and branch visible to a particular task are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "google-publisher",
+      "sourceId": "source-repository-branch-scope-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "control"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.google.jules.hosted.publish-output-current",
+      "rawRecordPath": "dossiers/google-jules/claims/google-jules/publish-output-current.json",
+      "rawRecordSha256": "aa541a51118981497ba779e47bf7f8928daedbcb34efeb0bc19dc23bc98602f8",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.jules.hosted.publish-output-current",
+        "slug": "publish-output-current",
+        "subject": {
+          "id": "com.google.jules.hosted",
+          "name": "Google Jules",
+          "publisher": "Google",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Jules",
+            "slug": "google-jules"
+          }
+        },
+        "claim": {
+          "category": "authority.communicate",
+          "statement": "Google's current code-review guide says a user can click Publish branch or Publish PR to push Jules changes to GitHub; the documented commit and pull-request attribution differs by route."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://jules.google/docs/code/",
+          "title": "Reviewing code changes in Jules",
+          "locator": "Pushing to GitHub",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T23:24:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "Publish branch",
+              "Publish PR"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Jules web task review"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "multiple",
+            "values": [
+              "GitHub branch",
+              "GitHub pull request"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "platform-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The claim covers the named user-triggered publish controls and does not establish every output route available through APIs, automations or later product changes.",
+          "No branch, commit or pull request was published or inspected."
+        ],
+        "unknowns": [
+          "The selected publish route, repository permissions, branch protections, commit identity and pull-request state of a real task are unknown.",
+          "Whether task output remains available, retained or deleted when neither publish control is used is unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "google-publisher",
+      "sourceId": "source-publish-output-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "output"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.google.jules.hosted.internet-enabled-vm-current",
+      "rawRecordPath": "dossiers/google-jules/claims/google-jules/internet-enabled-vm-current.json",
+      "rawRecordSha256": "acbd98b40d0a7ea28bcf9612946f2935a49e422ee11615fea6f5a6f3dbee80d6",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.jules.hosted.internet-enabled-vm-current",
+        "slug": "internet-enabled-vm-current",
+        "subject": {
+          "id": "com.google.jules.hosted",
+          "name": "Google Jules",
+          "publisher": "Google",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Jules",
+            "slug": "google-jules"
+          }
+        },
+        "claim": {
+          "category": "network",
+          "statement": "Google's current Jules FAQ says code in Jules executes in a cloud-based virtual machine with internet access and advises treating it like a public or shared compute surface."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://jules.google/docs/faq/",
+          "title": "Jules FAQ",
+          "locator": "How does Jules run code, and what should I know about security?",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T23:24:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "documented-default",
+            "values": [
+              "internet-enabled cloud VM"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Jules cloud task VM"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "code execution in Jules"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The FAQ does not enumerate egress controls, allowlists, blocked destinations, monitoring or network isolation.",
+          "No network request, DNS lookup, package download or external connection was observed."
+        ],
+        "unknowns": [
+          "The effective egress policy, destinations, proxies, logging, filtering and tenant network boundary are unknown.",
+          "The behavior of repository setup scripts and dependencies on the internet-enabled VM was not tested."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "google-publisher",
+      "sourceId": "source-internet-enabled-vm-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "network"
+      ],
+      "personaIds": [
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.google.jules.hosted.mcp-support-2026-02-02",
+      "rawRecordPath": "dossiers/google-jules/claims/google-jules/mcp-support-2026-02-02.json",
+      "rawRecordSha256": "942893bce73ad205af5a329967bf54a9f5f4f4f58bcedc3a3911a94fe3f034d6",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.jules.hosted.mcp-support-2026-02-02",
+        "slug": "mcp-support-2026-02-02",
+        "subject": {
+          "id": "com.google.jules.hosted",
+          "name": "Google Jules",
+          "publisher": "Google",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Jules",
+            "slug": "google-jules"
+          }
+        },
+        "claim": {
+          "category": "interoperability",
+          "statement": "Google's dated 2 February 2026 Jules changelog says selected MCP service connections can be configured with API-key authentication and Jules can trigger their tools when it detects a need during a session."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://jules.google/docs/changelog/2026-02-02/",
+          "title": "MCP support comes to Jules",
+          "locator": "Overview; Getting started; Focus on Security",
+          "publishedAt": "2026-02-02T00:00:00Z",
+          "capturedAt": "2026-07-31T23:24:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "2026-02-02 MCP support milestone"
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "selected supported MCP service connected with API key"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Google-hosted Jules service"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Jules session with configured MCP connection"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-02-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The dated launch entry names an initial server set but is not treated as a current exhaustive compatibility list.",
+          "The publisher's statements about data flow and permission review are not an independent security evaluation."
+        ],
+        "unknowns": [
+          "The currently supported MCP servers, enabled tools, permissions, data destinations and credential handling for a real account are unknown.",
+          "Which tool calls Jules would autonomously select, and with what side effects, was not tested."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "google-publisher",
+      "sourceId": "source-mcp-support-2026-02-02",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "extensions"
+      ],
+      "personaIds": [
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.google.jules.hosted.pr-feedback-2025-09-23",
+      "rawRecordPath": "dossiers/google-jules/claims/google-jules/pr-feedback-2025-09-23.json",
+      "rawRecordSha256": "97c9f4bcef941c7b3d18c245b312531dcbfa029f1b8030aa2d665f9b80435873",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.jules.hosted.pr-feedback-2025-09-23",
+        "slug": "pr-feedback-2025-09-23",
+        "subject": {
+          "id": "com.google.jules.hosted",
+          "name": "Google Jules",
+          "publisher": "Google",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Jules",
+            "slug": "google-jules"
+          }
+        },
+        "claim": {
+          "category": "authority.communicate",
+          "statement": "Google's dated 23 September 2025 Jules changelog says Jules can read and respond to pull-request comments and push requested changes, while Reactive Mode limits action to comments that specifically mention @Jules."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://jules.google/docs/changelog/2025-09-23/",
+          "title": "Jules Acts on PR Feedback",
+          "locator": "Overview, all three paragraphs",
+          "publishedAt": "2025-09-23T00:00:00Z",
+          "capturedAt": "2026-07-31T23:24:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "2025-09-23 PR feedback milestone"
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "default pull-request feedback mode",
+              "Reactive Mode with explicit @Jules mention"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitHub pull request connected to Jules"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "multiple",
+            "values": [
+              "read and react to pull-request comments",
+              "push requested changes"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2025-09-23",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "platform-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This dated milestone does not establish the current default, every supported review event or the precise permission model.",
+          "No pull-request comment, reaction or follow-up commit was created or observed."
+        ],
+        "unknowns": [
+          "The current feedback mode, eligible commenters, event filtering, authorization checks and branch protections are unknown.",
+          "The content, scope and safety of changes Jules may push in response to a comment were not tested."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "google-publisher",
+      "sourceId": "source-pr-feedback-2025-09-23",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "output"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "relationship-01",
+      "fromClaimId": "com.google.jules.hosted.out-of-beta-2025-08-06",
+      "toClaimId": "com.google.jules.hosted.public-beta-current",
+      "kind": "contradicts",
+      "extent": "full",
+      "status": "unresolved",
+      "resolution": null,
+      "note": "The dated publisher statement says Jules is no longer in beta, while the current publisher FAQ says Jules is in Public Beta; no attributable correction or scope explanation resolves the lifecycle disagreement."
+    },
+    {
+      "id": "relationship-02",
+      "fromClaimId": "com.google.jules.hosted.public-beta-current",
+      "toClaimId": "com.google.jules.hosted.out-of-beta-2025-08-06",
+      "kind": "contradicts",
+      "extent": "full",
+      "status": "unresolved",
+      "resolution": null,
+      "note": "The current publisher FAQ says Jules is in Public Beta, while the dated publisher changelog says Jules is no longer in beta; no attributable correction or scope explanation resolves the lifecycle disagreement."
+    }
+  ],
+  "independentTests": [],
+  "dossier": {
+    "summary": "Google's dated Jules changelog says the hosted service left beta on 6 August 2025, while the current Jules FAQ says it is in Public Beta. That unresolved publisher-source disagreement is preserved without adjudication. Other publisher sources describe hosted task VMs, environment setup and snapshots, plan approval, repository scope, GitHub publication, internet access, MCP connections and pull-request feedback modes; none was independently tested.",
+    "releaseContext": {
+      "statement": "Google's 6 August 2025 changelog is an exact dated out-of-beta milestone, not an exact backend release. The current FAQ's Public Beta label conflicts with it under potentially overlapping service applicability. The dossier therefore identifies a rolling hosted Jules service with unresolved lifecycle wording and runtime implementation.",
+      "sourceId": "source-out-of-beta-2025-08-06",
+      "legacySource": null
+    },
+    "limitations": [
+      "Every behavior statement is publisher-attributed; the catalog did not start or observe a Jules task.",
+      "The lifecycle disagreement is preserved as unresolved because neither source provides a correction, withdrawal or scope explanation.",
+      "Dated changelog entries establish service milestones, not an immutable backend build, deployed model, VM image or task artifact.",
+      "Rolling Jules documentation is not treated as exact evidence for the 2025 or 2026 milestones.",
+      "No independent report with defensible service-time, repository, plan, model, tool, network and task overlap was included."
+    ],
+    "unknowns": [
+      "Whether Jules is currently beta, post-beta, or differently labeled by region, plan, account cohort or surface.",
+      "Whether Google intends the current FAQ to correct, qualify or coexist with the 6 August 2025 changelog.",
+      "The backend service build, deployed code revision and change history for a particular task.",
+      "The effective model, provider revision, reasoning configuration, router and fallback behavior.",
+      "The task VM image digest, hardware, region, tenancy, isolation, retention and teardown behavior.",
+      "The repository environment setup path, commands, dependencies, snapshot contents and restoration behavior.",
+      "The effective GitHub authorization, repository, branch, organization policy and branch protections.",
+      "The plan-control path, prompt context, task output route, commit identity and pull-request state.",
+      "The effective internet egress controls, destinations, logging, filtering and network isolation.",
+      "The enabled MCP services, tools, API keys, permissions, data destinations and autonomous side effects."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "adopter",
+        "label": "Considering a hosted pilot",
+        "prompt": "Trace lifecycle identity, VM execution, plan control, repository scope and output route.",
+        "propositionIds": [
+          "identity",
+          "execution",
+          "control",
+          "output"
+        ]
+      },
+      {
+        "id": "reviewer",
+        "label": "Reviewing hosted authority",
+        "prompt": "Inspect environment, network, publication, MCP and pull-request feedback alternatives without collapsing their scopes.",
+        "propositionIds": [
+          "execution",
+          "control",
+          "output",
+          "network",
+          "extensions"
+        ]
+      },
+      {
+        "id": "auditor",
+        "label": "Checking disagreement and evidence",
+        "prompt": "Open both lifecycle sources, every exact claim, applicability boundary, limitation and unknown.",
+        "propositionIds": [
+          "identity",
+          "execution",
+          "control",
+          "output",
+          "network",
+          "extensions"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Service lifecycle",
+        "question": "What release state do Google's own Jules sources establish?",
+        "status": "Unresolved publisher-source disagreement",
+        "answer": "Google's dated 6 August 2025 changelog says Jules is no longer in beta. Google's current FAQ says Jules is currently in Public Beta. The catalog preserves both claims and does not adjudicate the conflict.",
+        "whyItMatters": "A hosted service can have exact dated milestones without a versioned backend, and later rolling documentation can disagree without proving which statement is current or correct.",
+        "claimIds": [
+          "com.google.jules.hosted.out-of-beta-2025-08-06",
+          "com.google.jules.hosted.public-beta-current"
+        ]
+      },
+      {
+        "id": "execution",
+        "eyebrow": "Hosted execution",
+        "question": "Where and how do publisher sources say Jules tasks run?",
+        "status": "Hosted task VM with repository-dependent bootstrap",
+        "answer": "Current Google documentation says each task uses a fresh cloud VM, while environment setup can be inferred, supplied by a repository script or restored from a successful repository snapshot.",
+        "whyItMatters": "The service name alone does not identify the VM image, setup commands, persisted snapshot state or resulting dependency surface.",
+        "claimIds": [
+          "com.google.jules.hosted.fresh-task-vm-current",
+          "com.google.jules.hosted.environment-bootstrap-current"
+        ]
+      },
+      {
+        "id": "control",
+        "eyebrow": "Task and repository scope",
+        "question": "What user and repository boundaries precede code changes?",
+        "status": "Interactive plan approval is documented for a scoped repository task",
+        "answer": "The current getting-started flow has a user choose an authorized repository and branch, request a plan, and review and approve it before changes. Other entry points are not silently assigned the same control path.",
+        "whyItMatters": "Approval and repository authorization are configuration and invocation facts, not universal properties of every hosted-agent task.",
+        "claimIds": [
+          "com.google.jules.hosted.plan-approval-current",
+          "com.google.jules.hosted.repository-branch-scope-current"
+        ]
+      },
+      {
+        "id": "output",
+        "eyebrow": "GitHub mutation and communication",
+        "question": "Which publisher-described routes can move Jules work into GitHub?",
+        "status": "Branch, pull-request and review-response routes are separately scoped",
+        "answer": "Current documentation describes user-triggered Publish branch and Publish PR controls. A dated milestone separately describes pull-request feedback handling, including a Reactive Mode that requires an explicit @Jules mention.",
+        "whyItMatters": "Output route and feedback mode determine attribution, event triggers and potential repository mutations.",
+        "claimIds": [
+          "com.google.jules.hosted.publish-output-current",
+          "com.google.jules.hosted.pr-feedback-2025-09-23"
+        ]
+      },
+      {
+        "id": "network",
+        "eyebrow": "Network boundary",
+        "question": "What network access does the publisher describe?",
+        "status": "Internet-enabled cloud VM; effective controls unknown",
+        "answer": "The current FAQ says Jules code executes in a cloud VM with internet access and advises treating it like a public or shared compute surface. It does not enumerate effective egress controls.",
+        "whyItMatters": "Internet access changes the data and dependency boundary even when VM isolation is described as secure.",
+        "claimIds": [
+          "com.google.jules.hosted.internet-enabled-vm-current"
+        ]
+      },
+      {
+        "id": "extensions",
+        "eyebrow": "External tools",
+        "question": "Can configured services expand Jules authority?",
+        "status": "Selected MCP connections can add autonomous tool calls",
+        "answer": "Google's dated 2 February 2026 milestone says selected MCP services can be connected with API keys and Jules can trigger their tools when it detects a need during a session.",
+        "whyItMatters": "The effective external tool and credential surface cannot be inferred from the hosted-agent identity.",
+        "claimIds": [
+          "com.google.jules.hosted.mcp-support-2026-02-02"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed public-source claims only. Publisher statements and source capture are not observed behavior or independent evaluation. The lifecycle disagreement remains unresolved."
+  }
+}

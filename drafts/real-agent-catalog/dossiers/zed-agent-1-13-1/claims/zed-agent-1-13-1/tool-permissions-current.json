@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.zed.agent.tool-permissions-current",
+  "slug": "tool-permissions-current",
+  "subject": { "id": "dev.zed.agent.native", "name": "Zed Agent", "publisher": "Zed Industries, Inc.", "surface": { "kind": "desktop-app", "name": "native Zed Agent in Zed", "slug": "zed-agent-1-13-1" } },
+  "claim": { "category": "approval-authority", "statement": "Zed's current Tool Permissions page says native-agent tools can be auto-allowed, auto-denied or always confirmed through global, tool-specific and pattern-specific rules." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Zed Industries, Inc." },
+  "source": { "uri": "https://zed.dev/docs/ai/tool-permissions", "title": "Tool Permissions", "locator": "Quick Start, How It Works, and Supported Tools", "publishedAt": null, "capturedAt": "2026-08-01T06:18:27Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["allow", "deny", "confirm", "global default", "tool-specific rules", "pattern rules"] }, "platform": { "scope": "named", "values": ["native Zed Agent"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["local Zed client"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling permission documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["permission-schema-change", "tool-list-change"] },
+  "limitations": ["The rule examples are configuration descriptions, not evidence of an effective decision or enforcement result."],
+  "unknowns": ["The effective defaults, tool patterns, precedence, prompts and user decisions are unknown."],
+  "relationships": [], "validationRefs": []
+}

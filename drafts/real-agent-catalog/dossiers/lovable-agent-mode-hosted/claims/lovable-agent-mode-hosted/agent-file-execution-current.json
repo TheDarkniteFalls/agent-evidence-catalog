@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.agent-file-execution-current", "slug": "agent-file-execution-current",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Build mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Build mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "workspace.agent-execution", "statement": "Current Lovable documentation says Build mode explores project code, applies coordinated changes across files, can inspect logs and network activity, fetch external documentation or assets, and exposes its work through tasks, diffs and summaries." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/features/agent-mode", "title": "Implement changes in Build mode", "locator": "Overview, What Build mode is for and Tasks and execution visibility", "publishedAt": null, "capturedAt": "2026-08-01T11:46:36Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["Build mode", "current Lovable project", "available hosted tools"] }, "platform": { "scope": "named", "values": ["Lovable hosted browser workspace"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["Lovable hosted service"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["agent-mode-change", "tool-inventory-change"] },
+  "limitations": ["The page is a publisher description, not an observed file, log, network or web-tool receipt."],
+  "unknowns": ["Project files, tool inventory, tool parameters, model, service revision and results are unknown."],
+  "relationships": [], "validationRefs": []
+}

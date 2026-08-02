@@ -1,0 +1,970 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-02",
+  "sourceDossier": {
+    "path": "dossiers/cline-vscode-extension-4-1-3/dossier-source.json",
+    "sha256": "4c91f0b84c0612c5621947f4cf14ea21d041993de4db5f1bc9a545fb72eadb3d",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.cline.bot.vscode-extension.4-1-3",
+    "agent": {
+      "id": "com.cline.bot",
+      "name": "Cline"
+    },
+    "publisher": {
+      "id": "cline-bot-inc",
+      "name": "Cline Bot Inc."
+    },
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension-4-1-3",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "4.1.3",
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Visual Studio Marketplace stable listing",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "Visual Studio Marketplace VSIX for VS Code extension hosts"
+        ],
+        "note": "The official listing identifies version 4.1.3, but no VSIX was downloaded, hashed, installed or run and no extension-host or platform variant was resolved."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "cline-marketplace-extension-4-1-3",
+        "kind": "vscode-marketplace-extension",
+        "identityStatus": "exact",
+        "uri": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+        "ecosystem": "Visual Studio Marketplace",
+        "version": "4.1.3",
+        "digest": null,
+        "note": "Exact listing version at capture time; the package digest and installed runtime remain unresolved."
+      },
+      {
+        "id": "cline-model-service-current",
+        "kind": "other",
+        "identityStatus": "unresolved",
+        "uri": null,
+        "ecosystem": "Configured hosted, gateway, cloud-platform, local or compatible model route",
+        "version": null,
+        "digest": null,
+        "note": "The extension version does not identify an effective model, endpoint or provider-side revision."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "cline-bot-inc",
+        "name": "Cline Bot Inc.",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-release-identity-4-1-3",
+      "uri": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+      "title": "Cline - Visual Studio Marketplace",
+      "locator": "Resources.Version and MoreInfo.VersionValue 4.1.3; Last Updated 2026-08-02",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "cline-bot-inc",
+      "publishedAt": "2026-08-02T05:47:31Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T06:58:22Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Exact version metadata captured from the current official Marketplace listing; the VSIX was not downloaded or hashed."
+      }
+    },
+    {
+      "id": "source-capabilities-current-4-1-3",
+      "uri": "https://github.com/cline/cline",
+      "title": "cline/cline official repository",
+      "locator": "VS Code Extension",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cline-bot-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T06:58:22Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current official publisher documentation; not silently treated as frozen exact-version behavior."
+      }
+    },
+    {
+      "id": "source-approval-current-4-1-3",
+      "uri": "https://docs.cline.bot/features/auto-approve",
+      "title": "Auto Approve and YOLO Mode - Cline",
+      "locator": "How It Works, Permissions and YOLO Mode",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cline-bot-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T06:58:22Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current official publisher documentation; not silently treated as frozen exact-version behavior."
+      }
+    },
+    {
+      "id": "source-checkpoints-current-4-1-3",
+      "uri": "https://docs.cline.bot/core-workflows/checkpoints",
+      "title": "Checkpoints - Cline",
+      "locator": "How It Works, Enable or Disable Checkpoints and Restoring Checkpoints",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cline-bot-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T06:58:22Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current official publisher documentation; not silently treated as frozen exact-version behavior."
+      }
+    },
+    {
+      "id": "source-model-routes-current-4-1-3",
+      "uri": "https://github.com/cline/cline",
+      "title": "cline/cline official repository",
+      "locator": "Works With Every Model",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cline-bot-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T06:58:22Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current official publisher documentation; not silently treated as frozen exact-version behavior."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Exact extension identity, model route, approval policy, tools, MCP, checkpoint state, network access and installed runtime remain separate applicability boundaries.",
+    "axes": [
+      {
+        "id": "approval-mode",
+        "label": "Approval mode",
+        "scope": "mutually-exclusive",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "manual",
+            "label": "Per-action approval",
+            "claimIds": [
+              "com.cline.bot.vscode-extension.approval-current-4-1-3"
+            ],
+            "mutuallyExclusiveWith": [
+              "selective-auto-approve",
+              "yolo"
+            ],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "selective-auto-approve",
+            "label": "Selected Auto Approve categories",
+            "claimIds": [
+              "com.cline.bot.vscode-extension.approval-current-4-1-3"
+            ],
+            "mutuallyExclusiveWith": [
+              "manual",
+              "yolo"
+            ],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "yolo",
+            "label": "YOLO Mode",
+            "claimIds": [
+              "com.cline.bot.vscode-extension.approval-current-4-1-3"
+            ],
+            "mutuallyExclusiveWith": [
+              "manual",
+              "selective-auto-approve"
+            ],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "unavailable"
+          }
+        ],
+        "unknowns": [
+          "The effective approval mode and per-category settings are unknown."
+        ]
+      },
+      {
+        "id": "model-route",
+        "label": "Model and provider route",
+        "scope": "unresolved",
+        "dimension": "model",
+        "alternatives": [
+          {
+            "id": "configured-provider",
+            "label": "Configured provider or local route",
+            "claimIds": [
+              "com.cline.bot.vscode-extension.model-routes-current-4-1-3"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The effective model, provider, endpoint, account and revision are unknown."
+        ]
+      },
+      {
+        "id": "checkpoint-state",
+        "label": "Checkpoint state",
+        "scope": "mutually-exclusive",
+        "dimension": "output-route",
+        "alternatives": [
+          {
+            "id": "enabled",
+            "label": "Checkpoints enabled",
+            "claimIds": [
+              "com.cline.bot.vscode-extension.checkpoints-current-4-1-3"
+            ],
+            "mutuallyExclusiveWith": [
+              "disabled"
+            ]
+          },
+          {
+            "id": "disabled",
+            "label": "Checkpoints disabled",
+            "claimIds": [
+              "com.cline.bot.vscode-extension.checkpoints-current-4-1-3"
+            ],
+            "mutuallyExclusiveWith": [
+              "enabled"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective checkpoint state and storage condition are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "com.cline.bot.vscode-extension.release-identity-4-1-3",
+      "rawRecordPath": "dossiers/cline-vscode-extension-4-1-3/claims/cline-vscode-extension-4-1-3/release-identity-4-1-3.json",
+      "rawRecordSha256": "9169649c79e9f485518a8ada35a2770dfc782e70f4ad24212300a5f44506d80f",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cline.bot.vscode-extension.release-identity-4-1-3",
+        "slug": "release-identity-4-1-3",
+        "subject": {
+          "id": "com.cline.bot",
+          "name": "Cline",
+          "publisher": "Cline Bot Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Cline VS Code extension",
+            "slug": "cline-vscode-extension-4-1-3"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "The official Visual Studio Marketplace listing identifies the Cline extension published as saoudrizwan.claude-dev at exact version 4.1.3 and reports that listing updated on 2026-08-02."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Cline Bot Inc."
+        },
+        "source": {
+          "uri": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+          "title": "Cline - Visual Studio Marketplace",
+          "locator": "Resources.Version and MoreInfo.VersionValue 4.1.3; Last Updated 2026-08-02",
+          "publishedAt": "2026-08-02T05:47:31Z",
+          "capturedAt": "2026-08-02T06:58:22Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "4.1.3"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "Marketplace listing"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "VS Code extension"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-08-09",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The rolling Marketplace page establishes the exact listed version at capture time, not an immutable package digest."
+        ],
+        "unknowns": [
+          "The installed VSIX, executable dependencies, platform build and effective runtime variant are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cline-bot-inc",
+      "sourceId": "source-release-identity-4-1-3",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "release-auditor",
+        "model-reviewer"
+      ]
+    },
+    {
+      "id": "com.cline.bot.vscode-extension.capabilities-current-4-1-3",
+      "rawRecordPath": "dossiers/cline-vscode-extension-4-1-3/claims/cline-vscode-extension-4-1-3/capabilities-current-4-1-3.json",
+      "rawRecordSha256": "a69d1510c2789e7a0eb1c3b5a5e75781980d3bbb8f5f0bf99dd9742fc4d51fe4",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cline.bot.vscode-extension.capabilities-current-4-1-3",
+        "slug": "capabilities-current-4-1-3",
+        "subject": {
+          "id": "com.cline.bot",
+          "name": "Cline",
+          "publisher": "Cline Bot Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Cline VS Code extension",
+            "slug": "cline-vscode-extension-4-1-3"
+          }
+        },
+        "claim": {
+          "category": "capability.tool-surface",
+          "statement": "Cline's current official repository describes the VS Code extension as able to create and edit files, run terminal commands, browse the web and use tools with human-in-the-loop approval."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Cline Bot Inc."
+        },
+        "source": {
+          "uri": "https://github.com/cline/cline",
+          "title": "cline/cline official repository",
+          "locator": "VS Code Extension",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T06:58:22Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "publisher-described default authority"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cline VS Code extension"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-08-09",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is a current publisher description, not observed exact-version behavior or a complete tool inventory."
+        ],
+        "unknowns": [
+          "The effective tools, workspace scope, network destinations and task-specific behavior are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cline-bot-inc",
+      "sourceId": "source-capabilities-current-4-1-3",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "capability"
+      ],
+      "personaIds": [
+        "authority-reviewer"
+      ]
+    },
+    {
+      "id": "com.cline.bot.vscode-extension.approval-current-4-1-3",
+      "rawRecordPath": "dossiers/cline-vscode-extension-4-1-3/claims/cline-vscode-extension-4-1-3/approval-current-4-1-3.json",
+      "rawRecordSha256": "c72c7d0d65f404f3f38428d4fe2d416feca02747a4ef246f96b61ceb9cbd2fd9",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cline.bot.vscode-extension.approval-current-4-1-3",
+        "slug": "approval-current-4-1-3",
+        "subject": {
+          "id": "com.cline.bot",
+          "name": "Cline",
+          "publisher": "Cline Bot Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Cline VS Code extension",
+            "slug": "cline-vscode-extension-4-1-3"
+          }
+        },
+        "claim": {
+          "category": "authority.approval",
+          "statement": "Current official documentation separates per-tool-call approval, selected Auto Approve categories and YOLO Mode, which auto-approves file, terminal, browser, MCP and mode-transition actions."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Cline Bot Inc."
+        },
+        "source": {
+          "uri": "https://docs.cline.bot/features/auto-approve",
+          "title": "Auto Approve and YOLO Mode - Cline",
+          "locator": "How It Works, Permissions and YOLO Mode",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T06:58:22Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "manual approval",
+              "selective Auto Approve",
+              "YOLO Mode"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cline IDE extension"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-08-09",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The documentation describes configurable authority; it does not establish the effective settings of any installation."
+        ],
+        "unknowns": [
+          "The active approval categories, command classification, MCP servers and mode-transition policy are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cline-bot-inc",
+      "sourceId": "source-approval-current-4-1-3",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authority"
+      ],
+      "personaIds": [
+        "authority-reviewer"
+      ]
+    },
+    {
+      "id": "com.cline.bot.vscode-extension.checkpoints-current-4-1-3",
+      "rawRecordPath": "dossiers/cline-vscode-extension-4-1-3/claims/cline-vscode-extension-4-1-3/checkpoints-current-4-1-3.json",
+      "rawRecordSha256": "703c6a248a2c63c2238af1a7f064d8f6d47e579ff61d5b0bd05112a62cb1fc04",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cline.bot.vscode-extension.checkpoints-current-4-1-3",
+        "slug": "checkpoints-current-4-1-3",
+        "subject": {
+          "id": "com.cline.bot",
+          "name": "Cline",
+          "publisher": "Cline Bot Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Cline VS Code extension",
+            "slug": "cline-vscode-extension-4-1-3"
+          }
+        },
+        "claim": {
+          "category": "authority.recovery",
+          "statement": "Current official documentation says checkpoints are enabled by default and use a separate shadow Git repository to snapshot project files after tool use, with compare and restore controls."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Cline Bot Inc."
+        },
+        "source": {
+          "uri": "https://docs.cline.bot/core-workflows/checkpoints",
+          "title": "Checkpoints - Cline",
+          "locator": "How It Works, Enable or Disable Checkpoints and Restoring Checkpoints",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T06:58:22Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "checkpoints enabled",
+              "checkpoints disabled"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cline IDE extension"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-08-09",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "File snapshots do not establish reversal of package installs, network actions, Git pushes or other external side effects."
+        ],
+        "unknowns": [
+          "The effective checkpoint setting, storage state, failure modes and restoration completeness are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cline-bot-inc",
+      "sourceId": "source-checkpoints-current-4-1-3",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "recovery"
+      ],
+      "personaIds": [
+        "authority-reviewer"
+      ]
+    },
+    {
+      "id": "com.cline.bot.vscode-extension.model-routes-current-4-1-3",
+      "rawRecordPath": "dossiers/cline-vscode-extension-4-1-3/claims/cline-vscode-extension-4-1-3/model-routes-current-4-1-3.json",
+      "rawRecordSha256": "156783e83e46f8fcb0b7b0a37c6c0539f57b68df7652dda049a98a8cdaf21ef3",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cline.bot.vscode-extension.model-routes-current-4-1-3",
+        "slug": "model-routes-current-4-1-3",
+        "subject": {
+          "id": "com.cline.bot",
+          "name": "Cline",
+          "publisher": "Cline Bot Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Cline VS Code extension",
+            "slug": "cline-vscode-extension-4-1-3"
+          }
+        },
+        "claim": {
+          "category": "identity.model",
+          "statement": "Cline's current official repository describes multiple hosted, gateway, cloud-platform, local and OpenAI-compatible model-provider routes rather than one model fixed by the extension version."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Cline Bot Inc."
+        },
+        "source": {
+          "uri": "https://github.com/cline/cline",
+          "title": "cline/cline official repository",
+          "locator": "Works With Every Model",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T06:58:22Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "configured provider route"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cline VS Code extension"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-08-09",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Provider names do not identify the model, endpoint, revision, account, retention policy or effective request path."
+        ],
+        "unknowns": [
+          "The effective model, provider, endpoint, model revision, credentials and data policy are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cline-bot-inc",
+      "sourceId": "source-model-routes-current-4-1-3",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "model"
+      ],
+      "personaIds": [
+        "model-reviewer"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "cline-vscode-extension-4-1-3-independent-evidence-search",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "evaluator-independence",
+          "dimension": "evaluator-independence",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate reached evaluator-independence review."
+        },
+        {
+          "id": "exact-release",
+          "dimension": "release",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed an inspectable exact 4.1.3 execution cell."
+        },
+        {
+          "id": "model-identity",
+          "dimension": "model",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed the exact model and provider-side revision used for the record."
+        },
+        {
+          "id": "configuration-cell",
+          "dimension": "configuration",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed the complete effective approval, sandbox, network, tool and extension configuration."
+        },
+        {
+          "id": "disclosure-completeness",
+          "dimension": "disclosure",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate supplied complete independence, funding, conflict and evaluation-method disclosures."
+        },
+        {
+          "id": "public-artifacts",
+          "dimension": "public-artifacts",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate exposed a reproducible public artifact bundle for the exact cell."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent result, evaluator, finding, test or score is admitted because no candidate passed every required gate."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "The current official Marketplace listing identifies Cline VS Code extension 4.1.3. Current publisher documentation describes file, terminal, browser and model-provider capabilities while keeping approval mode, MCP authority, checkpoint state, model route and installed runtime unresolved.",
+    "releaseContext": {
+      "statement": "The official Visual Studio Marketplace listing reported exact version 4.1.3 when captured on 2026-08-02; no VSIX was downloaded or hashed.",
+      "sourceId": "source-release-identity-4-1-3",
+      "legacySource": null
+    },
+    "limitations": [
+      "All behavior statements are publisher-attributed.",
+      "No extension package was downloaded, installed, hashed or run.",
+      "Rolling documentation is not treated as frozen 4.1.3 behavior.",
+      "No independent evidence candidate passed all gates."
+    ],
+    "unknowns": [
+      "Marketplace VSIX digest and installed runtime.",
+      "Exact extension-host and platform variant.",
+      "Effective model and provider revision.",
+      "Approval mode and command classification.",
+      "Enabled tools and MCP servers.",
+      "Network destinations and credential scope.",
+      "Checkpoint state and restoration completeness.",
+      "Independent reproducible behavior evidence."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "release-auditor",
+        "label": "Release auditor",
+        "prompt": "Inspect exact Marketplace identity and unresolved runtime.",
+        "propositionIds": [
+          "identity",
+          "evaluation"
+        ]
+      },
+      {
+        "id": "authority-reviewer",
+        "label": "Authority reviewer",
+        "prompt": "Inspect tools, approval modes and recovery boundaries.",
+        "propositionIds": [
+          "capability",
+          "authority",
+          "recovery"
+        ]
+      },
+      {
+        "id": "model-reviewer",
+        "label": "Model reviewer",
+        "prompt": "Inspect model-route boundaries without inferring a default model.",
+        "propositionIds": [
+          "model",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Release",
+        "question": "Which Cline is represented?",
+        "status": "Marketplace 4.1.3; installed runtime unresolved",
+        "tone": "qualified",
+        "answer": "The official Marketplace listing identifies Cline VS Code extension 4.1.3.",
+        "whyItMatters": "The listing version does not identify a downloaded VSIX, platform runtime or model service revision.",
+        "claimIds": [
+          "com.cline.bot.vscode-extension.release-identity-4-1-3"
+        ]
+      },
+      {
+        "id": "capability",
+        "eyebrow": "Tool surface",
+        "question": "What does the publisher describe?",
+        "status": "File, terminal, browser and tool use",
+        "tone": "attention",
+        "answer": "Current publisher material describes broad IDE agent capabilities.",
+        "whyItMatters": "Useful machine access must be read with the authority configuration.",
+        "claimIds": [
+          "com.cline.bot.vscode-extension.capabilities-current-4-1-3"
+        ]
+      },
+      {
+        "id": "authority",
+        "eyebrow": "Approval",
+        "question": "When does it ask?",
+        "status": "Configuration-dependent",
+        "tone": "attention",
+        "answer": "Manual approval, selected Auto Approve categories and YOLO Mode are distinct authority cells.",
+        "whyItMatters": "Version alone does not determine action approval.",
+        "claimIds": [
+          "com.cline.bot.vscode-extension.approval-current-4-1-3"
+        ]
+      },
+      {
+        "id": "recovery",
+        "eyebrow": "Recovery",
+        "question": "What can checkpoints restore?",
+        "status": "Project-file snapshots; external effects excluded",
+        "tone": "qualified",
+        "answer": "Current docs describe shadow-Git file checkpoints and restore controls.",
+        "whyItMatters": "File recovery does not reverse every command or network side effect.",
+        "claimIds": [
+          "com.cline.bot.vscode-extension.checkpoints-current-4-1-3"
+        ]
+      },
+      {
+        "id": "model",
+        "eyebrow": "Model",
+        "question": "Which model applies?",
+        "status": "Unresolved configured route",
+        "tone": "attention",
+        "answer": "The publisher describes multiple provider and local routes, not a model fixed by 4.1.3.",
+        "whyItMatters": "Model identity and data path can move independently of the client version.",
+        "claimIds": [
+          "com.cline.bot.vscode-extension.model-routes-current-4-1-3"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was exact 4.1.3 independently evaluated?",
+        "status": "No qualifying evidence",
+        "tone": "neutral",
+        "answer": "No candidate passed every admission gate.",
+        "whyItMatters": "Publisher documentation is not observed suitability evidence.",
+        "claimIds": [
+          "com.cline.bot.vscode-extension.release-identity-4-1-3"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Official public-source claims only; no 4.1.2 exact-version claim was transferred, no artifact was run, and no independent evidence, score, ranking, recommendation or publication action is included."
+  }
+}

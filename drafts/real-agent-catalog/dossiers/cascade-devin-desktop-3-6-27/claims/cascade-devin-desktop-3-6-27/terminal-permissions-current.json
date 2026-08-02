@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin-desktop.cascade.terminal-permissions-current",
+  "slug": "terminal-permissions-current",
+  "subject": { "id": "com.cognition.devin-desktop.cascade", "name": "Cascade in Devin Desktop", "publisher": "Cognition AI, Inc.", "surface": { "kind": "desktop-app", "name": "Cascade in Devin Desktop", "slug": "cascade-devin-desktop-3-6-27" } },
+  "claim": { "category": "authority.command-execution", "statement": "Current Devin Desktop terminal documentation defines four Cascade auto-execution levels: Disabled, Allowlist Only, Auto, and Turbo; Auto uses a classifier for command-safety judgment and Turbo automatically executes commands except those on the denylist." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/desktop/terminal", "title": "Terminal", "locator": "Cascade auto-execution levels; Disabled; Allowlist Only; Auto; Turbo", "publishedAt": null, "capturedAt": "2026-08-01T22:13:40Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "conditional", "values": ["Disabled", "Allowlist Only", "Auto", "Turbo"] }, "platform": { "scope": "all", "values": [] }, "model": { "scope": "unresolved", "values": ["Auto safety classifier"] }, "deployment": { "scope": "named", "values": ["Cascade terminal authority", "Devin Local permission model excluded"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher terminal documentation." },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-09-02", "invalidatedBy": ["auto-execution-level-change", "classifier-change", "denylist-change"] },
+  "limitations": ["The page expressly distinguishes Devin Local's different permission model; this claim applies only to Cascade.", "No classifier result, prompt, command or enforcement behavior was observed."],
+  "unknowns": ["The effective auto-execution level, classifier/model revision, commands, prompt decisions and enforcement result are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

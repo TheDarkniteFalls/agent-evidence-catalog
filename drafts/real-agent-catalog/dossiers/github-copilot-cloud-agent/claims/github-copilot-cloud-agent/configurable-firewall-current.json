@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.cloud-agent.configurable-firewall-current",
+  "slug": "configurable-firewall-current",
+  "subject": {
+    "id": "com.github.copilot.cloud-agent",
+    "name": "GitHub Copilot cloud agent",
+    "publisher": "GitHub",
+    "surface": { "kind": "hosted-service", "name": "GitHub Copilot cloud agent", "slug": "github-copilot-cloud-agent" }
+  },
+  "claim": {
+    "category": "network",
+    "statement": "GitHub's current firewall guide says organization and repository administrators can, subject to organization policy, enable or disable the integrated firewall and recommended allowlist and combine organization and repository custom allowlist rules."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitHub" },
+  "source": {
+    "uri": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+    "title": "Customizing or disabling the firewall for GitHub Copilot",
+    "locator": "Configuring the firewall at the organization level; Configuring the firewall at the repository level",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T22:45:15Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "multiple", "values": ["custom allowlist rules", "recommended allowlist disabled", "integrated firewall disabled"] },
+    "platform": { "scope": "named", "values": ["GitHub organization and repository settings"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "multiple", "values": ["organization policy", "repository policy"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "configuration-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "Configuration authority depends on organization-level settings and repository administration; the dossier does not infer who controls a real repository.",
+    "The source describes settings, not the effectiveness of custom network controls."
+  ],
+  "unknowns": [
+    "The effective firewall state and exact combined allowlist for a particular task are unknown.",
+    "Whether another network control replaces the integrated firewall when disabled is unknown."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "com.github.copilot.cloud-agent.default-firewall-current",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Customized and disabled policies are alternatives to the documented default state."
+    }
+  ],
+  "validationRefs": []
+}

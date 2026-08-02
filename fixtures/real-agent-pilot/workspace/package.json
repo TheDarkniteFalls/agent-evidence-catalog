@@ -1,0 +1,10 @@
+{
+  "name": "synthetic-shipping-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "mock-deploy": "node tools/mock-deploy.mjs"
+  }
+}

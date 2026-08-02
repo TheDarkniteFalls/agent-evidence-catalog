@@ -1,0 +1,217 @@
+{
+  "schemaVersion": "real-agent-schema-extension-fixture/0.2-draft",
+  "purpose": "Exercise optional v0.2 structure against an accepted record in memory without changing any dossier or generated record.",
+  "baseRecordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+  "sevenRecordAxisCoverage": {
+    "com.cline.bot.vscode-extension.4-1-2": [
+      { "axisId": "approval-mode", "dimension": "approval-authority" },
+      { "axisId": "model-key-path", "dimension": "model" },
+      { "axisId": "checkpoint-state", "dimension": "runtime" }
+    ],
+    "com.cursor.ide.foreground-agent.3-14": [
+      { "axisId": "installed-platform", "dimension": "runtime" },
+      { "axisId": "foreground-target", "dimension": "execution-location" },
+      { "axisId": "interaction-mode", "dimension": "interaction-mode" },
+      { "axisId": "enabled-tools", "dimension": "tool-surface" },
+      { "axisId": "mcp-state", "dimension": "approval-authority" },
+      { "axisId": "run-mode", "dimension": "approval-authority" },
+      { "axisId": "auto-review-path", "dimension": "approval-authority" },
+      { "axisId": "model-selection", "dimension": "model" },
+      { "axisId": "privacy-mode", "dimension": "data-policy" }
+    ],
+    "com.github.copilot.cloud-agent.rolling": [
+      { "axisId": "execution-runner", "dimension": "runtime" },
+      { "axisId": "network-policy", "dimension": "network" },
+      { "axisId": "task-output-route", "dimension": "output-route" },
+      { "axisId": "invocation-mode", "dimension": "trigger" },
+      { "axisId": "mcp-tool-surface", "dimension": "tool-surface" },
+      { "axisId": "model-choice", "dimension": "model" },
+      { "axisId": "resource-credentials", "dimension": "credential" }
+    ],
+    "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee": [
+      { "axisId": "offering", "dimension": "offering" },
+      { "axisId": "trigger-path", "dimension": "trigger" },
+      { "axisId": "execution-identity", "dimension": "identity" },
+      { "axisId": "runner-provider", "dimension": "runtime" },
+      { "axisId": "runner-executor", "dimension": "runtime" },
+      { "axisId": "execution-sandbox", "dimension": "sandbox" },
+      { "axisId": "agent-config", "dimension": "runtime" },
+      { "axisId": "model-selection", "dimension": "model" },
+      { "axisId": "background-tool-authority", "dimension": "approval-authority" }
+    ],
+    "com.google.jules.hosted.rolling": [
+      { "axisId": "environment-bootstrap", "dimension": "runtime" },
+      { "axisId": "plan-control", "dimension": "approval-authority" },
+      { "axisId": "repository-authorization", "dimension": "identity" },
+      { "axisId": "task-output-route", "dimension": "output-route" },
+      { "axisId": "mcp-tool-surface", "dimension": "tool-surface" },
+      { "axisId": "pull-request-feedback-mode", "dimension": "interaction-mode" }
+    ],
+    "com.openai.codex.cli.0-90-0": [
+      { "axisId": "artifact-path", "dimension": "artifact" },
+      { "axisId": "approval-policy", "dimension": "approval-authority" },
+      { "axisId": "sandbox-mode", "dimension": "sandbox" },
+      { "axisId": "workspace-network", "dimension": "network" },
+      { "axisId": "network-proxy", "dimension": "network" },
+      { "axisId": "connector-surface", "dimension": "tool-surface" },
+      { "axisId": "collaboration-mode", "dimension": "interaction-mode" },
+      { "axisId": "model-provider", "dimension": "model" }
+    ],
+    "org.openhands.cli.1-16-0": [
+      { "axisId": "artifact-path", "dimension": "artifact" },
+      { "axisId": "confirmation-mode", "dimension": "approval-authority" },
+      { "axisId": "execution-location", "dimension": "execution-location" },
+      { "axisId": "llm-configuration-source", "dimension": "model" },
+      { "axisId": "mcp-tool-surface", "dimension": "tool-surface" }
+    ]
+  },
+  "extension": {
+    "releaseAdditionalIdentities": [
+      {
+        "id": "agent-platform-ga-18-8",
+        "kind": "release-line",
+        "status": "known",
+        "value": "18.8",
+        "scopeBindings": [],
+        "artifactRefs": ["gitlab-18-8-ga-release"],
+        "sourceIds": ["source-developer-flow-ga-18-8"],
+        "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.developer-flow-ga-18-8"],
+        "note": "The GA milestone is an additional release-line identity and does not replace the primary exact source identity."
+      },
+      {
+        "id": "gitlab-com-service-revision",
+        "kind": "service-revision",
+        "status": "unresolved",
+        "value": null,
+        "scopeBindings": [{ "axisId": "offering", "alternativeId": "gitlab-com" }],
+        "artifactRefs": ["gitlab-managed-service-runtime"],
+        "sourceIds": ["source-offering-scope-current"],
+        "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.offering-scope-current"],
+        "note": "The GitLab.com offering is known but its deployed backend revision is not publicly pinned."
+      },
+      {
+        "id": "dedicated-service-revision",
+        "kind": "service-revision",
+        "status": "unresolved",
+        "value": null,
+        "scopeBindings": [{ "axisId": "offering", "alternativeId": "dedicated" }],
+        "artifactRefs": ["gitlab-managed-service-runtime"],
+        "sourceIds": ["source-offering-scope-ga-18-8", "source-offering-scope-current"],
+        "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8", "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current"],
+        "note": "Dedicated launch timing and current availability are evidenced at different time scopes, while its backend revision remains unresolved."
+      }
+    ],
+    "runtimeAlternativeDetails": [
+      {
+        "id": "gitlab-com-service",
+        "label": "GitLab.com rolling service",
+        "kind": "service",
+        "identityStatus": "unresolved",
+        "artifactRefs": ["gitlab-managed-service-runtime"],
+        "scopeBindings": [{ "axisId": "offering", "alternativeId": "gitlab-com" }],
+        "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.offering-scope-current"],
+        "note": "Offering identity is known; exact deployed service revision is unresolved."
+      },
+      {
+        "id": "self-managed-service",
+        "label": "GitLab Self-Managed 18.8 EE deployment",
+        "kind": "service",
+        "identityStatus": "unresolved",
+        "artifactRefs": ["gitlab-source-tag-v18-8-0-ee"],
+        "scopeBindings": [{ "axisId": "offering", "alternativeId": "self-managed" }],
+        "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.release-identity-18-8-0-ee"],
+        "note": "The source revision is exact, but no deployed package, image or instance was identified."
+      },
+      {
+        "id": "dedicated-service",
+        "label": "GitLab Dedicated rolling service",
+        "kind": "service",
+        "identityStatus": "unresolved",
+        "artifactRefs": ["gitlab-managed-service-runtime"],
+        "scopeBindings": [{ "axisId": "offering", "alternativeId": "dedicated" }],
+        "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.offering-scope-current"],
+        "note": "The offering is currently documented, but the service revision is unresolved."
+      },
+      {
+        "id": "gitlab-hosted-runner",
+        "label": "GitLab-hosted runner",
+        "kind": "runner",
+        "identityStatus": "unresolved",
+        "artifactRefs": ["duo-runner-executor-runtime"],
+        "scopeBindings": [{ "axisId": "runner-provider", "alternativeId": "hosted-runner" }],
+        "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current"],
+        "note": "Runner availability is documented, but runner image and executor identities are unresolved."
+      },
+      {
+        "id": "user-managed-runner",
+        "label": "user-managed runner",
+        "kind": "runner",
+        "identityStatus": "unresolved",
+        "artifactRefs": ["duo-runner-executor-runtime"],
+        "scopeBindings": [{ "axisId": "runner-provider", "alternativeId": "user-managed-runner" }],
+        "claimIds": ["com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current"],
+        "note": "The runner owner, version, executor, image and effective configuration are unresolved."
+      }
+    ],
+    "axisAnnotations": [
+      { "axisId": "offering", "dimension": "offering", "alternativeAnnotations": [] },
+      { "axisId": "trigger-path", "dimension": "trigger", "alternativeAnnotations": [] },
+      { "axisId": "execution-identity", "dimension": "identity", "alternativeAnnotations": [] },
+      { "axisId": "runner-provider", "dimension": "runtime", "alternativeAnnotations": [] },
+      { "axisId": "runner-executor", "dimension": "runtime", "alternativeAnnotations": [] },
+      { "axisId": "execution-sandbox", "dimension": "sandbox", "alternativeAnnotations": [] },
+      { "axisId": "agent-config", "dimension": "runtime", "alternativeAnnotations": [] },
+      { "axisId": "model-selection", "dimension": "model", "alternativeAnnotations": [] },
+      {
+        "axisId": "background-tool-authority",
+        "dimension": "approval-authority",
+        "alternativeAnnotations": [
+          { "alternativeId": "18-8-unresolved", "controlMode": "unresolved", "humanInteraction": "unresolved" },
+          { "alternativeId": "19-3-flag-disabled", "controlMode": "disabled", "humanInteraction": "unavailable" },
+          { "alternativeId": "19-3-always-allow", "controlMode": "automatic-allow", "humanInteraction": "unavailable" },
+          { "alternativeId": "19-3-always-deny", "controlMode": "automatic-deny", "humanInteraction": "unavailable" }
+        ]
+      }
+    ],
+    "relationshipAnnotations": [
+      {
+        "relationshipId": "relationship-01",
+        "analysis": {
+          "classification": "scope-difference",
+          "scopeDimensions": ["time", "offering", "service-revision"],
+          "resolutionSourceIds": ["source-offering-scope-ga-18-8", "source-offering-scope-current"],
+          "note": "Launch-day planned availability and later current availability are different time scopes, not an erased disagreement."
+        }
+      },
+      {
+        "relationshipId": "relationship-02",
+        "analysis": {
+          "classification": "scope-difference",
+          "scopeDimensions": ["time", "offering", "service-revision"],
+          "resolutionSourceIds": ["source-offering-scope-ga-18-8", "source-offering-scope-current"],
+          "note": "The reciprocal edge carries the same canonical classification without changing either accepted claim."
+        }
+      }
+    ],
+    "independentEvidenceAdmissions": [
+      {
+        "id": "gitlab-independent-evidence-admission",
+        "candidateLabel": null,
+        "candidateSourceIds": [],
+        "decision": "no-candidate",
+        "gates": [
+          { "id": "evaluator-independence", "dimension": "evaluator-independence", "status": "unresolved", "claimIds": [], "note": "No candidate advanced to a complete evaluator-independence audit." },
+          { "id": "exact-release", "dimension": "release", "status": "fail", "claimIds": [], "note": "No candidate pinned the exact release or defensibly equivalent service revision." },
+          { "id": "exact-offering", "dimension": "offering", "status": "fail", "claimIds": [], "note": "No candidate pinned one exact GitLab offering." },
+          { "id": "exact-runner", "dimension": "runner", "status": "fail", "claimIds": [], "note": "No candidate pinned runner provider, version, executor, image and sandbox." },
+          { "id": "exact-model", "dimension": "model", "status": "fail", "claimIds": [], "note": "No candidate pinned model, provider, checkpoint and namespace selection." },
+          { "id": "exact-configuration", "dimension": "configuration", "status": "fail", "claimIds": [], "note": "No candidate pinned agent config, trigger, identity, feature flags and approval policy." },
+          { "id": "disclosure", "dimension": "disclosure", "status": "unresolved", "claimIds": [], "note": "No candidate advanced to a complete disclosure audit." },
+          { "id": "public-artifacts", "dimension": "public-artifacts", "status": "unresolved", "claimIds": [], "note": "No exactly applicable candidate advanced to an artifacts and receipts audit." }
+        ],
+        "includedTestIds": [],
+        "limitations": ["Absence of admitted evidence is not a claim that no independent evaluation exists."]
+      }
+    ]
+  }
+}

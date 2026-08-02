@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.google.jules.hosted.mcp-support-2026-02-02",
+  "slug": "mcp-support-2026-02-02",
+  "subject": {
+    "id": "com.google.jules.hosted",
+    "name": "Google Jules",
+    "publisher": "Google",
+    "surface": { "kind": "hosted-service", "name": "Jules", "slug": "google-jules" }
+  },
+  "claim": {
+    "category": "interoperability",
+    "statement": "Google's dated 2 February 2026 Jules changelog says selected MCP service connections can be configured with API-key authentication and Jules can trigger their tools when it detects a need during a session."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Google" },
+  "source": {
+    "uri": "https://jules.google/docs/changelog/2026-02-02/",
+    "title": "MCP support comes to Jules",
+    "locator": "Overview; Getting started; Focus on Security",
+    "publishedAt": "2026-02-02T00:00:00Z",
+    "capturedAt": "2026-07-31T23:24:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "2026-02-02 MCP support milestone" },
+    "configuration": { "scope": "named", "values": ["selected supported MCP service connected with API key"] },
+    "platform": { "scope": "named", "values": ["Google-hosted Jules service"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["Jules session with configured MCP connection"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-02-02", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "product-surface-change", "configuration-change", "manual-review"]
+  },
+  "limitations": [
+    "The dated launch entry names an initial server set but is not treated as a current exhaustive compatibility list.",
+    "The publisher's statements about data flow and permission review are not an independent security evaluation."
+  ],
+  "unknowns": [
+    "The currently supported MCP servers, enabled tools, permissions, data destinations and credential handling for a real account are unknown.",
+    "Which tool calls Jules would autonomously select, and with what side effects, was not tested."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

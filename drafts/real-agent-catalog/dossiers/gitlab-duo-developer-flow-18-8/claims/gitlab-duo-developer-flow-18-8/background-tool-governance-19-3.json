@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.background-tool-governance-19-3",
+  "slug": "background-tool-governance-19-3",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "authority.tool-governance",
+    "statement": "GitLab's current beta documentation says tool-governance enforcement for background flows such as Duo Developer was added in GitLab 19.3 behind a disabled-by-default feature flag; background flows support Always Allow and Always Deny, not Always Ask, and an unconfigured background rule defaults to Always Allow."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/agents/tool-governance/",
+    "title": "Agent tool governance",
+    "locator": "History, background-flow enforcement and Known issues",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "19.3 beta" },
+    "configuration": { "scope": "alternatives", "values": ["duo_workflow_background_tool_governance disabled", "Always Allow", "Always Deny", "unconfigured background rule defaults to Always Allow"] },
+    "platform": { "scope": "named", "values": ["background Developer Flow"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "configuration-dependent", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-07-16", "reason": "Background enforcement introduced as a feature-flagged beta after the dossier's 18.8 anchor." },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-08-31",
+    "invalidatedBy": ["beta-change", "feature-flag-change", "background-approval-change", "default-policy-change"]
+  },
+  "limitations": [
+    "This claim postdates GitLab 18.8 and does not establish 18.8 approval behavior.",
+    "Always Ask does not apply to the background path because no user is present to answer an inline prompt."
+  ],
+  "unknowns": [
+    "The tool-authority policy used by Developer Flow in GitLab 18.8 remains unresolved.",
+    "The effective 19.3 feature flag and group or project rules for any execution are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

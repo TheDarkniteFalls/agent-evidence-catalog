@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.release-identity-2-1-117",
+  "slug": "release-identity-2-1-117",
+  "subject": { "id": "com.anthropic.claude-code.cli", "name": "Claude Code CLI", "publisher": "Anthropic PBC", "surface": { "kind": "cli", "name": "Claude Code CLI", "slug": "anthropic-claude-code-cli-2-1-117" } },
+  "claim": { "category": "identity.release", "statement": "Anthropic's GitHub release page identifies Claude Code v2.1.117, published on April 22, 2026, and links commit 2fa67717b8046c253cfa55fd84002e3501f1eca6." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Anthropic PBC" },
+  "source": { "uri": "https://github.com/anthropics/claude-code/releases/tag/v2.1.117", "title": "Release v2.1.117", "locator": "release heading, publication time, and linked commit", "publishedAt": "2026-04-22T00:04:00Z", "capturedAt": "2026-08-01T06:18:27Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "2.1.117" }, "configuration": { "scope": "unresolved", "values": [] }, "platform": { "scope": "unresolved", "values": [] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["local Claude Code CLI client with hosted model route"] } },
+  "lifecycle": { "status": "historical", "changedAt": null, "reason": "Later Claude Code releases exist; this claim remains exact to 2.1.117." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-11-01", "invalidatedBy": ["release-page-correction", "tag-or-commit-retagging"] },
+  "limitations": ["The release page does not identify a downloaded platform asset or binary digest."],
+  "unknowns": ["The installed asset, architecture, package manager and source-to-binary digest are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

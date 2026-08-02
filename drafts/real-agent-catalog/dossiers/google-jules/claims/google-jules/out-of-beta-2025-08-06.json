@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.google.jules.hosted.out-of-beta-2025-08-06",
+  "slug": "out-of-beta-2025-08-06",
+  "subject": {
+    "id": "com.google.jules.hosted",
+    "name": "Google Jules",
+    "publisher": "Google",
+    "surface": { "kind": "hosted-service", "name": "Jules", "slug": "google-jules" }
+  },
+  "claim": {
+    "category": "identity",
+    "statement": "Google's dated 6 August 2025 Jules changelog says Jules was no longer in beta on that date."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Google" },
+  "source": {
+    "uri": "https://jules.google/docs/changelog/2025-08-06/",
+    "title": "Jules is out of beta!",
+    "locator": "Dated heading; Overview, first paragraph",
+    "publishedAt": "2025-08-06T00:00:00Z",
+    "capturedAt": "2026-07-31T23:24:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "2025-08-06 out-of-beta milestone" },
+    "configuration": { "scope": "unspecified", "values": [] },
+    "platform": { "scope": "named", "values": ["Google-hosted Jules service"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["Jules web service"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2025-08-06", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "claimant-withdrawal", "product-surface-change", "contradictory-source", "manual-review"]
+  },
+  "limitations": [
+    "The dated milestone establishes a publisher statement about lifecycle, not a backend build or immutable service artifact.",
+    "The current FAQ uses a conflicting Public Beta label; the catalog has not found a publisher correction that resolves the relationship."
+  ],
+  "unknowns": [
+    "Whether Google intended the current FAQ to supersede, qualify or accidentally regress the 2025 lifecycle statement is unknown.",
+    "The exact service implementation deployed on 6 August 2025 is unknown."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "com.google.jules.hosted.public-beta-current",
+      "extent": "full",
+      "status": "active",
+      "resolution": null,
+      "note": "The dated publisher statement says Jules is no longer in beta, while the current publisher FAQ says Jules is in Public Beta; no attributable correction or scope explanation resolves the lifecycle disagreement."
+    }
+  ],
+  "validationRefs": []
+}
+

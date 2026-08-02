@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.app-server-remote-host-0-146-0",
+  "slug": "app-server-remote-host-0-146-0",
+  "subject": { "id": "com.openai.codex.cli", "name": "OpenAI Codex CLI", "publisher": "OpenAI", "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-146-0" } },
+  "claim": { "category": "deployment.app-server", "statement": "The 0.146.0 release announces app-server support for connecting remote Code Mode hosts over WebSocket; this is an app-server or remote-host path and is not evidence that an ordinary local CLI terminal session executes remotely." },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": { "uri": "https://github.com/openai/codex/releases/tag/rust-v0.146.0", "title": "OpenAI Codex 0.146.0 release", "locator": "New features: app-server remote Code Mode hosts over WebSocket", "publishedAt": "2026-07-29T01:42:51Z", "capturedAt": "2026-08-02T01:40:08Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "0.146.0" }, "configuration": { "scope": "alternatives", "values": ["app-server remote host unconfigured", "app-server remote Code Mode host over WebSocket"] }, "platform": { "scope": "unspecified", "values": [] }, "model": { "scope": "unspecified", "values": [] }, "deployment": { "scope": "named", "values": ["Codex app-server companion surface", "remote Code Mode host"] } },
+  "lifecycle": { "status": "active", "changedAt": "2026-07-29", "reason": null },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-10-31", "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "transport-change", "manual-review"] },
+  "limitations": ["The release note identifies support, not an observed remote-host deployment or its transport security.", "The app-server path is a companion surface with a different runtime and transport boundary from local CLI terminal execution."],
+  "unknowns": ["Whether app-server is used, the remote host identity, transport authentication, TLS, network reachability, execution placement and tool authority are unknown."],
+  "relationships": [
+    { "targetClaimId": "com.openai.codex.cli.local-cli-delivery-0-146-0", "type": "scope-differs", "extent": "full", "status": "resolved", "resolution": "scope-difference", "analysis": { "classification": "scope-difference", "scopeDimensions": ["offering", "runtime"], "resolutionSourceIds": [], "note": "The release distinguishes local CLI delivery from the app-server remote-host companion path." }, "note": "Remote app-server support must not be transferred to ordinary local CLI terminal behavior." }
+  ],
+  "validationRefs": []
+}

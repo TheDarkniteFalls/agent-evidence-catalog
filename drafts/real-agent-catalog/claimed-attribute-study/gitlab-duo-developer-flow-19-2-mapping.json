@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "claimed-attribute-mapping/0.1-study-extension",
+  "status": "unpublished-current-record-overlay",
+  "taxonomyPath": "taxonomy.json",
+  "baseMappingPath": "mapping.json",
+  "priorOverlayPath": "openai-codex-cli-0-146-0-mapping.json",
+  "asOf": "2026-08-02",
+  "mappingRule": "This additive mapping uses the completed taxonomy unchanged. The states array follows taxonomy.attributeOrder exactly, evidence references stay within this record, conditional states retain named applicability boundaries, and no independent-test credit or suitability calculation is introduced.",
+  "records": [
+    {
+      "recordId": "com.gitlab.duo.developer-flow.19-2",
+      "comparisonFrame": "repository-integrated",
+      "states": [
+        "unknown",
+        "claimed",
+        "conditional",
+        "unknown",
+        "unknown",
+        "conditional",
+        "unknown",
+        "claimed",
+        "unknown",
+        "unknown",
+        "unknown",
+        "conditional",
+        "unknown",
+        "claimed",
+        "claimed",
+        "conditional",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "unknown"
+      ],
+      "evidence": {
+        "cap.file-modify": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.purpose-current-19-2"
+          ]
+        },
+        "cap.command-execution": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.execution-current-19-2"
+          ],
+          "axisIds": [
+            "execution-runtime"
+          ]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.model-current-19-2"
+          ],
+          "axisIds": [
+            "model-route"
+          ]
+        },
+        "cap.background-or-async-execution": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.agentic-chat-handoff-19-2",
+            "com.gitlab.duo.developer-flow.execution-current-19-2"
+          ]
+        },
+        "cap.environment-bootstrap": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.project-configuration-current-19-2"
+          ],
+          "axisIds": [
+            "project-instructions"
+          ]
+        },
+        "cap.native-pull-request-output": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.purpose-current-19-2",
+            "com.gitlab.duo.developer-flow.output-current-19-2"
+          ]
+        },
+        "cap.native-pull-request-feedback": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.purpose-current-19-2",
+            "com.gitlab.duo.developer-flow.output-current-19-2"
+          ],
+          "note": "Credit is limited to publisher-documented merge-request iteration, conflict resolution and merge-request updates."
+        },
+        "authority.action-confirmation": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.agentic-chat-handoff-19-2"
+          ],
+          "axisIds": [
+            "handoff-approval"
+          ],
+          "note": "This is only the Agentic Chat handoff gate, not per-step action approval."
+        },
+        "authority.repository-scope": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.prerequisites-current-19-2"
+          ],
+          "axisIds": [
+            "offering"
+          ]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.execution-current-19-2"
+          ],
+          "axisIds": [
+            "execution-runtime"
+          ],
+          "note": "Credit is limited to documented environment variables and identity tokens within the selected runner path."
+        },
+        "authority.execution-principal": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.triggers-current-19-2",
+            "com.gitlab.duo.developer-flow.prerequisites-current-19-2"
+          ],
+          "axisIds": [
+            "trigger"
+          ]
+        },
+        "authority.execution-environment-selection": {
+          "claimIds": [
+            "com.gitlab.duo.developer-flow.execution-current-19-2"
+          ],
+          "axisIds": [
+            "execution-runtime"
+          ]
+        }
+      }
+    }
+  ]
+}

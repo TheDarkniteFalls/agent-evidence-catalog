@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.release-artifacts-0-146-0",
+  "slug": "release-artifacts-0-146-0",
+  "subject": { "id": "com.openai.codex.cli", "name": "OpenAI Codex CLI", "publisher": "OpenAI", "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-146-0" } },
+  "claim": { "category": "identity.artifact", "statement": "OpenAI's release API for rust-v0.146.0 publishes SHA-256 digests for release assets including codex-npm-0.146.0.tgz and config-schema.json." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "OpenAI" },
+  "source": { "uri": "https://api.github.com/repos/openai/codex/releases/tags/rust-v0.146.0", "title": "GitHub release API metadata for OpenAI Codex 0.146.0", "locator": "assets entries for codex-npm-0.146.0.tgz and config-schema.json", "publishedAt": "2026-07-29T01:42:51Z", "capturedAt": "2026-08-02T01:40:08Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "0.146.0" }, "configuration": { "scope": "alternatives", "values": ["npm release asset", "configuration-schema release asset"] }, "platform": { "scope": "unspecified", "values": [] }, "model": { "scope": "unspecified", "values": [] }, "deployment": { "scope": "named", "values": ["GitHub release assets"] } },
+  "lifecycle": { "status": "active", "changedAt": "2026-07-29", "reason": null },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-10-31", "invalidatedBy": ["source-unavailable", "claimant-correction", "release-asset-replacement", "manual-review"] },
+  "limitations": ["These are publisher-supplied digests from release metadata.", "The catalog did not download an asset or independently recompute any digest."],
+  "unknowns": ["Whether any listed asset is the artifact installed or invoked by a real session remains unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

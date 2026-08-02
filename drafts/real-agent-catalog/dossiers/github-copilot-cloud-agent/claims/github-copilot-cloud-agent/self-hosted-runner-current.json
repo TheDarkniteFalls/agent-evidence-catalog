@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.cloud-agent.self-hosted-runner-current",
+  "slug": "self-hosted-runner-current",
+  "subject": {
+    "id": "com.github.copilot.cloud-agent",
+    "name": "GitHub Copilot cloud agent",
+    "publisher": "GitHub",
+    "surface": { "kind": "hosted-service", "name": "GitHub Copilot cloud agent", "slug": "github-copilot-cloud-agent" }
+  },
+  "claim": {
+    "category": "delivery",
+    "statement": "GitHub's current environment guide says Copilot cloud agent can run on self-hosted GitHub Actions runners, recommends ephemeral single-use runners, limits compatibility to Ubuntu x64 or Windows 64-bit, and requires the integrated firewall to be disabled because it is incompatible with self-hosted runners."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitHub" },
+  "source": {
+    "uri": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment?tool=webui",
+    "title": "Configure the development environment",
+    "locator": "Using self-hosted GitHub Actions runners; compatibility note and step 2",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T22:45:15Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "multiple", "values": ["self-hosted GitHub Actions runner", "integrated firewall disabled"] },
+    "platform": { "scope": "multiple", "values": ["Ubuntu x64", "Windows 64-bit"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["self-hosted runner configuration"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "configuration-change", "platform-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "The guide recommends single-use runners but does not establish that every self-hosted deployment follows the recommendation.",
+    "The catalog did not inspect a self-hosted runner, network control or task."
+  ],
+  "unknowns": [
+    "The runner owner, lifecycle, image, persistence, network segmentation and access to internal resources are unknown.",
+    "The external firewall or other network controls used after disabling the integrated firewall are unknown."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "com.github.copilot.cloud-agent.ephemeral-actions-environment-current",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Self-hosted execution is a named alternative to the GitHub-hosted environment and must retain its different infrastructure boundary."
+    }
+  ],
+  "validationRefs": []
+}

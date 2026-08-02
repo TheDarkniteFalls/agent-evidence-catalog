@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Evidence-boundary comparison for eleven unpublished real-agent dossiers.">
+  <title>Compare unpublished real-agent evidence · Agent Evidence Catalog</title>
+  <link rel="stylesheet" href="styles.css?v=discovery1">
+</head>
+<body data-page="compare">
+  <a class="skip-link" href="#main">Skip to comparison</a>
+  <header class="site-header">
+    <a class="brand" href="browse.html">Agent Evidence Catalog <small>research draft</small></a>
+    <nav aria-label="Pilot navigation">
+      <a href="browse.html">Browse</a>
+      <a class="active" aria-current="page" href="compare.html">Compare</a>
+      <a href="detail.html">Details</a>
+      <a href="../../cline-vscode-extension/catalog-pilot/compare.html">Cline baseline</a>
+    </nav>
+  </header>
+  <aside class="boundary-banner" aria-label="Research boundary">
+    <strong>Comparison is descriptive.</strong> Identity, scope and unknowns come first; no product result, winner or recommendation exists.
+  </aside>
+  <main id="main" class="comparison-main">
+    <section class="hero compact-hero" aria-labelledby="compare-title">
+      <p class="eyebrow">Exact records · scoped claims · zero independent tests</p>
+      <h1 id="compare-title">Compare what the evidence can actually say.</h1>
+      <p id="comparisonIntro">Shortlisted records are compared without transferring claims across versions, surfaces or configurations.</p>
+    </section>
+    <section id="comparisonHeader" class="comparison-header" aria-label="Compared exact records"></section>
+    <section aria-labelledby="identity-title">
+      <div class="section-heading comparison-controls">
+        <div><p class="eyebrow">Start here</p><h2 id="identity-title">Identity, applicability and evidence boundaries</h2></div>
+        <label class="difference-toggle"><input id="differencesOnly" type="checkbox"> <span>Show differences only</span></label>
+      </div>
+      <div id="comparisonTable" class="comparison-table-wrap"></div>
+    </section>
+    <section class="configuration-section" aria-labelledby="configuration-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Do not collapse the alternatives</p><h2 id="configuration-title">Configuration-dependent authority</h2><p>Each axis retains its mutually scoped alternatives and exact supporting claim links.</p></div>
+      </div>
+      <div id="configurationComparison" class="configuration-comparison"></div>
+    </section>
+  </main>
+  <footer><p>Publisher-attributed public claims only. No represented agent was installed, run or independently tested.</p></footer>
+  <script src="catalog-data.js"></script>
+  <script src="discovery-data.js"></script>
+  <script src="discovery-expanded-data.js"></script>
+  <script src="app.js?v=discovery1"></script>
+</body>
+</html>

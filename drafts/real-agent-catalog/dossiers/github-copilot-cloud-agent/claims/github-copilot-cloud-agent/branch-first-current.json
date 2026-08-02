@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.cloud-agent.branch-first-current",
+  "slug": "branch-first-current",
+  "subject": {
+    "id": "com.github.copilot.cloud-agent",
+    "name": "GitHub Copilot cloud agent",
+    "publisher": "GitHub",
+    "surface": { "kind": "hosted-service", "name": "GitHub Copilot cloud agent", "slug": "github-copilot-cloud-agent" }
+  },
+  "claim": {
+    "category": "authority.change",
+    "statement": "GitHub's current service overview says GitHub.com agent entry points can have Copilot research, plan and make code changes on a branch before a pull request is created, while other entry points or an explicit prompt can request a pull request directly."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitHub" },
+  "source": {
+    "uri": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent",
+    "title": "About GitHub Copilot cloud agent",
+    "locator": "Overview of Copilot cloud agent; When you delegate tasks list; Limitations",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T22:45:15Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "multiple", "values": ["branch-first route", "direct pull-request route"] },
+    "platform": { "scope": "multiple", "values": ["GitHub.com agent entry points", "GitHub Issues", "Visual Studio Code"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "multiple", "values": ["branch without initial pull request", "direct pull request"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "product-surface-change", "configuration-change", "manual-review"]
+  },
+  "limitations": [
+    "The statement describes route options and does not establish which route a particular prompt or integration will use.",
+    "The catalog did not delegate a task or observe a branch, commit or pull request."
+  ],
+  "unknowns": [
+    "The selected entry point, prompt, branch, pull-request state and iteration history of a real task are unknown.",
+    "The exact repository permissions and branch protections applied to a task are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

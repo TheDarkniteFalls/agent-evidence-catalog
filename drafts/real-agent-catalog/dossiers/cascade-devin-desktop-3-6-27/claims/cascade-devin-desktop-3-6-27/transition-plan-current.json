@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin-desktop.cascade.transition-plan-current",
+  "slug": "transition-plan-current",
+  "subject": { "id": "com.cognition.devin-desktop.cascade", "name": "Cascade in Devin Desktop", "publisher": "Cognition AI, Inc.", "surface": { "kind": "desktop-app", "name": "Cascade in Devin Desktop", "slug": "cascade-devin-desktop-3-6-27" } },
+  "claim": { "category": "identity.transition-plan", "statement": "Cognition's Devin Desktop FAQ says the renamed Desktop product retains the IDE/editor and features, distinguishes Devin Cloud as a separate product, and states that existing Cascade would remain available through July." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/desktop/devin-desktop-faq", "title": "Devin Desktop FAQ", "locator": "What is Devin Desktop?; what happens to Windsurf?; Cascade availability; Devin Cloud distinction", "publishedAt": null, "capturedAt": "2026-08-01T22:13:40Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["Windsurf-to-Devin Desktop transition", "existing Cascade through July"] }, "platform": { "scope": "all", "values": [] }, "model": { "scope": "not-applicable", "values": [] }, "deployment": { "scope": "named", "values": ["Devin Desktop", "Devin Cloud excluded"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Current FAQ preserves a dated transition plan without a service-revision identifier." },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-08-16", "invalidatedBy": ["faq-change", "cascade-service-retirement-notice", "publisher-transition-clarification"] },
+  "limitations": ["The July statement is a planned availability boundary, not proof that Cascade ceased service.", "The FAQ's Desktop and Cloud distinction prevents transferring this local-client evidence to hosted Devin."],
+  "unknowns": ["Whether the planned Cascade transition schedule changed, and Cascade's post-July service status or revision, are unresolved."],
+  "relationships": [{ "type": "contradicts", "targetClaimId": "com.cognition.devin-desktop.cascade.surface-current", "extent": "partial", "status": "active", "resolution": null, "note": "The FAQ planned existing Cascade availability through July, while current post-July documentation still lists Cascade as a Devin Desktop local agent; no attributable correction or scope explanation resolves the timing." }],
+  "validationRefs": []
+}

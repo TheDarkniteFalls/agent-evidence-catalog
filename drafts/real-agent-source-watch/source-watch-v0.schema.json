@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-evidence-catalog.example/drafts/real-agent-source-watch/source-watch-v0.schema.json",
+  "title": "Unpublished real-agent primary-source watch registry",
+  "description": "A read-only maintenance registry. Source changes are review signals, never evidence claims or observed product behaviour.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "artifactType",
+    "unpublished",
+    "readOnly",
+    "asOf",
+    "boundaries",
+    "cadencePolicies",
+    "surfaces",
+    "sources"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "real-agent-source-watch/0.1-draft" },
+    "artifactType": { "const": "unpublished-primary-source-watch-registry" },
+    "unpublished": { "const": true },
+    "readOnly": { "const": true },
+    "asOf": { "$ref": "#/$defs/date" },
+    "boundaries": { "$ref": "#/$defs/boundaries" },
+    "cadencePolicies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["daily", "weekly", "monthly", "quarterly"],
+      "properties": {
+        "daily": { "$ref": "#/$defs/cadencePolicy" },
+        "weekly": { "$ref": "#/$defs/cadencePolicy" },
+        "monthly": { "$ref": "#/$defs/cadencePolicy" },
+        "quarterly": { "$ref": "#/$defs/cadencePolicy" }
+      }
+    },
+    "surfaces": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": { "$ref": "#/$defs/surface" }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 16,
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$",
+      "maxLength": 240
+    },
+    "nullableId": {
+      "type": ["string", "null"],
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$",
+      "maxLength": 240
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 200
+    },
+    "text": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "shortText": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "date": { "type": "string", "format": "date" },
+    "nullableDate": { "type": ["string", "null"], "format": "date" },
+    "uri": { "type": "string", "format": "uri", "maxLength": 2000 },
+    "cadence": { "enum": ["daily", "weekly", "monthly", "quarterly"] },
+    "sourceType": {
+      "enum": [
+        "release-feed",
+        "immutable-release",
+        "download-page",
+        "rolling-documentation",
+        "service-changelog",
+        "security-source",
+        "lifecycle-notice"
+      ]
+    },
+    "changeClassification": {
+      "enum": [
+        "release-available",
+        "rolling-documentation-changed",
+        "possible-rename",
+        "possible-discontinuation",
+        "applicability-review-needed"
+      ]
+    },
+    "boundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "acceptedEvidenceModified",
+        "claimsInferred",
+        "replacementDossiersCreated",
+        "sourceChangeIsProductObservation",
+        "networkWritesAllowed",
+        "note"
+      ],
+      "properties": {
+        "acceptedEvidenceModified": { "const": false },
+        "claimsInferred": { "const": false },
+        "replacementDossiersCreated": { "const": false },
+        "sourceChangeIsProductObservation": { "const": false },
+        "networkWritesAllowed": { "const": false },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "cadencePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["automated", "purpose", "allowedOutput", "humanBoundary"],
+      "properties": {
+        "automated": { "type": "boolean" },
+        "purpose": { "$ref": "#/$defs/text" },
+        "allowedOutput": { "$ref": "#/$defs/text" },
+        "humanBoundary": { "$ref": "#/$defs/text" }
+      }
+    },
+    "surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recordId", "surfaceKey", "publisher", "product", "surface", "deliveryModel", "sourceIds"],
+      "properties": {
+        "recordId": { "$ref": "#/$defs/id" },
+        "lifecycleRecordIds": {
+          "description": "Optional complete ordered lifecycle chain for a surface whose accepted pilot anchor is recordId.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "currentLifecycleRecordId": {
+          "description": "Optional current lifecycle record when it differs from the accepted pilot anchor.",
+          "$ref": "#/$defs/nullableId"
+        },
+        "surfaceKey": { "$ref": "#/$defs/id" },
+        "publisher": { "$ref": "#/$defs/shortText" },
+        "product": { "$ref": "#/$defs/shortText" },
+        "surface": { "$ref": "#/$defs/shortText" },
+        "deliveryModel": { "enum": ["local", "hybrid", "hosted"] },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/slug" }
+        }
+      }
+    },
+    "sourceOwner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "name", "canonicalDomains"],
+      "properties": {
+        "kind": { "const": "publisher" },
+        "name": { "$ref": "#/$defs/shortText" },
+        "canonicalDomains": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/shortText" }
+        }
+      }
+    },
+    "applicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recordIds", "surfaceKeys", "scopeNote"],
+      "properties": {
+        "recordIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "surfaceKeys": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "scopeNote": { "$ref": "#/$defs/text" }
+      }
+    },
+    "lastObservedChange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["date", "summary"],
+      "properties": {
+        "date": { "$ref": "#/$defs/nullableDate" },
+        "summary": { "$ref": "#/$defs/text" }
+      }
+    },
+    "contentFingerprint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "normalization", "value"],
+      "properties": {
+        "algorithm": { "const": "sha256" },
+        "normalization": { "const": "source-watch-normalized-response-v1" },
+        "value": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "uri",
+        "sourceType",
+        "owner",
+        "publisherControlled",
+        "applicability",
+        "expectedReviewCadence",
+        "lastCheckedDate",
+        "lastObservedChange",
+        "contentFingerprint",
+        "changeClassification",
+        "requiresHumanEvidenceReviewOnChange"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "title": { "$ref": "#/$defs/shortText" },
+        "uri": { "$ref": "#/$defs/uri" },
+        "sourceType": { "$ref": "#/$defs/sourceType" },
+        "owner": { "$ref": "#/$defs/sourceOwner" },
+        "publisherControlled": { "const": true },
+        "applicability": { "$ref": "#/$defs/applicability" },
+        "expectedReviewCadence": { "$ref": "#/$defs/cadence" },
+        "lastCheckedDate": { "$ref": "#/$defs/date" },
+        "lastObservedChange": { "$ref": "#/$defs/lastObservedChange" },
+        "contentFingerprint": { "$ref": "#/$defs/contentFingerprint" },
+        "changeClassification": { "$ref": "#/$defs/changeClassification" },
+        "requiresHumanEvidenceReviewOnChange": { "const": true }
+      }
+    }
+  }
+}

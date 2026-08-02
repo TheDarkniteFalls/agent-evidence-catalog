@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.cli-surface-current",
+  "slug": "cli-surface-current",
+  "subject": { "id": "com.anthropic.claude-code.cli", "name": "Claude Code CLI", "publisher": "Anthropic PBC", "surface": { "kind": "cli", "name": "Claude Code CLI", "slug": "anthropic-claude-code-cli-2-1-117" } },
+  "claim": { "category": "surface.capability", "statement": "Anthropic's current overview describes the terminal Claude Code CLI as a full-featured surface that can edit files, run commands and manage a project from the command line." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Anthropic PBC" },
+  "source": { "uri": "https://code.claude.com/docs/en/overview", "title": "Claude Code overview", "locator": "Get started — Terminal", "publishedAt": null, "capturedAt": "2026-08-01T06:18:27Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["terminal CLI surface"] }, "platform": { "scope": "named", "values": ["macOS", "Linux", "WSL", "Windows"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["local client with hosted or configured model provider"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["overview-change", "surface-retirement"] },
+  "limitations": ["The current overview is not an exact-version behavior receipt for 2.1.117."],
+  "unknowns": ["Which documented capabilities and installation paths apply unchanged to 2.1.117 are unresolved."],
+  "relationships": [],
+  "validationRefs": []
+}

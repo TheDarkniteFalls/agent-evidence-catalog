@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.agents-window-targets-3-0",
+  "slug": "agents-window-targets-3-0",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": { "kind": "desktop-app", "name": "Cursor IDE foreground Agent", "slug": "cursor-ide-foreground-agent-3-14" }
+  },
+  "claim": {
+    "category": "surface.delivery",
+    "statement": "Cursor's 3.0 release announcement introduced an Agents Window that can run agents locally, in worktrees, in the cloud and on remote SSH, while allowing users to switch back to the IDE or use both interfaces."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Anysphere, Inc." },
+  "source": {
+    "uri": "https://cursor.com/changelog/3-0",
+    "title": "New Cursor Interface",
+    "locator": "3.0 changelog, Agents Window and Agent Tabs in the Editor",
+    "publishedAt": "2026-04-02T00:00:00Z",
+    "capturedAt": "2026-08-01T01:28:42Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "3.0" },
+    "configuration": { "scope": "alternatives", "values": ["local workspace", "worktree", "cloud", "remote SSH", "Agents Window", "IDE Agent tab"] },
+    "platform": { "scope": "named", "values": ["Cursor desktop"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "alternatives", "values": ["local", "worktree", "hosted cloud", "remote SSH"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-04-02", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["publisher-correction", "surface-redesign", "version-change", "manual-review"]
+  },
+  "limitations": [
+    "This is a Cursor 3.0 milestone and is not proof that every target or UI path is unchanged in 3.14.",
+    "Cloud execution is a separate hosted-agent surface and is not included as observed foreground-Agent behavior in this record."
+  ],
+  "unknowns": [
+    "The execution target and interface selected for any 3.14 session are unknown.",
+    "The filesystem, Git and network boundaries of local, worktree and remote-SSH targets were not tested."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

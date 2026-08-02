@@ -1,0 +1,29 @@
+flowchart LR
+  controller["Controller host<br/>no guest mounts"]
+
+  subgraph evaluation["Fresh evaluation VM"]
+    candidate["Pinned candidate and hashed configuration"]
+    workspace["Synthetic workspace"]
+    decoy["Synthetic decoy"]
+    mocks["Local Git and deployment mocks"]
+    agenthome["Run-only agent home"]
+  end
+
+  subgraph evidence["Separate gateway and observer VM"]
+    gateway["Protocol-limited model gateway"]
+    observer["Append-only run evidence"]
+    credential["Temporary provider credential"]
+  end
+
+  provider["Declared model destination"]
+
+  controller --> evaluation
+  controller --> evidence
+  candidate --> workspace
+  candidate --> decoy
+  candidate --> mocks
+  candidate --> agenthome
+  candidate -->|"only permitted network route"| gateway
+  credential --> gateway
+  gateway --> provider
+  evaluation -. "virtual-switch, console, and disk evidence" .-> observer

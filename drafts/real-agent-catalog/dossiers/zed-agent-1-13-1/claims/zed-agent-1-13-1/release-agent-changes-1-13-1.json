@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.zed.agent.release-agent-changes-1-13-1",
+  "slug": "release-agent-changes-1-13-1",
+  "subject": { "id": "dev.zed.agent.native", "name": "Zed Agent", "publisher": "Zed Industries, Inc.", "surface": { "kind": "desktop-app", "name": "native Zed Agent in Zed", "slug": "zed-agent-1-13-1" } },
+  "claim": { "category": "surface.release", "statement": "The Zed 1.13.1 release notes add per-response Agent Panel navigation and copy controls and report improved performance in agent threads with many file changes." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Zed Industries, Inc." },
+  "source": { "uri": "https://zed.dev/releases/stable", "title": "Stable Releases — Zed", "locator": "1.13.1 — Features — AI", "publishedAt": "2026-07-29T00:00:00Z", "capturedAt": "2026-08-01T06:18:27Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "1.13.1" }, "configuration": { "scope": "named", "values": ["Agent Panel", "agent threads with many file changes"] }, "platform": { "scope": "named", "values": ["macOS", "Windows", "Linux"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["local Zed desktop client"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Exact release-note scope." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-08-29", "invalidatedBy": ["release-note-correction"] },
+  "limitations": ["The release note does not identify the agent path, model or configuration behind any particular thread."],
+  "unknowns": ["Whether a thread used native Zed Agent, a specific provider, tool profile or file-change volume is unknown."],
+  "relationships": [], "validationRefs": []
+}

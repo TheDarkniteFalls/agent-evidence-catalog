@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.replit.agent.hosted.model-selection-current",
+  "slug": "model-selection-current",
+  "subject": { "id": "com.replit.agent.hosted", "name": "Replit Agent", "publisher": "Replit", "surface": { "kind": "hosted-service", "name": "Replit Agent hosted workspace", "slug": "replit-agent-4-hosted" } },
+  "claim": { "category": "configuration.model", "statement": "Replit's current Model selector page says Agent can choose a model automatically or use a user-selected primary model and effort level, with availability varying by mode, rollout, organization settings and authorization." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Replit" },
+  "source": { "uri": "https://docs.replit.com/features/agent/model-selector", "title": "Model selector — Replit", "locator": "Choose a model; Models by mode; Effort", "publishedAt": null, "capturedAt": "2026-08-01T06:29:56Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["automatic selection", "manual primary model", "Lite", "Economy", "Power", "Low to Max effort", "account rollout", "organization authorization"] }, "platform": { "scope": "named", "values": ["Replit Agent Build settings"] }, "model": { "scope": "named", "values": ["rolling account-specific model catalog"] }, "deployment": { "scope": "named", "values": ["Replit-managed model routing"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher model catalog captured on 2026-08-01." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-08-15", "invalidatedBy": ["model-catalog-change", "mode-mapping-change", "effort-control-change", "rollout-change"] },
+  "limitations": ["The live model list is explicitly account- and rollout-dependent and does not establish the model used by an Agent 4 task."],
+  "unknowns": ["The selected model, effort, fallback, routing, endpoint, checkpoint and inference revision are unknown."],
+  "relationships": [], "validationRefs": []
+}

@@ -1,0 +1,314 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.1-draft",
+  "asOf": "2026-08-01",
+  "identity": {
+    "recordId": "com.cursor.ide.foreground-agent.3-14",
+    "agent": { "id": "com.cursor.ide.foreground-agent", "name": "Cursor IDE foreground Agent" },
+    "publisher": { "id": "anysphere", "name": "Anysphere, Inc." },
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cursor IDE foreground Agent",
+      "slug": "cursor-ide-foreground-agent-3-14",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "3.14",
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Cursor stable desktop download archive",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": ["macOS ARM64 DMG", "macOS x64 DMG", "macOS Universal DMG", "Windows x64 system installer", "Windows x64 user installer", "Windows ARM64 system installer", "Windows ARM64 user installer", "Linux DEB ARM64", "Linux DEB x64", "Linux RPM ARM64", "Linux RPM x64", "Linux AppImage ARM64", "Linux AppImage x64"],
+        "note": "No package was downloaded or installed. The operating system, architecture, installer type, executable digest, opaque build target, account feature flags and effective runtime remain unresolved."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "download-listing-3-14",
+        "kind": "hosted-release",
+        "identityStatus": "exact",
+        "uri": "https://cursor.com/download",
+        "ecosystem": "Cursor desktop download archive",
+        "version": "3.14",
+        "digest": null,
+        "note": "The mutable publisher download archive names exact client version 3.14 but supplies no catalog-captured digest or source revision."
+      },
+      {
+        "id": "macos-arm64-endpoint-3-14",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://api2.cursor.sh/updates/download/golden/darwin-arm64/cursor/3.14",
+        "ecosystem": "Cursor versioned macOS ARM64 download endpoint",
+        "version": "3.14",
+        "digest": null,
+        "note": "The official endpoint redirected to a production DMG path containing opaque token a758f2241ca99fecf380180b6cbdbbce0f1f42cf. Anysphere did not identify that token as a source revision, and the package was not downloaded or hashed."
+      },
+      {
+        "id": "installed-desktop-runtime-3-14",
+        "kind": "other",
+        "identityStatus": "unresolved",
+        "uri": null,
+        "ecosystem": "macOS, Windows or Linux desktop package",
+        "version": "3.14",
+        "digest": null,
+        "note": "No installed or invoked artifact exists in this public-source dossier."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      { "id": "anysphere", "name": "Anysphere, Inc.", "kind": "publisher" }
+    ],
+    "sourceCapturers": [
+      { "id": "catalog-source-capturer", "name": "Agent Evidence Catalog maintainer", "kind": "catalog-maintainer" }
+    ],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://cursor.com/download": {
+      "id": "download-archive",
+      "sourceKind": "publisher-release-metadata",
+      "snapshotStatus": "live-page",
+      "note": "Official mutable download archive captured while it listed 3.14 as latest; no package was downloaded."
+    },
+    "https://cursor.com/changelog/3-0": {
+      "id": "cursor-3-0",
+      "sourceKind": "publisher-release-metadata",
+      "snapshotStatus": "immutable-reference",
+      "note": "Official dated Cursor 3.0 changelog preserved as a release-line milestone only."
+    },
+    "https://docs.cursor.com/agent": {
+      "id": "agent-modes",
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Rolling official mode documentation; not tied to an exact desktop package."
+    },
+    "https://docs.cursor.com/en/agent/tools": {
+      "id": "agent-tools",
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Rolling official tool inventory; effective tools remain configuration-dependent."
+    },
+    "https://docs.cursor.com/en/agent/terminal": {
+      "id": "agent-terminal",
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Rolling official foreground terminal documentation."
+    },
+    "https://docs.cursor.com/context/model-context-protocol": {
+      "id": "agent-mcp",
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Rolling official MCP configuration and approval documentation."
+    },
+    "https://cursor.com/changelog/auto-review": {
+      "id": "auto-review-3-6",
+      "sourceKind": "publisher-release-metadata",
+      "snapshotStatus": "immutable-reference",
+      "note": "Official dated Cursor 3.6 introduction milestone."
+    },
+    "https://cursor.com/blog/agent-autonomy-auto-review": {
+      "id": "auto-review-current",
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Dated publisher research description used for rolling current configuration claims only."
+    },
+    "https://cursor.com/changelog/router": {
+      "id": "cursor-router-current",
+      "sourceKind": "publisher-release-metadata",
+      "snapshotStatus": "immutable-reference",
+      "note": "Official 22 July 2026 service announcement; the Router backend is not versioned with desktop 3.14."
+    },
+    "https://cursor.com/data-use": {
+      "id": "data-use-current",
+      "sourceKind": "publisher-policy",
+      "snapshotStatus": "live-page",
+      "note": "Current data-use page last updated 15 July 2026; effective settings and request paths remain unresolved."
+    }
+  },
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "No Cursor package, account or session was inspected. Exact client identity, rolling backend state and mutually scoped configuration alternatives remain separate.",
+    "axes": [
+      {
+        "id": "installed-platform",
+        "label": "Installed desktop platform",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "macos", "label": "macOS package", "claimIds": ["com.cursor.ide.foreground-agent.platform-downloads-3-14"], "mutuallyExclusiveWith": ["windows", "linux"] },
+          { "id": "windows", "label": "Windows package", "claimIds": ["com.cursor.ide.foreground-agent.platform-downloads-3-14"], "mutuallyExclusiveWith": ["macos", "linux"] },
+          { "id": "linux", "label": "Linux package", "claimIds": ["com.cursor.ide.foreground-agent.platform-downloads-3-14"], "mutuallyExclusiveWith": ["macos", "windows"] }
+        ],
+        "unknowns": ["The installed platform, architecture, package type and digest are unresolved."]
+      },
+      {
+        "id": "foreground-target",
+        "label": "Foreground execution target",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "local-workspace", "label": "Local workspace", "claimIds": ["com.cursor.ide.foreground-agent.agents-window-targets-3-0"], "mutuallyExclusiveWith": ["local-worktree", "remote-ssh"] },
+          { "id": "local-worktree", "label": "Local isolated worktree", "claimIds": ["com.cursor.ide.foreground-agent.agents-window-targets-3-0"], "mutuallyExclusiveWith": ["local-workspace", "remote-ssh"] },
+          { "id": "remote-ssh", "label": "Remote SSH workspace", "claimIds": ["com.cursor.ide.foreground-agent.agents-window-targets-3-0"], "mutuallyExclusiveWith": ["local-workspace", "local-worktree"] }
+        ],
+        "unknowns": ["The selected foreground target and its filesystem, Git and network boundaries are unknown. Cloud is a separate catalog surface and is not an alternative inside this record."]
+      },
+      {
+        "id": "interaction-mode",
+        "label": "IDE interaction mode",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "agent", "label": "Agent", "claimIds": ["com.cursor.ide.foreground-agent.agent-modes-current"], "mutuallyExclusiveWith": ["ask", "manual", "custom"] },
+          { "id": "ask", "label": "Ask", "claimIds": ["com.cursor.ide.foreground-agent.agent-modes-current"], "mutuallyExclusiveWith": ["agent", "manual", "custom"] },
+          { "id": "manual", "label": "Manual", "claimIds": ["com.cursor.ide.foreground-agent.agent-modes-current"], "mutuallyExclusiveWith": ["agent", "ask", "custom"] },
+          { "id": "custom", "label": "Custom", "claimIds": ["com.cursor.ide.foreground-agent.agent-modes-current"], "mutuallyExclusiveWith": ["agent", "ask", "manual"] }
+        ],
+        "unknowns": ["The selected mode and any custom tool configuration are unknown."]
+      },
+      {
+        "id": "enabled-tools",
+        "label": "Enabled Agent tools",
+        "scope": "composable",
+        "alternatives": [
+          { "id": "search-read", "label": "Search and read tools", "claimIds": ["com.cursor.ide.foreground-agent.tool-inventory-current"], "mutuallyExclusiveWith": [] },
+          { "id": "edit-delete", "label": "Edit and delete tools", "claimIds": ["com.cursor.ide.foreground-agent.tool-inventory-current"], "mutuallyExclusiveWith": [] },
+          { "id": "terminal", "label": "Native terminal", "claimIds": ["com.cursor.ide.foreground-agent.tool-inventory-current", "com.cursor.ide.foreground-agent.native-terminal-current"], "mutuallyExclusiveWith": [] },
+          { "id": "web-fetch", "label": "Web and Fetch", "claimIds": ["com.cursor.ide.foreground-agent.tool-inventory-current", "com.cursor.ide.foreground-agent.auto-review-3-6"], "mutuallyExclusiveWith": [] },
+          { "id": "mcp", "label": "Configured MCP tools", "claimIds": ["com.cursor.ide.foreground-agent.tool-inventory-current", "com.cursor.ide.foreground-agent.mcp-approval-current"], "mutuallyExclusiveWith": [] }
+        ],
+        "unknowns": ["The effective tool inventory, plugins, extensions, MCP servers, credentials and destinations are unknown."]
+      },
+      {
+        "id": "mcp-state",
+        "label": "MCP availability and approval",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "mcp-disabled", "label": "MCP disabled", "claimIds": ["com.cursor.ide.foreground-agent.mcp-approval-current"], "mutuallyExclusiveWith": ["mcp-manual", "mcp-auto"] },
+          { "id": "mcp-manual", "label": "MCP enabled with approval", "claimIds": ["com.cursor.ide.foreground-agent.mcp-approval-current"], "mutuallyExclusiveWith": ["mcp-disabled", "mcp-auto"] },
+          { "id": "mcp-auto", "label": "MCP enabled with Auto-run or Auto-review", "claimIds": ["com.cursor.ide.foreground-agent.mcp-approval-current", "com.cursor.ide.foreground-agent.auto-review-3-6"], "mutuallyExclusiveWith": ["mcp-disabled", "mcp-manual"] }
+        ],
+        "unknowns": ["The MCP configuration and per-call authority are unknown."]
+      },
+      {
+        "id": "run-mode",
+        "label": "Tool execution review mode",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "manual-review", "label": "Manual approval path", "claimIds": ["com.cursor.ide.foreground-agent.mcp-approval-current", "com.cursor.ide.foreground-agent.auto-review-current"], "mutuallyExclusiveWith": ["auto-review"] },
+          { "id": "auto-review", "label": "Auto-review", "claimIds": ["com.cursor.ide.foreground-agent.auto-review-3-6", "com.cursor.ide.foreground-agent.auto-review-current"], "mutuallyExclusiveWith": ["manual-review"] }
+        ],
+        "unknowns": ["New-user, existing-user and organization settings can differ; the effective run mode is unknown."]
+      },
+      {
+        "id": "auto-review-path",
+        "label": "Auto-review decision path",
+        "scope": "composable",
+        "alternatives": [
+          { "id": "allowlisted", "label": "Allowlisted immediate execution", "claimIds": ["com.cursor.ide.foreground-agent.auto-review-3-6"], "mutuallyExclusiveWith": [] },
+          { "id": "sandboxed", "label": "Sandboxed execution", "claimIds": ["com.cursor.ide.foreground-agent.auto-review-3-6"], "mutuallyExclusiveWith": [] },
+          { "id": "classifier-reviewed", "label": "Classifier-reviewed action", "claimIds": ["com.cursor.ide.foreground-agent.auto-review-3-6", "com.cursor.ide.foreground-agent.auto-review-current"], "mutuallyExclusiveWith": [] },
+          { "id": "user-prompted", "label": "User approval requested", "claimIds": ["com.cursor.ide.foreground-agent.auto-review-3-6", "com.cursor.ide.foreground-agent.auto-review-current"], "mutuallyExclusiveWith": [] }
+        ],
+        "unknowns": ["The branch taken, classifier revision and final result for any action are unknown."]
+      },
+      {
+        "id": "model-selection",
+        "label": "Model and routing selection",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "explicit-model", "label": "Explicit model", "claimIds": ["com.cursor.ide.foreground-agent.cursor-router-current"], "mutuallyExclusiveWith": ["auto-cost", "auto-balance", "auto-intelligence"] },
+          { "id": "auto-cost", "label": "Cursor Router Cost", "claimIds": ["com.cursor.ide.foreground-agent.cursor-router-current"], "mutuallyExclusiveWith": ["explicit-model", "auto-balance", "auto-intelligence"] },
+          { "id": "auto-balance", "label": "Cursor Router Balance", "claimIds": ["com.cursor.ide.foreground-agent.cursor-router-current"], "mutuallyExclusiveWith": ["explicit-model", "auto-cost", "auto-intelligence"] },
+          { "id": "auto-intelligence", "label": "Cursor Router Intelligence", "claimIds": ["com.cursor.ide.foreground-agent.cursor-router-current"], "mutuallyExclusiveWith": ["explicit-model", "auto-cost", "auto-balance"] }
+        ],
+        "unknowns": ["The model, provider, checkpoint, endpoint revision, reasoning setting, router policy and administrator restrictions are unknown."]
+      },
+      {
+        "id": "privacy-mode",
+        "label": "Privacy and training mode",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "privacy-enabled", "label": "Privacy Mode enabled", "claimIds": ["com.cursor.ide.foreground-agent.privacy-mode-current", "com.cursor.ide.foreground-agent.backend-request-path-current"], "mutuallyExclusiveWith": ["privacy-disabled"] },
+          { "id": "privacy-disabled", "label": "Privacy Mode disabled", "claimIds": ["com.cursor.ide.foreground-agent.privacy-mode-current", "com.cursor.ide.foreground-agent.backend-request-path-current"], "mutuallyExclusiveWith": ["privacy-enabled"] }
+        ],
+        "unknowns": ["The effective user or team Privacy Mode, provider ZDR status, abuse-classifier exception and training/retention outcome are unknown."]
+      }
+    ]
+  },
+  "rawClaimPaths": [
+    "claims/cursor-ide-foreground-agent-3-14/release-identity-3-14.json",
+    "claims/cursor-ide-foreground-agent-3-14/platform-downloads-3-14.json",
+    "claims/cursor-ide-foreground-agent-3-14/agents-window-targets-3-0.json",
+    "claims/cursor-ide-foreground-agent-3-14/agent-modes-current.json",
+    "claims/cursor-ide-foreground-agent-3-14/tool-inventory-current.json",
+    "claims/cursor-ide-foreground-agent-3-14/native-terminal-current.json",
+    "claims/cursor-ide-foreground-agent-3-14/mcp-approval-current.json",
+    "claims/cursor-ide-foreground-agent-3-14/auto-review-3-6.json",
+    "claims/cursor-ide-foreground-agent-3-14/auto-review-current.json",
+    "claims/cursor-ide-foreground-agent-3-14/cursor-router-current.json",
+    "claims/cursor-ide-foreground-agent-3-14/backend-request-path-current.json",
+    "claims/cursor-ide-foreground-agent-3-14/privacy-mode-current.json"
+  ],
+  "dossier": {
+    "summary": "Cursor desktop 3.14 provides an exact proprietary client identity for a foreground IDE Agent, while its Agent tools, permission modes, model Router, backend and privacy behavior remain configuration-dependent rolling services rather than exact-version observations.",
+    "releaseContext": {
+      "statement": "The official download archive named Cursor desktop 3.14 at capture, but supplied no captured digest, source revision or release time; rolling Agent and backend claims are not projected into that exact client identity.",
+      "sourceUri": "https://cursor.com/download",
+      "legacySource": null
+    },
+    "limitations": [
+      "All claims are attributed to public publisher sources; no behavior was observed.",
+      "No package was downloaded, installed, hashed or executed, and no account or effective configuration was inspected.",
+      "The exact 3.14 client does not pin Cursor's hosted backend, model provider, model checkpoint, Router policy or server-side feature flags.",
+      "Cursor 3.0 and 3.6 sources are dated milestones, not proof that their complete behavior is unchanged in 3.14.",
+      "Mutable documentation, security and data-use pages are rolling-current only.",
+      "Cloud Agents are a separate hosted surface and are not collapsed into this foreground IDE record.",
+      "The METR study failed exact client, mode, model and configuration applicability and is excluded from the generated record.",
+      "No independent behavior, enforcement, privacy, performance, quality or safety conclusion is supported."
+    ],
+    "unknowns": [
+      "The installed operating system, architecture, package type, package digest and executable identity are unknown.",
+      "The exact 3.14 release time, source revision and reproducible package-to-source relationship are unknown.",
+      "Whether rolling Agent documentation and server-side features matched a particular 3.14 installation is unknown.",
+      "The account, plan, organization policy, feature flags and backend service revision are unknown.",
+      "The selected foreground target, repository, workspace, worktree or remote-SSH boundary is unknown.",
+      "The selected Agent mode, custom instructions, rules, plugins, extensions and enabled tools are unknown.",
+      "The terminal profile, shell, inherited environment, credentials, commands and approval outcomes are unknown.",
+      "The run mode, allowlists, sandbox policy, classifier model, classifier policy and per-action decision path are unknown.",
+      "The configured MCP servers, tools, transports, credentials, arguments and destinations are unknown.",
+      "The selected model, provider, checkpoint, endpoint revision, Router mode and administrator restrictions are unknown.",
+      "The effective Privacy Mode, provider ZDR status, data transmitted, retention, training use and abuse-classifier exceptions are unknown.",
+      "Task completion, edit quality, rollback, command containment, data handling and safety were not independently tested."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      { "id": "engineering-lead", "label": "Engineering lead", "prompt": "Inspect exact client identity, foreground capability and configuration boundaries without inferring suitability.", "propositionIds": ["identity", "capability", "configuration"] },
+      { "id": "security-reviewer", "label": "Security reviewer", "prompt": "Inspect command, MCP, approval, model and data boundaries while preserving unknown enforcement.", "propositionIds": ["authority", "data"] },
+      { "id": "evidence-auditor", "label": "Evidence auditor", "prompt": "Trace every proposition to exact raw claims and verify that rejected independent evidence is absent.", "propositionIds": ["identity", "configuration", "evaluation"] }
+    ],
+    "propositions": [
+      { "id": "identity", "eyebrow": "Exact client", "question": "Which Cursor artifact and surface does this record identify?", "status": "Desktop client 3.14; installed package unresolved", "answer": "The publisher download archive names exact desktop client 3.14 and versioned platform endpoints. No package, digest, source revision or installed runtime was captured.", "whyItMatters": "A proprietary client version can be exact while its invoked artifact and hosted backend remain unresolved.", "claimIds": ["com.cursor.ide.foreground-agent.release-identity-3-14", "com.cursor.ide.foreground-agent.platform-downloads-3-14", "com.cursor.ide.foreground-agent.agents-window-targets-3-0"] },
+      { "id": "capability", "eyebrow": "Foreground Agent", "question": "What can the publisher-documented foreground Agent surface do?", "status": "Mode- and tool-dependent local IDE authority", "answer": "Rolling documentation describes Agent, Ask, Manual and Custom modes plus search, read, edit, delete, terminal, web and MCP tools. Their effective availability is unknown.", "whyItMatters": "The surface name alone does not establish the selected mode or enabled tools.", "claimIds": ["com.cursor.ide.foreground-agent.agent-modes-current", "com.cursor.ide.foreground-agent.tool-inventory-current", "com.cursor.ide.foreground-agent.native-terminal-current"] },
+      { "id": "authority", "eyebrow": "Execution authority", "question": "How can terminal, MCP and Fetch actions proceed?", "status": "Manual, allowlisted, sandboxed and classifier-reviewed paths remain separate", "answer": "Publisher sources describe manual MCP approval, Auto-run and Auto-review paths involving allowlists, sandboxing, a classifier and possible user approval. No effective path was inspected.", "whyItMatters": "Different settings can materially change consequential-action authority under the same client identity.", "claimIds": ["com.cursor.ide.foreground-agent.native-terminal-current", "com.cursor.ide.foreground-agent.mcp-approval-current", "com.cursor.ide.foreground-agent.auto-review-3-6", "com.cursor.ide.foreground-agent.auto-review-current"] },
+      { "id": "configuration", "eyebrow": "Runtime configuration", "question": "Which client, target, mode and model configuration was active?", "status": "Unresolved across nine explicit axes", "answer": "Platform, foreground target, interaction mode, tool set, MCP state, run mode, Auto-review path, model selection and Privacy Mode remain unresolved alternatives.", "whyItMatters": "Client version 3.14 is not a complete runtime or model identity.", "claimIds": ["com.cursor.ide.foreground-agent.platform-downloads-3-14", "com.cursor.ide.foreground-agent.agents-window-targets-3-0", "com.cursor.ide.foreground-agent.agent-modes-current", "com.cursor.ide.foreground-agent.tool-inventory-current", "com.cursor.ide.foreground-agent.mcp-approval-current", "com.cursor.ide.foreground-agent.auto-review-3-6", "com.cursor.ide.foreground-agent.auto-review-current", "com.cursor.ide.foreground-agent.cursor-router-current", "com.cursor.ide.foreground-agent.privacy-mode-current"] },
+      { "id": "data", "eyebrow": "Hosted request path", "question": "Where can Agent requests and code data go?", "status": "Cursor backend plus configuration-dependent providers and privacy terms", "answer": "Current publisher pages say AI requests, including bring-your-own-key requests, traverse Cursor's backend; Privacy Mode changes training and provider-retention commitments with stated exceptions.", "whyItMatters": "A local foreground client still depends on rolling hosted services and configuration-specific data terms.", "claimIds": ["com.cursor.ide.foreground-agent.cursor-router-current", "com.cursor.ide.foreground-agent.backend-request-path-current", "com.cursor.ide.foreground-agent.privacy-mode-current"] },
+      { "id": "evaluation", "eyebrow": "Independent evidence", "question": "Was this exact Cursor record independently evaluated?", "status": "No; METR evidence failed exact applicability", "answer": "No independent test is included. The METR study did not pin a Cursor version, require Cursor, isolate foreground Agent mode, or bind models and effective configuration to its result.", "whyItMatters": "General AI-allowed productivity evidence cannot be transferred to one exact client and configuration.", "claimIds": ["com.cursor.ide.foreground-agent.release-identity-3-14"] }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source claims only. The exact client, rolling backend, configuration alternatives and rejected METR applicability remain explicitly separate."
+  }
+}

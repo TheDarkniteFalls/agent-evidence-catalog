@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.developer-flow.model-current-19-2",
+  "slug": "model-current-19-2",
+  "subject": {
+    "id": "com.gitlab.duo.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitLab Duo Developer Flow",
+      "slug": "gitlab-duo-developer-flow-19-2"
+    }
+  },
+  "claim": {
+    "category": "identity.model",
+    "statement": "Current Agent Platform and flow documentation names Anthropic Claude Sonnet 4 for the managed flow surface and also documents GitLab Duo Self-Hosted model paths; no immutable provider-side model revision is exposed."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "GitLab, Inc."
+  },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/",
+    "title": "Flows - GitLab Docs",
+    "locator": "Model information and prerequisites",
+    "publishedAt": null,
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "GitLab-managed Claude Sonnet 4",
+        "self-hosted model"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Agent Platform flow"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "A marketing model label is not an immutable model revision or an observed request route."
+  ],
+  "unknowns": [
+    "The effective model ID, endpoint, revision, fallback and inference configuration are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

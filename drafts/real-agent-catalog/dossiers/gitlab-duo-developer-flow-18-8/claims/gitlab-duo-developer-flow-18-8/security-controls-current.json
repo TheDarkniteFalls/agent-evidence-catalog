@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.security-controls-current",
+  "slug": "security-controls-current",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "security.architecture",
+    "statement": "GitLab's current security documentation describes remote flows as using runner execution with composite identity, sandbox and network controls, flow-defined tool restrictions, server-side tool-response sanitization and prompt-injection detection, while stating that human-in-the-loop approval is not applied to flows."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/security_threats/",
+    "title": "Security threats in agentic systems",
+    "locator": "Content protection layers and execution-mode security-control table",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "composable", "values": ["composite identity", "SRT-compatible sandbox configuration", "network allowlist or denylist", "flow-defined tool restrictions", "server-side sanitization", "prompt-injection detection", "no human-in-the-loop approval"] },
+    "platform": { "scope": "named", "values": ["remote flow in GitLab CI"] },
+    "model": { "scope": "configuration-dependent", "values": [] },
+    "deployment": { "scope": "alternatives", "values": ["GitLab-hosted runner", "user-managed runner configured for secure execution"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-08-31",
+    "invalidatedBy": ["documentation-change", "security-control-change", "sandbox-requirement-change", "approval-change"]
+  },
+  "limitations": [
+    "These are publisher-described controls and threat-model boundaries, not independent penetration-test or execution receipts.",
+    "The separate execution documentation makes sandbox availability conditional on an SRT-compatible image and privileged runner configuration; custom non-SRT and hardened UBI images are excluded."
+  ],
+  "unknowns": [
+    "Which controls were enabled, effective and correctly enforced in any execution are unknown.",
+    "Control versions, detection thresholds, sanitizer behavior, allowed destinations and residual risks were not independently evaluated."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The security architecture describes the secure remote-flow mode; runner documentation shows that the sandbox depends on image and privileged-runner configuration."
+    }
+  ],
+  "validationRefs": []
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.google.jules.hosted.fresh-task-vm-current",
+  "slug": "fresh-task-vm-current",
+  "subject": {
+    "id": "com.google.jules.hosted",
+    "name": "Google Jules",
+    "publisher": "Google",
+    "surface": { "kind": "hosted-service", "name": "Jules", "slug": "google-jules" }
+  },
+  "claim": {
+    "category": "delivery",
+    "statement": "Google's current Jules FAQ says each task runs in a fresh virtual machine where Jules clones the repository, installs dependencies and makes prompt-directed changes."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "Google" },
+  "source": {
+    "uri": "https://jules.google/docs/faq/",
+    "title": "Jules FAQ",
+    "locator": "How does Jules work under the hood?",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T23:24:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "documented-default", "values": ["fresh task virtual machine"] },
+    "platform": { "scope": "named", "values": ["Google-hosted Jules service"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["cloud task VM"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "product-surface-change", "configuration-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "The word fresh is a publisher description; the catalog did not inspect VM creation, teardown, reuse or isolation.",
+    "Repository cloning, dependency installation and changes were not observed."
+  ],
+  "unknowns": [
+    "The VM image digest, region, tenancy, hardware, retention, isolation and teardown behavior are unknown.",
+    "The credentials, repository permissions and subprocess authority available inside a real task are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

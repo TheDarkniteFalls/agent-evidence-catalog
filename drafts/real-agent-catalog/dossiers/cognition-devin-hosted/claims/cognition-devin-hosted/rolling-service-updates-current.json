@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.rolling-service-updates-current",
+  "slug": "rolling-service-updates-current",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "identity.service", "statement": "Cognition's current release-note stream lists dated Devin service changes after the Devin 2.2 milestone without supplying one immutable current service revision." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/release-notes/overview", "title": "Recent Updates", "locator": "Dated updates after February 24, 2026", "publishedAt": null, "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "unresolved", "values": [] },
+    "platform": { "scope": "named", "values": ["Devin hosted coding agent"] },
+    "model": { "scope": "unresolved", "values": [] },
+    "deployment": { "scope": "alternatives", "values": ["Enterprise Cloud", "Customer Dedicated Deployment"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["new-service-version", "release-note-restructure", "immutable-service-identity"] },
+  "limitations": ["The absence of a revision in the captured page does not establish that Cognition has no internal deployment identifier."],
+  "unknowns": ["The exact current service, Brain, Devbox and model-serving revisions are unknown."],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.cognition.devin.devin-2-2-launch",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "analysis": {
+        "classification": "scope-difference",
+        "scopeDimensions": ["time", "release-line", "service-revision"],
+        "resolutionSourceIds": ["source-devin-2-2-launch", "source-rolling-service-updates-current"],
+        "note": "The rolling stream postdates the 2.2 milestone and does not turn that earlier label into a current revision."
+      },
+      "note": "The current rolling scope is preserved separately from the dated Devin 2.2 identity."
+    }
+  ],
+  "validationRefs": []
+}

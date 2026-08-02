@@ -1,10 +1,17 @@
 # Real-Agent MVP Pilot Specification
 
-Status: proposal only. No real agent has been installed, run, evaluated, accepted, or endorsed under this specification. Real-agent profile intake remains closed.
+Status: deferred evaluation proposal only. The publisher-source research preview
+described in `docs/claims-first-mvp.md` is the current real-agent direction.
+Cline evaluation, other agent execution, model use, suitability decisions and
+remote-VM provisioning are not part of that preview and remain explicitly
+deferred. No real agent has been installed, run, independently evaluated or
+endorsed under this specification. Real-agent profile intake remains closed.
+
+This document is retained as design input for a separately authorized optional validation layer. It must not be used to infer authority to create an evaluation environment or advance the runtime sequence below.
 
 ## Purpose
 
-The proposed pilot tests whether the Agent Evidence Catalog can help a small engineering team make one narrow decision:
+If separately authorized in the future, the proposed validation pilot would test whether the Agent Evidence Catalog can help a small engineering team make one narrow decision:
 
 > Which locally runnable coding agent should the team pilot on an existing repository when it requires workspace-bounded access, controlled command execution, no autonomous push or deployment, and clear data destinations?
 
@@ -242,7 +249,10 @@ The proposed profile describes only the tested configuration. Documented default
 
 ## Governance gates
 
-Real profiles must remain unpublished and intake must remain closed until the repository has all of the following:
+The static, maintainer-curated, publisher-source research preview may be
+released with intake closed after its applicable release gates pass. Before
+open intake, sensitive evidence handling or independent evaluation, the
+repository must have all of the following:
 
 1. A documented private route for sensitive corrections, vulnerability information, and evidence withdrawal.
 2. A written review method and named review responsibility.
@@ -263,7 +273,7 @@ The first four profiles, if the pilot advances, should be maintainer-curated. Ge
 
 ### Catalog completeness
 
-- Four eligible real CLI surfaces have unpublished draft profiles before governance approval and public profiles only after every publication gate is satisfied.
+- Four eligible real CLI surfaces have unpublished draft profiles before governance approval and public profiles only after the applicable publication gates are satisfied.
 - Each profile identifies one exact version, executable artifact, source revision when available, model, and hashed pilot configuration.
 - Each profile carries a coherent version-specific receipt.
 - Every material claim has an evidence state.
@@ -298,6 +308,8 @@ Record qualitative reasons as well as counts. A participant choosing no agent is
 These are internal pilot thresholds, not public service-level commitments.
 
 ## Pilot sequence and stop conditions
+
+This sequence is deferred in full under the claims-first MVP. In particular, do not evaluate Cline, provision a disposable or remote VM, install an agent, or call a model unless a later decision explicitly reopens the validation layer and its cyber-risk, cost, identity, governance, and publication controls.
 
 1. Resolve or explicitly defer the configuration-identity and artifact-type representation decisions without mislabeling data.
 2. Review this policy and evidence contract.

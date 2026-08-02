@@ -1,6 +1,27 @@
 {
   "schemaVersion": "1.0",
   "profileCount": 10,
+  "syntheticClaims": {
+    "entryPoint": "claims.html",
+    "manifest": "claims-build-manifest.json",
+    "manifestSha256": "c26a069e3f673f59327b313cbdad54b5fb6652815a83e5bfa6bbd034101fcd72",
+    "asOf": "2026-07-30",
+    "recordCount": 4,
+    "synthetic": true
+  },
+  "researchPreview": {
+    "entryPoint": "research-preview/index.html",
+    "data": "research-preview/catalog.json",
+    "dataSha256": "ecec67a63f4413e6928ea6f2b1e1fd6f6cb09e355b31fd05049b37e23bc25a3d",
+    "asOf": "2026-08-02",
+    "releaseCandidateStatus": "ready-for-release-review",
+    "surfaces": 16,
+    "currentRecordsPresented": 16,
+    "historyRecordsPresented": 6,
+    "recordsPresentedIncludingHistory": 22,
+    "independentTestsCredited": 0,
+    "openIntake": false
+  },
   "records": [
     {
       "id": "com.example.cloudmedic",

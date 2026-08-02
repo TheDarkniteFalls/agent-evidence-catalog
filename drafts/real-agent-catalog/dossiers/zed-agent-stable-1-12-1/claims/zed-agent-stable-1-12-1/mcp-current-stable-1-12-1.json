@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.zed.agent.native.mcp-current-stable-1-12-1",
+  "slug": "mcp-current-stable-1-12-1",
+  "subject": {
+    "id": "com.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Native Zed Agent",
+      "slug": "zed-agent-stable-1-12-1"
+    }
+  },
+  "claim": {
+    "category": "authority.mcp",
+    "statement": "Current official documentation says the native Zed Agent uses Zed-configured MCP servers and tools, with profile availability and tool permissions remaining separate controls."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://zed.dev/docs/ai/mcp",
+    "title": "Model Context Protocol in Zed",
+    "locator": "Agent path support, Agent Panel usage and tool permissions",
+    "publishedAt": null,
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Zed-configured MCP"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "native Zed Agent"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Configured MCP servers can add external tools and data sources; none was inspected."
+  ],
+  "unknowns": [
+    "Server identities, transports, credentials, tool schemas, data access, destinations and approval rules are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Cline sources and technical details</title>
+  <link rel="stylesheet" href="dossier.css">
+</head>
+<body data-page="report">
+  <header class="site-header">
+    <a class="brand" href="claims.html"><span class="brand-mark" aria-hidden="true">AC</span><span>Agent Catalog</span></a>
+    <nav aria-label="Dossier views">
+      <a class="nav-link" href="claims.html">Evidence brief</a>
+      <a class="nav-link is-current" href="report.html">Source details</a>
+      <a class="nav-link" href="agent.html">For agents</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="report-hero shell">
+      <div>
+        <div class="eyebrow-row"><span class="draft-pill">Unpublished research draft</span><span>Public-source record</span></div>
+        <p class="kicker">Cline · VS Code extension</p>
+        <h1>Sources and technical details</h1>
+        <p class="lede">Eight attributed statements with the scope, source, relationship and uncertainty needed to interpret each one.</p>
+      </div>
+      <div class="scope-card">
+        <span>Release identity</span><strong>4.1.2</strong>
+        <span>Source revision</span><code>644e8417</code>
+        <span>Runtime variant</span><strong>Unknown</strong>
+      </div>
+    </section>
+
+    <section class="report-tools shell" aria-label="Filter source statements">
+      <label>
+        <span>Find a statement</span>
+        <input id="recordSearch" type="search" placeholder="Try approval, user content, checkpoints…" autocomplete="off">
+      </label>
+      <label>
+        <span>Topic</span>
+        <select id="recordCategory">
+          <option value="all">All topics</option>
+        </select>
+      </label>
+      <p id="recordCount" class="count-label" aria-live="polite"></p>
+    </section>
+
+    <section class="release-note shell" aria-labelledby="release-note-title">
+      <div>
+        <p class="kicker">Release caveat</p>
+        <h2 id="release-note-title">One version can activate two extension variants</h2>
+      </div>
+      <div>
+        <p id="releaseContext"></p>
+        <p><a id="releaseSource" rel="noreferrer">Open the publisher changelog</a></p>
+      </div>
+    </section>
+
+    <section class="records-section shell" aria-labelledby="record-index">
+      <div class="section-heading">
+        <div><p class="kicker">Claim-by-claim record</p><h2 id="record-index">Exact attribution and applicability</h2></div>
+      </div>
+      <div id="recordList" class="record-list"></div>
+    </section>
+
+    <section class="limits-section shell" id="limits" aria-labelledby="limits-title">
+      <div>
+        <p class="kicker">Interpretation boundary</p>
+        <h2 id="limits-title">What this evidence does not prove</h2>
+        <p>No selected source is an independent test. Matching a public page to its publisher does not verify how Cline behaves on a particular machine, version variant, model, provider or configuration.</p>
+      </div>
+      <ul id="reportUnknowns" class="unknowns-list"></ul>
+    </section>
+
+    <section class="next-step shell">
+      <div><p class="kicker">A shorter reading path</p><h2>Return to the visitor brief.</h2><p>The evidence brief groups these records by the questions an adopter, reviewer or auditor is trying to answer.</p></div>
+      <div class="action-row"><a class="primary-action" href="claims.html">Read the evidence brief</a><a class="secondary-action" href="agent.html">Open the agent view</a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell"><p>Local unpublished draft · Public sources only · Not independently tested</p><p><a href="agent-dossier.json">Open canonical JSON</a></p></footer>
+  <script src="dossier-data.js"></script>
+  <script src="dossier-app.js"></script>
+</body>
+</html>

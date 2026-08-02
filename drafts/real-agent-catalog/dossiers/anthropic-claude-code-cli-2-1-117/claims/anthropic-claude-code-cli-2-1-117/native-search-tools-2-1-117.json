@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.native-search-tools-2-1-117",
+  "slug": "native-search-tools-2-1-117",
+  "subject": { "id": "com.anthropic.claude-code.cli", "name": "Claude Code CLI", "publisher": "Anthropic PBC", "surface": { "kind": "cli", "name": "Claude Code CLI", "slug": "anthropic-claude-code-cli-2-1-117" } },
+  "claim": { "category": "runtime.variant", "statement": "For v2.1.117, Anthropic says native macOS and Linux builds replace Glob and Grep with embedded bfs and ugrep through Bash, while Windows and npm-installed builds remain unchanged." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Anthropic PBC" },
+  "source": { "uri": "https://github.com/anthropics/claude-code/releases/tag/v2.1.117", "title": "Release v2.1.117", "locator": "What's changed — native builds on macOS and Linux", "publishedAt": "2026-04-22T00:04:00Z", "capturedAt": "2026-08-01T06:18:27Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "2.1.117" }, "configuration": { "scope": "named", "values": ["native macOS/Linux", "Windows", "npm-installed build"] }, "platform": { "scope": "named", "values": ["macOS", "Linux", "Windows"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["local Claude Code CLI"] } },
+  "lifecycle": { "status": "historical", "changedAt": null, "reason": "Exact release-specific build distinction." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-11-01", "invalidatedBy": ["release-note-correction"] },
+  "limitations": ["The claim is publisher release metadata and was not observed on any platform build."],
+  "unknowns": ["The installed build family, embedded tool versions and effective tool-permission behavior are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

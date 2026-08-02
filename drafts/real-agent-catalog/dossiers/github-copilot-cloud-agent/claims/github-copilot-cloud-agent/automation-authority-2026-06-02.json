@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.cloud-agent.automation-authority-2026-06-02",
+  "slug": "automation-authority-2026-06-02",
+  "subject": {
+    "id": "com.github.copilot.cloud-agent",
+    "name": "GitHub Copilot cloud agent",
+    "publisher": "GitHub",
+    "surface": { "kind": "hosted-service", "name": "GitHub Copilot cloud agent", "slug": "github-copilot-cloud-agent" }
+  },
+  "claim": {
+    "category": "delegation",
+    "statement": "GitHub's dated 2 June 2026 changelog says Copilot cloud agent automations can run on a schedule or in response to repository events, are scoped to one repository, and can be configured with tools such as creating pull requests or updating issue labels."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "GitHub" },
+  "source": {
+    "uri": "https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent/",
+    "title": "Schedule and automate tasks with Copilot cloud agent",
+    "locator": "Opening paragraphs; scope paragraph; configurable fields list",
+    "publishedAt": "2026-06-02T00:00:00Z",
+    "capturedAt": "2026-07-31T22:45:15Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "multiple", "values": ["scheduled or repository-event automation", "configured automation tools"] },
+    "platform": { "scope": "multiple", "values": ["GitHub.com", "GitHub Copilot app"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["single-repository Copilot automation"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-06-02", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "product-surface-change", "configuration-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "This is a dated service announcement, not an independently observed automation run or immutable backend version.",
+    "Automation availability, triggers and tools are configuration-dependent and may change after capture."
+  ],
+  "unknowns": [
+    "The effective trigger, creator, input trust boundary, selected tools, model and repository policy are unknown.",
+    "The code, pull requests, labels, comments or other external mutations produced by a particular automation are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

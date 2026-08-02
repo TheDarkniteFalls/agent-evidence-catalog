@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.local-cli-delivery-0-90-0",
+  "slug": "local-cli-delivery-0-90-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-90-0" }
+  },
+  "claim": {
+    "category": "identity.delivery",
+    "statement": "The publisher's README at tag rust-v0.90.0 describes Codex CLI as a coding agent that runs locally and names npm, Homebrew cask and platform-specific GitHub release binaries as distribution paths."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": {
+    "uri": "https://github.com/openai/codex/blob/rust-v0.90.0/README.md",
+    "title": "OpenAI Codex README at rust-v0.90.0",
+    "locator": "Opening description and Quickstart — Installing and running Codex CLI",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T00:47:47Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "0.90.0" },
+    "configuration": { "scope": "alternatives", "values": ["npm package", "Homebrew cask", "platform-specific GitHub release binary"] },
+    "platform": { "scope": "named", "values": ["macOS arm64", "macOS x86_64", "Linux arm64", "Linux x86_64"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["local computer"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-01-25", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "distribution-change", "manual-review"]
+  },
+  "limitations": [
+    "The README is a publisher description; local execution and each distribution path were not tested.",
+    "The named platforms are the README's highlighted archive examples, not an exhaustive supported-platform inventory."
+  ],
+  "unknowns": [
+    "Which distribution path, platform build and executable a particular user invokes is unknown.",
+    "Homebrew and npm registry metadata, transitive installation behavior and runtime file layout were not inspected."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

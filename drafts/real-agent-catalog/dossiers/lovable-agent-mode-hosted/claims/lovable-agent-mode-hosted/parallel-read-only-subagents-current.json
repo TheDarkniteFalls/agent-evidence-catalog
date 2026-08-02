@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.parallel-read-only-subagents-current", "slug": "parallel-read-only-subagents-current",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Build mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Build mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "execution.parallel-subagents", "statement": "Current Lovable documentation says the main agent can start temporary read-only subagents for research, code exploration and review, can run several independent subagents in parallel, and receives their findings before deciding what to do next; subagents cannot change the project and Lovable decides when to use them." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/features/subagents", "title": "Subagents", "locator": "Introduction, How subagents work and FAQ — Can multiple subagents run at once?", "publishedAt": null, "capturedAt": "2026-08-01T11:46:36Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["publisher-decided subagent use", "temporary read-only subagents", "parallel independent investigations", "main-agent aggregation", "all plans"] }, "platform": { "scope": "named", "values": ["Lovable hosted browser workspace"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["Lovable hosted service"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["subagent-availability-change", "subagent-authority-change", "parallelism-change"] },
+  "limitations": ["The publisher claim supports conditional parallel read-only investigation, not parallel project-writing agents or a fixed number of concurrent subagents."],
+  "unknowns": ["Whether subagents ran, their count, task briefings, model routes, tool calls, findings and timing are unknown."],
+  "relationships": [{ "type": "scope-differs", "targetClaimId": "com.lovable.agent.hosted.serial-prompt-queue-current", "extent": "partial", "status": "resolved", "resolution": "scope-difference", "note": "Temporary read-only subagents may investigate in parallel, while the main Build-mode prompt queue processes one task at a time; subagents cannot apply project changes." }], "validationRefs": []
+}

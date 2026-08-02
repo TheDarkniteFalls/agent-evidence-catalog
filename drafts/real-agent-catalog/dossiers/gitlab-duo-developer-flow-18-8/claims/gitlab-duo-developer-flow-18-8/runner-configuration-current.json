@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+  "slug": "runner-configuration-current",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "execution.runner",
+    "statement": "GitLab's current documentation says GitLab.com flows can use enabled-by-default hosted runners or a user-managed runner; a user-managed flow runner needs the gitlab--duo tag and a Docker-image-capable executor, while the shell executor is unsupported."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+    "title": "Configure flow execution",
+    "locator": "Configure runners to execute flows",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "alternatives", "values": ["GitLab.com hosted runner", "user-managed docker executor", "user-managed docker-autoscaler executor", "user-managed kubernetes executor", "unsupported shell executor"] },
+    "platform": { "scope": "alternatives", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "alternatives", "values": ["GitLab-hosted runner", "instance runner", "top-level group runner", "project or subgroup runner where restrictions permit"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["documentation-change", "runner-requirement-change", "executor-support-change"]
+  },
+  "limitations": [
+    "Hosted and user-managed runners have different ownership, networking and isolation boundaries.",
+    "A configured runner is not necessarily sandboxed; sandbox support depends on its image and privileged configuration."
+  ],
+  "unknowns": [
+    "The runner provider, runner version, executor, image, tag scope, network policy and ephemeral-state behavior are unknown.",
+    "Offering-specific hosted-runner availability beyond the explicit GitLab.com statement is unresolved."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.security-controls-current",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Runner eligibility and executor support do not establish sandbox or network isolation; those depend on separate security configuration."
+    }
+  ],
+  "validationRefs": []
+}

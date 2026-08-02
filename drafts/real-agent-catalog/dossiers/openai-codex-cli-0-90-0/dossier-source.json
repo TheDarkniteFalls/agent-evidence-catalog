@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.1-draft",
+  "asOf": "2026-08-01",
+  "identity": {
+    "recordId": "com.openai.codex.cli.0-90-0",
+    "agent": { "id": "com.openai.codex.cli", "name": "OpenAI Codex CLI" },
+    "publisher": { "id": "openai", "name": "OpenAI" },
+    "surface": {
+      "kind": "cli",
+      "name": "Codex CLI",
+      "slug": "openai-codex-cli-0-90-0",
+      "deliveryModel": "local"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "0.90.0",
+      "releaseTag": "rust-v0.90.0",
+      "sourceRevision": "b4e230f8de8f71d08f48c469443ed61a9f365af3",
+      "releasedAt": "2026-01-25T16:37:37Z",
+      "channel": "GitHub release",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": ["npm package", "Homebrew cask", "platform-specific GitHub release binary"],
+        "note": "No artifact was downloaded or installed, so the invoked package path, operating-system build, architecture, executable digest and effective runtime remain unresolved."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "source-revision-0-90-0",
+        "kind": "source-revision",
+        "identityStatus": "exact",
+        "uri": "https://github.com/openai/codex/commit/b4e230f8de8f71d08f48c469443ed61a9f365af3",
+        "ecosystem": "git",
+        "version": "0.90.0",
+        "digest": null,
+        "note": "Exact commit resolved from the annotated rust-v0.90.0 tag; the Git commit identifier is not represented as a SHA-256 artifact digest."
+      },
+      {
+        "id": "npm-release-asset-0-90-0",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/openai/codex/releases/download/rust-v0.90.0/codex-npm-0.90.0.tgz",
+        "ecosystem": "GitHub release asset / npm package archive",
+        "version": "0.90.0",
+        "digest": "7445e2a83928dca1e4ab6c5cd3bed7b75da69f8f29064981a34d760996f91ed7",
+        "note": "Publisher release metadata supplies this SHA-256 digest. The catalog did not download the archive or independently recompute the digest."
+      },
+      {
+        "id": "config-schema-0-90-0",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/openai/codex/releases/download/rust-v0.90.0/config-schema.json",
+        "ecosystem": "GitHub release asset",
+        "version": "0.90.0",
+        "digest": "77090c8be9f0750fddf24b9de6fe6441c343024da01a45ba7707c006b564a37a",
+        "note": "Publisher release metadata supplies this SHA-256 digest. Exact claims use the corresponding tagged repository schema; the release asset was not downloaded."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      { "id": "openai", "name": "OpenAI", "kind": "publisher" }
+    ],
+    "sourceCapturers": [
+      { "id": "catalog-source-capturer", "name": "Agent Evidence Catalog maintainer", "kind": "catalog-maintainer" }
+    ],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://github.com/openai/codex/releases/tag/rust-v0.90.0": {
+      "id": "release-0-90-0",
+      "sourceKind": "publisher-release-metadata",
+      "snapshotStatus": "immutable-reference",
+      "note": "Official exact release and tag page; no release asset was downloaded."
+    },
+    "https://api.github.com/repos/openai/codex/releases/tags/rust-v0.90.0": {
+      "id": "release-api-0-90-0",
+      "sourceKind": "publisher-release-metadata",
+      "snapshotStatus": "immutable-reference",
+      "note": "Official repository release metadata captured through a read-only API request. Publisher digests were not independently recomputed."
+    },
+    "https://github.com/openai/codex/blob/rust-v0.90.0/README.md": {
+      "id": "readme-0-90-0",
+      "sourceKind": "publisher-versioned-source",
+      "snapshotStatus": "immutable-reference",
+      "note": "Official repository README at the exact rust-v0.90.0 tag."
+    },
+    "https://github.com/openai/codex/blob/rust-v0.90.0/codex-rs/core/config.schema.json": {
+      "id": "config-schema-source-0-90-0",
+      "sourceKind": "publisher-versioned-source",
+      "snapshotStatus": "immutable-reference",
+      "note": "Generated configuration schema in the official repository at the exact release tag."
+    },
+    "https://learn.chatgpt.com/docs/agent-approvals-security": {
+      "id": "agent-approvals-security-current",
+      "sourceKind": "publisher-policy",
+      "snapshotStatus": "live-page",
+      "note": "Current OpenAI security documentation captured as rolling-current evidence only."
+    }
+  },
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "No artifact or effective configuration was inspected. The axes preserve publisher-documented alternatives without selecting or collapsing them.",
+    "axes": [
+      {
+        "id": "artifact-path",
+        "label": "Invoked distribution path",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "npm-package", "label": "npm package", "claimIds": ["com.openai.codex.cli.local-cli-delivery-0-90-0", "com.openai.codex.cli.release-artifacts-0-90-0"], "mutuallyExclusiveWith": ["homebrew-cask", "github-release-binary"] },
+          { "id": "homebrew-cask", "label": "Homebrew cask", "claimIds": ["com.openai.codex.cli.local-cli-delivery-0-90-0"], "mutuallyExclusiveWith": ["npm-package", "github-release-binary"] },
+          { "id": "github-release-binary", "label": "Platform-specific GitHub release binary", "claimIds": ["com.openai.codex.cli.local-cli-delivery-0-90-0", "com.openai.codex.cli.release-artifacts-0-90-0"], "mutuallyExclusiveWith": ["npm-package", "homebrew-cask"] }
+        ],
+        "unknowns": ["The installed and invoked artifact, operating system, architecture and independently verified digest are unresolved."]
+      },
+      {
+        "id": "approval-policy",
+        "label": "Command approval policy",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "untrusted", "label": "untrusted", "claimIds": ["com.openai.codex.cli.approval-policies-0-90-0"], "mutuallyExclusiveWith": ["on-failure", "on-request", "never"] },
+          { "id": "on-failure", "label": "on-failure", "claimIds": ["com.openai.codex.cli.approval-policies-0-90-0"], "mutuallyExclusiveWith": ["untrusted", "on-request", "never"] },
+          { "id": "on-request", "label": "on-request", "claimIds": ["com.openai.codex.cli.approval-policies-0-90-0"], "mutuallyExclusiveWith": ["untrusted", "on-failure", "never"] },
+          { "id": "never", "label": "never", "claimIds": ["com.openai.codex.cli.approval-policies-0-90-0"], "mutuallyExclusiveWith": ["untrusted", "on-failure", "on-request"] }
+        ],
+        "unknowns": ["The effective approval policy and the complete action coverage of that policy are unknown."]
+      },
+      {
+        "id": "sandbox-mode",
+        "label": "Command sandbox mode",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "read-only", "label": "read-only", "claimIds": ["com.openai.codex.cli.sandbox-modes-0-90-0", "com.openai.codex.cli.security-layers-current"], "mutuallyExclusiveWith": ["workspace-write", "danger-full-access"] },
+          { "id": "workspace-write", "label": "workspace-write", "claimIds": ["com.openai.codex.cli.sandbox-modes-0-90-0", "com.openai.codex.cli.security-layers-current"], "mutuallyExclusiveWith": ["read-only", "danger-full-access"] },
+          { "id": "danger-full-access", "label": "danger-full-access", "claimIds": ["com.openai.codex.cli.sandbox-modes-0-90-0"], "mutuallyExclusiveWith": ["read-only", "workspace-write"] }
+        ],
+        "unknowns": ["The effective sandbox, platform enforcement, writable roots and containment behavior are unknown."]
+      },
+      {
+        "id": "workspace-network",
+        "label": "workspace-write network access",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "network-disabled", "label": "Network access disabled", "claimIds": ["com.openai.codex.cli.sandbox-modes-0-90-0", "com.openai.codex.cli.security-layers-current"], "mutuallyExclusiveWith": ["network-enabled"] },
+          { "id": "network-enabled", "label": "Network access enabled", "claimIds": ["com.openai.codex.cli.sandbox-modes-0-90-0", "com.openai.codex.cli.security-layers-current"], "mutuallyExclusiveWith": ["network-disabled"] }
+        ],
+        "unknowns": ["The effective network flag, proxy policy, destinations and subprocess coverage are unknown."]
+      },
+      {
+        "id": "network-proxy",
+        "label": "Network sandbox proxy",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "proxy-unconfigured", "label": "Proxy not configured", "claimIds": ["com.openai.codex.cli.network-proxy-0-90-0"], "mutuallyExclusiveWith": ["proxy-policy-configured"] },
+          { "id": "proxy-policy-configured", "label": "Proxy policy configured", "claimIds": ["com.openai.codex.cli.network-proxy-0-90-0"], "mutuallyExclusiveWith": ["proxy-unconfigured"] }
+        ],
+        "unknowns": ["The effective proxy feature state, rules, DNS behavior and enforcement completeness are unknown."]
+      },
+      {
+        "id": "connector-surface",
+        "label": "Connector and MCP surface",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "connectors-unconfigured", "label": "No configured connector path", "claimIds": ["com.openai.codex.cli.connectors-0-90-0"], "mutuallyExclusiveWith": ["connectors-configured"] },
+          { "id": "connectors-configured", "label": "Connector or MCP path configured", "claimIds": ["com.openai.codex.cli.connectors-0-90-0"], "mutuallyExclusiveWith": ["connectors-unconfigured"] }
+        ],
+        "unknowns": ["Available connectors, MCP servers, tools, credentials, side effects and destinations are unknown."]
+      },
+      {
+        "id": "collaboration-mode",
+        "label": "TUI collaboration mode",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          { "id": "coding", "label": "Coding", "claimIds": ["com.openai.codex.cli.collaboration-mode-0-90-0"], "mutuallyExclusiveWith": ["plan"] },
+          { "id": "plan", "label": "Plan", "claimIds": ["com.openai.codex.cli.collaboration-mode-0-90-0"], "mutuallyExclusiveWith": ["coding"] }
+        ],
+        "unknowns": ["The selected mode, handoff timing and mode-specific tool authority of a particular session are unknown."]
+      },
+      {
+        "id": "model-provider",
+        "label": "Model and provider selection",
+        "scope": "unresolved",
+        "alternatives": [
+          { "id": "explicit-model-provider", "label": "Explicit model or provider override", "claimIds": ["com.openai.codex.cli.model-provider-configuration-0-90-0"], "mutuallyExclusiveWith": [] }
+        ],
+        "unknowns": ["The selected model, provider, endpoint revision, reasoning settings, credentials and request path are unknown."]
+      }
+    ]
+  },
+  "rawClaimPaths": [
+    "claims/openai-codex-cli-0-90-0/release-identity-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/local-cli-delivery-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/release-artifacts-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/network-proxy-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/connectors-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/collaboration-mode-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/ephemeral-thread-provenance-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/yolo-repository-check-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/approval-policies-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/sandbox-modes-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/model-provider-configuration-0-90-0.json",
+    "claims/openai-codex-cli-0-90-0/security-layers-current.json"
+  ],
+  "dossier": {
+    "summary": "OpenAI's exact Codex CLI 0.90.0 release and source commit are identified, along with publisher-provided asset digests. Publisher sources describe a local CLI with configuration-dependent approval, sandbox, network, connector, collaboration, thread and model-provider surfaces; none was installed, observed or independently tested.",
+    "releaseContext": {
+      "statement": "OpenAI's official release metadata identifies Codex CLI 0.90.0, tag rust-v0.90.0, publication time 2026-01-25T16:37:37Z and source commit b4e230f8de8f71d08f48c469443ed61a9f365af3. Exact release assets have publisher-provided digests, but no installed runtime variant was selected or inspected.",
+      "sourceUri": "https://github.com/openai/codex/releases/tag/rust-v0.90.0",
+      "legacySource": null
+    },
+    "limitations": [
+      "All substantive behavior statements are publisher-attributed; the catalog did not download, install or run Codex CLI.",
+      "Exact-version claims use the 0.90.0 release or tagged repository source; rolling security documentation is not treated as exact-version evidence.",
+      "Publisher-provided artifact digests were recorded from official metadata but were not independently recomputed.",
+      "Configuration alternatives identify possible authority surfaces, not the effective settings or enforcement of any session.",
+      "The Overeager Coding Agents paper is not included as independent evidence because evaluator independence, disclosure and public-artifact gates did not all pass."
+    ],
+    "unknowns": [
+      "The package, binary, platform build, architecture, installation path and executable digest used by any real session.",
+      "The effective approval policy and whether every consequential shell, file, app, connector, MCP and collaboration action is covered.",
+      "The effective sandbox mode, writable roots, operating-system enforcement, escape resistance and behavior outside the working directory.",
+      "The effective network flag, network-proxy state, policy rules, DNS path, WebSocket handling, destinations and subprocess coverage.",
+      "The configured connectors and MCP servers, their tools, annotations, credentials, data access, side effects and destinations.",
+      "The active Coding or Plan mode, plan-to-execution transition and mode-specific tool authority.",
+      "The use, lifetime, persistence and complete provenance of ephemeral or spawned collaboration threads.",
+      "The selected model, provider, endpoint revision, reasoning settings, authentication path, request payload and data handling.",
+      "The contents, permissions, retention, encryption, backup and deletion behavior of local configuration, credentials, history and logs.",
+      "Which current rolling security statements also applied to 0.90.0 beyond what the tagged schema establishes.",
+      "Whether the Overeager Coding Agents evaluators are genuinely independent after complete funding and conflict disclosure.",
+      "Whether the promised benchmark, audit bundle, adapters, annotations and exact environment artifacts become publicly inspectable and reproducible."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      { "id": "adopter", "label": "Considering a pilot", "prompt": "Trace exact artifact, local authority, network and extension boundaries.", "propositionIds": ["identity", "authority", "network", "extensions", "evaluation"] },
+      { "id": "reviewer", "label": "Reviewing authority", "prompt": "Inspect mutually scoped approval, sandbox, collaboration and model-provider alternatives.", "propositionIds": ["authority", "network", "extensions"] },
+      { "id": "auditor", "label": "Checking evidence", "prompt": "Open each claim, version locator, limitation, unknown and excluded evaluation gate.", "propositionIds": ["identity", "authority", "network", "extensions", "evaluation"] }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Release and artifact",
+        "question": "Which Codex CLI does this dossier identify?",
+        "status": "Exact source release; installed runtime unresolved",
+        "answer": "The official release identifies Codex CLI 0.90.0 at tag rust-v0.90.0 and commit b4e230f8. Publisher-provided release-asset digests are preserved, while the actually installed package, platform binary and executable digest remain unknown.",
+        "whyItMatters": "An exact tag and downloadable assets do not identify the executable a particular user invoked.",
+        "claimIds": ["com.openai.codex.cli.release-identity-0-90-0", "com.openai.codex.cli.local-cli-delivery-0-90-0", "com.openai.codex.cli.release-artifacts-0-90-0"]
+      },
+      {
+        "id": "authority",
+        "eyebrow": "Approval and sandbox",
+        "question": "What authority alternatives does 0.90.0 expose?",
+        "status": "Four approval policies and three sandbox modes",
+        "answer": "The tagged schema enumerates untrusted, on-failure, on-request and never approval policies, plus read-only, workspace-write and danger-full-access sandbox modes. The effective pair is unknown and the alternatives are not collapsed.",
+        "whyItMatters": "The same version can have materially different execution authority under different policy combinations.",
+        "claimIds": ["com.openai.codex.cli.approval-policies-0-90-0", "com.openai.codex.cli.sandbox-modes-0-90-0", "com.openai.codex.cli.yolo-repository-check-0-90-0", "com.openai.codex.cli.security-layers-current"]
+      },
+      {
+        "id": "network",
+        "eyebrow": "Outbound access",
+        "question": "How is network reachability scoped?",
+        "status": "Configuration-dependent network and proxy controls",
+        "answer": "The exact schema gives workspace-write a network_access flag that defaults false, and the 0.90.0 release announces a policy-enforcing network sandbox proxy. Current security docs describe sandbox, approval and network controls as separate layers; that rolling statement is not back-projected to runtime behavior in 0.90.0.",
+        "whyItMatters": "Network reach depends on several settings and enforcement paths, not product identity alone.",
+        "claimIds": ["com.openai.codex.cli.network-proxy-0-90-0", "com.openai.codex.cli.sandbox-modes-0-90-0", "com.openai.codex.cli.security-layers-current"]
+      },
+      {
+        "id": "extensions",
+        "eyebrow": "Tools and orchestration",
+        "question": "Which configured surfaces can change the tool and coordination boundary?",
+        "status": "Connectors, modes, threads and model provider are scoped",
+        "answer": "Release and tagged sources describe first-phase connectors through app server and MCP, Coding and Plan collaboration modes, ephemeral spawned threads with provenance metadata, and model/provider overrides. Their effective values and authority are unknown.",
+        "whyItMatters": "Tool, model and coordination configuration can change both what acts and where actions go.",
+        "claimIds": ["com.openai.codex.cli.connectors-0-90-0", "com.openai.codex.cli.collaboration-mode-0-90-0", "com.openai.codex.cli.ephemeral-thread-provenance-0-90-0", "com.openai.codex.cli.model-provider-configuration-0-90-0"]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was the exact record independently evaluated?",
+        "status": "No; one paper remains unresolved potential evidence",
+        "answer": "No independent test is included. A paper names Codex CLI 0.90.0 under four models and a permissive never plus danger-full-access configuration, but missing independence disclosures and public artifacts prevent its results from entering this record.",
+        "whyItMatters": "A version match is not enough when evaluator independence, reproducibility and exact artifact applicability remain unresolved.",
+        "claimIds": ["com.openai.codex.cli.release-identity-0-90-0"]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source claims only. The unresolved paper audit is not an independent test or finding in this record."
+  }
+}
+

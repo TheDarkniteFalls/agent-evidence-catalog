@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "real-agent-discovery/0.1-draft",
+  "artifactType": "unpublished-real-agent-discovery-index",
+  "unpublished": true,
+  "synthetic": false,
+  "asOf": "2026-08-01",
+  "interpretationBoundary": "This expansion overlay annotates only newly validated batch records. It does not modify the completed eight-record discovery source or transfer evidence across surfaces.",
+  "entries": [
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-117",
+      "canonicalIdentity": {
+        "publisher": { "value": "Anthropic PBC", "recordPath": "/identity/publisher/name" },
+        "product": { "value": "Claude Code CLI", "recordPath": "/identity/agent/name" },
+        "surface": { "value": "Claude Code CLI", "recordPath": "/identity/surface/name" }
+      },
+      "sourcedAliases": [
+        {
+          "id": "claude-code",
+          "value": "Claude Code",
+          "kind": "product-name",
+          "scope": "exact-version",
+          "status": "publisher-sourced",
+          "sourceIds": ["source-release-identity-2-1-117"],
+          "claimIds": ["com.anthropic.claude-code.cli.release-identity-2-1-117"],
+          "note": "The publisher release title uses Claude Code; the alias remains scoped to this exact CLI record and does not include IDE, desktop, web or background surfaces."
+        }
+      ],
+      "unresolvedAliases": [],
+      "evidenceGaps": [
+        {
+          "id": "installed-release-asset",
+          "category": "artifact",
+          "status": "unavailable",
+          "resolvableBy": "publisher-evidence",
+          "summary": "Downloaded 2.1.117 platform asset and binary digest",
+          "evidenceRefs": { "sourceIds": ["source-release-identity-2-1-117"], "claimIds": ["com.anthropic.claude-code.cli.release-identity-2-1-117"], "dossierUnknownNumbers": [1] },
+          "note": "The release page pins tag and commit but this public-source dossier has no asset receipt or digest."
+        },
+        {
+          "id": "exact-effective-configuration",
+          "category": "configuration",
+          "status": "unresolved",
+          "resolvableBy": "either",
+          "summary": "Effective 2.1.117 permission, sandbox, model and MCP configuration",
+          "evidenceRefs": { "sourceIds": ["source-agent-mcp-2-1-117", "source-model-persistence-2-1-117"], "claimIds": ["com.anthropic.claude-code.cli.agent-mcp-2-1-117", "com.anthropic.claude-code.cli.model-persistence-2-1-117"], "dossierUnknownNumbers": [3, 4, 5, 7] },
+          "note": "Exact release notes expose configuration-sensitive behavior but no effective session configuration."
+        },
+        {
+          "id": "overeager-public-artifacts",
+          "category": "independent-evaluation",
+          "status": "unavailable",
+          "resolvableBy": "independent-evaluation",
+          "summary": "Complete disclosures and public artifacts for the evaluated Claude Code cells",
+          "evidenceRefs": { "sourceIds": [], "claimIds": [], "dossierUnknownNumbers": [8] },
+          "note": "The independent-evidence audit remains unresolved and admits no test or finding."
+        }
+      ]
+    },
+    {
+      "recordId": "dev.zed.agent.native.1-13-1",
+      "canonicalIdentity": {
+        "publisher": { "value": "Zed Industries, Inc.", "recordPath": "/identity/publisher/name" },
+        "product": { "value": "Zed Agent", "recordPath": "/identity/agent/name" },
+        "surface": { "value": "native Zed Agent in Zed", "recordPath": "/identity/surface/name" }
+      },
+      "sourcedAliases": [],
+      "unresolvedAliases": [],
+      "evidenceGaps": [
+        {
+          "id": "installed-zed-package",
+          "category": "artifact",
+          "status": "unavailable",
+          "resolvableBy": "publisher-evidence",
+          "summary": "Installed Zed 1.13.1 package, source revision and digest",
+          "evidenceRefs": { "sourceIds": ["source-release-identity-1-13-1"], "claimIds": ["dev.zed.agent.release-identity-1-13-1"], "dossierUnknownNumbers": [1] },
+          "note": "The stable page dates three platform builds but supplies no captured package digest or source revision."
+        },
+        {
+          "id": "effective-native-agent-stack",
+          "category": "configuration",
+          "status": "unresolved",
+          "resolvableBy": "either",
+          "summary": "Effective native-agent profile, permissions, sandbox and model route",
+          "evidenceRefs": { "sourceIds": ["source-profiles-current", "source-tool-permissions-current", "source-sandbox-current", "source-model-privacy-current"], "claimIds": ["dev.zed.agent.profiles-current", "dev.zed.agent.tool-permissions-current", "dev.zed.agent.sandbox-current", "dev.zed.agent.model-privacy-current"], "dossierUnknownNumbers": [3, 4, 5, 6] },
+          "note": "Publisher documentation describes independently configured layers but no effective thread receipt."
+        },
+        {
+          "id": "independent-native-agent-evaluation",
+          "category": "independent-evaluation",
+          "status": "not-yet-researched",
+          "resolvableBy": "independent-evaluation",
+          "summary": "Independent result applicable to Zed 1.13.1 native Agent and exact configuration",
+          "evidenceRefs": { "sourceIds": [], "claimIds": [], "dossierUnknownNumbers": [8] },
+          "note": "No candidate was assessed because this batch permits only the Claude Code admission attempt."
+        },
+        {
+          "id": "external-agent-runtime",
+          "category": "runtime",
+          "status": "not-applicable",
+          "resolvableBy": "publisher-evidence",
+          "summary": "ACP External Agent or Terminal Thread runtime identity",
+          "evidenceRefs": { "sourceIds": ["source-agent-paths-current"], "claimIds": ["dev.zed.agent.agent-paths-current"], "dossierUnknownNumbers": [] },
+          "note": "External Agents and Terminal Threads are separate surfaces; their runtime identities are not applicable to this native Zed Agent record."
+        }
+      ]
+    },
+    {
+      "recordId": "com.replit.agent.hosted.agent-4",
+      "canonicalIdentity": {
+        "publisher": { "value": "Replit", "recordPath": "/identity/publisher/name" },
+        "product": { "value": "Replit Agent", "recordPath": "/identity/agent/name" },
+        "surface": { "value": "Replit Agent hosted workspace", "recordPath": "/identity/surface/name" }
+      },
+      "sourcedAliases": [
+        {
+          "id": "agent-4",
+          "value": "Agent 4",
+          "kind": "release-label",
+          "scope": "release-line",
+          "status": "publisher-sourced",
+          "sourceIds": ["source-agent-4-launch"],
+          "claimIds": ["com.replit.agent.hosted.agent-4-launch"],
+          "note": "The publisher launch uses Agent 4 for this hosted generation. It is not transferred to Replit's separate mobile, desktop, ChatGPT or external integration surfaces."
+        }
+      ],
+      "unresolvedAliases": [],
+      "evidenceGaps": [
+        {
+          "id": "immutable-current-service-revision",
+          "category": "service-revision",
+          "status": "unavailable",
+          "resolvableBy": "publisher-evidence",
+          "summary": "Immutable current Replit Agent service and deployment revision",
+          "evidenceRefs": { "sourceIds": ["source-agent-4-launch", "source-agent-modes-current"], "claimIds": ["com.replit.agent.hosted.agent-4-launch", "com.replit.agent.hosted.agent-modes-current"], "dossierUnknownNumbers": [1] },
+          "note": "The dated generation and current controls are public, but no immutable serving build, tenant or regional rollout receipt is published."
+        },
+        {
+          "id": "effective-mode-model-and-effort",
+          "category": "model",
+          "status": "unresolved",
+          "resolvableBy": "either",
+          "summary": "Effective mode, model, effort and per-request route",
+          "evidenceRefs": { "sourceIds": ["source-agent-modes-current", "source-model-selection-current"], "claimIds": ["com.replit.agent.hosted.agent-modes-current", "com.replit.agent.hosted.model-selection-current"], "dossierUnknownNumbers": [2, 3] },
+          "note": "The publisher says availability varies by account, rollout, organization settings and authorization; no task receipt identifies the effective route."
+        },
+        {
+          "id": "replaced-control-history",
+          "category": "configuration",
+          "status": "unavailable",
+          "resolvableBy": "publisher-evidence",
+          "summary": "Versioned history for replaced Turbo and Code Optimizations controls",
+          "evidenceRefs": { "sourceIds": ["source-agent-modes-current", "source-model-selection-current"], "claimIds": ["com.replit.agent.hosted.agent-modes-current", "com.replit.agent.hosted.model-selection-current"], "dossierUnknownNumbers": [3] },
+          "note": "Older documentation routes no longer described the live control surface on capture. The stale controls were not treated as rolling-current claims."
+        },
+        {
+          "id": "independent-agent-4-evaluation",
+          "category": "independent-evaluation",
+          "status": "not-yet-researched",
+          "resolvableBy": "independent-evaluation",
+          "summary": "Independent result applicable to Agent 4 and an exact hosted configuration",
+          "evidenceRefs": { "sourceIds": [], "claimIds": [], "dossierUnknownNumbers": [8] },
+          "note": "No candidate was assessed because this batch permits only the Claude Code admission attempt."
+        },
+        {
+          "id": "other-replit-agent-surfaces",
+          "category": "runtime",
+          "status": "not-applicable",
+          "resolvableBy": "publisher-evidence",
+          "summary": "Desktop, mobile, ChatGPT or other Replit Agent surface identity",
+          "evidenceRefs": { "sourceIds": ["source-agent-4-launch"], "claimIds": ["com.replit.agent.hosted.agent-4-launch"], "dossierUnknownNumbers": [] },
+          "note": "This record covers the hosted Project Editor workspace only; related Replit surfaces are separate and require their own identity and claims."
+        }
+      ]
+    }
+  ]
+}

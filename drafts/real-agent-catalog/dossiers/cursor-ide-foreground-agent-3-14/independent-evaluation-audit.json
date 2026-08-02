@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "independent-evaluation-gate-audit/0.1-draft",
+  "artifactType": "unpublished-potential-evidence-audit",
+  "asOf": "2026-08-01",
+  "candidate": {
+    "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+    "uri": "https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study-paper.pdf",
+    "studyPeriod": "February-June 2025"
+  },
+  "decision": "excluded-inapplicable-to-exact-record",
+  "includedInGeneratedRecord": false,
+  "gates": {
+    "evaluatorIndependence": {
+      "status": "unresolved",
+      "note": "METR describes itself as a donation-funded nonprofit, but the bounded public material does not provide a complete Anysphere-specific funding or relationship disclosure."
+    },
+    "exactClientApplicability": {
+      "status": "fail",
+      "namedVersion": null,
+      "missing": ["Cursor client version", "platform package", "artifact digest", "source revision"]
+    },
+    "exactAgentModeApplicability": {
+      "status": "fail",
+      "note": "Cursor was optional, and reported use mixed Cursor Agent or Composer, Cursor chat, other AI tools and no AI use within the AI-allowed condition."
+    },
+    "exactModelApplicability": {
+      "status": "fail",
+      "namedModels": ["GPT-4o", "GPT-4.5", "o1", "o3-mini", "o3", "o4-mini", "Gemini 2.5 Flash", "Gemini 2.5 Pro", "Claude 3.5 Sonnet", "Claude 3.7 Sonnet"],
+      "missing": ["per-task model identity", "provider endpoint revision", "model settings"]
+    },
+    "exactConfigurationApplicability": {
+      "status": "fail",
+      "missing": ["effective Cursor mode", "approval mode", "tool inventory", "terminal policy", "MCP configuration", "privacy mode", "account and server-side flags"]
+    },
+    "publicArtifacts": {
+      "status": "unresolved",
+      "located": ["public paper", "public methodology page"],
+      "missingForCatalogAdmission": ["exact Cursor run manifest", "versioned client receipt", "per-run model identity", "effective configuration receipt"]
+    }
+  },
+  "catalogBoundary": "No METR result, evaluator, source, independent test or finding is included in the generated Cursor record."
+}

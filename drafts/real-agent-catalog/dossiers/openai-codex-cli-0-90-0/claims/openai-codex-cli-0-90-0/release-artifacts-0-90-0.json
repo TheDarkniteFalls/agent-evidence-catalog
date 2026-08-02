@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.release-artifacts-0-90-0",
+  "slug": "release-artifacts-0-90-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-90-0" }
+  },
+  "claim": {
+    "category": "identity.artifact",
+    "statement": "OpenAI's 0.90.0 release metadata names versioned assets and publisher-provided SHA-256 digests, including codex-npm-0.90.0.tgz with digest 7445e2a83928dca1e4ab6c5cd3bed7b75da69f8f29064981a34d760996f91ed7 and config-schema.json with digest 77090c8be9f0750fddf24b9de6fe6441c343024da01a45ba7707c006b564a37a."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "OpenAI" },
+  "source": {
+    "uri": "https://api.github.com/repos/openai/codex/releases/tags/rust-v0.90.0",
+    "title": "OpenAI Codex 0.90.0 release API metadata",
+    "locator": "assets entries for codex-npm-0.90.0.tgz and config-schema.json — name, digest and browser_download_url",
+    "publishedAt": "2026-01-25T16:37:37Z",
+    "capturedAt": "2026-08-01T00:47:47Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "0.90.0" },
+    "configuration": { "scope": "alternatives", "values": ["GitHub release asset selection"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["GitHub release distribution"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-01-25", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "release-metadata-change", "claimant-correction", "manual-review"]
+  },
+  "limitations": [
+    "These are publisher-provided release metadata values, not catalog-recomputed digests.",
+    "The catalog did not download either asset or establish that either was installed or invoked."
+  ],
+  "unknowns": [
+    "Whether publisher-provided digests match downloaded bytes was not independently verified.",
+    "The executable and configuration schema used by any real session are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.example.patchpilot.cli.unconfirmed-command-report",
+  "slug": "unconfirmed-command-report",
+  "subject": {
+    "id": "dev.example.patchpilot",
+    "name": "PatchPilot",
+    "publisher": "Synthetic Workshop Ltd",
+    "surface": {
+      "kind": "cli",
+      "name": "PatchPilot CLI",
+      "slug": "patchpilot-cli"
+    }
+  },
+  "claim": {
+    "category": "authority.change",
+    "statement": "Synthetic Test Collective reports that one mutating command completed without confirmation in the named restricted configuration."
+  },
+  "provenance": {
+    "kind": "independent-third-party-report",
+    "claimant": "Synthetic Test Collective"
+  },
+  "source": {
+    "uri": "https://reports.synthetic.example/patchpilot/2.4.1/command-controls",
+    "title": "Synthetic PatchPilot command-control report",
+    "locator": "Restricted configuration result",
+    "publishedAt": "2026-07-15T00:00:00Z",
+    "capturedAt": "2026-07-30T00:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "2.4.1"
+    },
+    "configuration": {
+      "scope": "named",
+      "values": ["restricted"]
+    },
+    "platform": {
+      "scope": "named",
+      "values": ["linux-x86_64"]
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["local"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-30",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-30",
+    "recheckAfter": "2026-10-28",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-change",
+      "configuration-change",
+      "contradictory-source"
+    ]
+  },
+  "limitations": [
+    "This synthetic third-party report has not been reproduced by the catalog."
+  ],
+  "unknowns": [
+    "The report does not establish behavior outside its named synthetic setup."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "dev.example.patchpilot.cli.mutating-command-approval",
+      "extent": "partial",
+      "status": "active",
+      "resolution": null,
+      "note": "Both synthetic claims address mutating commands in version 2.4.1 under the restricted configuration."
+    }
+  ],
+  "validationRefs": []
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.cloud-agent.ga-milestone-2025-09-25",
+  "slug": "ga-milestone-2025-09-25",
+  "subject": {
+    "id": "com.github.copilot.cloud-agent",
+    "name": "GitHub Copilot cloud agent",
+    "publisher": "GitHub",
+    "surface": { "kind": "hosted-service", "name": "GitHub Copilot cloud agent", "slug": "github-copilot-cloud-agent" }
+  },
+  "claim": {
+    "category": "identity",
+    "statement": "GitHub's dated 25 September 2025 changelog identifies Copilot coding agent as its asynchronous, autonomous developer agent, announces general availability for paid Copilot subscribers, and describes delegation that opens a draft pull request and works in a GitHub Actions-powered development environment."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "GitHub" },
+  "source": {
+    "uri": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
+    "title": "Copilot coding agent is now generally available",
+    "locator": "Dated heading; opening two paragraphs; task-entry-point paragraph",
+    "publishedAt": "2025-09-25T00:00:00Z",
+    "capturedAt": "2026-07-31T22:45:15Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "2025-09-25 GA milestone" },
+    "configuration": { "scope": "named", "values": ["direct draft pull-request route"] },
+    "platform": { "scope": "named", "values": ["GitHub hosted service"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["GitHub Actions-powered development environment"] }
+  },
+  "lifecycle": { "status": "superseded", "changedAt": "2026-04-01", "reason": "GitHub explicitly renamed the service Copilot cloud agent and expanded branch-first workflows." },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-change", "source-unavailable", "claimant-correction", "product-surface-change", "manual-review"]
+  },
+  "limitations": [
+    "This dated service milestone does not identify an immutable backend build, runner image, model or task artifact.",
+    "The behavior is a publisher description and was not observed by the catalog."
+  ],
+  "unknowns": [
+    "The exact service implementation deployed on the milestone date is unknown.",
+    "The organization, repository, policy, runner, model and task configurations covered by the announcement are not fully enumerated."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

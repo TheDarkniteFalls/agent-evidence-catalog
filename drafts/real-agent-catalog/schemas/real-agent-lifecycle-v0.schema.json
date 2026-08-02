@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-evidence-catalog.example/drafts/real-agent-lifecycle-v0.schema.json",
+  "title": "Unpublished real-agent lifecycle overlay draft",
+  "description": "A separate backward-compatible lifecycle overlay for immutable accepted real-agent records. It records currentness review and direct record-to-record supersession links without changing evidence or catalog pages.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "artifactType",
+    "synthetic",
+    "unpublished",
+    "asOf",
+    "interpretationBoundary",
+    "sources",
+    "entries"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "real-agent-lifecycle/0.1-draft" },
+    "artifactType": { "const": "unpublished-real-agent-lifecycle-overlay" },
+    "synthetic": { "const": false },
+    "unpublished": { "const": true },
+    "asOf": { "$ref": "#/$defs/date" },
+    "interpretationBoundary": { "$ref": "#/$defs/interpretationBoundary" },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/lifecycleSource" }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/lifecycleEntry" }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$",
+      "maxLength": 240
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 200
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "shortText": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "nullableRecordId": {
+      "type": ["string", "null"],
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$",
+      "maxLength": 240
+    },
+    "nullableText": {
+      "type": ["string", "null"],
+      "maxLength": 4000
+    },
+    "interpretationBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordsModified",
+        "publisherSourcesOnly",
+        "claimsOrObservationsAdded",
+        "catalogIntegration",
+        "note"
+      ],
+      "properties": {
+        "recordsModified": { "const": false },
+        "publisherSourcesOnly": { "const": true },
+        "claimsOrObservationsAdded": { "const": false },
+        "catalogIntegration": { "const": false },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "lifecycleSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "publisher",
+        "title",
+        "uri",
+        "kind",
+        "publisherControlled",
+        "reviewedAt"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "publisher": { "$ref": "#/$defs/shortText" },
+        "title": { "$ref": "#/$defs/shortText" },
+        "uri": { "type": "string", "format": "uri", "maxLength": 2000 },
+        "kind": {
+          "enum": [
+            "marketplace-listing",
+            "release-list",
+            "latest-release",
+            "download-page",
+            "changelog",
+            "release-notes",
+            "product-documentation"
+          ]
+        },
+        "publisherControlled": { "const": true },
+        "reviewedAt": { "$ref": "#/$defs/date" }
+      }
+    },
+    "lifecycleEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordId",
+        "surfaceKey",
+        "status",
+        "reviewedAt",
+        "basisSourceIds",
+        "supersedesRecordId",
+        "supersededByRecordId",
+        "historicalSignificance",
+        "note"
+      ],
+      "properties": {
+        "recordId": { "$ref": "#/$defs/id" },
+        "surfaceKey": { "$ref": "#/$defs/id" },
+        "status": {
+          "enum": [
+            "current",
+            "superseded",
+            "historical",
+            "discontinued",
+            "unresolved"
+          ]
+        },
+        "reviewedAt": { "$ref": "#/$defs/date" },
+        "basisSourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/slug" }
+        },
+        "supersedesRecordId": { "$ref": "#/$defs/nullableRecordId" },
+        "supersededByRecordId": { "$ref": "#/$defs/nullableRecordId" },
+        "historicalSignificance": { "$ref": "#/$defs/nullableText" },
+        "note": { "$ref": "#/$defs/nullableText" }
+      }
+    }
+  }
+}

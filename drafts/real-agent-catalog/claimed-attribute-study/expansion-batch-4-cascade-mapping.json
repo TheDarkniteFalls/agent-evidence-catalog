@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "claimed-attribute-mapping/0.1-study-extension",
+  "status": "unpublished-expansion-overlay",
+  "taxonomyPath": "taxonomy.json",
+  "baseMappingPath": "mapping.json",
+  "priorOverlayPath": "expansion-batch-4-mapping.json",
+  "asOf": "2026-08-02",
+  "mappingRule": "This additive mapping uses the completed taxonomy and calculation boundaries unchanged. The states array follows taxonomy.attributeOrder exactly, and evidence references point only to claims and configuration axes in Cascade in Devin Desktop v3.6.27. Unknown does not mean absent; not-applicable is limited to native hosted-output or trigger paths outside this foreground Desktop surface.",
+  "records": [
+    {
+      "recordId": "com.cognition.devin-desktop.cascade.3-6-27",
+      "comparisonFrame": "interactive-ide",
+      "states": [
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "unknown",
+        "conditional",
+        "unknown",
+        "unknown",
+        "unknown",
+        "not-applicable",
+        "not-applicable",
+        "not-applicable",
+        "conditional",
+        "conditional",
+        "conditional",
+        "not-applicable",
+        "conditional",
+        "unknown",
+        "unknown",
+        "conditional",
+        "unknown",
+        "unknown",
+        "not-applicable",
+        "not-applicable"
+      ],
+      "evidence": {
+        "cap.file-read": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.modes-current", "com.cognition.devin-desktop.cascade.concurrency-workspace-current"],
+          "axisIds": ["interaction-mode", "file-scope"],
+          "note": "Plan and Ask explicitly inspect or explore, while file scope remains conditional on the workspace and ignore policies."
+        },
+        "cap.file-modify": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.modes-current", "com.cognition.devin-desktop.cascade.plan-code-transition-current", "com.cognition.devin-desktop.cascade.concurrency-workspace-current"],
+          "axisIds": ["interaction-mode", "plan-code-transition", "file-scope", "session-concurrency"],
+          "note": "Code may modify files, Plan must transition to implementation and Ask is read-only; concurrent same-workspace edits are race-prone."
+        },
+        "cap.command-execution": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.modes-current", "com.cognition.devin-desktop.cascade.terminal-permissions-current", "com.cognition.devin-desktop.cascade.command-policy-current", "com.cognition.devin-desktop.cascade.tools-current"],
+          "axisIds": ["interaction-mode", "terminal-autoexecution", "command-policy", "tool-surface"]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.tools-current"],
+          "axisIds": ["tool-surface"],
+          "note": "Only the publisher-documented Web tool is credited; network availability or behavior was not observed."
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.tools-current"],
+          "axisIds": ["tool-surface"],
+          "note": "Scoped to configured MCP tools; no server, credential or tool call was observed."
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.model-routing-current"],
+          "axisIds": ["model-route"],
+          "note": "Adaptive and manual selection remain alternatives; exact provider, model revision and Adaptive per-request route are unresolved."
+        },
+        "cap.nonwriting-plan-stage": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.modes-current", "com.cognition.devin-desktop.cascade.plan-code-transition-current", "com.cognition.devin-desktop.cascade.planning-queue-current"],
+          "axisIds": ["interaction-mode", "plan-code-transition"],
+          "note": "Plan is separated from implementation, but multiple human and automatic Code-transition paths prevent an unconditional state."
+        },
+        "cap.parallel-or-child-execution": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.concurrency-workspace-current"],
+          "axisIds": ["session-concurrency"],
+          "note": "Publisher docs permit simultaneous Cascade sessions and warn about edit races; this is not credited as spawned child-agent or isolated execution."
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.plan-code-transition-current", "com.cognition.devin-desktop.cascade.command-policy-current", "com.cognition.devin-desktop.cascade.tools-current"],
+          "axisIds": ["plan-code-transition", "terminal-autoexecution", "command-policy", "tool-surface"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.plan-code-transition-current", "com.cognition.devin-desktop.cascade.terminal-permissions-current", "com.cognition.devin-desktop.cascade.tools-current"],
+          "axisIds": ["plan-code-transition", "terminal-autoexecution", "tool-surface"],
+          "note": "Automatic ready detection, Auto/Turbo execution and configured auto-continue are separate conditional paths, not a universal bypass."
+        },
+        "authority.plan-approval": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.plan-code-transition-current"],
+          "axisIds": ["plan-code-transition"],
+          "note": "Implement, approval-request and manual-switch paths are human-gated, while automatic ready detection remains a separate alternative."
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.terminal-permissions-current", "com.cognition.devin-desktop.cascade.command-policy-current", "com.cognition.devin-desktop.cascade.tools-current"],
+          "axisIds": ["terminal-autoexecution", "command-policy", "tool-surface"],
+          "note": "Command execution levels and merged allow/deny rules are credited only for the Cascade terminal path."
+        },
+        "authority.repository-scope": {
+          "claimIds": ["com.cognition.devin-desktop.cascade.concurrency-workspace-current"],
+          "axisIds": ["file-scope", "session-concurrency"],
+          "note": "Only local workspace/worktree and ignore-policy boundaries are credited; hosted repository authorization is not inferred."
+        }
+      }
+    }
+  ]
+}

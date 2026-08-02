@@ -1,0 +1,403 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-evidence-catalog.example/drafts/real-agent-dossier-v0.schema.json",
+  "title": "Unpublished real-agent dossier draft v0.2-compatible",
+  "description": "A provisional public-source dossier contract that keeps identity, attribution, capture, evaluation, applicability, configuration alternatives, relationships, gaps and reader mappings explicit without scoring or recommendation. The optional v0.2 annotations are additive; accepted v0.1 records remain valid without rewriting.",
+  "$comment": "The v0.2 retrospective adds only optional structure. No existing required list is expanded.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "artifactType", "synthetic", "unpublished", "asOf", "sourceDossier",
+    "identity", "roles", "sources", "configurationModel", "claims",
+    "relationships", "independentTests", "dossier", "mappings", "boundaries"
+  ],
+  "properties": {
+    "schemaVersion": { "enum": ["real-agent-dossier/0.1-draft", "real-agent-dossier/0.2-draft"] },
+    "artifactType": { "const": "unpublished-real-agent-dossier" },
+    "synthetic": { "const": false },
+    "unpublished": { "const": true },
+    "asOf": { "$ref": "#/$defs/date" },
+    "sourceDossier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "relationship"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "relationship": { "enum": ["derived-lossless-mapping", "canonical-draft-source"] }
+      }
+    },
+    "identity": { "$ref": "#/$defs/identity" },
+    "roles": { "$ref": "#/$defs/roles" },
+    "sources": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/source" } },
+    "configurationModel": { "$ref": "#/$defs/configurationModel" },
+    "claims": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/claimEnvelope" } },
+    "relationships": { "type": "array", "items": { "$ref": "#/$defs/relationship" } },
+    "independentTests": { "type": "array", "items": { "$ref": "#/$defs/independentTest" } },
+    "independentEvidenceAdmissions": { "type": "array", "items": { "$ref": "#/$defs/independentEvidenceAdmission" } },
+    "dossier": { "$ref": "#/$defs/dossier" },
+    "mappings": { "$ref": "#/$defs/mappings" },
+    "boundaries": { "$ref": "#/$defs/boundaries" }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$", "maxLength": 240 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 200 },
+    "text": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "shortText": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "date": { "type": "string", "format": "date" },
+    "dateTime": { "type": "string", "format": "date-time" },
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "artifactDigest": { "type": "string", "pattern": "^(?:[a-f0-9]{40}|[a-f0-9]{64})$" },
+    "uri": { "type": "string", "format": "uri", "maxLength": 2000 },
+    "nullableText": { "type": ["string", "null"], "maxLength": 4000 },
+    "scopeBinding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["axisId", "alternativeId"],
+      "properties": {
+        "axisId": { "$ref": "#/$defs/slug" },
+        "alternativeId": { "$ref": "#/$defs/slug" }
+      }
+    },
+    "additionalReleaseIdentity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "status", "value", "scopeBindings", "artifactRefs", "sourceIds", "claimIds", "note"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "kind": { "enum": ["release-line", "service-revision", "deployment-revision", "runtime-build", "artifact-version", "other"] },
+        "status": { "enum": ["known", "unresolved", "not-applicable"] },
+        "value": { "type": ["string", "null"], "maxLength": 240 },
+        "scopeBindings": { "type": "array", "items": { "$ref": "#/$defs/scopeBinding" } },
+        "artifactRefs": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "sourceIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "claimIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "runtimeAlternativeDetail": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "label", "kind", "identityStatus", "artifactRefs", "scopeBindings", "claimIds", "note"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "label": { "$ref": "#/$defs/shortText" },
+        "kind": { "enum": ["package", "binary", "client-variant", "platform-build", "service", "runner", "environment", "executor", "other"] },
+        "identityStatus": { "enum": ["exact", "unresolved", "not-applicable"] },
+        "artifactRefs": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "scopeBindings": { "type": "array", "items": { "$ref": "#/$defs/scopeBinding" } },
+        "claimIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "surface": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "name", "slug", "deliveryModel"],
+      "properties": {
+        "kind": { "enum": ["cli", "ide-extension", "desktop-app", "browser-extension", "hosted-service", "api", "sdk", "other"] },
+        "name": { "$ref": "#/$defs/shortText" },
+        "slug": { "$ref": "#/$defs/slug" },
+        "deliveryModel": { "enum": ["local", "hosted", "hybrid", "unknown"] }
+      }
+    },
+    "runtimeVariant": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "value", "alternatives", "note"],
+      "properties": {
+        "status": { "enum": ["known", "unresolved", "not-applicable"] },
+        "value": { "type": ["string", "null"], "maxLength": 240 },
+        "alternatives": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/shortText" } },
+        "alternativeDetails": { "type": "array", "items": { "$ref": "#/$defs/runtimeAlternativeDetail" } },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "release": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "version", "releaseTag", "sourceRevision", "releasedAt", "channel", "installedRuntimeVariant"],
+      "properties": {
+        "scope": { "enum": ["exact-version", "rolling-service", "unresolved"] },
+        "version": { "type": ["string", "null"], "maxLength": 200 },
+        "releaseTag": { "type": ["string", "null"], "maxLength": 200 },
+        "sourceRevision": { "type": ["string", "null"], "maxLength": 200 },
+        "releasedAt": { "oneOf": [{ "$ref": "#/$defs/dateTime" }, { "type": "null" }] },
+        "channel": { "type": ["string", "null"], "maxLength": 200 },
+        "additionalIdentities": { "type": "array", "items": { "$ref": "#/$defs/additionalReleaseIdentity" } },
+        "installedRuntimeVariant": { "$ref": "#/$defs/runtimeVariant" }
+      }
+    },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "identityStatus", "uri", "ecosystem", "version", "digest", "note"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "kind": { "enum": ["source-revision", "vscode-marketplace-extension", "python-package", "standalone-binary", "container-image", "hosted-release", "other"] },
+        "identityStatus": { "enum": ["exact", "unresolved", "not-applicable"] },
+        "uri": { "oneOf": [{ "$ref": "#/$defs/uri" }, { "type": "null" }] },
+        "ecosystem": { "type": ["string", "null"], "maxLength": 200 },
+        "version": { "type": ["string", "null"], "maxLength": 200 },
+        "digest": { "oneOf": [{ "$ref": "#/$defs/artifactDigest" }, { "type": "null" }] },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["recordId", "agent", "publisher", "surface", "release", "artifacts"],
+      "properties": {
+        "recordId": { "$ref": "#/$defs/id" },
+        "agent": {
+          "type": "object", "additionalProperties": false, "required": ["id", "name"],
+          "properties": { "id": { "$ref": "#/$defs/id" }, "name": { "$ref": "#/$defs/shortText" } }
+        },
+        "publisher": {
+          "type": "object", "additionalProperties": false, "required": ["id", "name"],
+          "properties": { "id": { "$ref": "#/$defs/id" }, "name": { "$ref": "#/$defs/shortText" } }
+        },
+        "surface": { "$ref": "#/$defs/surface" },
+        "release": { "$ref": "#/$defs/release" },
+        "artifacts": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/artifact" } }
+      }
+    },
+    "actor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "kind"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "name": { "$ref": "#/$defs/shortText" },
+        "kind": { "enum": ["publisher", "catalog-maintainer", "independent-third-party", "other"] }
+      }
+    },
+    "roles": {
+      "type": "object", "additionalProperties": false,
+      "required": ["claimants", "sourceCapturers", "independentEvaluators"],
+      "properties": {
+        "claimants": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/actor" } },
+        "sourceCapturers": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/actor" } },
+        "independentEvaluators": { "type": "array", "items": { "$ref": "#/$defs/actor" } }
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "uri", "title", "locator", "sourceKind", "claimantId", "publishedAt", "capture"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "uri": { "$ref": "#/$defs/uri" },
+        "title": { "$ref": "#/$defs/shortText" },
+        "locator": { "$ref": "#/$defs/text" },
+        "sourceKind": { "enum": ["publisher-release-metadata", "publisher-versioned-source", "publisher-rolling-documentation", "publisher-policy", "independent-report"] },
+        "claimantId": { "$ref": "#/$defs/slug" },
+        "publishedAt": { "oneOf": [{ "$ref": "#/$defs/dateTime" }, { "type": "null" }] },
+        "capture": {
+          "type": "object", "additionalProperties": false,
+          "required": ["capturerId", "capturedAt", "snapshotStatus", "contentDigest", "note"],
+          "properties": {
+            "capturerId": { "$ref": "#/$defs/slug" },
+            "capturedAt": { "$ref": "#/$defs/dateTime" },
+            "snapshotStatus": { "enum": ["immutable-reference", "live-page", "archived-snapshot", "unresolved"] },
+            "contentDigest": { "oneOf": [{ "$ref": "#/$defs/sha256" }, { "type": "null" }] },
+            "note": { "$ref": "#/$defs/text" }
+          }
+        }
+      }
+    },
+    "configurationAlternative": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "label", "claimIds", "mutuallyExclusiveWith"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "label": { "$ref": "#/$defs/shortText" },
+        "claimIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "mutuallyExclusiveWith": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "controlMode": { "enum": ["manual-approval", "automatic-allow", "automatic-deny", "conditional-policy", "classifier-mediated", "disabled", "unavailable", "unresolved", "other"] },
+        "humanInteraction": { "enum": ["required", "possible", "unavailable", "not-applicable", "unresolved"] }
+      }
+    },
+    "configurationAxis": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "label", "scope", "alternatives", "unknowns"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "label": { "$ref": "#/$defs/shortText" },
+        "scope": { "enum": ["mutually-exclusive", "composable", "unresolved"] },
+        "dimension": { "enum": ["artifact", "offering", "runtime", "service-revision", "execution-location", "interaction-mode", "trigger", "identity", "credential", "approval-authority", "sandbox", "network", "tool-surface", "model", "data-policy", "output-route", "other"] },
+        "alternatives": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/configurationAlternative" } },
+        "unknowns": { "type": "array", "items": { "$ref": "#/$defs/text" } }
+      }
+    },
+    "configurationModel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["axes", "effectiveConfigurationStatus", "note"],
+      "properties": {
+        "axes": { "type": "array", "items": { "$ref": "#/$defs/configurationAxis" } },
+        "effectiveConfigurationStatus": { "enum": ["known", "unresolved", "not-applicable"] },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "rawRecord": {
+      "type": "object",
+      "required": ["schemaVersion", "id", "subject", "claim", "provenance", "source", "applicability", "limitations", "unknowns", "relationships"],
+      "properties": {
+        "schemaVersion": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
+        "subject": { "type": "object" },
+        "claim": {
+          "type": "object", "required": ["category", "statement"],
+          "properties": { "category": { "type": "string" }, "statement": { "$ref": "#/$defs/text" } }
+        },
+        "provenance": {
+          "type": "object", "required": ["kind", "claimant"],
+          "properties": { "kind": { "type": "string" }, "claimant": { "$ref": "#/$defs/shortText" } }
+        },
+        "source": { "type": "object" },
+        "applicability": { "type": "object" },
+        "limitations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/text" } },
+        "unknowns": { "type": "array", "items": { "$ref": "#/$defs/text" } },
+        "relationships": { "type": "array" }
+      }
+    },
+    "claimEnvelope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "rawRecordPath", "rawRecordSha256", "rawRecord", "claimantId", "sourceId", "sourceCapturerId", "independentEvaluatorRefs", "assertionType", "publisherClaimBoundary", "propositionIds", "personaIds"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "rawRecordPath": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "rawRecordSha256": { "$ref": "#/$defs/sha256" },
+        "rawRecord": { "$ref": "#/$defs/rawRecord" },
+        "claimantId": { "$ref": "#/$defs/slug" },
+        "sourceId": { "$ref": "#/$defs/slug" },
+        "sourceCapturerId": { "$ref": "#/$defs/slug" },
+        "independentEvaluatorRefs": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "assertionType": { "enum": ["publisher-attributed-claim", "publisher-reported-result", "independent-finding"] },
+        "publisherClaimBoundary": { "const": "attributed-not-observed" },
+        "propositionIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "personaIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } }
+      }
+    },
+    "relationship": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "fromClaimId", "toClaimId", "kind", "extent", "status", "resolution", "note"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "fromClaimId": { "$ref": "#/$defs/id" },
+        "toClaimId": { "$ref": "#/$defs/id" },
+        "kind": { "enum": ["contradicts", "corroborates", "supersedes", "scope-differs", "unresolved-relationship"] },
+        "extent": { "enum": ["full", "partial", "unknown"] },
+        "status": { "enum": ["active", "resolved", "unresolved"] },
+        "resolution": { "type": ["string", "null"], "enum": [null, "attributable-correction", "claimant-withdrawal", "superseding-source", "scope-difference"] },
+        "analysis": { "$ref": "#/$defs/relationshipAnalysis" },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "relationshipAnalysis": {
+      "type": "object", "additionalProperties": false,
+      "required": ["classification", "scopeDimensions", "resolutionSourceIds", "note"],
+      "properties": {
+        "classification": { "enum": ["substantive-disagreement", "scope-difference", "supersession", "corroboration", "unresolved"] },
+        "scopeDimensions": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["version", "release-line", "time", "offering", "service-revision", "runtime", "configuration", "model", "trigger", "identity", "approval-authority", "source", "claimant", "other"] } },
+        "resolutionSourceIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "independentEvidenceGate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "dimension", "status", "claimIds", "note"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "dimension": { "enum": ["evaluator-independence", "release", "offering", "runtime", "runner", "model", "configuration", "disclosure", "public-artifacts", "other"] },
+        "status": { "enum": ["pass", "fail", "partial", "unresolved", "not-assessed"] },
+        "claimIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    },
+    "independentEvidenceAdmission": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "candidateLabel", "candidateSourceIds", "decision", "gates", "includedTestIds", "limitations"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "candidateLabel": { "type": ["string", "null"], "maxLength": 240 },
+        "candidateSourceIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "decision": { "enum": ["admitted", "excluded", "unresolved-potential", "no-candidate"] },
+        "gates": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/independentEvidenceGate" } },
+        "includedTestIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } },
+        "limitations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/text" } }
+      }
+    },
+    "independentTest": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "evaluatorId", "artifactRef", "configurationRef", "result", "sourceId", "limitations"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "evaluatorId": { "$ref": "#/$defs/slug" },
+        "admissionId": { "$ref": "#/$defs/slug" },
+        "artifactRef": { "$ref": "#/$defs/slug" },
+        "configurationRef": { "$ref": "#/$defs/slug" },
+        "result": { "enum": ["observed", "reproduced", "not-reproduced", "inconclusive"] },
+        "sourceId": { "$ref": "#/$defs/slug" },
+        "limitations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/text" } }
+      }
+    },
+    "releaseContext": {
+      "type": "object", "additionalProperties": false,
+      "required": ["statement", "sourceId", "legacySource"],
+      "properties": {
+        "statement": { "$ref": "#/$defs/text" },
+        "sourceId": { "$ref": "#/$defs/slug" },
+        "legacySource": { "type": ["object", "null"] }
+      }
+    },
+    "dossier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["summary", "releaseContext", "limitations", "unknowns"],
+      "properties": {
+        "summary": { "$ref": "#/$defs/text" },
+        "releaseContext": { "$ref": "#/$defs/releaseContext" },
+        "limitations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/text" } },
+        "unknowns": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/text" } }
+      }
+    },
+    "persona": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "label", "prompt", "propositionIds"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "label": { "$ref": "#/$defs/shortText" },
+        "prompt": { "$ref": "#/$defs/text" },
+        "propositionIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/slug" } }
+      }
+    },
+    "proposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "eyebrow", "question", "status", "answer", "whyItMatters", "claimIds"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "eyebrow": { "$ref": "#/$defs/shortText" },
+        "question": { "$ref": "#/$defs/text" },
+        "status": { "$ref": "#/$defs/shortText" },
+        "tone": { "enum": ["attention", "mixed", "qualified", "neutral"] },
+        "answer": { "$ref": "#/$defs/text" },
+        "whyItMatters": { "$ref": "#/$defs/text" },
+        "claimIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } }
+      }
+    },
+    "mappings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["personas", "propositions"],
+      "properties": {
+        "personas": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/persona" } },
+        "propositions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/proposition" } }
+      }
+    },
+    "boundaries": {
+      "type": "object", "additionalProperties": false,
+      "required": ["publisherContacted", "intakeOpened", "agentInstalled", "agentRun", "independentlyTested", "catalogEvaluation", "ranking", "recommendation", "safetyCertification", "published", "note"],
+      "properties": {
+        "publisherContacted": { "const": false },
+        "intakeOpened": { "const": false },
+        "agentInstalled": { "const": false },
+        "agentRun": { "const": false },
+        "independentlyTested": { "const": false },
+        "catalogEvaluation": { "const": false },
+        "ranking": { "const": false },
+        "recommendation": { "const": false },
+        "safetyCertification": { "const": false },
+        "published": { "const": false },
+        "note": { "$ref": "#/$defs/text" }
+      }
+    }
+  }
+}

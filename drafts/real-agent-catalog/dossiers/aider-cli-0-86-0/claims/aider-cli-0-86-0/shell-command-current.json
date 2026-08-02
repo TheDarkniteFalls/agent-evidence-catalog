@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0", "id": "org.aider-ai.aider.cli.shell-command-current", "slug": "shell-command-current",
+  "subject": { "id": "org.aider-ai.aider.cli", "name": "Aider CLI", "publisher": "Aider-AI project", "surface": { "kind": "cli", "name": "Aider CLI", "slug": "aider-cli-0-86-0" } },
+  "claim": { "category": "tool.command-execution", "statement": "Current in-chat command documentation describes `/run` as executing a shell command with an option to add its output to chat, and `/git` as executing a git command without adding output to chat." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Aider-AI project" },
+  "source": { "uri": "https://aider.chat/docs/usage/commands.html", "title": "Aider in-chat commands", "locator": "Slash commands table — /run and /git", "publishedAt": null, "capturedAt": "2026-08-01T10:46:26Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["user-invoked /run", "user-invoked /git", "local shell environment"] }, "platform": { "scope": "unresolved", "values": [] }, "model": { "scope": "not-applicable", "values": [] }, "deployment": { "scope": "named", "values": ["local CLI workspace"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["command-documentation-change", "shell-authority-change"] },
+  "limitations": ["The documented path is explicitly user-invoked and does not establish autonomous command execution by a model."],
+  "unknowns": ["No command, shell, working directory, environment, confirmation response or output was inspected."],
+  "relationships": [], "validationRefs": []
+}
+

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.safe-mode-action-approval-current",
+  "slug": "safe-mode-action-approval-current",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "authority.approval", "statement": "The current v3 session reference defines waiting_for_approval as a running-session status detail meaning that the session is awaiting action approval in safe mode." },
+  "provenance": { "kind": "publisher-declared", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/api-reference/v3/sessions/post-organizations-sessions", "title": "Create Session", "locator": "Response — status_detail — waiting_for_approval", "publishedAt": null, "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "v3 API captured 2026-08-01" },
+    "configuration": { "scope": "named", "values": ["safe mode", "action approval", "waiting_for_approval"] },
+    "platform": { "scope": "named", "values": ["running Devin session"] },
+    "model": { "scope": "configuration-dependent", "values": [] },
+    "deployment": { "scope": "unresolved", "values": [] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-08-15", "invalidatedBy": ["status-schema-change", "safe-mode-change", "approval-change"] },
+  "limitations": ["A status definition does not enumerate which actions require approval or prove that an approval check was enforced."],
+  "unknowns": ["The safe-mode policy, action, approver, approval result and child-session behavior are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

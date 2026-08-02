@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.sandbox-modes-0-90-0",
+  "slug": "sandbox-modes-0-90-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-90-0" }
+  },
+  "claim": {
+    "category": "authority.sandbox",
+    "statement": "The generated configuration schema at tag rust-v0.90.0 enumerates read-only, workspace-write and danger-full-access sandbox modes; its workspace-write object includes writable_roots and a network_access boolean whose documented default is false."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": {
+    "uri": "https://github.com/openai/codex/blob/rust-v0.90.0/codex-rs/core/config.schema.json",
+    "title": "Codex 0.90.0 generated configuration schema",
+    "locator": "definitions.SandboxMode, definitions.SandboxWorkspaceWrite and properties.sandbox_mode",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T00:47:47Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "0.90.0" },
+    "configuration": { "scope": "alternatives", "values": ["read-only", "workspace-write", "danger-full-access", "workspace-write network_access=false", "workspace-write network_access=true", "additional writable_roots"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["local Codex CLI command execution"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-01-25", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "platform-change", "manual-review"]
+  },
+  "limitations": [
+    "The schema records configuration shape, not observed operating-system enforcement or sandbox strength.",
+    "The three sandbox modes and network flag alternatives are configuration-scoped and must remain separate."
+  ],
+  "unknowns": [
+    "The effective sandbox mode, writable roots and network flag of any session are unknown.",
+    "Platform-specific enforcement, symlink behavior, process inheritance, temporary-directory access, bypass resistance and failure behavior were not tested."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.openai.codex.cli.security-layers-current",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The exact tagged schema and rolling current security documentation discuss overlapping controls under different version applicability; neither is projected into the other's time scope."
+    }
+  ],
+  "validationRefs": []
+}
+

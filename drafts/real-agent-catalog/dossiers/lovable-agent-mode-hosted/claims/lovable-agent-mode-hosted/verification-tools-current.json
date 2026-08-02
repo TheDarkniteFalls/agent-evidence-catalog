@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.verification-tools-current", "slug": "verification-tools-current",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Build mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Build mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "tool.verification", "statement": "Current Lovable documentation describes browser testing, frontend tests and edge-function verification as separate hosted verification paths and says most tests run only when requested." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/features/testing", "title": "Test and verify your app", "locator": "Verification overview, Browser testing, Frontend tests and Backend verification", "publishedAt": null, "capturedAt": "2026-08-01T10:46:26Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["browser testing", "frontend tests", "edge-function direct calls", "edge tests", "explicit request"] }, "platform": { "scope": "named", "values": ["Lovable hosted verification environments"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["project preview or configured test environment"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["testing-documentation-change", "tool-change"] },
+  "limitations": ["Tool availability does not prove a tool was requested, executed, passed or independently verified."],
+  "unknowns": ["Verification path, test code, inputs, environment, credentials, results and artifacts are unknown."],
+  "relationships": [], "validationRefs": []
+}

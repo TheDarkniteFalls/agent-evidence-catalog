@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.platform-downloads-3-14",
+  "slug": "platform-downloads-3-14",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": { "kind": "desktop-app", "name": "Cursor IDE foreground Agent", "slug": "cursor-ide-foreground-agent-3-14" }
+  },
+  "claim": {
+    "category": "identity.artifact",
+    "statement": "The official 3.14 download listing exposes versioned Cursor desktop endpoints for macOS ARM64, x64 and Universal; Windows x64 and ARM64 system and user installers; and Linux DEB, RPM and AppImage packages for ARM64 and x64."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Anysphere, Inc." },
+  "source": {
+    "uri": "https://cursor.com/download",
+    "title": "Cursor download archive",
+    "locator": "3.14 platform downloads under macOS, Windows and Linux",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T01:28:42Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "3.14" },
+    "configuration": { "scope": "alternatives", "values": ["macOS ARM64", "macOS x64", "macOS Universal", "Windows x64 system", "Windows x64 user", "Windows ARM64 system", "Windows ARM64 user", "Linux DEB ARM64", "Linux DEB x64", "Linux RPM ARM64", "Linux RPM x64", "Linux AppImage ARM64", "Linux AppImage x64"] },
+    "platform": { "scope": "alternatives", "values": ["macOS", "Windows", "Linux"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["publisher desktop download endpoints"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["download-endpoint-change", "artifact-withdrawal", "publisher-correction", "manual-review"]
+  },
+  "limitations": [
+    "No package was downloaded, installed or hashed, so the endpoint labels are not independently verified artifact digests.",
+    "The platform packages are alternatives and must not be collapsed into one installed runtime."
+  ],
+  "unknowns": [
+    "The installed operating system, architecture, installer type and package digest are unknown.",
+    "The reproducible relationship among platform packages, the opaque production build token and any source revision is unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

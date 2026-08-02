@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The original static catalog presentation for comparison.">
+    <title>Original catalog · Agent Evidence Catalog</title>
+    <link rel="stylesheet" href="styles.css?v=journey4">
+  </head>
+  <body data-page="catalog-classic">
+    <a class="skip-link" href="#main">Skip to catalog</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Agent Evidence Catalog home">Agent Evidence Catalog</a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">New catalog</a>
+        <a href="compare.html">New compare</a>
+        <a href="claims.html">PatchPilot example</a>
+        <a href="index.html#contribute">Contribute</a>
+      </nav>
+    </header>
+    <aside class="synthetic-banner" aria-label="Synthetic demonstration notice">
+      <strong>Synthetic demonstration.</strong> Every profile, publisher, identity, endpoint, digest, result, and policy is fictional. No affiliation, endorsement, or safety certification is claimed.
+    </aside>
+    <main id="main">
+      <section class="intro" aria-labelledby="catalog-heading">
+        <h1 id="catalog-heading">Choose agents by evidence, not claims.</h1>
+        <p>Versioned profiles make authority, evaluation receipts, and unknowns inspectable before adoption.</p>
+        <a class="text-link" href="index.html">Open the new browse journey <span aria-hidden="true">→</span></a>
+      </section>
+      <section class="catalog-controls" aria-label="Catalog search and filters">
+        <label class="search-control"><span class="sr-only">Search catalog</span><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="catalogSearch" type="search" placeholder="Search agents, permissions, protocols..." autocomplete="off"></label>
+        <label class="select-control"><span>Delivery</span><select id="deliveryFilter"><option value="all">All</option><option value="local">Local</option><option value="hosted">Hosted</option><option value="hybrid">Hybrid</option></select></label>
+        <label class="check-control"><input id="externalFilter" type="checkbox"> Writes externally</label>
+        <label class="check-control"><input id="gapFilter" type="checkbox"> Evidence gaps</label>
+      </section>
+      <p id="resultCount" class="result-count" aria-live="polite"></p>
+      <section class="catalog-shell" aria-label="Versioned agent catalog">
+        <div class="table-scroll"><table class="catalog-table"><thead><tr><th scope="col">Agent</th><th scope="col">Version</th><th scope="col">Authority</th><th scope="col">Evaluation / evidence</th><th scope="col">Freshness</th></tr></thead><tbody id="catalogRows"></tbody></table></div>
+        <aside id="profileDetail" class="profile-detail" aria-live="polite" aria-label="Selected agent details"></aside>
+      </section>
+    </main>
+    <footer><p>Synthetic examples only. Evidence labels describe support for a claim, not whether an agent is safe.</p><p><a href="LICENSE">Apache-2.0</a> · A2A · Agent Skills · MCP · Git · OCI · in-toto/Sigstore</p></footer>
+    <script src="catalog-data.js"></script>
+    <script src="app.js?v=journey4"></script>
+  </body>
+</html>

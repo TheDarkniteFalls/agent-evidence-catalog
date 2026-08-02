@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin-desktop.cascade.tools-current",
+  "slug": "tools-current",
+  "subject": { "id": "com.cognition.devin-desktop.cascade", "name": "Cascade in Devin Desktop", "publisher": "Cognition AI, Inc.", "surface": { "kind": "desktop-app", "name": "Cascade in Devin Desktop", "slug": "cascade-devin-desktop-3-6-27" } },
+  "claim": { "category": "capability.tools", "statement": "Current Cascade documentation describes Search, Analyze, Web and configured MCP tools, terminal use, and package installation after the user presses Accept; it also documents a per-prompt tool-call limit and a configurable auto-continue path." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/desktop/cascade/cascade", "title": "Cascade", "locator": "Tools; terminal; package installation; tool-call limit; auto-continue", "publishedAt": null, "capturedAt": "2026-08-01T22:13:40Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "conditional", "values": ["Search", "Analyze", "Web", "configured MCP tools", "terminal", "package-install acceptance", "auto-continue"] }, "platform": { "scope": "all", "values": [] }, "model": { "scope": "all", "values": [] }, "deployment": { "scope": "named", "values": ["Cascade in Devin Desktop"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher tool documentation." },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-09-02", "invalidatedBy": ["tool-surface-change", "mcp-change", "acceptance-flow-change", "tool-call-limit-change"] },
+  "limitations": ["Documented tools are availability claims, not evidence that any tool, network route, package install or MCP server was enabled or used."],
+  "unknowns": ["Enabled tools, MCP servers, credentials, terminal commands, network access, package-install decisions and auto-continue setting are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

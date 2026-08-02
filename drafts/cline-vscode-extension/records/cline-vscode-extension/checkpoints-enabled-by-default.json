@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.checkpoints-enabled-by-default",
+  "slug": "checkpoints-enabled-by-default",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension"
+    }
+  },
+  "claim": {
+    "category": "capability",
+    "statement": "The publisher's current Checkpoints guide states that checkpoints are enabled by default and that after file edits, commands and other tool uses Cline snapshots project files in a separate shadow Git repository for comparison or restoration."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://docs.cline.bot/core-workflows/checkpoints",
+    "title": "Cline Checkpoints guide",
+    "locator": "How It Works; Enable or Disable Checkpoints; Restoring Checkpoints",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T10:37:35Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "documented-default",
+      "values": ["checkpoints enabled"]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["VS Code extension"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-31",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-31",
+    "recheckAfter": "2026-10-29",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-change",
+      "source-unavailable",
+      "claimant-correction",
+      "product-version-change",
+      "product-surface-change",
+      "configuration-change",
+      "platform-change"
+    ]
+  },
+  "limitations": [
+    "This is a rolling publisher capability claim captured on 31 July 2026, not independently tested recovery behavior.",
+    "File snapshots cannot by themselves establish reversal of command side effects, network actions, credential changes or external writes."
+  ],
+  "unknowns": [
+    "Checkpoint failure modes, storage limits and restoration completeness were not tested.",
+    "Whether checkpoint behavior differs between the Legacy and Next 4.1.2 variants is unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

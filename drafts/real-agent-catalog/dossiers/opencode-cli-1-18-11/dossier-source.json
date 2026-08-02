@@ -1,0 +1,288 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "asOf": "2026-08-02",
+  "identity": {
+    "recordId": "com.anomaly.opencode.cli.1-18-11",
+    "agent": { "id": "com.anomaly.opencode.cli", "name": "OpenCode CLI" },
+    "publisher": { "id": "anomaly-innovations-inc", "name": "Anomaly Innovations, Inc." },
+    "surface": { "kind": "cli", "name": "OpenCode CLI/TUI", "slug": "opencode-cli-1-18-11", "deliveryModel": "hybrid" },
+    "release": {
+      "scope": "exact-version",
+      "version": "1.18.11",
+      "releaseTag": "v1.18.11",
+      "sourceRevision": "012c2f57f976489d88bd4598a056b4bdcdd428ee",
+      "releasedAt": "2026-08-01T11:44:00Z",
+      "channel": "OpenCode GitHub release",
+      "additionalIdentities": [
+        {
+          "id": "exact-cli-source-release",
+          "kind": "artifact-version",
+          "status": "known",
+          "value": "OpenCode CLI v1.18.11",
+          "scopeBindings": [],
+          "artifactRefs": ["opencode-release-1-18-11", "opencode-source-revision-1-18-11"],
+          "sourceIds": ["source-release-identity-1-18-11"],
+          "claimIds": ["com.anomaly.opencode.cli.release-identity-1-18-11"],
+          "note": "The immutable release tag and linked source revision are exact; no distribution artifact was captured or hashed."
+        },
+        {
+          "id": "opencode-zen-service-revision",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [{ "axisId": "model-route", "alternativeId": "opencode-zen" }],
+          "artifactRefs": ["opencode-zen-service"],
+          "sourceIds": ["source-model-provider-route-current", "source-zen-data-policy-current"],
+          "claimIds": ["com.anomaly.opencode.cli.model-provider-route-current", "com.anomaly.opencode.cli.zen-data-policy-current"],
+          "note": "Zen is a separately changing hosted gateway and model catalog; no service revision, endpoint, account, region or selected model was fixed."
+        },
+        {
+          "id": "external-provider-service-revision",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [{ "axisId": "model-route", "alternativeId": "external-hosted-provider" }],
+          "artifactRefs": ["external-provider-service"],
+          "sourceIds": ["source-model-provider-route-current"],
+          "claimIds": ["com.anomaly.opencode.cli.model-provider-route-current"],
+          "note": "External provider identity, endpoint, account and backend service revision are unresolved and must not inherit Zen policy."
+        },
+        {
+          "id": "selected-model-revision",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [{ "axisId": "model-revision", "alternativeId": "selected-model" }],
+          "artifactRefs": ["configured-model-revision"],
+          "sourceIds": ["source-model-provider-route-current"],
+          "claimIds": ["com.anomaly.opencode.cli.model-provider-route-current"],
+          "note": "No exact model identifier, alias resolution, snapshot, fallback or inference configuration was identified."
+        }
+      ],
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": ["Install-script resolved binary", "npm-compatible package", "Homebrew package", "Publisher release binary", "Container image"],
+        "alternativeDetails": [
+          { "id": "install-script", "label": "Install-script resolved binary", "kind": "binary", "identityStatus": "unresolved", "artifactRefs": ["opencode-release-binary-1-18-11"], "scopeBindings": [{ "axisId": "runtime-path", "alternativeId": "install-script" }], "claimIds": ["com.anomaly.opencode.cli.runtime-paths-current"], "note": "The current installation script is documented, but it was not invoked and its resolved artifact, version, platform and digest are unknown." },
+          { "id": "npm-package", "label": "npm-compatible package", "kind": "package", "identityStatus": "unresolved", "artifactRefs": ["opencode-npm-package-1-18-11"], "scopeBindings": [{ "axisId": "runtime-path", "alternativeId": "npm-package" }], "claimIds": ["com.anomaly.opencode.cli.runtime-paths-current"], "note": "The package channel is documented, but no package or dependency graph was downloaded and its correspondence to the tagged source was not verified." },
+          { "id": "homebrew-package", "label": "Homebrew package", "kind": "package", "identityStatus": "unresolved", "artifactRefs": ["opencode-homebrew-package-1-18-11"], "scopeBindings": [{ "axisId": "runtime-path", "alternativeId": "homebrew-package" }], "claimIds": ["com.anomaly.opencode.cli.runtime-paths-current"], "note": "The Homebrew path is documented, but no formula, bottle, dependency set or digest was inspected." },
+          { "id": "release-binary", "label": "Publisher release binary", "kind": "binary", "identityStatus": "unresolved", "artifactRefs": ["opencode-release-binary-1-18-11"], "scopeBindings": [{ "axisId": "runtime-path", "alternativeId": "release-binary" }], "claimIds": ["com.anomaly.opencode.cli.release-identity-1-18-11", "com.anomaly.opencode.cli.runtime-paths-current"], "note": "The exact release page lists assets, but no platform binary was selected, downloaded or hashed." },
+          { "id": "container-image", "label": "Container image", "kind": "environment", "identityStatus": "unresolved", "artifactRefs": ["opencode-container-image"], "scopeBindings": [{ "axisId": "runtime-path", "alternativeId": "container-image" }], "claimIds": ["com.anomaly.opencode.cli.runtime-paths-current"], "note": "The container path is documented, but no image reference, platform manifest or digest was captured." }
+        ],
+        "note": "No OpenCode artifact was downloaded, installed, executed or observed; the exact tag does not establish an installed runtime."
+      }
+    },
+    "artifacts": [
+      { "id": "opencode-release-1-18-11", "kind": "other", "identityStatus": "exact", "uri": "https://github.com/anomalyco/opencode/releases/tag/v1.18.11", "ecosystem": "GitHub release", "version": "1.18.11", "digest": null, "note": "Exact immutable publisher release page; no release asset was downloaded." },
+      { "id": "opencode-source-revision-1-18-11", "kind": "source-revision", "identityStatus": "exact", "uri": "https://github.com/anomalyco/opencode/commit/012c2f57f976489d88bd4598a056b4bdcdd428ee", "ecosystem": "git", "version": "1.18.11", "digest": "012c2f57f976489d88bd4598a056b4bdcdd428ee", "note": "Git commit referenced by immutable release v1.18.11." },
+      { "id": "opencode-release-binary-1-18-11", "kind": "standalone-binary", "identityStatus": "unresolved", "uri": "https://github.com/anomalyco/opencode/releases/tag/v1.18.11", "ecosystem": "GitHub release assets or install script", "version": "1.18.11", "digest": null, "note": "No platform-specific asset was selected or hashed." },
+      { "id": "opencode-npm-package-1-18-11", "kind": "other", "identityStatus": "unresolved", "uri": "https://opencode.ai/docs/", "ecosystem": "npm-compatible package registry", "version": "1.18.11", "digest": null, "note": "Documented package path only; no registry artifact or digest was captured." },
+      { "id": "opencode-homebrew-package-1-18-11", "kind": "other", "identityStatus": "unresolved", "uri": "https://opencode.ai/docs/", "ecosystem": "Homebrew", "version": "1.18.11", "digest": null, "note": "Documented package path only; no formula or bottle was captured." },
+      { "id": "opencode-container-image", "kind": "container-image", "identityStatus": "unresolved", "uri": "https://opencode.ai/docs/", "ecosystem": "container registry", "version": null, "digest": null, "note": "Documented container path only; no tag, manifest or digest was captured." },
+      { "id": "opencode-zen-service", "kind": "hosted-release", "identityStatus": "unresolved", "uri": "https://opencode.ai/docs/zen/", "ecosystem": "OpenCode Zen", "version": null, "digest": null, "note": "Optional publisher-hosted model gateway with unresolved service and model revisions." },
+      { "id": "external-provider-service", "kind": "hosted-release", "identityStatus": "unresolved", "uri": "https://opencode.ai/docs/providers/", "ecosystem": "user-selected external provider", "version": null, "digest": null, "note": "Provider, endpoint and backend service revision are unresolved." },
+      { "id": "configured-model-revision", "kind": "other", "identityStatus": "unresolved", "uri": null, "ecosystem": "configured model route", "version": null, "digest": null, "note": "Exact model identifier, alias resolution, snapshot and inference configuration are unresolved." }
+    ]
+  },
+  "roles": {
+    "claimants": [{ "id": "anomaly-innovations-inc", "name": "Anomaly Innovations, Inc.", "kind": "publisher" }],
+    "sourceCapturers": [{ "id": "catalog-source-capturer", "name": "Agent Evidence Catalog maintainer", "kind": "catalog-maintainer" }],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://github.com/anomalyco/opencode/releases/tag/v1.18.11": { "sourceKind": "publisher-release-metadata", "snapshotStatus": "immutable-reference", "note": "Exact immutable release tag and linked source revision; no release asset downloaded." },
+    "https://opencode.ai/legal/terms-of-service": { "sourceKind": "publisher-policy", "snapshotStatus": "live-page", "note": "Current publisher terms identify the company and distinguish Zen from third-party model services." },
+    "https://opencode.ai/docs/cli/": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current CLI/TUI documentation; not an exact-version receipt for v1.18.11." },
+    "https://opencode.ai/docs/": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current installation documentation; distribution artifacts were not downloaded." },
+    "https://github.com/anomalyco/opencode/blob/v1.18.11/packages/opencode/src/agent/agent.ts": { "sourceKind": "publisher-versioned-source", "snapshotStatus": "immutable-reference", "note": "Agent definitions at exact immutable release tag v1.18.11." },
+    "https://opencode.ai/docs/agents/": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current agent documentation, explicitly separated from tagged v1.18.11 source." },
+    "https://opencode.ai/docs/permissions/": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current permission documentation; effective policy was not observed." },
+    "https://opencode.ai/docs/tools/": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current built-in, custom and MCP tool documentation." },
+    "https://opencode.ai/docs/providers/": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current provider catalog and configuration documentation; no provider or model was selected." },
+    "https://opencode.ai/docs/zen/": { "sourceKind": "publisher-policy", "snapshotStatus": "live-page", "note": "Current optional Zen service and data-policy documentation; external-provider policy is not inferred." },
+    "https://github.com/anomalyco/opencode/security/policy": { "sourceKind": "publisher-policy", "snapshotStatus": "live-page", "note": "Current publisher security policy with explicit no-sandbox limitation." },
+    "https://opencode.ai/docs/share/": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current session-sharing documentation; no share was created or inspected." }
+  },
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Installed artifact, primary agent, model route and revision, permissions, tool surface, external-directory authority, isolation and session sharing are separate applicability dimensions; none was observed.",
+    "axes": [
+      {
+        "id": "runtime-path", "label": "Installed CLI runtime path", "scope": "mutually-exclusive", "dimension": "runtime",
+        "alternatives": [
+          { "id": "install-script", "label": "Install script", "claimIds": ["com.anomaly.opencode.cli.runtime-paths-current"], "mutuallyExclusiveWith": ["npm-package", "homebrew-package", "release-binary", "container-image"] },
+          { "id": "npm-package", "label": "npm-compatible package", "claimIds": ["com.anomaly.opencode.cli.runtime-paths-current"], "mutuallyExclusiveWith": ["install-script", "homebrew-package", "release-binary", "container-image"] },
+          { "id": "homebrew-package", "label": "Homebrew package", "claimIds": ["com.anomaly.opencode.cli.runtime-paths-current"], "mutuallyExclusiveWith": ["install-script", "npm-package", "release-binary", "container-image"] },
+          { "id": "release-binary", "label": "Publisher release binary", "claimIds": ["com.anomaly.opencode.cli.release-identity-1-18-11", "com.anomaly.opencode.cli.runtime-paths-current"], "mutuallyExclusiveWith": ["install-script", "npm-package", "homebrew-package", "container-image"] },
+          { "id": "container-image", "label": "Container image", "claimIds": ["com.anomaly.opencode.cli.runtime-paths-current"], "mutuallyExclusiveWith": ["install-script", "npm-package", "homebrew-package", "release-binary"] }
+        ],
+        "unknowns": ["Installed path, resolved version, platform build, dependencies, digest and source-to-artifact correspondence are unknown."]
+      },
+      {
+        "id": "primary-agent-mode", "label": "Primary agent mode", "scope": "mutually-exclusive", "dimension": "interaction-mode",
+        "alternatives": [
+          { "id": "build", "label": "Build primary agent", "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current"], "mutuallyExclusiveWith": ["plan"], "controlMode": "conditional-policy", "humanInteraction": "possible" },
+          { "id": "plan", "label": "Plan primary agent", "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current"], "mutuallyExclusiveWith": ["build"], "controlMode": "conditional-policy", "humanInteraction": "possible" }
+        ],
+        "unknowns": ["The selected primary agent and whether exact-tag or current documented defaults apply are unknown."]
+      },
+      {
+        "id": "agent-role", "label": "Primary and subagent path", "scope": "composable", "dimension": "interaction-mode",
+        "alternatives": [
+          { "id": "primary", "label": "Primary agent", "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current"], "mutuallyExclusiveWith": [] },
+          { "id": "general-subagent", "label": "General subagent", "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current"], "mutuallyExclusiveWith": [] },
+          { "id": "explore-subagent", "label": "Explore subagent", "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current"], "mutuallyExclusiveWith": [] },
+          { "id": "custom-agent", "label": "Custom agent", "claimIds": ["com.anomaly.opencode.cli.agent-modes-current", "com.anomaly.opencode.cli.permissions-current"], "mutuallyExclusiveWith": [] }
+        ],
+        "unknowns": ["Subagent invocation, custom-agent definitions, delegation path and inherited permissions are unknown."]
+      },
+      {
+        "id": "model-route", "label": "Model provider route", "scope": "mutually-exclusive", "dimension": "model",
+        "alternatives": [
+          { "id": "opencode-zen", "label": "OpenCode Zen", "claimIds": ["com.anomaly.opencode.cli.publisher-surface-current", "com.anomaly.opencode.cli.model-provider-route-current", "com.anomaly.opencode.cli.zen-data-policy-current"], "mutuallyExclusiveWith": ["external-hosted-provider", "local-provider"] },
+          { "id": "external-hosted-provider", "label": "External hosted provider", "claimIds": ["com.anomaly.opencode.cli.publisher-surface-current", "com.anomaly.opencode.cli.model-provider-route-current"], "mutuallyExclusiveWith": ["opencode-zen", "local-provider"] },
+          { "id": "local-provider", "label": "Local provider", "claimIds": ["com.anomaly.opencode.cli.model-provider-route-current"], "mutuallyExclusiveWith": ["opencode-zen", "external-hosted-provider"] }
+        ],
+        "unknowns": ["Provider, endpoint, account, credentials, region and backend service revision are unknown."]
+      },
+      {
+        "id": "model-revision", "label": "Selected model identity", "scope": "unresolved", "dimension": "model",
+        "alternatives": [{ "id": "selected-model", "label": "Configured model", "claimIds": ["com.anomaly.opencode.cli.cli-tui-surface-current", "com.anomaly.opencode.cli.model-provider-route-current"], "mutuallyExclusiveWith": [] }],
+        "unknowns": ["Model identifier, alias resolution, snapshot, fallback, context limits and inference settings are unknown."]
+      },
+      {
+        "id": "permission-policy", "label": "Effective permission policy", "scope": "composable", "dimension": "approval-authority",
+        "alternatives": [
+          { "id": "publisher-defaults", "label": "Publisher defaults", "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current", "com.anomaly.opencode.cli.permissions-current"], "mutuallyExclusiveWith": [], "controlMode": "conditional-policy", "humanInteraction": "possible" },
+          { "id": "ordered-custom-rules", "label": "Ordered custom rules", "claimIds": ["com.anomaly.opencode.cli.permissions-current"], "mutuallyExclusiveWith": [], "controlMode": "conditional-policy", "humanInteraction": "possible" },
+          { "id": "per-agent-overrides", "label": "Per-agent overrides", "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current", "com.anomaly.opencode.cli.permissions-current"], "mutuallyExclusiveWith": [], "controlMode": "conditional-policy", "humanInteraction": "possible" }
+        ],
+        "unknowns": ["Effective rule order, patterns, allow/ask/deny actions, per-agent overrides, prompts and enforcement are unknown."]
+      },
+      {
+        "id": "external-directory-authority", "label": "External-directory authority", "scope": "mutually-exclusive", "dimension": "approval-authority",
+        "alternatives": [
+          { "id": "ask", "label": "Ask before external-directory access", "claimIds": ["com.anomaly.opencode.cli.permissions-current"], "mutuallyExclusiveWith": ["allow", "deny"], "controlMode": "manual-approval", "humanInteraction": "required" },
+          { "id": "allow", "label": "Allow matched external-directory access", "claimIds": ["com.anomaly.opencode.cli.permissions-current"], "mutuallyExclusiveWith": ["ask", "deny"], "controlMode": "automatic-allow", "humanInteraction": "possible" },
+          { "id": "deny", "label": "Deny matched external-directory access", "claimIds": ["com.anomaly.opencode.cli.permissions-current"], "mutuallyExclusiveWith": ["ask", "allow"], "controlMode": "automatic-deny", "humanInteraction": "possible" }
+        ],
+        "unknowns": ["Working directory, matched external paths, patterns and effective action are unknown."]
+      },
+      {
+        "id": "tool-surface", "label": "Enabled tool surface", "scope": "composable", "dimension": "tool-surface",
+        "alternatives": [
+          { "id": "built-in-tools", "label": "Built-in tools", "claimIds": ["com.anomaly.opencode.cli.tools-current"], "mutuallyExclusiveWith": [] },
+          { "id": "custom-tools", "label": "Custom tools", "claimIds": ["com.anomaly.opencode.cli.tools-current"], "mutuallyExclusiveWith": [] },
+          { "id": "mcp-servers", "label": "MCP servers", "claimIds": ["com.anomaly.opencode.cli.tools-current"], "mutuallyExclusiveWith": [] }
+        ],
+        "unknowns": ["Enabled tools, custom code, MCP definitions, credentials, command environment and network paths are unknown."]
+      },
+      {
+        "id": "isolation-path", "label": "Execution isolation path", "scope": "mutually-exclusive", "dimension": "sandbox",
+        "alternatives": [
+          { "id": "direct-unsandboxed-host", "label": "Direct unsandboxed host execution", "claimIds": ["com.anomaly.opencode.cli.no-sandbox-security-current"], "mutuallyExclusiveWith": ["external-isolation-wrapper"], "controlMode": "unavailable", "humanInteraction": "possible" },
+          { "id": "external-isolation-wrapper", "label": "External OS sandbox, container or VM", "claimIds": ["com.anomaly.opencode.cli.no-sandbox-security-current", "com.anomaly.opencode.cli.runtime-paths-current"], "mutuallyExclusiveWith": ["direct-unsandboxed-host"], "controlMode": "conditional-policy", "humanInteraction": "required" }
+        ],
+        "unknowns": ["Host privileges, mounts, network policy and any external isolation wrapper are unknown; OpenCode permissions are not credited as security isolation."]
+      },
+      {
+        "id": "session-sharing", "label": "Session-sharing policy", "scope": "mutually-exclusive", "dimension": "data-policy",
+        "alternatives": [
+          { "id": "manual", "label": "Manual sharing", "claimIds": ["com.anomaly.opencode.cli.session-sharing-current"], "mutuallyExclusiveWith": ["automatic", "disabled"], "controlMode": "manual-approval", "humanInteraction": "required" },
+          { "id": "automatic", "label": "Automatic sharing", "claimIds": ["com.anomaly.opencode.cli.session-sharing-current"], "mutuallyExclusiveWith": ["manual", "disabled"], "controlMode": "automatic-allow", "humanInteraction": "possible" },
+          { "id": "disabled", "label": "Sharing disabled", "claimIds": ["com.anomaly.opencode.cli.session-sharing-current"], "mutuallyExclusiveWith": ["manual", "automatic"], "controlMode": "disabled", "humanInteraction": "possible" }
+        ],
+        "unknowns": ["Effective sharing mode, shared content, public-link audience, retention and deletion state are unknown."]
+      }
+    ]
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-opencode-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        { "id": "bounded-public-search", "dimension": "other", "status": "not-assessed", "claimIds": [], "note": "No specific public evaluation entry was identified with defensible evaluator independence plus exact OpenCode v1.18.11, model, permission, mode and tool configuration, disclosure and public-artifact applicability." }
+      ],
+      "includedTestIds": [],
+      "limitations": ["No independent evaluator, test, finding, score or result is admitted; publisher sources remain attribution only."]
+    }
+  ],
+  "dossier": {
+    "summary": "OpenCode CLI v1.18.11 is represented as an exact immutable source release for the terminal CLI/TUI, with unresolved installed artifact and runtime. Current publisher sources separately describe Build and Plan modes, configurable permissions and tools, OpenCode Zen versus external providers, model selection, sharing and an explicit no-sandbox limitation; none is treated as observed behavior.",
+    "releaseContext": { "statement": "Anomaly Innovations, Inc.'s OpenCode repository published immutable release v1.18.11 on 2026-08-01 at source revision 012c2f57f976489d88bd4598a056b4bdcdd428ee. Current documentation and policies are rolling-current and are not silently applied to that exact release.", "sourceUri": "https://github.com/anomalyco/opencode/releases/tag/v1.18.11", "legacySource": null },
+    "limitations": [
+      "All product claims are attributed to official OpenCode sources; no product behavior was observed.",
+      "No OpenCode binary, package, container, source checkout, dependency set or model service was downloaded, installed, hashed or run.",
+      "The exact record is limited to the CLI/TUI; desktop, IDE, SDK and unrelated server surfaces are excluded.",
+      "Current documentation and policies may postdate v1.18.11 and remain rolling-current rather than exact-version receipts.",
+      "The exact tagged source and current agent documentation differ in their Plan-mode permission descriptions; this is preserved as a resolved version/time scope difference.",
+      "OpenCode Zen and external providers remain separate routes with separate service revisions and data-policy applicability.",
+      "The publisher says OpenCode is not sandboxed and permissions are not a security boundary; no independent security validation was performed.",
+      "No independent evaluation was admitted.",
+      "No capability quality, safety, privacy, performance or suitability conclusion is supported."
+    ],
+    "unknowns": [
+      "The installed artifact, package channel, platform, dependency graph, digest and source-to-artifact correspondence are unknown.",
+      "The exact runtime process, operating-system user, privileges, environment variables and working directory are unknown.",
+      "The selected Build or Plan primary agent, subagent path and custom-agent definitions are unknown.",
+      "The effective permission rules, order, patterns, allow/ask/deny actions, per-agent overrides and prompt decisions are unknown.",
+      "The enabled built-in tools, custom tools, MCP servers, credentials, command environment and network paths are unknown.",
+      "The provider route is unknown: OpenCode Zen, an external hosted provider or a local provider may apply.",
+      "The provider endpoint, account, region and service revision are unknown.",
+      "The exact model identifier, alias resolution, snapshot, fallback and inference configuration are unknown.",
+      "Whether Zen data policy applies, and the selected model-specific retention path, are unknown.",
+      "The external-directory scope and any grants or denials are unknown.",
+      "The host isolation, filesystem mounts and network restrictions are unknown; no product sandbox is assumed.",
+      "The effective session-sharing mode, uploaded content, public-link state, retention and deletion state are unknown.",
+      "No independently attributable evaluation with exact release, model, permission, mode, tool, disclosure and public-artifact applicability was identified."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      { "id": "release-auditor", "label": "Release auditor", "prompt": "Inspect exact CLI source identity and unresolved installed runtime.", "propositionIds": ["identity", "runtime"] },
+      { "id": "authority-reviewer", "label": "Authority reviewer", "prompt": "Inspect mode, permission, tool and isolation boundaries.", "propositionIds": ["mode", "permissions", "tools", "isolation"] },
+      { "id": "data-model-reviewer", "label": "Model and data reviewer", "prompt": "Inspect model route, service revision, Zen policy and sharing boundaries.", "propositionIds": ["model-route", "data-boundaries", "evaluation"] }
+    ],
+    "propositions": [
+      { "id": "identity", "eyebrow": "Exact CLI", "question": "Which OpenCode release and surface are pinned?", "status": "v1.18.11 tag and source revision known", "tone": "qualified", "answer": "The immutable v1.18.11 release and source revision are exact; the record is limited to the terminal CLI/TUI.", "whyItMatters": "Desktop, IDE and other related surfaces must not inherit this evidence.", "claimIds": ["com.anomaly.opencode.cli.release-identity-1-18-11", "com.anomaly.opencode.cli.publisher-surface-current", "com.anomaly.opencode.cli.cli-tui-surface-current"] },
+      { "id": "runtime", "eyebrow": "Runtime", "question": "Which artifact and environment ran?", "status": "Unresolved", "tone": "attention", "answer": "Publisher sources document several distribution paths, but no package, binary, image, platform or runtime was observed.", "whyItMatters": "A source tag does not establish an installed artifact or dependency graph.", "claimIds": ["com.anomaly.opencode.cli.release-identity-1-18-11", "com.anomaly.opencode.cli.runtime-paths-current"] },
+      { "id": "mode", "eyebrow": "Agent mode", "question": "Do Build or Plan boundaries apply?", "status": "Configuration-scoped with version difference", "tone": "mixed", "answer": "Exact v1.18.11 source and current docs both separate Build and Plan, but their Plan permission descriptions differ and remain scoped by version/time.", "whyItMatters": "The catalog must not collapse modes or transfer rolling defaults to the exact release.", "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current"] },
+      { "id": "permissions", "eyebrow": "Permissions", "question": "Which actions require approval?", "status": "Configurable; effective policy unknown", "tone": "attention", "answer": "Current docs define ordered allow, ask and deny rules with per-agent and pattern-specific overrides.", "whyItMatters": "Tool authority depends on the effective merged policy, not the client version alone.", "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current", "com.anomaly.opencode.cli.permissions-current"] },
+      { "id": "tools", "eyebrow": "Tools", "question": "Which tool paths can be available?", "status": "Built-in, custom and MCP paths documented", "tone": "qualified", "answer": "Current docs list built-in file, shell, web and related tools plus custom tools and MCP servers, all subject to configuration and permissions.", "whyItMatters": "Documented availability is not evidence that a tool was enabled or used.", "claimIds": ["com.anomaly.opencode.cli.tools-current"] },
+      { "id": "model-route", "eyebrow": "Model identity", "question": "Which provider and model produced output?", "status": "Unresolved", "tone": "attention", "answer": "OpenCode Zen, external hosted providers and local providers are separate alternatives; exact provider, model and service revisions are unknown.", "whyItMatters": "The CLI release does not freeze the inference backend.", "claimIds": ["com.anomaly.opencode.cli.publisher-surface-current", "com.anomaly.opencode.cli.cli-tui-surface-current", "com.anomaly.opencode.cli.model-provider-route-current"] },
+      { "id": "isolation", "eyebrow": "Isolation", "question": "Is local execution sandboxed?", "status": "Explicit publisher limitation", "tone": "attention", "answer": "The publisher states that OpenCode itself is not sandboxed and that permissions are not a security boundary; external OS, container or VM isolation is a separate user-selected path.", "whyItMatters": "Approval UX and security isolation cannot be treated as the same control.", "claimIds": ["com.anomaly.opencode.cli.no-sandbox-security-current"] },
+      { "id": "data-boundaries", "eyebrow": "Data paths", "question": "Where can model requests and session data go?", "status": "Route and sharing configuration unresolved", "tone": "attention", "answer": "Zen has model-dependent policy claims; external-provider terms remain separate; session sharing can be manual, automatic or disabled.", "whyItMatters": "Provider routing and public session sharing are distinct data destinations.", "claimIds": ["com.anomaly.opencode.cli.model-provider-route-current", "com.anomaly.opencode.cli.zen-data-policy-current", "com.anomaly.opencode.cli.session-sharing-current"] },
+      { "id": "evaluation", "eyebrow": "Independent evidence", "question": "Was OpenCode v1.18.11 independently evaluated here?", "status": "No", "tone": "neutral", "answer": "No public evaluation entry passed the exact release, model, permission, mode, tool, disclosure and artifact gates into this dossier.", "whyItMatters": "Publisher documentation is attribution, not independent observed behavior.", "claimIds": ["com.anomaly.opencode.cli.release-identity-1-18-11"] }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source attribution only; exact CLI source identity is separate from rolling documentation, installed runtime, model services, configuration and independent evaluation."
+  },
+  "rawClaimPaths": [
+    "claims/opencode-cli-1-18-11/release-identity-1-18-11.json",
+    "claims/opencode-cli-1-18-11/publisher-surface-current.json",
+    "claims/opencode-cli-1-18-11/cli-tui-surface-current.json",
+    "claims/opencode-cli-1-18-11/runtime-paths-current.json",
+    "claims/opencode-cli-1-18-11/agent-modes-1-18-11.json",
+    "claims/opencode-cli-1-18-11/agent-modes-current.json",
+    "claims/opencode-cli-1-18-11/permissions-current.json",
+    "claims/opencode-cli-1-18-11/tools-current.json",
+    "claims/opencode-cli-1-18-11/model-provider-route-current.json",
+    "claims/opencode-cli-1-18-11/zen-data-policy-current.json",
+    "claims/opencode-cli-1-18-11/no-sandbox-security-current.json",
+    "claims/opencode-cli-1-18-11/session-sharing-current.json"
+  ]
+}

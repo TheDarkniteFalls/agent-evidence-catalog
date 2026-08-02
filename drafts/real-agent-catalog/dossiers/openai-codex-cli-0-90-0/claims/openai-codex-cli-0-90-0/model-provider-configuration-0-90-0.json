@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.model-provider-configuration-0-90-0",
+  "slug": "model-provider-configuration-0-90-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-90-0" }
+  },
+  "claim": {
+    "category": "configuration.model",
+    "statement": "The generated configuration schema at tag rust-v0.90.0 exposes an optional model override, a model_provider key selecting from model_providers, user-defined provider entries, reasoning controls and an optional model-instructions override."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": {
+    "uri": "https://github.com/openai/codex/blob/rust-v0.90.0/codex-rs/core/config.schema.json",
+    "title": "Codex 0.90.0 generated configuration schema",
+    "locator": "properties.model, model_provider, model_providers, model_reasoning_effort, model_reasoning_summary, model_verbosity and model_instructions_file",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T00:47:47Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "0.90.0" },
+    "configuration": { "scope": "conditional", "values": ["model override", "model_provider selection", "user-defined provider", "reasoning settings", "model instructions override"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "configuration-dependent", "values": [] },
+    "deployment": { "scope": "named", "values": ["local Codex CLI model request path"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-01-25", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "provider-change", "model-change", "manual-review"]
+  },
+  "limitations": [
+    "The schema establishes configurable fields, not which models or providers were available to a particular account or session.",
+    "No model, provider, endpoint, API key or request was configured or inspected."
+  ],
+  "unknowns": [
+    "The selected model, provider, base URL, endpoint revision, reasoning settings, credentials and request payload are unknown.",
+    "Provider-specific retention, training, subprocess, telemetry and error behavior are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

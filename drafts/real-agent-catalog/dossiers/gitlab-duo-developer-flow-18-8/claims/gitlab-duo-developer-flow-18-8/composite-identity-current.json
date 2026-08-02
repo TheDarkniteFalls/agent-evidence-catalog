@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-current",
+  "slug": "composite-identity-current",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "identity.execution",
+    "statement": "GitLab's current documentation says runner-executed flows use a one-time composite identity combining the initiating human with a Developer-role service account, applying the more restrictive role and project-access intersection."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/composite_identity/",
+    "title": "Composite identity",
+    "locator": "How composite identity works and Composite identity workflow",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01; automatic inclusion applies 18.9+" },
+    "configuration": { "scope": "named", "values": ["runner-executed flow", "human initiator", "enabled flow service account", "intersection of human and service-account project access"] },
+    "platform": { "scope": "named", "values": ["foundational flow on a runner"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "configuration-dependent", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-02-19", "reason": "Automatic inclusion after the 18.9 setting removal." },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["documentation-change", "permission-model-change", "token-scope-change"]
+  },
+  "limitations": [
+    "This is GitLab's described authorization design, not an observed token or permission trace.",
+    "OAuth ai_workflows and mcp scopes and CI job-token permissions are distinct; the statement does not collapse them."
+  ],
+  "unknowns": [
+    "The human user, service account, effective role, project intersection and token contents for any execution are unknown.",
+    "The exact token implementation and audit-log representation per offering were not inspected."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Current automatic inclusion follows the 18.8 configurable state and 18.9 setting removal."
+    }
+  ],
+  "validationRefs": []
+}

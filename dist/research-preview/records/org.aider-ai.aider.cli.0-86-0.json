@@ -1,0 +1,1656 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-01",
+  "sourceDossier": {
+    "path": "dossiers/aider-cli-0-86-0/dossier-source.json",
+    "sha256": "30fe5f5e9ee3c3b387c9b3f041a0cd6c5751f723c10abff92a565b2ebbbb90fc",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "org.aider-ai.aider.cli.0-86-0",
+    "agent": {
+      "id": "org.aider-ai.aider.cli",
+      "name": "Aider CLI"
+    },
+    "publisher": {
+      "id": "aider-ai-project",
+      "name": "Aider-AI project"
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "Aider CLI",
+      "slug": "aider-cli-0-86-0",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "0.86.0",
+      "releaseTag": "v0.86.0",
+      "sourceRevision": "a4be6ccd87ebaa59b361f3f028d116ce1761b626",
+      "releasedAt": "2025-08-09T17:42:00Z",
+      "channel": "Aider GitHub release",
+      "additionalIdentities": [
+        {
+          "id": "exact-cli-release",
+          "kind": "artifact-version",
+          "status": "known",
+          "value": "Aider CLI 0.86.0",
+          "scopeBindings": [],
+          "artifactRefs": [
+            "aider-release-0-86-0",
+            "aider-source-revision-0-86-0"
+          ],
+          "sourceIds": [
+            "source-release-identity-0-86-0"
+          ],
+          "claimIds": [
+            "org.aider-ai.aider.cli.release-identity-0-86-0"
+          ],
+          "note": "The publisher release tag and source revision are known; no distribution artifact digest was captured."
+        },
+        {
+          "id": "configured-model-service",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [
+            {
+              "axisId": "model-route",
+              "alternativeId": "configured-provider"
+            }
+          ],
+          "artifactRefs": [
+            "configured-model-service"
+          ],
+          "sourceIds": [
+            "source-model-provider-current"
+          ],
+          "claimIds": [
+            "org.aider-ai.aider.cli.model-provider-current"
+          ],
+          "note": "The client can route to many configured providers or local models; no provider, endpoint, model revision or inference configuration is selected here."
+        }
+      ],
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "aider-chat Python package",
+          "source checkout"
+        ],
+        "alternativeDetails": [
+          {
+            "id": "python-package",
+            "label": "aider-chat Python package",
+            "kind": "package",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "aider-python-package-0-86-0"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "runtime-path",
+                "alternativeId": "python-package"
+              }
+            ],
+            "claimIds": [
+              "org.aider-ai.aider.cli.release-identity-0-86-0"
+            ],
+            "note": "Version 0.86.0 is identified, but no wheel, source distribution, digest, platform or dependency resolution was inspected."
+          },
+          {
+            "id": "source-checkout",
+            "label": "Source checkout at the release revision",
+            "kind": "package",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "aider-source-revision-0-86-0"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "runtime-path",
+                "alternativeId": "source-checkout"
+              }
+            ],
+            "claimIds": [
+              "org.aider-ai.aider.cli.release-identity-0-86-0"
+            ],
+            "note": "The source revision is exact, but no environment built from it was inspected."
+          }
+        ],
+        "note": "No Aider artifact was downloaded or installed, and no effective runtime was observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "aider-release-0-86-0",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
+        "ecosystem": "GitHub release",
+        "version": "0.86.0",
+        "digest": null,
+        "note": "Exact publisher release page; release assets were not downloaded."
+      },
+      {
+        "id": "aider-source-revision-0-86-0",
+        "kind": "source-revision",
+        "identityStatus": "exact",
+        "uri": "https://github.com/Aider-AI/aider/commit/a4be6ccd87ebaa59b361f3f028d116ce1761b626",
+        "ecosystem": "git",
+        "version": "0.86.0",
+        "digest": "a4be6ccd87ebaa59b361f3f028d116ce1761b626",
+        "note": "Git commit referenced by the v0.86.0 tag."
+      },
+      {
+        "id": "aider-python-package-0-86-0",
+        "kind": "python-package",
+        "identityStatus": "unresolved",
+        "uri": "https://pypi.org/project/aider-chat/0.86.0/",
+        "ecosystem": "PyPI",
+        "version": "0.86.0",
+        "digest": null,
+        "note": "Named package version; no wheel or source distribution was downloaded or hashed."
+      },
+      {
+        "id": "configured-model-service",
+        "kind": "other",
+        "identityStatus": "unresolved",
+        "uri": null,
+        "ecosystem": "user-selected model provider or local model",
+        "version": null,
+        "digest": null,
+        "note": "Provider, endpoint, model and backend revision are unresolved."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "aider-ai-project",
+        "name": "Aider-AI project",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-release-identity-0-86-0",
+      "uri": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
+      "title": "Aider v0.86.0 release",
+      "locator": "Release heading, publication time, tag and linked commit",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "aider-ai-project",
+      "publishedAt": "2025-08-09T17:42:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T10:46:26Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Exact publisher release tag and linked source revision; no release asset downloaded."
+      }
+    },
+    {
+      "id": "source-file-edit-and-git-current",
+      "uri": "https://aider.chat/docs/usage.html",
+      "title": "Aider usage",
+      "locator": "Adding files and Making changes",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "aider-ai-project",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T10:46:26Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current publisher usage documentation; not silently applied to version 0.86.0."
+      }
+    },
+    {
+      "id": "source-shell-command-current",
+      "uri": "https://aider.chat/docs/usage/commands.html",
+      "title": "Aider in-chat commands",
+      "locator": "Slash commands table — /run and /git",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "aider-ai-project",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T10:46:26Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current in-chat command documentation."
+      }
+    },
+    {
+      "id": "source-test-automation-current",
+      "uri": "https://aider.chat/docs/usage/lint-test.html",
+      "title": "Aider linting and testing",
+      "locator": "Testing and Manually running code",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "aider-ai-project",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T10:46:26Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current linting and testing documentation."
+      }
+    },
+    {
+      "id": "source-model-provider-current",
+      "uri": "https://aider.chat/docs/usage.html",
+      "title": "Aider usage",
+      "locator": "LLMs",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "aider-ai-project",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T10:46:26Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current publisher usage documentation; not silently applied to version 0.86.0."
+      }
+    },
+    {
+      "id": "source-chat-modes-current",
+      "uri": "https://aider.chat/docs/usage/modes.html",
+      "title": "Aider chat modes",
+      "locator": "Chat modes and Architect mode and the editor model",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "aider-ai-project",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T10:46:26Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current chat-mode documentation."
+      }
+    },
+    {
+      "id": "source-edit-formats-current",
+      "uri": "https://aider.chat/docs/more/edit-formats.html",
+      "title": "Aider edit formats",
+      "locator": "Edit formats and editor-diff and editor-whole",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "aider-ai-project",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T10:46:26Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current edit-format documentation."
+      }
+    },
+    {
+      "id": "source-repository-map-current",
+      "uri": "https://aider.chat/docs/faq.html",
+      "title": "Aider FAQ",
+      "locator": "How do I turn on the repository map?",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "aider-ai-project",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T10:46:26Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current repository-map documentation."
+      }
+    },
+    {
+      "id": "source-configuration-current",
+      "uri": "https://aider.chat/docs/config.html",
+      "title": "Aider configuration",
+      "locator": "Configuration methods",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "aider-ai-project",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T10:46:26Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current configuration documentation."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Runtime path, model route, chat mode, command/test path, git output and repository context are separate applicability dimensions; none was observed.",
+    "axes": [
+      {
+        "id": "runtime-path",
+        "label": "Runtime path",
+        "scope": "mutually-exclusive",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "python-package",
+            "label": "aider-chat Python package",
+            "claimIds": [
+              "org.aider-ai.aider.cli.release-identity-0-86-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "source-checkout"
+            ]
+          },
+          {
+            "id": "source-checkout",
+            "label": "Source checkout",
+            "claimIds": [
+              "org.aider-ai.aider.cli.release-identity-0-86-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "python-package"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The installed artifact, platform, Python runtime, dependencies and digest are unknown."
+        ]
+      },
+      {
+        "id": "model-route",
+        "label": "Model and provider route",
+        "scope": "unresolved",
+        "dimension": "model",
+        "alternatives": [
+          {
+            "id": "configured-provider",
+            "label": "Configured hosted provider",
+            "claimIds": [
+              "org.aider-ai.aider.cli.model-provider-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "local-model"
+            ]
+          },
+          {
+            "id": "local-model",
+            "label": "Configured local model",
+            "claimIds": [
+              "org.aider-ai.aider.cli.model-provider-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "configured-provider"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Provider, endpoint, exact model, credentials, alias resolution and inference settings are unknown."
+        ]
+      },
+      {
+        "id": "chat-mode",
+        "label": "Chat mode",
+        "scope": "mutually-exclusive",
+        "dimension": "interaction-mode",
+        "alternatives": [
+          {
+            "id": "code",
+            "label": "Code mode",
+            "claimIds": [
+              "org.aider-ai.aider.cli.chat-modes-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "ask",
+              "architect",
+              "help"
+            ],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "ask",
+            "label": "Ask mode",
+            "claimIds": [
+              "org.aider-ai.aider.cli.chat-modes-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "code",
+              "architect",
+              "help"
+            ],
+            "controlMode": "automatic-deny",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "architect",
+            "label": "Architect/editor mode",
+            "claimIds": [
+              "org.aider-ai.aider.cli.chat-modes-current",
+              "org.aider-ai.aider.cli.edit-formats-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "code",
+              "ask",
+              "help"
+            ],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "help",
+            "label": "Help mode",
+            "claimIds": [
+              "org.aider-ai.aider.cli.chat-modes-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "code",
+              "ask",
+              "architect"
+            ],
+            "controlMode": "automatic-deny",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "The active mode and any per-message override are unknown."
+        ]
+      },
+      {
+        "id": "command-test-path",
+        "label": "Command and test execution path",
+        "scope": "composable",
+        "dimension": "trigger",
+        "alternatives": [
+          {
+            "id": "user-run",
+            "label": "User-invoked /run or /test",
+            "claimIds": [
+              "org.aider-ai.aider.cli.shell-command-current",
+              "org.aider-ai.aider.cli.test-automation-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "auto-test",
+            "label": "Configured automatic tests after edits",
+            "claimIds": [
+              "org.aider-ai.aider.cli.test-automation-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "auto-test-disabled"
+            ],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "auto-test-disabled",
+            "label": "Automatic tests disabled",
+            "claimIds": [
+              "org.aider-ai.aider.cli.test-automation-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "auto-test"
+            ],
+            "controlMode": "disabled",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "No command, test command, working directory, environment or auto-test setting was inspected."
+        ]
+      },
+      {
+        "id": "git-output",
+        "label": "Git output behavior",
+        "scope": "mutually-exclusive",
+        "dimension": "output-route",
+        "alternatives": [
+          {
+            "id": "automatic-commit",
+            "label": "Automatic Aider commits",
+            "claimIds": [
+              "org.aider-ai.aider.cli.file-edit-and-git-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "automatic-commit-disabled"
+            ],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "automatic-commit-disabled",
+            "label": "Automatic commits disabled",
+            "claimIds": [
+              "org.aider-ai.aider.cli.configuration-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "automatic-commit"
+            ],
+            "controlMode": "disabled",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "The effective auto-commit, dirty-commit and commit-verification settings are unknown."
+        ]
+      },
+      {
+        "id": "repository-context",
+        "label": "Repository context",
+        "scope": "composable",
+        "dimension": "tool-surface",
+        "alternatives": [
+          {
+            "id": "explicit-files",
+            "label": "Files explicitly added to chat",
+            "claimIds": [
+              "org.aider-ai.aider.cli.file-edit-and-git-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "repository-map",
+            "label": "Repository map enabled",
+            "claimIds": [
+              "org.aider-ai.aider.cli.repository-map-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "repository-map-disabled"
+            ]
+          },
+          {
+            "id": "repository-map-disabled",
+            "label": "Repository map disabled",
+            "claimIds": [
+              "org.aider-ai.aider.cli.repository-map-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "repository-map"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The files in chat, read-only files, ignore rules, repository-map state and token budget are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "org.aider-ai.aider.cli.release-identity-0-86-0",
+      "rawRecordPath": "dossiers/aider-cli-0-86-0/claims/aider-cli-0-86-0/release-identity-0-86-0.json",
+      "rawRecordSha256": "92507bab07b88764a0c494e4ff82be3a81f35341376266622e339e0a703727e1",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.aider-ai.aider.cli.release-identity-0-86-0",
+        "slug": "release-identity-0-86-0",
+        "subject": {
+          "id": "org.aider-ai.aider.cli",
+          "name": "Aider CLI",
+          "publisher": "Aider-AI project",
+          "surface": {
+            "kind": "cli",
+            "name": "Aider CLI",
+            "slug": "aider-cli-0-86-0"
+          }
+        },
+        "claim": {
+          "category": "release.identity",
+          "statement": "The Aider-AI project release page identifies Aider v0.86.0, published on 2025-08-09, at source revision a4be6ccd87ebaa59b361f3f028d116ce1761b626."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Aider-AI project"
+        },
+        "source": {
+          "uri": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
+          "title": "Aider v0.86.0 release",
+          "locator": "Release heading, publication time, tag and linked commit",
+          "publishedAt": "2025-08-09T17:42:00Z",
+          "capturedAt": "2026-08-01T10:46:26Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.86.0"
+          },
+          "configuration": {
+            "scope": "all",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "publisher source release"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "historical",
+          "changedAt": null,
+          "reason": "Exact released version retained as a bounded artifact identity."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-11-01",
+          "invalidatedBy": [
+            "release-metadata-correction",
+            "tag-retargeting"
+          ]
+        },
+        "limitations": [
+          "No release asset was downloaded; the installed artifact, environment and digest are not established."
+        ],
+        "unknowns": [
+          "The exact wheel or source distribution used by any installation is unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "aider-ai-project",
+      "sourceId": "source-release-identity-0-86-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "release-auditor",
+        "configuration-reviewer"
+      ]
+    },
+    {
+      "id": "org.aider-ai.aider.cli.file-edit-and-git-current",
+      "rawRecordPath": "dossiers/aider-cli-0-86-0/claims/aider-cli-0-86-0/file-edit-and-git-current.json",
+      "rawRecordSha256": "c33150268bd855a74a61fd922c9205fbea948dbac2e0ea54dfc56300ee0fdc11",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.aider-ai.aider.cli.file-edit-and-git-current",
+        "slug": "file-edit-and-git-current",
+        "subject": {
+          "id": "org.aider-ai.aider.cli",
+          "name": "Aider CLI",
+          "publisher": "Aider-AI project",
+          "surface": {
+            "kind": "cli",
+            "name": "Aider CLI",
+            "slug": "aider-cli-0-86-0"
+          }
+        },
+        "claim": {
+          "category": "workspace.file-and-git-authority",
+          "statement": "Current Aider usage documentation says users can add existing or new files to a chat, ask Aider to edit them, review diffs, and have Aider create git commits that can be undone."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Aider-AI project"
+        },
+        "source": {
+          "uri": "https://aider.chat/docs/usage.html",
+          "title": "Aider usage",
+          "locator": "Adding files and Making changes",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T10:46:26Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "files added to chat or selected by Aider",
+              "git repository",
+              "automatic commit path"
+            ]
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local CLI workspace"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-09-01",
+          "invalidatedBy": [
+            "usage-documentation-change",
+            "git-behavior-change"
+          ]
+        },
+        "limitations": [
+          "This is a publisher claim, not an observed edit, diff, commit or undo receipt for 0.86.0."
+        ],
+        "unknowns": [
+          "Files, ignore rules, git settings, repository state and commit policy are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "aider-ai-project",
+      "sourceId": "source-file-edit-and-git-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "workspace",
+        "git-output"
+      ],
+      "personaIds": [
+        "authority-reviewer"
+      ]
+    },
+    {
+      "id": "org.aider-ai.aider.cli.shell-command-current",
+      "rawRecordPath": "dossiers/aider-cli-0-86-0/claims/aider-cli-0-86-0/shell-command-current.json",
+      "rawRecordSha256": "8ea048a9bcd2e62c175a3677c077c5bbfb33a2d8d1d334376e770e28b2bcd89b",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.aider-ai.aider.cli.shell-command-current",
+        "slug": "shell-command-current",
+        "subject": {
+          "id": "org.aider-ai.aider.cli",
+          "name": "Aider CLI",
+          "publisher": "Aider-AI project",
+          "surface": {
+            "kind": "cli",
+            "name": "Aider CLI",
+            "slug": "aider-cli-0-86-0"
+          }
+        },
+        "claim": {
+          "category": "tool.command-execution",
+          "statement": "Current in-chat command documentation describes `/run` as executing a shell command with an option to add its output to chat, and `/git` as executing a git command without adding output to chat."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Aider-AI project"
+        },
+        "source": {
+          "uri": "https://aider.chat/docs/usage/commands.html",
+          "title": "Aider in-chat commands",
+          "locator": "Slash commands table — /run and /git",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T10:46:26Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "user-invoked /run",
+              "user-invoked /git",
+              "local shell environment"
+            ]
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local CLI workspace"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-09-01",
+          "invalidatedBy": [
+            "command-documentation-change",
+            "shell-authority-change"
+          ]
+        },
+        "limitations": [
+          "The documented path is explicitly user-invoked and does not establish autonomous command execution by a model."
+        ],
+        "unknowns": [
+          "No command, shell, working directory, environment, confirmation response or output was inspected."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "aider-ai-project",
+      "sourceId": "source-shell-command-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "execution"
+      ],
+      "personaIds": [
+        "authority-reviewer"
+      ]
+    },
+    {
+      "id": "org.aider-ai.aider.cli.test-automation-current",
+      "rawRecordPath": "dossiers/aider-cli-0-86-0/claims/aider-cli-0-86-0/test-automation-current.json",
+      "rawRecordSha256": "0b78126645333e983ec4ddde68362afde91064b9b6da71b95347f80ea82c2ec0",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.aider-ai.aider.cli.test-automation-current",
+        "slug": "test-automation-current",
+        "subject": {
+          "id": "org.aider-ai.aider.cli",
+          "name": "Aider CLI",
+          "publisher": "Aider-AI project",
+          "surface": {
+            "kind": "cli",
+            "name": "Aider CLI",
+            "slug": "aider-cli-0-86-0"
+          }
+        },
+        "claim": {
+          "category": "tool.test-execution",
+          "statement": "Current Aider documentation says `/test` can run a configured test command and that `--test-cmd` with `--auto-test` can run a test suite after AI edits, with Aider attempting to fix reported failures."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Aider-AI project"
+        },
+        "source": {
+          "uri": "https://aider.chat/docs/usage/lint-test.html",
+          "title": "Aider linting and testing",
+          "locator": "Testing and Manually running code",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T10:46:26Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "/test command",
+              "--test-cmd",
+              "--auto-test",
+              "non-zero test exit"
+            ]
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local CLI workspace"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-09-01",
+          "invalidatedBy": [
+            "testing-documentation-change",
+            "auto-test-behavior-change"
+          ]
+        },
+        "limitations": [
+          "No test command was run and no repair result was observed; automatic behavior depends on explicit configuration."
+        ],
+        "unknowns": [
+          "Test command, trigger, environment, timeout, exit result and fix behavior are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "aider-ai-project",
+      "sourceId": "source-test-automation-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "execution"
+      ],
+      "personaIds": [
+        "authority-reviewer"
+      ]
+    },
+    {
+      "id": "org.aider-ai.aider.cli.model-provider-current",
+      "rawRecordPath": "dossiers/aider-cli-0-86-0/claims/aider-cli-0-86-0/model-provider-current.json",
+      "rawRecordSha256": "3a8d6f9527fc6a05d9747be4cb9b4a471a31d450d9ffa0ebb2f225c0c57e0650",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.aider-ai.aider.cli.model-provider-current",
+        "slug": "model-provider-current",
+        "subject": {
+          "id": "org.aider-ai.aider.cli",
+          "name": "Aider CLI",
+          "publisher": "Aider-AI project",
+          "surface": {
+            "kind": "cli",
+            "name": "Aider CLI",
+            "slug": "aider-cli-0-86-0"
+          }
+        },
+        "claim": {
+          "category": "runtime.model-provider",
+          "statement": "Current Aider usage documentation says the CLI can select a model with `--model` or `/model`, connect to multiple hosted providers, and connect to local models."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Aider-AI project"
+        },
+        "source": {
+          "uri": "https://aider.chat/docs/usage.html",
+          "title": "Aider usage",
+          "locator": "LLMs",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T10:46:26Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "--model",
+              "/model",
+              "configured hosted provider",
+              "configured local model"
+            ]
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local client with user-selected model route"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-09-01",
+          "invalidatedBy": [
+            "model-documentation-change",
+            "provider-support-change"
+          ]
+        },
+        "limitations": [
+          "Model availability and behavior are rolling and are not frozen by the 0.86.0 client identity."
+        ],
+        "unknowns": [
+          "Provider, endpoint, model, alias, credentials, fallback and inference settings are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "aider-ai-project",
+      "sourceId": "source-model-provider-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "runtime",
+        "model-and-mode"
+      ],
+      "personaIds": [
+        "release-auditor",
+        "configuration-reviewer"
+      ]
+    },
+    {
+      "id": "org.aider-ai.aider.cli.chat-modes-current",
+      "rawRecordPath": "dossiers/aider-cli-0-86-0/claims/aider-cli-0-86-0/chat-modes-current.json",
+      "rawRecordSha256": "461b7b368e1d1b29e87904b7f902df2e828018658c85f9c7205fc6b05072cb77",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.aider-ai.aider.cli.chat-modes-current",
+        "slug": "chat-modes-current",
+        "subject": {
+          "id": "org.aider-ai.aider.cli",
+          "name": "Aider CLI",
+          "publisher": "Aider-AI project",
+          "surface": {
+            "kind": "cli",
+            "name": "Aider CLI",
+            "slug": "aider-cli-0-86-0"
+          }
+        },
+        "claim": {
+          "category": "interaction.mode",
+          "statement": "Current Aider documentation separates code mode, which changes files; ask mode, which discusses code without changing files; architect mode, which uses an architect and editor path; and help mode."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Aider-AI project"
+        },
+        "source": {
+          "uri": "https://aider.chat/docs/usage/modes.html",
+          "title": "Aider chat modes",
+          "locator": "Chat modes and Architect mode and the editor model",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T10:46:26Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "code mode",
+              "ask mode",
+              "architect mode",
+              "help mode"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "interactive CLI session"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-09-01",
+          "invalidatedBy": [
+            "mode-documentation-change",
+            "authority-change"
+          ]
+        },
+        "limitations": [
+          "Mode names do not establish the effective mode of any session or prove enforcement of a non-writing boundary."
+        ],
+        "unknowns": [
+          "The active mode, per-message override, models and auto-accept behavior are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "aider-ai-project",
+      "sourceId": "source-chat-modes-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "model-and-mode"
+      ],
+      "personaIds": [
+        "configuration-reviewer"
+      ]
+    },
+    {
+      "id": "org.aider-ai.aider.cli.edit-formats-current",
+      "rawRecordPath": "dossiers/aider-cli-0-86-0/claims/aider-cli-0-86-0/edit-formats-current.json",
+      "rawRecordSha256": "2adf43d64c4f8c6d394ad857e4fc58159e876f05d27c553e8d31d35feeebbd39",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.aider-ai.aider.cli.edit-formats-current",
+        "slug": "edit-formats-current",
+        "subject": {
+          "id": "org.aider-ai.aider.cli",
+          "name": "Aider CLI",
+          "publisher": "Aider-AI project",
+          "surface": {
+            "kind": "cli",
+            "name": "Aider CLI",
+            "slug": "aider-cli-0-86-0"
+          }
+        },
+        "claim": {
+          "category": "configuration.edit-format",
+          "statement": "Current Aider documentation describes multiple model-dependent edit formats and says users can override the selected format, including separate editor formats for architect mode."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Aider-AI project"
+        },
+        "source": {
+          "uri": "https://aider.chat/docs/more/edit-formats.html",
+          "title": "Aider edit formats",
+          "locator": "Edit formats and editor-diff and editor-whole",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T10:46:26Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "model-selected edit format",
+              "--edit-format",
+              "--editor-edit-format",
+              "architect mode"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "interactive CLI session"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-09-01",
+          "invalidatedBy": [
+            "edit-format-documentation-change",
+            "model-default-change"
+          ]
+        },
+        "limitations": [
+          "No model response or edit format was observed, and format choice does not prove successful application."
+        ],
+        "unknowns": [
+          "Selected model, edit format, editor model and editor edit format are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "aider-ai-project",
+      "sourceId": "source-edit-formats-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "model-and-mode"
+      ],
+      "personaIds": [
+        "configuration-reviewer"
+      ]
+    },
+    {
+      "id": "org.aider-ai.aider.cli.repository-map-current",
+      "rawRecordPath": "dossiers/aider-cli-0-86-0/claims/aider-cli-0-86-0/repository-map-current.json",
+      "rawRecordSha256": "79249248f2d48f73cfb6a5ae56667761443a0532c79dcc0b5d6a5ebfb32351ba",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.aider-ai.aider.cli.repository-map-current",
+        "slug": "repository-map-current",
+        "subject": {
+          "id": "org.aider-ai.aider.cli",
+          "name": "Aider CLI",
+          "publisher": "Aider-AI project",
+          "surface": {
+            "kind": "cli",
+            "name": "Aider CLI",
+            "slug": "aider-cli-0-86-0"
+          }
+        },
+        "claim": {
+          "category": "workspace.repository-context",
+          "statement": "Current Aider documentation says repository-map use is model-dependent, can be disabled, and can be forced on with a configured token budget."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Aider-AI project"
+        },
+        "source": {
+          "uri": "https://aider.chat/docs/faq.html",
+          "title": "Aider FAQ",
+          "locator": "How do I turn on the repository map?",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T10:46:26Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "repository map enabled",
+              "repository map disabled",
+              "--map-tokens"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local git repository"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-09-01",
+          "invalidatedBy": [
+            "repository-map-documentation-change",
+            "model-default-change"
+          ]
+        },
+        "limitations": [
+          "A repository map is context supplied to a model; this claim does not establish what files were read or changed."
+        ],
+        "unknowns": [
+          "Repository-map enablement, ranking, language support, token budget and included paths are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "aider-ai-project",
+      "sourceId": "source-repository-map-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "workspace"
+      ],
+      "personaIds": [
+        "authority-reviewer"
+      ]
+    },
+    {
+      "id": "org.aider-ai.aider.cli.configuration-current",
+      "rawRecordPath": "dossiers/aider-cli-0-86-0/claims/aider-cli-0-86-0/configuration-current.json",
+      "rawRecordSha256": "534c8a7f33b280b57195690131f14fe82092f9d3b9de0b4e25fa072e8ba7930e",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.aider-ai.aider.cli.configuration-current",
+        "slug": "configuration-current",
+        "subject": {
+          "id": "org.aider-ai.aider.cli",
+          "name": "Aider CLI",
+          "publisher": "Aider-AI project",
+          "surface": {
+            "kind": "cli",
+            "name": "Aider CLI",
+            "slug": "aider-cli-0-86-0"
+          }
+        },
+        "claim": {
+          "category": "configuration.paths",
+          "statement": "Current Aider documentation says options can be supplied through command-line switches, YAML configuration, environment variables or an environment file, so effective behavior is not identified by client version alone."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Aider-AI project"
+        },
+        "source": {
+          "uri": "https://aider.chat/docs/config.html",
+          "title": "Aider configuration",
+          "locator": "Configuration methods",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T10:46:26Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "command-line options",
+              ".aider.conf.yml",
+              "AIDER environment variables",
+              ".env"
+            ]
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local CLI configuration"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-09-01",
+          "invalidatedBy": [
+            "configuration-documentation-change",
+            "precedence-change"
+          ]
+        },
+        "limitations": [
+          "The page describes configuration paths but does not expose the effective values of any installation."
+        ],
+        "unknowns": [
+          "Configuration-file locations, precedence, environment values, API-key paths and option values are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "aider-ai-project",
+      "sourceId": "source-configuration-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "git-output"
+      ],
+      "personaIds": [
+        "authority-reviewer"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-aider-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-search",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No potentially independent public evaluation with exact Aider 0.86.0, model, provider and configuration applicability was identified in this bounded source pass."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "Publisher benchmarks are not independent evidence, and no independent result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Aider CLI 0.86.0 is represented as an exact open-source release with unresolved installed package and model backend; current documentation describes file editing, git output, commands, tests, chat modes and configurable model routes without becoming an observed behavior receipt.",
+    "releaseContext": {
+      "statement": "The Aider-AI project published Aider v0.86.0 on 2025-08-09 at source revision a4be6ccd87ebaa59b361f3f028d116ce1761b626. Current documentation is scoped separately and may postdate that release.",
+      "sourceId": "source-release-identity-0-86-0",
+      "legacySource": null
+    },
+    "limitations": [
+      "All product claims are attributed to Aider-AI project sources; no product behavior was observed.",
+      "No Aider package, source tree, dependency set or model service was downloaded, installed, hashed or run.",
+      "Current documentation is not an exact-version receipt for 0.86.0.",
+      "The client version does not freeze a provider, model, endpoint, credential path or inference revision.",
+      "Command, test, git and file authority depend on effective configuration and explicit user actions.",
+      "No independent evaluation was admitted.",
+      "No capability quality, safety, privacy, performance or suitability conclusion is supported."
+    ],
+    "unknowns": [
+      "The installed wheel or source distribution, platform, Python version, dependencies and artifact digest are unknown.",
+      "The exact correspondence between source revision and any installed package artifact is unknown.",
+      "The provider, endpoint, model identifier, alias resolution, credentials and inference settings are unknown.",
+      "The active chat mode, edit format and architect/editor model pairing are unknown.",
+      "The files in chat, read-only files, ignore rules and repository-map configuration are unknown.",
+      "The command, test, lint, working-directory and environment configuration are unknown.",
+      "The effective auto-commit, dirty-commit, commit-hook and undo state are unknown.",
+      "No independently attributable exact-version evaluation artifact was identified."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "release-auditor",
+        "label": "Release auditor",
+        "prompt": "Inspect exact client and unresolved package identity.",
+        "propositionIds": [
+          "identity",
+          "runtime"
+        ]
+      },
+      {
+        "id": "authority-reviewer",
+        "label": "Authority reviewer",
+        "prompt": "Inspect file, command, test and git authority by configuration.",
+        "propositionIds": [
+          "workspace",
+          "execution",
+          "git-output"
+        ]
+      },
+      {
+        "id": "configuration-reviewer",
+        "label": "Configuration reviewer",
+        "prompt": "Inspect model, mode and edit-pipeline alternatives.",
+        "propositionIds": [
+          "model-and-mode",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Exact client",
+        "question": "Which Aider release is pinned?",
+        "status": "0.86.0 tag and source revision known",
+        "tone": "qualified",
+        "answer": "The publisher release identifies v0.86.0 and a source revision; no distribution artifact digest was captured.",
+        "whyItMatters": "A release tag does not identify an installed wheel or environment.",
+        "claimIds": [
+          "org.aider-ai.aider.cli.release-identity-0-86-0"
+        ]
+      },
+      {
+        "id": "runtime",
+        "eyebrow": "Runtime",
+        "question": "Which package and model backend ran?",
+        "status": "Unresolved",
+        "tone": "attention",
+        "answer": "Package path, dependency set, provider, endpoint, model and service revision remain unknown.",
+        "whyItMatters": "The local client and remote or local model route are separate identities.",
+        "claimIds": [
+          "org.aider-ai.aider.cli.model-provider-current"
+        ]
+      },
+      {
+        "id": "workspace",
+        "eyebrow": "Workspace changes",
+        "question": "What file and repository actions are claimed?",
+        "status": "Publisher-attributed and configuration-scoped",
+        "tone": "qualified",
+        "answer": "Current docs describe adding files, editing them, using repository context and producing git commits.",
+        "whyItMatters": "Files in chat, repo-map state and commit behavior determine scope.",
+        "claimIds": [
+          "org.aider-ai.aider.cli.file-edit-and-git-current",
+          "org.aider-ai.aider.cli.repository-map-current"
+        ]
+      },
+      {
+        "id": "execution",
+        "eyebrow": "Commands and checks",
+        "question": "How can commands and tests run?",
+        "status": "Manual and automatic paths documented",
+        "tone": "attention",
+        "answer": "Current docs distinguish user-invoked commands and tests from configured automatic tests after edits.",
+        "whyItMatters": "Execution authority changes with the trigger and command configuration.",
+        "claimIds": [
+          "org.aider-ai.aider.cli.shell-command-current",
+          "org.aider-ai.aider.cli.test-automation-current"
+        ]
+      },
+      {
+        "id": "git-output",
+        "eyebrow": "Git output",
+        "question": "Are edits committed automatically?",
+        "status": "Configurable; effective state unknown",
+        "tone": "attention",
+        "answer": "Current docs describe automatic commits and configuration options, but no effective settings were observed.",
+        "whyItMatters": "File mutation and repository-history mutation are distinct authority boundaries.",
+        "claimIds": [
+          "org.aider-ai.aider.cli.file-edit-and-git-current",
+          "org.aider-ai.aider.cli.configuration-current"
+        ]
+      },
+      {
+        "id": "model-and-mode",
+        "eyebrow": "Model and mode",
+        "question": "Which reasoning and editing path applies?",
+        "status": "Multiple alternatives; unresolved",
+        "tone": "attention",
+        "answer": "Provider/model choice, code versus ask versus architect mode, and edit format are separate configurable paths.",
+        "whyItMatters": "Client identity does not freeze the model or interaction pipeline.",
+        "claimIds": [
+          "org.aider-ai.aider.cli.model-provider-current",
+          "org.aider-ai.aider.cli.chat-modes-current",
+          "org.aider-ai.aider.cli.edit-formats-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was Aider 0.86.0 independently evaluated here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No exact-version independent evaluation passed into this dossier.",
+        "whyItMatters": "Publisher documentation is attribution, not observed behavior.",
+        "claimIds": [
+          "org.aider-ai.aider.cli.release-identity-0-86-0"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source attribution only; exact release identity is separate from rolling documentation and unresolved runtime configuration."
+  }
+}

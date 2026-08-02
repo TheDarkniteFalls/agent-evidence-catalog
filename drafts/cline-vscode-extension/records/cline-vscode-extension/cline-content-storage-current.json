@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.cline-key-user-content-path",
+  "slug": "cline-key-user-content-path",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension"
+    }
+  },
+  "claim": {
+    "category": "data-handling",
+    "statement": "Cline Bot Inc.'s Privacy Notice states that when users rely on API keys provided by Cline, Cline collects user content to facilitate requests and transmits requests that may contain personal data to the third-party model provider."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://cline.bot/privacy",
+    "title": "Cline Privacy Notice",
+    "locator": "User Content; Disclosure to AI Model Providers",
+    "publishedAt": "2025-09-24T00:00:00Z",
+    "capturedAt": "2026-07-31T10:37:35Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": ["Cline-provided AI-model API keys"]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["VS Code extension"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-31",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-31",
+    "recheckAfter": "2026-10-29",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-change",
+      "source-unavailable",
+      "claimant-correction",
+      "product-version-change",
+      "product-surface-change",
+      "configuration-change",
+      "model-change",
+      "deployment-change",
+      "contradictory-source"
+    ]
+  },
+  "limitations": [
+    "This is a publisher legal notice, not a catalog observation or independent technical test.",
+    "The notice describes collection and transmission at a policy level; it does not enumerate the exact contents of every request."
+  ],
+  "unknowns": [
+    "Cline's specific retention period for task user content was not established by the selected passages.",
+    "The selected third-party provider's retention, training and onward-disclosure terms were not reviewed."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "com.cline.bot.vscode-extension.byok-user-content-path",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict about whether Cline collects user content is resolved because the claims apply to different API-key configurations."
+    }
+  ],
+  "validationRefs": []
+}

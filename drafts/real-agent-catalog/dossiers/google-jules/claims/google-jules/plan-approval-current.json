@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.google.jules.hosted.plan-approval-current",
+  "slug": "plan-approval-current",
+  "subject": {
+    "id": "com.google.jules.hosted",
+    "name": "Google Jules",
+    "publisher": "Google",
+    "surface": { "kind": "hosted-service", "name": "Jules", "slug": "google-jules" }
+  },
+  "claim": {
+    "category": "authority.change",
+    "statement": "Google's current getting-started guide says a submitted Jules task generates a plan that the user can review and approve before code changes are made."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "Google" },
+  "source": {
+    "uri": "https://jules.google/docs",
+    "title": "Jules getting started",
+    "locator": "Starting your first task, steps 1-5 and final sentence",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T23:24:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "documented-default", "values": ["interactive plan review and approval"] },
+    "platform": { "scope": "named", "values": ["Jules web task flow"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["user-submitted repository task"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "product-surface-change", "configuration-change", "manual-review"]
+  },
+  "limitations": [
+    "The statement describes the getting-started task flow and does not prove that every Jules invocation mode requires plan approval.",
+    "The catalog did not submit a task or test which side effects can occur before approval."
+  ],
+  "unknowns": [
+    "Plan auto-approval, scheduled-task and API behavior are outside this claim's documented configuration.",
+    "The completeness of the plan relative to later file, command, network or tool actions is unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

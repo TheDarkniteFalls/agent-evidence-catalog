@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0",
+  "asOf": "2026-07-30",
+  "previewCases": [
+    "valid-contradiction-pair",
+    "valid-resolved-scope-difference"
+  ],
+  "cases": [
+    {
+      "id": "valid-contradiction-pair",
+      "expected": "valid"
+    },
+    {
+      "id": "valid-resolved-scope-difference",
+      "expected": "valid"
+    },
+    {
+      "id": "invalid-rolling-version-value",
+      "expected": "invalid",
+      "errorIncludes": "rolling-current requires value null"
+    },
+    {
+      "id": "invalid-asymmetric-contradiction",
+      "expected": "invalid",
+      "errorIncludes": "missing reciprocal contradicts relationship"
+    },
+    {
+      "id": "invalid-impossible-date",
+      "expected": "invalid",
+      "errorIncludes": "reviewedAt: must be an ISO date"
+    },
+    {
+      "id": "invalid-subject-identity-conflict",
+      "expected": "invalid",
+      "errorIncludes": "subject identity conflicts"
+    },
+    {
+      "id": "invalid-closed-validation-ref",
+      "expected": "invalid",
+      "errorIncludes": "validation references remain closed under the claims-first MVP"
+    }
+  ]
+}

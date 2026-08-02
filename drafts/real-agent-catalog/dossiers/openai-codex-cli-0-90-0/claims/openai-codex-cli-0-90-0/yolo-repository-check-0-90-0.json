@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.yolo-repository-check-0-90-0",
+  "slug": "yolo-repository-check-0-90-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-90-0" }
+  },
+  "claim": {
+    "category": "authority.override",
+    "statement": "OpenAI's 0.90.0 release notes say the --yolo option skips the Git repository check when Codex CLI is run outside a repository."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": {
+    "uri": "https://github.com/openai/codex/releases/tag/rust-v0.90.0",
+    "title": "OpenAI Codex release 0.90.0",
+    "locator": "Bug Fixes — --yolo skips the Git repository check outside a repository (#9590)",
+    "publishedAt": "2026-01-25T16:37:37Z",
+    "capturedAt": "2026-08-01T00:47:47Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "0.90.0" },
+    "configuration": { "scope": "conditional", "values": ["--yolo supplied", "current directory is outside a Git repository"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["local CLI invocation"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-01-25", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "manual-review"]
+  },
+  "limitations": [
+    "The claim is limited to the repository check described in the release note; it does not infer every effect of --yolo.",
+    "The catalog did not invoke the option inside or outside a repository."
+  ],
+  "unknowns": [
+    "The complete approval, sandbox, network and other authority changes implied by --yolo in 0.90.0 were not established from this source.",
+    "The filesystem scope and working-directory behavior outside a Git repository were not tested."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "0.1",
+  "asOf": "2026-07-31",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension"
+    },
+    "releaseIdentity": {
+      "version": "4.1.2",
+      "sourceRevision": "644e84173724b50d6a248f813d01c7f1dad9ecf2",
+      "variant": null
+    }
+  },
+  "decisionBoundary": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed public-source claims only. Attribution and source capture do not establish that a claim is true in practice."
+  },
+  "personas": [
+    {
+      "id": "adopter",
+      "label": "Considering Cline",
+      "prompt": "See what it can do, when it pauses, and what can be undone.",
+      "questionIds": ["capability", "authority", "recovery", "data"]
+    },
+    {
+      "id": "reviewer",
+      "label": "Reviewing risk",
+      "prompt": "Trace consequential authority, content paths, recovery limits and release ambiguity.",
+      "questionIds": ["authority", "data", "recovery", "identity"]
+    },
+    {
+      "id": "auditor",
+      "label": "Checking evidence",
+      "prompt": "Inspect every source, scope difference, limitation and unknown.",
+      "questionIds": ["identity", "capability", "authority", "data", "recovery"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "identity",
+      "eyebrow": "Surface and release",
+      "question": "Which Cline did this research cover?",
+      "status": "Exact release identity; runtime variant unknown",
+      "tone": "attention",
+      "answer": "The exact release identity is the Cline VS Code extension 4.1.2 at publisher commit 644e8417. The official changelog says the combined package can activate a Legacy or Next variant per window, so the active implementation for a particular installation is not established here.",
+      "whyItMatters": "Do not transfer these statements to Cline CLI, JetBrains, SDK, Kanban or an unidentified extension variant.",
+      "claimIds": [
+        "com.cline.bot.vscode-extension.release-identity-4-1-2"
+      ]
+    },
+    {
+      "id": "capability",
+      "eyebrow": "Machine authority",
+      "question": "What does the publisher say it can do from VS Code?",
+      "status": "Broad local and network-capable tool surface",
+      "tone": "attention",
+      "answer": "At the 4.1.2 release commit, the publisher describes Cline as able to create files, run terminal commands, browse the web and use tools. The source frames those actions as human-in-the-loop, but approval behavior changes with configuration.",
+      "whyItMatters": "The useful surface is also consequential: file, process, browser and tool access should be reviewed together with the approval settings below.",
+      "claimIds": [
+        "com.cline.bot.vscode-extension.publisher-described-capabilities-4-1-2"
+      ]
+    },
+    {
+      "id": "authority",
+      "eyebrow": "Approval behavior",
+      "question": "Will Cline ask before it changes files or runs commands?",
+      "status": "It depends on the approval configuration",
+      "tone": "mixed",
+      "answer": "The current guides describe three distinct configurations: explicit approval when Auto Approve is off; category-specific actions that proceed without prompts when selected Auto Approve toggles are on; and YOLO Mode, which the publisher says approves all file, command, browser, MCP and mode-transition actions.",
+      "whyItMatters": "The sources look inconsistent if configuration is hidden. They are recorded as resolved scope differences, not an active factual dispute.",
+      "claimIds": [
+        "com.cline.bot.vscode-extension.manual-approval-before-changes",
+        "com.cline.bot.vscode-extension.selective-auto-approval",
+        "com.cline.bot.vscode-extension.yolo-auto-approval"
+      ]
+    },
+    {
+      "id": "data",
+      "eyebrow": "Code and prompt path",
+      "question": "Who can receive user content?",
+      "status": "A model provider receives it; Cline collection depends on key path",
+      "tone": "mixed",
+      "answer": "Cline's Privacy Notice says user content goes directly to the third-party model provider when users supply their own API keys and Cline does not collect that content. With Cline-provided keys, the notice says Cline collects the content to facilitate the request and transmits it to the model provider.",
+      "whyItMatters": "Using your own key changes Cline's stated role; it does not make the model request local or establish the provider's retention or training rules.",
+      "claimIds": [
+        "com.cline.bot.vscode-extension.byok-user-content-path",
+        "com.cline.bot.vscode-extension.cline-key-user-content-path"
+      ]
+    },
+    {
+      "id": "recovery",
+      "eyebrow": "Reversibility",
+      "question": "What recovery mechanism does the publisher describe?",
+      "status": "File checkpoints are described; external side effects are not reversed",
+      "tone": "qualified",
+      "answer": "The current Checkpoints guide says checkpoints are enabled by default, save project-file snapshots in a separate shadow Git repository after tool use, and support compare or restore actions.",
+      "whyItMatters": "A file snapshot is useful recovery evidence, but it does not prove that package installs, system changes, network actions, Git pushes or other external effects can be undone.",
+      "claimIds": [
+        "com.cline.bot.vscode-extension.checkpoints-enabled-by-default"
+      ]
+    }
+  ],
+  "releaseContext": {
+    "statement": "The publisher changelog says 4.1.0 introduced a combined A/B package that activates either a Legacy or SDK-based Next extension per window through a staged remote rollout, and 4.1.2 added a display of the active variant.",
+    "source": {
+      "uri": "https://github.com/cline/cline/blob/644e84173724b50d6a248f813d01c7f1dad9ecf2/CHANGELOG.md",
+      "title": "Cline VS Code extension changelog at release commit 644e8417",
+      "locator": "4.1.2 and 4.1.0",
+      "publishedAt": "2026-07-31T05:02:40Z",
+      "capturedAt": "2026-07-31T10:37:35Z"
+    }
+  },
+  "globalUnknowns": [
+    "Which Legacy or Next extension variant a particular 4.1.2 installation activates.",
+    "Whether rolling approval and checkpoint documentation applies identically to both variants.",
+    "The exact fresh-install toggle state and effective configuration of a particular installation.",
+    "Platform-specific, model-specific and provider-specific behavior.",
+    "The exact content and network destinations used by a particular task.",
+    "Third-party model-provider retention, training and onward-disclosure terms.",
+    "Observed permission enforcement, command classification reliability and checkpoint restoration behavior.",
+    "Independent third-party findings under overlapping applicability; none were included in this bounded dossier."
+  ]
+}

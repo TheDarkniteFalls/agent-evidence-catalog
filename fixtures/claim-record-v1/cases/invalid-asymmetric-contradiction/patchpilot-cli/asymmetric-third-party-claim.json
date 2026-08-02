@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.example.patchpilot.cli.asymmetric-third-party-claim",
+  "slug": "asymmetric-third-party-claim",
+  "subject": {
+    "id": "dev.example.patchpilot",
+    "name": "PatchPilot",
+    "publisher": "Synthetic Workshop Ltd",
+    "surface": {
+      "kind": "cli",
+      "name": "PatchPilot CLI",
+      "slug": "patchpilot-cli"
+    }
+  },
+  "claim": {
+    "category": "authority.change",
+    "statement": "Synthetic Test Collective reports that one mutating command completed without confirmation in restricted mode."
+  },
+  "provenance": {
+    "kind": "independent-third-party-report",
+    "claimant": "Synthetic Test Collective"
+  },
+  "source": {
+    "uri": "https://reports.synthetic.example/patchpilot/asymmetric-command-result",
+    "title": "Synthetic restricted-mode command result",
+    "locator": "Mutating command observation",
+    "publishedAt": "2026-07-15T00:00:00Z",
+    "capturedAt": "2026-07-30T00:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "2.4.1"
+    },
+    "configuration": {
+      "scope": "named",
+      "values": ["restricted"]
+    },
+    "platform": {
+      "scope": "named",
+      "values": ["linux-x86_64"]
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["local"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-30",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-30",
+    "recheckAfter": "2026-10-28",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-change",
+      "contradictory-source"
+    ]
+  },
+  "limitations": [
+    "This synthetic report has not been reproduced by the catalog."
+  ],
+  "unknowns": [],
+  "relationships": [],
+  "validationRefs": []
+}

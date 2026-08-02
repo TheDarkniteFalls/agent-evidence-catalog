@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.openhands.cli.always-approve-confirmation-1-16-0",
+  "slug": "always-approve-confirmation-1-16-0",
+  "subject": {
+    "id": "org.openhands.cli",
+    "name": "OpenHands",
+    "publisher": "OpenHands",
+    "surface": { "kind": "cli", "name": "OpenHands CLI", "slug": "openhands-cli" }
+  },
+  "claim": {
+    "category": "authority.change",
+    "statement": "The publisher's README at tag 1.16.0 states that --always-approve, also exposed as --yolo, auto-approves all actions without confirmation."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenHands" },
+  "source": {
+    "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+    "title": "OpenHands CLI README at tag 1.16.0",
+    "locator": "Features — Confirmation Modes — Auto-approve all actions",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T21:47:27Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "1.16.0" },
+    "configuration": { "scope": "named", "values": ["--always-approve or --yolo"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["local OpenHands CLI session"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "manual-review"]
+  },
+  "limitations": [
+    "This is a version-pinned publisher description, not observed behavior.",
+    "The catalog did not establish what operating-system, container, repository or credential boundaries remain outside the confirmation layer."
+  ],
+  "unknowns": [
+    "The tools and credentials available to a particular always-approve session are unknown.",
+    "Whether external containment would block any attempted action is unknown."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "org.openhands.cli.always-ask-confirmation-1-16-0",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because always-approve and always-ask are mutually exclusive confirmation configurations."
+    }
+  ],
+  "validationRefs": []
+}

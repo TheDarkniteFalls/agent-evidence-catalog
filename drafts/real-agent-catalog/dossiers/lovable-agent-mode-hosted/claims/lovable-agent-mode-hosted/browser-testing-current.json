@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.browser-testing-current", "slug": "browser-testing-current",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Build mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Build mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "tool.browser-testing", "statement": "Current Lovable documentation says browser testing runs in a remote virtual environment against the current project preview, can interact with flows and inspect console and network activity, and may use the current preview user's authenticated session." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/features/browser-testing", "title": "Test your app in a browser", "locator": "What browser testing can do, How browser testing works and Where it runs", "publishedAt": null, "capturedAt": "2026-08-01T10:46:26Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["explicit request or confirmed offer", "remote virtual browser", "current preview", "current authenticated preview user", "test environment when enabled"] }, "platform": { "scope": "named", "values": ["remote browser environment"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["project preview", "test environment preview when configured"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["browser-testing-change", "authentication-boundary-change"] },
+  "limitations": ["Authenticated browser testing may exercise the current app user's authority; no target or side effect was observed here."],
+  "unknowns": ["Trigger, confirmation, preview identity, authenticated user, viewport, actions, screenshots and results are unknown."],
+  "relationships": [], "validationRefs": []
+}

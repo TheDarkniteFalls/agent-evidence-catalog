@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "asOf": "2026-08-01",
+  "identity": {
+    "recordId": "com.replit.agent.hosted.agent-4",
+    "agent": { "id": "com.replit.agent.hosted", "name": "Replit Agent" },
+    "publisher": { "id": "replit", "name": "Replit" },
+    "surface": { "kind": "hosted-service", "name": "Replit Agent hosted workspace", "slug": "replit-agent-4-hosted", "deliveryModel": "hosted" },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Replit-managed rolling Agent service after the Agent 4 milestone",
+      "additionalIdentities": [
+        { "id": "agent-4-generation", "kind": "release-line", "status": "known", "value": "Agent 4", "scopeBindings": [], "artifactRefs": ["agent-4-generation"], "sourceIds": ["source-agent-4-launch"], "claimIds": ["com.replit.agent.hosted.agent-4-launch"], "note": "Replit's dated 2026-03-13 changelog names Agent 4, but the label is a hosted service generation rather than an immutable backend build." },
+        { "id": "current-service-revision", "kind": "service-revision", "status": "unresolved", "value": null, "scopeBindings": [], "artifactRefs": ["replit-current-agent-service"], "sourceIds": ["source-agent-modes-current"], "claimIds": ["com.replit.agent.hosted.agent-modes-current"], "note": "Current documentation describes the rolling service controls but does not expose an immutable serving revision." },
+        { "id": "current-model-routing", "kind": "runtime-build", "status": "unresolved", "value": null, "scopeBindings": [], "artifactRefs": ["replit-agent-model-backend"], "sourceIds": ["source-model-selection-current"], "claimIds": ["com.replit.agent.hosted.model-selection-current"], "note": "The live model catalog is account- and rollout-dependent and does not identify the model, checkpoint, endpoint or inference revision used by a particular task." }
+      ],
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": ["Lite mode service path", "Economy mode service path", "Power mode service path"],
+        "alternativeDetails": [
+          { "id": "lite-mode-service", "label": "Lite mode service path", "kind": "service", "identityStatus": "unresolved", "artifactRefs": ["replit-current-agent-service", "replit-agent-model-backend"], "scopeBindings": [{ "axisId": "agent-mode", "alternativeId": "lite" }], "claimIds": ["com.replit.agent.hosted.agent-modes-current"], "note": "The named mode is documented; the serving and model revisions are not." },
+          { "id": "economy-mode-service", "label": "Economy mode service path", "kind": "service", "identityStatus": "unresolved", "artifactRefs": ["replit-current-agent-service", "replit-agent-model-backend"], "scopeBindings": [{ "axisId": "agent-mode", "alternativeId": "economy" }], "claimIds": ["com.replit.agent.hosted.agent-modes-current"], "note": "The named mode is documented; the serving and model revisions are not." },
+          { "id": "power-mode-service", "label": "Power mode service path", "kind": "service", "identityStatus": "unresolved", "artifactRefs": ["replit-current-agent-service", "replit-agent-model-backend"], "scopeBindings": [{ "axisId": "agent-mode", "alternativeId": "power" }], "claimIds": ["com.replit.agent.hosted.agent-modes-current"], "note": "The named mode is documented; the serving and model revisions are not." }
+        ],
+        "note": "No Replit account, project, workspace, task, browser test, deployment or model route was opened or run."
+      }
+    },
+    "artifacts": [
+      { "id": "agent-4-generation", "kind": "hosted-release", "identityStatus": "exact", "uri": "https://docs.replit.com/updates/2026/03/13/changelog", "ecosystem": "Replit Agent hosted service", "version": "Agent 4", "digest": null, "note": "Dated publisher generation milestone; not an immutable deployed service revision." },
+      { "id": "replit-current-agent-service", "kind": "hosted-release", "identityStatus": "unresolved", "uri": null, "ecosystem": "Replit-managed Agent service", "version": null, "digest": null, "note": "No immutable current service build or regional rollout receipt is published in the captured sources." },
+      { "id": "replit-agent-model-backend", "kind": "other", "identityStatus": "unresolved", "uri": null, "ecosystem": "Replit-routed Agent model backend", "version": null, "digest": null, "note": "Exact provider, model, checkpoint, endpoint, routing and inference revision are unresolved." }
+    ]
+  },
+  "roles": {
+    "claimants": [{ "id": "replit", "name": "Replit", "kind": "publisher" }],
+    "sourceCapturers": [{ "id": "catalog-source-capturer", "name": "Agent Evidence Catalog maintainer", "kind": "catalog-maintainer" }],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://docs.replit.com/updates/2026/03/13/changelog": { "sourceKind": "publisher-release-metadata", "snapshotStatus": "live-page", "note": "Dated publisher changelog entry captured from a live documentation page." },
+    "https://docs.replit.com/features/agent/agent-modes": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current publisher mode documentation; no configuration was selected." },
+    "https://docs.replit.com/features/agent/model-selector": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current publisher model and effort selector documentation; no model was selected." },
+    "https://docs.replit.com/features/agent/plan-mode": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current publisher Plan-to-Build workflow documentation; no plan was created or approved." },
+    "https://docs.replit.com/core-concepts/agent/task-system": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current publisher background-task workflow; no task was accepted, run, applied or dismissed." },
+    "https://docs.replit.com/features/agent/app-testing": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current publisher browser-testing description; no test was enabled or observed." },
+    "https://docs.replit.com/core-concepts/project-editor/app-setup/secrets": { "sourceKind": "publisher-policy", "snapshotStatus": "live-page", "note": "Current publisher workspace secret-storage guidance; no secret or access path was inspected." }
+  },
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Hosted generation, service revision, model route and effort, interaction mode, execution mode, chained approvals, browser testing and secret scope remain separate evidence dimensions.",
+    "axes": [
+      {
+        "id": "agent-mode", "label": "Agent execution mode", "scope": "mutually-exclusive", "dimension": "runtime",
+        "alternatives": [
+          { "id": "lite", "label": "Lite", "claimIds": ["com.replit.agent.hosted.agent-modes-current"], "mutuallyExclusiveWith": ["economy", "power"] },
+          { "id": "economy", "label": "Economy", "claimIds": ["com.replit.agent.hosted.agent-modes-current"], "mutuallyExclusiveWith": ["lite", "power"] },
+          { "id": "power", "label": "Power", "claimIds": ["com.replit.agent.hosted.agent-modes-current"], "mutuallyExclusiveWith": ["lite", "economy"] }
+        ],
+        "unknowns": ["The selected mode, mode revision, model route and account entitlement are unknown."]
+      },
+      {
+        "id": "model-selection", "label": "Primary model selection", "scope": "mutually-exclusive", "dimension": "model",
+        "alternatives": [
+          { "id": "automatic", "label": "Automatic model selection", "claimIds": ["com.replit.agent.hosted.model-selection-current"], "mutuallyExclusiveWith": ["manual-primary"], "controlMode": "classifier-mediated", "humanInteraction": "possible" },
+          { "id": "manual-primary", "label": "Manual primary model and effort", "claimIds": ["com.replit.agent.hosted.model-selection-current"], "mutuallyExclusiveWith": ["automatic"], "controlMode": "manual-approval", "humanInteraction": "required" }
+        ],
+        "unknowns": ["The available catalog, selected model, effort, account authorization, rollout and per-request route are unknown."]
+      },
+      {
+        "id": "interaction-mode", "label": "Plan or Build interaction", "scope": "mutually-exclusive", "dimension": "interaction-mode",
+        "alternatives": [
+          { "id": "plan", "label": "Plan mode", "claimIds": ["com.replit.agent.hosted.plan-build-current"], "mutuallyExclusiveWith": ["build"], "controlMode": "automatic-deny", "humanInteraction": "possible" },
+          { "id": "build", "label": "Build mode", "claimIds": ["com.replit.agent.hosted.plan-build-current"], "mutuallyExclusiveWith": ["plan"], "controlMode": "automatic-allow", "humanInteraction": "possible" }
+        ],
+        "unknowns": ["The effective mode, task list and file or data operations are unknown."]
+      },
+      {
+        "id": "plan-approval", "label": "Plan-to-Build decision", "scope": "mutually-exclusive", "dimension": "approval-authority",
+        "alternatives": [
+          { "id": "refine", "label": "Continue refining without building", "claimIds": ["com.replit.agent.hosted.plan-build-current"], "mutuallyExclusiveWith": ["start-building"], "controlMode": "automatic-deny", "humanInteraction": "required" },
+          { "id": "start-building", "label": "Select Start building", "claimIds": ["com.replit.agent.hosted.plan-build-current"], "mutuallyExclusiveWith": ["refine"], "controlMode": "manual-approval", "humanInteraction": "required" }
+        ],
+        "unknowns": ["No proposed plan, approver identity, approval receipt or resulting Build session is known."]
+      },
+      {
+        "id": "background-task-start", "label": "Background-task start decision", "scope": "mutually-exclusive", "dimension": "approval-authority",
+        "alternatives": [
+          { "id": "revise-plan", "label": "Revise plan", "claimIds": ["com.replit.agent.hosted.background-tasks-current"], "mutuallyExclusiveWith": ["accept-tasks"], "controlMode": "automatic-deny", "humanInteraction": "required" },
+          { "id": "accept-tasks", "label": "Accept tasks", "claimIds": ["com.replit.agent.hosted.background-tasks-current"], "mutuallyExclusiveWith": ["revise-plan"], "controlMode": "manual-approval", "humanInteraction": "required" }
+        ],
+        "unknowns": ["No task plan, accepting principal, concurrency entitlement or isolated task runtime is known."]
+      },
+      {
+        "id": "background-task-output", "label": "Background-task output decision", "scope": "mutually-exclusive", "dimension": "approval-authority",
+        "alternatives": [
+          { "id": "dismiss", "label": "Dismiss task changes", "claimIds": ["com.replit.agent.hosted.background-tasks-current"], "mutuallyExclusiveWith": ["apply"], "controlMode": "automatic-deny", "humanInteraction": "required" },
+          { "id": "apply", "label": "Apply changes to main version", "claimIds": ["com.replit.agent.hosted.background-tasks-current"], "mutuallyExclusiveWith": ["dismiss"], "controlMode": "manual-approval", "humanInteraction": "required" }
+        ],
+        "unknowns": ["No work log, diff, test result, reviewer identity, application receipt or conflict-resolution result is known."]
+      },
+      {
+        "id": "app-testing", "label": "Agent browser testing", "scope": "mutually-exclusive", "dimension": "tool-surface",
+        "alternatives": [
+          { "id": "disabled", "label": "App Testing disabled", "claimIds": ["com.replit.agent.hosted.app-testing-current"], "mutuallyExclusiveWith": ["enabled"], "controlMode": "disabled", "humanInteraction": "possible" },
+          { "id": "enabled", "label": "App Testing enabled", "claimIds": ["com.replit.agent.hosted.app-testing-current"], "mutuallyExclusiveWith": ["disabled"], "controlMode": "classifier-mediated", "humanInteraction": "possible" }
+        ],
+        "unknowns": ["Enablement, tested application, browser build, generated actions, findings and fixes are unknown."]
+      },
+      {
+        "id": "secret-scope", "label": "Workspace secret scope", "scope": "composable", "dimension": "credential",
+        "alternatives": [
+          { "id": "app-level", "label": "App-level secret", "claimIds": ["com.replit.agent.hosted.secrets-current"], "mutuallyExclusiveWith": [] },
+          { "id": "account-level", "label": "Account-level secret copied into selected Apps", "claimIds": ["com.replit.agent.hosted.secrets-current"], "mutuallyExclusiveWith": [] }
+        ],
+        "unknowns": ["No secret, collaborator role, recipient App, deployment, access log or Agent credential read was inspected."]
+      }
+    ]
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "replit-agent-independent-evidence",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [{ "id": "candidate-search", "dimension": "other", "status": "not-assessed", "claimIds": [], "note": "This batch reserved its sole independent-evaluation admission attempt for Claude Code; no Replit Agent 4 study was assessed for admission." }],
+      "includedTestIds": [],
+      "limitations": ["No-candidate is a bounded research state, not a claim that no independent Replit Agent evaluation exists."]
+    }
+  ],
+  "dossier": {
+    "summary": "Replit Agent is represented as a hosted rolling service after the dated Agent 4 generation milestone, with current mode, model, plan, background-task, testing and secret boundaries kept configuration-scoped.",
+    "releaseContext": { "statement": "Replit's 2026-03-13 changelog names Agent 4. Current documentation describes later rolling controls, but no immutable serving, regional deployment or model revision is published in the captured sources.", "sourceUri": "https://docs.replit.com/updates/2026/03/13/changelog", "legacySource": null },
+    "limitations": [
+      "All product claims are attributed to Replit public sources; no behavior was observed.",
+      "No Replit account, project, workspace, Agent task, browser test, secret, deployment or model was opened or run.",
+      "Agent 4 is a dated hosted-service generation, not an immutable backend build or exact current runtime.",
+      "Current documentation is rolling and does not silently establish the configuration available on 2026-03-13.",
+      "Plan/Build mode, execution mode, primary-model selection, effort and App Testing are separate controls.",
+      "Background-task acceptance and later application of completed changes are separate human decisions.",
+      "Workspace secret documentation does not prove which credentials Agent can read in any session.",
+      "No independent evaluation was attempted for this record and no suitability conclusion is supported."
+    ],
+    "unknowns": [
+      "The immutable current Replit Agent service, regional rollout, tenant and deployment revision are unknown.",
+      "The exact model provider, model, checkpoint, endpoint, routing and inference revision are unknown.",
+      "The effective Lite, Economy or Power mode, primary model, effort and account entitlement are unknown.",
+      "The effective Plan or Build mode, proposed task list, approver and approval receipt are unknown.",
+      "The background-task runtime, concurrency, accepting principal, completed diff and application decision are unknown.",
+      "App Testing enablement, browser build, actions, findings and changes are unknown.",
+      "Secret values, scopes, collaborator roles, deployment propagation and Agent access are unknown.",
+      "Task completion, code quality, security, privacy and independent-evaluation results remain unverified."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      { "id": "service-auditor", "label": "Service identity auditor", "prompt": "Inspect named generation and unresolved rolling service revisions.", "propositionIds": ["identity", "service"] },
+      { "id": "workflow-reviewer", "label": "Workflow authority reviewer", "prompt": "Inspect mode and chained approval boundaries.", "propositionIds": ["mode", "approval"] },
+      { "id": "security-reviewer", "label": "Security reviewer", "prompt": "Inspect browser-testing, optimization and credential boundaries.", "propositionIds": ["testing", "credentials"] },
+      { "id": "evidence-auditor", "label": "Evidence auditor", "prompt": "Trace publisher claims and unresolved independent evidence.", "propositionIds": ["identity", "evaluation"] }
+    ],
+    "propositions": [
+      { "id": "identity", "eyebrow": "Hosted generation", "question": "Which Replit Agent generation is named?", "status": "Agent 4 dated; immutable build unavailable", "tone": "qualified", "answer": "The publisher changelog names Agent 4 on 2026-03-13.", "whyItMatters": "A generation label does not freeze a hosted backend.", "claimIds": ["com.replit.agent.hosted.agent-4-launch", "com.replit.agent.hosted.agent-4-capabilities"] },
+      { "id": "service", "eyebrow": "Service and model", "question": "Which backend served a task?", "status": "Rolling service; exact backend unresolved", "tone": "attention", "answer": "Current modes and model selection imply multiple Replit-routed service paths, but the exact serving and model revisions are not published.", "whyItMatters": "The service can change independently of the dated generation label.", "claimIds": ["com.replit.agent.hosted.agent-modes-current", "com.replit.agent.hosted.model-selection-current"] },
+      { "id": "mode", "eyebrow": "Interaction and execution modes", "question": "Which Agent control path applied?", "status": "Plan/Build and Lite/Economy/Power separately scoped", "tone": "attention", "answer": "Replit documents separate interaction, execution, model and effort choices.", "whyItMatters": "They change write authority and backend applicability.", "claimIds": ["com.replit.agent.hosted.agent-modes-current", "com.replit.agent.hosted.model-selection-current", "com.replit.agent.hosted.plan-build-current"] },
+      { "id": "approval", "eyebrow": "Chained approval", "question": "Which human decisions gate background work?", "status": "Task start and main-version application are separate", "tone": "attention", "answer": "Publisher docs describe Accept versus Revise before execution, then Apply versus Dismiss after completion.", "whyItMatters": "Approval to run work is not approval to merge its output.", "claimIds": ["com.replit.agent.hosted.plan-build-current", "com.replit.agent.hosted.background-tasks-current"] },
+      { "id": "testing", "eyebrow": "Agent self-testing", "question": "Was browser testing enabled?", "status": "Rolling control documented; effective state unknown", "tone": "attention", "answer": "App Testing lets Agent decide when to exercise a supported web app in a browser, but it was not observed here.", "whyItMatters": "Publisher-described self-testing is not an independent evaluation.", "claimIds": ["com.replit.agent.hosted.app-testing-current"] },
+      { "id": "credentials", "eyebrow": "Secrets", "question": "Which credentials could reach the workspace?", "status": "Storage scopes documented; Agent access unresolved", "tone": "attention", "answer": "Replit documents App-level and Account-level secret storage and sharing boundaries.", "whyItMatters": "Secret storage does not prove a particular Agent session accessed a value.", "claimIds": ["com.replit.agent.hosted.secrets-current"] },
+      { "id": "evaluation", "eyebrow": "Independent evidence", "question": "Was Agent 4 independently evaluated?", "status": "No candidate assessed; zero tests", "tone": "attention", "answer": "No independent-evaluation admission was attempted for this record.", "whyItMatters": "Absence of an admitted test is not evidence of product behavior.", "claimIds": ["com.replit.agent.hosted.agent-4-launch"] }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false, "intakeOpened": false, "agentInstalled": false, "agentRun": false, "independentlyTested": false, "catalogEvaluation": false, "ranking": false, "recommendation": false, "safetyCertification": false, "published": false,
+    "note": "Unpublished public-source attribution only; named Agent 4 and rolling-current service claims remain separately scoped."
+  },
+  "rawClaimPaths": [
+    "claims/replit-agent-4-hosted/agent-4-launch.json",
+    "claims/replit-agent-4-hosted/agent-4-capabilities.json",
+    "claims/replit-agent-4-hosted/agent-modes-current.json",
+    "claims/replit-agent-4-hosted/plan-build-current.json",
+    "claims/replit-agent-4-hosted/background-tasks-current.json",
+    "claims/replit-agent-4-hosted/app-testing-current.json",
+    "claims/replit-agent-4-hosted/model-selection-current.json",
+    "claims/replit-agent-4-hosted/secrets-current.json"
+  ]
+}

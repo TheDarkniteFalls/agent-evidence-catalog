@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.replit.agent.hosted.background-tasks-current",
+  "slug": "background-tasks-current",
+  "subject": { "id": "com.replit.agent.hosted", "name": "Replit Agent", "publisher": "Replit", "surface": { "kind": "hosted-service", "name": "Replit Agent hosted workspace", "slug": "replit-agent-4-hosted" } },
+  "claim": { "category": "approval-authority", "statement": "Replit's current task-system documentation separates approval to start isolated background tasks through Accept tasks from later review and the separate Apply changes to main version or Dismiss decision." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Replit" },
+  "source": { "uri": "https://docs.replit.com/core-concepts/agent/task-system", "title": "Build in Parallel — Replit", "locator": "Review and accept; Tasks start running; Review and apply", "publishedAt": null, "capturedAt": "2026-08-01T06:29:56Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["Accept tasks", "Revise plan", "isolated task copy", "Apply changes to main version", "Dismiss", "Core concurrency", "Pro concurrency"] }, "platform": { "scope": "named", "values": ["Replit task system"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["Replit-managed background task runtime"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["task-state-change", "approval-flow-change", "concurrency-change", "apply-flow-change"] },
+  "limitations": ["Publisher-described isolation, work logs, tests and conflict handling were not observed and do not identify the underlying task runtime."],
+  "unknowns": ["The proposed tasks, accepting principal, isolated runtime, work log, diff, test result, reviewer and apply or dismiss decision are unknown."],
+  "relationships": [], "validationRefs": []
+}

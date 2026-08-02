@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.publish-boundary-current", "slug": "publish-boundary-current",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Build mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Build mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "approval.publish-output", "statement": "Current Lovable publishing documentation says project changes are not automatically deployed to a live URL and that a user must choose Publish or Update to deploy a snapshot, with project and website access controlled separately." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/features/publish", "title": "Publish your Lovable project", "locator": "How publishing works in Lovable and project versus website access FAQ", "publishedAt": null, "capturedAt": "2026-08-01T10:46:26Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["unpublished project changes", "user-triggered Publish", "user-triggered Update", "project access", "website access"] }, "platform": { "scope": "named", "values": ["Lovable hosted project"] }, "model": { "scope": "not-applicable", "values": [] }, "deployment": { "scope": "named", "values": ["Lovable live URL snapshot"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["publishing-flow-change", "access-policy-change"] },
+  "limitations": ["This explicit publish gate does not prevent other configured repository synchronization and does not prove a deployment occurred."],
+  "unknowns": ["Publish state, snapshot, live URL, project access, website access and actor are unknown."],
+  "relationships": [], "validationRefs": []
+}

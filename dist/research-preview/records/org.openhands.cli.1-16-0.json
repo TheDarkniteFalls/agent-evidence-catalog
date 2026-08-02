@@ -1,0 +1,1577 @@
+{
+  "schemaVersion": "real-agent-dossier/0.1-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-01",
+  "sourceDossier": {
+    "path": "dossiers/openhands-cli/dossier-source.json",
+    "sha256": "1ee394244b49ee0deeed31dd696d03fadcc4cfd59f49f205b03ede834dadcc16",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "org.openhands.cli.1-16-0",
+    "agent": {
+      "id": "org.openhands.cli",
+      "name": "OpenHands"
+    },
+    "publisher": {
+      "id": "openhands-publisher",
+      "name": "OpenHands"
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "OpenHands CLI",
+      "slug": "openhands-cli",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "1.16.0",
+      "releaseTag": "1.16.0",
+      "sourceRevision": "2963442dacc7cea44e39b7c4e73724295c853465",
+      "releasedAt": null,
+      "channel": "GitHub release",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "Python package",
+          "standalone binary"
+        ],
+        "note": "No artifact was downloaded or installed, so the runtime packaging, platform build and digest remain unresolved."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "source-revision-1-16-0",
+        "kind": "source-revision",
+        "identityStatus": "exact",
+        "uri": "https://github.com/OpenHands/OpenHands-CLI/commit/2963442dacc7cea44e39b7c4e73724295c853465",
+        "ecosystem": "git",
+        "version": "1.16.0",
+        "digest": null,
+        "note": "Exact publisher source revision; the Git commit identifier is not represented as a SHA-256 artifact digest."
+      },
+      {
+        "id": "python-package-1-16-0",
+        "kind": "python-package",
+        "identityStatus": "unresolved",
+        "uri": "https://pypi.org/project/openhands/1.16.0/",
+        "ecosystem": "PyPI",
+        "version": "1.16.0",
+        "digest": null,
+        "note": "The tagged README names the package path, but no wheel or source distribution was downloaded and no digest was captured."
+      },
+      {
+        "id": "standalone-binary-1-16-0",
+        "kind": "standalone-binary",
+        "identityStatus": "unresolved",
+        "uri": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
+        "ecosystem": "GitHub release assets",
+        "version": "1.16.0",
+        "digest": null,
+        "note": "The release exposes platform assets, but no asset was selected, downloaded or hashed."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "openhands-publisher",
+        "name": "OpenHands",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-release-identity-1-16-0",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
+      "title": "OpenHands CLI release 1.16.0",
+      "locator": "Release heading, signed tag and commit 2963442",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "openhands-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T21:47:27Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Signed GitHub release and exact tag commit; no release asset was downloaded."
+      }
+    },
+    {
+      "id": "source-delivery-surfaces-1-16-0",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+      "title": "OpenHands CLI README at tag 1.16.0",
+      "locator": "Installation; Running Modes",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openhands-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T21:47:27Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Publisher README at exact tag 1.16.0."
+      }
+    },
+    {
+      "id": "source-always-ask-confirmation-1-16-0",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+      "title": "OpenHands CLI README at tag 1.16.0",
+      "locator": "Features — Confirmation Modes — default",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openhands-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T21:47:27Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Publisher README at exact tag 1.16.0."
+      }
+    },
+    {
+      "id": "source-always-approve-confirmation-1-16-0",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+      "title": "OpenHands CLI README at tag 1.16.0",
+      "locator": "Features — Confirmation Modes — Auto-approve all actions",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openhands-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T21:47:27Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Publisher README at exact tag 1.16.0."
+      }
+    },
+    {
+      "id": "source-llm-approve-confirmation-1-16-0",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+      "title": "OpenHands CLI README at tag 1.16.0",
+      "locator": "Features — Confirmation Modes — LLM-based security analyzer",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openhands-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T21:47:27Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Publisher README at exact tag 1.16.0."
+      }
+    },
+    {
+      "id": "source-configuration-storage-1-16-0",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+      "title": "OpenHands CLI README at tag 1.16.0",
+      "locator": "Configuration",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openhands-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T21:47:27Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Publisher README at exact tag 1.16.0."
+      }
+    },
+    {
+      "id": "source-mcp-authority-1-16-0",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+      "title": "OpenHands CLI README at tag 1.16.0",
+      "locator": "Features — MCP Servers",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openhands-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T21:47:27Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Publisher README at exact tag 1.16.0."
+      }
+    },
+    {
+      "id": "source-cloud-delegation-current",
+      "uri": "https://docs.openhands.dev/openhands/usage/cli/cloud",
+      "title": "OpenHands CLI Cloud guide",
+      "locator": "Authentication; Creating Cloud Conversations; Cloud vs Local",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "openhands-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T21:47:27Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-local-persistence-current",
+      "uri": "https://docs.openhands.dev/openhands/usage/cli/command-reference",
+      "title": "OpenHands CLI command reference",
+      "locator": "Configuration Files",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "openhands-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T21:47:27Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling documentation captured without an archive digest."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "No installed agent or effective configuration was inspected. The axes below preserve source-backed alternatives without choosing one.",
+    "axes": [
+      {
+        "id": "artifact-path",
+        "label": "Installed artifact path",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "python-package",
+            "label": "Python package",
+            "claimIds": [
+              "org.openhands.cli.delivery-surfaces-1-16-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "standalone-binary"
+            ]
+          },
+          {
+            "id": "standalone-binary",
+            "label": "Standalone binary",
+            "claimIds": [
+              "org.openhands.cli.delivery-surfaces-1-16-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "python-package"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The installed artifact, platform build and digest are unresolved."
+        ]
+      },
+      {
+        "id": "confirmation-mode",
+        "label": "Action confirmation mode",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "always-ask",
+            "label": "Always ask (documented default)",
+            "claimIds": [
+              "org.openhands.cli.always-ask-confirmation-1-16-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "always-approve",
+              "llm-approve"
+            ]
+          },
+          {
+            "id": "always-approve",
+            "label": "Always approve / yolo",
+            "claimIds": [
+              "org.openhands.cli.always-approve-confirmation-1-16-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "always-ask",
+              "llm-approve"
+            ]
+          },
+          {
+            "id": "llm-approve",
+            "label": "LLM-based approval",
+            "claimIds": [
+              "org.openhands.cli.llm-approve-confirmation-1-16-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "always-ask",
+              "always-approve"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective mode, analyzer model and action coverage of a particular session are unknown."
+        ]
+      },
+      {
+        "id": "execution-location",
+        "label": "Execution and persistence location",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "local-session",
+            "label": "Local CLI session",
+            "claimIds": [
+              "org.openhands.cli.delivery-surfaces-1-16-0",
+              "org.openhands.cli.local-persistence-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "cloud-conversation"
+            ]
+          },
+          {
+            "id": "cloud-conversation",
+            "label": "Delegated cloud conversation",
+            "claimIds": [
+              "org.openhands.cli.cloud-delegation-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "local-session"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The exact runtime, mounts, repository boundary and remote data path were not established."
+        ]
+      },
+      {
+        "id": "llm-configuration-source",
+        "label": "LLM configuration source",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "persisted-settings",
+            "label": "Persisted ~/.openhands settings",
+            "claimIds": [
+              "org.openhands.cli.configuration-storage-1-16-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "environment-override"
+            ]
+          },
+          {
+            "id": "environment-override",
+            "label": "Session environment overrides",
+            "claimIds": [
+              "org.openhands.cli.configuration-storage-1-16-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "persisted-settings"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The model, provider, base URL, credential source and request data for a particular session are unknown."
+        ]
+      },
+      {
+        "id": "mcp-tool-surface",
+        "label": "MCP tool surface",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "mcp-unconfigured",
+            "label": "No enabled MCP servers",
+            "claimIds": [
+              "org.openhands.cli.mcp-authority-1-16-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "mcp-enabled"
+            ]
+          },
+          {
+            "id": "mcp-enabled",
+            "label": "One or more enabled MCP servers",
+            "claimIds": [
+              "org.openhands.cli.mcp-authority-1-16-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "mcp-unconfigured"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Enabled servers, transports, commands, destinations and credentials are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "org.openhands.cli.release-identity-1-16-0",
+      "rawRecordPath": "dossiers/openhands-cli/claims/openhands-cli/release-identity-1-16-0.json",
+      "rawRecordSha256": "ffa6a6840a9b21ce01881cc3b9d5bf1275c920e66acc8599f090c51a1061f0cc",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.openhands.cli.release-identity-1-16-0",
+        "slug": "release-identity-1-16-0",
+        "subject": {
+          "id": "org.openhands.cli",
+          "name": "OpenHands",
+          "publisher": "OpenHands",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenHands CLI",
+            "slug": "openhands-cli"
+          }
+        },
+        "claim": {
+          "category": "identity",
+          "statement": "The publisher's signed GitHub release, version-bump commit and tagged package metadata identify OpenHands CLI version 1.16.0 at source revision 2963442dacc7cea44e39b7c4e73724295c853465."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "OpenHands"
+        },
+        "source": {
+          "uri": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
+          "title": "OpenHands CLI release 1.16.0",
+          "locator": "Release heading, signed tag and commit 2963442",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T21:47:27Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.16.0"
+          },
+          "configuration": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "OpenHands CLI source release"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-unavailable",
+            "claimant-correction",
+            "claimant-withdrawal",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The release and source identity were inspected through publisher-controlled GitHub records; no package or binary was downloaded.",
+          "A signed Git tag establishes repository metadata under the applicable GitHub trust path, not the identity of an installed artifact."
+        ],
+        "unknowns": [
+          "The digest of any PyPI wheel, source distribution or standalone binary was not captured.",
+          "The relationship between each release asset and a user's installed executable was not independently verified."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openhands-publisher",
+      "sourceId": "source-release-identity-1-16-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity"
+      ],
+      "personaIds": [
+        "adopter",
+        "auditor"
+      ]
+    },
+    {
+      "id": "org.openhands.cli.delivery-surfaces-1-16-0",
+      "rawRecordPath": "dossiers/openhands-cli/claims/openhands-cli/delivery-surfaces-1-16-0.json",
+      "rawRecordSha256": "5405d4b00370690418bc691121bc1d9e483a7f8f6834c7b564931898e88f2008",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.openhands.cli.delivery-surfaces-1-16-0",
+        "slug": "delivery-surfaces-1-16-0",
+        "subject": {
+          "id": "org.openhands.cli",
+          "name": "OpenHands",
+          "publisher": "OpenHands",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenHands CLI",
+            "slug": "openhands-cli"
+          }
+        },
+        "claim": {
+          "category": "delivery",
+          "statement": "The publisher's README at tag 1.16.0 describes installation as the Python package named openhands through uv or as a standalone binary, and lists terminal, ACP, headless, browser-served terminal UI, GUI-server and cloud commands as distinct running modes."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenHands"
+        },
+        "source": {
+          "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+          "title": "OpenHands CLI README at tag 1.16.0",
+          "locator": "Installation; Running Modes",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T21:47:27Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.16.0"
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "Python package",
+              "standalone binary"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "multiple",
+            "values": [
+              "terminal",
+              "ACP",
+              "headless",
+              "web interface",
+              "GUI server",
+              "cloud command"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "product-surface-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is a publisher description of delivery and commands, not a catalog installation or runtime observation.",
+          "The listed commands cross local, browser-served, container-backed and hosted execution boundaries and must not be treated as one effective runtime."
+        ],
+        "unknowns": [
+          "Which package or binary variant a particular user installs is unknown.",
+          "Platform-specific packaging, signing and update behavior were not established."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openhands-publisher",
+      "sourceId": "source-delivery-surfaces-1-16-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "execution"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "org.openhands.cli.always-ask-confirmation-1-16-0",
+      "rawRecordPath": "dossiers/openhands-cli/claims/openhands-cli/always-ask-confirmation-1-16-0.json",
+      "rawRecordSha256": "3d3f5c794eef77d6228ed6219df3bb7eb6532f5839b1c55e2a3788cd5d01f3d9",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.openhands.cli.always-ask-confirmation-1-16-0",
+        "slug": "always-ask-confirmation-1-16-0",
+        "subject": {
+          "id": "org.openhands.cli",
+          "name": "OpenHands",
+          "publisher": "OpenHands",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenHands CLI",
+            "slug": "openhands-cli"
+          }
+        },
+        "claim": {
+          "category": "authority.change",
+          "statement": "The publisher's README at tag 1.16.0 describes the default OpenHands CLI confirmation mode as asking for confirmation on each action."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenHands"
+        },
+        "source": {
+          "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+          "title": "OpenHands CLI README at tag 1.16.0",
+          "locator": "Features — Confirmation Modes — default",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T21:47:27Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.16.0"
+          },
+          "configuration": {
+            "scope": "documented-default",
+            "values": [
+              "always-ask confirmation mode"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local OpenHands CLI session"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This exact-version publisher statement was not tested against an installed CLI.",
+          "The statement does not enumerate every event that the implementation treats as an action or establish that every consequential side effect is intercepted."
+        ],
+        "unknowns": [
+          "The effective confirmation mode of a particular session is unknown.",
+          "Confirmation coverage for hooks, MCP tools, subagents, cloud delegation and command side effects was not tested."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "org.openhands.cli.always-approve-confirmation-1-16-0",
+            "extent": "full",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The apparent conflict is resolved because always-ask and always-approve are mutually exclusive confirmation configurations."
+          },
+          {
+            "type": "contradicts",
+            "targetClaimId": "org.openhands.cli.llm-approve-confirmation-1-16-0",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The apparent conflict is resolved because always-ask and LLM-based approval are mutually exclusive confirmation configurations."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "openhands-publisher",
+      "sourceId": "source-always-ask-confirmation-1-16-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authority"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "org.openhands.cli.always-approve-confirmation-1-16-0",
+      "rawRecordPath": "dossiers/openhands-cli/claims/openhands-cli/always-approve-confirmation-1-16-0.json",
+      "rawRecordSha256": "eca776b7f3927291bfcc62446f384996f17fcc4a1f93266558768fa097c536a6",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.openhands.cli.always-approve-confirmation-1-16-0",
+        "slug": "always-approve-confirmation-1-16-0",
+        "subject": {
+          "id": "org.openhands.cli",
+          "name": "OpenHands",
+          "publisher": "OpenHands",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenHands CLI",
+            "slug": "openhands-cli"
+          }
+        },
+        "claim": {
+          "category": "authority.change",
+          "statement": "The publisher's README at tag 1.16.0 states that --always-approve, also exposed as --yolo, auto-approves all actions without confirmation."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenHands"
+        },
+        "source": {
+          "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+          "title": "OpenHands CLI README at tag 1.16.0",
+          "locator": "Features — Confirmation Modes — Auto-approve all actions",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T21:47:27Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.16.0"
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "--always-approve or --yolo"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local OpenHands CLI session"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is a version-pinned publisher description, not observed behavior.",
+          "The catalog did not establish what operating-system, container, repository or credential boundaries remain outside the confirmation layer."
+        ],
+        "unknowns": [
+          "The tools and credentials available to a particular always-approve session are unknown.",
+          "Whether external containment would block any attempted action is unknown."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "org.openhands.cli.always-ask-confirmation-1-16-0",
+            "extent": "full",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The apparent conflict is resolved because always-approve and always-ask are mutually exclusive confirmation configurations."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "openhands-publisher",
+      "sourceId": "source-always-approve-confirmation-1-16-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authority"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "org.openhands.cli.llm-approve-confirmation-1-16-0",
+      "rawRecordPath": "dossiers/openhands-cli/claims/openhands-cli/llm-approve-confirmation-1-16-0.json",
+      "rawRecordSha256": "d20063479f2b59a25776e6e2fafd9359470d475e6541653c0e211f8c9266fcfa",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.openhands.cli.llm-approve-confirmation-1-16-0",
+        "slug": "llm-approve-confirmation-1-16-0",
+        "subject": {
+          "id": "org.openhands.cli",
+          "name": "OpenHands",
+          "publisher": "OpenHands",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenHands CLI",
+            "slug": "openhands-cli"
+          }
+        },
+        "claim": {
+          "category": "authority.change",
+          "statement": "The publisher's README at tag 1.16.0 describes --llm-approve as using an LLM-based security analyzer to decide action approval."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenHands"
+        },
+        "source": {
+          "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+          "title": "OpenHands CLI README at tag 1.16.0",
+          "locator": "Features — Confirmation Modes — LLM-based security analyzer",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T21:47:27Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.16.0"
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "--llm-approve"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local OpenHands CLI session"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "model-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is a version-pinned publisher description, not an independent assessment of the analyzer.",
+          "The selected source does not establish the analyzer model, prompt, thresholds, failure behavior or coverage for every action type."
+        ],
+        "unknowns": [
+          "The analyzer's false-positive and false-negative rates are unknown.",
+          "The exact model and data sent for approval analysis in a particular session are unknown."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "org.openhands.cli.always-ask-confirmation-1-16-0",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The apparent conflict is resolved because LLM-based approval and always-ask are mutually exclusive confirmation configurations."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "openhands-publisher",
+      "sourceId": "source-llm-approve-confirmation-1-16-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authority"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "org.openhands.cli.configuration-storage-1-16-0",
+      "rawRecordPath": "dossiers/openhands-cli/claims/openhands-cli/configuration-storage-1-16-0.json",
+      "rawRecordSha256": "21a565c99d2d2cff4c0fba36021b04ae5e55a27558e7e4d7de46b483890a8814",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.openhands.cli.configuration-storage-1-16-0",
+        "slug": "configuration-storage-1-16-0",
+        "subject": {
+          "id": "org.openhands.cli",
+          "name": "OpenHands",
+          "publisher": "OpenHands",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenHands CLI",
+            "slug": "openhands-cli"
+          }
+        },
+        "claim": {
+          "category": "credentials",
+          "statement": "The publisher's README at tag 1.16.0 states that OpenHands CLI stores agent, CLI and MCP configuration under ~/.openhands, and ignores LLM_API_KEY, LLM_MODEL and LLM_BASE_URL by default unless --override-with-envs is supplied, in which case those overrides are not persisted."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenHands"
+        },
+        "source": {
+          "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+          "title": "OpenHands CLI README at tag 1.16.0",
+          "locator": "Configuration",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T21:47:27Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.16.0"
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "persisted ~/.openhands settings",
+              "--override-with-envs session overrides"
+            ]
+          },
+          "platform": {
+            "scope": "multiple",
+            "values": [
+              "Linux",
+              "macOS",
+              "Windows through WSL"
+            ]
+          },
+          "model": {
+            "scope": "named",
+            "values": [
+              "configured provider and model"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local OpenHands CLI"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "platform-change",
+            "model-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The publisher documentation describes storage locations and precedence; the catalog did not inspect permissions, encryption, keychain use or cleanup behavior.",
+          "Not persisting environment overrides does not establish that secrets or prompts never appear in process state, logs, caches, provider requests or conversation history."
+        ],
+        "unknowns": [
+          "File permissions, encryption at rest and credential deletion behavior are unknown.",
+          "The exact provider endpoint, payload, retention and training policy depend on configuration and were not reviewed."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openhands-publisher",
+      "sourceId": "source-configuration-storage-1-16-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "persistence"
+      ],
+      "personaIds": [
+        "adopter",
+        "auditor"
+      ]
+    },
+    {
+      "id": "org.openhands.cli.mcp-authority-1-16-0",
+      "rawRecordPath": "dossiers/openhands-cli/claims/openhands-cli/mcp-authority-1-16-0.json",
+      "rawRecordSha256": "1415025ddaca4217d0c2d6ac676f1b43d874e52ab6b93b63e7a6e3487278893a",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.openhands.cli.mcp-authority-1-16-0",
+        "slug": "mcp-authority-1-16-0",
+        "subject": {
+          "id": "org.openhands.cli",
+          "name": "OpenHands",
+          "publisher": "OpenHands",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenHands CLI",
+            "slug": "openhands-cli"
+          }
+        },
+        "claim": {
+          "category": "interoperability",
+          "statement": "The publisher's README at tag 1.16.0 states that OpenHands CLI can add, enable and disable MCP servers using HTTP, SSE or stdio transports, extending the tools available to the agent."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenHands"
+        },
+        "source": {
+          "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+          "title": "OpenHands CLI README at tag 1.16.0",
+          "locator": "Features — MCP Servers",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T21:47:27Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.16.0"
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "MCP disabled or unconfigured",
+              "one or more enabled MCP servers"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local OpenHands CLI"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This records publisher-described extensibility, not the behavior or trustworthiness of any MCP server.",
+          "The authority, credentials, network destinations and side effects of enabled MCP tools are configuration-specific."
+        ],
+        "unknowns": [
+          "Which MCP servers, transports, headers, environment variables and credentials a particular session exposes are unknown.",
+          "Whether confirmation coverage differs among built-in and MCP-provided tools was not tested."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openhands-publisher",
+      "sourceId": "source-mcp-authority-1-16-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "extensions"
+      ],
+      "personaIds": [
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "org.openhands.cli.cloud-delegation-current",
+      "rawRecordPath": "dossiers/openhands-cli/claims/openhands-cli/cloud-delegation-current.json",
+      "rawRecordSha256": "a3806f376dfe0005181dc75037a9627afc827601331dc93f2c3ff68bc74fa610",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.openhands.cli.cloud-delegation-current",
+        "slug": "cloud-delegation-current",
+        "subject": {
+          "id": "org.openhands.cli",
+          "name": "OpenHands",
+          "publisher": "OpenHands",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenHands CLI",
+            "slug": "openhands-cli"
+          }
+        },
+        "claim": {
+          "category": "delegation",
+          "statement": "The publisher's current CLI cloud guide states that the openhands cloud command can authenticate to OpenHands Cloud or a custom server and create a hosted conversation from task text or a local file; the guide distinguishes cloud-hosted compute and cloud persistence from local CLI compute and local files."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenHands"
+        },
+        "source": {
+          "uri": "https://docs.openhands.dev/openhands/usage/cli/cloud",
+          "title": "OpenHands CLI Cloud guide",
+          "locator": "Authentication; Creating Cloud Conversations; Cloud vs Local",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T21:47:27Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "default OpenHands Cloud server",
+              "custom OpenHands server"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "openhands cloud command"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is rolling publisher documentation and is not silently applied to the exact 1.16.0 release.",
+          "The guide describes the location of compute and persistence at a high level; it is not a privacy, retention or security audit."
+        ],
+        "unknowns": [
+          "The exact data uploaded from a task file, repository or configured integration is unknown.",
+          "Cloud retention, deletion, training, subprocess authority and network destinations were not established by the selected passages."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openhands-publisher",
+      "sourceId": "source-cloud-delegation-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "execution"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "org.openhands.cli.local-persistence-current",
+      "rawRecordPath": "dossiers/openhands-cli/claims/openhands-cli/local-persistence-current.json",
+      "rawRecordSha256": "0fe04433ededc82bf1181df1dc70cd43527cac907d756bc178086cb0b24f1de1",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "org.openhands.cli.local-persistence-current",
+        "slug": "local-persistence-current",
+        "subject": {
+          "id": "org.openhands.cli",
+          "name": "OpenHands",
+          "publisher": "OpenHands",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenHands CLI",
+            "slug": "openhands-cli"
+          }
+        },
+        "claim": {
+          "category": "data-handling",
+          "statement": "The publisher's current command reference lists ~/.openhands/conversations as the local conversation-history location and identifies separate files under ~/.openhands for agent settings, CLI preferences and MCP server configuration."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenHands"
+        },
+        "source": {
+          "uri": "https://docs.openhands.dev/openhands/usage/cli/command-reference",
+          "title": "OpenHands CLI command reference",
+          "locator": "Configuration Files",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T21:47:27Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "local OpenHands CLI"
+            ]
+          },
+          "platform": {
+            "scope": "multiple",
+            "values": [
+              "Linux",
+              "macOS",
+              "Windows through WSL"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local OpenHands CLI"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "platform-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is rolling publisher documentation, not a filesystem inspection of version 1.16.0.",
+          "A documented local path does not establish file permissions, encryption, retention duration, deletion completeness or absence of other storage."
+        ],
+        "unknowns": [
+          "The exact event, prompt, tool-call, observation and secret content retained in a particular conversation is unknown.",
+          "Automatic cleanup, secure deletion and backup behavior are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openhands-publisher",
+      "sourceId": "source-local-persistence-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "persistence"
+      ],
+      "personaIds": [
+        "adopter",
+        "auditor"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "relationship-01",
+      "fromClaimId": "org.openhands.cli.always-ask-confirmation-1-16-0",
+      "toClaimId": "org.openhands.cli.always-approve-confirmation-1-16-0",
+      "kind": "contradicts",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because always-ask and always-approve are mutually exclusive confirmation configurations."
+    },
+    {
+      "id": "relationship-02",
+      "fromClaimId": "org.openhands.cli.always-ask-confirmation-1-16-0",
+      "toClaimId": "org.openhands.cli.llm-approve-confirmation-1-16-0",
+      "kind": "contradicts",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because always-ask and LLM-based approval are mutually exclusive confirmation configurations."
+    },
+    {
+      "id": "relationship-03",
+      "fromClaimId": "org.openhands.cli.always-approve-confirmation-1-16-0",
+      "toClaimId": "org.openhands.cli.always-ask-confirmation-1-16-0",
+      "kind": "contradicts",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because always-approve and always-ask are mutually exclusive confirmation configurations."
+    },
+    {
+      "id": "relationship-04",
+      "fromClaimId": "org.openhands.cli.llm-approve-confirmation-1-16-0",
+      "toClaimId": "org.openhands.cli.always-ask-confirmation-1-16-0",
+      "kind": "contradicts",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because LLM-based approval and always-ask are mutually exclusive confirmation configurations."
+    }
+  ],
+  "independentTests": [],
+  "dossier": {
+    "summary": "OpenHands CLI 1.16.0 has exact publisher release and source anchors, while installed artifact identity and effective runtime remain unresolved. Publisher sources describe local and cloud modes, three approval configurations, configurable model settings, MCP expansion and local persistence; none was independently tested.",
+    "releaseContext": {
+      "statement": "GitHub identifies 1.16.0 as the signed current OpenHands CLI release at commit 2963442dacc7cea44e39b7c4e73724295c853465. The release offers package and binary paths, but this dossier did not download an asset and therefore does not identify an installed executable.",
+      "sourceId": "source-release-identity-1-16-0",
+      "legacySource": null
+    },
+    "limitations": [
+      "All substantive behavior statements are publisher-attributed; the catalog did not install or run OpenHands CLI.",
+      "Exact-version claims use the 1.16.0 release or tagged source; rolling documentation is not treated as exact-version evidence.",
+      "The dossier does not establish a wheel, source distribution, standalone binary, container or installed runtime digest.",
+      "The CLI surface can enter local, browser-served, ACP, container-backed and cloud modes; claims remain scoped rather than collapsed across them.",
+      "No independent report with defensible exact-version, artifact and configuration overlap was included."
+    ],
+    "unknowns": [
+      "The package or binary artifact, platform build, digest and installation path used by any real user.",
+      "The effective confirmation mode and whether every consequential action is covered by it.",
+      "The LLM-based approval analyzer model, inputs, thresholds, availability and error behavior.",
+      "The enabled built-in tools, hooks, skills, subagents and MCP servers in a particular session.",
+      "The selected model provider, base URL, credentials, request payload and network destinations.",
+      "The local workspace boundary, outside-workspace access, process environment and operating-system containment.",
+      "The contents, permissions, encryption, retention, backup and deletion behavior of local conversation and configuration files.",
+      "The cloud service's task upload scope, retention, deletion, training and downstream-provider behavior.",
+      "Independent findings under overlapping 1.16.0 artifact and configuration applicability; none were included."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "adopter",
+        "label": "Considering a pilot",
+        "prompt": "Trace delivery, confirmation, execution and persistence boundaries.",
+        "propositionIds": [
+          "identity",
+          "authority",
+          "execution",
+          "persistence"
+        ]
+      },
+      {
+        "id": "reviewer",
+        "label": "Reviewing authority",
+        "prompt": "Inspect scoped approval alternatives, cloud delegation and tool expansion.",
+        "propositionIds": [
+          "authority",
+          "execution",
+          "extensions"
+        ]
+      },
+      {
+        "id": "auditor",
+        "label": "Checking evidence",
+        "prompt": "Open each exact claim, source locator, limitation, relationship and unknown.",
+        "propositionIds": [
+          "identity",
+          "authority",
+          "execution",
+          "extensions",
+          "persistence"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Release and artifact",
+        "question": "Which OpenHands CLI does this dossier identify?",
+        "status": "Exact source release; installed artifact unresolved",
+        "answer": "The publisher release identifies OpenHands CLI 1.16.0 at commit 2963442d. The documented Python-package and standalone-binary paths remain unresolved alternatives because no asset was downloaded or hashed.",
+        "whyItMatters": "A source tag does not by itself identify the executable a user runs.",
+        "claimIds": [
+          "org.openhands.cli.release-identity-1-16-0",
+          "org.openhands.cli.delivery-surfaces-1-16-0"
+        ]
+      },
+      {
+        "id": "authority",
+        "eyebrow": "Action approval",
+        "question": "When does the publisher say actions require confirmation?",
+        "status": "Three mutually scoped modes",
+        "answer": "The 1.16.0 README describes always-ask as the default, always-approve or yolo as approving every action, and llm-approve as delegating approval decisions to an LLM-based security analyzer.",
+        "whyItMatters": "The same release can present materially different authority depending on the effective mode.",
+        "claimIds": [
+          "org.openhands.cli.always-ask-confirmation-1-16-0",
+          "org.openhands.cli.always-approve-confirmation-1-16-0",
+          "org.openhands.cli.llm-approve-confirmation-1-16-0"
+        ]
+      },
+      {
+        "id": "execution",
+        "eyebrow": "Execution location",
+        "question": "Does the CLI run locally or delegate to a hosted service?",
+        "status": "Both paths exist; they are not the same runtime",
+        "answer": "The publisher describes terminal, ACP, headless and browser-served modes around the CLI, plus a cloud command that creates a hosted conversation. Rolling docs distinguish local compute and files from cloud compute and persistence.",
+        "whyItMatters": "Workspace, credential, network and persistence boundaries change when a task moves from a local process to cloud infrastructure.",
+        "claimIds": [
+          "org.openhands.cli.delivery-surfaces-1-16-0",
+          "org.openhands.cli.cloud-delegation-current"
+        ]
+      },
+      {
+        "id": "extensions",
+        "eyebrow": "Tool expansion",
+        "question": "Can configuration add tools and destinations?",
+        "status": "Enabled MCP servers can expand authority",
+        "answer": "The tagged README describes HTTP, SSE and stdio MCP servers that can be added, enabled or disabled. Their tools, commands, credentials and destinations are configuration-specific.",
+        "whyItMatters": "Product identity alone does not bound the effective tool surface.",
+        "claimIds": [
+          "org.openhands.cli.mcp-authority-1-16-0"
+        ]
+      },
+      {
+        "id": "persistence",
+        "eyebrow": "Configuration and history",
+        "question": "What does the publisher say is stored locally?",
+        "status": "Settings and conversation history have named local paths",
+        "answer": "Publisher sources name files under ~/.openhands for agent, CLI and MCP configuration and a conversations directory for local history. Environment overrides require an explicit flag and are described as not persisted.",
+        "whyItMatters": "A named path makes state discoverable but does not establish its contents, protection, retention or complete deletion.",
+        "claimIds": [
+          "org.openhands.cli.configuration-storage-1-16-0",
+          "org.openhands.cli.local-persistence-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed public-source claims only. Publisher statements and source capture are not observed behavior or independent evaluation."
+  }
+}

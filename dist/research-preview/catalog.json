@@ -1,0 +1,4508 @@
+{
+  "schemaVersion": "agent-evidence-research-preview/0.1-draft",
+  "artifactType": "unpublished-maintainer-curated-research-preview",
+  "asOf": "2026-08-02",
+  "releaseCandidateStatus": "ready-for-release-review",
+  "boundaries": {
+    "static": true,
+    "maintainerCurated": true,
+    "publisherSourcesOnly": true,
+    "independentTestCredit": false,
+    "rankings": false,
+    "calculations": false,
+    "recommendations": false,
+    "openIntake": false,
+    "agentInstalledOrRun": false,
+    "note": "Current records are shown by default and non-current records only through explicit history. Publisher claims are attributed documentation, not observed product behavior."
+  },
+  "provenance": {
+    "baseLifecyclePath": "drafts/real-agent-catalog/lifecycle/lifecycle-source.json",
+    "baseLifecycleSha256": "5cd17b23a70a89834fc0adb5d68b8cf8e381e2bc2eeab6a25609ce5101662a95",
+    "currentnessReceiptPath": "drafts/research-preview-release/currentness-2026-08-02/currentness-receipt.json",
+    "currentnessLifecyclePath": "drafts/research-preview-release/currentness-2026-08-02/lifecycle-overlay.json",
+    "currentnessLifecycleSha256": "e1bca6067071205e5e60c101f634243dd871f6ab961feb1fa74942e28ed34db7",
+    "baseWatcherSha256": "c2ccb0379cb2e9f84faf4e6008db68bb6c345898d8302d331887fa0d34400954",
+    "unifiedLifecyclePath": "drafts/real-agent-catalog/research-preview/lifecycle.json",
+    "unifiedWatcherPath": "drafts/real-agent-catalog/research-preview/source-registry.json",
+    "watcherPublicationBoundary": "local-validation-only"
+  },
+  "gates": {},
+  "counts": {
+    "surfaces": 16,
+    "currentLifecycleRecords": 16,
+    "currentRecordsPresented": 16,
+    "recordsPresentedIncludingHistory": 22,
+    "independentTestsCredited": 0
+  },
+  "surfaces": [
+    {
+      "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
+      "currentRecordId": "com.amazon.kiro.ide.1-0-242",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.amazon.kiro.ide.1-0-242",
+        "name": "Kiro IDE",
+        "publisher": "Amazon Web Services",
+        "surface": {
+          "kind": "desktop-app",
+          "name": "Kiro IDE",
+          "slug": "aws-kiro-ide-1-0-242",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "1.0.242",
+          "releaseTag": "1.0.242",
+          "sourceRevision": null,
+          "releasedAt": "2026-07-28T00:00:00Z",
+          "channel": "Kiro IDE desktop release",
+          "additionalIdentities": [
+            {
+              "id": "exact-desktop-release",
+              "kind": "artifact-version",
+              "status": "known",
+              "value": "Kiro IDE 1.0.242",
+              "scopeBindings": [],
+              "artifactRefs": [
+                "kiro-ide-release-1-0-242"
+              ],
+              "sourceIds": [
+                "source-release-identity-1-0-242"
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-242"
+              ],
+              "note": "The dated desktop release is known; no platform installer or digest was captured."
+            },
+            {
+              "id": "code-oss-base",
+              "kind": "runtime-build",
+              "status": "known",
+              "value": "Code OSS 1.108.2",
+              "scopeBindings": [],
+              "artifactRefs": [
+                "kiro-ide-release-1-0-242"
+              ],
+              "sourceIds": [
+                "source-code-oss-base-1-0-242"
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.code-oss-base-1-0-242"
+              ],
+              "note": "The 1.0.242 release note names the editor base; it does not expose a source revision or platform digest."
+            },
+            {
+              "id": "rolling-kiro-service",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "model-route",
+                  "alternativeId": "auto-route"
+                }
+              ],
+              "artifactRefs": [
+                "kiro-hosted-service"
+              ],
+              "sourceIds": [
+                "source-model-selection-current"
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.model-selection-current"
+              ],
+              "note": "Model inventory and automatic routing are rolling and are not frozen by desktop release 1.0.242."
+            }
+          ],
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "macOS Apple Silicon",
+              "macOS Intel",
+              "Windows x64",
+              "Linux Debian/Ubuntu",
+              "Linux Universal"
+            ],
+            "alternativeDetails": [
+              {
+                "id": "macos-apple-silicon",
+                "label": "macOS Apple Silicon",
+                "kind": "platform-build",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "kiro-platform-installers-1-0-242"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "platform-build",
+                    "alternativeId": "macos-apple-silicon"
+                  }
+                ],
+                "claimIds": [
+                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                ],
+                "note": "No installer or digest captured."
+              },
+              {
+                "id": "macos-intel",
+                "label": "macOS Intel",
+                "kind": "platform-build",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "kiro-platform-installers-1-0-242"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "platform-build",
+                    "alternativeId": "macos-intel"
+                  }
+                ],
+                "claimIds": [
+                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                ],
+                "note": "No installer or digest captured."
+              },
+              {
+                "id": "windows-x64",
+                "label": "Windows x64",
+                "kind": "platform-build",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "kiro-platform-installers-1-0-242"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "platform-build",
+                    "alternativeId": "windows-x64"
+                  }
+                ],
+                "claimIds": [
+                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                ],
+                "note": "No installer or digest captured."
+              },
+              {
+                "id": "linux-debian",
+                "label": "Linux Debian or Ubuntu",
+                "kind": "platform-build",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "kiro-platform-installers-1-0-242"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "platform-build",
+                    "alternativeId": "linux-debian"
+                  }
+                ],
+                "claimIds": [
+                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                ],
+                "note": "No installer or digest captured."
+              },
+              {
+                "id": "linux-universal",
+                "label": "Linux Universal",
+                "kind": "platform-build",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "kiro-platform-installers-1-0-242"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "platform-build",
+                    "alternativeId": "linux-universal"
+                  }
+                ],
+                "claimIds": [
+                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                ],
+                "note": "No installer or digest captured."
+              }
+            ],
+            "note": "No Kiro installer was downloaded or inspected."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 9,
+        "sourceCount": 9,
+        "unknownCount": 10,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/com.amazon.kiro.ide.1-0-242.json",
+        "mappingPath": null,
+        "lifecycleNote": "The publisher IDE changelog lists 1.0.242 as the latest 1.0.x patch on the reviewed date."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
+      "currentRecordId": "com.anomaly.opencode.cli.1-18-11",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.anomaly.opencode.cli.1-18-11",
+        "name": "OpenCode CLI",
+        "publisher": "Anomaly Innovations, Inc.",
+        "surface": {
+          "kind": "cli",
+          "name": "OpenCode CLI/TUI",
+          "slug": "opencode-cli-1-18-11",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "1.18.11",
+          "releaseTag": "v1.18.11",
+          "sourceRevision": "012c2f57f976489d88bd4598a056b4bdcdd428ee",
+          "releasedAt": "2026-08-01T11:44:00Z",
+          "channel": "OpenCode GitHub release",
+          "additionalIdentities": [
+            {
+              "id": "exact-cli-source-release",
+              "kind": "artifact-version",
+              "status": "known",
+              "value": "OpenCode CLI v1.18.11",
+              "scopeBindings": [],
+              "artifactRefs": [
+                "opencode-release-1-18-11",
+                "opencode-source-revision-1-18-11"
+              ],
+              "sourceIds": [
+                "source-release-identity-1-18-11"
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.release-identity-1-18-11"
+              ],
+              "note": "The immutable release tag and linked source revision are exact; no distribution artifact was captured or hashed."
+            },
+            {
+              "id": "opencode-zen-service-revision",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "model-route",
+                  "alternativeId": "opencode-zen"
+                }
+              ],
+              "artifactRefs": [
+                "opencode-zen-service"
+              ],
+              "sourceIds": [
+                "source-model-provider-route-current",
+                "source-zen-data-policy-current"
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.model-provider-route-current",
+                "com.anomaly.opencode.cli.zen-data-policy-current"
+              ],
+              "note": "Zen is a separately changing hosted gateway and model catalog; no service revision, endpoint, account, region or selected model was fixed."
+            },
+            {
+              "id": "external-provider-service-revision",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "model-route",
+                  "alternativeId": "external-hosted-provider"
+                }
+              ],
+              "artifactRefs": [
+                "external-provider-service"
+              ],
+              "sourceIds": [
+                "source-model-provider-route-current"
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.model-provider-route-current"
+              ],
+              "note": "External provider identity, endpoint, account and backend service revision are unresolved and must not inherit Zen policy."
+            },
+            {
+              "id": "selected-model-revision",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "model-revision",
+                  "alternativeId": "selected-model"
+                }
+              ],
+              "artifactRefs": [
+                "configured-model-revision"
+              ],
+              "sourceIds": [
+                "source-model-provider-route-current"
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.model-provider-route-current"
+              ],
+              "note": "No exact model identifier, alias resolution, snapshot, fallback or inference configuration was identified."
+            }
+          ],
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "Install-script resolved binary",
+              "npm-compatible package",
+              "Homebrew package",
+              "Publisher release binary",
+              "Container image"
+            ],
+            "alternativeDetails": [
+              {
+                "id": "install-script",
+                "label": "Install-script resolved binary",
+                "kind": "binary",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "opencode-release-binary-1-18-11"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-path",
+                    "alternativeId": "install-script"
+                  }
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.runtime-paths-current"
+                ],
+                "note": "The current installation script is documented, but it was not invoked and its resolved artifact, version, platform and digest are unknown."
+              },
+              {
+                "id": "npm-package",
+                "label": "npm-compatible package",
+                "kind": "package",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "opencode-npm-package-1-18-11"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-path",
+                    "alternativeId": "npm-package"
+                  }
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.runtime-paths-current"
+                ],
+                "note": "The package channel is documented, but no package or dependency graph was downloaded and its correspondence to the tagged source was not verified."
+              },
+              {
+                "id": "homebrew-package",
+                "label": "Homebrew package",
+                "kind": "package",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "opencode-homebrew-package-1-18-11"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-path",
+                    "alternativeId": "homebrew-package"
+                  }
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.runtime-paths-current"
+                ],
+                "note": "The Homebrew path is documented, but no formula, bottle, dependency set or digest was inspected."
+              },
+              {
+                "id": "release-binary",
+                "label": "Publisher release binary",
+                "kind": "binary",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "opencode-release-binary-1-18-11"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-path",
+                    "alternativeId": "release-binary"
+                  }
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.release-identity-1-18-11",
+                  "com.anomaly.opencode.cli.runtime-paths-current"
+                ],
+                "note": "The exact release page lists assets, but no platform binary was selected, downloaded or hashed."
+              },
+              {
+                "id": "container-image",
+                "label": "Container image",
+                "kind": "environment",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "opencode-container-image"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-path",
+                    "alternativeId": "container-image"
+                  }
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.runtime-paths-current"
+                ],
+                "note": "The container path is documented, but no image reference, platform manifest or digest was captured."
+              }
+            ],
+            "note": "No OpenCode artifact was downloaded, installed, executed or observed; the exact tag does not establish an installed runtime."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 12,
+        "sourceCount": 12,
+        "unknownCount": 13,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/expansion-batch-4/records/com.anomaly.opencode.cli.1-18-11.json",
+        "mappingPath": null,
+        "lifecycleNote": "The publisher latest-release endpoint resolves to immutable v1.18.11. Desktop release-note content is not transferred to this CLI/TUI surface."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "currentRecordId": "com.anthropic.claude-code.cli.2-1-220",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.anthropic.claude-code.cli.2-1-220",
+        "name": "Claude Code CLI",
+        "publisher": "Anthropic PBC",
+        "surface": {
+          "kind": "cli",
+          "name": "Claude Code CLI",
+          "slug": "anthropic-claude-code-cli-2-1-220",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "2.1.220",
+          "releaseTag": "v2.1.220",
+          "sourceRevision": "7ef6eec9d9ba84ea6f233f26c45f1df5c5991843",
+          "releasedAt": "2026-07-25T01:35:55Z",
+          "channel": "Claude Code GitHub stable release",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "darwin-arm64",
+              "darwin-x64",
+              "linux-arm64-musl",
+              "linux-arm64",
+              "linux-x64-musl",
+              "linux-x64",
+              "win32-arm64",
+              "win32-x64"
+            ],
+            "note": "Official release assets and publisher-supplied digests are known, but no asset was downloaded, installed, hashed independently or run."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 9,
+        "sourceCount": 9,
+        "unknownCount": 9,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.anthropic.claude-code.cli.2-1-220.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/anthropic-claude-code-cli-2-1-220-mapping.json",
+        "lifecycleNote": "The publisher latest-release endpoint resolves to v2.1.220. Exact client identity remains separate from rolling authentication, permission, sandbox, model, tool, MCP and extension documentation."
+      },
+      "gate": null,
+      "history": [
+        {
+          "recordId": "com.anthropic.claude-code.cli.2-1-117",
+          "name": "Claude Code CLI",
+          "publisher": "Anthropic PBC",
+          "surface": {
+            "kind": "cli",
+            "name": "Claude Code CLI",
+            "slug": "anthropic-claude-code-cli-2-1-117",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "2.1.117",
+            "releaseTag": "v2.1.117",
+            "sourceRevision": "2fa67717b8046c253cfa55fd84002e3501f1eca6",
+            "releasedAt": "2026-04-22T00:04:00Z",
+            "channel": "Claude Code GitHub release",
+            "additionalIdentities": [
+              {
+                "id": "exact-client-release",
+                "kind": "artifact-version",
+                "status": "known",
+                "value": "Claude Code CLI 2.1.117",
+                "scopeBindings": [],
+                "artifactRefs": [
+                  "claude-code-release-2-1-117",
+                  "claude-code-source-revision-2-1-117"
+                ],
+                "sourceIds": [
+                  "source-release-identity-2-1-117"
+                ],
+                "claimIds": [
+                  "com.anthropic.claude-code.cli.release-identity-2-1-117"
+                ],
+                "note": "The exact publisher release, tag and linked commit are known; downloaded binary digests are not."
+              },
+              {
+                "id": "current-documentation-revision",
+                "kind": "service-revision",
+                "status": "unresolved",
+                "value": null,
+                "scopeBindings": [],
+                "artifactRefs": [
+                  "claude-code-current-service"
+                ],
+                "sourceIds": [
+                  "source-cli-surface-current",
+                  "source-permissions-current",
+                  "source-sandbox-current",
+                  "source-model-routing-current"
+                ],
+                "claimIds": [
+                  "com.anthropic.claude-code.cli.cli-surface-current",
+                  "com.anthropic.claude-code.cli.permissions-current",
+                  "com.anthropic.claude-code.cli.sandbox-current",
+                  "com.anthropic.claude-code.cli.model-routing-current"
+                ],
+                "note": "Rolling documentation describes later Claude Code behavior and cannot be treated as a frozen property of 2.1.117."
+              }
+            ],
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "Native macOS or Linux build",
+                "Windows build",
+                "npm-installed build"
+              ],
+              "alternativeDetails": [
+                {
+                  "id": "native-macos-linux",
+                  "label": "Native macOS or Linux build",
+                  "kind": "platform-build",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "claude-code-release-2-1-117"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "client-build",
+                      "alternativeId": "native-macos-linux"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anthropic.claude-code.cli.native-search-tools-2-1-117"
+                  ],
+                  "note": "The release note distinguishes this build family, but no asset or digest was captured."
+                },
+                {
+                  "id": "windows-build",
+                  "label": "Windows build",
+                  "kind": "platform-build",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "claude-code-release-2-1-117"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "client-build",
+                      "alternativeId": "windows"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anthropic.claude-code.cli.native-search-tools-2-1-117"
+                  ],
+                  "note": "The exact Windows release asset and digest are unresolved."
+                },
+                {
+                  "id": "npm-installed-build",
+                  "label": "npm-installed build",
+                  "kind": "package",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "claude-code-release-2-1-117"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "client-build",
+                      "alternativeId": "npm"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anthropic.claude-code.cli.native-search-tools-2-1-117"
+                  ],
+                  "note": "The exact npm package artifact and digest are unresolved."
+                }
+              ],
+              "note": "No release asset was downloaded and no installed Claude Code runtime was inspected."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-02",
+          "claimCount": 8,
+          "sourceCount": 8,
+          "unknownCount": 8,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/records/com.anthropic.claude-code.cli.2-1-117.json",
+          "mappingPath": null,
+          "lifecycleNote": "The publisher latest-release endpoint resolves to v2.1.220. No superseding catalog record exists yet, so the direct record link remains null rather than naming an uncreated fixture. The additive research-preview lifecycle supplies the reciprocal current-record link without changing the accepted record."
+        }
+      ]
+    },
+    {
+      "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
+      "currentRecordId": "com.cline.bot.vscode-extension.4-1-3",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.cline.bot.vscode-extension.4-1-3",
+        "name": "Cline",
+        "publisher": "Cline Bot Inc.",
+        "surface": {
+          "kind": "ide-extension",
+          "name": "Cline VS Code extension",
+          "slug": "cline-vscode-extension-4-1-3",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "4.1.3",
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Visual Studio Marketplace stable listing",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "Visual Studio Marketplace VSIX for VS Code extension hosts"
+            ],
+            "note": "The official listing identifies version 4.1.3, but no VSIX was downloaded, hashed, installed or run and no extension-host or platform variant was resolved."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 5,
+        "sourceCount": 5,
+        "unknownCount": 8,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.cline.bot.vscode-extension.4-1-3.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/cline-vscode-extension-4-1-3-mapping.json",
+        "lifecycleNote": "The official Marketplace listing identifies exact version 4.1.3. The installed VSIX, platform runtime, model route and effective configuration remain unresolved applicability boundaries."
+      },
+      "gate": null,
+      "history": [
+        {
+          "recordId": "com.cline.bot.vscode-extension.4-1-2",
+          "name": "Cline",
+          "publisher": "Cline Bot Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Cline VS Code extension",
+            "slug": "cline-vscode-extension",
+            "deliveryModel": "local"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "4.1.2",
+            "releaseTag": null,
+            "sourceRevision": "644e84173724b50d6a248f813d01c7f1dad9ecf2",
+            "releasedAt": null,
+            "channel": "VS Code extension release source",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "Legacy",
+                "Next"
+              ],
+              "note": "The accepted release context says the active Legacy or Next variant is selected through a staged rollout and is unknown for a particular installation."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-02",
+          "claimCount": 8,
+          "sourceCount": 9,
+          "unknownCount": 8,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/records/com.cline.bot.vscode-extension.4-1-2.json",
+          "mappingPath": null,
+          "lifecycleNote": "The official Marketplace listing identified exact version 4.1.3 on 2026-08-02. The accepted 4.1.2 record remains unchanged and is linked only through this same-surface lifecycle overlay."
+        }
+      ]
+    },
+    {
+      "surfaceKey": "com.cognition.devin-desktop.cascade.desktop-stable",
+      "currentRecordId": "com.cognition.devin-desktop.cascade.3-6-27",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.cognition.devin-desktop.cascade.3-6-27",
+        "name": "Cascade in Devin Desktop",
+        "publisher": "Cognition AI, Inc.",
+        "surface": {
+          "kind": "desktop-app",
+          "name": "Cascade in Devin Desktop",
+          "slug": "cascade-devin-desktop-3-6-27",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "3.6.27",
+          "releaseTag": "v3.6.27",
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Devin Desktop stable release",
+          "additionalIdentities": [
+            {
+              "id": "desktop-build-3-6-27",
+              "kind": "runtime-build",
+              "status": "known",
+              "value": "Devin Desktop v3.6.27 build token 0becb483ee8498d49deadf6aefe8c24f58b8007e",
+              "scopeBindings": [],
+              "artifactRefs": [
+                "desktop-release-3-6-27",
+                "desktop-platform-artifact-family-3-6-27"
+              ],
+              "sourceIds": [
+                "source-release-identity-3-6-27"
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+              ],
+              "note": "The official release page exposes a platform artifact family with this shared path token; no artifact was downloaded and the token is not treated as a source revision or cryptographic digest."
+            },
+            {
+              "id": "devin-desktop-release-line-name",
+              "kind": "release-line",
+              "status": "known",
+              "value": "Windsurf renamed Devin Desktop from v3.0.12",
+              "scopeBindings": [
+                {
+                  "axisId": "agent-surface",
+                  "alternativeId": "cascade"
+                }
+              ],
+              "artifactRefs": [
+                "desktop-release-line"
+              ],
+              "sourceIds": [
+                "source-windsurf-devin-transition-3-0-12"
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.windsurf-devin-transition-3-0-12"
+              ],
+              "note": "Publisher-sourced former product name and dated release-line transition; it does not identify or rename hosted Devin, Devin Local or ACP agents."
+            },
+            {
+              "id": "cascade-service-revision",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "agent-surface",
+                  "alternativeId": "cascade"
+                }
+              ],
+              "artifactRefs": [
+                "cascade-service"
+              ],
+              "sourceIds": [
+                "source-surface-current",
+                "source-transition-plan-current"
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.surface-current",
+                "com.cognition.devin-desktop.cascade.transition-plan-current"
+              ],
+              "note": "No Cascade service revision or post-July transition resolution was published in the captured sources."
+            },
+            {
+              "id": "selected-model-revision",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "model-route",
+                  "alternativeId": "manual-selection"
+                }
+              ],
+              "artifactRefs": [
+                "cascade-model-backend"
+              ],
+              "sourceIds": [
+                "source-model-routing-current"
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.model-routing-current"
+              ],
+              "note": "No exact model identifier, alias resolution, provider revision or inference configuration was fixed."
+            },
+            {
+              "id": "adaptive-underlying-model",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "model-route",
+                  "alternativeId": "adaptive"
+                }
+              ],
+              "artifactRefs": [
+                "adaptive-router",
+                "cascade-model-backend"
+              ],
+              "sourceIds": [
+                "source-model-routing-current"
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.model-routing-current"
+              ],
+              "note": "Adaptive can route each request to a different underlying model; neither router revision nor per-request model identity is known."
+            },
+            {
+              "id": "cascade-transition-status",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "agent-surface",
+                  "alternativeId": "cascade"
+                }
+              ],
+              "artifactRefs": [
+                "cascade-service"
+              ],
+              "sourceIds": [
+                "source-transition-plan-current",
+                "source-surface-current"
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.transition-plan-current",
+                "com.cognition.devin-desktop.cascade.surface-current"
+              ],
+              "note": "The FAQ planned existing Cascade availability through July, while current post-July docs still list Cascade; no correction or service milestone resolves the relationship."
+            }
+          ],
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "macOS arm64 artifact",
+              "macOS x64 artifact",
+              "Windows arm64 artifact",
+              "Windows x64 artifact",
+              "Linux x64 artifact"
+            ],
+            "alternativeDetails": [
+              {
+                "id": "macos-arm64",
+                "label": "macOS arm64 artifact",
+                "kind": "binary",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "desktop-platform-artifact-family-3-6-27"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-platform",
+                    "alternativeId": "macos-arm64"
+                  }
+                ],
+                "claimIds": [
+                  "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+                ],
+                "note": "The exact release link is documented; no package, signature or digest was captured."
+              },
+              {
+                "id": "macos-x64",
+                "label": "macOS x64 artifact",
+                "kind": "binary",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "desktop-platform-artifact-family-3-6-27"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-platform",
+                    "alternativeId": "macos-x64"
+                  }
+                ],
+                "claimIds": [
+                  "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+                ],
+                "note": "The exact release link is documented; no package, signature or digest was captured."
+              },
+              {
+                "id": "windows-arm64",
+                "label": "Windows arm64 artifact",
+                "kind": "binary",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "desktop-platform-artifact-family-3-6-27"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-platform",
+                    "alternativeId": "windows-arm64"
+                  }
+                ],
+                "claimIds": [
+                  "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+                ],
+                "note": "The exact release link is documented; no package, signature or digest was captured."
+              },
+              {
+                "id": "windows-x64",
+                "label": "Windows x64 artifact",
+                "kind": "binary",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "desktop-platform-artifact-family-3-6-27"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-platform",
+                    "alternativeId": "windows-x64"
+                  }
+                ],
+                "claimIds": [
+                  "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+                ],
+                "note": "The exact release link is documented; no package, signature or digest was captured."
+              },
+              {
+                "id": "linux-x64",
+                "label": "Linux x64 artifact",
+                "kind": "binary",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "desktop-platform-artifact-family-3-6-27"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-platform",
+                    "alternativeId": "linux-x64"
+                  }
+                ],
+                "claimIds": [
+                  "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+                ],
+                "note": "The exact release link is documented; no package, signature or digest was captured."
+              }
+            ],
+            "note": "No Devin Desktop package was downloaded, installed, executed or observed; the official artifact family does not identify a particular installed runtime."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 14,
+        "sourceCount": 14,
+        "unknownCount": 14,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/expansion-batch-4/records/com.cognition.devin-desktop.cascade.3-6-27.json",
+        "mappingPath": null,
+        "lifecycleNote": "The publisher lists Desktop v3.6.27 first and continues to document Cascade. Exact client identity remains separate from rolling service and model backend identity and from Devin Local or hosted Devin."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.cognition.devin.hosted.rolling-service",
+      "currentRecordId": "com.cognition.devin.hosted.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.cognition.devin.hosted.rolling",
+        "name": "Devin",
+        "publisher": "Cognition AI, Inc.",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Devin hosted coding agent",
+          "slug": "cognition-devin-hosted",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Cognition-managed rolling Devin service",
+          "additionalIdentities": [
+            {
+              "id": "devin-2-2-milestone",
+              "kind": "release-line",
+              "status": "known",
+              "value": "2.2",
+              "scopeBindings": [],
+              "artifactRefs": [
+                "devin-2-2-milestone"
+              ],
+              "sourceIds": [
+                "source-devin-2-2-launch"
+              ],
+              "claimIds": [
+                "com.cognition.devin.devin-2-2-launch"
+              ],
+              "note": "Cognition's dated release notes name Devin 2.2, but the milestone does not freeze the current rolling service."
+            },
+            {
+              "id": "api-v3-release",
+              "kind": "artifact-version",
+              "status": "known",
+              "value": "v3 API primary release",
+              "scopeBindings": [],
+              "artifactRefs": [
+                "devin-api-v3-release"
+              ],
+              "sourceIds": [
+                "source-api-v3-release"
+              ],
+              "claimIds": [
+                "com.cognition.devin.api-v3-release"
+              ],
+              "note": "The dated v3 API release identifies an API generation, not the code or model revision serving a session."
+            },
+            {
+              "id": "current-service-revision",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [],
+              "artifactRefs": [
+                "devin-current-hosted-service"
+              ],
+              "sourceIds": [
+                "source-rolling-service-updates-current"
+              ],
+              "claimIds": [
+                "com.cognition.devin.rolling-service-updates-current"
+              ],
+              "note": "The current release-note stream is dated but does not expose an immutable backend or service revision."
+            },
+            {
+              "id": "enterprise-cloud-deployment-revision",
+              "kind": "deployment-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "offering",
+                  "alternativeId": "enterprise-cloud"
+                }
+              ],
+              "artifactRefs": [
+                "enterprise-cloud-runtime"
+              ],
+              "sourceIds": [
+                "source-deployment-architecture-current"
+              ],
+              "claimIds": [
+                "com.cognition.devin.deployment-architecture-current"
+              ],
+              "note": "The Enterprise Cloud architecture is documented, while its deployed revision remains unresolved."
+            },
+            {
+              "id": "customer-dedicated-deployment-revision",
+              "kind": "deployment-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "offering",
+                  "alternativeId": "customer-dedicated"
+                }
+              ],
+              "artifactRefs": [
+                "customer-dedicated-runtime"
+              ],
+              "sourceIds": [
+                "source-deployment-architecture-current"
+              ],
+              "claimIds": [
+                "com.cognition.devin.deployment-architecture-current"
+              ],
+              "note": "The Customer Dedicated architecture is documented, while its tenant deployment revision remains unresolved."
+            },
+            {
+              "id": "model-backend-revision",
+              "kind": "runtime-build",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "model-backend",
+                  "alternativeId": "cognition-compound-system"
+                }
+              ],
+              "artifactRefs": [
+                "devin-model-backend"
+              ],
+              "sourceIds": [
+                "source-compound-system-current"
+              ],
+              "claimIds": [
+                "com.cognition.devin.compound-system-current"
+              ],
+              "note": "Cognition identifies a managed compound system but not the exact model, checkpoint, routing or inference revision for this record."
+            }
+          ],
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "Enterprise Cloud Cognition-hosted Devbox",
+              "Customer Dedicated single-tenant Devbox",
+              "Organization-default or inherited platform",
+              "Configured built-in platform",
+              "Configured outpost pool"
+            ],
+            "alternativeDetails": [
+              {
+                "id": "enterprise-cloud-devbox",
+                "label": "Enterprise Cloud Cognition-hosted Devbox",
+                "kind": "service",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "enterprise-cloud-runtime"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "offering",
+                    "alternativeId": "enterprise-cloud"
+                  }
+                ],
+                "claimIds": [
+                  "com.cognition.devin.deployment-architecture-current"
+                ],
+                "note": "The hosting model is known; the service image and deployed revision are not."
+              },
+              {
+                "id": "customer-dedicated-devbox",
+                "label": "Customer Dedicated single-tenant Devbox",
+                "kind": "service",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "customer-dedicated-runtime"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "offering",
+                    "alternativeId": "customer-dedicated"
+                  }
+                ],
+                "claimIds": [
+                  "com.cognition.devin.deployment-architecture-current"
+                ],
+                "note": "The tenant-isolated deployment model is known; its exact tenant build is not."
+              },
+              {
+                "id": "organization-default-platform",
+                "label": "Organization-default or inherited platform",
+                "kind": "environment",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "devin-session-platform"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "session-placement",
+                    "alternativeId": "organization-default-or-inherit"
+                  }
+                ],
+                "claimIds": [
+                  "com.cognition.devin.session-configuration-current"
+                ],
+                "note": "The selection rule is documented, but the selected platform or pool is unknown."
+              },
+              {
+                "id": "configured-built-in-platform",
+                "label": "Configured built-in platform",
+                "kind": "environment",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "devin-session-platform"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "session-placement",
+                    "alternativeId": "explicit-built-in-platform"
+                  }
+                ],
+                "claimIds": [
+                  "com.cognition.devin.session-configuration-current"
+                ],
+                "note": "No built-in platform label or image identity was selected for this public-source record."
+              },
+              {
+                "id": "configured-outpost-pool",
+                "label": "Configured outpost pool",
+                "kind": "environment",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "devin-session-platform"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "session-placement",
+                    "alternativeId": "explicit-outpost-pool"
+                  }
+                ],
+                "claimIds": [
+                  "com.cognition.devin.session-configuration-current"
+                ],
+                "note": "Publisher documentation allows a named outpost pool, but no pool, host or build was identified."
+              }
+            ],
+            "note": "No Devin service, session, Devbox, tenant deployment, platform, outpost, model or integration was invoked or inspected."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 13,
+        "sourceCount": 13,
+        "unknownCount": 14,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/records/com.cognition.devin.hosted.rolling.json",
+        "mappingPath": null,
+        "lifecycleNote": "Current means the Cognition-managed hosted surface remains documented as of review; it does not import claims from Devin Desktop, Cascade, or Devin Local."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
+      "currentRecordId": "com.cursor.ide.foreground-agent.3-14",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.cursor.ide.foreground-agent.3-14",
+        "name": "Cursor IDE foreground Agent",
+        "publisher": "Anysphere, Inc.",
+        "surface": {
+          "kind": "desktop-app",
+          "name": "Cursor IDE foreground Agent",
+          "slug": "cursor-ide-foreground-agent-3-14",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "3.14",
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Cursor stable desktop download archive",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "macOS ARM64 DMG",
+              "macOS x64 DMG",
+              "macOS Universal DMG",
+              "Windows x64 system installer",
+              "Windows x64 user installer",
+              "Windows ARM64 system installer",
+              "Windows ARM64 user installer",
+              "Linux DEB ARM64",
+              "Linux DEB x64",
+              "Linux RPM ARM64",
+              "Linux RPM x64",
+              "Linux AppImage ARM64",
+              "Linux AppImage x64"
+            ],
+            "note": "No package was downloaded or installed. The operating system, architecture, installer type, executable digest, opaque build target, account feature flags and effective runtime remain unresolved."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 12,
+        "sourceCount": 12,
+        "unknownCount": 12,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/records/com.cursor.ide.foreground-agent.3-14.json",
+        "mappingPath": null,
+        "lifecycleNote": "The desktop download archive labels 3.14 latest. This lifecycle entry does not collapse the rolling service, model backend, Agent mode, or authority configuration into the exact client identity."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.github.copilot.cloud-agent.rolling-service",
+      "currentRecordId": "com.github.copilot.cloud-agent.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.github.copilot.cloud-agent.rolling",
+        "name": "GitHub Copilot cloud agent",
+        "publisher": "GitHub",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "GitHub Copilot cloud agent",
+          "slug": "github-copilot-cloud-agent",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "GitHub-hosted rolling service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "GitHub-hosted GitHub Actions environment",
+              "self-hosted GitHub Actions runner"
+            ],
+            "note": "No task was started and GitHub does not expose a public backend build identity for the rolling service. The effective runner, image, model, region and session implementation remain unresolved."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 11,
+        "sourceCount": 11,
+        "unknownCount": 11,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/records/com.github.copilot.cloud-agent.rolling.json",
+        "mappingPath": null,
+        "lifecycleNote": "Current means the rolling hosted surface remains offered as of review; it does not identify an immutable service or model revision."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "currentRecordId": "com.gitlab.duo.developer-flow.19-2-1",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.gitlab.duo.developer-flow.19-2-1",
+        "name": "GitLab Duo Developer Flow",
+        "publisher": "GitLab, Inc.",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "GitLab Duo Developer Flow",
+          "slug": "gitlab-duo-developer-flow-19-2-1",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "19.2.1-ee",
+          "releaseTag": "v19.2.1-ee",
+          "sourceRevision": "8cb614f3c9f0242582886f260763fa45d19768ab",
+          "releasedAt": "2026-07-29T00:00:00Z",
+          "channel": "GitLab 19.2.1 Enterprise Edition patch and rolling Agent Platform service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "GitLab.com",
+              "GitLab Self-Managed 19.2.1 EE",
+              "GitLab Dedicated",
+              "GitLab-hosted runner",
+              "user-managed runner"
+            ],
+            "note": "The exact source tag does not identify the rolling service, runner image, agent service revision, model endpoint or project configuration used by a session."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 10,
+        "sourceCount": 10,
+        "unknownCount": 9,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.gitlab.duo.developer-flow.19-2-1.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/gitlab-duo-developer-flow-19-2-1-mapping.json",
+        "lifecycleNote": "The protected v19.2.1-ee tag is current for the exact patch identity. The 19.2 feature line and rolling Agent Platform service, runner, model and project configuration remain separate applicability boundaries."
+      },
+      "gate": null,
+      "history": [
+        {
+          "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "18.8.0-ee",
+            "releaseTag": "v18.8.0-ee",
+            "sourceRevision": "1010a9b2b769993080ce8399fd25e77c54e1ad1c",
+            "releasedAt": null,
+            "channel": "GitLab 18.8 Enterprise Edition source release and Duo Agent Platform GA milestone",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "GitLab.com rolling service",
+                "GitLab Self-Managed 18.8 EE deployment",
+                "GitLab Dedicated rolling service",
+                "GitLab-hosted runner",
+                "user-managed runner"
+              ],
+              "note": "The exact source tag is not a complete hosted or executed runtime. No GitLab service, package, runner, Duo CLI executor, model endpoint, feature-flag state or project configuration was installed, invoked or inspected."
+            }
+          },
+          "lifecycleStatus": "historical",
+          "reviewedAt": "2026-08-02",
+          "claimCount": 16,
+          "sourceCount": 16,
+          "unknownCount": 16,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/records/com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee.json",
+          "mappingPath": null,
+          "lifecycleNote": "GitLab 18.8 remains the publisher-documented general-availability milestone. Its direct successor is the preserved 19.2.0-ee record, which is now itself superseded by 19.2.1-ee."
+        },
+        {
+          "recordId": "com.gitlab.duo.developer-flow.19-2",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-19-2",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "19.2.0-ee",
+            "releaseTag": "v19.2.0-ee",
+            "sourceRevision": "68485a1eb627c9a992f266263157327649822db3",
+            "releasedAt": "2026-07-15T20:11:26Z",
+            "channel": "GitLab 19.2 Enterprise Edition release line and rolling Agent Platform service",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "GitLab.com",
+                "GitLab Self-Managed 19.2 EE",
+                "GitLab Dedicated",
+                "GitLab-hosted runner",
+                "user-managed runner"
+              ],
+              "note": "The exact source tag does not identify the rolling service, runner image, agent service revision, model endpoint or project configuration used by a session."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-02",
+          "claimCount": 10,
+          "sourceCount": 10,
+          "unknownCount": 9,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.gitlab.duo.developer-flow.19-2.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/gitlab-duo-developer-flow-19-2-mapping.json",
+          "lifecycleNote": "GitLab 19.2.1-ee is the current protected patch tag for the 19.2 release line. The accepted 19.2.0-ee record remains unchanged and keeps its reciprocal historical link to the 18.8 GA record."
+        }
+      ]
+    },
+    {
+      "surfaceKey": "com.google.jules.hosted.rolling-service",
+      "currentRecordId": "com.google.jules.hosted.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.google.jules.hosted.rolling",
+        "name": "Google Jules",
+        "publisher": "Google",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Jules",
+          "slug": "google-jules",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Google-hosted rolling service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "fresh Jules task VM",
+              "task VM restored from a repository environment snapshot"
+            ],
+            "note": "No task was started and Google does not expose a public backend build identity for the rolling service. The effective VM image, snapshot, model, region and session implementation remain unresolved."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 10,
+        "sourceCount": 10,
+        "unknownCount": 10,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/records/com.google.jules.hosted.rolling.json",
+        "mappingPath": null,
+        "lifecycleNote": "Current means the rolling hosted surface remains documented as of review; undisclosed runtime and model revisions remain unresolved."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.lovable.build-mode.hosted.rolling-service",
+      "currentRecordId": "com.lovable.agent.hosted.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.lovable.agent.hosted.rolling",
+        "name": "Lovable Build mode",
+        "publisher": "Lovable",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Lovable Build mode",
+          "slug": "lovable-agent-mode-hosted",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Lovable hosted service",
+          "additionalIdentities": [
+            {
+              "id": "agent-mode-default-milestone",
+              "kind": "release-line",
+              "status": "known",
+              "value": "Agent mode default milestone — 2025-08-11",
+              "scopeBindings": [
+                {
+                  "axisId": "interaction-mode",
+                  "alternativeId": "build-mode"
+                }
+              ],
+              "artifactRefs": [
+                "agent-mode-default-milestone-2025-08-11"
+              ],
+              "sourceIds": [
+                "source-agent-default-milestone-2025-08-11"
+              ],
+              "claimIds": [
+                "com.lovable.agent.hosted.agent-default-milestone-2025-08-11"
+              ],
+              "note": "The dated changelog milestone preserves the former Agent mode name for the execution surface now documented as Build mode; it does not identify an immutable current runtime."
+            },
+            {
+              "id": "build-mode-current-name",
+              "kind": "other",
+              "status": "known",
+              "value": "Build mode (previously Agent mode)",
+              "scopeBindings": [
+                {
+                  "axisId": "interaction-mode",
+                  "alternativeId": "build-mode"
+                }
+              ],
+              "artifactRefs": [
+                "lovable-agent-rolling-service"
+              ],
+              "sourceIds": [
+                "source-agent-plan-modes-current"
+              ],
+              "claimIds": [
+                "com.lovable.agent.hosted.agent-plan-modes-current"
+              ],
+              "note": "Current publisher documentation supplies the canonical Build mode name and explicitly identifies Agent mode as its former name; the rename does not freeze a service revision."
+            },
+            {
+              "id": "model-service-milestone",
+              "kind": "service-revision",
+              "status": "known",
+              "value": "Opus 4.6 incorporated — 2026-04-24 milestone",
+              "scopeBindings": [
+                {
+                  "axisId": "model-route",
+                  "alternativeId": "publisher-managed-route"
+                }
+              ],
+              "artifactRefs": [
+                "lovable-service-milestone-2026-04-24"
+              ],
+              "sourceIds": [
+                "source-model-service-milestone-2026-04-24"
+              ],
+              "claimIds": [
+                "com.lovable.agent.hosted.model-service-milestone-2026-04-24"
+              ],
+              "note": "The dated changelog names a model incorporated into the Agent; exact routing, provider revision and continued current applicability remain unresolved."
+            },
+            {
+              "id": "current-service-revision",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [],
+              "artifactRefs": [
+                "lovable-agent-rolling-service"
+              ],
+              "sourceIds": [
+                "source-agent-plan-modes-current",
+                "source-agent-file-execution-current"
+              ],
+              "claimIds": [
+                "com.lovable.agent.hosted.agent-plan-modes-current",
+                "com.lovable.agent.hosted.agent-file-execution-current"
+              ],
+              "note": "The effective hosted service, prompt, tool and model revisions are not publicly pinned."
+            }
+          ],
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "Lovable project without Cloud",
+              "Lovable Cloud project"
+            ],
+            "alternativeDetails": [
+              {
+                "id": "project-without-cloud",
+                "label": "Lovable project without Cloud",
+                "kind": "environment",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "lovable-agent-rolling-service"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "cloud-state",
+                    "alternativeId": "cloud-disabled"
+                  }
+                ],
+                "claimIds": [
+                  "com.lovable.agent.hosted.cloud-tool-permissions-current"
+                ],
+                "note": "The project backend state is unknown."
+              },
+              {
+                "id": "lovable-cloud-project",
+                "label": "Lovable Cloud project",
+                "kind": "environment",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "lovable-cloud-runtime"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "cloud-state",
+                    "alternativeId": "cloud-enabled"
+                  }
+                ],
+                "claimIds": [
+                  "com.lovable.agent.hosted.cloud-tool-permissions-current"
+                ],
+                "note": "Cloud enablement, region and tool policy are unknown."
+              }
+            ],
+            "note": "No Lovable project, account, region or service runtime was inspected."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 11,
+        "sourceCount": 11,
+        "unknownCount": 12,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/com.lovable.agent.hosted.rolling.json",
+        "mappingPath": null,
+        "lifecycleNote": "Current publisher documentation uses Build mode as the canonical name and Agent mode as its former name; the sourced rename does not create a second surface."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.openai.codex.cli.stable",
+      "currentRecordId": "com.openai.codex.cli.0-146-0",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.openai.codex.cli.0-146-0",
+        "name": "OpenAI Codex CLI",
+        "publisher": "OpenAI",
+        "surface": {
+          "kind": "cli",
+          "name": "Codex CLI",
+          "slug": "openai-codex-cli-0-146-0",
+          "deliveryModel": "local"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "0.146.0",
+          "releaseTag": "rust-v0.146.0",
+          "sourceRevision": "e363b08c9175ac1cbe5893615dd2cb9ddf95043b",
+          "releasedAt": "2026-07-29T01:42:51Z",
+          "channel": "GitHub release",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "npm package",
+              "Homebrew cask",
+              "platform-specific release binary"
+            ],
+            "note": "No artifact was downloaded or installed, so the invoked package path, platform build, architecture, executable digest and effective runtime remain unresolved."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 15,
+        "sourceCount": 15,
+        "unknownCount": 15,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.openai.codex.cli.0-146-0.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/openai-codex-cli-0-146-0-mapping.json",
+        "lifecycleNote": "The official latest-release endpoint resolves to the exact 0.146.0 record. Currentness is scoped to the Codex CLI stable release surface and does not identify the installed runtime, model, authentication path, configuration, app-server host or any other Codex surface."
+      },
+      "gate": null,
+      "history": [
+        {
+          "recordId": "com.openai.codex.cli.0-90-0",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-90-0",
+            "deliveryModel": "local"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "0.90.0",
+            "releaseTag": "rust-v0.90.0",
+            "sourceRevision": "b4e230f8de8f71d08f48c469443ed61a9f365af3",
+            "releasedAt": "2026-01-25T16:37:37Z",
+            "channel": "GitHub release",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "npm package",
+                "Homebrew cask",
+                "platform-specific GitHub release binary"
+              ],
+              "note": "No artifact was downloaded or installed, so the invoked package path, operating-system build, architecture, executable digest and effective runtime remain unresolved."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-02",
+          "claimCount": 12,
+          "sourceCount": 12,
+          "unknownCount": 12,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/records/com.openai.codex.cli.0-90-0.json",
+          "mappingPath": null,
+          "lifecycleNote": "The publisher latest-release endpoint resolves to 0.146.0. The separate unpublished 0.146.0 record now supplies the reciprocal same-surface successor link; 0.90.0 remains superseded and is not reclassified as historical."
+        }
+      ]
+    },
+    {
+      "surfaceKey": "com.replit.agent.hosted.agent-4-service",
+      "currentRecordId": "com.replit.agent.hosted.agent-4",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.replit.agent.hosted.agent-4",
+        "name": "Replit Agent",
+        "publisher": "Replit",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Replit Agent hosted workspace",
+          "slug": "replit-agent-4-hosted",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Replit-managed rolling Agent service after the Agent 4 milestone",
+          "additionalIdentities": [
+            {
+              "id": "agent-4-generation",
+              "kind": "release-line",
+              "status": "known",
+              "value": "Agent 4",
+              "scopeBindings": [],
+              "artifactRefs": [
+                "agent-4-generation"
+              ],
+              "sourceIds": [
+                "source-agent-4-launch"
+              ],
+              "claimIds": [
+                "com.replit.agent.hosted.agent-4-launch"
+              ],
+              "note": "Replit's dated 2026-03-13 changelog names Agent 4, but the label is a hosted service generation rather than an immutable backend build."
+            },
+            {
+              "id": "current-service-revision",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [],
+              "artifactRefs": [
+                "replit-current-agent-service"
+              ],
+              "sourceIds": [
+                "source-agent-modes-current"
+              ],
+              "claimIds": [
+                "com.replit.agent.hosted.agent-modes-current"
+              ],
+              "note": "Current documentation describes the rolling service controls but does not expose an immutable serving revision."
+            },
+            {
+              "id": "current-model-routing",
+              "kind": "runtime-build",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [],
+              "artifactRefs": [
+                "replit-agent-model-backend"
+              ],
+              "sourceIds": [
+                "source-model-selection-current"
+              ],
+              "claimIds": [
+                "com.replit.agent.hosted.model-selection-current"
+              ],
+              "note": "The live model catalog is account- and rollout-dependent and does not identify the model, checkpoint, endpoint or inference revision used by a particular task."
+            }
+          ],
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "Lite mode service path",
+              "Economy mode service path",
+              "Power mode service path"
+            ],
+            "alternativeDetails": [
+              {
+                "id": "lite-mode-service",
+                "label": "Lite mode service path",
+                "kind": "service",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "replit-current-agent-service",
+                  "replit-agent-model-backend"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "agent-mode",
+                    "alternativeId": "lite"
+                  }
+                ],
+                "claimIds": [
+                  "com.replit.agent.hosted.agent-modes-current"
+                ],
+                "note": "The named mode is documented; the serving and model revisions are not."
+              },
+              {
+                "id": "economy-mode-service",
+                "label": "Economy mode service path",
+                "kind": "service",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "replit-current-agent-service",
+                  "replit-agent-model-backend"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "agent-mode",
+                    "alternativeId": "economy"
+                  }
+                ],
+                "claimIds": [
+                  "com.replit.agent.hosted.agent-modes-current"
+                ],
+                "note": "The named mode is documented; the serving and model revisions are not."
+              },
+              {
+                "id": "power-mode-service",
+                "label": "Power mode service path",
+                "kind": "service",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "replit-current-agent-service",
+                  "replit-agent-model-backend"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "agent-mode",
+                    "alternativeId": "power"
+                  }
+                ],
+                "claimIds": [
+                  "com.replit.agent.hosted.agent-modes-current"
+                ],
+                "note": "The named mode is documented; the serving and model revisions are not."
+              }
+            ],
+            "note": "No Replit account, project, workspace, task, browser test, deployment or model route was opened or run."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 8,
+        "sourceCount": 8,
+        "unknownCount": 8,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/records/com.replit.agent.hosted.agent-4.json",
+        "mappingPath": null,
+        "lifecycleNote": "Current is scoped to the Agent 4 generation anchor and rolling Replit-managed service as of review; no Agent 5 publisher identity was identified in the bounded audit."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "dev.zed.agent.native.desktop-stable",
+      "currentRecordId": "dev.zed.agent.native.1-13-1",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "dev.zed.agent.native.1-13-1",
+        "name": "Zed Agent",
+        "publisher": "Zed Industries, Inc.",
+        "surface": {
+          "kind": "desktop-app",
+          "name": "native Zed Agent in Zed",
+          "slug": "zed-agent-1-13-1",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "1.13.1",
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": "2026-07-29T00:00:00Z",
+          "channel": "Zed stable release",
+          "additionalIdentities": [
+            {
+              "id": "zed-stable-1-13-1",
+              "kind": "artifact-version",
+              "status": "known",
+              "value": "Zed 1.13.1 stable",
+              "scopeBindings": [],
+              "artifactRefs": [
+                "zed-stable-1-13-1"
+              ],
+              "sourceIds": [
+                "source-release-identity-1-13-1"
+              ],
+              "claimIds": [
+                "dev.zed.agent.release-identity-1-13-1"
+              ],
+              "note": "The publisher stable page dates the client version; platform package digests and source revision are unresolved."
+            },
+            {
+              "id": "zed-model-service-revision",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "model-route",
+                  "alternativeId": "zed-hosted"
+                }
+              ],
+              "artifactRefs": [
+                "zed-model-service"
+              ],
+              "sourceIds": [
+                "source-model-privacy-current"
+              ],
+              "claimIds": [
+                "dev.zed.agent.model-privacy-current"
+              ],
+              "note": "The hosted request path is documented, but the serving revision, provider routing and selected model are unresolved."
+            }
+          ],
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "macOS Zed 1.13.1",
+              "Windows Zed 1.13.1",
+              "Linux Zed 1.13.1"
+            ],
+            "alternativeDetails": [
+              {
+                "id": "macos-zed-1-13-1",
+                "label": "macOS Zed 1.13.1",
+                "kind": "platform-build",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "zed-stable-1-13-1"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "client-platform",
+                    "alternativeId": "macos"
+                  }
+                ],
+                "claimIds": [
+                  "dev.zed.agent.release-identity-1-13-1"
+                ],
+                "note": "The stable page names macOS availability but no package digest was captured."
+              },
+              {
+                "id": "windows-zed-1-13-1",
+                "label": "Windows Zed 1.13.1",
+                "kind": "platform-build",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "zed-stable-1-13-1"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "client-platform",
+                    "alternativeId": "windows"
+                  }
+                ],
+                "claimIds": [
+                  "dev.zed.agent.release-identity-1-13-1"
+                ],
+                "note": "The stable page names Windows availability but no package digest was captured."
+              },
+              {
+                "id": "linux-zed-1-13-1",
+                "label": "Linux Zed 1.13.1",
+                "kind": "platform-build",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "zed-stable-1-13-1"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "client-platform",
+                    "alternativeId": "linux"
+                  }
+                ],
+                "claimIds": [
+                  "dev.zed.agent.release-identity-1-13-1"
+                ],
+                "note": "The stable page names Linux availability but no package digest was captured."
+              }
+            ],
+            "note": "No Zed build was downloaded, installed, hashed or run."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 8,
+        "sourceCount": 8,
+        "unknownCount": 8,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/records/dev.zed.agent.native.1-13-1.json",
+        "mappingPath": null,
+        "lifecycleNote": "Zed's official stable page lists 1.13.1 dated 2026-07-29. The accepted source-only dossier, generated record and taxonomy mapping were losslessly revalidated; installed package and hosted model identity remain unresolved."
+      },
+      "gate": null,
+      "history": [
+        {
+          "recordId": "com.zed.agent.native.stable.1-12-1",
+          "name": "Zed Agent",
+          "publisher": "Zed Industries, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Native Zed Agent",
+            "slug": "zed-agent-stable-1-12-1",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "1.12.1",
+            "releaseTag": "v1.12.1",
+            "sourceRevision": "2a37601c02a32b22e7700835c04b89ff75ffcd5d",
+            "releasedAt": "2026-07-27T18:30:09Z",
+            "channel": "Zed stable channel",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "macOS aarch64",
+                "macOS x86_64",
+                "Linux aarch64",
+                "Linux x86_64",
+                "Windows aarch64",
+                "Windows x86_64"
+              ],
+              "note": "Official release assets and digests are known, but no build was downloaded, installed or run."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-02",
+          "claimCount": 11,
+          "sourceCount": 11,
+          "unknownCount": 10,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.zed.agent.native.stable.1-12-1.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/zed-agent-stable-1-12-1-mapping.json",
+          "lifecycleNote": "Zed's official stable page now lists 1.13.1. The accepted 1.12.1 stable record remains unchanged and is linked here to the accepted 1.13.1 same-surface successor."
+        }
+      ]
+    },
+    {
+      "surfaceKey": "org.aider-ai.aider.cli.stable",
+      "currentRecordId": "org.aider-ai.aider.cli.0-86-0",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "org.aider-ai.aider.cli.0-86-0",
+        "name": "Aider CLI",
+        "publisher": "Aider-AI project",
+        "surface": {
+          "kind": "cli",
+          "name": "Aider CLI",
+          "slug": "aider-cli-0-86-0",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "0.86.0",
+          "releaseTag": "v0.86.0",
+          "sourceRevision": "a4be6ccd87ebaa59b361f3f028d116ce1761b626",
+          "releasedAt": "2025-08-09T17:42:00Z",
+          "channel": "Aider GitHub release",
+          "additionalIdentities": [
+            {
+              "id": "exact-cli-release",
+              "kind": "artifact-version",
+              "status": "known",
+              "value": "Aider CLI 0.86.0",
+              "scopeBindings": [],
+              "artifactRefs": [
+                "aider-release-0-86-0",
+                "aider-source-revision-0-86-0"
+              ],
+              "sourceIds": [
+                "source-release-identity-0-86-0"
+              ],
+              "claimIds": [
+                "org.aider-ai.aider.cli.release-identity-0-86-0"
+              ],
+              "note": "The publisher release tag and source revision are known; no distribution artifact digest was captured."
+            },
+            {
+              "id": "configured-model-service",
+              "kind": "service-revision",
+              "status": "unresolved",
+              "value": null,
+              "scopeBindings": [
+                {
+                  "axisId": "model-route",
+                  "alternativeId": "configured-provider"
+                }
+              ],
+              "artifactRefs": [
+                "configured-model-service"
+              ],
+              "sourceIds": [
+                "source-model-provider-current"
+              ],
+              "claimIds": [
+                "org.aider-ai.aider.cli.model-provider-current"
+              ],
+              "note": "The client can route to many configured providers or local models; no provider, endpoint, model revision or inference configuration is selected here."
+            }
+          ],
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "aider-chat Python package",
+              "source checkout"
+            ],
+            "alternativeDetails": [
+              {
+                "id": "python-package",
+                "label": "aider-chat Python package",
+                "kind": "package",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "aider-python-package-0-86-0"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-path",
+                    "alternativeId": "python-package"
+                  }
+                ],
+                "claimIds": [
+                  "org.aider-ai.aider.cli.release-identity-0-86-0"
+                ],
+                "note": "Version 0.86.0 is identified, but no wheel, source distribution, digest, platform or dependency resolution was inspected."
+              },
+              {
+                "id": "source-checkout",
+                "label": "Source checkout at the release revision",
+                "kind": "package",
+                "identityStatus": "unresolved",
+                "artifactRefs": [
+                  "aider-source-revision-0-86-0"
+                ],
+                "scopeBindings": [
+                  {
+                    "axisId": "runtime-path",
+                    "alternativeId": "source-checkout"
+                  }
+                ],
+                "claimIds": [
+                  "org.aider-ai.aider.cli.release-identity-0-86-0"
+                ],
+                "note": "The source revision is exact, but no environment built from it was inspected."
+              }
+            ],
+            "note": "No Aider artifact was downloaded or installed, and no effective runtime was observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 9,
+        "sourceCount": 9,
+        "unknownCount": 8,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/org.aider-ai.aider.cli.0-86-0.json",
+        "mappingPath": null,
+        "lifecycleNote": "The publisher latest-release endpoint still resolves to v0.86.0; release age alone is not treated as supersession."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "org.openhands.openhands.cli.stable",
+      "currentRecordId": "org.openhands.cli.1-16-0",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "org.openhands.cli.1-16-0",
+        "name": "OpenHands",
+        "publisher": "OpenHands",
+        "surface": {
+          "kind": "cli",
+          "name": "OpenHands CLI",
+          "slug": "openhands-cli",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "1.16.0",
+          "releaseTag": "1.16.0",
+          "sourceRevision": "2963442dacc7cea44e39b7c4e73724295c853465",
+          "releasedAt": null,
+          "channel": "GitHub release",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [
+              "Python package",
+              "standalone binary"
+            ],
+            "note": "No artifact was downloaded or installed, so the runtime packaging, platform build and digest remain unresolved."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-02",
+        "claimCount": 9,
+        "sourceCount": 9,
+        "unknownCount": 9,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/records/org.openhands.cli.1-16-0.json",
+        "mappingPath": null,
+        "lifecycleNote": "The publisher labels 1.16.0 latest and describes V1 CLI as feature-complete and stability-maintained rather than discontinued."
+      },
+      "gate": null,
+      "history": []
+    }
+  ],
+  "previewRecords": [
+    {
+      "recordId": "com.cline.bot.vscode-extension.4-1-2",
+      "name": "Cline",
+      "publisher": "Cline Bot Inc.",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Cline VS Code extension",
+        "slug": "cline-vscode-extension",
+        "deliveryModel": "local"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "4.1.2",
+        "releaseTag": null,
+        "sourceRevision": "644e84173724b50d6a248f813d01c7f1dad9ecf2",
+        "releasedAt": null,
+        "channel": "VS Code extension release source",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Legacy",
+            "Next"
+          ],
+          "note": "The accepted release context says the active Legacy or Next variant is selected through a staged rollout and is unknown for a particular installation."
+        }
+      },
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 8,
+      "sourceCount": 9,
+      "unknownCount": 8,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/com.cline.bot.vscode-extension.4-1-2.json",
+      "mappingPath": null,
+      "lifecycleNote": "The official Marketplace listing identified exact version 4.1.3 on 2026-08-02. The accepted 4.1.2 record remains unchanged and is linked only through this same-surface lifecycle overlay."
+    },
+    {
+      "recordId": "org.openhands.cli.1-16-0",
+      "name": "OpenHands",
+      "publisher": "OpenHands",
+      "surface": {
+        "kind": "cli",
+        "name": "OpenHands CLI",
+        "slug": "openhands-cli",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.16.0",
+        "releaseTag": "1.16.0",
+        "sourceRevision": "2963442dacc7cea44e39b7c4e73724295c853465",
+        "releasedAt": null,
+        "channel": "GitHub release",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Python package",
+            "standalone binary"
+          ],
+          "note": "No artifact was downloaded or installed, so the runtime packaging, platform build and digest remain unresolved."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 9,
+      "sourceCount": 9,
+      "unknownCount": 9,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/org.openhands.cli.1-16-0.json",
+      "mappingPath": null,
+      "lifecycleNote": "The publisher labels 1.16.0 latest and describes V1 CLI as feature-complete and stability-maintained rather than discontinued."
+    },
+    {
+      "recordId": "com.github.copilot.cloud-agent.rolling",
+      "name": "GitHub Copilot cloud agent",
+      "publisher": "GitHub",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "GitHub Copilot cloud agent",
+        "slug": "github-copilot-cloud-agent",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "GitHub-hosted rolling service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "GitHub-hosted GitHub Actions environment",
+            "self-hosted GitHub Actions runner"
+          ],
+          "note": "No task was started and GitHub does not expose a public backend build identity for the rolling service. The effective runner, image, model, region and session implementation remain unresolved."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 11,
+      "sourceCount": 11,
+      "unknownCount": 11,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/com.github.copilot.cloud-agent.rolling.json",
+      "mappingPath": null,
+      "lifecycleNote": "Current means the rolling hosted surface remains offered as of review; it does not identify an immutable service or model revision."
+    },
+    {
+      "recordId": "com.google.jules.hosted.rolling",
+      "name": "Google Jules",
+      "publisher": "Google",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Jules",
+        "slug": "google-jules",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Google-hosted rolling service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "fresh Jules task VM",
+            "task VM restored from a repository environment snapshot"
+          ],
+          "note": "No task was started and Google does not expose a public backend build identity for the rolling service. The effective VM image, snapshot, model, region and session implementation remain unresolved."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 10,
+      "sourceCount": 10,
+      "unknownCount": 10,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/com.google.jules.hosted.rolling.json",
+      "mappingPath": null,
+      "lifecycleNote": "Current means the rolling hosted surface remains documented as of review; undisclosed runtime and model revisions remain unresolved."
+    },
+    {
+      "recordId": "com.openai.codex.cli.0-90-0",
+      "name": "OpenAI Codex CLI",
+      "publisher": "OpenAI",
+      "surface": {
+        "kind": "cli",
+        "name": "Codex CLI",
+        "slug": "openai-codex-cli-0-90-0",
+        "deliveryModel": "local"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "0.90.0",
+        "releaseTag": "rust-v0.90.0",
+        "sourceRevision": "b4e230f8de8f71d08f48c469443ed61a9f365af3",
+        "releasedAt": "2026-01-25T16:37:37Z",
+        "channel": "GitHub release",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "npm package",
+            "Homebrew cask",
+            "platform-specific GitHub release binary"
+          ],
+          "note": "No artifact was downloaded or installed, so the invoked package path, operating-system build, architecture, executable digest and effective runtime remain unresolved."
+        }
+      },
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 12,
+      "sourceCount": 12,
+      "unknownCount": 12,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/com.openai.codex.cli.0-90-0.json",
+      "mappingPath": null,
+      "lifecycleNote": "The publisher latest-release endpoint resolves to 0.146.0. The separate unpublished 0.146.0 record now supplies the reciprocal same-surface successor link; 0.90.0 remains superseded and is not reclassified as historical."
+    },
+    {
+      "recordId": "com.cursor.ide.foreground-agent.3-14",
+      "name": "Cursor IDE foreground Agent",
+      "publisher": "Anysphere, Inc.",
+      "surface": {
+        "kind": "desktop-app",
+        "name": "Cursor IDE foreground Agent",
+        "slug": "cursor-ide-foreground-agent-3-14",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "3.14",
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Cursor stable desktop download archive",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "macOS ARM64 DMG",
+            "macOS x64 DMG",
+            "macOS Universal DMG",
+            "Windows x64 system installer",
+            "Windows x64 user installer",
+            "Windows ARM64 system installer",
+            "Windows ARM64 user installer",
+            "Linux DEB ARM64",
+            "Linux DEB x64",
+            "Linux RPM ARM64",
+            "Linux RPM x64",
+            "Linux AppImage ARM64",
+            "Linux AppImage x64"
+          ],
+          "note": "No package was downloaded or installed. The operating system, architecture, installer type, executable digest, opaque build target, account feature flags and effective runtime remain unresolved."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 12,
+      "sourceCount": 12,
+      "unknownCount": 12,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/com.cursor.ide.foreground-agent.3-14.json",
+      "mappingPath": null,
+      "lifecycleNote": "The desktop download archive labels 3.14 latest. This lifecycle entry does not collapse the rolling service, model backend, Agent mode, or authority configuration into the exact client identity."
+    },
+    {
+      "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+      "name": "GitLab Duo Developer Flow",
+      "publisher": "GitLab, Inc.",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "GitLab Duo Developer Flow",
+        "slug": "gitlab-duo-developer-flow-18-8",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "18.8.0-ee",
+        "releaseTag": "v18.8.0-ee",
+        "sourceRevision": "1010a9b2b769993080ce8399fd25e77c54e1ad1c",
+        "releasedAt": null,
+        "channel": "GitLab 18.8 Enterprise Edition source release and Duo Agent Platform GA milestone",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "GitLab.com rolling service",
+            "GitLab Self-Managed 18.8 EE deployment",
+            "GitLab Dedicated rolling service",
+            "GitLab-hosted runner",
+            "user-managed runner"
+          ],
+          "note": "The exact source tag is not a complete hosted or executed runtime. No GitLab service, package, runner, Duo CLI executor, model endpoint, feature-flag state or project configuration was installed, invoked or inspected."
+        }
+      },
+      "lifecycleStatus": "historical",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 16,
+      "sourceCount": 16,
+      "unknownCount": 16,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee.json",
+      "mappingPath": null,
+      "lifecycleNote": "GitLab 18.8 remains the publisher-documented general-availability milestone. Its direct successor is the preserved 19.2.0-ee record, which is now itself superseded by 19.2.1-ee."
+    },
+    {
+      "recordId": "com.cognition.devin.hosted.rolling",
+      "name": "Devin",
+      "publisher": "Cognition AI, Inc.",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Devin hosted coding agent",
+        "slug": "cognition-devin-hosted",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Cognition-managed rolling Devin service",
+        "additionalIdentities": [
+          {
+            "id": "devin-2-2-milestone",
+            "kind": "release-line",
+            "status": "known",
+            "value": "2.2",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "devin-2-2-milestone"
+            ],
+            "sourceIds": [
+              "source-devin-2-2-launch"
+            ],
+            "claimIds": [
+              "com.cognition.devin.devin-2-2-launch"
+            ],
+            "note": "Cognition's dated release notes name Devin 2.2, but the milestone does not freeze the current rolling service."
+          },
+          {
+            "id": "api-v3-release",
+            "kind": "artifact-version",
+            "status": "known",
+            "value": "v3 API primary release",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "devin-api-v3-release"
+            ],
+            "sourceIds": [
+              "source-api-v3-release"
+            ],
+            "claimIds": [
+              "com.cognition.devin.api-v3-release"
+            ],
+            "note": "The dated v3 API release identifies an API generation, not the code or model revision serving a session."
+          },
+          {
+            "id": "current-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [],
+            "artifactRefs": [
+              "devin-current-hosted-service"
+            ],
+            "sourceIds": [
+              "source-rolling-service-updates-current"
+            ],
+            "claimIds": [
+              "com.cognition.devin.rolling-service-updates-current"
+            ],
+            "note": "The current release-note stream is dated but does not expose an immutable backend or service revision."
+          },
+          {
+            "id": "enterprise-cloud-deployment-revision",
+            "kind": "deployment-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "offering",
+                "alternativeId": "enterprise-cloud"
+              }
+            ],
+            "artifactRefs": [
+              "enterprise-cloud-runtime"
+            ],
+            "sourceIds": [
+              "source-deployment-architecture-current"
+            ],
+            "claimIds": [
+              "com.cognition.devin.deployment-architecture-current"
+            ],
+            "note": "The Enterprise Cloud architecture is documented, while its deployed revision remains unresolved."
+          },
+          {
+            "id": "customer-dedicated-deployment-revision",
+            "kind": "deployment-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "offering",
+                "alternativeId": "customer-dedicated"
+              }
+            ],
+            "artifactRefs": [
+              "customer-dedicated-runtime"
+            ],
+            "sourceIds": [
+              "source-deployment-architecture-current"
+            ],
+            "claimIds": [
+              "com.cognition.devin.deployment-architecture-current"
+            ],
+            "note": "The Customer Dedicated architecture is documented, while its tenant deployment revision remains unresolved."
+          },
+          {
+            "id": "model-backend-revision",
+            "kind": "runtime-build",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-backend",
+                "alternativeId": "cognition-compound-system"
+              }
+            ],
+            "artifactRefs": [
+              "devin-model-backend"
+            ],
+            "sourceIds": [
+              "source-compound-system-current"
+            ],
+            "claimIds": [
+              "com.cognition.devin.compound-system-current"
+            ],
+            "note": "Cognition identifies a managed compound system but not the exact model, checkpoint, routing or inference revision for this record."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Enterprise Cloud Cognition-hosted Devbox",
+            "Customer Dedicated single-tenant Devbox",
+            "Organization-default or inherited platform",
+            "Configured built-in platform",
+            "Configured outpost pool"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "enterprise-cloud-devbox",
+              "label": "Enterprise Cloud Cognition-hosted Devbox",
+              "kind": "service",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "enterprise-cloud-runtime"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "offering",
+                  "alternativeId": "enterprise-cloud"
+                }
+              ],
+              "claimIds": [
+                "com.cognition.devin.deployment-architecture-current"
+              ],
+              "note": "The hosting model is known; the service image and deployed revision are not."
+            },
+            {
+              "id": "customer-dedicated-devbox",
+              "label": "Customer Dedicated single-tenant Devbox",
+              "kind": "service",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "customer-dedicated-runtime"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "offering",
+                  "alternativeId": "customer-dedicated"
+                }
+              ],
+              "claimIds": [
+                "com.cognition.devin.deployment-architecture-current"
+              ],
+              "note": "The tenant-isolated deployment model is known; its exact tenant build is not."
+            },
+            {
+              "id": "organization-default-platform",
+              "label": "Organization-default or inherited platform",
+              "kind": "environment",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "devin-session-platform"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "session-placement",
+                  "alternativeId": "organization-default-or-inherit"
+                }
+              ],
+              "claimIds": [
+                "com.cognition.devin.session-configuration-current"
+              ],
+              "note": "The selection rule is documented, but the selected platform or pool is unknown."
+            },
+            {
+              "id": "configured-built-in-platform",
+              "label": "Configured built-in platform",
+              "kind": "environment",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "devin-session-platform"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "session-placement",
+                  "alternativeId": "explicit-built-in-platform"
+                }
+              ],
+              "claimIds": [
+                "com.cognition.devin.session-configuration-current"
+              ],
+              "note": "No built-in platform label or image identity was selected for this public-source record."
+            },
+            {
+              "id": "configured-outpost-pool",
+              "label": "Configured outpost pool",
+              "kind": "environment",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "devin-session-platform"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "session-placement",
+                  "alternativeId": "explicit-outpost-pool"
+                }
+              ],
+              "claimIds": [
+                "com.cognition.devin.session-configuration-current"
+              ],
+              "note": "Publisher documentation allows a named outpost pool, but no pool, host or build was identified."
+            }
+          ],
+          "note": "No Devin service, session, Devbox, tenant deployment, platform, outpost, model or integration was invoked or inspected."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 13,
+      "sourceCount": 13,
+      "unknownCount": 14,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/com.cognition.devin.hosted.rolling.json",
+      "mappingPath": null,
+      "lifecycleNote": "Current means the Cognition-managed hosted surface remains documented as of review; it does not import claims from Devin Desktop, Cascade, or Devin Local."
+    },
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-117",
+      "name": "Claude Code CLI",
+      "publisher": "Anthropic PBC",
+      "surface": {
+        "kind": "cli",
+        "name": "Claude Code CLI",
+        "slug": "anthropic-claude-code-cli-2-1-117",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "2.1.117",
+        "releaseTag": "v2.1.117",
+        "sourceRevision": "2fa67717b8046c253cfa55fd84002e3501f1eca6",
+        "releasedAt": "2026-04-22T00:04:00Z",
+        "channel": "Claude Code GitHub release",
+        "additionalIdentities": [
+          {
+            "id": "exact-client-release",
+            "kind": "artifact-version",
+            "status": "known",
+            "value": "Claude Code CLI 2.1.117",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "claude-code-release-2-1-117",
+              "claude-code-source-revision-2-1-117"
+            ],
+            "sourceIds": [
+              "source-release-identity-2-1-117"
+            ],
+            "claimIds": [
+              "com.anthropic.claude-code.cli.release-identity-2-1-117"
+            ],
+            "note": "The exact publisher release, tag and linked commit are known; downloaded binary digests are not."
+          },
+          {
+            "id": "current-documentation-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [],
+            "artifactRefs": [
+              "claude-code-current-service"
+            ],
+            "sourceIds": [
+              "source-cli-surface-current",
+              "source-permissions-current",
+              "source-sandbox-current",
+              "source-model-routing-current"
+            ],
+            "claimIds": [
+              "com.anthropic.claude-code.cli.cli-surface-current",
+              "com.anthropic.claude-code.cli.permissions-current",
+              "com.anthropic.claude-code.cli.sandbox-current",
+              "com.anthropic.claude-code.cli.model-routing-current"
+            ],
+            "note": "Rolling documentation describes later Claude Code behavior and cannot be treated as a frozen property of 2.1.117."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Native macOS or Linux build",
+            "Windows build",
+            "npm-installed build"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "native-macos-linux",
+              "label": "Native macOS or Linux build",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "claude-code-release-2-1-117"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "client-build",
+                  "alternativeId": "native-macos-linux"
+                }
+              ],
+              "claimIds": [
+                "com.anthropic.claude-code.cli.native-search-tools-2-1-117"
+              ],
+              "note": "The release note distinguishes this build family, but no asset or digest was captured."
+            },
+            {
+              "id": "windows-build",
+              "label": "Windows build",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "claude-code-release-2-1-117"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "client-build",
+                  "alternativeId": "windows"
+                }
+              ],
+              "claimIds": [
+                "com.anthropic.claude-code.cli.native-search-tools-2-1-117"
+              ],
+              "note": "The exact Windows release asset and digest are unresolved."
+            },
+            {
+              "id": "npm-installed-build",
+              "label": "npm-installed build",
+              "kind": "package",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "claude-code-release-2-1-117"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "client-build",
+                  "alternativeId": "npm"
+                }
+              ],
+              "claimIds": [
+                "com.anthropic.claude-code.cli.native-search-tools-2-1-117"
+              ],
+              "note": "The exact npm package artifact and digest are unresolved."
+            }
+          ],
+          "note": "No release asset was downloaded and no installed Claude Code runtime was inspected."
+        }
+      },
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 8,
+      "sourceCount": 8,
+      "unknownCount": 8,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/com.anthropic.claude-code.cli.2-1-117.json",
+      "mappingPath": null,
+      "lifecycleNote": "The publisher latest-release endpoint resolves to v2.1.220. No superseding catalog record exists yet, so the direct record link remains null rather than naming an uncreated fixture. The additive research-preview lifecycle supplies the reciprocal current-record link without changing the accepted record."
+    },
+    {
+      "recordId": "dev.zed.agent.native.1-13-1",
+      "name": "Zed Agent",
+      "publisher": "Zed Industries, Inc.",
+      "surface": {
+        "kind": "desktop-app",
+        "name": "native Zed Agent in Zed",
+        "slug": "zed-agent-1-13-1",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.13.1",
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": "2026-07-29T00:00:00Z",
+        "channel": "Zed stable release",
+        "additionalIdentities": [
+          {
+            "id": "zed-stable-1-13-1",
+            "kind": "artifact-version",
+            "status": "known",
+            "value": "Zed 1.13.1 stable",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "zed-stable-1-13-1"
+            ],
+            "sourceIds": [
+              "source-release-identity-1-13-1"
+            ],
+            "claimIds": [
+              "dev.zed.agent.release-identity-1-13-1"
+            ],
+            "note": "The publisher stable page dates the client version; platform package digests and source revision are unresolved."
+          },
+          {
+            "id": "zed-model-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "zed-hosted"
+              }
+            ],
+            "artifactRefs": [
+              "zed-model-service"
+            ],
+            "sourceIds": [
+              "source-model-privacy-current"
+            ],
+            "claimIds": [
+              "dev.zed.agent.model-privacy-current"
+            ],
+            "note": "The hosted request path is documented, but the serving revision, provider routing and selected model are unresolved."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "macOS Zed 1.13.1",
+            "Windows Zed 1.13.1",
+            "Linux Zed 1.13.1"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "macos-zed-1-13-1",
+              "label": "macOS Zed 1.13.1",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "zed-stable-1-13-1"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "client-platform",
+                  "alternativeId": "macos"
+                }
+              ],
+              "claimIds": [
+                "dev.zed.agent.release-identity-1-13-1"
+              ],
+              "note": "The stable page names macOS availability but no package digest was captured."
+            },
+            {
+              "id": "windows-zed-1-13-1",
+              "label": "Windows Zed 1.13.1",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "zed-stable-1-13-1"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "client-platform",
+                  "alternativeId": "windows"
+                }
+              ],
+              "claimIds": [
+                "dev.zed.agent.release-identity-1-13-1"
+              ],
+              "note": "The stable page names Windows availability but no package digest was captured."
+            },
+            {
+              "id": "linux-zed-1-13-1",
+              "label": "Linux Zed 1.13.1",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "zed-stable-1-13-1"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "client-platform",
+                  "alternativeId": "linux"
+                }
+              ],
+              "claimIds": [
+                "dev.zed.agent.release-identity-1-13-1"
+              ],
+              "note": "The stable page names Linux availability but no package digest was captured."
+            }
+          ],
+          "note": "No Zed build was downloaded, installed, hashed or run."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 8,
+      "sourceCount": 8,
+      "unknownCount": 8,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/dev.zed.agent.native.1-13-1.json",
+      "mappingPath": null,
+      "lifecycleNote": "Zed's official stable page lists 1.13.1 dated 2026-07-29. The accepted source-only dossier, generated record and taxonomy mapping were losslessly revalidated; installed package and hosted model identity remain unresolved."
+    },
+    {
+      "recordId": "com.replit.agent.hosted.agent-4",
+      "name": "Replit Agent",
+      "publisher": "Replit",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Replit Agent hosted workspace",
+        "slug": "replit-agent-4-hosted",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Replit-managed rolling Agent service after the Agent 4 milestone",
+        "additionalIdentities": [
+          {
+            "id": "agent-4-generation",
+            "kind": "release-line",
+            "status": "known",
+            "value": "Agent 4",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "agent-4-generation"
+            ],
+            "sourceIds": [
+              "source-agent-4-launch"
+            ],
+            "claimIds": [
+              "com.replit.agent.hosted.agent-4-launch"
+            ],
+            "note": "Replit's dated 2026-03-13 changelog names Agent 4, but the label is a hosted service generation rather than an immutable backend build."
+          },
+          {
+            "id": "current-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [],
+            "artifactRefs": [
+              "replit-current-agent-service"
+            ],
+            "sourceIds": [
+              "source-agent-modes-current"
+            ],
+            "claimIds": [
+              "com.replit.agent.hosted.agent-modes-current"
+            ],
+            "note": "Current documentation describes the rolling service controls but does not expose an immutable serving revision."
+          },
+          {
+            "id": "current-model-routing",
+            "kind": "runtime-build",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [],
+            "artifactRefs": [
+              "replit-agent-model-backend"
+            ],
+            "sourceIds": [
+              "source-model-selection-current"
+            ],
+            "claimIds": [
+              "com.replit.agent.hosted.model-selection-current"
+            ],
+            "note": "The live model catalog is account- and rollout-dependent and does not identify the model, checkpoint, endpoint or inference revision used by a particular task."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Lite mode service path",
+            "Economy mode service path",
+            "Power mode service path"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "lite-mode-service",
+              "label": "Lite mode service path",
+              "kind": "service",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "replit-current-agent-service",
+                "replit-agent-model-backend"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "agent-mode",
+                  "alternativeId": "lite"
+                }
+              ],
+              "claimIds": [
+                "com.replit.agent.hosted.agent-modes-current"
+              ],
+              "note": "The named mode is documented; the serving and model revisions are not."
+            },
+            {
+              "id": "economy-mode-service",
+              "label": "Economy mode service path",
+              "kind": "service",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "replit-current-agent-service",
+                "replit-agent-model-backend"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "agent-mode",
+                  "alternativeId": "economy"
+                }
+              ],
+              "claimIds": [
+                "com.replit.agent.hosted.agent-modes-current"
+              ],
+              "note": "The named mode is documented; the serving and model revisions are not."
+            },
+            {
+              "id": "power-mode-service",
+              "label": "Power mode service path",
+              "kind": "service",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "replit-current-agent-service",
+                "replit-agent-model-backend"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "agent-mode",
+                  "alternativeId": "power"
+                }
+              ],
+              "claimIds": [
+                "com.replit.agent.hosted.agent-modes-current"
+              ],
+              "note": "The named mode is documented; the serving and model revisions are not."
+            }
+          ],
+          "note": "No Replit account, project, workspace, task, browser test, deployment or model route was opened or run."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 8,
+      "sourceCount": 8,
+      "unknownCount": 8,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/records/com.replit.agent.hosted.agent-4.json",
+      "mappingPath": null,
+      "lifecycleNote": "Current is scoped to the Agent 4 generation anchor and rolling Replit-managed service as of review; no Agent 5 publisher identity was identified in the bounded audit."
+    },
+    {
+      "recordId": "org.aider-ai.aider.cli.0-86-0",
+      "name": "Aider CLI",
+      "publisher": "Aider-AI project",
+      "surface": {
+        "kind": "cli",
+        "name": "Aider CLI",
+        "slug": "aider-cli-0-86-0",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "0.86.0",
+        "releaseTag": "v0.86.0",
+        "sourceRevision": "a4be6ccd87ebaa59b361f3f028d116ce1761b626",
+        "releasedAt": "2025-08-09T17:42:00Z",
+        "channel": "Aider GitHub release",
+        "additionalIdentities": [
+          {
+            "id": "exact-cli-release",
+            "kind": "artifact-version",
+            "status": "known",
+            "value": "Aider CLI 0.86.0",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "aider-release-0-86-0",
+              "aider-source-revision-0-86-0"
+            ],
+            "sourceIds": [
+              "source-release-identity-0-86-0"
+            ],
+            "claimIds": [
+              "org.aider-ai.aider.cli.release-identity-0-86-0"
+            ],
+            "note": "The publisher release tag and source revision are known; no distribution artifact digest was captured."
+          },
+          {
+            "id": "configured-model-service",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "configured-provider"
+              }
+            ],
+            "artifactRefs": [
+              "configured-model-service"
+            ],
+            "sourceIds": [
+              "source-model-provider-current"
+            ],
+            "claimIds": [
+              "org.aider-ai.aider.cli.model-provider-current"
+            ],
+            "note": "The client can route to many configured providers or local models; no provider, endpoint, model revision or inference configuration is selected here."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "aider-chat Python package",
+            "source checkout"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "python-package",
+              "label": "aider-chat Python package",
+              "kind": "package",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "aider-python-package-0-86-0"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "python-package"
+                }
+              ],
+              "claimIds": [
+                "org.aider-ai.aider.cli.release-identity-0-86-0"
+              ],
+              "note": "Version 0.86.0 is identified, but no wheel, source distribution, digest, platform or dependency resolution was inspected."
+            },
+            {
+              "id": "source-checkout",
+              "label": "Source checkout at the release revision",
+              "kind": "package",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "aider-source-revision-0-86-0"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "source-checkout"
+                }
+              ],
+              "claimIds": [
+                "org.aider-ai.aider.cli.release-identity-0-86-0"
+              ],
+              "note": "The source revision is exact, but no environment built from it was inspected."
+            }
+          ],
+          "note": "No Aider artifact was downloaded or installed, and no effective runtime was observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 9,
+      "sourceCount": 9,
+      "unknownCount": 8,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/org.aider-ai.aider.cli.0-86-0.json",
+      "mappingPath": null,
+      "lifecycleNote": "The publisher latest-release endpoint still resolves to v0.86.0; release age alone is not treated as supersession."
+    },
+    {
+      "recordId": "com.amazon.kiro.ide.1-0-242",
+      "name": "Kiro IDE",
+      "publisher": "Amazon Web Services",
+      "surface": {
+        "kind": "desktop-app",
+        "name": "Kiro IDE",
+        "slug": "aws-kiro-ide-1-0-242",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.0.242",
+        "releaseTag": "1.0.242",
+        "sourceRevision": null,
+        "releasedAt": "2026-07-28T00:00:00Z",
+        "channel": "Kiro IDE desktop release",
+        "additionalIdentities": [
+          {
+            "id": "exact-desktop-release",
+            "kind": "artifact-version",
+            "status": "known",
+            "value": "Kiro IDE 1.0.242",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "kiro-ide-release-1-0-242"
+            ],
+            "sourceIds": [
+              "source-release-identity-1-0-242"
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-242"
+            ],
+            "note": "The dated desktop release is known; no platform installer or digest was captured."
+          },
+          {
+            "id": "code-oss-base",
+            "kind": "runtime-build",
+            "status": "known",
+            "value": "Code OSS 1.108.2",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "kiro-ide-release-1-0-242"
+            ],
+            "sourceIds": [
+              "source-code-oss-base-1-0-242"
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.code-oss-base-1-0-242"
+            ],
+            "note": "The 1.0.242 release note names the editor base; it does not expose a source revision or platform digest."
+          },
+          {
+            "id": "rolling-kiro-service",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "auto-route"
+              }
+            ],
+            "artifactRefs": [
+              "kiro-hosted-service"
+            ],
+            "sourceIds": [
+              "source-model-selection-current"
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.model-selection-current"
+            ],
+            "note": "Model inventory and automatic routing are rolling and are not frozen by desktop release 1.0.242."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "macOS Apple Silicon",
+            "macOS Intel",
+            "Windows x64",
+            "Linux Debian/Ubuntu",
+            "Linux Universal"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "macos-apple-silicon",
+              "label": "macOS Apple Silicon",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "kiro-platform-installers-1-0-242"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "platform-build",
+                  "alternativeId": "macos-apple-silicon"
+                }
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-242"
+              ],
+              "note": "No installer or digest captured."
+            },
+            {
+              "id": "macos-intel",
+              "label": "macOS Intel",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "kiro-platform-installers-1-0-242"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "platform-build",
+                  "alternativeId": "macos-intel"
+                }
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-242"
+              ],
+              "note": "No installer or digest captured."
+            },
+            {
+              "id": "windows-x64",
+              "label": "Windows x64",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "kiro-platform-installers-1-0-242"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "platform-build",
+                  "alternativeId": "windows-x64"
+                }
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-242"
+              ],
+              "note": "No installer or digest captured."
+            },
+            {
+              "id": "linux-debian",
+              "label": "Linux Debian or Ubuntu",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "kiro-platform-installers-1-0-242"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "platform-build",
+                  "alternativeId": "linux-debian"
+                }
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-242"
+              ],
+              "note": "No installer or digest captured."
+            },
+            {
+              "id": "linux-universal",
+              "label": "Linux Universal",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "kiro-platform-installers-1-0-242"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "platform-build",
+                  "alternativeId": "linux-universal"
+                }
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-242"
+              ],
+              "note": "No installer or digest captured."
+            }
+          ],
+          "note": "No Kiro installer was downloaded or inspected."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 9,
+      "sourceCount": 9,
+      "unknownCount": 10,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/com.amazon.kiro.ide.1-0-242.json",
+      "mappingPath": null,
+      "lifecycleNote": "The publisher IDE changelog lists 1.0.242 as the latest 1.0.x patch on the reviewed date."
+    },
+    {
+      "recordId": "com.lovable.agent.hosted.rolling",
+      "name": "Lovable Build mode",
+      "publisher": "Lovable",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Lovable Build mode",
+        "slug": "lovable-agent-mode-hosted",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Lovable hosted service",
+        "additionalIdentities": [
+          {
+            "id": "agent-mode-default-milestone",
+            "kind": "release-line",
+            "status": "known",
+            "value": "Agent mode default milestone — 2025-08-11",
+            "scopeBindings": [
+              {
+                "axisId": "interaction-mode",
+                "alternativeId": "build-mode"
+              }
+            ],
+            "artifactRefs": [
+              "agent-mode-default-milestone-2025-08-11"
+            ],
+            "sourceIds": [
+              "source-agent-default-milestone-2025-08-11"
+            ],
+            "claimIds": [
+              "com.lovable.agent.hosted.agent-default-milestone-2025-08-11"
+            ],
+            "note": "The dated changelog milestone preserves the former Agent mode name for the execution surface now documented as Build mode; it does not identify an immutable current runtime."
+          },
+          {
+            "id": "build-mode-current-name",
+            "kind": "other",
+            "status": "known",
+            "value": "Build mode (previously Agent mode)",
+            "scopeBindings": [
+              {
+                "axisId": "interaction-mode",
+                "alternativeId": "build-mode"
+              }
+            ],
+            "artifactRefs": [
+              "lovable-agent-rolling-service"
+            ],
+            "sourceIds": [
+              "source-agent-plan-modes-current"
+            ],
+            "claimIds": [
+              "com.lovable.agent.hosted.agent-plan-modes-current"
+            ],
+            "note": "Current publisher documentation supplies the canonical Build mode name and explicitly identifies Agent mode as its former name; the rename does not freeze a service revision."
+          },
+          {
+            "id": "model-service-milestone",
+            "kind": "service-revision",
+            "status": "known",
+            "value": "Opus 4.6 incorporated — 2026-04-24 milestone",
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "publisher-managed-route"
+              }
+            ],
+            "artifactRefs": [
+              "lovable-service-milestone-2026-04-24"
+            ],
+            "sourceIds": [
+              "source-model-service-milestone-2026-04-24"
+            ],
+            "claimIds": [
+              "com.lovable.agent.hosted.model-service-milestone-2026-04-24"
+            ],
+            "note": "The dated changelog names a model incorporated into the Agent; exact routing, provider revision and continued current applicability remain unresolved."
+          },
+          {
+            "id": "current-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [],
+            "artifactRefs": [
+              "lovable-agent-rolling-service"
+            ],
+            "sourceIds": [
+              "source-agent-plan-modes-current",
+              "source-agent-file-execution-current"
+            ],
+            "claimIds": [
+              "com.lovable.agent.hosted.agent-plan-modes-current",
+              "com.lovable.agent.hosted.agent-file-execution-current"
+            ],
+            "note": "The effective hosted service, prompt, tool and model revisions are not publicly pinned."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Lovable project without Cloud",
+            "Lovable Cloud project"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "project-without-cloud",
+              "label": "Lovable project without Cloud",
+              "kind": "environment",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "lovable-agent-rolling-service"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "cloud-state",
+                  "alternativeId": "cloud-disabled"
+                }
+              ],
+              "claimIds": [
+                "com.lovable.agent.hosted.cloud-tool-permissions-current"
+              ],
+              "note": "The project backend state is unknown."
+            },
+            {
+              "id": "lovable-cloud-project",
+              "label": "Lovable Cloud project",
+              "kind": "environment",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "lovable-cloud-runtime"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "cloud-state",
+                  "alternativeId": "cloud-enabled"
+                }
+              ],
+              "claimIds": [
+                "com.lovable.agent.hosted.cloud-tool-permissions-current"
+              ],
+              "note": "Cloud enablement, region and tool policy are unknown."
+            }
+          ],
+          "note": "No Lovable project, account, region or service runtime was inspected."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 11,
+      "sourceCount": 11,
+      "unknownCount": 12,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/com.lovable.agent.hosted.rolling.json",
+      "mappingPath": null,
+      "lifecycleNote": "Current publisher documentation uses Build mode as the canonical name and Agent mode as its former name; the sourced rename does not create a second surface."
+    },
+    {
+      "recordId": "com.anomaly.opencode.cli.1-18-11",
+      "name": "OpenCode CLI",
+      "publisher": "Anomaly Innovations, Inc.",
+      "surface": {
+        "kind": "cli",
+        "name": "OpenCode CLI/TUI",
+        "slug": "opencode-cli-1-18-11",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.18.11",
+        "releaseTag": "v1.18.11",
+        "sourceRevision": "012c2f57f976489d88bd4598a056b4bdcdd428ee",
+        "releasedAt": "2026-08-01T11:44:00Z",
+        "channel": "OpenCode GitHub release",
+        "additionalIdentities": [
+          {
+            "id": "exact-cli-source-release",
+            "kind": "artifact-version",
+            "status": "known",
+            "value": "OpenCode CLI v1.18.11",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "opencode-release-1-18-11",
+              "opencode-source-revision-1-18-11"
+            ],
+            "sourceIds": [
+              "source-release-identity-1-18-11"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.release-identity-1-18-11"
+            ],
+            "note": "The immutable release tag and linked source revision are exact; no distribution artifact was captured or hashed."
+          },
+          {
+            "id": "opencode-zen-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "opencode-zen"
+              }
+            ],
+            "artifactRefs": [
+              "opencode-zen-service"
+            ],
+            "sourceIds": [
+              "source-model-provider-route-current",
+              "source-zen-data-policy-current"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.model-provider-route-current",
+              "com.anomaly.opencode.cli.zen-data-policy-current"
+            ],
+            "note": "Zen is a separately changing hosted gateway and model catalog; no service revision, endpoint, account, region or selected model was fixed."
+          },
+          {
+            "id": "external-provider-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "external-hosted-provider"
+              }
+            ],
+            "artifactRefs": [
+              "external-provider-service"
+            ],
+            "sourceIds": [
+              "source-model-provider-route-current"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.model-provider-route-current"
+            ],
+            "note": "External provider identity, endpoint, account and backend service revision are unresolved and must not inherit Zen policy."
+          },
+          {
+            "id": "selected-model-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-revision",
+                "alternativeId": "selected-model"
+              }
+            ],
+            "artifactRefs": [
+              "configured-model-revision"
+            ],
+            "sourceIds": [
+              "source-model-provider-route-current"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.model-provider-route-current"
+            ],
+            "note": "No exact model identifier, alias resolution, snapshot, fallback or inference configuration was identified."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Install-script resolved binary",
+            "npm-compatible package",
+            "Homebrew package",
+            "Publisher release binary",
+            "Container image"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "install-script",
+              "label": "Install-script resolved binary",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-release-binary-1-18-11"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "install-script"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The current installation script is documented, but it was not invoked and its resolved artifact, version, platform and digest are unknown."
+            },
+            {
+              "id": "npm-package",
+              "label": "npm-compatible package",
+              "kind": "package",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-npm-package-1-18-11"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "npm-package"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The package channel is documented, but no package or dependency graph was downloaded and its correspondence to the tagged source was not verified."
+            },
+            {
+              "id": "homebrew-package",
+              "label": "Homebrew package",
+              "kind": "package",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-homebrew-package-1-18-11"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "homebrew-package"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The Homebrew path is documented, but no formula, bottle, dependency set or digest was inspected."
+            },
+            {
+              "id": "release-binary",
+              "label": "Publisher release binary",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-release-binary-1-18-11"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "release-binary"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.release-identity-1-18-11",
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The exact release page lists assets, but no platform binary was selected, downloaded or hashed."
+            },
+            {
+              "id": "container-image",
+              "label": "Container image",
+              "kind": "environment",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-container-image"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "container-image"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The container path is documented, but no image reference, platform manifest or digest was captured."
+            }
+          ],
+          "note": "No OpenCode artifact was downloaded, installed, executed or observed; the exact tag does not establish an installed runtime."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 12,
+      "sourceCount": 12,
+      "unknownCount": 13,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/expansion-batch-4/records/com.anomaly.opencode.cli.1-18-11.json",
+      "mappingPath": null,
+      "lifecycleNote": "The publisher latest-release endpoint resolves to immutable v1.18.11. Desktop release-note content is not transferred to this CLI/TUI surface."
+    },
+    {
+      "recordId": "com.cognition.devin-desktop.cascade.3-6-27",
+      "name": "Cascade in Devin Desktop",
+      "publisher": "Cognition AI, Inc.",
+      "surface": {
+        "kind": "desktop-app",
+        "name": "Cascade in Devin Desktop",
+        "slug": "cascade-devin-desktop-3-6-27",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "3.6.27",
+        "releaseTag": "v3.6.27",
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Devin Desktop stable release",
+        "additionalIdentities": [
+          {
+            "id": "desktop-build-3-6-27",
+            "kind": "runtime-build",
+            "status": "known",
+            "value": "Devin Desktop v3.6.27 build token 0becb483ee8498d49deadf6aefe8c24f58b8007e",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "desktop-release-3-6-27",
+              "desktop-platform-artifact-family-3-6-27"
+            ],
+            "sourceIds": [
+              "source-release-identity-3-6-27"
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+            ],
+            "note": "The official release page exposes a platform artifact family with this shared path token; no artifact was downloaded and the token is not treated as a source revision or cryptographic digest."
+          },
+          {
+            "id": "devin-desktop-release-line-name",
+            "kind": "release-line",
+            "status": "known",
+            "value": "Windsurf renamed Devin Desktop from v3.0.12",
+            "scopeBindings": [
+              {
+                "axisId": "agent-surface",
+                "alternativeId": "cascade"
+              }
+            ],
+            "artifactRefs": [
+              "desktop-release-line"
+            ],
+            "sourceIds": [
+              "source-windsurf-devin-transition-3-0-12"
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.windsurf-devin-transition-3-0-12"
+            ],
+            "note": "Publisher-sourced former product name and dated release-line transition; it does not identify or rename hosted Devin, Devin Local or ACP agents."
+          },
+          {
+            "id": "cascade-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "agent-surface",
+                "alternativeId": "cascade"
+              }
+            ],
+            "artifactRefs": [
+              "cascade-service"
+            ],
+            "sourceIds": [
+              "source-surface-current",
+              "source-transition-plan-current"
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.surface-current",
+              "com.cognition.devin-desktop.cascade.transition-plan-current"
+            ],
+            "note": "No Cascade service revision or post-July transition resolution was published in the captured sources."
+          },
+          {
+            "id": "selected-model-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "manual-selection"
+              }
+            ],
+            "artifactRefs": [
+              "cascade-model-backend"
+            ],
+            "sourceIds": [
+              "source-model-routing-current"
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.model-routing-current"
+            ],
+            "note": "No exact model identifier, alias resolution, provider revision or inference configuration was fixed."
+          },
+          {
+            "id": "adaptive-underlying-model",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "adaptive"
+              }
+            ],
+            "artifactRefs": [
+              "adaptive-router",
+              "cascade-model-backend"
+            ],
+            "sourceIds": [
+              "source-model-routing-current"
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.model-routing-current"
+            ],
+            "note": "Adaptive can route each request to a different underlying model; neither router revision nor per-request model identity is known."
+          },
+          {
+            "id": "cascade-transition-status",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "agent-surface",
+                "alternativeId": "cascade"
+              }
+            ],
+            "artifactRefs": [
+              "cascade-service"
+            ],
+            "sourceIds": [
+              "source-transition-plan-current",
+              "source-surface-current"
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.transition-plan-current",
+              "com.cognition.devin-desktop.cascade.surface-current"
+            ],
+            "note": "The FAQ planned existing Cascade availability through July, while current post-July docs still list Cascade; no correction or service milestone resolves the relationship."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "macOS arm64 artifact",
+            "macOS x64 artifact",
+            "Windows arm64 artifact",
+            "Windows x64 artifact",
+            "Linux x64 artifact"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "macos-arm64",
+              "label": "macOS arm64 artifact",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "desktop-platform-artifact-family-3-6-27"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-platform",
+                  "alternativeId": "macos-arm64"
+                }
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+              ],
+              "note": "The exact release link is documented; no package, signature or digest was captured."
+            },
+            {
+              "id": "macos-x64",
+              "label": "macOS x64 artifact",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "desktop-platform-artifact-family-3-6-27"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-platform",
+                  "alternativeId": "macos-x64"
+                }
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+              ],
+              "note": "The exact release link is documented; no package, signature or digest was captured."
+            },
+            {
+              "id": "windows-arm64",
+              "label": "Windows arm64 artifact",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "desktop-platform-artifact-family-3-6-27"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-platform",
+                  "alternativeId": "windows-arm64"
+                }
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+              ],
+              "note": "The exact release link is documented; no package, signature or digest was captured."
+            },
+            {
+              "id": "windows-x64",
+              "label": "Windows x64 artifact",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "desktop-platform-artifact-family-3-6-27"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-platform",
+                  "alternativeId": "windows-x64"
+                }
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+              ],
+              "note": "The exact release link is documented; no package, signature or digest was captured."
+            },
+            {
+              "id": "linux-x64",
+              "label": "Linux x64 artifact",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "desktop-platform-artifact-family-3-6-27"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-platform",
+                  "alternativeId": "linux-x64"
+                }
+              ],
+              "claimIds": [
+                "com.cognition.devin-desktop.cascade.release-identity-3-6-27"
+              ],
+              "note": "The exact release link is documented; no package, signature or digest was captured."
+            }
+          ],
+          "note": "No Devin Desktop package was downloaded, installed, executed or observed; the official artifact family does not identify a particular installed runtime."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 14,
+      "sourceCount": 14,
+      "unknownCount": 14,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/expansion-batch-4/records/com.cognition.devin-desktop.cascade.3-6-27.json",
+      "mappingPath": null,
+      "lifecycleNote": "The publisher lists Desktop v3.6.27 first and continues to document Cascade. Exact client identity remains separate from rolling service and model backend identity and from Devin Local or hosted Devin."
+    },
+    {
+      "recordId": "com.openai.codex.cli.0-146-0",
+      "name": "OpenAI Codex CLI",
+      "publisher": "OpenAI",
+      "surface": {
+        "kind": "cli",
+        "name": "Codex CLI",
+        "slug": "openai-codex-cli-0-146-0",
+        "deliveryModel": "local"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "0.146.0",
+        "releaseTag": "rust-v0.146.0",
+        "sourceRevision": "e363b08c9175ac1cbe5893615dd2cb9ddf95043b",
+        "releasedAt": "2026-07-29T01:42:51Z",
+        "channel": "GitHub release",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "npm package",
+            "Homebrew cask",
+            "platform-specific release binary"
+          ],
+          "note": "No artifact was downloaded or installed, so the invoked package path, platform build, architecture, executable digest and effective runtime remain unresolved."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 15,
+      "sourceCount": 15,
+      "unknownCount": 15,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.openai.codex.cli.0-146-0.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/openai-codex-cli-0-146-0-mapping.json",
+      "lifecycleNote": "The official latest-release endpoint resolves to the exact 0.146.0 record. Currentness is scoped to the Codex CLI stable release surface and does not identify the installed runtime, model, authentication path, configuration, app-server host or any other Codex surface."
+    },
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-220",
+      "name": "Claude Code CLI",
+      "publisher": "Anthropic PBC",
+      "surface": {
+        "kind": "cli",
+        "name": "Claude Code CLI",
+        "slug": "anthropic-claude-code-cli-2-1-220",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "2.1.220",
+        "releaseTag": "v2.1.220",
+        "sourceRevision": "7ef6eec9d9ba84ea6f233f26c45f1df5c5991843",
+        "releasedAt": "2026-07-25T01:35:55Z",
+        "channel": "Claude Code GitHub stable release",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "darwin-arm64",
+            "darwin-x64",
+            "linux-arm64-musl",
+            "linux-arm64",
+            "linux-x64-musl",
+            "linux-x64",
+            "win32-arm64",
+            "win32-x64"
+          ],
+          "note": "Official release assets and publisher-supplied digests are known, but no asset was downloaded, installed, hashed independently or run."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 9,
+      "sourceCount": 9,
+      "unknownCount": 9,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.anthropic.claude-code.cli.2-1-220.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/anthropic-claude-code-cli-2-1-220-mapping.json",
+      "lifecycleNote": "The publisher latest-release endpoint resolves to v2.1.220. Exact client identity remains separate from rolling authentication, permission, sandbox, model, tool, MCP and extension documentation."
+    },
+    {
+      "recordId": "com.gitlab.duo.developer-flow.19-2",
+      "name": "GitLab Duo Developer Flow",
+      "publisher": "GitLab, Inc.",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "GitLab Duo Developer Flow",
+        "slug": "gitlab-duo-developer-flow-19-2",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "19.2.0-ee",
+        "releaseTag": "v19.2.0-ee",
+        "sourceRevision": "68485a1eb627c9a992f266263157327649822db3",
+        "releasedAt": "2026-07-15T20:11:26Z",
+        "channel": "GitLab 19.2 Enterprise Edition release line and rolling Agent Platform service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "GitLab.com",
+            "GitLab Self-Managed 19.2 EE",
+            "GitLab Dedicated",
+            "GitLab-hosted runner",
+            "user-managed runner"
+          ],
+          "note": "The exact source tag does not identify the rolling service, runner image, agent service revision, model endpoint or project configuration used by a session."
+        }
+      },
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 10,
+      "sourceCount": 10,
+      "unknownCount": 9,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.gitlab.duo.developer-flow.19-2.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/gitlab-duo-developer-flow-19-2-mapping.json",
+      "lifecycleNote": "GitLab 19.2.1-ee is the current protected patch tag for the 19.2 release line. The accepted 19.2.0-ee record remains unchanged and keeps its reciprocal historical link to the 18.8 GA record."
+    },
+    {
+      "recordId": "com.zed.agent.native.stable.1-12-1",
+      "name": "Zed Agent",
+      "publisher": "Zed Industries, Inc.",
+      "surface": {
+        "kind": "desktop-app",
+        "name": "Native Zed Agent",
+        "slug": "zed-agent-stable-1-12-1",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.12.1",
+        "releaseTag": "v1.12.1",
+        "sourceRevision": "2a37601c02a32b22e7700835c04b89ff75ffcd5d",
+        "releasedAt": "2026-07-27T18:30:09Z",
+        "channel": "Zed stable channel",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "macOS aarch64",
+            "macOS x86_64",
+            "Linux aarch64",
+            "Linux x86_64",
+            "Windows aarch64",
+            "Windows x86_64"
+          ],
+          "note": "Official release assets and digests are known, but no build was downloaded, installed or run."
+        }
+      },
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 11,
+      "sourceCount": 11,
+      "unknownCount": 10,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.zed.agent.native.stable.1-12-1.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/zed-agent-stable-1-12-1-mapping.json",
+      "lifecycleNote": "Zed's official stable page now lists 1.13.1. The accepted 1.12.1 stable record remains unchanged and is linked here to the accepted 1.13.1 same-surface successor."
+    },
+    {
+      "recordId": "com.cline.bot.vscode-extension.4-1-3",
+      "name": "Cline",
+      "publisher": "Cline Bot Inc.",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Cline VS Code extension",
+        "slug": "cline-vscode-extension-4-1-3",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "4.1.3",
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Visual Studio Marketplace stable listing",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Visual Studio Marketplace VSIX for VS Code extension hosts"
+          ],
+          "note": "The official listing identifies version 4.1.3, but no VSIX was downloaded, hashed, installed or run and no extension-host or platform variant was resolved."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 5,
+      "sourceCount": 5,
+      "unknownCount": 8,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.cline.bot.vscode-extension.4-1-3.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/cline-vscode-extension-4-1-3-mapping.json",
+      "lifecycleNote": "The official Marketplace listing identifies exact version 4.1.3. The installed VSIX, platform runtime, model route and effective configuration remain unresolved applicability boundaries."
+    },
+    {
+      "recordId": "com.gitlab.duo.developer-flow.19-2-1",
+      "name": "GitLab Duo Developer Flow",
+      "publisher": "GitLab, Inc.",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "GitLab Duo Developer Flow",
+        "slug": "gitlab-duo-developer-flow-19-2-1",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "19.2.1-ee",
+        "releaseTag": "v19.2.1-ee",
+        "sourceRevision": "8cb614f3c9f0242582886f260763fa45d19768ab",
+        "releasedAt": "2026-07-29T00:00:00Z",
+        "channel": "GitLab 19.2.1 Enterprise Edition patch and rolling Agent Platform service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "GitLab.com",
+            "GitLab Self-Managed 19.2.1 EE",
+            "GitLab Dedicated",
+            "GitLab-hosted runner",
+            "user-managed runner"
+          ],
+          "note": "The exact source tag does not identify the rolling service, runner image, agent service revision, model endpoint or project configuration used by a session."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-02",
+      "claimCount": 10,
+      "sourceCount": 10,
+      "unknownCount": 9,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.gitlab.duo.developer-flow.19-2-1.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/gitlab-duo-developer-flow-19-2-1-mapping.json",
+      "lifecycleNote": "The protected v19.2.1-ee tag is current for the exact patch identity. The 19.2 feature line and rolling Agent Platform service, runner, model and project configuration remain separate applicability boundaries."
+    }
+  ]
+}

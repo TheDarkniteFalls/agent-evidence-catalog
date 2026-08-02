@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.desktop-qa-approval-2-2",
+  "slug": "desktop-qa-approval-2-2",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "authority.approval", "statement": "The Devin 2.2 release note says Desktop Testing requests approval to QA a pull request and, if approved, runs a Linux desktop app with computer use and returns an edited testing recording for review." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/release-notes/overview", "title": "Recent Updates", "locator": "February 24, 2026 — Full Desktop Testing", "publishedAt": "2026-02-24T00:00:00Z", "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "Devin 2.2 milestone, 2026-02-24" },
+    "configuration": { "scope": "named", "values": ["Desktop mode enabled", "Linux desktop app", "PR QA request", "user approval", "computer use", "edited recording"] },
+    "platform": { "scope": "named", "values": ["Linux desktop app in Devin Desktop Testing"] },
+    "model": { "scope": "unresolved", "values": [] },
+    "deployment": { "scope": "unresolved", "values": [] }
+  },
+  "lifecycle": { "status": "historical", "changedAt": null, "reason": "The statement is preserved at the Devin 2.2 release-note scope and is not silently rolled forward." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["release-note-correction", "desktop-testing-change", "approval-change"] },
+  "limitations": ["This is a release-scoped publisher capability and control claim, not an observed QA run or current-service guarantee."],
+  "unknowns": ["Whether Desktop mode was enabled, approval was requested or granted, an app was run or a recording was produced is unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

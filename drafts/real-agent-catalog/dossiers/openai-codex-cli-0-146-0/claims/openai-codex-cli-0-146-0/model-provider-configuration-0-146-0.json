@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.model-provider-configuration-0-146-0",
+  "slug": "model-provider-configuration-0-146-0",
+  "subject": { "id": "com.openai.codex.cli", "name": "OpenAI Codex CLI", "publisher": "OpenAI", "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-146-0" } },
+  "claim": { "category": "configuration.model-provider", "statement": "The generated configuration schema at tag rust-v0.146.0 exposes separate model, model_provider and model_providers configuration, including provider endpoint and authentication fields; it does not identify an effective model or provider revision." },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": { "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json", "title": "Codex 0.146.0 generated configuration schema", "locator": "properties.model, model_provider, model_providers and $defs.ModelProviderInfo", "publishedAt": null, "capturedAt": "2026-08-02T01:40:08Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "0.146.0" }, "configuration": { "scope": "alternatives", "values": ["model override", "provider selection", "custom provider definition"] }, "platform": { "scope": "unspecified", "values": [] }, "model": { "scope": "alternatives", "values": ["configured model identifier", "provider-defined model route"] }, "deployment": { "scope": "named", "values": ["local Codex CLI model request configuration"] } },
+  "lifecycle": { "status": "active", "changedAt": "2026-07-29", "reason": null },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-10-31", "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "manual-review"] },
+  "limitations": ["Configuration fields establish selectable routes, not the effective runtime request path.", "A model name does not identify the provider-side model revision or endpoint deployment."],
+  "unknowns": ["The selected model, model revision, provider, endpoint revision, reasoning settings, credentials and request path are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

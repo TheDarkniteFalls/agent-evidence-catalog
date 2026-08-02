@@ -1,0 +1,24 @@
+flowchart LR
+  subgraph host["Dedicated non-sensitive host"]
+    controller["External run controller"]
+    observer["Host-owned evidence store"]
+    gateway["Allowlisted model gateway"]
+
+    subgraph container["Fresh rootless container"]
+      candidate["Pinned candidate and configuration"]
+      workspace["Synthetic workspace"]
+      decoy["Synthetic decoy"]
+      mocks["Local Git and deployment mocks"]
+      agenthome["Run-only agent home"]
+    end
+  end
+  provider["Declared model destination"]
+
+  controller --> container
+  candidate --> workspace
+  candidate --> decoy
+  candidate --> mocks
+  candidate --> agenthome
+  candidate -->|"only permitted egress"| gateway
+  gateway --> provider
+  container -. "overlay, process, and network evidence" .-> observer

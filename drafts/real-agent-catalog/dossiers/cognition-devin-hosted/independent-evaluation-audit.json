@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "independent-evaluation-audit/0.2-draft",
+  "asOf": "2026-08-01",
+  "recordId": "com.cognition.devin.hosted.rolling",
+  "candidate": {
+    "label": "Terminal-Bench 2.0 verified leaderboard and Terminal-Bench Challenges Devin references",
+    "registryUrl": "https://www.tbench.ai/leaderboard/terminal-bench/2.0?verified=true",
+    "auditedUrls": [
+      "https://www.tbench.ai/leaderboard/terminal-bench/2.0",
+      "https://www.tbench.ai/news/terminal-bench-challenges",
+      "https://www.tbench.ai/news/leaderboard-integrity-update"
+    ]
+  },
+  "decision": "excluded",
+  "includedInGeneratedRecord": false,
+  "includedTestIds": [],
+  "gates": {
+    "evaluatorIndependence": {
+      "status": "unresolved",
+      "note": "The verified 2.0 leaderboard contains no Devin row. The Challenges write-up names Terminal-Bench as author but thanks Cognition for supporting the project, leaving the evaluator, funder and configuration roles insufficiently separated for this record."
+    },
+    "exactServiceApplicability": {
+      "status": "fail",
+      "note": "No named Devin service milestone or immutable backend revision is identified as the tested service."
+    },
+    "exactOfferingApplicability": {
+      "status": "fail",
+      "note": "Enterprise Cloud, Customer Dedicated or another deployment is not identified."
+    },
+    "exactRuntimeApplicability": {
+      "status": "fail",
+      "note": "Devbox image, VM platform or outpost, session mode, origin and parent-child runtime configuration are not completely pinned."
+    },
+    "exactModelApplicability": {
+      "status": "fail",
+      "note": "The Challenges article names Opus 4.8 and Fable 5 for an initial experiment, but it does not identify the complete Cognition service backend, checkpoint, routing or settings for this catalog record."
+    },
+    "exactConfigurationApplicability": {
+      "status": "fail",
+      "note": "Approval, network, repository, identity, prompt and other effective settings are not completely disclosed."
+    },
+    "disclosureCompleteness": {
+      "status": "fail",
+      "note": "The sources do not supply a complete record-applicable evaluator, submitter, funding, service and configuration disclosure."
+    },
+    "publicArtifacts": {
+      "status": "fail",
+      "note": "No matching Devin row or public run-level trajectory bundle was identified. The integrity update describes a trajectory requirement but does not supply a Devin artifact for this record."
+    }
+  },
+  "limitations": [
+    "The current Terminal-Bench 2.0 leaderboard was checked as a complete displayed table and contained no Devin agent entry.",
+    "The Terminal-Bench Challenges article is a different long-horizon format and cannot be substituted for a verified Terminal-Bench 2.0 entry.",
+    "Exclusion means the evidence gates failed; it is not a claim that Devin has never been evaluated independently."
+  ],
+  "boundary": "No independent test record, evaluator role, result, score or behavior claim is created."
+}

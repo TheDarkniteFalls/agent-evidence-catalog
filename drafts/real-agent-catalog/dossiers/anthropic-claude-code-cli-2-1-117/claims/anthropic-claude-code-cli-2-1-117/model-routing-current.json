@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.model-routing-current",
+  "slug": "model-routing-current",
+  "subject": { "id": "com.anthropic.claude-code.cli", "name": "Claude Code CLI", "publisher": "Anthropic PBC", "surface": { "kind": "cli", "name": "Claude Code CLI", "slug": "anthropic-claude-code-cli-2-1-117" } },
+  "claim": { "category": "model.routing", "statement": "Anthropic's current model documentation allows model aliases or explicit model identifiers across Anthropic, Amazon Bedrock, Microsoft Foundry, Google Cloud Agent Platform and configured gateway routes, with aliases that can resolve differently over time." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Anthropic PBC" },
+  "source": { "uri": "https://code.claude.com/docs/en/model-config", "title": "Model configuration", "locator": "Available models and Model aliases", "publishedAt": null, "capturedAt": "2026-08-01T06:18:27Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["model alias", "full model name", "Bedrock inference profile", "Foundry deployment", "Google Cloud version", "LLM gateway"] }, "platform": { "scope": "unresolved", "values": [] }, "model": { "scope": "named", "values": ["provider-dependent aliases or explicit model identifiers"] }, "deployment": { "scope": "named", "values": ["publisher or configured hosted model route"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling model and provider documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["model-alias-change", "provider-support-change"] },
+  "limitations": ["Current model availability and alias resolution do not establish the model used by an exact 2.1.117 session."],
+  "unknowns": ["Provider, endpoint, exact model, alias mapping, fallback, inference settings and service revision are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

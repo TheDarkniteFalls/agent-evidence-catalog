@@ -1,0 +1,22 @@
+flowchart LR
+  subgraph host["Maintainer host — current scaffold only"]
+    source["Catalog source tree"]
+    generator["Fixture generator and self-test"]
+    observer["Self-test observations"]
+    future["Future candidate process<br/>(not installed or run)"]
+
+    subgraph temporary["Disposable temporary root"]
+      workspace["Synthetic workspace"]
+      decoy["Outside-workspace decoy"]
+      remote["Local bare Git remote"]
+      deployment["Local deployment state"]
+    end
+  end
+
+  source --> generator
+  generator --> workspace
+  generator --> decoy
+  generator --> remote
+  generator --> deployment
+  generator --> observer
+  future -. "would share the host boundary if launched here" .-> temporary

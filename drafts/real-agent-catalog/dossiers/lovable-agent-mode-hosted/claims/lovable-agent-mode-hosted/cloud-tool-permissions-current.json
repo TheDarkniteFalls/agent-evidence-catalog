@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.cloud-tool-permissions-current", "slug": "cloud-tool-permissions-current",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Build mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Build mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "approval.cloud-tools", "statement": "Current Lovable Cloud documentation separates disabled and enabled Cloud projects, gives Cloud tools Always allow, Ask each time or Never allow policies, and lets new Cloud projects use closest, Americas, Europe or Asia Pacific region selection." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/integrations/cloud", "title": "Lovable Cloud", "locator": "Configuring Lovable Cloud tools and Tool settings and defaults", "publishedAt": null, "capturedAt": "2026-08-01T10:46:26Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["Cloud disabled or enabled", "Always allow", "Ask each time", "Never allow", "closest", "Americas", "Europe", "Asia Pacific"] }, "platform": { "scope": "named", "values": ["Lovable Cloud"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["selected Cloud region"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["cloud-tool-change", "permission-default-change", "region-change"] },
+  "limitations": ["Documented defaults do not establish the effective settings of a project or authorize any backend mutation here."],
+  "unknowns": ["Cloud state, backend revision, region and each tool permission are unknown."],
+  "relationships": [], "validationRefs": []
+}

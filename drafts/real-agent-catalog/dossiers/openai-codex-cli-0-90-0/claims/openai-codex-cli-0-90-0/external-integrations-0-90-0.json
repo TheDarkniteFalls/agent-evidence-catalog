@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.connectors-0-90-0",
+  "slug": "connectors-0-90-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-90-0" }
+  },
+  "claim": {
+    "category": "authority.extensions",
+    "statement": "OpenAI's 0.90.0 release notes describe first-phase connectors support through the app server and MCP integration, with associated configuration and documentation updates."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": {
+    "uri": "https://github.com/openai/codex/releases/tag/rust-v0.90.0",
+    "title": "OpenAI Codex release 0.90.0",
+    "locator": "New Features and Documentation — connectors support via app server and MCP (#9667)",
+    "publishedAt": "2026-01-25T16:37:37Z",
+    "capturedAt": "2026-08-01T00:47:47Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "0.90.0" },
+    "configuration": { "scope": "conditional", "values": ["connector access available", "app server path configured", "MCP integration configured"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["Codex app server and MCP integration"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-01-25", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "manual-review"]
+  },
+  "limitations": [
+    "The release describes a first phase and does not establish the complete connector surface or maturity.",
+    "No connector, app server or MCP server was configured or invoked by the catalog."
+  ],
+  "unknowns": [
+    "Available connectors, servers, tools, transports, annotations and side effects are unknown.",
+    "Credential handling, data destinations, approval coverage and server trust are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

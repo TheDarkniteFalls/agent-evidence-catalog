@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "catalog-refresh-preservation/0.1-draft",
+  "asOf": "2026-08-02",
+  "algorithm": "sha256 of sorted rows formatted as file-sha256, two spaces, repository-relative path, newline",
+  "roots": ["drafts/cline-vscode-extension", "drafts/real-agent-catalog", "catalog", "fixtures", "schemas", "site", "dist", "drafts/real-agent-source-watch"],
+  "protectedFileCount": 430,
+  "aggregateSha256": "5136f8e0d48ecf3ae0dc2686c73f9621e58fc65263337084b23ea10ff2595a88",
+  "authorizedExistingFileExclusions": [
+    "drafts/real-agent-catalog/lifecycle/README.md",
+    "drafts/real-agent-catalog/lifecycle/lifecycle-source.json",
+    "drafts/real-agent-catalog/scripts/validate-lifecycle-layer.mjs",
+    "drafts/real-agent-source-watch/README.md",
+    "drafts/real-agent-source-watch/source-registry.json",
+    "drafts/real-agent-source-watch/source-watch-v0.schema.json",
+    "drafts/real-agent-source-watch/validate-source-watch.mjs"
+  ],
+  "authorizedNewPathExclusions": [
+    "drafts/real-agent-catalog/dossiers/openai-codex-cli-0-146-0/",
+    "drafts/real-agent-catalog/current-record-refresh/records/com.openai.codex.cli.0-146-0.json",
+    "drafts/real-agent-catalog/claimed-attribute-study/openai-codex-cli-0-146-0-mapping.json",
+    "drafts/real-agent-catalog/scripts/build-openai-codex-0-146-0.mjs",
+    "drafts/real-agent-catalog/scripts/validate-openai-codex-0-146-0-source.mjs",
+    "drafts/real-agent-catalog/scripts/validate-openai-codex-0-146-0-refresh.mjs"
+  ],
+  "note": "The manifest was calculated from live repository state before refresh edits. Exclusions are limited to the new 0.146.0 refresh and the seven explicitly authorized lifecycle or watcher maintenance files."
+}

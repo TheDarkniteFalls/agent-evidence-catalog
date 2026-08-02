@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.zed.agent.native.release-assets-stable-1-12-1",
+  "slug": "release-assets-stable-1-12-1",
+  "subject": {
+    "id": "com.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Native Zed Agent",
+      "slug": "zed-agent-stable-1-12-1"
+    }
+  },
+  "claim": {
+    "category": "identity.artifact",
+    "statement": "The official v1.12.1 release publishes macOS, Linux and Windows client artifacts with publisher-supplied SHA-256 digests."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://github.com/zed-industries/zed/releases/tag/v1.12.1",
+    "title": "Zed v1.12.1 release",
+    "locator": "Release metadata and client assets",
+    "publishedAt": "2026-07-27T18:30:09Z",
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "1.12.1"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "platform-specific client"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local Zed desktop client"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-27",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The catalog recorded publisher metadata and did not download or recompute any digest."
+  ],
+  "unknowns": [
+    "The installed artifact and executable digest are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

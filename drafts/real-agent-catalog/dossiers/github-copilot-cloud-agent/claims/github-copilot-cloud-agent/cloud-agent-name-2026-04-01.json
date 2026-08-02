@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.cloud-agent.cloud-agent-name-2026-04-01",
+  "slug": "cloud-agent-name-2026-04-01",
+  "subject": {
+    "id": "com.github.copilot.cloud-agent",
+    "name": "GitHub Copilot cloud agent",
+    "publisher": "GitHub",
+    "surface": { "kind": "hosted-service", "name": "GitHub Copilot cloud agent", "slug": "github-copilot-cloud-agent" }
+  },
+  "claim": {
+    "category": "identity",
+    "statement": "GitHub's dated 1 April 2026 changelog explicitly states that Copilot cloud agent was formerly known as Copilot coding agent and expands the service beyond pull-request-only workflows to research, planning and branch-based code changes."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "GitHub" },
+  "source": {
+    "uri": "https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/",
+    "title": "Research, plan, and code with Copilot cloud agent",
+    "locator": "Dated heading; introduction; More control over when you open a pull request",
+    "publishedAt": "2026-04-01T00:00:00Z",
+    "capturedAt": "2026-07-31T22:45:15Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "2026-04-01 naming and workflow milestone" },
+    "configuration": { "scope": "unspecified", "values": [] },
+    "platform": { "scope": "named", "values": ["GitHub hosted service"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["Copilot cloud agent service"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-04-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "product-surface-change", "manual-review"]
+  },
+  "limitations": [
+    "The dated entry anchors publisher naming and feature state, not an immutable service build.",
+    "The catalog did not exercise research, planning, branch or pull-request routes."
+  ],
+  "unknowns": [
+    "The backend deployment and model set corresponding to the naming milestone are unknown.",
+    "Whether every older reference to Copilot coding agent maps without exception to the current service is not established beyond the explicit publisher statement."
+  ],
+  "relationships": [
+    {
+      "type": "supersedes",
+      "targetClaimId": "com.github.copilot.cloud-agent.ga-milestone-2025-09-25",
+      "extent": "partial",
+      "status": "active",
+      "resolution": null,
+      "note": "The later publisher source supplies the current name and explicitly preserves the former-name lineage; it does not rewrite the earlier GA behavior as current."
+    }
+  ],
+  "validationRefs": []
+}

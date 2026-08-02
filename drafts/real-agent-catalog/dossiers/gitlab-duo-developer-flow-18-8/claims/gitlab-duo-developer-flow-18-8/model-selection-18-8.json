@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+  "slug": "model-selection-18-8",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "model.configuration",
+    "statement": "GitLab's model-selection history places the 18.8 GitLab.com release line between enabling the duo_agent_platform_model_selection feature flag in 18.6 and removing that flag in 18.9; it does not name the Developer Flow's effective 18.8 model."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/model_selection/",
+    "title": "Agent Platform AI models",
+    "locator": "Select a model for a feature: History",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "18.8" },
+    "configuration": { "scope": "alternatives", "values": ["namespace default model", "administrator-selected Agent Platform model", "duo_agent_platform_model_selection enabled"] },
+    "platform": { "scope": "named", "values": ["GitLab.com"] },
+    "model": { "scope": "configuration-dependent", "values": ["effective 18.8 model unresolved"] },
+    "deployment": { "scope": "named", "values": ["top-level group configuration inherited by child groups and projects"] }
+  },
+  "lifecycle": { "status": "historical", "changedAt": "2026-02-19", "reason": "The Agent Platform model-selection flag was removed in 18.9." },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["release-history-change", "feature-flag-history-change", "model-history-correction"]
+  },
+  "limitations": [
+    "The release history applies explicitly to GitLab.com model selection and does not establish Self-Managed or Dedicated behavior.",
+    "An enabled feature flag does not identify the default or selected model used by any execution."
+  ],
+  "unknowns": [
+    "The Developer Flow default model, selected model, provider, checkpoint and reasoning configuration in 18.8 are unknown.",
+    "The namespace model setting and inheritance state for any project are unknown."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.model-selection-current",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The 18.8 release-line feature-flag state does not freeze the rolling current default and selectable model set."
+    }
+  ],
+  "validationRefs": []
+}

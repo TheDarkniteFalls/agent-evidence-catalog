@@ -1,0 +1,1939 @@
+{
+  "schemaVersion": "real-agent-dossier/0.1-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-01",
+  "sourceDossier": {
+    "path": "dossiers/github-copilot-cloud-agent/dossier-source.json",
+    "sha256": "ad77f3081891ad99d173f89695dff8a780a2dc90c4fd763dba6a53c7db6a1fa8",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.github.copilot.cloud-agent.rolling",
+    "agent": {
+      "id": "com.github.copilot.cloud-agent",
+      "name": "GitHub Copilot cloud agent"
+    },
+    "publisher": {
+      "id": "github-publisher",
+      "name": "GitHub"
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitHub Copilot cloud agent",
+      "slug": "github-copilot-cloud-agent",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "GitHub-hosted rolling service",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "GitHub-hosted GitHub Actions environment",
+          "self-hosted GitHub Actions runner"
+        ],
+        "note": "No task was started and GitHub does not expose a public backend build identity for the rolling service. The effective runner, image, model, region and session implementation remain unresolved."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "ga-milestone-2025-09-25",
+        "kind": "hosted-release",
+        "identityStatus": "exact",
+        "uri": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
+        "ecosystem": "GitHub hosted service",
+        "version": "2025-09-25 GA milestone",
+        "digest": null,
+        "note": "Exact dated publisher milestone under the former Copilot coding agent name; it is not a backend build or downloadable artifact."
+      },
+      {
+        "id": "cloud-agent-name-milestone-2026-04-01",
+        "kind": "hosted-release",
+        "identityStatus": "exact",
+        "uri": "https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/",
+        "ecosystem": "GitHub hosted service",
+        "version": "2026-04-01 naming and workflow milestone",
+        "digest": null,
+        "note": "Exact dated publisher milestone explicitly connecting the current Copilot cloud agent name to the former Copilot coding agent name; it is not a backend build."
+      },
+      {
+        "id": "rolling-service-runtime",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent",
+        "ecosystem": "GitHub hosted service",
+        "version": null,
+        "digest": null,
+        "note": "Current service documentation does not expose an immutable backend build, deployed model set, runner image digest or session artifact."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "github-publisher",
+        "name": "GitHub",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-ga-milestone-2025-09-25",
+      "uri": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
+      "title": "Copilot coding agent is now generally available",
+      "locator": "Dated heading; opening two paragraphs; task-entry-point paragraph",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "github-publisher",
+      "publishedAt": "2025-09-25T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Dated GitHub Changelog milestone; no service artifact or backend build was available to capture."
+      }
+    },
+    {
+      "id": "source-cloud-agent-name-2026-04-01",
+      "uri": "https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/",
+      "title": "Research, plan, and code with Copilot cloud agent",
+      "locator": "Dated heading; introduction; More control over when you open a pull request",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "github-publisher",
+      "publishedAt": "2026-04-01T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Dated GitHub Changelog milestone; the page anchors naming and workflow state, not a backend build."
+      }
+    },
+    {
+      "id": "source-ephemeral-actions-environment-current",
+      "uri": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent",
+      "title": "About GitHub Copilot cloud agent",
+      "locator": "Overview of Copilot cloud agent; paragraph beginning While working on a coding task",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling GitHub documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-self-hosted-runner-current",
+      "uri": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment?tool=webui",
+      "title": "Configure the development environment",
+      "locator": "Using self-hosted GitHub Actions runners; compatibility note and step 2",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling GitHub documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-default-firewall-current",
+      "uri": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+      "title": "Customizing or disabling the firewall for GitHub Copilot",
+      "locator": "Overview; Limitations; Understanding the recommended firewall allowlist",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling GitHub documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-configurable-firewall-current",
+      "uri": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+      "title": "Customizing or disabling the firewall for GitHub Copilot",
+      "locator": "Configuring the firewall at the organization level; Configuring the firewall at the repository level",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling GitHub documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-mcp-tool-authority-current",
+      "uri": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent",
+      "title": "Model Context Protocol (MCP) and GitHub Copilot cloud agent",
+      "locator": "Default MCP servers; Setting up MCP servers in a repository",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling GitHub documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-branch-first-current",
+      "uri": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent",
+      "title": "About GitHub Copilot cloud agent",
+      "locator": "Overview of Copilot cloud agent; When you delegate tasks list; Limitations",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling GitHub documentation captured without an archive digest."
+      }
+    },
+    {
+      "id": "source-automation-authority-2026-06-02",
+      "uri": "https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent/",
+      "title": "Schedule and automate tasks with Copilot cloud agent",
+      "locator": "Opening paragraphs; scope paragraph; configurable fields list",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "github-publisher",
+      "publishedAt": "2026-06-02T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Dated GitHub Changelog milestone for automations; no automation was configured or run."
+      }
+    },
+    {
+      "id": "source-model-selection-current",
+      "uri": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/changing-the-ai-model",
+      "title": "Changing the AI model for GitHub Copilot cloud agent",
+      "locator": "Introduction; model-picker availability note; Supported models; Reasoning level",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling GitHub documentation captured without an archive digest; the named model list can change."
+      }
+    },
+    {
+      "id": "source-agents-secrets-current",
+      "uri": "https://docs.github.com/en/copilot/tutorials/cloud-agent/give-access-to-resources",
+      "title": "Giving GitHub Copilot cloud agent access to resources in your organization",
+      "locator": "Storing secrets securely; Configuring access to MCP servers; Controlling who can configure these settings",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-publisher",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-07-31T22:45:15Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling GitHub documentation captured without an archive digest."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "No GitHub account, repository, policy, task or runner was inspected. Publisher-documented alternatives remain separate and no effective configuration is inferred.",
+    "axes": [
+      {
+        "id": "execution-runner",
+        "label": "Execution runner",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "github-hosted-runner",
+            "label": "GitHub-hosted GitHub Actions environment",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.ephemeral-actions-environment-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "self-hosted-runner"
+            ]
+          },
+          {
+            "id": "self-hosted-runner",
+            "label": "Self-hosted GitHub Actions runner",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.self-hosted-runner-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "github-hosted-runner"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The runner choice, image, hardware, region, lifecycle and isolation controls of a particular task are unknown."
+        ]
+      },
+      {
+        "id": "network-policy",
+        "label": "Integrated firewall policy",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "recommended-firewall",
+            "label": "Firewall with recommended allowlist",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.default-firewall-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "custom-firewall",
+              "firewall-disabled"
+            ]
+          },
+          {
+            "id": "custom-firewall",
+            "label": "Firewall with custom rules",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.configurable-firewall-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "recommended-firewall",
+              "firewall-disabled"
+            ]
+          },
+          {
+            "id": "firewall-disabled",
+            "label": "Integrated firewall disabled",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.configurable-firewall-current",
+              "com.github.copilot.cloud-agent.self-hosted-runner-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "recommended-firewall",
+              "custom-firewall"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective organization and repository rules, allowed destinations, bypass exposure and external network controls are unknown."
+        ]
+      },
+      {
+        "id": "task-output-route",
+        "label": "Task output route",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "branch-first",
+            "label": "Branch without an initial pull request",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.branch-first-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "direct-pull-request"
+            ]
+          },
+          {
+            "id": "direct-pull-request",
+            "label": "Direct draft pull request",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.ga-milestone-2025-09-25",
+              "com.github.copilot.cloud-agent.branch-first-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "branch-first"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The selected entry point, prompt and resulting branch or pull-request state for a real task are unknown."
+        ]
+      },
+      {
+        "id": "invocation-mode",
+        "label": "Task invocation",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "manual-delegation",
+            "label": "User-started session",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.branch-first-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "scheduled-or-event-automation"
+            ]
+          },
+          {
+            "id": "scheduled-or-event-automation",
+            "label": "Scheduled or event-triggered automation",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.automation-authority-2026-06-02"
+            ],
+            "mutuallyExclusiveWith": [
+              "manual-delegation"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The trigger, initiating identity, input trust boundary and selected automation tools are unknown."
+        ]
+      },
+      {
+        "id": "mcp-tool-surface",
+        "label": "MCP tool surface",
+        "scope": "composable",
+        "alternatives": [
+          {
+            "id": "default-mcp",
+            "label": "Default GitHub and Playwright MCP servers",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.mcp-tool-authority-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "configured-mcp",
+            "label": "Repository or custom-agent MCP tools",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.mcp-tool-authority-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The effective servers, tools, credentials, destinations and side effects for a particular repository are unknown."
+        ]
+      },
+      {
+        "id": "model-choice",
+        "label": "Model selection",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "auto-model",
+            "label": "Auto model selection",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.model-selection-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "named-model"
+            ]
+          },
+          {
+            "id": "named-model",
+            "label": "Named model at a supported entry point",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.model-selection-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "auto-model"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The selected model, provider revision, reasoning level, routing and fallback behavior of a particular task are unknown."
+        ]
+      },
+      {
+        "id": "resource-credentials",
+        "label": "External-resource credentials",
+        "scope": "composable",
+        "alternatives": [
+          {
+            "id": "repository-token-only",
+            "label": "Scoped repository token only",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.agents-secrets-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "agents-secrets-configured",
+            "label": "Repository or organization Agents secrets configured",
+            "claimIds": [
+              "com.github.copilot.cloud-agent.agents-secrets-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The configured secrets, consumers, rotation, exposure in subprocesses and external services are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "com.github.copilot.cloud-agent.ga-milestone-2025-09-25",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/ga-milestone-2025-09-25.json",
+      "rawRecordSha256": "7d15d5f02e87f258ad1e6094f46d896b18859a1ca5848475ad681d82812a9052",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.ga-milestone-2025-09-25",
+        "slug": "ga-milestone-2025-09-25",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "identity",
+          "statement": "GitHub's dated 25 September 2025 changelog identifies Copilot coding agent as its asynchronous, autonomous developer agent, announces general availability for paid Copilot subscribers, and describes delegation that opens a draft pull request and works in a GitHub Actions-powered development environment."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
+          "title": "Copilot coding agent is now generally available",
+          "locator": "Dated heading; opening two paragraphs; task-entry-point paragraph",
+          "publishedAt": "2025-09-25T00:00:00Z",
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "2025-09-25 GA milestone"
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "direct draft pull-request route"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitHub hosted service"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "GitHub Actions-powered development environment"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "superseded",
+          "changedAt": "2026-04-01",
+          "reason": "GitHub explicitly renamed the service Copilot cloud agent and expanded branch-first workflows."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This dated service milestone does not identify an immutable backend build, runner image, model or task artifact.",
+          "The behavior is a publisher description and was not observed by the catalog."
+        ],
+        "unknowns": [
+          "The exact service implementation deployed on the milestone date is unknown.",
+          "The organization, repository, policy, runner, model and task configurations covered by the announcement are not fully enumerated."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-ga-milestone-2025-09-25",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "authority"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cloud-agent.cloud-agent-name-2026-04-01",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/cloud-agent-name-2026-04-01.json",
+      "rawRecordSha256": "e1936ee60fb3f95cb03cea5711c093fd56fc96410617d2d6dcef3c034e0b66b0",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.cloud-agent-name-2026-04-01",
+        "slug": "cloud-agent-name-2026-04-01",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "identity",
+          "statement": "GitHub's dated 1 April 2026 changelog explicitly states that Copilot cloud agent was formerly known as Copilot coding agent and expands the service beyond pull-request-only workflows to research, planning and branch-based code changes."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/",
+          "title": "Research, plan, and code with Copilot cloud agent",
+          "locator": "Dated heading; introduction; More control over when you open a pull request",
+          "publishedAt": "2026-04-01T00:00:00Z",
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "2026-04-01 naming and workflow milestone"
+          },
+          "configuration": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitHub hosted service"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Copilot cloud agent service"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-04-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The dated entry anchors publisher naming and feature state, not an immutable service build.",
+          "The catalog did not exercise research, planning, branch or pull-request routes."
+        ],
+        "unknowns": [
+          "The backend deployment and model set corresponding to the naming milestone are unknown.",
+          "Whether every older reference to Copilot coding agent maps without exception to the current service is not established beyond the explicit publisher statement."
+        ],
+        "relationships": [
+          {
+            "type": "supersedes",
+            "targetClaimId": "com.github.copilot.cloud-agent.ga-milestone-2025-09-25",
+            "extent": "partial",
+            "status": "active",
+            "resolution": null,
+            "note": "The later publisher source supplies the current name and explicitly preserves the former-name lineage; it does not rewrite the earlier GA behavior as current."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-cloud-agent-name-2026-04-01",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity"
+      ],
+      "personaIds": [
+        "adopter",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cloud-agent.ephemeral-actions-environment-current",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/ephemeral-actions-environment-current.json",
+      "rawRecordSha256": "b4fe64c78e0dee0ef4ee8bf235d6d2cdf8eee084d48d0e3494331ab0bfeb693c",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.ephemeral-actions-environment-current",
+        "slug": "ephemeral-actions-environment-current",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "delivery",
+          "statement": "GitHub's current service overview says Copilot cloud agent has its own ephemeral development environment powered by GitHub Actions, where it can explore code, make changes and execute automated tests and linters."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent",
+          "title": "About GitHub Copilot cloud agent",
+          "locator": "Overview of Copilot cloud agent; paragraph beginning While working on a coding task",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "documented-default",
+            "values": [
+              "GitHub-hosted GitHub Actions environment"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitHub Actions"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Copilot cloud agent coding task"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "platform-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is rolling documentation and is not applied to an exact service build or dated milestone.",
+          "The term ephemeral is publisher wording and was not tested for image reuse, storage persistence, cleanup or isolation."
+        ],
+        "unknowns": [
+          "The runner image digest, hardware, region, tenancy, persistence and cleanup behavior are unknown.",
+          "The full command, file, process, credential and network authority available within a particular task is unknown."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "com.github.copilot.cloud-agent.self-hosted-runner-current",
+            "extent": "full",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "GitHub-hosted and self-hosted runners are configuration alternatives with different infrastructure and firewall boundaries."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-ephemeral-actions-environment-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "execution"
+      ],
+      "personaIds": [
+        "adopter",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cloud-agent.self-hosted-runner-current",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/self-hosted-runner-current.json",
+      "rawRecordSha256": "06b59bd99496268c0332ed566b76fa35d55fee6c9bc5a0acd4b0aa89dcec599e",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.self-hosted-runner-current",
+        "slug": "self-hosted-runner-current",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "delivery",
+          "statement": "GitHub's current environment guide says Copilot cloud agent can run on self-hosted GitHub Actions runners, recommends ephemeral single-use runners, limits compatibility to Ubuntu x64 or Windows 64-bit, and requires the integrated firewall to be disabled because it is incompatible with self-hosted runners."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment?tool=webui",
+          "title": "Configure the development environment",
+          "locator": "Using self-hosted GitHub Actions runners; compatibility note and step 2",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "self-hosted GitHub Actions runner",
+              "integrated firewall disabled"
+            ]
+          },
+          "platform": {
+            "scope": "multiple",
+            "values": [
+              "Ubuntu x64",
+              "Windows 64-bit"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "self-hosted runner configuration"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "platform-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The guide recommends single-use runners but does not establish that every self-hosted deployment follows the recommendation.",
+          "The catalog did not inspect a self-hosted runner, network control or task."
+        ],
+        "unknowns": [
+          "The runner owner, lifecycle, image, persistence, network segmentation and access to internal resources are unknown.",
+          "The external firewall or other network controls used after disabling the integrated firewall are unknown."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "com.github.copilot.cloud-agent.ephemeral-actions-environment-current",
+            "extent": "full",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "Self-hosted execution is a named alternative to the GitHub-hosted environment and must retain its different infrastructure boundary."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-self-hosted-runner-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "execution",
+        "network"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cloud-agent.default-firewall-current",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/default-firewall-current.json",
+      "rawRecordSha256": "2d20ab01470e3117545e7fd8601382c6f9f3197d4769ce4ff707caa75c5865d1",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.default-firewall-current",
+        "slug": "default-firewall-current",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "network",
+          "statement": "GitHub's current firewall guide says Copilot internet access is limited by a firewall by default and that a recommended allowlist is enabled by default, while warning that the firewall only covers processes started through the agent's Bash tool within the GitHub Actions appliance, not MCP servers or configured setup-step processes, and may be bypassed by sophisticated attacks."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+          "title": "Customizing or disabling the firewall for GitHub Copilot",
+          "locator": "Overview; Limitations; Understanding the recommended firewall allowlist",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "documented-default",
+            "values": [
+              "integrated firewall with recommended allowlist enabled"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitHub Actions appliance"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "processes started through the agent Bash tool"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The source explicitly says the firewall is not a comprehensive security solution.",
+          "The catalog did not observe blocked or allowed traffic or test bypass resistance."
+        ],
+        "unknowns": [
+          "The effective organization and repository firewall settings and allowlists are unknown.",
+          "Traffic from MCP servers, setup steps, non-Bash processes and activity outside the appliance was not observed."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "com.github.copilot.cloud-agent.configurable-firewall-current",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The default restriction and configurable or disabled states are mutually scoped policy alternatives, not a factual conflict."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-default-firewall-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "network"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cloud-agent.configurable-firewall-current",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/configurable-firewall-current.json",
+      "rawRecordSha256": "f5aaf4ceff8fefeef1c9434c09bb0a320cab55b9b13ac31e840dd80aaee2b568",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.configurable-firewall-current",
+        "slug": "configurable-firewall-current",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "network",
+          "statement": "GitHub's current firewall guide says organization and repository administrators can, subject to organization policy, enable or disable the integrated firewall and recommended allowlist and combine organization and repository custom allowlist rules."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+          "title": "Customizing or disabling the firewall for GitHub Copilot",
+          "locator": "Configuring the firewall at the organization level; Configuring the firewall at the repository level",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "custom allowlist rules",
+              "recommended allowlist disabled",
+              "integrated firewall disabled"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitHub organization and repository settings"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "multiple",
+            "values": [
+              "organization policy",
+              "repository policy"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Configuration authority depends on organization-level settings and repository administration; the dossier does not infer who controls a real repository.",
+          "The source describes settings, not the effectiveness of custom network controls."
+        ],
+        "unknowns": [
+          "The effective firewall state and exact combined allowlist for a particular task are unknown.",
+          "Whether another network control replaces the integrated firewall when disabled is unknown."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "com.github.copilot.cloud-agent.default-firewall-current",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "Customized and disabled policies are alternatives to the documented default state."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-configurable-firewall-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "network"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cloud-agent.mcp-tool-authority-current",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/mcp-tool-authority-current.json",
+      "rawRecordSha256": "ef7f104c7fbbbce65ec9f234e40feda443bc08b65edeb88d8f0cbe4cb2aaf950",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.mcp-tool-authority-current",
+        "slug": "mcp-tool-authority-current",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "interoperability",
+          "statement": "GitHub's current MCP guide says GitHub and Playwright MCP servers are configured automatically, the default GitHub MCP token is read-only for the current repository, repository administrators can configure additional MCP tools, and Copilot uses available tools autonomously without asking for approval before use."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent",
+          "title": "Model Context Protocol (MCP) and GitHub Copilot cloud agent",
+          "locator": "Default MCP servers; Setting up MCP servers in a repository",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "default GitHub and Playwright MCP servers",
+              "repository-configured MCP tools",
+              "custom-agent MCP tools"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Copilot cloud agent"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "multiple",
+            "values": [
+              "default MCP configuration",
+              "repository MCP configuration",
+              "custom-agent MCP configuration"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The claim records publisher-described authority, not the behavior, trustworthiness or side effects of any MCP server.",
+          "GitHub's firewall guide says the integrated firewall does not apply to MCP servers."
+        ],
+        "unknowns": [
+          "The effective MCP servers, tools, transports, code, credentials and destinations are unknown.",
+          "The autonomous tool-selection behavior, inputs, outputs and side effects of a particular task were not observed."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-mcp-tool-authority-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "extensions"
+      ],
+      "personaIds": [
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cloud-agent.branch-first-current",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/branch-first-current.json",
+      "rawRecordSha256": "33a162ab3016e3ea80378774a3b0b34b94818ce50f143f4436e1e2714e6cd57b",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.branch-first-current",
+        "slug": "branch-first-current",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "authority.change",
+          "statement": "GitHub's current service overview says GitHub.com agent entry points can have Copilot research, plan and make code changes on a branch before a pull request is created, while other entry points or an explicit prompt can request a pull request directly."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent",
+          "title": "About GitHub Copilot cloud agent",
+          "locator": "Overview of Copilot cloud agent; When you delegate tasks list; Limitations",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "branch-first route",
+              "direct pull-request route"
+            ]
+          },
+          "platform": {
+            "scope": "multiple",
+            "values": [
+              "GitHub.com agent entry points",
+              "GitHub Issues",
+              "Visual Studio Code"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "multiple",
+            "values": [
+              "branch without initial pull request",
+              "direct pull request"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The statement describes route options and does not establish which route a particular prompt or integration will use.",
+          "The catalog did not delegate a task or observe a branch, commit or pull request."
+        ],
+        "unknowns": [
+          "The selected entry point, prompt, branch, pull-request state and iteration history of a real task are unknown.",
+          "The exact repository permissions and branch protections applied to a task are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-branch-first-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authority"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cloud-agent.automation-authority-2026-06-02",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/automation-authority-2026-06-02.json",
+      "rawRecordSha256": "60b8efa742fe2cddb136703d92f32888959d5919be7e6f172b011a6bb8d14007",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.automation-authority-2026-06-02",
+        "slug": "automation-authority-2026-06-02",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "delegation",
+          "statement": "GitHub's dated 2 June 2026 changelog says Copilot cloud agent automations can run on a schedule or in response to repository events, are scoped to one repository, and can be configured with tools such as creating pull requests or updating issue labels."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent/",
+          "title": "Schedule and automate tasks with Copilot cloud agent",
+          "locator": "Opening paragraphs; scope paragraph; configurable fields list",
+          "publishedAt": "2026-06-02T00:00:00Z",
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "scheduled or repository-event automation",
+              "configured automation tools"
+            ]
+          },
+          "platform": {
+            "scope": "multiple",
+            "values": [
+              "GitHub.com",
+              "GitHub Copilot app"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "single-repository Copilot automation"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-06-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is a dated service announcement, not an independently observed automation run or immutable backend version.",
+          "Automation availability, triggers and tools are configuration-dependent and may change after capture."
+        ],
+        "unknowns": [
+          "The effective trigger, creator, input trust boundary, selected tools, model and repository policy are unknown.",
+          "The code, pull requests, labels, comments or other external mutations produced by a particular automation are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-automation-authority-2026-06-02",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authority",
+        "automation"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cloud-agent.model-selection-current",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/model-selection-current.json",
+      "rawRecordSha256": "c9904a62d337a82400ade65f12d07498a1ecbe2b74145e940e635f2c56db84ec",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.model-selection-current",
+        "slug": "model-selection-current",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "capability",
+          "statement": "GitHub's current model guide says supported task entry points allow selection of Auto or a named model and, for supported models, a reasoning level, while entry points without a model picker use Auto automatically."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/changing-the-ai-model",
+          "title": "Changing the AI model for GitHub Copilot cloud agent",
+          "locator": "Introduction; model-picker availability note; Supported models; Reasoning level",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "Auto model selection",
+              "named model at a supported entry point"
+            ]
+          },
+          "platform": {
+            "scope": "multiple",
+            "values": [
+              "supported model-picker entry point",
+              "entry point without model picker"
+            ]
+          },
+          "model": {
+            "scope": "multiple",
+            "values": [
+              "Auto",
+              "publisher-listed named model"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Copilot cloud agent task"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "product-surface-change",
+            "configuration-change",
+            "model-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The dossier intentionally does not freeze the current named-model list into the claim because it is rolling service documentation.",
+          "No task, model route, reasoning level, fallback or output was observed."
+        ],
+        "unknowns": [
+          "The selected model, provider revision, system configuration, reasoning level, routing and fallback behavior of a particular task are unknown.",
+          "The relationship between the displayed model name and backend deployment identity is unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-model-selection-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "extensions"
+      ],
+      "personaIds": [
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cloud-agent.agents-secrets-current",
+      "rawRecordPath": "dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/agents-secrets-current.json",
+      "rawRecordSha256": "f74d1ddeff2b6b66a4bd7f82cffa866f3bfcd0e36e9dbc1ecf7a1541be43adaf",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cloud-agent.agents-secrets-current",
+        "slug": "agents-secrets-current",
+        "subject": {
+          "id": "com.github.copilot.cloud-agent",
+          "name": "GitHub Copilot cloud agent",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub Copilot cloud agent",
+            "slug": "github-copilot-cloud-agent"
+          }
+        },
+        "claim": {
+          "category": "credentials",
+          "statement": "GitHub's current resource-access guide says the default Copilot authentication token is limited to the repository, while repository administrators or organization owners can configure Agents secrets that Copilot can access during setup and task execution; it also says Copilot cannot access GitHub Actions, Codespaces or Dependabot secrets and variables."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://docs.github.com/en/copilot/tutorials/cloud-agent/give-access-to-resources",
+          "title": "Giving GitHub Copilot cloud agent access to resources in your organization",
+          "locator": "Storing secrets securely; Configuring access to MCP servers; Controlling who can configure these settings",
+          "publishedAt": null,
+          "capturedAt": "2026-07-31T22:45:15Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "multiple",
+            "values": [
+              "scoped repository token",
+              "repository Agents secrets",
+              "organization Agents secrets"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitHub organization or repository"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "multiple",
+            "values": [
+              "setup execution",
+              "task execution"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-01",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "scheduled-recheck",
+            "source-change",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "deployment-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The guide describes credential scopes and configuration paths, not the contents, protection or behavior of a particular secret.",
+          "The catalog did not configure a secret, inspect a token or observe a setup step, task or external service."
+        ],
+        "unknowns": [
+          "The configured secret names, values, consumers, rotation, logging and exposure to child processes are unknown.",
+          "The effective repository-token permissions and external systems reachable through configured credentials are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github-publisher",
+      "sourceId": "source-agents-secrets-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "extensions"
+      ],
+      "personaIds": [
+        "reviewer",
+        "auditor"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "relationship-01",
+      "fromClaimId": "com.github.copilot.cloud-agent.cloud-agent-name-2026-04-01",
+      "toClaimId": "com.github.copilot.cloud-agent.ga-milestone-2025-09-25",
+      "kind": "supersedes",
+      "extent": "partial",
+      "status": "active",
+      "resolution": null,
+      "note": "The later publisher source supplies the current name and explicitly preserves the former-name lineage; it does not rewrite the earlier GA behavior as current."
+    },
+    {
+      "id": "relationship-02",
+      "fromClaimId": "com.github.copilot.cloud-agent.ephemeral-actions-environment-current",
+      "toClaimId": "com.github.copilot.cloud-agent.self-hosted-runner-current",
+      "kind": "contradicts",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "GitHub-hosted and self-hosted runners are configuration alternatives with different infrastructure and firewall boundaries."
+    },
+    {
+      "id": "relationship-03",
+      "fromClaimId": "com.github.copilot.cloud-agent.self-hosted-runner-current",
+      "toClaimId": "com.github.copilot.cloud-agent.ephemeral-actions-environment-current",
+      "kind": "contradicts",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Self-hosted execution is a named alternative to the GitHub-hosted environment and must retain its different infrastructure boundary."
+    },
+    {
+      "id": "relationship-04",
+      "fromClaimId": "com.github.copilot.cloud-agent.default-firewall-current",
+      "toClaimId": "com.github.copilot.cloud-agent.configurable-firewall-current",
+      "kind": "contradicts",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The default restriction and configurable or disabled states are mutually scoped policy alternatives, not a factual conflict."
+    },
+    {
+      "id": "relationship-05",
+      "fromClaimId": "com.github.copilot.cloud-agent.configurable-firewall-current",
+      "toClaimId": "com.github.copilot.cloud-agent.default-firewall-current",
+      "kind": "contradicts",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Customized and disabled policies are alternatives to the documented default state."
+    }
+  ],
+  "independentTests": [],
+  "dossier": {
+    "summary": "GitHub's dated changelog connects the current Copilot cloud agent name to the generally available Copilot coding agent service. Current publisher sources describe GitHub Actions execution, runner and network alternatives, branch or pull-request routes, autonomous MCP tools, model selection, Agents secrets and automations; the backend build and every effective configuration remain unresolved, and none was independently tested.",
+    "releaseContext": {
+      "statement": "GitHub announced Copilot coding agent as generally available on 25 September 2025 and explicitly renamed that service Copilot cloud agent on 1 April 2026. These are exact dated service milestones, not an exact backend build; the dossier therefore identifies a rolling hosted service with unresolved runtime implementation.",
+      "sourceId": "source-cloud-agent-name-2026-04-01",
+      "legacySource": null
+    },
+    "limitations": [
+      "Every behavior statement is publisher-attributed; the catalog did not start or observe a Copilot cloud agent task.",
+      "The dated changelog entries establish service milestones and naming lineage, not an immutable backend build, model, runner image or task artifact.",
+      "Rolling GitHub Docs are not treated as exact evidence for the 2025 or 2026 milestones.",
+      "GitHub-hosted and self-hosted runners materially change network, isolation and firewall boundaries and remain separately scoped.",
+      "No independent report with defensible service-time, repository-policy, runner, model, tool and task overlap was included."
+    ],
+    "unknowns": [
+      "The backend service build, deployed code revision and change history for a particular task.",
+      "The effective model, provider revision, reasoning level, router, fallback and model-policy state.",
+      "The GitHub-hosted runner image digest, hardware, region, tenancy and complete isolation boundary.",
+      "The self-hosted runner lifecycle, network segmentation, persistence and protection when that alternative is selected.",
+      "The effective organization, enterprise and repository policies governing access and features.",
+      "The task entry point, prompt context, repository contents, branch target and pull-request route used by a real session.",
+      "The effective firewall state, allowlists, traffic outside its documented coverage and any successful bypass.",
+      "The enabled MCP servers, tools, autonomous calls, credentials, destinations and side effects.",
+      "The Agents secrets, variables, setup steps, hooks, skills, custom agents and package credentials available to a task.",
+      "The automation trigger, creator, input trust boundary, selected tools and resulting external mutations.",
+      "Independent findings under overlapping service-time and configuration applicability; none were included."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "adopter",
+        "label": "Considering a hosted pilot",
+        "prompt": "Trace service identity, execution, output route and policy-dependent configuration.",
+        "propositionIds": [
+          "identity",
+          "execution",
+          "authority",
+          "network"
+        ]
+      },
+      {
+        "id": "reviewer",
+        "label": "Reviewing hosted authority",
+        "prompt": "Inspect runner, network, MCP, credentials and automation alternatives without collapsing their scopes.",
+        "propositionIds": [
+          "authority",
+          "network",
+          "extensions",
+          "automation"
+        ]
+      },
+      {
+        "id": "auditor",
+        "label": "Checking evidence",
+        "prompt": "Open each source locator, applicability boundary, relationship, limitation and unknown.",
+        "propositionIds": [
+          "identity",
+          "execution",
+          "authority",
+          "network",
+          "extensions",
+          "automation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Service and release",
+        "question": "Which GitHub-hosted agent does this dossier identify?",
+        "status": "Rolling service with two exact dated milestones",
+        "answer": "GitHub's 1 April 2026 changelog explicitly identifies Copilot cloud agent as the service formerly known as Copilot coding agent, whose general availability was announced on 25 September 2025. No backend build is exposed.",
+        "whyItMatters": "A dated service milestone can anchor lineage without pretending a rolling SaaS has a downloadable versioned artifact.",
+        "claimIds": [
+          "com.github.copilot.cloud-agent.ga-milestone-2025-09-25",
+          "com.github.copilot.cloud-agent.cloud-agent-name-2026-04-01"
+        ]
+      },
+      {
+        "id": "execution",
+        "eyebrow": "Hosted execution",
+        "question": "Where does publisher documentation say tasks execute?",
+        "status": "GitHub Actions environment; runner choice is scoped",
+        "answer": "Current GitHub Docs describe an ephemeral GitHub Actions-powered development environment and separately document self-hosted runners. Those alternatives have different lifecycle, platform and firewall conditions.",
+        "whyItMatters": "Hosted product identity alone does not determine the machine, network or persistence boundary of a task.",
+        "claimIds": [
+          "com.github.copilot.cloud-agent.ephemeral-actions-environment-current",
+          "com.github.copilot.cloud-agent.self-hosted-runner-current"
+        ]
+      },
+      {
+        "id": "authority",
+        "eyebrow": "Repository change route",
+        "question": "What change and communication routes can a task use?",
+        "status": "Branch-first, direct pull request and automated routes differ",
+        "answer": "Publisher sources describe work on a branch before a pull request, direct draft pull-request entry points, and scheduled or event-triggered automations with selected tools. These are scoped routes, not one universal behavior.",
+        "whyItMatters": "The trigger and output route determine which changes and communications can occur without another user action.",
+        "claimIds": [
+          "com.github.copilot.cloud-agent.ga-milestone-2025-09-25",
+          "com.github.copilot.cloud-agent.branch-first-current",
+          "com.github.copilot.cloud-agent.automation-authority-2026-06-02"
+        ]
+      },
+      {
+        "id": "network",
+        "eyebrow": "Network boundary",
+        "question": "What does the integrated firewall cover?",
+        "status": "Default restriction with configurable alternatives and explicit gaps",
+        "answer": "GitHub says internet access is limited by default and a recommended allowlist is enabled, but organization or repository settings can customize or disable it. The documented firewall excludes MCP servers, setup-step processes and activity outside the GitHub Actions appliance.",
+        "whyItMatters": "A named firewall is not a complete network containment claim, especially across self-hosted and extension paths.",
+        "claimIds": [
+          "com.github.copilot.cloud-agent.default-firewall-current",
+          "com.github.copilot.cloud-agent.configurable-firewall-current",
+          "com.github.copilot.cloud-agent.self-hosted-runner-current"
+        ]
+      },
+      {
+        "id": "extensions",
+        "eyebrow": "Tools, model and credentials",
+        "question": "Which configuration can expand task inputs and authority?",
+        "status": "MCP tools, model choice and Agents secrets are configuration-scoped",
+        "answer": "Current GitHub Docs describe default and configurable MCP tools used autonomously, Auto or named model selection at supported entry points, and repository or organization Agents secrets available during setup and task execution.",
+        "whyItMatters": "The effective tool, model and credential surface cannot be inferred from the service name.",
+        "claimIds": [
+          "com.github.copilot.cloud-agent.mcp-tool-authority-current",
+          "com.github.copilot.cloud-agent.model-selection-current",
+          "com.github.copilot.cloud-agent.agents-secrets-current"
+        ]
+      },
+      {
+        "id": "automation",
+        "eyebrow": "Unattended invocation",
+        "question": "Can tasks start without a person initiating each session?",
+        "status": "Scheduled and event-triggered automation is documented",
+        "answer": "GitHub's 2 June 2026 changelog describes automations that run on a schedule or repository event, scoped to one repository with configurable tools such as creating pull requests or updating issue labels.",
+        "whyItMatters": "Automation changes the initiation boundary and can grant communication or mutation tools before any individual task starts.",
+        "claimIds": [
+          "com.github.copilot.cloud-agent.automation-authority-2026-06-02"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed public-source claims only. Publisher statements and source capture are not observed behavior or independent evaluation."
+  }
+}

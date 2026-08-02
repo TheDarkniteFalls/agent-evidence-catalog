@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Check who made each PatchPilot statement, which version and setup it applies to, and what still needs verification.">
+    <title>PatchPilot CLI sources and technical details · Agent Evidence Catalog</title>
+    <link rel="alternate" type="application/json" href="agent-dossier.json" title="PatchPilot evidence data for agents">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="claims.css">
+  </head>
+  <body data-page="claims-report">
+    <a class="skip-link" href="#reportMain">Skip to PatchPilot sources</a>
+    <header class="site-header claims-header report-header">
+      <a class="brand" href="index.html" aria-label="Agent Evidence Catalog home">Agent Evidence Catalog</a>
+      <nav aria-label="Report actions">
+        <a href="claims.html">← Back to summary</a>
+        <a href="agent.html">Use with an agent</a>
+      </nav>
+    </header>
+    <aside class="synthetic-banner claims-banner" aria-label="Fictional example notice">
+      <strong>Fictional example.</strong> These sources were not independently tested here and do not provide a ranking, recommendation or safety result.
+    </aside>
+
+    <main id="reportMain" class="report-main">
+      <section id="reportError" class="claims-error" role="alert" hidden></section>
+      <nav class="report-contents" aria-label="Sources and technical details">
+        <span class="report-contents-label">Contents</span>
+        <a href="#report-overview">At a glance</a>
+        <a href="#question-authority-change">Change approval</a>
+        <a href="#question-network">Network use</a>
+        <a href="#record-index">Source index</a>
+        <a href="#contract-boundary">What this does not prove</a>
+      </nav>
+
+      <article class="report-document">
+        <header class="report-title">
+          <p class="report-breadcrumb"><a href="claims.html">PatchPilot CLI</a> / Sources and technical details</p>
+          <h1>PatchPilot CLI: sources and technical details</h1>
+          <dl id="reportMetadata" class="report-metadata"></dl>
+        </header>
+
+        <section id="report-overview" class="report-overview" aria-labelledby="overview-heading">
+          <div>
+            <p class="section-kicker">Use this page to verify</p>
+            <h2 id="overview-heading">At a glance</h2>
+            <dl id="reportSummary" class="report-summary"></dl>
+          </div>
+          <div class="report-note">
+            <strong>What you can do here</strong>
+            <p>Check who made each statement, where it appeared, the exact setup it covers, and what disagrees or remains unknown.</p>
+          </div>
+        </section>
+
+        <div id="reportQuestions" class="report-questions"></div>
+
+        <section id="record-index" class="record-index" aria-labelledby="record-index-heading">
+          <p class="section-kicker">Find a source</p>
+          <h2 id="record-index-heading">Source index</h2>
+          <div class="report-table-scroll">
+            <table>
+              <thead><tr><th>Statement ID</th><th>Question</th><th>Applies to</th><th>Who says it</th><th>Source data</th></tr></thead>
+              <tbody id="recordIndexBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="contract-boundary" class="contract-boundary" aria-labelledby="contract-heading">
+          <p class="section-kicker">Before you rely on this</p>
+          <h2 id="contract-heading">What this evidence does not prove</h2>
+          <div class="contract-grid">
+            <p><strong>Fictional example.</strong> Every statement is about the made-up PatchPilot CLI, not a real product.</p>
+            <p><strong>Not independently tested.</strong> No one here installed or ran PatchPilot to confirm these statements.</p>
+            <p><strong>A source is not proof.</strong> Finding a statement confirms who said it—not that the behavior is true.</p>
+            <p><strong>Make your own decision.</strong> Use the scope, disagreements and unanswered questions before relying on anything here.</p>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <noscript><p class="noscript">JavaScript is required to show these source details. The source data remains available in <code>claim-records/</code>.</p></noscript>
+    <script src="claims-data.js"></script>
+    <script src="claims-shared.js"></script>
+    <script src="report-app.js"></script>
+  </body>
+</html>

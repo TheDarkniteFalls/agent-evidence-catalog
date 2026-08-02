@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.google.jules.hosted.environment-bootstrap-current",
+  "slug": "environment-bootstrap-current",
+  "subject": {
+    "id": "com.google.jules.hosted",
+    "name": "Google Jules",
+    "publisher": "Google",
+    "surface": { "kind": "hosted-service", "name": "Jules", "slug": "google-jules" }
+  },
+  "claim": {
+    "category": "process",
+    "statement": "Google's current environment guide says Jules can infer setup for simple repositories or run a repository-specific setup script, and a successful Run and Snapshot stores an environment snapshot for future tasks on that repository."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "Google" },
+  "source": {
+    "uri": "https://jules.google/docs/environment/",
+    "title": "Jules environment setup",
+    "locator": "Overview; Add a setup script; Test your setup script; Environment Snapshots",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T23:24:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "multiple", "values": ["inferred environment setup", "repository setup script", "successful environment snapshot"] },
+    "platform": { "scope": "named", "values": ["Ubuntu Jules task VM"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "multiple", "values": ["fresh task environment", "repository environment snapshot"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "product-surface-change", "configuration-change", "platform-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "The guide describes setup paths but does not establish which path a particular repository will use.",
+    "No setup script was submitted and no snapshot was created or inspected."
+  ],
+  "unknowns": [
+    "Snapshot contents, encryption, retention, invalidation, tenant isolation and restoration completeness are unknown.",
+    "The exact commands inferred by Jules and the side effects of a repository setup script are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

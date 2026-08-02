@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "claimed-attribute-mapping/0.1-study-extension",
+  "status": "unpublished-expansion-overlay",
+  "taxonomyPath": "taxonomy.json",
+  "baseMappingPath": "mapping.json",
+  "priorOverlayPath": "expansion-batch-3-mapping.json",
+  "asOf": "2026-08-02",
+  "mappingRule": "This additive mapping uses the completed taxonomy and calculation boundaries unchanged. The states array follows taxonomy.attributeOrder exactly, and evidence references point only to claims and configuration axes in the OpenCode CLI v1.18.11 record. Unknown does not mean absent; not-applicable is limited to native hosted-output paths outside this CLI/TUI surface.",
+  "records": [
+    {
+      "recordId": "com.anomaly.opencode.cli.1-18-11",
+      "comparisonFrame": "interactive-cli",
+      "states": [
+        "conditional", "conditional", "conditional", "conditional", "conditional", "conditional", "unknown", "not-applicable", "conditional",
+        "unknown", "unknown", "unknown", "not-applicable", "not-applicable", "not-applicable", "conditional",
+        "conditional", "unknown", "not-applicable", "conditional", "explicit-limitation", "unknown", "conditional", "conditional",
+        "unknown", "conditional", "not-applicable"
+      ],
+      "evidence": {
+        "cap.file-read": {
+          "claimIds": ["com.anomaly.opencode.cli.tools-current", "com.anomaly.opencode.cli.permissions-current"],
+          "axisIds": ["primary-agent-mode", "permission-policy", "tool-surface"],
+          "note": "File inspection is documented through the built-in tool surface and remains conditional on mode and effective permissions."
+        },
+        "cap.file-modify": {
+          "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current", "com.anomaly.opencode.cli.tools-current", "com.anomaly.opencode.cli.permissions-current"],
+          "axisIds": ["primary-agent-mode", "permission-policy", "tool-surface"],
+          "note": "Build and Plan alternatives, exact versus rolling defaults and permission overrides prevent an unconditional file-modification state."
+        },
+        "cap.command-execution": {
+          "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current", "com.anomaly.opencode.cli.tools-current", "com.anomaly.opencode.cli.permissions-current"],
+          "axisIds": ["primary-agent-mode", "permission-policy", "tool-surface"]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": ["com.anomaly.opencode.cli.tools-current"],
+          "axisIds": ["permission-policy", "tool-surface"],
+          "note": "Only publisher-documented web-oriented tools are credited; no browser behavior or network route was observed."
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.anomaly.opencode.cli.tools-current"],
+          "axisIds": ["permission-policy", "tool-surface"],
+          "note": "Scoped to configured MCP servers or custom tools; no server, credential or tool call was observed."
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["com.anomaly.opencode.cli.cli-tui-surface-current", "com.anomaly.opencode.cli.model-provider-route-current"],
+          "axisIds": ["model-route", "model-revision"],
+          "note": "Zen, external hosted and local providers remain mutually scoped alternatives; the exact model revision is unresolved."
+        },
+        "cap.parallel-or-child-execution": {
+          "claimIds": ["com.anomaly.opencode.cli.agent-modes-1-18-11", "com.anomaly.opencode.cli.agent-modes-current"],
+          "axisIds": ["agent-role"],
+          "note": "Subagent paths are documented, but invocation and concurrent execution are not inferred."
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.anomaly.opencode.cli.agent-modes-current", "com.anomaly.opencode.cli.permissions-current"],
+          "axisIds": ["primary-agent-mode", "permission-policy", "external-directory-authority"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["com.anomaly.opencode.cli.permissions-current"],
+          "axisIds": ["permission-policy", "external-directory-authority"],
+          "note": "Allow rules can avoid an ask prompt for matched operations; no effective rule or bypass behavior was observed."
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": ["com.anomaly.opencode.cli.permissions-current", "com.anomaly.opencode.cli.tools-current"],
+          "axisIds": ["permission-policy", "tool-surface"]
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": ["com.anomaly.opencode.cli.no-sandbox-security-current"],
+          "axisIds": ["isolation-path"],
+          "note": "Explicit publisher limitation: OpenCode itself is not sandboxed and permissions are not a security boundary. External OS, container or VM isolation is a separate user-selected wrapper and earns no product-isolation credit."
+        },
+        "authority.repository-scope": {
+          "claimIds": ["com.anomaly.opencode.cli.permissions-current"],
+          "axisIds": ["external-directory-authority", "permission-policy"],
+          "note": "Only the documented working-directory and external-directory permission boundary is credited; repository authorization was not observed."
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": ["com.anomaly.opencode.cli.model-provider-route-current", "com.anomaly.opencode.cli.tools-current"],
+          "axisIds": ["model-route", "tool-surface"],
+          "note": "Providers and MCP/custom tools can require configured credentials, but the credential store, scope and principal remain unresolved."
+        },
+        "authority.execution-environment-selection": {
+          "claimIds": ["com.anomaly.opencode.cli.runtime-paths-current", "com.anomaly.opencode.cli.no-sandbox-security-current"],
+          "axisIds": ["runtime-path", "isolation-path"],
+          "note": "A local package/binary path and an externally isolated container or VM remain separate delivery and isolation choices."
+        }
+      }
+    }
+  ]
+}

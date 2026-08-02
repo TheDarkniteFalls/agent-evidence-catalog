@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.openhands.cli.configuration-storage-1-16-0",
+  "slug": "configuration-storage-1-16-0",
+  "subject": {
+    "id": "org.openhands.cli",
+    "name": "OpenHands",
+    "publisher": "OpenHands",
+    "surface": { "kind": "cli", "name": "OpenHands CLI", "slug": "openhands-cli" }
+  },
+  "claim": {
+    "category": "credentials",
+    "statement": "The publisher's README at tag 1.16.0 states that OpenHands CLI stores agent, CLI and MCP configuration under ~/.openhands, and ignores LLM_API_KEY, LLM_MODEL and LLM_BASE_URL by default unless --override-with-envs is supplied, in which case those overrides are not persisted."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenHands" },
+  "source": {
+    "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+    "title": "OpenHands CLI README at tag 1.16.0",
+    "locator": "Configuration",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T21:47:27Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "1.16.0" },
+    "configuration": { "scope": "multiple", "values": ["persisted ~/.openhands settings", "--override-with-envs session overrides"] },
+    "platform": { "scope": "multiple", "values": ["Linux", "macOS", "Windows through WSL"] },
+    "model": { "scope": "named", "values": ["configured provider and model"] },
+    "deployment": { "scope": "named", "values": ["local OpenHands CLI"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "platform-change", "model-change", "manual-review"]
+  },
+  "limitations": [
+    "The publisher documentation describes storage locations and precedence; the catalog did not inspect permissions, encryption, keychain use or cleanup behavior.",
+    "Not persisting environment overrides does not establish that secrets or prompts never appear in process state, logs, caches, provider requests or conversation history."
+  ],
+  "unknowns": [
+    "File permissions, encryption at rest and credential deletion behavior are unknown.",
+    "The exact provider endpoint, payload, retention and training policy depend on configuration and were not reviewed."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

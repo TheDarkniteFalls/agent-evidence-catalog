@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.model-persistence-2-1-117",
+  "slug": "model-persistence-2-1-117",
+  "subject": { "id": "com.anthropic.claude-code.cli", "name": "Claude Code CLI", "publisher": "Anthropic PBC", "surface": { "kind": "cli", "name": "Claude Code CLI", "slug": "anthropic-claude-code-cli-2-1-117" } },
+  "claim": { "category": "model-configuration", "statement": "Anthropic's v2.1.117 release notes say /model selections persist across restarts even when a project pins a different model, and the startup header identifies project or managed-settings model pins." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Anthropic PBC" },
+  "source": { "uri": "https://github.com/anthropics/claude-code/releases/tag/v2.1.117", "title": "Release v2.1.117", "locator": "What's changed — improved /model", "publishedAt": "2026-04-22T00:04:00Z", "capturedAt": "2026-08-01T06:18:27Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "2.1.117" }, "configuration": { "scope": "named", "values": ["session model selection", "project model pin", "managed-settings model pin"] }, "platform": { "scope": "unresolved", "values": [] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["local Claude Code CLI"] } },
+  "lifecycle": { "status": "historical", "changedAt": null, "reason": "Later release notes describe changed model-selection semantics." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-11-01", "invalidatedBy": ["release-note-correction"] },
+  "limitations": ["The release note describes selection persistence, not the model, provider endpoint or response behavior."],
+  "unknowns": ["The selected model, pin source, provider, endpoint and fallback behavior are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

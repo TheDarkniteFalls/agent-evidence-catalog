@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.bypass-approval-current",
+  "slug": "bypass-approval-current",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "authority.approval", "statement": "A Cognition-authored scheduled-session example says setting bypass approval to true enables fully autonomous operation without manual approvals for MCP tools, Knowledge updates or child-session creation in that workflow." },
+  "provenance": { "kind": "publisher-declared", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/use-cases/gallery/granola-post-call-processing", "title": "Create PRs After Every Call", "locator": "Create the hourly schedule — bypass approval configuration", "publishedAt": null, "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "named", "values": ["scheduled session", "bypass approval true", "Granola MCP", "Knowledge updates", "child-session creation"] },
+    "platform": { "scope": "named", "values": ["Devin scheduled session"] },
+    "model": { "scope": "configuration-dependent", "values": [] },
+    "deployment": { "scope": "unresolved", "values": [] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-08-15", "invalidatedBy": ["bypass-semantics-change", "schedule-change", "child-session-approval-change"] },
+  "limitations": ["This publisher example establishes semantics only for the named scheduled workflow actions; it is not a universal claim that every Devin action can bypass approval."],
+  "unknowns": ["The effective bypass value, policy inheritance, excluded actions and resulting child-session controls are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

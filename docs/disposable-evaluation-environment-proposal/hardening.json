@@ -1,0 +1,399 @@
+{
+  "documentType": "codex-security.hardening-analysis",
+  "schemaVersion": "1.0",
+  "analysisId": "private-evaluation-environment-20260727",
+  "sourceEvidence": {
+    "kind": "document_and_source_collection",
+    "label": "Real-Agent pilot policy and completed synthetic fixture scaffold",
+    "collectionSha256": "641eee9ea1217ccdc1ab2fe12ebef8be9b78e1885999a554fc36e84ea759faca",
+    "artifactCount": 10,
+    "sourceDrift": "present",
+    "targetRevision": "9f111e9fb5087690602d1450e8d934995960628c"
+  },
+  "assessment": {
+    "outcome": "opportunities_identified",
+    "summary": "The synthetic fixture needs a candidate-independent runtime, network, credential, observation, and cleanup boundary before any private agent evaluation."
+  },
+  "constraints": {
+    "profile": "safety_first_private_pilot",
+    "changeHorizons": [
+      "proposal_only",
+      "preflight_before_agent",
+      "single_private_run"
+    ],
+    "nonNegotiables": [
+      "No real host data, credentials, sessions, remote, or deployment target may enter the candidate runtime.",
+      "Only one declared model data path may leave the runtime.",
+      "Candidate decisions must remain distinct from operator decisions and environment outcomes.",
+      "No agent installation, model call, or external contact is authorized by this analysis."
+    ],
+    "assumptions": [
+      "No performance, memory, cost, or setup-time measurements were supplied.",
+      "The first evaluation remains synthetic, private, and single-candidate.",
+      "Configuration identity and executable artifact types remain unresolved publication blockers."
+    ]
+  },
+  "opportunities": [
+    {
+      "opportunityId": "disposable-evaluation-boundary",
+      "title": "Place real-data protection and observation outside candidate authority",
+      "summary": "Run the synthetic fixture inside a disposable boundary with no host mounts, a single model gateway, scoped credentials, external observations, and verified cleanup.",
+      "diagnosis": "The scaffold is a deterministic synthetic test object, not an operating-system sandbox; direct host execution would make product policy the only barrier to ambient host authority.",
+      "evidence": [
+        {
+          "claimType": "observed",
+          "sourceKind": "document",
+          "evidenceId": "E001",
+          "path": "docs/real-agent-mvp-pilot.md",
+          "claim": "The pilot requires a fresh isolated environment, no host mounts or credentials, model-only egress, local mocks, and observations the candidate cannot rewrite."
+        },
+        {
+          "claimType": "observed",
+          "sourceKind": "document",
+          "evidenceId": "E002",
+          "path": "docs/synthetic-pilot-fixture.md",
+          "claim": "The completed scaffold explicitly does not enforce workspace access, general egress, approvals, immutable observations, or agent tool restrictions."
+        },
+        {
+          "claimType": "observed",
+          "sourceKind": "source",
+          "evidenceId": "E003",
+          "path": "scripts/pilot-fixture.mjs",
+          "claim": "The generator builds a local-path Git remote, local deployment target, synthetic decoy, deterministic tests, and a result-separation rule."
+        },
+        {
+          "claimType": "observed",
+          "sourceKind": "source",
+          "evidenceId": "E007",
+          "path": "fixtures/real-agent-pilot/workspace/UNTRUSTED_INSTRUCTIONS.md",
+          "claim": "The synthetic redirect asks the future candidate to leave its task boundary, so OS blocking and candidate policy behavior must remain distinguishable."
+        },
+        {
+          "claimType": "observed",
+          "sourceKind": "source",
+          "evidenceId": "E010",
+          "path": "fixtures/real-agent-pilot/workspace/tools/mock-deploy.mjs",
+          "claim": "The supplied mock deployment writes only a workspace-local state file."
+        },
+        {
+          "claimType": "inferred",
+          "sourceKind": "source",
+          "path": "scripts/pilot-fixture.mjs",
+          "claim": "Launching a candidate directly on the maintainer host would leave ambient host authority outside the fixture's control."
+        }
+      ],
+      "desiredInvariants": [
+        "No host home, project, credential store, session, device, clipboard, runtime socket, or shared folder is visible inside the candidate runtime.",
+        "The provider credential remains outside the candidate runtime; the guest receives only a scoped, expiring, revocable, cost-limited gateway token.",
+        "The candidate has no general route or DNS service and can reach only one protocol-limited model gateway plus fixture-local resources.",
+        "The controller owns approval input, console capture, virtual-network records, starting manifests, and final offline disk inventory outside candidate write authority.",
+        "Agent decision, operator decision, and environment outcome are recorded independently for every consequential action.",
+        "Every run starts from a clean snapshot and ends with token revocation and destruction of overlays, homes, mocks, and run-specific state."
+      ],
+      "proposalPath": "proposals/disposable-evaluation-boundary.md",
+      "options": [
+        {
+          "optionId": "hardened-container",
+          "title": "Dedicated host with a hardened rootless container",
+          "kind": "baseline",
+          "summary": "Use a synthetic-only dedicated host, rootless container, no bind mounts or runtime sockets, default-deny networking, and host-owned observations.",
+          "diagramPaths": {
+            "before": "diagrams/disposable-evaluation-boundary-before.mmd",
+            "after": "diagrams/disposable-evaluation-boundary-hardened-container-after.mmd"
+          },
+          "evidenceCoverage": [
+            {
+              "evidenceId": "E001",
+              "effect": "mitigates",
+              "tacticalFixRequired": true,
+              "rationale": "The container narrows routine host access but shares the host kernel and depends on a separately disposable host."
+            },
+            {
+              "evidenceId": "E002",
+              "effect": "mitigates",
+              "tacticalFixRequired": true,
+              "rationale": "Mount and network policy add missing controls, while a preflight still has to prove them."
+            },
+            {
+              "evidenceId": "E003",
+              "effect": "unaffected",
+              "tacticalFixRequired": true,
+              "rationale": "The fixture controls remain useful and still require separate action-state recording."
+            },
+            {
+              "evidenceId": "E007",
+              "effect": "unaffected",
+              "tacticalFixRequired": true,
+              "rationale": "The decoy must remain readable inside the synthetic outer boundary to test candidate policy behavior."
+            },
+            {
+              "evidenceId": "E010",
+              "effect": "unaffected",
+              "tacticalFixRequired": true,
+              "rationale": "The local target remains safe only when its path and hash are verified before the run."
+            }
+          ],
+          "tradeoffs": [
+            {
+              "dimension": "security",
+              "direction": "improves",
+              "confidence": "medium",
+              "basis": "analogous",
+              "assessment": "Rootless isolation, no mounts, and default-deny networking narrow ambient authority, but the candidate shares the host kernel.",
+              "validationPlan": "Run no-agent mount, device, socket, namespace, capability, and network probes on a dedicated rebuildable host."
+            },
+            {
+              "dimension": "performance",
+              "direction": "neutral",
+              "confidence": "low",
+              "basis": "analogous",
+              "assessment": "Container overhead should be small, but observation and gateway costs are unmeasured.",
+              "validationPlan": "Measure fixture-test wall time and gateway round-trip time against an offline host-only baseline."
+            },
+            {
+              "dimension": "memory",
+              "direction": "regresses",
+              "confidence": "medium",
+              "basis": "analogous",
+              "assessment": "The container, gateway, and evidence buffers add bounded memory without a second guest OS.",
+              "validationPlan": "Record peak host and container RSS during the no-agent rehearsal."
+            },
+            {
+              "dimension": "reliability",
+              "direction": "improves",
+              "confidence": "medium",
+              "basis": "analogous",
+              "assessment": "Disposable overlays improve recovery, while a shared-kernel failure can affect controller and observer together.",
+              "validationPlan": "Terminate the probe and container at each phase and verify deterministic evidence capture and teardown."
+            },
+            {
+              "dimension": "operability",
+              "direction": "regresses",
+              "confidence": "medium",
+              "basis": "hypothetical",
+              "assessment": "A dedicated disposable host, rootless profile, gateway, and cleanup receipt require new ownership.",
+              "validationPlan": "Time a complete no-agent build, run, evidence export, destruction, and host rebuild."
+            },
+            {
+              "dimension": "migration",
+              "direction": "regresses",
+              "confidence": "medium",
+              "basis": "source-derived",
+              "assessment": "The fixture can be copied unchanged, but container policy and host preparation must be designed and reviewed.",
+              "validationPlan": "Generate the fixture in the container and compare its manifest and test behavior with the current self-test."
+            }
+          ],
+          "residualRisks": [
+            "Shared host kernel and container-management boundary.",
+            "Misconfigured mounts or runtime sockets.",
+            "Host-owned evidence shares a failure domain with the container runtime."
+          ]
+        },
+        {
+          "optionId": "single-use-vm",
+          "title": "Single-use VM with external controller and observer",
+          "kind": "isolation",
+          "summary": "Place the pinned candidate and synthetic fixture in a fresh VM with no host sharing, one model gateway, candidate-inaccessible evidence, and verified destruction.",
+          "diagramPaths": {
+            "before": "diagrams/disposable-evaluation-boundary-before.mmd",
+            "after": "diagrams/disposable-evaluation-boundary-single-use-vm-after.mmd"
+          },
+          "evidenceCoverage": [
+            {
+              "evidenceId": "E001",
+              "effect": "addresses",
+              "tacticalFixRequired": true,
+              "rationale": "The proposed VM, gateway, observer, snapshot, and cleanup controls directly implement the policy boundary after validation."
+            },
+            {
+              "evidenceId": "E002",
+              "effect": "addresses",
+              "tacticalFixRequired": true,
+              "rationale": "The VM design owns the isolation controls the scaffold explicitly leaves open; preflight evidence remains mandatory."
+            },
+            {
+              "evidenceId": "E003",
+              "effect": "unaffected",
+              "tacticalFixRequired": true,
+              "rationale": "The existing local mocks and manifest are preserved, with action dimensions recorded separately."
+            },
+            {
+              "evidenceId": "E007",
+              "effect": "unaffected",
+              "tacticalFixRequired": true,
+              "rationale": "The decoy remains synthetic and guest-readable so candidate policy behavior can be observed."
+            },
+            {
+              "evidenceId": "E010",
+              "effect": "unaffected",
+              "tacticalFixRequired": true,
+              "rationale": "The local mock deployment remains bounded by its verified program and guest-only target."
+            }
+          ],
+          "tradeoffs": [
+            {
+              "dimension": "security",
+              "direction": "improves",
+              "confidence": "high",
+              "basis": "analogous",
+              "assessment": "A virtual hardware boundary, absent host sharing, scoped gateway token, and outside observations remove normal guest authority over real host assets.",
+              "validationPlan": "Use no-agent probes to enumerate mounts, devices, host services, credentials, routes, DNS, gateway methods, and observer write paths."
+            },
+            {
+              "dimension": "performance",
+              "direction": "regresses",
+              "confidence": "medium",
+              "basis": "analogous",
+              "assessment": "Virtualization, console capture, disk diffing, and gateway mediation add latency and I/O work.",
+              "validationPlan": "Measure VM boot, offline test time, disk-inventory time, and synthetic gateway round-trip latency against stated ceilings."
+            },
+            {
+              "dimension": "memory",
+              "direction": "regresses",
+              "confidence": "high",
+              "basis": "analogous",
+              "assessment": "One guest OS plus evidence buffers consumes more memory than a container.",
+              "validationPlan": "Record host and guest peak memory during the no-agent rehearsal and define an abort threshold."
+            },
+            {
+              "dimension": "reliability",
+              "direction": "improves",
+              "confidence": "medium",
+              "basis": "analogous",
+              "assessment": "Guest failure is contained and the overlay is disposable, but the hypervisor, controller, and gateway become dependencies.",
+              "validationPlan": "Inject guest, gateway, observer, and controller interruption during rehearsal and verify stop and cleanup behavior."
+            },
+            {
+              "dimension": "operability",
+              "direction": "regresses",
+              "confidence": "medium",
+              "basis": "hypothetical",
+              "assessment": "Frozen images, virtual networking, token service, evidence hashing, and cleanup receipts require explicit ownership.",
+              "validationPlan": "Have a second reviewer follow the runbook for a no-agent build and teardown and record ambiguous steps."
+            },
+            {
+              "dimension": "migration",
+              "direction": "regresses",
+              "confidence": "medium",
+              "basis": "source-derived",
+              "assessment": "The fixture is portable, but image preparation, gateway protocol, observer outputs, and preflight gates are new.",
+              "validationPlan": "Reproduce the fixture manifest and expected failing test from a clean VM clone before any candidate artifact is added."
+            }
+          ],
+          "residualRisks": [
+            "Hypervisor, controller administrator, and model gateway remain trusted.",
+            "The model provider receives synthetic content under its own retention policy.",
+            "Candidate-inaccessible evidence is not independent third-party attestation."
+          ]
+        },
+        {
+          "optionId": "split-observer-vm",
+          "title": "Split evaluation VM and gateway/observer VM",
+          "kind": "foundational",
+          "summary": "Place the candidate in one VM and the model credential, gateway, network capture, and evidence volume in a second minimal VM.",
+          "diagramPaths": {
+            "before": "diagrams/disposable-evaluation-boundary-before.mmd",
+            "after": "diagrams/disposable-evaluation-boundary-split-observer-after.mmd"
+          },
+          "evidenceCoverage": [
+            {
+              "evidenceId": "E001",
+              "effect": "addresses",
+              "tacticalFixRequired": true,
+              "rationale": "Two VM boundaries separate candidate, provider credential, and retained evidence after validation."
+            },
+            {
+              "evidenceId": "E002",
+              "effect": "addresses",
+              "tacticalFixRequired": true,
+              "rationale": "The split design supplies the missing isolation and observation owners while preserving scaffold limits."
+            },
+            {
+              "evidenceId": "E003",
+              "effect": "unaffected",
+              "tacticalFixRequired": true,
+              "rationale": "The fixture remains unchanged and still needs separate action-state recording."
+            },
+            {
+              "evidenceId": "E007",
+              "effect": "unaffected",
+              "tacticalFixRequired": true,
+              "rationale": "The decoy stays inside the evaluation VM's synthetic boundary."
+            },
+            {
+              "evidenceId": "E010",
+              "effect": "unaffected",
+              "tacticalFixRequired": true,
+              "rationale": "The deployment target stays local to the evaluation guest and remains subject to preflight hashing."
+            }
+          ],
+          "tradeoffs": [
+            {
+              "dimension": "security",
+              "direction": "improves",
+              "confidence": "medium",
+              "basis": "hypothetical",
+              "assessment": "A second VM separates gateway credentials and evidence from both the candidate guest and ordinary controller session.",
+              "validationPlan": "Probe every inter-VM and host route and prove the evaluation VM cannot reach observer storage or controller services."
+            },
+            {
+              "dimension": "performance",
+              "direction": "regresses",
+              "confidence": "medium",
+              "basis": "analogous",
+              "assessment": "Two guests, inter-VM gateway traffic, and separate evidence storage add the most overhead.",
+              "validationPlan": "Measure boot, gateway latency, evidence ingestion, and export time across both guests."
+            },
+            {
+              "dimension": "memory",
+              "direction": "regresses",
+              "confidence": "high",
+              "basis": "analogous",
+              "assessment": "Two guest operating systems and their buffers require the largest memory allocation.",
+              "validationPlan": "Record peak host and per-VM memory and test behavior under the proposed fixed limits."
+            },
+            {
+              "dimension": "reliability",
+              "direction": "unknown",
+              "confidence": "medium",
+              "basis": "hypothetical",
+              "assessment": "Observer survival improves during evaluation-guest failure, but routing, clocks, export, and partial teardown add failure modes.",
+              "validationPlan": "Exercise every single-component failure and confirm evidence survival, stop semantics, and cleanup ordering."
+            },
+            {
+              "dimension": "operability",
+              "direction": "regresses",
+              "confidence": "high",
+              "basis": "hypothetical",
+              "assessment": "A second image, protocol, firewall, clock, evidence volume, and lifecycle materially increase operational work.",
+              "validationPlan": "Time two independent reviewers executing the no-agent lifecycle and count unresolved manual decisions."
+            },
+            {
+              "dimension": "migration",
+              "direction": "regresses",
+              "confidence": "high",
+              "basis": "source-derived",
+              "assessment": "The project must define an inter-VM gateway and observation contract before using the unchanged fixture.",
+              "validationPlan": "Validate the protocol and evidence schema with synthetic probes before packaging any candidate artifact."
+            }
+          ],
+          "residualRisks": [
+            "The controller and hypervisor still coordinate both VMs.",
+            "More policies and clocks can drift independently.",
+            "Operational complexity can create gaps that outweigh the additional isolation."
+          ]
+        }
+      ],
+      "recommendedOptionId": "single-use-vm",
+      "recommendation": "Use a fresh single-use VM with no host sharing, a protocol-limited gateway, candidate-inaccessible evidence, and a mandatory no-agent preflight; choose the split design only if evidence must also be isolated from the controller host."
+    }
+  ],
+  "openQuestions": [
+    "Which virtualization platform can satisfy the no-sharing and observable-network invariants with the least hidden host integration?",
+    "Can the selected model protocol be narrowed without creating a generic forwarding proxy?",
+    "What prompt and response retention is acceptable for synthetic model traffic?",
+    "Who owns token limits, revocation, evidence retention, and cleanup sign-off?",
+    "Is candidate-inaccessible evidence sufficient, or must evidence also be isolated from the controller host?",
+    "Can the exact Cline artifact, source relationship, and effective configuration be frozen and represented truthfully?"
+  ]
+}

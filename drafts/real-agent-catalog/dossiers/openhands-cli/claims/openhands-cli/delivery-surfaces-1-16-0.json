@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.openhands.cli.delivery-surfaces-1-16-0",
+  "slug": "delivery-surfaces-1-16-0",
+  "subject": {
+    "id": "org.openhands.cli",
+    "name": "OpenHands",
+    "publisher": "OpenHands",
+    "surface": { "kind": "cli", "name": "OpenHands CLI", "slug": "openhands-cli" }
+  },
+  "claim": {
+    "category": "delivery",
+    "statement": "The publisher's README at tag 1.16.0 describes installation as the Python package named openhands through uv or as a standalone binary, and lists terminal, ACP, headless, browser-served terminal UI, GUI-server and cloud commands as distinct running modes."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenHands" },
+  "source": {
+    "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+    "title": "OpenHands CLI README at tag 1.16.0",
+    "locator": "Installation; Running Modes",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T21:47:27Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "1.16.0" },
+    "configuration": { "scope": "multiple", "values": ["Python package", "standalone binary"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "not-applicable", "values": [] },
+    "deployment": { "scope": "multiple", "values": ["terminal", "ACP", "headless", "web interface", "GUI server", "cloud command"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-unavailable", "claimant-correction", "product-version-change", "product-surface-change", "manual-review"]
+  },
+  "limitations": [
+    "This is a publisher description of delivery and commands, not a catalog installation or runtime observation.",
+    "The listed commands cross local, browser-served, container-backed and hosted execution boundaries and must not be treated as one effective runtime."
+  ],
+  "unknowns": [
+    "Which package or binary variant a particular user installs is unknown.",
+    "Platform-specific packaging, signing and update behavior were not established."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

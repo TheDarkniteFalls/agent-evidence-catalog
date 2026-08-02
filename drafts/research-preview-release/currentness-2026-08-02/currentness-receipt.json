@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "agent-evidence-currentness-receipt/0.1-draft",
+  "artifactType": "unpublished-source-currentness-receipt",
+  "asOf": "2026-08-02",
+  "checkedAt": "2026-08-02T06:58:22Z",
+  "cutoffRule": "Current official publisher identity when checked on 2026-08-02; no artificial historical cutoff.",
+  "scope": {
+    "surfacesReviewed": 16,
+    "publisherSourcesOnly": true,
+    "agentsInstalledOrRun": false,
+    "independentEvidenceCredit": 0,
+    "catalogPresentationChanged": false,
+    "watcherBaselinesChanged": false
+  },
+  "currentSurfaces": [
+    {
+      "surface": "Cline VS Code extension",
+      "recordId": "com.cline.bot.vscode-extension.4-1-3",
+      "currentIdentity": "4.1.3",
+      "identityScope": "exact-version",
+      "status": "current",
+      "basisSourceId": "cline-marketplace-listing",
+      "note": "Repaired from 4.1.2."
+    },
+    {
+      "surface": "OpenHands CLI",
+      "recordId": "org.openhands.cli.1-16-0",
+      "currentIdentity": "1.16.0",
+      "identityScope": "exact-version",
+      "status": "current",
+      "basisSourceId": "openhands-cli-release-list",
+      "note": "Official release remains latest."
+    },
+    {
+      "surface": "GitHub Copilot cloud agent",
+      "recordId": "com.github.copilot.cloud-agent.rolling",
+      "currentIdentity": "rolling",
+      "identityScope": "rolling-service",
+      "status": "current",
+      "basisSourceId": "github-copilot-cloud-agent-changelog",
+      "note": "Current hosted surface; immutable service revision unresolved."
+    },
+    {
+      "surface": "Google Jules",
+      "recordId": "com.google.jules.hosted.rolling",
+      "currentIdentity": "rolling",
+      "identityScope": "rolling-service",
+      "status": "current",
+      "basisSourceId": "google-jules-changelog",
+      "note": "Current hosted surface; immutable runtime and model revisions unresolved."
+    },
+    {
+      "surface": "Cursor foreground Agent",
+      "recordId": "com.cursor.ide.foreground-agent.3-14",
+      "currentIdentity": "3.14",
+      "identityScope": "exact-client-version",
+      "status": "current",
+      "basisSourceId": "cursor-desktop-download",
+      "note": "Official download archive labels 3.14 latest."
+    },
+    {
+      "surface": "Devin hosted",
+      "recordId": "com.cognition.devin.hosted.rolling",
+      "currentIdentity": "rolling",
+      "identityScope": "rolling-service",
+      "status": "current",
+      "basisSourceId": "cognition-devin-2026-release-notes",
+      "note": "Current hosted surface; Desktop and Cascade excluded."
+    },
+    {
+      "surface": "Replit Agent",
+      "recordId": "com.replit.agent.hosted.agent-4",
+      "currentIdentity": "Agent 4",
+      "identityScope": "rolling-generation",
+      "status": "current",
+      "basisSourceId": "replit-agent-4-announcement",
+      "note": "Current named generation anchor."
+    },
+    {
+      "surface": "Aider CLI",
+      "recordId": "org.aider-ai.aider.cli.0-86-0",
+      "currentIdentity": "0.86.0",
+      "identityScope": "exact-version",
+      "status": "current",
+      "basisSourceId": "aider-latest-release",
+      "note": "Official latest endpoint remains v0.86.0."
+    },
+    {
+      "surface": "Kiro IDE",
+      "recordId": "com.amazon.kiro.ide.1-0-242",
+      "currentIdentity": "1.0.242",
+      "identityScope": "exact-version",
+      "status": "current",
+      "basisSourceId": "kiro-ide-changelog",
+      "note": "Official IDE changelog still lists 1.0.242 first."
+    },
+    {
+      "surface": "Lovable Build mode",
+      "recordId": "com.lovable.agent.hosted.rolling",
+      "currentIdentity": "rolling",
+      "identityScope": "rolling-service",
+      "status": "current",
+      "basisSourceId": "lovable-build-mode-documentation",
+      "note": "Build mode is the current name; former Agent mode is the same surface."
+    },
+    {
+      "surface": "OpenCode CLI/TUI",
+      "recordId": "com.anomaly.opencode.cli.1-18-11",
+      "currentIdentity": "1.18.11",
+      "identityScope": "exact-version",
+      "status": "current",
+      "basisSourceId": "opencode-latest-release",
+      "note": "Official latest endpoint remains v1.18.11."
+    },
+    {
+      "surface": "Cascade in Devin Desktop",
+      "recordId": "com.cognition.devin-desktop.cascade.3-6-27",
+      "currentIdentity": "3.6.27",
+      "identityScope": "exact-client-version",
+      "status": "current",
+      "basisSourceId": "cognition-devin-desktop-releases",
+      "note": "Official Desktop release list still shows 3.6.27 first."
+    },
+    {
+      "surface": "OpenAI Codex CLI",
+      "recordId": "com.openai.codex.cli.0-146-0",
+      "currentIdentity": "0.146.0",
+      "identityScope": "exact-version",
+      "status": "current",
+      "basisSourceId": "openai-codex-latest-release",
+      "note": "Exact CLI stable identity only; other Codex surfaces excluded."
+    },
+    {
+      "surface": "Anthropic Claude Code CLI",
+      "recordId": "com.anthropic.claude-code.cli.2-1-220",
+      "currentIdentity": "2.1.220",
+      "identityScope": "exact-version",
+      "status": "current",
+      "basisSourceId": "anthropic-claude-code-latest-release",
+      "note": "Official latest endpoint remains v2.1.220."
+    },
+    {
+      "surface": "GitLab Duo Developer Flow",
+      "recordId": "com.gitlab.duo.developer-flow.19-2-1",
+      "currentIdentity": "19.2.1-ee",
+      "identityScope": "exact-patch-plus-rolling-service",
+      "status": "current",
+      "basisSourceId": "gitlab-19-2-1-patch-release",
+      "note": "Repaired from 19.2.0-ee."
+    },
+    {
+      "surface": "Native Zed Agent",
+      "recordId": "dev.zed.agent.native.1-13-1",
+      "currentIdentity": "1.13.1",
+      "identityScope": "exact-client-version",
+      "status": "current",
+      "basisSourceId": "zed-stable-releases",
+      "note": "Reconciled as current stable; 1.12.1 superseded."
+    }
+  ],
+  "supersededRecords": [
+    {
+      "recordId": "com.cline.bot.vscode-extension.4-1-2",
+      "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
+      "supersededByRecordId": "com.cline.bot.vscode-extension.4-1-3"
+    },
+    {
+      "recordId": "com.openai.codex.cli.0-90-0",
+      "surfaceKey": "com.openai.codex.cli.stable",
+      "supersededByRecordId": "com.openai.codex.cli.0-146-0"
+    },
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-117",
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "supersededByRecordId": "com.anthropic.claude-code.cli.2-1-220"
+    },
+    {
+      "recordId": "com.gitlab.duo.developer-flow.19-2",
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "supersededByRecordId": "com.gitlab.duo.developer-flow.19-2-1"
+    },
+    {
+      "recordId": "com.zed.agent.native.stable.1-12-1",
+      "surfaceKey": "dev.zed.agent.native.desktop-stable",
+      "supersededByRecordId": "dev.zed.agent.native.1-13-1"
+    }
+  ],
+  "historicalRecords": [
+    {
+      "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "historicalSignificance": "GitLab 18.8 is the publisher-documented general-availability milestone for Developer Flow."
+    }
+  ],
+  "unresolvedIdentitySurfaces": [],
+  "unresolvedApplicabilityBoundary": "Current surface identity is resolved for all 16 reviewed surfaces. Rolling service revisions, installed runtime artifacts, models, credentials, configuration, tools, approvals, sandboxes, network paths and related product surfaces remain unresolved where each record says so.",
+  "materialTransitions": [
+    {
+      "surface": "Cline VS Code extension",
+      "fromRecordId": "com.cline.bot.vscode-extension.4-1-2",
+      "toRecordId": "com.cline.bot.vscode-extension.4-1-3"
+    },
+    {
+      "surface": "GitLab Duo Developer Flow",
+      "fromRecordId": "com.gitlab.duo.developer-flow.19-2",
+      "toRecordId": "com.gitlab.duo.developer-flow.19-2-1"
+    },
+    {
+      "surface": "Native Zed Agent",
+      "fromRecordId": "com.zed.agent.native.stable.1-12-1",
+      "toRecordId": "dev.zed.agent.native.1-13-1"
+    }
+  ]
+}

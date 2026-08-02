@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.manual-approval-before-changes",
+  "slug": "manual-approval-before-changes",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension"
+    }
+  },
+  "claim": {
+    "category": "authority.change",
+    "statement": "The publisher's current IDE guide states that, when Auto Approve is not enabled, every file creation, file edit and terminal command waits for explicit user approval."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://docs.cline.bot/usage/ide",
+    "title": "Cline IDE guide",
+    "locator": "Step 5: Approve the Changes",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T10:37:35Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": ["Auto Approve disabled"]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["VS Code extension"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-31",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-31",
+    "recheckAfter": "2026-10-29",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-change",
+      "source-unavailable",
+      "claimant-correction",
+      "product-version-change",
+      "product-surface-change",
+      "configuration-change",
+      "contradictory-source"
+    ]
+  },
+  "limitations": [
+    "This is a rolling publisher guide captured on 31 July 2026, not independently tested behavior.",
+    "The guide does not establish the effective approval configuration of a particular installation."
+  ],
+  "unknowns": [
+    "Whether the guide applies identically to both 4.1.2 extension variants is unknown.",
+    "The fresh-install default state of every approval toggle was not established from version-pinned material."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "com.cline.bot.vscode-extension.selective-auto-approval",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because this claim applies when Auto Approve is disabled and the other applies when selected Auto Approve categories are enabled."
+    },
+    {
+      "type": "contradicts",
+      "targetClaimId": "com.cline.bot.vscode-extension.yolo-auto-approval",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because this claim applies when Auto Approve is disabled and the other applies only when YOLO Mode is enabled."
+    }
+  ],
+  "validationRefs": []
+}

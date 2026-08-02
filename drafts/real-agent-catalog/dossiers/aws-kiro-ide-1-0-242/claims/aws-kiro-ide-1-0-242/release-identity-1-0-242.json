@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0", "id": "com.amazon.kiro.ide.release-identity-1-0-242", "slug": "release-identity-1-0-242",
+  "subject": { "id": "com.amazon.kiro.ide", "name": "Kiro IDE", "publisher": "Amazon Web Services", "surface": { "kind": "desktop-app", "name": "Kiro IDE", "slug": "aws-kiro-ide-1-0-242" } },
+  "claim": { "category": "release.identity", "statement": "AWS's Kiro changelog identifies Kiro IDE 1.0.242 as a desktop release dated 2026-07-28." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Amazon Web Services" },
+  "source": { "uri": "https://kiro.dev/changelog/ide/1-0-242/", "title": "Editor Actions, Guided Hook Creation, and Code OSS Upgrade", "locator": "Release date and 1.0.242 heading", "publishedAt": "2026-07-28T00:00:00Z", "capturedAt": "2026-08-01T10:46:26Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "1.0.242" }, "configuration": { "scope": "all", "values": [] }, "platform": { "scope": "named", "values": ["Kiro IDE desktop release"] }, "model": { "scope": "not-applicable", "values": [] }, "deployment": { "scope": "named", "values": ["desktop client"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Exact dated release retained even when later builds appear." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["release-metadata-correction", "version-withdrawal"] },
+  "limitations": ["No installer, platform package, signature or digest was captured."],
+  "unknowns": ["The source revision, installed platform asset and binary digest are unavailable or unresolved."],
+  "relationships": [], "validationRefs": []
+}
+

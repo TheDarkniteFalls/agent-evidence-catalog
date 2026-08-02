@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.example.patchpilot.cli.asymmetric-publisher-claim",
+  "slug": "asymmetric-publisher-claim",
+  "subject": {
+    "id": "dev.example.patchpilot",
+    "name": "PatchPilot",
+    "publisher": "Synthetic Workshop Ltd",
+    "surface": {
+      "kind": "cli",
+      "name": "PatchPilot CLI",
+      "slug": "patchpilot-cli"
+    }
+  },
+  "claim": {
+    "category": "authority.change",
+    "statement": "The synthetic publisher states that restricted mode requests confirmation for every mutating command."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Synthetic Workshop Ltd"
+  },
+  "source": {
+    "uri": "https://docs.synthetic.example/patchpilot/asymmetric-approval",
+    "title": "Synthetic restricted-mode approvals",
+    "locator": "Command confirmation",
+    "publishedAt": "2026-06-01T00:00:00Z",
+    "capturedAt": "2026-07-30T00:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "2.4.1"
+    },
+    "configuration": {
+      "scope": "named",
+      "values": ["restricted"]
+    },
+    "platform": {
+      "scope": "named",
+      "values": ["linux-x86_64"]
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["local"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-30",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-30",
+    "recheckAfter": "2026-10-28",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-change",
+      "contradictory-source"
+    ]
+  },
+  "limitations": [
+    "This is an attributed synthetic publisher claim."
+  ],
+  "unknowns": [],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "dev.example.patchpilot.cli.asymmetric-third-party-claim",
+      "extent": "partial",
+      "status": "active",
+      "resolution": null,
+      "note": "The two synthetic claims address the same version, configuration, platform, and command class."
+    }
+  ],
+  "validationRefs": []
+}

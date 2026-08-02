@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.flow-executor-current",
+  "slug": "flow-executor-current",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "execution.architecture",
+    "statement": "GitLab's current execution documentation says a UI-started flow uses CI/CD: the runner downloads @gitlab/duo-cli, the CLI connects by WebSocket to the Duo Workflow Service, and the runner executes file and Git tools directed by the AI model."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+    "title": "Configure flow execution",
+    "locator": "Executor architecture",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "named", "values": ["flow started from GitLab UI", "CI/CD execution", "runner can reach npm registry and Duo Workflow Service"] },
+    "platform": { "scope": "named", "values": ["GitLab CI/CD runner"] },
+    "model": { "scope": "configuration-dependent", "values": ["AI model selected by namespace configuration"] },
+    "deployment": { "scope": "alternatives", "values": ["GitLab-hosted runner", "user-managed runner"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["documentation-change", "executor-change", "package-delivery-change", "workflow-service-change"]
+  },
+  "limitations": [
+    "GitLab says the executor version is GitLab-managed and updated with regular releases, so this architecture does not pin a Duo CLI package or Workflow Service revision.",
+    "IDE-local flows are expressly outside this repository-integrated background-flow record."
+  ],
+  "unknowns": [
+    "The @gitlab/duo-cli version, integrity digest, Workflow Service revision and tool protocol are unknown.",
+    "The runner image, network path and tool calls of any execution were not observed."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

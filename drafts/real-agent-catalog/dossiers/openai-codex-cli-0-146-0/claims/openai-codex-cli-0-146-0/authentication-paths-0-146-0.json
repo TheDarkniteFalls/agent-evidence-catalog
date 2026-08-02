@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.authentication-paths-0-146-0",
+  "slug": "authentication-paths-0-146-0",
+  "subject": { "id": "com.openai.codex.cli", "name": "OpenAI Codex CLI", "publisher": "OpenAI", "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-146-0" } },
+  "claim": { "category": "authority.authentication", "statement": "The README at tag rust-v0.146.0 documents ChatGPT sign-in and API-key setup as separate Codex CLI authentication paths." },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": { "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/README.md", "title": "Codex README at rust-v0.146.0", "locator": "Sign in with ChatGPT and API key sections", "publishedAt": null, "capturedAt": "2026-08-02T01:40:08Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "0.146.0" }, "configuration": { "scope": "alternatives", "values": ["ChatGPT sign-in", "OpenAI API key"] }, "platform": { "scope": "unspecified", "values": [] }, "model": { "scope": "unspecified", "values": [] }, "deployment": { "scope": "named", "values": ["local Codex CLI authentication"] } },
+  "lifecycle": { "status": "active", "changedAt": "2026-07-29", "reason": null },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-10-31", "invalidatedBy": ["source-unavailable", "claimant-correction", "authentication-change", "manual-review"] },
+  "limitations": ["The source documents supported sign-in paths; it does not identify the path used by any session.", "Provider-specific credentials for configured custom providers are a separate configuration boundary."],
+  "unknowns": ["The effective authentication path, account, credential scope, storage and token lifetime are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

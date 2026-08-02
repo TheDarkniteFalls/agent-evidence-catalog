@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.compound-system-current",
+  "slug": "compound-system-current",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "runtime.model", "statement": "Cognition describes Devin as a compound AI system and says the enterprise deployments in this documentation do not support third-party LLM API keys." },
+  "provenance": { "kind": "publisher-declared", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/enterprise/deployment/overview", "title": "Enterprise Deployment", "locator": "FAQs & Additional Information — Can we use our own LLM API keys?", "publishedAt": null, "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "named", "values": ["Cognition-managed compound AI system", "no third-party LLM API keys"] },
+    "platform": { "scope": "named", "values": ["Enterprise Cloud", "Customer Dedicated Deployment"] },
+    "model": { "scope": "publisher-managed", "values": [] },
+    "deployment": { "scope": "alternatives", "values": ["Enterprise Cloud", "Customer Dedicated Deployment"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["model-choice-change", "byok-support", "architecture-change"] },
+  "limitations": ["The compound-system label does not identify constituent models, checkpoints, routing or inference configuration."],
+  "unknowns": ["The model provider, model names, checkpoints, routing and backend revision are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

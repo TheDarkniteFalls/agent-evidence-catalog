@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.google.jules.hosted.repository-branch-scope-current",
+  "slug": "repository-branch-scope-current",
+  "subject": {
+    "id": "com.google.jules.hosted",
+    "name": "Google Jules",
+    "publisher": "Google",
+    "surface": { "kind": "hosted-service", "name": "Jules", "slug": "google-jules" }
+  },
+  "claim": {
+    "category": "authority.read",
+    "statement": "Google's current Jules documentation says Jules can access only repositories explicitly allowed through GitHub, and a user selects an authorized repository and branch when starting a task."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "Google" },
+  "source": {
+    "uri": "https://jules.google/docs/tasks-repos/",
+    "title": "Managing Jules tasks and repositories",
+    "locator": "Managing repositories; Selecting a repo; Granting access to more repos",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T23:24:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "multiple", "values": ["all repositories authorized in GitHub", "specific repositories authorized in GitHub", "selected task branch"] },
+    "platform": { "scope": "named", "values": ["GitHub-connected Jules web service"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["authorized repository task"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "product-surface-change", "configuration-change", "platform-change", "manual-review"]
+  },
+  "limitations": [
+    "The source describes repository selection and access configuration, not the exact token scopes or every GitHub permission granted.",
+    "No repository authorization or branch selection was inspected."
+  ],
+  "unknowns": [
+    "The effective GitHub App installation permissions, token scopes, organization policies and branch protections are unknown.",
+    "The repository and branch visible to a particular task are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

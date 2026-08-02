@@ -1,0 +1,528 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "asOf": "2026-08-02",
+  "identity": {
+    "recordId": "com.gitlab.duo.developer-flow.19-2",
+    "agent": {
+      "id": "com.gitlab.duo.developer-flow",
+      "name": "GitLab Duo Developer Flow"
+    },
+    "publisher": {
+      "id": "gitlab-inc",
+      "name": "GitLab, Inc."
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitLab Duo Developer Flow",
+      "slug": "gitlab-duo-developer-flow-19-2",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "19.2.0-ee",
+      "releaseTag": "v19.2.0-ee",
+      "sourceRevision": "68485a1eb627c9a992f266263157327649822db3",
+      "releasedAt": "2026-07-15T20:11:26Z",
+      "channel": "GitLab 19.2 Enterprise Edition release line and rolling Agent Platform service",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "GitLab.com",
+          "GitLab Self-Managed 19.2 EE",
+          "GitLab Dedicated",
+          "GitLab-hosted runner",
+          "user-managed runner"
+        ],
+        "note": "The exact source tag does not identify the rolling service, runner image, agent service revision, model endpoint or project configuration used by a session."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "gitlab-source-19-2-0-ee",
+        "kind": "source-revision",
+        "identityStatus": "exact",
+        "uri": "https://gitlab.com/gitlab-org/gitlab/-/commit/68485a1eb627c9a992f266263157327649822db3",
+        "ecosystem": "git",
+        "version": "19.2.0-ee",
+        "digest": null,
+        "note": "Commit resolved from the protected v19.2.0-ee tag."
+      },
+      {
+        "id": "gitlab-developer-flow-service-19-2",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/",
+        "ecosystem": "GitLab.com, Self-Managed or Dedicated plus runner",
+        "version": "19.2 release line",
+        "digest": null,
+        "note": "The release line and feature milestone are known; the rolling service and execution runtime are not immutable artifacts."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "gitlab-inc",
+        "name": "GitLab, Inc.",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://docs.gitlab.com/releases/19/gitlab-19-2-released/": {
+      "sourceKind": "publisher-release-metadata",
+      "snapshotStatus": "immutable-reference",
+      "note": "Version-applicable official publisher source; no artifact was installed or run."
+    },
+    "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Current official publisher documentation; not silently treated as frozen exact-version behavior."
+    },
+    "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Current official publisher documentation; not silently treated as frozen exact-version behavior."
+    },
+    "https://docs.gitlab.com/user/duo_agent_platform/flows/": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Current official publisher documentation; not silently treated as frozen exact-version behavior."
+    }
+  },
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Offering, trigger, handoff, runner, service account, instructions, model and output route are separate applicability boundaries.",
+    "axes": [
+      {
+        "id": "offering",
+        "label": "GitLab offering",
+        "scope": "mutually-exclusive",
+        "dimension": "offering",
+        "alternatives": [
+          {
+            "id": "gitlab-com",
+            "label": "GitLab.com",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.offerings-19-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "self-managed",
+              "dedicated"
+            ]
+          },
+          {
+            "id": "self-managed",
+            "label": "GitLab Self-Managed",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.offerings-19-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "gitlab-com",
+              "dedicated"
+            ]
+          },
+          {
+            "id": "dedicated",
+            "label": "GitLab Dedicated",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.offerings-19-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "gitlab-com",
+              "self-managed"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective offering, instance revision and feature state are unknown."
+        ]
+      },
+      {
+        "id": "trigger",
+        "label": "Developer Flow trigger",
+        "scope": "composable",
+        "dimension": "trigger",
+        "alternatives": [
+          {
+            "id": "mention",
+            "label": "Duo Developer mention",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.triggers-current-19-2"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "assign-or-button",
+            "label": "Issue assignment or Implement work item",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.triggers-current-19-2"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "agentic-chat",
+            "label": "Agentic Chat handoff",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.agentic-chat-handoff-19-2"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The actual trigger and initiating user authority are unknown."
+        ]
+      },
+      {
+        "id": "handoff-approval",
+        "label": "Agentic Chat flow handoff",
+        "scope": "mutually-exclusive",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "approved-handoff",
+            "label": "User approves handoff",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.agentic-chat-handoff-19-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "not-used"
+            ],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "not-used",
+            "label": "Agentic Chat route not used",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.agentic-chat-handoff-19-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "approved-handoff"
+            ],
+            "controlMode": "unavailable",
+            "humanInteraction": "not-applicable"
+          }
+        ],
+        "unknowns": [
+          "Handoff approval does not establish per-step approval inside the flow."
+        ]
+      },
+      {
+        "id": "execution-runtime",
+        "label": "Flow execution runtime",
+        "scope": "mutually-exclusive",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "gitlab-hosted-runner",
+            "label": "GitLab-hosted runner",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.execution-current-19-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "user-managed-runner"
+            ]
+          },
+          {
+            "id": "user-managed-runner",
+            "label": "Configured project or group runner",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.execution-current-19-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "gitlab-hosted-runner"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Runner image, executor, network, credentials, environment and service revision are unknown."
+        ]
+      },
+      {
+        "id": "project-instructions",
+        "label": "Project instructions and environment",
+        "scope": "composable",
+        "dimension": "tool-surface",
+        "alternatives": [
+          {
+            "id": "agents-md",
+            "label": "AGENTS.md context",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.project-configuration-current-19-2"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "agent-config",
+            "label": "agent-config.yml setup",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.project-configuration-current-19-2"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Instruction contents, setup commands and resulting tools are unknown."
+        ]
+      },
+      {
+        "id": "model-route",
+        "label": "Agent Platform model route",
+        "scope": "mutually-exclusive",
+        "dimension": "model",
+        "alternatives": [
+          {
+            "id": "gitlab-model",
+            "label": "GitLab-managed model route",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.model-current-19-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "self-hosted-model"
+            ]
+          },
+          {
+            "id": "self-hosted-model",
+            "label": "GitLab Duo Self-Hosted model",
+            "claimIds": [
+              "com.gitlab.duo.developer-flow.model-current-19-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "gitlab-model"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective model, provider endpoint, model revision and inference settings are unknown."
+        ]
+      }
+    ]
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "gitlab-developer-flow-19-2-independent-evidence-search",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "evaluator-independence",
+          "dimension": "evaluator-independence",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate reached evaluator-independence review."
+        },
+        {
+          "id": "exact-release",
+          "dimension": "release",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed an inspectable exact 19.2.0-ee execution cell."
+        },
+        {
+          "id": "model-identity",
+          "dimension": "model",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed the exact model and provider-side revision used for the record."
+        },
+        {
+          "id": "configuration-cell",
+          "dimension": "configuration",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed the complete effective approval, sandbox, network, tool and extension configuration."
+        },
+        {
+          "id": "disclosure-completeness",
+          "dimension": "disclosure",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate supplied complete independence, funding, conflict and evaluation-method disclosures."
+        },
+        {
+          "id": "public-artifacts",
+          "dimension": "public-artifacts",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate exposed a reproducible public artifact bundle for the exact cell."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent result, evaluator, finding, test or score is admitted because no candidate passed every required gate."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "GitLab Duo Developer Flow is pinned to the GitLab 19.2.0-ee source tag and the 19.2 Agentic Chat handoff milestone while rolling offering, runner, project, service-account and model boundaries remain explicit.",
+    "releaseContext": {
+      "statement": "GitLab's v19.2.0-ee tag resolves to commit 68485a1e, and the 19.2 release notes add an approved Agentic Chat handoff to Developer Flow.",
+      "sourceUri": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/",
+      "legacySource": null
+    },
+    "limitations": [
+      "All behavior statements are publisher-attributed.",
+      "No GitLab service, runner, model or repository flow was run.",
+      "The source tag does not freeze rolling service components.",
+      "Agentic Chat handoff approval is not transferred into per-step flow approval.",
+      "No independent evidence candidate passed all gates."
+    ],
+    "unknowns": [
+      "Effective GitLab offering and instance patch.",
+      "Agent Platform service revision.",
+      "Runner image, executor and network.",
+      "Service-account and OAuth token scope.",
+      "Project instructions and setup commands.",
+      "Model and provider revision.",
+      "Flow tool inventory and approval behavior.",
+      "Output correctness and acceptance.",
+      "Independent reproducible behavior evidence."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "platform-owner",
+        "label": "Platform owner",
+        "prompt": "Inspect offering, runner and service-account prerequisites.",
+        "propositionIds": [
+          "identity",
+          "runtime"
+        ]
+      },
+      {
+        "id": "authority-reviewer",
+        "label": "Authority reviewer",
+        "prompt": "Inspect triggers, handoff and project configuration.",
+        "propositionIds": [
+          "authority",
+          "outputs"
+        ]
+      },
+      {
+        "id": "evidence-reviewer",
+        "label": "Evidence reviewer",
+        "prompt": "Inspect model and independent-evidence boundaries.",
+        "propositionIds": [
+          "model",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Release line",
+        "question": "Which Developer Flow release is represented?",
+        "status": "GitLab 19.2.0-ee source and 19.2 milestone",
+        "tone": "qualified",
+        "answer": "The source tag and Agentic Chat handoff milestone are pinned; the service remains rolling.",
+        "whyItMatters": "A GitLab tag does not identify every hosted component.",
+        "claimIds": [
+          "com.gitlab.duo.developer-flow.release-identity-19-2",
+          "com.gitlab.duo.developer-flow.offerings-19-2"
+        ]
+      },
+      {
+        "id": "runtime",
+        "eyebrow": "Execution",
+        "question": "Where does the flow run?",
+        "status": "CI/CD runner required; effective runtime unknown",
+        "tone": "attention",
+        "answer": "The flow uses GitLab CI/CD with a hosted or configured runner and project prerequisites.",
+        "whyItMatters": "Runner and token configuration define practical authority.",
+        "claimIds": [
+          "com.gitlab.duo.developer-flow.prerequisites-current-19-2",
+          "com.gitlab.duo.developer-flow.execution-current-19-2"
+        ]
+      },
+      {
+        "id": "authority",
+        "eyebrow": "Trigger and approval",
+        "question": "How can work begin?",
+        "status": "Several triggers; Agentic Chat handoff approved by user",
+        "tone": "qualified",
+        "answer": "Mentions, assignment, the issue action and Agentic Chat are separate routes.",
+        "whyItMatters": "A start approval does not define every later action.",
+        "claimIds": [
+          "com.gitlab.duo.developer-flow.triggers-current-19-2",
+          "com.gitlab.duo.developer-flow.agentic-chat-handoff-19-2",
+          "com.gitlab.duo.developer-flow.project-configuration-current-19-2"
+        ]
+      },
+      {
+        "id": "outputs",
+        "eyebrow": "Outputs",
+        "question": "What can the flow produce?",
+        "status": "Publisher-described workflow outputs",
+        "tone": "qualified",
+        "answer": "The documentation names draft merge requests, implementation work, discussions and conflict resolution.",
+        "whyItMatters": "Output creation is not merge or acceptance authority.",
+        "claimIds": [
+          "com.gitlab.duo.developer-flow.purpose-current-19-2",
+          "com.gitlab.duo.developer-flow.output-current-19-2"
+        ]
+      },
+      {
+        "id": "model",
+        "eyebrow": "Model",
+        "question": "Which model applies?",
+        "status": "Managed label or self-hosted route; revision unknown",
+        "tone": "attention",
+        "answer": "The docs name Claude Sonnet 4 for flows and support a separate self-hosted path.",
+        "whyItMatters": "Model labels and service revisions can move independently of GitLab releases.",
+        "claimIds": [
+          "com.gitlab.duo.developer-flow.model-current-19-2"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this exact flow cell independently evaluated?",
+        "status": "No qualifying evidence",
+        "tone": "neutral",
+        "answer": "No candidate passed every admission gate.",
+        "whyItMatters": "Publisher workflow documentation is not observed suitability evidence.",
+        "claimIds": [
+          "com.gitlab.duo.developer-flow.release-identity-19-2"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Official public-source claims only; no 18.8 claim was transferred, no GitLab flow was run, and no independent evidence, score, ranking, recommendation or publication action is included."
+  },
+  "rawClaimPaths": [
+    "claims/gitlab-duo-developer-flow-19-2/release-identity-19-2.json",
+    "claims/gitlab-duo-developer-flow-19-2/agentic-chat-handoff-19-2.json",
+    "claims/gitlab-duo-developer-flow-19-2/purpose-current-19-2.json",
+    "claims/gitlab-duo-developer-flow-19-2/triggers-current-19-2.json",
+    "claims/gitlab-duo-developer-flow-19-2/prerequisites-current-19-2.json",
+    "claims/gitlab-duo-developer-flow-19-2/execution-current-19-2.json",
+    "claims/gitlab-duo-developer-flow-19-2/project-configuration-current-19-2.json",
+    "claims/gitlab-duo-developer-flow-19-2/offerings-19-2.json",
+    "claims/gitlab-duo-developer-flow-19-2/model-current-19-2.json",
+    "claims/gitlab-duo-developer-flow-19-2/output-current-19-2.json"
+  ]
+}

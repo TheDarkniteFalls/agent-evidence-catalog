@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The original three-agent comparison presentation.">
+    <title>Original comparison · Agent Evidence Catalog</title>
+    <link rel="stylesheet" href="styles.css?v=journey4">
+  </head>
+  <body data-page="compare-classic">
+    <a class="skip-link" href="#main">Skip to comparison</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Agent Evidence Catalog home">Agent Evidence Catalog</a>
+      <nav aria-label="Primary navigation"><a href="index.html">Catalog</a><a class="active" href="compare-classic.html" aria-current="page">Original compare</a><a href="claims.html">PatchPilot example</a><a href="index.html#contribute">Contribute</a></nav>
+    </header>
+    <aside class="synthetic-banner" aria-label="Synthetic demonstration notice"><strong>Synthetic demonstration.</strong> Every profile, publisher, identity, endpoint, digest, result, and policy is fictional. No affiliation, endorsement, or safety certification is claimed.</aside>
+    <main id="main" class="comparison-main">
+      <section class="compare-intro" aria-labelledby="compare-heading"><h1 id="compare-heading">Compare exact versions</h1><p>Authority and evidence are version-specific. Unknown does not mean unsafe; it means unproven here. This page shows facts and does not calculate suitability.</p><a class="quiet-link" href="compare.html">Open the new comparison journey</a></section>
+      <section class="policy-context" aria-label="Decision context"><div><strong>Task</strong><span>Draft replies to selected customer-email threads.</span></div><div><strong>Review against</strong><span>Read selected thread · Create draft · Retention ≤ 7 days</span></div><div><strong>Review against</strong><span>No send or forward · No mailbox-state changes · No autonomous external action</span></div></section>
+      <section class="compare-controls" aria-label="Choose exact agent versions"><label><span class="sr-only">First agent</span><select id="agentSelect0"></select></label><label><span class="sr-only">Second agent</span><select id="agentSelect1"></select></label><label><span class="sr-only">Third agent</span><select id="agentSelect2"></select></label><button id="copyComparison" class="outline-button" type="button">Copy comparison link</button><label class="check-control mismatch-toggle"><input id="mismatchOnly" type="checkbox"> Show only differences</label><span id="copyStatus" class="copy-status" aria-live="polite"></span></section>
+      <section class="comparison-shell" aria-label="Agent comparison matrix"><div class="table-scroll"><table class="comparison-table"><caption class="sr-only">Side-by-side comparison of exact agent versions</caption><thead id="comparisonHead"></thead><tbody id="comparisonBody"></tbody></table></div></section>
+      <section class="decision-note" aria-labelledby="decision-heading"><div><p class="eyebrow">Local worksheet only</p><h2 id="decision-heading">Record a review direction</h2></div><fieldset><legend>Decision</legend><label><input type="radio" name="decision"> Advance to organizational review</label><label><input type="radio" name="decision"> Reject for this policy</label><label><input type="radio" name="decision"> Request missing evidence</label><label><input type="radio" name="decision"> None are suitable</label></fieldset><label class="concern-field">Unresolved concern<textarea rows="3" placeholder="Not saved or submitted"></textarea></label></section>
+    </main>
+    <footer><p>Synthetic examples only. Evidence labels describe support for a claim, not whether an agent is safe.</p><p><a href="LICENSE">Apache-2.0</a> · <a href="CORRECTIONS.md">Corrections and revocations</a> · No install, run, authorize, buy, or submit action exists here.</p></footer>
+    <script src="catalog-data.js"></script>
+    <script src="app.js?v=journey4"></script>
+  </body>
+</html>

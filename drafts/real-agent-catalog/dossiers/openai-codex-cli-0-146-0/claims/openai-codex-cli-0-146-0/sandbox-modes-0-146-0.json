@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.sandbox-modes-0-146-0",
+  "slug": "sandbox-modes-0-146-0",
+  "subject": { "id": "com.openai.codex.cli", "name": "OpenAI Codex CLI", "publisher": "OpenAI", "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-146-0" } },
+  "claim": { "category": "authority.sandbox", "statement": "The generated configuration schema at tag rust-v0.146.0 enumerates read-only, workspace-write and danger-full-access sandbox modes, with workspace-write writable-root settings represented separately." },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": { "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json", "title": "Codex 0.146.0 generated configuration schema", "locator": "$defs.SandboxMode, properties.sandbox_mode and sandbox_workspace_write", "publishedAt": null, "capturedAt": "2026-08-02T01:40:08Z", "snapshot": null },
+  "applicability": { "version": { "kind": "exact-version", "value": "0.146.0" }, "configuration": { "scope": "alternatives", "values": ["read-only", "workspace-write", "danger-full-access"] }, "platform": { "scope": "unspecified", "values": [] }, "model": { "scope": "unspecified", "values": [] }, "deployment": { "scope": "named", "values": ["local Codex CLI command execution"] } },
+  "lifecycle": { "status": "active", "changedAt": "2026-07-29", "reason": null },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-10-31", "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "manual-review"] },
+  "limitations": ["The schema enumerates configuration alternatives but does not prove operating-system enforcement or containment.", "Sandbox selection is separate from approval, network and tool authority."],
+  "unknowns": ["The effective sandbox mode, writable roots, platform enforcement and escape resistance are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

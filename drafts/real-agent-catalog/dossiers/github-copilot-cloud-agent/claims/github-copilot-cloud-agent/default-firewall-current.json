@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.cloud-agent.default-firewall-current",
+  "slug": "default-firewall-current",
+  "subject": {
+    "id": "com.github.copilot.cloud-agent",
+    "name": "GitHub Copilot cloud agent",
+    "publisher": "GitHub",
+    "surface": { "kind": "hosted-service", "name": "GitHub Copilot cloud agent", "slug": "github-copilot-cloud-agent" }
+  },
+  "claim": {
+    "category": "network",
+    "statement": "GitHub's current firewall guide says Copilot internet access is limited by a firewall by default and that a recommended allowlist is enabled by default, while warning that the firewall only covers processes started through the agent's Bash tool within the GitHub Actions appliance, not MCP servers or configured setup-step processes, and may be bypassed by sophisticated attacks."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitHub" },
+  "source": {
+    "uri": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+    "title": "Customizing or disabling the firewall for GitHub Copilot",
+    "locator": "Overview; Limitations; Understanding the recommended firewall allowlist",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T22:45:15Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "documented-default", "values": ["integrated firewall with recommended allowlist enabled"] },
+    "platform": { "scope": "named", "values": ["GitHub Actions appliance"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["processes started through the agent Bash tool"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "configuration-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "The source explicitly says the firewall is not a comprehensive security solution.",
+    "The catalog did not observe blocked or allowed traffic or test bypass resistance."
+  ],
+  "unknowns": [
+    "The effective organization and repository firewall settings and allowlists are unknown.",
+    "Traffic from MCP servers, setup steps, non-Bash processes and activity outside the appliance was not observed."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "com.github.copilot.cloud-agent.configurable-firewall-current",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The default restriction and configurable or disabled states are mutually scoped policy alternatives, not a factual conflict."
+    }
+  ],
+  "validationRefs": []
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.auto-review-3-6",
+  "slug": "auto-review-3-6",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": { "kind": "desktop-app", "name": "Cursor IDE foreground Agent", "slug": "cursor-ide-foreground-agent-3-14" }
+  },
+  "claim": {
+    "category": "authority.approval",
+    "statement": "Cursor's 3.6 changelog introduced Auto-review for Shell, MCP and Fetch: allowlisted calls run immediately, sandboxable calls run in the sandbox, and other actions go to a classifier that may allow, redirect or request approval."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Anysphere, Inc." },
+  "source": {
+    "uri": "https://cursor.com/changelog/auto-review",
+    "title": "Auto-review Run Mode",
+    "locator": "3.6 changelog, Auto-review execution path and settings",
+    "publishedAt": "2026-05-29T00:00:00Z",
+    "capturedAt": "2026-08-01T01:28:42Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "3.6" },
+    "configuration": { "scope": "composable", "values": ["Shell", "MCP", "Fetch", "allowlist", "sandbox", "classifier review", "user approval"] },
+    "platform": { "scope": "named", "values": ["Cursor desktop"] },
+    "model": { "scope": "configuration-dependent", "values": ["classifier model unresolved"] },
+    "deployment": { "scope": "named", "values": ["foreground Agent Auto-review"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-05-29", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["publisher-correction", "approval-redesign", "sandbox-change", "manual-review"]
+  },
+  "limitations": [
+    "This is a 3.6 introduction milestone, not proof of identical policy, classifier or sandbox behavior in client 3.14.",
+    "The publisher description is not an independent enforcement or escape test."
+  ],
+  "unknowns": [
+    "The complete allowlist matching rules, sandbox implementation and classifier policy for 3.14 are unknown.",
+    "The selected run mode and outcome for any tool call are unknown."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.cursor.ide.foreground-agent.auto-review-current",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The 3.6 introduction milestone and later rolling publisher description discuss the same named feature under different time applicability; neither is projected into the other's scope."
+    }
+  ],
+  "validationRefs": []
+}

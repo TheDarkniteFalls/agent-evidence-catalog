@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.deployment-architecture-current",
+  "slug": "deployment-architecture-current",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "runtime.deployment", "statement": "Cognition documents Devin as a Brain plus Devbox architecture: the Brain remains in Cognition Cloud, while Enterprise Cloud runs each session's Devbox on an isolated Cognition-hosted machine and Customer Dedicated runs Devboxes in a customer-isolated single-tenant VPC connected through AWS PrivateLink or IPSec." },
+  "provenance": { "kind": "publisher-declared", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/enterprise/deployment/overview", "title": "Enterprise Deployment", "locator": "Devin's Architecture; Enterprise Cloud Architecture; Customer Dedicated Deployment Architecture", "publishedAt": null, "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "mutually-exclusive", "values": ["Enterprise Cloud", "Customer Dedicated Deployment"] },
+    "platform": { "scope": "alternatives", "values": ["Cognition Cloud Devbox", "customer-isolated single-tenant VPC Devbox"] },
+    "model": { "scope": "publisher-managed", "values": ["Cognition Cloud Brain"] },
+    "deployment": { "scope": "alternatives", "values": ["Enterprise Cloud", "Customer Dedicated Deployment"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["deployment-model-change", "architecture-change", "hosting-change"] },
+  "limitations": ["This is publisher-described architecture, not an independently observed tenant, network or isolation receipt."],
+  "unknowns": ["The selected offering, region, tenant, Devbox image, Brain revision and effective network paths are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

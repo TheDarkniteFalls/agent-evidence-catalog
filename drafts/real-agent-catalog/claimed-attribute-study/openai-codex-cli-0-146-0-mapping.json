@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "claimed-attribute-mapping/0.1-study-extension",
+  "status": "unpublished-current-record-overlay",
+  "taxonomyPath": "taxonomy.json",
+  "baseMappingPath": "mapping.json",
+  "priorOverlayPath": "expansion-batch-4-cascade-mapping.json",
+  "asOf": "2026-08-02",
+  "mappingRule": "This additive mapping uses the completed taxonomy and calculation boundaries unchanged. The states array follows taxonomy.attributeOrder exactly, and evidence references point only to claims and configuration axes in the unpublished Codex CLI 0.146.0 record. Unknown does not mean absent; app-server remote-host support is credited only as a conditional local-to-remote distinction and is not transferred to ordinary local CLI terminal behavior.",
+  "records": [
+    {
+      "recordId": "com.openai.codex.cli.0-146-0",
+      "comparisonFrame": "interactive-cli",
+      "states": [
+        "unknown",
+        "unknown",
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "conditional",
+        "unknown",
+        "not-applicable",
+        "not-applicable",
+        "not-applicable",
+        "conditional",
+        "conditional",
+        "unknown",
+        "not-applicable",
+        "conditional",
+        "conditional",
+        "conditional",
+        "unknown",
+        "conditional",
+        "unknown",
+        "not-applicable",
+        "not-applicable"
+      ],
+      "evidence": {
+        "cap.command-execution": {
+          "claimIds": ["com.openai.codex.cli.approval-policies-0-146-0"],
+          "axisIds": ["approval-policy"],
+          "note": "The exact schema conditions command approval behavior; it is not a runtime observation."
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": ["com.openai.codex.cli.tool-configuration-0-146-0"],
+          "axisIds": ["tool-surface"],
+          "note": "Credit is limited to the configured web-search modes in the exact schema."
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.openai.codex.cli.mcp-configuration-0-146-0"],
+          "axisIds": ["mcp-surface"],
+          "note": "MCP capability depends on a configured server, transport, tools and policy."
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["com.openai.codex.cli.model-provider-configuration-0-146-0"],
+          "axisIds": ["model-selection", "model-provider"],
+          "note": "Selectable configuration does not identify the effective model, revision, provider or endpoint."
+        },
+        "cap.delegated-remote-execution": {
+          "claimIds": ["com.openai.codex.cli.local-cli-delivery-0-146-0", "com.openai.codex.cli.app-server-remote-host-0-146-0"],
+          "axisIds": ["app-server-remote-host"],
+          "note": "The publisher distinguishes local CLI delivery from an app-server remote Code Mode host path; no remote behavior is transferred to an ordinary terminal session."
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.openai.codex.cli.approval-policies-0-146-0"],
+          "axisIds": ["approval-policy"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["com.openai.codex.cli.approval-policies-0-146-0"],
+          "axisIds": ["approval-policy"],
+          "note": "The never alternative is a conditional configuration boundary, not an observed session setting."
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": ["com.openai.codex.cli.mcp-configuration-0-146-0", "com.openai.codex.cli.plugin-configuration-0-146-0"],
+          "axisIds": ["mcp-surface", "plugin-surface"],
+          "note": "Credit is limited to configured MCP and plugin-provided tool enablement or policy."
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": ["com.openai.codex.cli.sandbox-modes-0-146-0"],
+          "axisIds": ["sandbox-mode"]
+        },
+        "authority.network-restriction": {
+          "claimIds": ["com.openai.codex.cli.network-access-0-146-0", "com.openai.codex.cli.proxy-routing-0-146-0"],
+          "axisIds": ["workspace-network", "network-proxy", "tool-surface"],
+          "note": "Workspace network access, proxy routing and web-search mode remain separate configuration paths."
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": ["com.openai.codex.cli.authentication-paths-0-146-0", "com.openai.codex.cli.model-provider-configuration-0-146-0", "com.openai.codex.cli.mcp-configuration-0-146-0"],
+          "axisIds": ["authentication-path", "model-provider", "mcp-surface"],
+          "note": "Authentication and configured provider or MCP credentials are documented alternatives; effective identities, storage and scopes are unresolved."
+        }
+      }
+    }
+  ]
+}

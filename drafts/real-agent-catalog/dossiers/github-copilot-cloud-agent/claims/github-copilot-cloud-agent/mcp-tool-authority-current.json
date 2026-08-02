@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.cloud-agent.mcp-tool-authority-current",
+  "slug": "mcp-tool-authority-current",
+  "subject": {
+    "id": "com.github.copilot.cloud-agent",
+    "name": "GitHub Copilot cloud agent",
+    "publisher": "GitHub",
+    "surface": { "kind": "hosted-service", "name": "GitHub Copilot cloud agent", "slug": "github-copilot-cloud-agent" }
+  },
+  "claim": {
+    "category": "interoperability",
+    "statement": "GitHub's current MCP guide says GitHub and Playwright MCP servers are configured automatically, the default GitHub MCP token is read-only for the current repository, repository administrators can configure additional MCP tools, and Copilot uses available tools autonomously without asking for approval before use."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitHub" },
+  "source": {
+    "uri": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent",
+    "title": "Model Context Protocol (MCP) and GitHub Copilot cloud agent",
+    "locator": "Default MCP servers; Setting up MCP servers in a repository",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T22:45:15Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "multiple", "values": ["default GitHub and Playwright MCP servers", "repository-configured MCP tools", "custom-agent MCP tools"] },
+    "platform": { "scope": "named", "values": ["Copilot cloud agent"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "multiple", "values": ["default MCP configuration", "repository MCP configuration", "custom-agent MCP configuration"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "product-surface-change", "configuration-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "The claim records publisher-described authority, not the behavior, trustworthiness or side effects of any MCP server.",
+    "GitHub's firewall guide says the integrated firewall does not apply to MCP servers."
+  ],
+  "unknowns": [
+    "The effective MCP servers, tools, transports, code, credentials and destinations are unknown.",
+    "The autonomous tool-selection behavior, inputs, outputs and side effects of a particular task were not observed."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

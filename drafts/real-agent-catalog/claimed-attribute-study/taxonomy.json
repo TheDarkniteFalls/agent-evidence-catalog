@@ -1,0 +1,283 @@
+{
+  "schemaVersion": "claimed-attribute-taxonomy/0.1-study",
+  "status": "unpublished-design-study",
+  "title": "Publisher-claimed capability and authority taxonomy",
+  "asOf": "2026-08-01",
+  "boundaries": {
+    "publisherClaimsOnly": true,
+    "independentVerificationCredit": false,
+    "suitability": false,
+    "ranking": false,
+    "recommendation": false,
+    "winner": false,
+    "weights": false,
+    "pageBuilt": false,
+    "note": "This separate derived layer tests comparison vocabulary. It does not modify or reinterpret accepted evidence records."
+  },
+  "statusVocabulary": {
+    "claimed": "An accepted publisher-attributed claim directly supports the attribute across the record scope without choosing among documented alternatives.",
+    "conditional": "An accepted publisher-attributed claim supports the attribute only for a named configuration, release line, path, offering or other explicit scope.",
+    "explicit-limitation": "An accepted publisher-attributed source explicitly limits or excludes the attribute in the mapped scope; this is not an independent finding.",
+    "unknown": "The accepted evidence does not determine the attribute. Unknown is not evidence that the product lacks it.",
+    "unresolved": "Accepted evidence relevant to the attribute cannot yet be reconciled to the exact record scope.",
+    "not-applicable": "The taxonomy definition excludes this record's comparison frame. This status is assigned by the taxonomy rule, not by product inference."
+  },
+  "comparisonFrames": [
+    {
+      "id": "interactive-cli",
+      "label": "Interactive CLI",
+      "description": "A user-directed command-line surface whose primary accepted record is local or hybrid rather than a repository-native hosted task."
+    },
+    {
+      "id": "interactive-ide",
+      "label": "Interactive IDE or desktop",
+      "description": "A foreground editor, extension or desktop-agent surface. Related cloud or external-agent surfaces do not inherit its claims."
+    },
+    {
+      "id": "hosted-background",
+      "label": "Hosted or background service",
+      "description": "A publisher-hosted task or session surface not defined primarily by native repository-service output controls."
+    },
+    {
+      "id": "repository-integrated",
+      "label": "Repository-integrated service",
+      "description": "A hosted or runner-executed surface with native repository authorization, branch, merge-request or pull-request controls."
+    }
+  ],
+  "calculation": {
+    "applicableCount": "count(status != 'not-applicable')",
+    "claimedCoverageFloor": "count(status == 'claimed') / applicableCount",
+    "configuredClaimedCoverage": "(count(status == 'claimed') + count(conditional attributes whose cited scope matches the selected configuration)) / applicableCount",
+    "documentedClaimCeiling": "count(status in ['claimed', 'conditional']) / applicableCount",
+    "evidenceCompleteness": "count(status in ['claimed', 'conditional', 'explicit-limitation']) / applicableCount",
+    "unresolvedAndUnknownStayVisible": true,
+    "rounding": "one decimal percentage point",
+    "warnings": [
+      "The unconfigured floor gives no credit to conditional claims.",
+      "The documented ceiling is not necessarily achievable because conditional claims can depend on mutually exclusive alternatives.",
+      "Evidence completeness measures admitted documentation coverage, not capability, quality or truth.",
+      "No metric mixes independent evidence with publisher claims and no current record has an admitted independent test.",
+      "Cross-frame ordering is invalid; even within a frame, results remain sensitive to publisher documentation breadth."
+    ]
+  },
+  "attributeOrder": [
+    "cap.file-read",
+    "cap.file-modify",
+    "cap.command-execution",
+    "cap.browser-or-web-tool",
+    "cap.external-tool-protocol",
+    "cap.model-or-provider-selection",
+    "cap.nonwriting-plan-stage",
+    "cap.background-or-async-execution",
+    "cap.parallel-or-child-execution",
+    "cap.automated-checks",
+    "cap.delegated-remote-execution",
+    "cap.environment-bootstrap",
+    "cap.native-branch-output",
+    "cap.native-pull-request-output",
+    "cap.native-pull-request-feedback",
+    "authority.action-confirmation",
+    "authority.auto-approval-or-bypass",
+    "authority.plan-approval",
+    "authority.output-application-approval",
+    "authority.tool-allow-deny",
+    "authority.sandbox-or-isolation",
+    "authority.network-restriction",
+    "authority.repository-scope",
+    "authority.credential-or-secret-scope",
+    "authority.execution-principal",
+    "authority.execution-environment-selection",
+    "authority.scheduled-or-event-trigger"
+  ],
+  "attributes": [
+    {
+      "id": "cap.file-read",
+      "kind": "capability",
+      "label": "Read or inspect workspace files",
+      "definition": "The publisher explicitly says the mapped surface can read, inspect or explore files or code in its workspace or repository.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.file-modify",
+      "kind": "capability",
+      "label": "Create or modify workspace files",
+      "definition": "The publisher explicitly says the mapped surface can create, edit, delete or otherwise change workspace or repository files.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.command-execution",
+      "kind": "capability",
+      "label": "Execute terminal or command-line actions",
+      "definition": "The publisher explicitly describes terminal, shell or command execution by the mapped surface; a setup system merely existing is insufficient.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.browser-or-web-tool",
+      "kind": "capability",
+      "label": "Use a browser, fetch or web-oriented tool",
+      "definition": "The publisher explicitly describes web browsing, fetch, Playwright, computer use or application testing through a browser-like tool.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.external-tool-protocol",
+      "kind": "capability",
+      "label": "Use MCP, connectors or named external tools",
+      "definition": "The publisher explicitly describes MCP, connectors or another named external-tool integration available to the mapped surface.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.model-or-provider-selection",
+      "kind": "capability",
+      "label": "Select or configure a model or provider route",
+      "definition": "The publisher explicitly describes user, administrator or configuration selection of a model, provider, gateway or routing mode.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.nonwriting-plan-stage",
+      "kind": "capability",
+      "label": "Use a non-writing analysis or plan stage",
+      "definition": "The publisher explicitly distinguishes a planning or analysis stage that precedes or excludes implementation changes; a mode named Plan without that boundary is insufficient.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.background-or-async-execution",
+      "kind": "capability",
+      "label": "Run a hosted, background or asynchronous task",
+      "definition": "The publisher explicitly describes a task, session or conversation that executes remotely or in the background rather than only as a foreground local interaction.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.parallel-or-child-execution",
+      "kind": "capability",
+      "label": "Run parallel, spawned or child work",
+      "definition": "The publisher explicitly describes parallel tasks, child sessions, subagents or spawned work associated with the mapped surface.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.automated-checks",
+      "kind": "capability",
+      "label": "Execute automated tests, linters or app checks",
+      "definition": "The publisher explicitly says the mapped surface can run automated tests, linters, browser app testing or a named QA workflow.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.delegated-remote-execution",
+      "kind": "capability",
+      "label": "Delegate between local and remote execution paths",
+      "definition": "The publisher explicitly distinguishes a local or foreground path from a selectable cloud, hosted, remote-SSH or equivalent execution path without transferring claims between surfaces.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.environment-bootstrap",
+      "kind": "capability",
+      "label": "Configure task environment bootstrap",
+      "definition": "The publisher explicitly describes setup scripts, snapshots, images, caches or other task-environment bootstrap controls.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.native-branch-output",
+      "kind": "capability",
+      "label": "Publish a branch through a native hosted workflow",
+      "definition": "The publisher explicitly describes native branch publication by the hosted or repository-integrated surface, not merely the possibility of running Git commands.",
+      "applicableFrames": ["hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.native-pull-request-output",
+      "kind": "capability",
+      "label": "Create a pull or merge request through the native workflow",
+      "definition": "The publisher explicitly describes the mapped hosted surface creating or publishing a pull request or merge request.",
+      "applicableFrames": ["hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "cap.native-pull-request-feedback",
+      "kind": "capability",
+      "label": "Read or respond to pull-request review feedback",
+      "definition": "The publisher explicitly describes the mapped hosted surface reading, responding to or implementing pull-request or merge-request feedback.",
+      "applicableFrames": ["hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.action-confirmation",
+      "kind": "authority",
+      "label": "Human confirmation before individual actions",
+      "definition": "The publisher explicitly describes a human confirmation path before individual actions or tool calls. Plan and final-output approvals are separate attributes.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.auto-approval-or-bypass",
+      "kind": "authority",
+      "label": "Automatic approval or approval bypass",
+      "definition": "The publisher explicitly describes an automatic allow, no-prompt, autonomous or approval-bypass path for actions or tools.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.plan-approval",
+      "kind": "authority",
+      "label": "Human approval before plan implementation",
+      "definition": "The publisher explicitly describes a human decision that gates movement from a proposed plan to implementation.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.output-application-approval",
+      "kind": "authority",
+      "label": "Human approval before applying or publishing completed output",
+      "definition": "The publisher explicitly describes a post-execution human decision to apply, dismiss or publish completed hosted-task output.",
+      "applicableFrames": ["hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.tool-allow-deny",
+      "kind": "authority",
+      "label": "Configure tool availability or allow/deny rules",
+      "definition": "The publisher explicitly describes tool-specific availability, enable/disable, allow, deny or confirmation rules rather than only a global execution mode.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.sandbox-or-isolation",
+      "kind": "authority",
+      "label": "Select or rely on a documented sandbox or isolated environment",
+      "definition": "The publisher explicitly describes sandboxing, operating-system restrictions, a fresh isolated machine or an isolated background-task environment.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.network-restriction",
+      "kind": "authority",
+      "label": "Configure or apply outbound-network restrictions",
+      "definition": "The publisher explicitly describes network denial, allowlists, firewall, proxy policy or sandbox egress boundaries.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.repository-scope",
+      "kind": "authority",
+      "label": "Restrict repository authorization scope",
+      "definition": "The publisher explicitly describes authorization to selected repositories, one repository, all repositories or an equivalent project-access boundary.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.credential-or-secret-scope",
+      "kind": "authority",
+      "label": "Configure scoped credentials, API keys or secrets",
+      "definition": "The publisher explicitly describes credential, API-key or secret availability with a named scope, storage path or role boundary.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.execution-principal",
+      "kind": "authority",
+      "label": "Identify or select the execution principal",
+      "definition": "The publisher explicitly identifies service-user, impersonated-user, token, composite-identity, commit-attribution or equivalent execution-principal alternatives.",
+      "applicableFrames": ["interactive-cli", "interactive-ide", "hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.execution-environment-selection",
+      "kind": "authority",
+      "label": "Select a hosted runner, placement or deployment environment",
+      "definition": "The publisher explicitly describes choosing or inheriting a hosted runner, outpost, platform, deployment or other hosted execution placement.",
+      "applicableFrames": ["hosted-background", "repository-integrated"]
+    },
+    {
+      "id": "authority.scheduled-or-event-trigger",
+      "kind": "authority",
+      "label": "Authorize scheduled or event-triggered invocation",
+      "definition": "The publisher explicitly describes scheduled execution, repository-event invocation, mention-based invocation or another non-interactive hosted trigger.",
+      "applicableFrames": ["hosted-background", "repository-integrated"]
+    }
+  ]
+}

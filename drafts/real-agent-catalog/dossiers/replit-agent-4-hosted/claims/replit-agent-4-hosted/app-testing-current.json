@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.replit.agent.hosted.app-testing-current",
+  "slug": "app-testing-current",
+  "subject": { "id": "com.replit.agent.hosted", "name": "Replit Agent", "publisher": "Replit", "surface": { "kind": "hosted-service", "name": "Replit Agent hosted workspace", "slug": "replit-agent-4-hosted" } },
+  "claim": { "category": "publisher-self-testing", "statement": "Replit's current App Testing page says that, when enabled for supported web applications, Agent decides when to exercise the app in a real browser, analyzes results and may automatically fix identified issues." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Replit" },
+  "source": { "uri": "https://docs.replit.com/features/agent/app-testing", "title": "App Testing — Replit", "locator": "How App Testing works; The Testing Process; Usage", "publishedAt": null, "capturedAt": "2026-08-01T06:29:56Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["App Testing enabled", "Economy or Power", "Full Stack JavaScript", "Streamlit Python", "take over", "skip"] }, "platform": { "scope": "named", "values": ["supported Replit web application", "Agent browser preview"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["Replit-managed browser-testing path"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["testing-availability-change", "supported-framework-change", "takeover-flow-change"] },
+  "limitations": ["This is publisher-described self-testing, not a genuinely independent evaluation or an observed test receipt."],
+  "unknowns": ["Enablement, browser identity, test actions, coverage, findings, corrections, takeover and result artifacts are unknown."],
+  "relationships": [], "validationRefs": []
+}

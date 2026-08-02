@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.example.patchpilot.cli.network-destination-2-4-1",
+  "slug": "network-destination-2-4-1",
+  "subject": {
+    "id": "dev.example.patchpilot",
+    "name": "PatchPilot",
+    "publisher": "Synthetic Workshop Ltd",
+    "surface": {
+      "kind": "cli",
+      "name": "PatchPilot CLI",
+      "slug": "patchpilot-cli"
+    }
+  },
+  "claim": {
+    "category": "network",
+    "statement": "The synthetic release documentation for version 2.4.1 lists one telemetry destination."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Synthetic Workshop Ltd"
+  },
+  "source": {
+    "uri": "https://docs.synthetic.example/patchpilot/2.4.1/network",
+    "title": "PatchPilot 2.4.1 network metadata",
+    "locator": "Telemetry destination",
+    "publishedAt": "2026-05-01T00:00:00Z",
+    "capturedAt": "2026-07-30T00:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "2.4.1"
+    },
+    "configuration": {
+      "scope": "documented-default",
+      "values": ["standard"]
+    },
+    "platform": {
+      "scope": "multiple",
+      "values": ["linux-x86_64", "macos-arm64"]
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["local"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-30",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-30",
+    "recheckAfter": "2026-10-28",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-unavailable",
+      "claimant-correction"
+    ]
+  },
+  "limitations": [
+    "This synthetic release claim applies only to version 2.4.1."
+  ],
+  "unknowns": [],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "dev.example.patchpilot.cli.network-destination-2-5-0",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because the sources describe different exact versions."
+    }
+  ],
+  "validationRefs": []
+}

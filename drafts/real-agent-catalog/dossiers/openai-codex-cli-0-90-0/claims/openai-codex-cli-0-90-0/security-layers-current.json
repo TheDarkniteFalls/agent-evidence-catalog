@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.security-layers-current",
+  "slug": "security-layers-current",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-90-0" }
+  },
+  "claim": {
+    "category": "authority.security",
+    "statement": "OpenAI's current agent-approvals security documentation describes sandbox mode and approval policy as separate controls, says local Codex CLI uses operating-system mechanisms for sandbox policies, and says current defaults include network access off with writes limited to the active workspace."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": {
+    "uri": "https://learn.chatgpt.com/docs/agent-approvals-security",
+    "title": "OpenAI Agent approvals and security",
+    "locator": "Agent approvals & security — introduction; Sandbox and approvals; Codex CLI / IDE extension; Network access",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T00:47:47Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "conditional", "values": ["sandbox mode", "approval policy", "workspace-write", "network access disabled", "network access enabled"] },
+    "platform": { "scope": "named", "values": ["local Codex CLI operating-system sandbox"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["current local Codex CLI"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-unavailable", "claimant-correction", "documentation-change", "configuration-change", "platform-change", "manual-review"]
+  },
+  "limitations": [
+    "This is rolling-current publisher documentation and is not evidence that all statements applied to version 0.90.0.",
+    "The catalog did not observe operating-system enforcement, defaults or approval behavior."
+  ],
+  "unknowns": [
+    "Which current security statements also applied to Codex CLI 0.90.0 beyond the tagged schema is unknown.",
+    "The effective local platform, sandbox, approval policy, workspace boundary, network state and enforcement behavior are unknown."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.openai.codex.cli.sandbox-modes-0-90-0",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The rolling current security page and exact tagged schema overlap conceptually but have different version applicability; the catalog does not transfer the current defaults to 0.90.0."
+    }
+  ],
+  "validationRefs": []
+}
+

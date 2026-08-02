@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.publisher-surface-current",
+  "slug": "publisher-surface-current",
+  "subject": { "id": "com.anomaly.opencode.cli", "name": "OpenCode CLI", "publisher": "Anomaly Innovations, Inc.", "surface": { "kind": "cli", "name": "OpenCode CLI/TUI", "slug": "opencode-cli-1-18-11" } },
+  "claim": { "category": "identity.publisher-surface", "statement": "OpenCode's current terms identify Anomaly Innovations, Inc. as the contracting company and describe OpenCode as a coding agent that runs in the terminal, while distinguishing third-party model providers from the optional OpenCode Zen service." },
+  "provenance": { "kind": "publisher-policy", "claimant": "Anomaly Innovations, Inc." },
+  "source": { "uri": "https://opencode.ai/legal/terms-of-service", "title": "OpenCode Terms of Service", "locator": "Contracting entity; OpenCode Services; Third-Party Services; OpenCode Zen", "publishedAt": "2026-03-06T00:00:00Z", "capturedAt": "2026-08-01T20:54:30Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "conditional", "values": ["OpenCode Zen", "third-party model provider"] }, "platform": { "scope": "named", "values": ["terminal"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["OpenCode CLI/TUI"] } },
+  "lifecycle": { "status": "current", "changedAt": "2026-03-06", "reason": "Current publisher terms, not an exact-version source receipt." },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-09-02", "invalidatedBy": ["terms-change", "publisher-identity-change", "service-definition-change"] },
+  "limitations": ["The terms are rolling-current policy text and do not establish an installed client artifact or a selected model route."],
+  "unknowns": ["The contracting account, model route, provider terms and runtime service revision for any use are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

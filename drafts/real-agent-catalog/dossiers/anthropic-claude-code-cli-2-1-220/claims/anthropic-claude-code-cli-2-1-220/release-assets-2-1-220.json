@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.release-assets-2-1-220",
+  "slug": "release-assets-2-1-220",
+  "subject": {
+    "id": "com.anthropic.claude-code.cli",
+    "name": "Claude Code CLI",
+    "publisher": "Anthropic PBC",
+    "surface": {
+      "kind": "cli",
+      "name": "Claude Code CLI",
+      "slug": "anthropic-claude-code-cli-2-1-220"
+    }
+  },
+  "claim": {
+    "category": "identity.artifact",
+    "statement": "The v2.1.220 release publishes eight macOS, Linux and Windows client archives with publisher-supplied SHA-256 digests and signed checksum metadata."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Anthropic PBC"
+  },
+  "source": {
+    "uri": "https://github.com/anthropics/claude-code/releases/tag/v2.1.220",
+    "title": "Claude Code v2.1.220 release assets",
+    "locator": "Assets and digest metadata",
+    "publishedAt": "2026-07-25T01:35:55Z",
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "2.1.220"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "platform-specific archive"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local CLI artifact"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-25",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The catalog recorded publisher metadata and did not download or recompute any digest."
+  ],
+  "unknowns": [
+    "The executable unpacked from any archive and its local digest remain unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

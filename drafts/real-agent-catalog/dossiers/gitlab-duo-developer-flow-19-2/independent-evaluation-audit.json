@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "independent-evidence-audit/0.1-draft",
+  "asOf": "2026-08-02",
+  "recordId": "com.gitlab.duo.developer-flow.19-2",
+  "decision": "no-qualifying-independent-evidence",
+  "includedInGeneratedRecord": false,
+  "gates": {
+    "evaluatorIndependence": {
+      "status": "not-assessed",
+      "note": "No candidate reached review."
+    },
+    "exactApplicability": {
+      "status": "not-assessed",
+      "note": "No candidate disclosed an exact 19.2.0-ee execution cell."
+    },
+    "modelIdentity": {
+      "status": "not-assessed",
+      "note": "No candidate disclosed the exact model revision."
+    },
+    "configurationCompleteness": {
+      "status": "not-assessed",
+      "note": "No candidate disclosed the complete effective configuration."
+    },
+    "disclosureCompleteness": {
+      "status": "not-assessed",
+      "note": "No candidate supplied complete disclosure."
+    },
+    "publicArtifacts": {
+      "status": "not-assessed",
+      "note": "No reproducible public bundle was located."
+    }
+  },
+  "limitations": [
+    "Publisher sources establish claims and boundaries, not observed product behavior or suitability."
+  ]
+}

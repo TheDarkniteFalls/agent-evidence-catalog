@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "independent-evaluation-gate-audit/0.1-draft",
+  "artifactType": "unpublished-potential-evidence-audit",
+  "asOf": "2026-08-02",
+  "searchBoundary": {
+    "subject": "exact stable OpenAI Codex CLI 0.146.0 artifact",
+    "sourceClasses": ["official release and repository", "exact-version evaluation and benchmark search", "security-audit search", "package and user-report search"],
+    "note": "The bounded search located publisher material, adjacent surfaces or versions, user reports and non-reproducible summaries, but no candidate with a complete exact 0.146.0 evaluation cell."
+  },
+  "decision": "no-qualifying-independent-evidence",
+  "includedInGeneratedRecord": false,
+  "gates": {
+    "evaluatorIndependence": { "status": "not-assessed", "note": "No candidate reached evaluator-identity review." },
+    "exactApplicability": { "status": "not-assessed", "namedVersion": "0.146.0", "unresolved": ["exact installed artifact", "artifact digest", "platform build", "runtime identity"] },
+    "modelIdentity": { "status": "not-assessed", "unresolved": ["model", "provider-side model revision", "provider", "endpoint revision"] },
+    "configurationCompleteness": { "status": "not-assessed", "unresolved": ["authentication", "approval policy", "sandbox", "network", "tools", "MCP", "plugins", "skills", "app-server remote host"] },
+    "disclosureCompleteness": { "status": "not-assessed", "missing": ["qualifying candidate", "funding disclosure", "competing-interest disclosure", "complete method disclosure"] },
+    "publicArtifacts": { "status": "not-assessed", "locatedArtifacts": [], "missing": ["exact artifact receipt", "environment definition", "runner and adapter", "raw results", "reproduction instructions"] }
+  },
+  "catalogBoundary": "No independent evaluator, test, finding, score or result is included in the source dossier or generated 0.146.0 record."
+}

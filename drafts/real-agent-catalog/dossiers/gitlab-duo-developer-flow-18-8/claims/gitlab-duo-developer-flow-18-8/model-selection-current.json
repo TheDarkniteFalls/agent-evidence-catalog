@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.model-selection-current",
+  "slug": "model-selection-current",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "model.configuration",
+    "statement": "GitLab's current documentation says every Agent Platform feature has a default model that GitLab may update, while a supported administrator-selected model persists until changed and has no automatic fallback when unavailable."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/model_selection/",
+    "title": "Agent Platform AI models",
+    "locator": "Default models, Select a model for a feature and Model is not available",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "alternatives", "values": ["GitLab-managed default model", "administrator-selected supported model"] },
+    "platform": { "scope": "alternatives", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated"] },
+    "model": { "scope": "configuration-dependent", "values": ["rolling default", "selected supported model"] },
+    "deployment": { "scope": "configuration-dependent", "values": ["top-level group model setting", "child-group and project inheritance"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-08-31",
+    "invalidatedBy": ["documentation-change", "default-model-change", "supported-model-change", "fallback-change"]
+  },
+  "limitations": [
+    "The mutable default and supported-model tables are not exact-release evidence.",
+    "The page does not demonstrate which model served any Developer Flow request."
+  ],
+  "unknowns": [
+    "The effective model, provider endpoint, checkpoint, routing, reasoning parameters and change time are unknown.",
+    "Self-Managed self-hosted model compatibility and Dedicated rollout details for this surface are unresolved."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The current rolling model policy and tables are not projected into GitLab 18.8."
+    }
+  ],
+  "validationRefs": []
+}

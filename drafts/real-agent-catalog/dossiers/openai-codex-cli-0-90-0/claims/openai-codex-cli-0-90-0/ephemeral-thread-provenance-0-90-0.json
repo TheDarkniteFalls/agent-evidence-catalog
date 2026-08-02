@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.ephemeral-thread-provenance-0-90-0",
+  "slug": "ephemeral-thread-provenance-0-90-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-90-0" }
+  },
+  "claim": {
+    "category": "workflow.provenance",
+    "statement": "OpenAI's 0.90.0 release notes say the release added ephemeral threads and improved collaboration-tool provenance metadata for spawned threads."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": {
+    "uri": "https://github.com/openai/codex/releases/tag/rust-v0.90.0",
+    "title": "OpenAI Codex release 0.90.0",
+    "locator": "New Features — ephemeral threads and spawned-thread provenance metadata (#9765, #9769)",
+    "publishedAt": "2026-01-25T16:37:37Z",
+    "capturedAt": "2026-08-01T00:47:47Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "0.90.0" },
+    "configuration": { "scope": "conditional", "values": ["ephemeral spawned-thread path", "collaboration tools enabled"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["spawned collaboration threads"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-01-25", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "manual-review"]
+  },
+  "limitations": [
+    "The release note is a publisher description and does not define the full ephemeral-thread lifecycle.",
+    "No thread was created, observed, resumed, persisted or deleted by the catalog."
+  ],
+  "unknowns": [
+    "The provenance fields, propagation rules and completeness of spawned-thread attribution are unknown.",
+    "The lifetime, persistence, cleanup, context inheritance, tool authority and resource limits of ephemeral threads are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

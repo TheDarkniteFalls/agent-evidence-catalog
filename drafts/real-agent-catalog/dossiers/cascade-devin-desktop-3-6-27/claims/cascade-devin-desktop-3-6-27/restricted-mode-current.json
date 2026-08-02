@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin-desktop.cascade.restricted-mode-current",
+  "slug": "restricted-mode-current",
+  "subject": { "id": "com.cognition.devin-desktop.cascade", "name": "Cascade in Devin Desktop", "publisher": "Cognition AI, Inc.", "surface": { "kind": "desktop-app", "name": "Cascade in Devin Desktop", "slug": "cascade-devin-desktop-3-6-27" } },
+  "claim": { "category": "limitation.deployment", "statement": "Current Devin Desktop documentation says Cascade is unavailable when Restricted Mode is enabled." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/desktop/cascade/cascade", "title": "Cascade", "locator": "Local agents; Restricted Mode availability note", "publishedAt": null, "capturedAt": "2026-08-01T22:13:40Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "conditional", "values": ["normal workspace mode", "Restricted Mode"] }, "platform": { "scope": "all", "values": [] }, "model": { "scope": "not-applicable", "values": [] }, "deployment": { "scope": "named", "values": ["Devin Desktop Restricted Mode"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher deployment limitation." },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-09-02", "invalidatedBy": ["restricted-mode-agent-availability-change"] },
+  "limitations": ["This is an explicit availability limitation; no inference is made about Restricted Mode's controls or other agents available within it."],
+  "unknowns": ["Whether Restricted Mode is enabled for any account or workspace is unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

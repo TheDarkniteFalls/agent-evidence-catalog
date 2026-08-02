@@ -1,0 +1,193 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "asOf": "2026-08-01",
+  "identity": {
+    "recordId": "com.anthropic.claude-code.cli.2-1-117",
+    "agent": { "id": "com.anthropic.claude-code.cli", "name": "Claude Code CLI" },
+    "publisher": { "id": "anthropic-pbc", "name": "Anthropic PBC" },
+    "surface": { "kind": "cli", "name": "Claude Code CLI", "slug": "anthropic-claude-code-cli-2-1-117", "deliveryModel": "hybrid" },
+    "release": {
+      "scope": "exact-version",
+      "version": "2.1.117",
+      "releaseTag": "v2.1.117",
+      "sourceRevision": "2fa67717b8046c253cfa55fd84002e3501f1eca6",
+      "releasedAt": "2026-04-22T00:04:00Z",
+      "channel": "Claude Code GitHub release",
+      "additionalIdentities": [
+        {
+          "id": "exact-client-release",
+          "kind": "artifact-version",
+          "status": "known",
+          "value": "Claude Code CLI 2.1.117",
+          "scopeBindings": [],
+          "artifactRefs": ["claude-code-release-2-1-117", "claude-code-source-revision-2-1-117"],
+          "sourceIds": ["source-release-identity-2-1-117"],
+          "claimIds": ["com.anthropic.claude-code.cli.release-identity-2-1-117"],
+          "note": "The exact publisher release, tag and linked commit are known; downloaded binary digests are not."
+        },
+        {
+          "id": "current-documentation-revision",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [],
+          "artifactRefs": ["claude-code-current-service"],
+          "sourceIds": ["source-cli-surface-current", "source-permissions-current", "source-sandbox-current", "source-model-routing-current"],
+          "claimIds": ["com.anthropic.claude-code.cli.cli-surface-current", "com.anthropic.claude-code.cli.permissions-current", "com.anthropic.claude-code.cli.sandbox-current", "com.anthropic.claude-code.cli.model-routing-current"],
+          "note": "Rolling documentation describes later Claude Code behavior and cannot be treated as a frozen property of 2.1.117."
+        }
+      ],
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": ["Native macOS or Linux build", "Windows build", "npm-installed build"],
+        "alternativeDetails": [
+          { "id": "native-macos-linux", "label": "Native macOS or Linux build", "kind": "platform-build", "identityStatus": "unresolved", "artifactRefs": ["claude-code-release-2-1-117"], "scopeBindings": [{ "axisId": "client-build", "alternativeId": "native-macos-linux" }], "claimIds": ["com.anthropic.claude-code.cli.native-search-tools-2-1-117"], "note": "The release note distinguishes this build family, but no asset or digest was captured." },
+          { "id": "windows-build", "label": "Windows build", "kind": "platform-build", "identityStatus": "unresolved", "artifactRefs": ["claude-code-release-2-1-117"], "scopeBindings": [{ "axisId": "client-build", "alternativeId": "windows" }], "claimIds": ["com.anthropic.claude-code.cli.native-search-tools-2-1-117"], "note": "The exact Windows release asset and digest are unresolved." },
+          { "id": "npm-installed-build", "label": "npm-installed build", "kind": "package", "identityStatus": "unresolved", "artifactRefs": ["claude-code-release-2-1-117"], "scopeBindings": [{ "axisId": "client-build", "alternativeId": "npm" }], "claimIds": ["com.anthropic.claude-code.cli.native-search-tools-2-1-117"], "note": "The exact npm package artifact and digest are unresolved." }
+        ],
+        "note": "No release asset was downloaded and no installed Claude Code runtime was inspected."
+      }
+    },
+    "artifacts": [
+      { "id": "claude-code-release-2-1-117", "kind": "standalone-binary", "identityStatus": "exact", "uri": "https://github.com/anthropics/claude-code/releases/tag/v2.1.117", "ecosystem": "GitHub release", "version": "2.1.117", "digest": null, "note": "Exact release page; individual platform assets and digests were not captured." },
+      { "id": "claude-code-source-revision-2-1-117", "kind": "source-revision", "identityStatus": "exact", "uri": "https://github.com/anthropics/claude-code/commit/2fa67717b8046c253cfa55fd84002e3501f1eca6", "ecosystem": "git", "version": "2.1.117", "digest": null, "note": "Commit linked from the publisher release page." },
+      { "id": "claude-code-current-service", "kind": "other", "identityStatus": "unresolved", "uri": null, "ecosystem": "Anthropic or configured model service", "version": null, "digest": null, "note": "Model endpoint, routing and backend revision are unresolved." }
+    ]
+  },
+  "roles": {
+    "claimants": [{ "id": "anthropic-pbc", "name": "Anthropic PBC", "kind": "publisher" }],
+    "sourceCapturers": [{ "id": "catalog-source-capturer", "name": "Agent Evidence Catalog maintainer", "kind": "catalog-maintainer" }],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://github.com/anthropics/claude-code/releases/tag/v2.1.117": { "sourceKind": "publisher-release-metadata", "snapshotStatus": "immutable-reference", "note": "Exact publisher release tag and linked commit; no asset downloaded." },
+    "https://code.claude.com/docs/en/overview": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current publisher overview, claim-scoped as rolling documentation." },
+    "https://code.claude.com/docs/en/permissions": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current permission documentation, not silently applied to version 2.1.117." },
+    "https://code.claude.com/docs/en/sandboxing": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current sandbox documentation, not silently applied to version 2.1.117." },
+    "https://code.claude.com/docs/en/model-config": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current model configuration, aliases and provider paths; effective values unresolved." }
+  },
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Client build, model route, permission mode and sandbox mode are separate applicability dimensions; none was observed.",
+    "axes": [
+      {
+        "id": "client-build", "label": "Client build family", "scope": "mutually-exclusive", "dimension": "artifact",
+        "alternatives": [
+          { "id": "native-macos-linux", "label": "Native macOS or Linux build", "claimIds": ["com.anthropic.claude-code.cli.native-search-tools-2-1-117"], "mutuallyExclusiveWith": ["windows", "npm"] },
+          { "id": "windows", "label": "Windows build", "claimIds": ["com.anthropic.claude-code.cli.native-search-tools-2-1-117"], "mutuallyExclusiveWith": ["native-macos-linux", "npm"] },
+          { "id": "npm", "label": "npm-installed build", "claimIds": ["com.anthropic.claude-code.cli.native-search-tools-2-1-117"], "mutuallyExclusiveWith": ["native-macos-linux", "windows"] }
+        ],
+        "unknowns": ["The installed asset, platform, package manager and digest are unknown."]
+      },
+      {
+        "id": "permission-mode", "label": "Permission mode", "scope": "mutually-exclusive", "dimension": "approval-authority",
+        "alternatives": [
+          { "id": "default", "label": "Default prompts", "claimIds": ["com.anthropic.claude-code.cli.permissions-current"], "mutuallyExclusiveWith": ["accept-edits", "plan", "auto", "dont-ask", "bypass"], "controlMode": "manual-approval", "humanInteraction": "required" },
+          { "id": "accept-edits", "label": "Accept edits", "claimIds": ["com.anthropic.claude-code.cli.permissions-current"], "mutuallyExclusiveWith": ["default", "plan", "auto", "dont-ask", "bypass"], "controlMode": "automatic-allow", "humanInteraction": "possible" },
+          { "id": "plan", "label": "Plan", "claimIds": ["com.anthropic.claude-code.cli.permissions-current"], "mutuallyExclusiveWith": ["default", "accept-edits", "auto", "dont-ask", "bypass"], "controlMode": "automatic-deny", "humanInteraction": "possible" },
+          { "id": "auto", "label": "Auto research preview", "claimIds": ["com.anthropic.claude-code.cli.permissions-current"], "mutuallyExclusiveWith": ["default", "accept-edits", "plan", "dont-ask", "bypass"], "controlMode": "classifier-mediated", "humanInteraction": "possible" },
+          { "id": "dont-ask", "label": "Don't ask", "claimIds": ["com.anthropic.claude-code.cli.permissions-current"], "mutuallyExclusiveWith": ["default", "accept-edits", "plan", "auto", "bypass"], "controlMode": "automatic-deny", "humanInteraction": "unavailable" },
+          { "id": "bypass", "label": "Bypass permissions", "claimIds": ["com.anthropic.claude-code.cli.permissions-current"], "mutuallyExclusiveWith": ["default", "accept-edits", "plan", "auto", "dont-ask"], "controlMode": "automatic-allow", "humanInteraction": "unavailable" }
+        ],
+        "unknowns": ["The effective mode and rule set are unknown; current names and behavior may postdate 2.1.117."]
+      },
+      {
+        "id": "sandbox-mode", "label": "Bash sandbox mode", "scope": "mutually-exclusive", "dimension": "sandbox",
+        "alternatives": [
+          { "id": "disabled", "label": "Sandbox disabled or unavailable", "claimIds": ["com.anthropic.claude-code.cli.sandbox-current"], "mutuallyExclusiveWith": ["auto-allow", "regular-permissions"], "controlMode": "disabled", "humanInteraction": "possible" },
+          { "id": "auto-allow", "label": "Sandbox auto-allow", "claimIds": ["com.anthropic.claude-code.cli.sandbox-current"], "mutuallyExclusiveWith": ["disabled", "regular-permissions"], "controlMode": "automatic-allow", "humanInteraction": "possible" },
+          { "id": "regular-permissions", "label": "Sandbox with regular permissions", "claimIds": ["com.anthropic.claude-code.cli.sandbox-current"], "mutuallyExclusiveWith": ["disabled", "auto-allow"], "controlMode": "manual-approval", "humanInteraction": "required" }
+        ],
+        "unknowns": ["Sandbox enablement, dependencies, filesystem policy, network allowlist and unsandboxed fallback are unknown."]
+      },
+      {
+        "id": "model-route", "label": "Model and provider route", "scope": "mutually-exclusive", "dimension": "model",
+        "alternatives": [
+          { "id": "anthropic", "label": "Anthropic API or Claude subscription route", "claimIds": ["com.anthropic.claude-code.cli.model-routing-current"], "mutuallyExclusiveWith": ["bedrock", "foundry", "google-agent-platform", "gateway"] },
+          { "id": "bedrock", "label": "Amazon Bedrock", "claimIds": ["com.anthropic.claude-code.cli.model-routing-current"], "mutuallyExclusiveWith": ["anthropic", "foundry", "google-agent-platform", "gateway"] },
+          { "id": "foundry", "label": "Microsoft Foundry", "claimIds": ["com.anthropic.claude-code.cli.model-routing-current"], "mutuallyExclusiveWith": ["anthropic", "bedrock", "google-agent-platform", "gateway"] },
+          { "id": "google-agent-platform", "label": "Google Cloud Agent Platform", "claimIds": ["com.anthropic.claude-code.cli.model-routing-current"], "mutuallyExclusiveWith": ["anthropic", "bedrock", "foundry", "gateway"] },
+          { "id": "gateway", "label": "Configured LLM gateway", "claimIds": ["com.anthropic.claude-code.cli.model-routing-current"], "mutuallyExclusiveWith": ["anthropic", "bedrock", "foundry", "google-agent-platform"] }
+        ],
+        "unknowns": ["Provider, endpoint, exact model, alias resolution, fallback, account tier and inference revision are unknown."]
+      },
+      {
+        "id": "agent-mcp", "label": "Agent-scoped MCP configuration", "scope": "unresolved", "dimension": "tool-surface",
+        "alternatives": [{ "id": "agent-frontmatter-mcp", "label": "MCP servers loaded from agent frontmatter", "claimIds": ["com.anthropic.claude-code.cli.agent-mcp-2-1-117"], "mutuallyExclusiveWith": [] }],
+        "unknowns": ["No agent file, MCP server, tool schema, authentication or approval result was inspected."]
+      }
+    ]
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "overeager-claude-code-2-1-117-admission",
+      "candidateLabel": "Overeager Coding Agents: Claude Code 2.1.117 cells",
+      "candidateSourceIds": [],
+      "decision": "unresolved-potential",
+      "gates": [
+        { "id": "evaluator-independence", "dimension": "evaluator-independence", "status": "unresolved", "claimIds": [], "note": "No listed author affiliation is Anthropic, but the paper provides no funding or competing-interest disclosure that proves independence." },
+        { "id": "exact-release", "dimension": "release", "status": "pass", "claimIds": ["com.anthropic.claude-code.cli.release-identity-2-1-117"], "note": "The paper names Claude Code 2.1.117, matching the exact publisher release in this dossier." },
+        { "id": "exact-runtime", "dimension": "runtime", "status": "partial", "claimIds": [], "note": "The paper names Linux 6.8.0, Docker 28.4, cwd and HOME, but not release asset, digest, image digest or complete adapter implementation." },
+        { "id": "exact-model", "dimension": "model", "status": "partial", "claimIds": [], "note": "Three model labels are named, but provider endpoint revisions and complete inference settings are not public." },
+        { "id": "exact-configuration", "dimension": "configuration", "status": "partial", "claimIds": [], "note": "The study names --dangerously-skip-permissions and 300-second timeouts, but complete effective settings are unavailable." },
+        { "id": "disclosure-completeness", "dimension": "disclosure", "status": "fail", "claimIds": [], "note": "Funding, competing interests, annotator identities and complete raw annotation materials are not disclosed publicly." },
+        { "id": "public-artifacts", "dimension": "public-artifacts", "status": "fail", "claimIds": [], "note": "The paper promises or describes a repository and audit bundle, but no corresponding public benchmark, adapter, run bundle or raw annotations were located in the bounded search." }
+      ],
+      "includedTestIds": [],
+      "limitations": ["No study result, evaluator, test or finding is admitted until every gate passes for an inspectable exact cell."]
+    }
+  ],
+  "dossier": {
+    "summary": "Claude Code CLI 2.1.117 is represented as an exact publisher release with unresolved installed asset and model backend, while current permission, sandbox and model documentation remains rolling-current and is not silently applied to the exact client.",
+    "releaseContext": { "statement": "Anthropic published Claude Code v2.1.117 on 2026-04-22 and linked commit 2fa67717b8046c253cfa55fd84002e3501f1eca6. Current documentation has evolved beyond this release and is scoped separately.", "sourceUri": "https://github.com/anthropics/claude-code/releases/tag/v2.1.117", "legacySource": null },
+    "limitations": [
+      "All product claims are attributed to Anthropic public sources; no product behavior was observed.",
+      "No Claude Code release asset was downloaded, installed, hashed or run.",
+      "Current permission, sandbox and model pages are rolling documentation and do not freeze 2.1.117 behavior.",
+      "The exact release page identifies a tag and commit but not the installed platform asset or digest.",
+      "Permission mode, sandbox state, model provider, endpoint and MCP configuration remain unresolved.",
+      "The Overeager paper is retained only as unresolved potential evidence; no result is included.",
+      "No capability, quality, performance, safety, privacy or suitability conclusion is supported."
+    ],
+    "unknowns": [
+      "The installed release asset, package manager, platform architecture and binary digest are unknown.",
+      "The exact source-to-binary correspondence beyond the publisher release link is unknown.",
+      "The effective permission mode, allow, ask and deny rules are unknown.",
+      "Sandbox enablement, dependency availability, fallback and enforcement policy are unknown.",
+      "The model provider, endpoint, model identifier, alias resolution and fallback are unknown.",
+      "The account tier, organization policy, managed settings and workspace trust state are unknown.",
+      "The configured agents, MCP servers, plugins, hooks, instructions and tools are unknown.",
+      "Independent-evaluator disclosures and inspectable benchmark artifacts remain unavailable."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      { "id": "release-auditor", "label": "Release auditor", "prompt": "Inspect exact client and artifact identity without rolling documentation leakage.", "propositionIds": ["identity", "runtime"] },
+      { "id": "security-reviewer", "label": "Security reviewer", "prompt": "Inspect permission and sandbox alternatives without treating publisher claims as observed enforcement.", "propositionIds": ["authority", "sandbox"] },
+      { "id": "evidence-auditor", "label": "Evidence auditor", "prompt": "Inspect independent-evidence gates and source applicability.", "propositionIds": ["evaluation", "model"] }
+    ],
+    "propositions": [
+      { "id": "identity", "eyebrow": "Exact client", "question": "Which Claude Code client is pinned?", "status": "2.1.117 tag and commit known", "tone": "qualified", "answer": "The publisher release identifies v2.1.117 and a linked commit; the installed asset and digest remain unresolved.", "whyItMatters": "An exact tag does not identify a particular downloaded binary.", "claimIds": ["com.anthropic.claude-code.cli.release-identity-2-1-117"] },
+      { "id": "runtime", "eyebrow": "Build variants", "question": "Which client build was used?", "status": "Three release-note build families; effective asset unknown", "tone": "attention", "answer": "The release distinguishes native macOS/Linux from Windows and npm-installed behavior, but no asset was inspected.", "whyItMatters": "Tool inventory differs by build family.", "claimIds": ["com.anthropic.claude-code.cli.native-search-tools-2-1-117"] },
+      { "id": "authority", "eyebrow": "Permission authority", "question": "Which approval policy applied?", "status": "Current alternatives documented; effective and exact-version state unknown", "tone": "attention", "answer": "Current documentation separates several permission modes and ordered rules, but this record has no runtime receipt.", "whyItMatters": "Authority depends on effective configuration and documentation date.", "claimIds": ["com.anthropic.claude-code.cli.permissions-current"] },
+      { "id": "sandbox", "eyebrow": "Sandbox", "question": "Was Bash isolated?", "status": "Current sandbox alternatives documented; effective state unknown", "tone": "attention", "answer": "Current docs describe OS-enforced filesystem and network boundaries plus multiple modes and fallback behavior.", "whyItMatters": "Sandbox and permissions are complementary and separately configurable.", "claimIds": ["com.anthropic.claude-code.cli.sandbox-current"] },
+      { "id": "model", "eyebrow": "Model route", "question": "Which provider and model answered?", "status": "Multiple routes; exact endpoint unresolved", "tone": "attention", "answer": "Current documentation supports several providers and rolling aliases, none selected for this dossier.", "whyItMatters": "Client version does not freeze model or provider behavior.", "claimIds": ["com.anthropic.claude-code.cli.model-routing-current", "com.anthropic.claude-code.cli.model-persistence-2-1-117"] },
+      { "id": "evaluation", "eyebrow": "Independent evidence", "question": "Did the paper qualify for admission?", "status": "Unresolved potential; zero tests admitted", "tone": "attention", "answer": "Version applicability passes, but independence, disclosure, runtime completeness and public-artifact gates do not all pass.", "whyItMatters": "A named version alone is not a reproducible independent evaluation receipt.", "claimIds": ["com.anthropic.claude-code.cli.release-identity-2-1-117"] }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false, "intakeOpened": false, "agentInstalled": false, "agentRun": false, "independentlyTested": false, "catalogEvaluation": false, "ranking": false, "recommendation": false, "safetyCertification": false, "published": false,
+    "note": "Unpublished public-source attribution only; current docs are separated from exact 2.1.117 identity and the paper remains unresolved potential evidence."
+  },
+  "rawClaimPaths": [
+    "claims/anthropic-claude-code-cli-2-1-117/release-identity-2-1-117.json",
+    "claims/anthropic-claude-code-cli-2-1-117/agent-mcp-2-1-117.json",
+    "claims/anthropic-claude-code-cli-2-1-117/model-persistence-2-1-117.json",
+    "claims/anthropic-claude-code-cli-2-1-117/native-search-tools-2-1-117.json",
+    "claims/anthropic-claude-code-cli-2-1-117/cli-surface-current.json",
+    "claims/anthropic-claude-code-cli-2-1-117/permissions-current.json",
+    "claims/anthropic-claude-code-cli-2-1-117/sandbox-current.json",
+    "claims/anthropic-claude-code-cli-2-1-117/model-routing-current.json"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.github-sync-current", "slug": "github-sync-current",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Build mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Build mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "repository.github-sync", "statement": "Current Lovable documentation says an owner or admin can authorize OAuth, install the Lovable GitHub App for all or selected repositories, connect one project to one repository, and enable two-way synchronization on the default branch." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/integrations/github", "title": "Connect your project to GitHub", "locator": "Before you connect and Set up the GitHub integration", "publishedAt": null, "capturedAt": "2026-08-01T10:46:26Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["workspace owner or admin", "OAuth", "Lovable GitHub App", "all or selected repositories", "one linked repository", "default branch two-way sync"] }, "platform": { "scope": "named", "values": ["Lovable hosted project", "GitHub"] }, "model": { "scope": "not-applicable", "values": [] }, "deployment": { "scope": "named", "values": ["connected GitHub repository"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["github-integration-change", "permission-change", "sync-change"] },
+  "limitations": ["The documentation does not establish the execution principal or commit attribution of a particular synchronized change."],
+  "unknowns": ["OAuth identity, App installation, repository scope, linked repository, branch and synchronization state are unknown."],
+  "relationships": [], "validationRefs": []
+}

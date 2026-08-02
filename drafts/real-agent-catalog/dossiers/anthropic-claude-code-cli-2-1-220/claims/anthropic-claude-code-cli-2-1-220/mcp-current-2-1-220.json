@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.mcp-current-2-1-220",
+  "slug": "mcp-current-2-1-220",
+  "subject": {
+    "id": "com.anthropic.claude-code.cli",
+    "name": "Claude Code CLI",
+    "publisher": "Anthropic PBC",
+    "surface": {
+      "kind": "cli",
+      "name": "Claude Code CLI",
+      "slug": "anthropic-claude-code-cli-2-1-220"
+    }
+  },
+  "claim": {
+    "category": "authority.mcp",
+    "statement": "Current official documentation supports configured MCP servers over local and remote transports, OAuth for remote servers, tool search and plugin-provided MCP servers; configured server identities and credentials remain separate from the CLI release."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anthropic PBC"
+  },
+  "source": {
+    "uri": "https://code.claude.com/docs/en/mcp",
+    "title": "Connect Claude Code to tools via MCP",
+    "locator": "Server management, transports, authentication, plugin MCP and tool search",
+    "publishedAt": null,
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "stdio",
+        "SSE",
+        "HTTP",
+        "OAuth",
+        "tool search"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "configured MCP servers"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "MCP availability depends on effective configuration, server behavior and model support."
+  ],
+  "unknowns": [
+    "Configured servers, tools, transports, credentials, destinations, data access and approvals are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

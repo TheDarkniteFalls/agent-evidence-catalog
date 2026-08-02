@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "claimed-attribute-mapping/0.1-study-extension",
+  "status": "unpublished-current-record-overlay",
+  "taxonomyPath": "taxonomy.json",
+  "baseMappingPath": "mapping.json",
+  "priorOverlayPath": "gitlab-duo-developer-flow-19-2-mapping.json",
+  "asOf": "2026-08-02",
+  "mappingRule": "This additive mapping uses the completed taxonomy unchanged. States follow taxonomy.attributeOrder exactly, evidence stays within the 4.1.3 record, conditional states retain named applicability boundaries, and no independent-test or suitability credit is introduced.",
+  "records": [
+    {
+      "recordId": "com.cline.bot.vscode-extension.4-1-3",
+      "comparisonFrame": "interactive-ide",
+      "states": [
+        "unknown",
+        "claimed",
+        "claimed",
+        "claimed",
+        "conditional",
+        "conditional",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "not-applicable",
+        "not-applicable",
+        "not-applicable",
+        "conditional",
+        "conditional",
+        "unknown",
+        "not-applicable",
+        "conditional",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "not-applicable",
+        "not-applicable"
+      ],
+      "evidence": {
+        "cap.file-modify": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.capabilities-current-4-1-3"
+          ]
+        },
+        "cap.command-execution": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.capabilities-current-4-1-3"
+          ]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.capabilities-current-4-1-3"
+          ]
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.approval-current-4-1-3"
+          ],
+          "axisIds": [
+            "approval-mode"
+          ],
+          "note": "MCP is named only inside the current approval documentation; effective servers and tools are unknown."
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.model-routes-current-4-1-3"
+          ],
+          "axisIds": [
+            "model-route"
+          ]
+        },
+        "authority.action-confirmation": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.approval-current-4-1-3"
+          ],
+          "axisIds": [
+            "approval-mode"
+          ]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.approval-current-4-1-3"
+          ],
+          "axisIds": [
+            "approval-mode"
+          ]
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": [
+            "com.cline.bot.vscode-extension.approval-current-4-1-3"
+          ],
+          "axisIds": [
+            "approval-mode"
+          ]
+        }
+      }
+    }
+  ]
+}

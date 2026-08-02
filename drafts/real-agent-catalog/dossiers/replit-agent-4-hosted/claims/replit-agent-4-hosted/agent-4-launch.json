@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.replit.agent.hosted.agent-4-launch",
+  "slug": "agent-4-launch",
+  "subject": { "id": "com.replit.agent.hosted", "name": "Replit Agent", "publisher": "Replit", "surface": { "kind": "hosted-service", "name": "Replit Agent hosted workspace", "slug": "replit-agent-4-hosted" } },
+  "claim": { "category": "identity.release", "statement": "Replit's March 13, 2026 changelog introduces the hosted service generation as Replit Agent 4." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Replit" },
+  "source": { "uri": "https://docs.replit.com/updates/2026/03/13/changelog", "title": "March 13, 2026 — Replit", "locator": "Agent — Introducing Replit Agent 4", "publishedAt": "2026-03-13T00:00:00Z", "capturedAt": "2026-08-01T06:29:56Z", "snapshot": null },
+  "applicability": { "version": { "kind": "release-line", "value": "Agent 4" }, "configuration": { "scope": "unresolved", "values": [] }, "platform": { "scope": "named", "values": ["Replit hosted Project Editor"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["Replit-managed hosted service"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Dated publisher generation milestone; current backend revision remains rolling." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["generation-renaming", "publisher-correction"] },
+  "limitations": ["The Agent 4 label does not identify an immutable service, regional deployment or model revision."],
+  "unknowns": ["The exact backend build, tenant rollout and model serving Agent 4 at any time are unknown."],
+  "relationships": [], "validationRefs": []
+}

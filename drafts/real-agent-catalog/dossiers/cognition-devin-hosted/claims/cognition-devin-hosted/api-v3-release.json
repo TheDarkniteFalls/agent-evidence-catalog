@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.api-v3-release",
+  "slug": "api-v3-release",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "identity.api", "statement": "Cognition's February 20, 2026 release note says the Devin v3 API left beta and became the primary API, adding role-based access control and session attribution while legacy v1 and v2 remained available during deprecation." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/release-notes/overview", "title": "Recent Updates", "locator": "February 20, 2026 — Devin v3 API Officially Released", "publishedAt": "2026-02-20T00:00:00Z", "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "v3 API primary release, 2026-02-20" },
+    "configuration": { "scope": "named", "values": ["v3 API", "role-based access control", "session attribution"] },
+    "platform": { "scope": "named", "values": ["Devin API"] },
+    "model": { "scope": "unresolved", "values": [] },
+    "deployment": { "scope": "alternatives", "values": ["api.devin.ai", "dedicated custom API domain"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["api-version-change", "deprecation-change", "rbac-change"] },
+  "limitations": ["An API generation does not identify the implementation or model revision serving an API request."],
+  "unknowns": ["The exact v3 server build and deployed schema revision are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,8 +1,18 @@
-# Contributing a profile
+# Contributing
 
-Initial publication status: synthetic reference only. Real-agent profile intake is not open. If intake opens later, the only accepted submission shape will be a pull request that adds, corrects, or revokes one version-specific profile record. Opening intake requires a documented private reporting route and review process; no review or response is promised.
+The real-agent Research Preview v0.1 is the canonical product; the earlier
+synthetic catalog is a secondary reference. The preview is maintainer-curated
+and its intake is closed. Do not submit a new
+real-agent record, publisher request, ranking, sponsorship placement, test run
+or evidence bundle. A future intake decision would require a separate policy
+change, an operational private reporting route and explicit repository-owner
+authorization. The missing private route does not block the static
+maintainer-curated preview. No review or response is promised.
 
-## Required
+## Future profile requirements
+
+The following requirements describe a possible later contribution shape; they
+do not open intake today.
 
 - For a new profile, add one `catalog/<agent>-<version>.json` file; do not edit another publisher's record.
 - Use public-safe URLs and redact logs before referencing them.
@@ -24,10 +34,20 @@ Maintainers may request narrower claims or more explicit unknowns. Passing valid
 
 ## Corrections and revocations
 
-Use an explicit pull request for a public-safe correction. A revocation pull request removes the affected record from the active catalog and explains the reason without exposing sensitive material; Git history preserves the earlier version. Follow `CORRECTIONS.md`. Do not put secrets, private reports, personal data, or unredacted logs in a pull request.
+After publication, a public-safe correction may be proposed through an explicit
+pull request if repository contributions are enabled. A revocation removes the
+affected record from the active view and explains the non-sensitive reason
+without promoting an older record. Follow `CORRECTIONS.md`. Do not put secrets,
+private reports, personal data, vulnerability details or unredacted logs in a
+public issue or pull request. A private route is not yet operational; do not
+submit sensitive material. It is tracked as a prerequisite for future intake in
+`ROADMAP.md`.
 
 ## Contribution rights and license
 
 This project is licensed under the Apache License 2.0. By intentionally submitting a contribution for inclusion, you represent that you have the right to submit it and agree that it is provided under Apache-2.0, as described in section 5 of that license. Do not submit material whose license or ownership you cannot establish.
 
-No contributor agreement or developer certificate is required by this static Phase 0 package. A future repository owner may add one before accepting real submissions, but this package makes no external commitment to do so.
+No contributor agreement or developer certificate is required for the current
+closed-intake static package. A future repository owner may add one before
+accepting real submissions, but this package makes no external commitment to do
+so.

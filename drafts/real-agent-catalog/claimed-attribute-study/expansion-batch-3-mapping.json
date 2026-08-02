@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "claimed-attribute-mapping/0.1-study-extension",
+  "status": "unpublished-expansion-overlay",
+  "taxonomyPath": "taxonomy.json",
+  "baseMappingPath": "mapping.json",
+  "asOf": "2026-08-01",
+  "mappingRule": "Additive mappings use the completed taxonomy and calculation boundaries unchanged. The states array follows taxonomy.attributeOrder exactly, and evidence references may point only to claims and configuration axes in the same new record.",
+  "records": [
+    {
+      "recordId": "org.aider-ai.aider.cli.0-86-0",
+      "comparisonFrame": "interactive-cli",
+      "states": [
+        "conditional", "conditional", "conditional", "unknown", "unknown", "conditional", "conditional", "not-applicable", "not-applicable",
+        "conditional", "not-applicable", "unknown", "not-applicable", "not-applicable", "not-applicable", "unknown",
+        "unknown", "unknown", "unknown", "unknown", "unknown", "unknown", "unknown", "unknown",
+        "unknown", "not-applicable", "not-applicable"
+      ],
+      "evidence": {
+        "cap.file-read": {
+          "claimIds": ["org.aider-ai.aider.cli.file-edit-and-git-current", "org.aider-ai.aider.cli.repository-map-current"],
+          "axisIds": ["repository-context"],
+          "note": "Scoped to files added to chat and optional repository-map context; the effective file set is unknown."
+        },
+        "cap.file-modify": {
+          "claimIds": ["org.aider-ai.aider.cli.file-edit-and-git-current"],
+          "axisIds": ["chat-mode", "repository-context"],
+          "note": "Code and architect paths can edit, while ask and help paths are separated alternatives."
+        },
+        "cap.command-execution": {
+          "claimIds": ["org.aider-ai.aider.cli.shell-command-current"],
+          "axisIds": ["command-test-path"],
+          "note": "The admitted command path is explicitly user-invoked."
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["org.aider-ai.aider.cli.model-provider-current"],
+          "axisIds": ["model-route"]
+        },
+        "cap.nonwriting-plan-stage": {
+          "claimIds": ["org.aider-ai.aider.cli.chat-modes-current"],
+          "axisIds": ["chat-mode"],
+          "note": "Ask mode is documented as discussing code without changing files; no effective session was observed."
+        },
+        "cap.automated-checks": {
+          "claimIds": ["org.aider-ai.aider.cli.test-automation-current"],
+          "axisIds": ["command-test-path"]
+        }
+      }
+    },
+    {
+      "recordId": "com.amazon.kiro.ide.1-0-242",
+      "comparisonFrame": "interactive-ide",
+      "states": [
+        "conditional", "conditional", "conditional", "unknown", "conditional", "conditional", "conditional", "not-applicable", "unknown",
+        "unknown", "unknown", "unknown", "not-applicable", "not-applicable", "not-applicable", "conditional",
+        "conditional", "conditional", "conditional", "conditional", "unknown", "unknown", "unknown", "unknown",
+        "unknown", "not-applicable", "conditional"
+      ],
+      "evidence": {
+        "cap.file-read": {
+          "claimIds": ["com.amazon.kiro.ide.file-command-authority-current"],
+          "axisIds": ["operation-mode"]
+        },
+        "cap.file-modify": {
+          "claimIds": ["com.amazon.kiro.ide.file-command-authority-current", "com.amazon.kiro.ide.autopilot-supervised-current"],
+          "axisIds": ["operation-mode", "protected-path-review"]
+        },
+        "cap.command-execution": {
+          "claimIds": ["com.amazon.kiro.ide.file-command-authority-current", "com.amazon.kiro.ide.command-policy-current"],
+          "axisIds": ["operation-mode", "command-policy"]
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": ["com.amazon.kiro.ide.mcp-tool-authority-current"],
+          "axisIds": ["mcp-tool-policy"]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["com.amazon.kiro.ide.model-selection-current"],
+          "axisIds": ["model-route"]
+        },
+        "cap.nonwriting-plan-stage": {
+          "claimIds": ["com.amazon.kiro.ide.spec-gates-current"],
+          "axisIds": ["spec-workflow"],
+          "note": "Spec artifacts are planning outputs; later implementation remains a separate action."
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.amazon.kiro.ide.autopilot-supervised-current", "com.amazon.kiro.ide.command-policy-current", "com.amazon.kiro.ide.mcp-tool-authority-current"],
+          "axisIds": ["operation-mode", "command-policy", "protected-path-review", "mcp-tool-policy"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["com.amazon.kiro.ide.autopilot-supervised-current", "com.amazon.kiro.ide.command-policy-current", "com.amazon.kiro.ide.mcp-tool-authority-current"],
+          "axisIds": ["operation-mode", "command-policy", "mcp-tool-policy"]
+        },
+        "authority.plan-approval": {
+          "claimIds": ["com.amazon.kiro.ide.spec-gates-current"],
+          "axisIds": ["spec-workflow"]
+        },
+        "authority.output-application-approval": {
+          "claimIds": ["com.amazon.kiro.ide.autopilot-supervised-current"],
+          "axisIds": ["operation-mode"],
+          "note": "Supervised review occurs after tool writes are tagged; the claim does not imply pre-write isolation."
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": ["com.amazon.kiro.ide.command-policy-current", "com.amazon.kiro.ide.mcp-tool-authority-current"],
+          "axisIds": ["command-policy", "mcp-tool-policy"]
+        },
+        "authority.scheduled-or-event-trigger": {
+          "claimIds": ["com.amazon.kiro.ide.hook-actions-current"],
+          "axisIds": ["hook-action"]
+        }
+      }
+    },
+    {
+      "recordId": "com.lovable.agent.hosted.rolling",
+      "comparisonFrame": "hosted-background",
+      "states": [
+        "conditional", "conditional", "unknown", "conditional", "unknown", "unresolved", "conditional", "claimed", "conditional",
+        "conditional", "unknown", "unknown", "unknown", "unknown", "unknown", "conditional",
+        "conditional", "unknown", "claimed", "conditional", "conditional", "unknown", "conditional", "conditional",
+        "unresolved", "conditional", "unknown"
+      ],
+      "evidence": {
+        "cap.file-read": {
+          "claimIds": ["com.lovable.agent.hosted.agent-file-execution-current"],
+          "axisIds": ["interaction-mode"]
+        },
+        "cap.file-modify": {
+          "claimIds": ["com.lovable.agent.hosted.agent-plan-modes-current", "com.lovable.agent.hosted.agent-file-execution-current"],
+          "axisIds": ["interaction-mode"]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": ["com.lovable.agent.hosted.agent-file-execution-current", "com.lovable.agent.hosted.browser-testing-current"],
+          "axisIds": ["verification-path", "browser-test-trigger"]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": ["com.lovable.agent.hosted.model-service-milestone-2026-04-24"],
+          "axisIds": ["model-route"],
+          "note": "A dated model-incorporation milestone exists, but the current publisher-managed route is unresolved and no user selection is claimed."
+        },
+        "cap.nonwriting-plan-stage": {
+          "claimIds": ["com.lovable.agent.hosted.agent-plan-modes-current"],
+          "axisIds": ["interaction-mode"]
+        },
+        "cap.background-or-async-execution": {
+          "claimIds": ["com.lovable.agent.hosted.agent-file-execution-current"],
+          "axisIds": ["interaction-mode"],
+          "note": "The admitted surface is the publisher-hosted Build task, not a local foreground runtime."
+        },
+        "cap.parallel-or-child-execution": {
+          "claimIds": ["com.lovable.agent.hosted.serial-prompt-queue-current", "com.lovable.agent.hosted.parallel-read-only-subagents-current"],
+          "axisIds": ["prompt-queue", "subagent-execution"],
+          "note": "Conditional scope: the main Build-mode prompt queue is serial, while publisher-decided temporary read-only subagents may perform independent investigations in parallel; no parallel project-writing authority is inferred."
+        },
+        "cap.automated-checks": {
+          "claimIds": ["com.lovable.agent.hosted.verification-tools-current", "com.lovable.agent.hosted.browser-testing-current"],
+          "axisIds": ["verification-path", "browser-test-trigger"]
+        },
+        "authority.action-confirmation": {
+          "claimIds": ["com.lovable.agent.hosted.browser-testing-current", "com.lovable.agent.hosted.cloud-tool-permissions-current"],
+          "axisIds": ["browser-test-trigger", "cloud-tool-policy"]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"],
+          "axisIds": ["cloud-tool-policy"]
+        },
+        "authority.output-application-approval": {
+          "claimIds": ["com.lovable.agent.hosted.publish-boundary-current"],
+          "axisIds": ["publish-state"],
+          "note": "Project changes are not automatically deployed; Publish or Update is a separate user action."
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"],
+          "axisIds": ["cloud-tool-policy"]
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": ["com.lovable.agent.hosted.browser-testing-current"],
+          "axisIds": ["verification-path"],
+          "note": "Only the documented remote virtual browser environment is credited; no general Agent sandbox is inferred."
+        },
+        "authority.repository-scope": {
+          "claimIds": ["com.lovable.agent.hosted.github-sync-current"],
+          "axisIds": ["github-connection"]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": ["com.lovable.agent.hosted.github-sync-current"],
+          "axisIds": ["github-connection"],
+          "note": "Scoped to OAuth plus the Lovable GitHub App authorization path; application secrets are not inferred."
+        },
+        "authority.execution-principal": {
+          "claimIds": ["com.lovable.agent.hosted.github-sync-current"],
+          "axisIds": ["github-connection"],
+          "note": "The App and authorizing role are named, but commit attribution and the effective execution principal remain unresolved."
+        },
+        "authority.execution-environment-selection": {
+          "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"],
+          "axisIds": ["cloud-state", "cloud-region"]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.openhands.cli.release-identity-1-16-0",
+  "slug": "release-identity-1-16-0",
+  "subject": {
+    "id": "org.openhands.cli",
+    "name": "OpenHands",
+    "publisher": "OpenHands",
+    "surface": { "kind": "cli", "name": "OpenHands CLI", "slug": "openhands-cli" }
+  },
+  "claim": {
+    "category": "identity",
+    "statement": "The publisher's signed GitHub release, version-bump commit and tagged package metadata identify OpenHands CLI version 1.16.0 at source revision 2963442dacc7cea44e39b7c4e73724295c853465."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "OpenHands" },
+  "source": {
+    "uri": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
+    "title": "OpenHands CLI release 1.16.0",
+    "locator": "Release heading, signed tag and commit 2963442",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T21:47:27Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "1.16.0" },
+    "configuration": { "scope": "not-applicable", "values": [] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "not-applicable", "values": [] },
+    "deployment": { "scope": "named", "values": ["OpenHands CLI source release"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-unavailable", "claimant-correction", "claimant-withdrawal", "manual-review"]
+  },
+  "limitations": [
+    "The release and source identity were inspected through publisher-controlled GitHub records; no package or binary was downloaded.",
+    "A signed Git tag establishes repository metadata under the applicable GitHub trust path, not the identity of an installed artifact."
+  ],
+  "unknowns": [
+    "The digest of any PyPI wheel, source distribution or standalone binary was not captured.",
+    "The relationship between each release asset and a user's installed executable was not independently verified."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

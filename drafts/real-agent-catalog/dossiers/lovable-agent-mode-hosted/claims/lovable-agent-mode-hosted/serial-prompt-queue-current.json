@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.serial-prompt-queue-current", "slug": "serial-prompt-queue-current",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Build mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Build mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "execution.queue-limitation", "statement": "Current Lovable documentation says Build mode processes one main task at a time while additional prompts enter a visible, reorderable and pausable queue, including a repeat control for queued prompts." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/features/agent-mode", "title": "Implement changes in Build mode", "locator": "Prompt queue", "publishedAt": null, "capturedAt": "2026-08-01T11:46:36Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["one active task", "queued prompts", "pause", "reorder", "repeat"] }, "platform": { "scope": "named", "values": ["Lovable hosted browser workspace"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["Lovable hosted service"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["queue-behavior-change", "parallelism-change"] },
+  "limitations": ["The one-task statement applies to the main Build-mode prompt queue; it does not limit the separate temporary read-only subagent layer."],
+  "unknowns": ["Queue contents, ordering, repeat values, paused state and active task are unknown."],
+  "relationships": [{ "type": "scope-differs", "targetClaimId": "com.lovable.agent.hosted.parallel-read-only-subagents-current", "extent": "partial", "status": "resolved", "resolution": "scope-difference", "note": "The main Build-mode prompt queue is serial, while temporary read-only subagents may perform separate investigations in parallel; neither claim establishes parallel project-writing agents." }], "validationRefs": []
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "independent-evaluation-gate-audit/0.1-draft",
+  "artifactType": "unpublished-potential-evidence-audit",
+  "asOf": "2026-08-01",
+  "candidate": {
+    "title": "Overeager Coding Agents: Measuring Out-of-Scope Actions on Benign Tasks",
+    "uri": "https://arxiv.org/abs/2605.18583v1",
+    "version": "v1",
+    "publishedAt": "2026-05-18T16:00:41Z"
+  },
+  "decision": "unresolved-potential-evidence",
+  "includedInGeneratedRecord": false,
+  "gates": {
+    "evaluatorIndependence": {
+      "status": "unresolved",
+      "note": "No author affiliation is OpenAI, but no funding or competing-interest disclosure was found; institutional distance does not prove independence."
+    },
+    "exactApplicability": {
+      "status": "partial-pass",
+      "namedVersion": "0.90.0",
+      "namedModels": ["gpt-5.3-codex", "claude-sonnet-4-6", "MiniMax-M2.7", "GLM-4.6"],
+      "namedConfiguration": ["Linux 6.8.0", "Docker 28.4", "timeout 300 seconds", "cwd=/sandbox", "HOME=/sandbox", "--ask-for-approval=never", "--sandbox=danger-full-access"],
+      "unresolved": ["release asset", "source commit", "artifact digest", "container image digest", "provider endpoint revision", "complete environment and adapter implementation"]
+    },
+    "disclosureCompleteness": {
+      "status": "fail",
+      "missing": ["funding disclosure", "competing-interest disclosure", "human annotator identities", "public raw annotation materials"]
+    },
+    "publicArtifacts": {
+      "status": "fail",
+      "paperStatement": "The benchmark, audit bundle, generators, audit suite and adapter layer will be released publicly upon publication.",
+      "locatedArtifacts": [],
+      "missing": ["benchmark scenarios", "run audit bundle", "generators", "audit suite", "agent adapters", "annotation guide", "raw annotation labels"]
+    }
+  },
+  "catalogBoundary": "No paper result, independent evaluator, independent test or independent finding is included in the generated Codex record."
+}
+

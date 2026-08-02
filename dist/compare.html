@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Compare exact AI agent versions by authority, evidence, and unknowns.">
     <title>Compare exact versions · Agent Evidence Catalog</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=journey4">
   </head>
   <body data-page="compare">
     <a class="skip-link" href="#main">Skip to comparison</a>
@@ -14,6 +14,7 @@
       <nav aria-label="Primary navigation">
         <a href="index.html">Catalog</a>
         <a class="active" href="compare.html" aria-current="page">Compare</a>
+        <a href="claims.html">PatchPilot example</a>
         <a href="index.html#contribute">Contribute</a>
       </nav>
     </header>
@@ -26,22 +27,20 @@
       <section class="compare-intro" aria-labelledby="compare-heading">
         <h1 id="compare-heading">Compare exact versions</h1>
         <p>Authority and evidence are version-specific. Unknown does not mean unsafe; it means unproven here. This page shows facts and does not calculate suitability.</p>
-      </section>
-
-      <section class="policy-context" aria-label="Decision context">
-        <div><strong>Task</strong><span>Draft replies to selected customer-email threads.</span></div>
-        <div><strong>Review against</strong><span>Read selected thread · Create draft · Retention ≤ 7 days</span></div>
-        <div><strong>Review against</strong><span>No send or forward · No mailbox-state changes · No autonomous external action</span></div>
+        <a class="quiet-link" href="compare-classic.html">View the original three-agent comparison</a>
       </section>
 
       <section class="compare-controls" aria-label="Choose exact agent versions">
         <label><span class="sr-only">First agent</span><select id="agentSelect0"></select></label>
         <label><span class="sr-only">Second agent</span><select id="agentSelect1"></select></label>
         <label><span class="sr-only">Third agent</span><select id="agentSelect2"></select></label>
+        <label><span class="sr-only">Fourth agent, optional</span><select id="agentSelect3"><option value="">Add a fourth agent</option></select></label>
         <button id="copyComparison" class="outline-button" type="button">Copy comparison link</button>
         <label class="check-control mismatch-toggle"><input id="mismatchOnly" type="checkbox"> Show only differences</label>
         <span id="copyStatus" class="copy-status" aria-live="polite"></span>
       </section>
+
+      <section id="decisionSummary" class="decision-summary" aria-label="Decision-first comparison summary"></section>
 
       <section class="comparison-shell" aria-label="Agent comparison matrix">
         <div class="table-scroll">
@@ -75,6 +74,6 @@
     </footer>
     <noscript><p class="noscript">JavaScript is required for client-side comparison. Raw records remain available in <code>records/</code>.</p></noscript>
     <script src="catalog-data.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js?v=journey4"></script>
   </body>
 </html>

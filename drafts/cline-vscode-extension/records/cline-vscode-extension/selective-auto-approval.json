@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.selective-auto-approval",
+  "slug": "selective-auto-approval",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension"
+    }
+  },
+  "claim": {
+    "category": "authority.change",
+    "statement": "The publisher's current Auto Approve guide states that users can let selected categories proceed without a prompt, including project or all-file edits and safe or approval-required terminal commands."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://docs.cline.bot/features/auto-approve",
+    "title": "Cline Auto Approve and YOLO Mode guide",
+    "locator": "How It Works; Permissions",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T10:37:35Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": ["Auto Approve enabled for selected categories"]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["VS Code extension"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-31",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-31",
+    "recheckAfter": "2026-10-29",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-change",
+      "source-unavailable",
+      "claimant-correction",
+      "product-version-change",
+      "product-surface-change",
+      "configuration-change",
+      "model-change",
+      "contradictory-source"
+    ]
+  },
+  "limitations": [
+    "This is a rolling publisher guide captured on 31 July 2026, not independently tested behavior.",
+    "The guide states that command classification is model-supplied rather than based on a fixed command allowlist."
+  ],
+  "unknowns": [
+    "The effective settings for a particular installation and task are unknown.",
+    "The reliability of model-supplied command classification was not assessed."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "com.cline.bot.vscode-extension.manual-approval-before-changes",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because this claim applies when selected Auto Approve categories are enabled and the other applies when Auto Approve is disabled."
+    }
+  ],
+  "validationRefs": []
+}

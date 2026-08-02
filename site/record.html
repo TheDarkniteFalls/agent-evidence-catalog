@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Inspect one exact synthetic agent version by proposition, authority, evidence, and unknowns.">
+    <title>Agent details · Agent Evidence Catalog</title>
+    <link rel="stylesheet" href="styles.css?v=journey4">
+  </head>
+  <body data-page="profile">
+    <a class="skip-link" href="#main">Skip to agent details</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Agent Evidence Catalog home">Agent Evidence Catalog</a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Catalog</a>
+        <a href="compare.html">Compare</a>
+        <a href="claims.html">PatchPilot example</a>
+        <a href="index.html#contribute">Contribute</a>
+      </nav>
+    </header>
+
+    <aside class="synthetic-banner" aria-label="Synthetic demonstration notice">
+      <strong>Synthetic demonstration.</strong> Every profile, publisher, identity, endpoint, digest, result, and policy is fictional. No affiliation, endorsement, or safety certification is claimed.
+    </aside>
+
+    <main id="main" class="profile-main">
+      <div id="profileRoot"></div>
+    </main>
+
+    <footer>
+      <p>Synthetic examples only. Evidence labels describe support for a claim, not whether an agent is safe.</p>
+      <p><a href="LICENSE">Apache-2.0</a> · <a href="CORRECTIONS.md">Corrections and revocations</a> · No install, run, authorize, buy, or submit action exists here.</p>
+    </footer>
+    <noscript><p class="noscript">JavaScript is required for the proposition view. Raw records remain available in <code>records/</code>.</p></noscript>
+    <script src="catalog-data.js"></script>
+    <script src="app.js?v=journey4"></script>
+  </body>
+</html>

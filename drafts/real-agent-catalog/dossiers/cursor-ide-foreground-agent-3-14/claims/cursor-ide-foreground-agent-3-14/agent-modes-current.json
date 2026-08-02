@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.agent-modes-current",
+  "slug": "agent-modes-current",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": { "kind": "desktop-app", "name": "Cursor IDE foreground Agent", "slug": "cursor-ide-foreground-agent-3-14" }
+  },
+  "claim": {
+    "category": "configuration.mode",
+    "statement": "Cursor's rolling modes documentation distinguishes Agent for autonomous exploration, multi-file edits and commands; Ask for read-only exploration; Manual for selected-file editing; and configurable Custom modes."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "Anysphere, Inc." },
+  "source": {
+    "uri": "https://docs.cursor.com/agent",
+    "title": "Cursor Agent modes",
+    "locator": "Modes table and Agent, Ask, Manual and Custom sections",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T01:28:42Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "alternatives", "values": ["Agent", "Ask", "Manual", "Custom"] },
+    "platform": { "scope": "named", "values": ["Cursor desktop"] },
+    "model": { "scope": "configuration-dependent", "values": [] },
+    "deployment": { "scope": "named", "values": ["foreground IDE interaction"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-08-31",
+    "invalidatedBy": ["documentation-change", "mode-redesign", "server-side-feature-change", "manual-review"]
+  },
+  "limitations": [
+    "The page is rolling documentation and is not tied to the exact 3.14 binary or one account's feature flags.",
+    "The modes are mutually scoped alternatives; capabilities from Agent must not be attributed to Ask or Manual."
+  ],
+  "unknowns": [
+    "The selected mode and effective custom-mode tool configuration are unknown.",
+    "Whether the documented mode set was identical for every 3.14 account and platform is unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

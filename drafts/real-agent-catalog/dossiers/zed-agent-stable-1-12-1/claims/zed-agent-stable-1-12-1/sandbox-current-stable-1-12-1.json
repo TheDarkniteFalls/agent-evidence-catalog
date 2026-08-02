@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.zed.agent.native.sandbox-current-stable-1-12-1",
+  "slug": "sandbox-current-stable-1-12-1",
+  "subject": {
+    "id": "com.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Native Zed Agent",
+      "slug": "zed-agent-stable-1-12-1"
+    }
+  },
+  "claim": {
+    "category": "authority.sandbox",
+    "statement": "Current official documentation says Zed Agent sandboxing applies to terminal and fetch tools, protects Git metadata, limits filesystem writes and outbound network access, and can fall back or be disabled depending on platform and configuration."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://zed.dev/docs/ai/sandboxing",
+    "title": "Sandboxing - Zed Docs",
+    "locator": "Sandboxed tools, requirements, default access and limitations",
+    "publishedAt": null,
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "sandboxed",
+        "unsandboxed or unavailable"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "native Zed Agent terminal and fetch tools"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The sandbox does not cover Zed itself, language servers, extensions, regular terminal tabs, External Agents or Terminal Threads."
+  ],
+  "unknowns": [
+    "Effective platform primitives, grants, network mode, fallbacks and side channels are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

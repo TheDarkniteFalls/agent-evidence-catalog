@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.openhands.cli.llm-approve-confirmation-1-16-0",
+  "slug": "llm-approve-confirmation-1-16-0",
+  "subject": {
+    "id": "org.openhands.cli",
+    "name": "OpenHands",
+    "publisher": "OpenHands",
+    "surface": { "kind": "cli", "name": "OpenHands CLI", "slug": "openhands-cli" }
+  },
+  "claim": {
+    "category": "authority.change",
+    "statement": "The publisher's README at tag 1.16.0 describes --llm-approve as using an LLM-based security analyzer to decide action approval."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenHands" },
+  "source": {
+    "uri": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+    "title": "OpenHands CLI README at tag 1.16.0",
+    "locator": "Features — Confirmation Modes — LLM-based security analyzer",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T21:47:27Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "1.16.0" },
+    "configuration": { "scope": "named", "values": ["--llm-approve"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["local OpenHands CLI session"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "model-change", "manual-review"]
+  },
+  "limitations": [
+    "This is a version-pinned publisher description, not an independent assessment of the analyzer.",
+    "The selected source does not establish the analyzer model, prompt, thresholds, failure behavior or coverage for every action type."
+  ],
+  "unknowns": [
+    "The analyzer's false-positive and false-negative rates are unknown.",
+    "The exact model and data sent for approval analysis in a particular session are unknown."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "org.openhands.cli.always-ask-confirmation-1-16-0",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The apparent conflict is resolved because LLM-based approval and always-ask are mutually exclusive confirmation configurations."
+    }
+  ],
+  "validationRefs": []
+}

@@ -1,0 +1,352 @@
+{
+  "schemaVersion": "0.1",
+  "artifactType": "agent-evidence-dossier",
+  "synthetic": true,
+  "asOf": "2026-07-30",
+  "subject": {
+    "id": "dev.example.patchpilot",
+    "name": "PatchPilot",
+    "publisher": "Synthetic Workshop Ltd",
+    "surface": {
+      "kind": "cli",
+      "name": "PatchPilot CLI",
+      "slug": "patchpilot-cli"
+    }
+  },
+  "decisionBoundary": {
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "note": "Fictional attributed claims only. Attribution does not establish claim truth."
+  },
+  "humanViews": {
+    "evidenceBrief": "claims.html",
+    "technicalReport": "report.html"
+  },
+  "questions": [
+    {
+      "category": "authority.change",
+      "question": "Does PatchPilot require approval before making changes?",
+      "status": "active-contradiction",
+      "interpretation": "Attributable records disagree under overlapping applicability. The catalog does not adjudicate the conflict.",
+      "claimIds": [
+        "dev.example.patchpilot.cli.mutating-command-approval",
+        "dev.example.patchpilot.cli.unconfirmed-command-report"
+      ]
+    },
+    {
+      "category": "network",
+      "question": "What network destinations does PatchPilot use?",
+      "status": "resolved-scope-difference",
+      "interpretation": "The apparent conflict is recorded as resolved because the claims apply to different exact versions.",
+      "claimIds": [
+        "dev.example.patchpilot.cli.network-destination-2-4-1",
+        "dev.example.patchpilot.cli.network-destination-2-5-0"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "dev.example.patchpilot.cli.mutating-command-approval",
+      "recordContractVersion": "1.0",
+      "category": "authority.change",
+      "statement": "The publisher states that mutating commands require approval in the named restricted configuration.",
+      "claimant": "Synthetic Workshop Ltd",
+      "provenanceKind": "publisher-declared",
+      "source": {
+        "uri": "https://docs.synthetic.example/patchpilot/2.4.1/approvals",
+        "title": "PatchPilot 2.4.1 approval controls",
+        "locator": "Mutating commands",
+        "publishedAt": "2026-06-01T00:00:00Z",
+        "capturedAt": "2026-07-30T00:00:00Z",
+        "snapshot": null
+      },
+      "applicability": {
+        "version": {
+          "kind": "exact-version",
+          "value": "2.4.1"
+        },
+        "configuration": {
+          "scope": "named",
+          "values": [
+            "restricted"
+          ]
+        },
+        "platform": {
+          "scope": "named",
+          "values": [
+            "linux-x86_64"
+          ]
+        },
+        "model": {
+          "scope": "not-applicable",
+          "values": []
+        },
+        "deployment": {
+          "scope": "named",
+          "values": [
+            "local"
+          ]
+        }
+      },
+      "lifecycle": {
+        "status": "active",
+        "changedAt": "2026-07-30",
+        "reason": null
+      },
+      "review": {
+        "reviewedAt": "2026-07-30",
+        "recheckAfter": "2026-10-28",
+        "invalidatedBy": [
+          "scheduled-recheck",
+          "source-change",
+          "claimant-correction",
+          "configuration-change",
+          "contradictory-source"
+        ]
+      },
+      "limitations": [
+        "This is an attributed synthetic publisher claim, not catalog-observed behavior."
+      ],
+      "unknowns": [
+        "Applicability to other configurations and platforms is unknown."
+      ],
+      "relationships": [
+        {
+          "type": "contradicts",
+          "targetClaimId": "dev.example.patchpilot.cli.unconfirmed-command-report",
+          "extent": "partial",
+          "status": "active",
+          "resolution": null,
+          "note": "Both synthetic claims address mutating commands in version 2.4.1 under the restricted configuration."
+        }
+      ],
+      "rawRecordPath": "claim-records/patchpilot-cli/mutating-command-approval.json"
+    },
+    {
+      "id": "dev.example.patchpilot.cli.unconfirmed-command-report",
+      "recordContractVersion": "1.0",
+      "category": "authority.change",
+      "statement": "Synthetic Test Collective reports that one mutating command completed without confirmation in the named restricted configuration.",
+      "claimant": "Synthetic Test Collective",
+      "provenanceKind": "independent-third-party-report",
+      "source": {
+        "uri": "https://reports.synthetic.example/patchpilot/2.4.1/command-controls",
+        "title": "Synthetic PatchPilot command-control report",
+        "locator": "Restricted configuration result",
+        "publishedAt": "2026-07-15T00:00:00Z",
+        "capturedAt": "2026-07-30T00:00:00Z",
+        "snapshot": null
+      },
+      "applicability": {
+        "version": {
+          "kind": "exact-version",
+          "value": "2.4.1"
+        },
+        "configuration": {
+          "scope": "named",
+          "values": [
+            "restricted"
+          ]
+        },
+        "platform": {
+          "scope": "named",
+          "values": [
+            "linux-x86_64"
+          ]
+        },
+        "model": {
+          "scope": "not-applicable",
+          "values": []
+        },
+        "deployment": {
+          "scope": "named",
+          "values": [
+            "local"
+          ]
+        }
+      },
+      "lifecycle": {
+        "status": "active",
+        "changedAt": "2026-07-30",
+        "reason": null
+      },
+      "review": {
+        "reviewedAt": "2026-07-30",
+        "recheckAfter": "2026-10-28",
+        "invalidatedBy": [
+          "scheduled-recheck",
+          "source-change",
+          "configuration-change",
+          "contradictory-source"
+        ]
+      },
+      "limitations": [
+        "This synthetic third-party report has not been reproduced by the catalog."
+      ],
+      "unknowns": [
+        "The report does not establish behavior outside its named synthetic setup."
+      ],
+      "relationships": [
+        {
+          "type": "contradicts",
+          "targetClaimId": "dev.example.patchpilot.cli.mutating-command-approval",
+          "extent": "partial",
+          "status": "active",
+          "resolution": null,
+          "note": "Both synthetic claims address mutating commands in version 2.4.1 under the restricted configuration."
+        }
+      ],
+      "rawRecordPath": "claim-records/patchpilot-cli/unconfirmed-command-report.json"
+    },
+    {
+      "id": "dev.example.patchpilot.cli.network-destination-2-4-1",
+      "recordContractVersion": "1.0",
+      "category": "network",
+      "statement": "The synthetic release documentation for version 2.4.1 lists one telemetry destination.",
+      "claimant": "Synthetic Workshop Ltd",
+      "provenanceKind": "publisher-release-metadata",
+      "source": {
+        "uri": "https://docs.synthetic.example/patchpilot/2.4.1/network",
+        "title": "PatchPilot 2.4.1 network metadata",
+        "locator": "Telemetry destination",
+        "publishedAt": "2026-05-01T00:00:00Z",
+        "capturedAt": "2026-07-30T00:00:00Z",
+        "snapshot": null
+      },
+      "applicability": {
+        "version": {
+          "kind": "exact-version",
+          "value": "2.4.1"
+        },
+        "configuration": {
+          "scope": "documented-default",
+          "values": [
+            "standard"
+          ]
+        },
+        "platform": {
+          "scope": "multiple",
+          "values": [
+            "linux-x86_64",
+            "macos-arm64"
+          ]
+        },
+        "model": {
+          "scope": "not-applicable",
+          "values": []
+        },
+        "deployment": {
+          "scope": "named",
+          "values": [
+            "local"
+          ]
+        }
+      },
+      "lifecycle": {
+        "status": "active",
+        "changedAt": "2026-07-30",
+        "reason": null
+      },
+      "review": {
+        "reviewedAt": "2026-07-30",
+        "recheckAfter": "2026-10-28",
+        "invalidatedBy": [
+          "scheduled-recheck",
+          "source-unavailable",
+          "claimant-correction"
+        ]
+      },
+      "limitations": [
+        "This synthetic release claim applies only to version 2.4.1."
+      ],
+      "unknowns": [],
+      "relationships": [
+        {
+          "type": "contradicts",
+          "targetClaimId": "dev.example.patchpilot.cli.network-destination-2-5-0",
+          "extent": "full",
+          "status": "resolved",
+          "resolution": "scope-difference",
+          "note": "The apparent conflict is resolved because the sources describe different exact versions."
+        }
+      ],
+      "rawRecordPath": "claim-records/patchpilot-cli/network-destination-2-4-1.json"
+    },
+    {
+      "id": "dev.example.patchpilot.cli.network-destination-2-5-0",
+      "recordContractVersion": "1.0",
+      "category": "network",
+      "statement": "The synthetic release documentation for version 2.5.0 states that telemetry is disabled.",
+      "claimant": "Synthetic Workshop Ltd",
+      "provenanceKind": "publisher-release-metadata",
+      "source": {
+        "uri": "https://docs.synthetic.example/patchpilot/2.5.0/network",
+        "title": "PatchPilot 2.5.0 network metadata",
+        "locator": "Telemetry disabled",
+        "publishedAt": "2026-07-01T00:00:00Z",
+        "capturedAt": "2026-07-30T00:00:00Z",
+        "snapshot": null
+      },
+      "applicability": {
+        "version": {
+          "kind": "exact-version",
+          "value": "2.5.0"
+        },
+        "configuration": {
+          "scope": "documented-default",
+          "values": [
+            "standard"
+          ]
+        },
+        "platform": {
+          "scope": "multiple",
+          "values": [
+            "linux-x86_64",
+            "macos-arm64"
+          ]
+        },
+        "model": {
+          "scope": "not-applicable",
+          "values": []
+        },
+        "deployment": {
+          "scope": "named",
+          "values": [
+            "local"
+          ]
+        }
+      },
+      "lifecycle": {
+        "status": "active",
+        "changedAt": "2026-07-30",
+        "reason": null
+      },
+      "review": {
+        "reviewedAt": "2026-07-30",
+        "recheckAfter": "2026-10-28",
+        "invalidatedBy": [
+          "scheduled-recheck",
+          "source-unavailable",
+          "claimant-correction"
+        ]
+      },
+      "limitations": [
+        "This synthetic release claim applies only to version 2.5.0."
+      ],
+      "unknowns": [],
+      "relationships": [
+        {
+          "type": "contradicts",
+          "targetClaimId": "dev.example.patchpilot.cli.network-destination-2-4-1",
+          "extent": "full",
+          "status": "resolved",
+          "resolution": "scope-difference",
+          "note": "The apparent conflict is resolved because the sources describe different exact versions."
+        }
+      ],
+      "rawRecordPath": "claim-records/patchpilot-cli/network-destination-2-5-0.json"
+    }
+  ]
+}

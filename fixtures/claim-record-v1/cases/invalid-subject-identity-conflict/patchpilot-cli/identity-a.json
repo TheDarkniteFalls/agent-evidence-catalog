@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.example.patchpilot.cli.identity-a",
+  "slug": "identity-a",
+  "subject": {
+    "id": "dev.example.patchpilot",
+    "name": "PatchPilot",
+    "publisher": "Synthetic Workshop Ltd",
+    "surface": {
+      "kind": "cli",
+      "name": "PatchPilot CLI",
+      "slug": "patchpilot-cli"
+    }
+  },
+  "claim": {
+    "category": "identity",
+    "statement": "One synthetic source attributes PatchPilot to Synthetic Workshop Ltd."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Synthetic Workshop Ltd"
+  },
+  "source": {
+    "uri": "https://docs.synthetic.example/patchpilot/identity-a",
+    "title": "Synthetic PatchPilot identity A",
+    "locator": "Publisher",
+    "publishedAt": "2026-06-01T00:00:00Z",
+    "capturedAt": "2026-07-30T00:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "unspecified",
+      "value": null
+    },
+    "configuration": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "platform": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "not-applicable",
+      "values": []
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-30",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-30",
+    "recheckAfter": "2026-10-28",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "claimant-correction"
+    ]
+  },
+  "limitations": [
+    "This is one half of a deliberate synthetic identity conflict."
+  ],
+  "unknowns": [],
+  "relationships": [],
+  "validationRefs": []
+}

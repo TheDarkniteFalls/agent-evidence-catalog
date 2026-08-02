@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.google.jules.hosted.pr-feedback-2025-09-23",
+  "slug": "pr-feedback-2025-09-23",
+  "subject": {
+    "id": "com.google.jules.hosted",
+    "name": "Google Jules",
+    "publisher": "Google",
+    "surface": { "kind": "hosted-service", "name": "Jules", "slug": "google-jules" }
+  },
+  "claim": {
+    "category": "authority.communicate",
+    "statement": "Google's dated 23 September 2025 Jules changelog says Jules can read and respond to pull-request comments and push requested changes, while Reactive Mode limits action to comments that specifically mention @Jules."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Google" },
+  "source": {
+    "uri": "https://jules.google/docs/changelog/2025-09-23/",
+    "title": "Jules Acts on PR Feedback",
+    "locator": "Overview, all three paragraphs",
+    "publishedAt": "2025-09-23T00:00:00Z",
+    "capturedAt": "2026-07-31T23:24:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "2025-09-23 PR feedback milestone" },
+    "configuration": { "scope": "multiple", "values": ["default pull-request feedback mode", "Reactive Mode with explicit @Jules mention"] },
+    "platform": { "scope": "named", "values": ["GitHub pull request connected to Jules"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "multiple", "values": ["read and react to pull-request comments", "push requested changes"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2025-09-23", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "product-surface-change", "configuration-change", "platform-change", "manual-review"]
+  },
+  "limitations": [
+    "This dated milestone does not establish the current default, every supported review event or the precise permission model.",
+    "No pull-request comment, reaction or follow-up commit was created or observed."
+  ],
+  "unknowns": [
+    "The current feedback mode, eligible commenters, event filtering, authorization checks and branch protections are unknown.",
+    "The content, scope and safety of changes Jules may push in response to a comment were not tested."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

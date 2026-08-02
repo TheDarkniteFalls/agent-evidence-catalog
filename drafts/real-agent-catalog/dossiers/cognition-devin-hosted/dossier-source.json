@@ -1,0 +1,379 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "asOf": "2026-08-01",
+  "identity": {
+    "recordId": "com.cognition.devin.hosted.rolling",
+    "agent": { "id": "com.cognition.devin", "name": "Devin" },
+    "publisher": { "id": "cognition-ai-inc", "name": "Cognition AI, Inc." },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Devin hosted coding agent",
+      "slug": "cognition-devin-hosted",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Cognition-managed rolling Devin service",
+      "additionalIdentities": [
+        {
+          "id": "devin-2-2-milestone",
+          "kind": "release-line",
+          "status": "known",
+          "value": "2.2",
+          "scopeBindings": [],
+          "artifactRefs": ["devin-2-2-milestone"],
+          "sourceIds": ["source-devin-2-2-launch"],
+          "claimIds": ["com.cognition.devin.devin-2-2-launch"],
+          "note": "Cognition's dated release notes name Devin 2.2, but the milestone does not freeze the current rolling service."
+        },
+        {
+          "id": "api-v3-release",
+          "kind": "artifact-version",
+          "status": "known",
+          "value": "v3 API primary release",
+          "scopeBindings": [],
+          "artifactRefs": ["devin-api-v3-release"],
+          "sourceIds": ["source-api-v3-release"],
+          "claimIds": ["com.cognition.devin.api-v3-release"],
+          "note": "The dated v3 API release identifies an API generation, not the code or model revision serving a session."
+        },
+        {
+          "id": "current-service-revision",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [],
+          "artifactRefs": ["devin-current-hosted-service"],
+          "sourceIds": ["source-rolling-service-updates-current"],
+          "claimIds": ["com.cognition.devin.rolling-service-updates-current"],
+          "note": "The current release-note stream is dated but does not expose an immutable backend or service revision."
+        },
+        {
+          "id": "enterprise-cloud-deployment-revision",
+          "kind": "deployment-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [{ "axisId": "offering", "alternativeId": "enterprise-cloud" }],
+          "artifactRefs": ["enterprise-cloud-runtime"],
+          "sourceIds": ["source-deployment-architecture-current"],
+          "claimIds": ["com.cognition.devin.deployment-architecture-current"],
+          "note": "The Enterprise Cloud architecture is documented, while its deployed revision remains unresolved."
+        },
+        {
+          "id": "customer-dedicated-deployment-revision",
+          "kind": "deployment-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [{ "axisId": "offering", "alternativeId": "customer-dedicated" }],
+          "artifactRefs": ["customer-dedicated-runtime"],
+          "sourceIds": ["source-deployment-architecture-current"],
+          "claimIds": ["com.cognition.devin.deployment-architecture-current"],
+          "note": "The Customer Dedicated architecture is documented, while its tenant deployment revision remains unresolved."
+        },
+        {
+          "id": "model-backend-revision",
+          "kind": "runtime-build",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [{ "axisId": "model-backend", "alternativeId": "cognition-compound-system" }],
+          "artifactRefs": ["devin-model-backend"],
+          "sourceIds": ["source-compound-system-current"],
+          "claimIds": ["com.cognition.devin.compound-system-current"],
+          "note": "Cognition identifies a managed compound system but not the exact model, checkpoint, routing or inference revision for this record."
+        }
+      ],
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "Enterprise Cloud Cognition-hosted Devbox",
+          "Customer Dedicated single-tenant Devbox",
+          "Organization-default or inherited platform",
+          "Configured built-in platform",
+          "Configured outpost pool"
+        ],
+        "alternativeDetails": [
+          {
+            "id": "enterprise-cloud-devbox",
+            "label": "Enterprise Cloud Cognition-hosted Devbox",
+            "kind": "service",
+            "identityStatus": "unresolved",
+            "artifactRefs": ["enterprise-cloud-runtime"],
+            "scopeBindings": [{ "axisId": "offering", "alternativeId": "enterprise-cloud" }],
+            "claimIds": ["com.cognition.devin.deployment-architecture-current"],
+            "note": "The hosting model is known; the service image and deployed revision are not."
+          },
+          {
+            "id": "customer-dedicated-devbox",
+            "label": "Customer Dedicated single-tenant Devbox",
+            "kind": "service",
+            "identityStatus": "unresolved",
+            "artifactRefs": ["customer-dedicated-runtime"],
+            "scopeBindings": [{ "axisId": "offering", "alternativeId": "customer-dedicated" }],
+            "claimIds": ["com.cognition.devin.deployment-architecture-current"],
+            "note": "The tenant-isolated deployment model is known; its exact tenant build is not."
+          },
+          {
+            "id": "organization-default-platform",
+            "label": "Organization-default or inherited platform",
+            "kind": "environment",
+            "identityStatus": "unresolved",
+            "artifactRefs": ["devin-session-platform"],
+            "scopeBindings": [{ "axisId": "session-placement", "alternativeId": "organization-default-or-inherit" }],
+            "claimIds": ["com.cognition.devin.session-configuration-current"],
+            "note": "The selection rule is documented, but the selected platform or pool is unknown."
+          },
+          {
+            "id": "configured-built-in-platform",
+            "label": "Configured built-in platform",
+            "kind": "environment",
+            "identityStatus": "unresolved",
+            "artifactRefs": ["devin-session-platform"],
+            "scopeBindings": [{ "axisId": "session-placement", "alternativeId": "explicit-built-in-platform" }],
+            "claimIds": ["com.cognition.devin.session-configuration-current"],
+            "note": "No built-in platform label or image identity was selected for this public-source record."
+          },
+          {
+            "id": "configured-outpost-pool",
+            "label": "Configured outpost pool",
+            "kind": "environment",
+            "identityStatus": "unresolved",
+            "artifactRefs": ["devin-session-platform"],
+            "scopeBindings": [{ "axisId": "session-placement", "alternativeId": "explicit-outpost-pool" }],
+            "claimIds": ["com.cognition.devin.session-configuration-current"],
+            "note": "Publisher documentation allows a named outpost pool, but no pool, host or build was identified."
+          }
+        ],
+        "note": "No Devin service, session, Devbox, tenant deployment, platform, outpost, model or integration was invoked or inspected."
+      }
+    },
+    "artifacts": [
+      { "id": "devin-2-2-milestone", "kind": "hosted-release", "identityStatus": "exact", "uri": "https://docs.devin.ai/release-notes/overview", "ecosystem": "Devin service release notes", "version": "2.2", "digest": null, "note": "Dated publisher milestone on 2026-02-24; not an immutable service build." },
+      { "id": "devin-api-v3-release", "kind": "hosted-release", "identityStatus": "exact", "uri": "https://docs.devin.ai/release-notes/overview", "ecosystem": "Devin API", "version": "v3 primary API", "digest": null, "note": "Dated publisher API-generation milestone on 2026-02-20; not a server build." },
+      { "id": "devin-current-hosted-service", "kind": "hosted-release", "identityStatus": "unresolved", "uri": null, "ecosystem": "Cognition-managed Devin service", "version": null, "digest": null, "note": "No immutable current service revision is published in the captured sources." },
+      { "id": "enterprise-cloud-runtime", "kind": "other", "identityStatus": "unresolved", "uri": null, "ecosystem": "Enterprise Cloud Brain and Devbox", "version": null, "digest": null, "note": "Architecture is documented; exact Brain, Devbox image and deployment revisions are unresolved." },
+      { "id": "customer-dedicated-runtime", "kind": "other", "identityStatus": "unresolved", "uri": null, "ecosystem": "Customer Dedicated Devbox and Cognition Cloud Brain", "version": null, "digest": null, "note": "Architecture is documented; tenant and Brain revisions are unresolved." },
+      { "id": "devin-session-platform", "kind": "other", "identityStatus": "unresolved", "uri": null, "ecosystem": "Devin VM platform or outpost pool", "version": null, "digest": null, "note": "No platform label, pool, VM image or runtime receipt was captured." },
+      { "id": "devin-model-backend", "kind": "other", "identityStatus": "unresolved", "uri": null, "ecosystem": "Cognition compound AI system", "version": null, "digest": null, "note": "Exact model and backend revision are unresolved." }
+    ]
+  },
+  "roles": {
+    "claimants": [{ "id": "cognition-ai-inc", "name": "Cognition AI, Inc.", "kind": "publisher" }],
+    "sourceCapturers": [{ "id": "catalog-source-capturer", "name": "Agent Evidence Catalog maintainer", "kind": "catalog-maintainer" }],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://docs.devin.ai/release-notes/overview": { "sourceKind": "publisher-release-metadata", "snapshotStatus": "live-page", "note": "Dated publisher release-note stream captured as a rolling page; milestones remain time-scoped." },
+    "https://docs.devin.ai/enterprise/deployment/overview": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current publisher deployment architecture; no deployment revision receipt." },
+    "https://docs.devin.ai/api-reference/v3/sessions/post-organizations-sessions": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current v3 session schema and status reference; no API call was made." },
+    "https://docs.devin.ai/api-reference/authentication": { "sourceKind": "publisher-policy", "snapshotStatus": "live-page", "note": "Current publisher authentication and attribution reference; no token was created." },
+    "https://docs.devin.ai/work-with-devin/interactive-planning": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current publisher interaction guidance; no plan was generated or approved." },
+    "https://docs.devin.ai/use-cases/gallery/granola-post-call-processing": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Publisher-authored configuration example used only for approval-bypass semantics; no schedule or integration was created." },
+    "https://docs.devin.ai/integrations/gh": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current publisher GitHub integration permissions; no GitHub App was installed." }
+  },
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Deployment offering, session placement, mode, caller principal, session attribution, plan control, action approval, desktop QA, repository scope, network mode and model backend remain independent evidence dimensions.",
+    "axes": [
+      {
+        "id": "offering", "label": "Hosted deployment offering", "scope": "mutually-exclusive", "dimension": "offering",
+        "alternatives": [
+          { "id": "enterprise-cloud", "label": "Enterprise Cloud", "claimIds": ["com.cognition.devin.deployment-architecture-current"], "mutuallyExclusiveWith": ["customer-dedicated"] },
+          { "id": "customer-dedicated", "label": "Customer Dedicated Deployment", "claimIds": ["com.cognition.devin.deployment-architecture-current"], "mutuallyExclusiveWith": ["enterprise-cloud"] }
+        ],
+        "unknowns": ["The effective offering, tenant, region, service revision and rollout state are unknown."]
+      },
+      {
+        "id": "session-placement", "label": "Session VM placement", "scope": "mutually-exclusive", "dimension": "runtime",
+        "alternatives": [
+          { "id": "organization-default-or-inherit", "label": "Organization default or parent inheritance", "claimIds": ["com.cognition.devin.session-configuration-current"], "mutuallyExclusiveWith": ["explicit-built-in-platform", "explicit-outpost-pool"] },
+          { "id": "explicit-built-in-platform", "label": "Explicit built-in platform", "claimIds": ["com.cognition.devin.session-configuration-current"], "mutuallyExclusiveWith": ["organization-default-or-inherit", "explicit-outpost-pool"] },
+          { "id": "explicit-outpost-pool", "label": "Explicit outpost pool", "claimIds": ["com.cognition.devin.session-configuration-current"], "mutuallyExclusiveWith": ["organization-default-or-inherit", "explicit-built-in-platform"] }
+        ],
+        "unknowns": ["The platform, pool, VM image, host and inherited placement are unknown."]
+      },
+      {
+        "id": "session-mode", "label": "Devin session mode", "scope": "mutually-exclusive", "dimension": "interaction-mode",
+        "alternatives": [
+          { "id": "normal", "label": "Normal", "claimIds": ["com.cognition.devin.session-configuration-current"], "mutuallyExclusiveWith": ["fast", "lite", "ultra", "fusion"] },
+          { "id": "fast", "label": "Fast", "claimIds": ["com.cognition.devin.session-configuration-current"], "mutuallyExclusiveWith": ["normal", "lite", "ultra", "fusion"] },
+          { "id": "lite", "label": "Lite preview", "claimIds": ["com.cognition.devin.session-configuration-current"], "mutuallyExclusiveWith": ["normal", "fast", "ultra", "fusion"] },
+          { "id": "ultra", "label": "Ultra preview", "claimIds": ["com.cognition.devin.session-configuration-current"], "mutuallyExclusiveWith": ["normal", "fast", "lite", "fusion"] },
+          { "id": "fusion", "label": "Fusion preview", "claimIds": ["com.cognition.devin.session-configuration-current"], "mutuallyExclusiveWith": ["normal", "fast", "lite", "ultra"] }
+        ],
+        "unknowns": ["The selected mode, feature flags and enterprise preview eligibility are unknown."]
+      },
+      {
+        "id": "caller-principal", "label": "API caller principal", "scope": "mutually-exclusive", "dimension": "credential",
+        "alternatives": [
+          { "id": "service-user", "label": "Service User API key", "claimIds": ["com.cognition.devin.service-user-attribution-current"], "mutuallyExclusiveWith": ["human-pat"] },
+          { "id": "human-pat", "label": "Human Personal Access Token, closed beta", "claimIds": ["com.cognition.devin.service-user-attribution-current"], "mutuallyExclusiveWith": ["service-user"] }
+        ],
+        "unknowns": ["The credential type, service-user scope, role and effective permissions are unknown."]
+      },
+      {
+        "id": "session-attribution", "label": "Created-session attribution", "scope": "mutually-exclusive", "dimension": "identity",
+        "alternatives": [
+          { "id": "service-user-default", "label": "Attributed to service user", "claimIds": ["com.cognition.devin.service-user-attribution-current"], "mutuallyExclusiveWith": ["create-as-human"] },
+          { "id": "create-as-human", "label": "Attributed to an impersonated organization user", "claimIds": ["com.cognition.devin.service-user-attribution-current"], "mutuallyExclusiveWith": ["service-user-default"] }
+        ],
+        "unknowns": ["The creating service user, target user, organization membership and permission checks are unknown."]
+      },
+      {
+        "id": "plan-control", "label": "Interactive plan control", "scope": "mutually-exclusive", "dimension": "approval-authority",
+        "alternatives": [
+          { "id": "timed-feedback-auto-proceed", "label": "Timed feedback window then automatic proceed", "claimIds": ["com.cognition.devin.interactive-plan-approval-current"], "mutuallyExclusiveWith": ["wait-for-my-approval"], "controlMode": "conditional-policy", "humanInteraction": "possible" },
+          { "id": "wait-for-my-approval", "label": "Wait for explicit plan approval", "claimIds": ["com.cognition.devin.interactive-plan-approval-current"], "mutuallyExclusiveWith": ["timed-feedback-auto-proceed"], "controlMode": "manual-approval", "humanInteraction": "required" }
+        ],
+        "unknowns": ["The effective wait setting, plan contents, approver and approval event are unknown."]
+      },
+      {
+        "id": "action-approval", "label": "Tool and child-session approval", "scope": "mutually-exclusive", "dimension": "approval-authority",
+        "alternatives": [
+          { "id": "safe-mode-action-approval", "label": "Safe-mode action approval", "claimIds": ["com.cognition.devin.safe-mode-action-approval-current"], "mutuallyExclusiveWith": ["bypass-approval"], "controlMode": "manual-approval", "humanInteraction": "required" },
+          { "id": "bypass-approval", "label": "Bypass approval for scheduled MCP, Knowledge and child-session actions", "claimIds": ["com.cognition.devin.bypass-approval-current"], "mutuallyExclusiveWith": ["safe-mode-action-approval"], "controlMode": "automatic-allow", "humanInteraction": "unavailable" }
+        ],
+        "unknowns": ["The effective bypass flag, safe-mode policy, approver, approved action and inheritance into child sessions are unknown."]
+      },
+      {
+        "id": "desktop-qa-approval", "label": "Desktop QA approval", "scope": "mutually-exclusive", "dimension": "approval-authority",
+        "alternatives": [
+          { "id": "qa-approved", "label": "User approves requested PR QA", "claimIds": ["com.cognition.devin.desktop-qa-approval-2-2"], "mutuallyExclusiveWith": ["qa-not-approved-or-unresolved"], "controlMode": "manual-approval", "humanInteraction": "required" },
+          { "id": "qa-not-approved-or-unresolved", "label": "Approval absent or unresolved", "claimIds": ["com.cognition.devin.desktop-qa-approval-2-2"], "mutuallyExclusiveWith": ["qa-approved"], "controlMode": "unresolved", "humanInteraction": "possible" }
+        ],
+        "unknowns": ["Whether Desktop mode was enabled, QA was requested, approval was granted or a recording was produced is unknown."]
+      },
+      {
+        "id": "github-repository-scope", "label": "GitHub App repository scope", "scope": "mutually-exclusive", "dimension": "credential",
+        "alternatives": [
+          { "id": "all-organization-repositories", "label": "All organization repositories", "claimIds": ["com.cognition.devin.github-authority-current"], "mutuallyExclusiveWith": ["selected-repositories"] },
+          { "id": "selected-repositories", "label": "Selected repositories", "claimIds": ["com.cognition.devin.github-authority-current"], "mutuallyExclusiveWith": ["all-organization-repositories"] }
+        ],
+        "unknowns": ["The installation owner, selected repositories, branch protections and effective token permissions are unknown."]
+      },
+      {
+        "id": "network-mode", "label": "Native internet deployment capability", "scope": "mutually-exclusive", "dimension": "network",
+        "alternatives": [
+          { "id": "secure-mode-enabled", "label": "Secure Mode enabled", "claimIds": ["com.cognition.devin.secure-mode-release-2026-02-13"], "mutuallyExclusiveWith": ["secure-mode-disabled"] },
+          { "id": "secure-mode-disabled", "label": "Secure Mode disabled", "claimIds": ["com.cognition.devin.secure-mode-release-2026-02-13"], "mutuallyExclusiveWith": ["secure-mode-enabled"] }
+        ],
+        "unknowns": ["The current Secure Mode state and the complete residual network policy are unknown."]
+      },
+      {
+        "id": "model-backend", "label": "Model and inference backend", "scope": "unresolved", "dimension": "model",
+        "alternatives": [
+          { "id": "cognition-compound-system", "label": "Cognition-managed compound AI system", "claimIds": ["com.cognition.devin.compound-system-current"], "mutuallyExclusiveWith": [] }
+        ],
+        "unknowns": ["Model provider, model name, checkpoint, routing, system prompt, inference settings and backend revision are unknown."]
+      }
+    ]
+  },
+  "rawClaimPaths": [
+    "claims/cognition-devin-hosted/devin-2-2-launch.json",
+    "claims/cognition-devin-hosted/rolling-service-updates-current.json",
+    "claims/cognition-devin-hosted/deployment-architecture-current.json",
+    "claims/cognition-devin-hosted/compound-system-current.json",
+    "claims/cognition-devin-hosted/api-v3-release.json",
+    "claims/cognition-devin-hosted/session-configuration-current.json",
+    "claims/cognition-devin-hosted/service-user-attribution-current.json",
+    "claims/cognition-devin-hosted/interactive-plan-approval-current.json",
+    "claims/cognition-devin-hosted/safe-mode-action-approval-current.json",
+    "claims/cognition-devin-hosted/bypass-approval-current.json",
+    "claims/cognition-devin-hosted/desktop-qa-approval-2-2.json",
+    "claims/cognition-devin-hosted/github-authority-current.json",
+    "claims/cognition-devin-hosted/secure-mode-release-2026-02-13.json"
+  ],
+  "dossier": {
+    "summary": "Devin is represented as a Cognition-managed rolling hosted coding-agent service with dated Devin 2.2 and API v3 milestones, two documented enterprise deployment models, unresolved service and runtime revisions, and separately scoped plan, action, child-session and desktop-QA approval boundaries.",
+    "releaseContext": {
+      "statement": "Cognition's release notes pin Devin 2.2 on 2026-02-24 and the v3 API primary release on 2026-02-20. Subsequent dated updates demonstrate a rolling service, so neither milestone identifies the current Brain, Devbox, model or deployment revision.",
+      "sourceUri": "https://docs.devin.ai/release-notes/overview",
+      "legacySource": null
+    },
+    "limitations": [
+      "All product claims are attributed to Cognition public sources; no behavior was observed.",
+      "No Devin account, service, API, session, model, Devbox, integration, tenant or outpost was installed, invoked or inspected.",
+      "Devin 2.2 and API v3 are dated service and API milestones, not immutable current service builds.",
+      "Enterprise Cloud and Customer Dedicated share a Cognition Cloud Brain but have different Devbox, tenant and network boundaries.",
+      "The API schema establishes selectable fields and status meanings, not their effective value in any session.",
+      "A service-user permission does not establish a particular session's target user, repository authority or audit attribution.",
+      "Plan approval, safe-mode action approval, approval bypass and desktop-QA approval are different gates and are not collapsed.",
+      "The desktop-QA approval claim is scoped to the Devin 2.2 release note and is not silently rolled forward.",
+      "GitHub App permissions are publisher-declared authorization requirements, not proof that any repository action occurred.",
+      "Secure Mode's stated effect does not identify a complete egress policy or prove enforcement.",
+      "The compound-system description does not identify an exact model or model-serving revision.",
+      "No independent evaluation passed independence, exact applicability, disclosure and public-artifact gates.",
+      "No performance, correctness, quality, safety, privacy, containment or approval-enforcement conclusion is supported."
+    ],
+    "unknowns": [
+      "The current Devin service revision, deployment timestamp and rollout cohort are unknown.",
+      "The effective organization, account tier, enterprise feature flags and preview eligibility are unknown.",
+      "The Enterprise Cloud or Customer Dedicated offering, region, tenant and exact deployment revision are unknown.",
+      "The Brain, Devbox image, VM platform, outpost pool and session environment revisions are unknown.",
+      "The exact model, provider, checkpoint, routing, system prompt and inference configuration are unknown.",
+      "The session mode, origin, parent, child playbook, repository list, secrets and resumability state are unknown.",
+      "The caller principal, credential type, service-user role and effective API permissions are unknown.",
+      "The session attribution target, impersonation authorization and audit-log result are unknown.",
+      "The plan-control setting, approver, plan content and approval event are unknown.",
+      "The safe-mode policy, bypass-approval value, approved tool action and child-session inheritance are unknown.",
+      "Desktop mode, QA request, QA approval, app state and recording output are unknown.",
+      "The GitHub App installation, repository scope, branch protections and effective write authority are unknown.",
+      "The Secure Mode setting, allowlists, network routes and residual internet access are unknown.",
+      "Task completion, code quality, test results, PR acceptance, merge authority and downstream deployment were not independently verified."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      { "id": "platform-owner", "label": "Platform owner", "prompt": "Inspect service, deployment, session-placement and integration boundaries without inferring suitability.", "propositionIds": ["identity", "deployment", "runtime", "repository-authority"] },
+      { "id": "security-reviewer", "label": "Security reviewer", "prompt": "Inspect principal, approval, network and model boundaries while preserving unresolved enforcement.", "propositionIds": ["identity-authority", "approval-chain", "network-model"] },
+      { "id": "evidence-auditor", "label": "Evidence auditor", "prompt": "Trace propositions to raw claims and keep dated milestones, rolling documentation and excluded evaluations separate.", "propositionIds": ["identity", "approval-chain", "evaluation"] }
+    ],
+    "propositions": [
+      { "id": "identity", "eyebrow": "Service identity", "question": "Which Devin service or release identity does this record establish?", "status": "Rolling service; two dated milestones; current revision unresolved", "tone": "attention", "answer": "The record identifies the Devin hosted surface, the dated Devin 2.2 and API v3 milestones, and an unresolved current service revision.", "whyItMatters": "A named service milestone must not be substituted for the backend serving a later session.", "claimIds": ["com.cognition.devin.devin-2-2-launch", "com.cognition.devin.rolling-service-updates-current", "com.cognition.devin.api-v3-release"] },
+      { "id": "deployment", "eyebrow": "Deployment", "question": "Where do the Brain and Devbox run?", "status": "Two offering alternatives; exact revisions unresolved", "tone": "mixed", "answer": "Cognition documents Enterprise Cloud and Customer Dedicated Devbox placements while saying the Brain remains in Cognition Cloud.", "whyItMatters": "Tenant, network and execution boundaries differ even when the product name is the same.", "claimIds": ["com.cognition.devin.deployment-architecture-current"] },
+      { "id": "runtime", "eyebrow": "Session runtime", "question": "Which mode, platform and parent-child placement applied?", "status": "Selectable and inheritable; effective values unknown", "tone": "attention", "answer": "The v3 API exposes modes, explicit platforms or outpost pools, and parent placement inheritance, but this dossier has no session receipt.", "whyItMatters": "Mode and placement are runtime applicability boundaries independent of the service label.", "claimIds": ["com.cognition.devin.session-configuration-current"] },
+      { "id": "identity-authority", "eyebrow": "Principal and attribution", "question": "Whose identity creates and owns a session?", "status": "Service-user, impersonated-user and beta PAT paths separated", "tone": "mixed", "answer": "Cognition distinguishes service-user and human credentials and requires separate permissions when a service user creates a session on behalf of a human.", "whyItMatters": "Caller authority and session attribution are not the same identity boundary.", "claimIds": ["com.cognition.devin.service-user-attribution-current"] },
+      { "id": "approval-chain", "eyebrow": "Approval chain", "question": "Which human approvals can occur before planning, actions and desktop QA?", "status": "Three distinct gates plus an explicit bypass configuration", "tone": "attention", "answer": "Current planning can auto-proceed after a feedback window or wait for explicit approval; safe mode can await action approval; publisher configuration guidance says bypass approval removes manual approval for named scheduled actions; Devin 2.2 separately requested approval before desktop QA.", "whyItMatters": "Approval authority is stage-specific and can change through configuration rather than forming one global yes-or-no control.", "claimIds": ["com.cognition.devin.interactive-plan-approval-current", "com.cognition.devin.safe-mode-action-approval-current", "com.cognition.devin.bypass-approval-current", "com.cognition.devin.desktop-qa-approval-2-2"] },
+      { "id": "repository-authority", "eyebrow": "Repository authority", "question": "What GitHub access does Cognition say the integration requests?", "status": "Repository scope selectable; read/write permissions publisher-declared", "tone": "qualified", "answer": "The GitHub App can be limited to selected repositories or granted all organization repositories and requests multiple read and read/write permissions, including contents, issues, pull requests and workflows.", "whyItMatters": "Integration installation scope and repository controls bound what a session can change.", "claimIds": ["com.cognition.devin.github-authority-current"] },
+      { "id": "network-model", "eyebrow": "Network and model", "question": "Which network mode and model backend applied?", "status": "Secure Mode and compound-system claims; exact values unresolved", "tone": "attention", "answer": "A dated release note says Secure Mode removes native internet deployment capabilities, while current deployment docs describe Devin as a Cognition-managed compound system without third-party LLM keys.", "whyItMatters": "Neither statement identifies an effective egress policy or exact model for a session.", "claimIds": ["com.cognition.devin.secure-mode-release-2026-02-13", "com.cognition.devin.compound-system-current"] },
+      { "id": "evaluation", "eyebrow": "Independent evidence", "question": "Was this exact hosted record independently evaluated?", "status": "Candidate excluded; zero tests admitted", "tone": "attention", "answer": "The audited Terminal-Bench references do not establish an exact Devin service revision, deployment, model, configuration, independent evaluator role and public run artifact for this record.", "whyItMatters": "Publisher claims and incompletely applicable benchmark references cannot be presented as observed behavior.", "claimIds": ["com.cognition.devin.rolling-service-updates-current"] }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source attribution only. Rolling service identity, deployment alternatives, principals, chained approvals, model runtime and excluded independent evidence remain explicit."
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "terminal-bench-devin-admission",
+      "candidateLabel": "Terminal-Bench 2.0 verified leaderboard and Terminal-Bench Challenges Devin references",
+      "candidateSourceIds": [],
+      "decision": "excluded",
+      "gates": [
+        { "id": "evaluator-independence", "dimension": "evaluator-independence", "status": "unresolved", "claimIds": [], "note": "The verified 2.0 leaderboard has no Devin row, while the Challenges article thanks Cognition for support and does not disclose a clean evaluator-submitter boundary for the named experiments." },
+        { "id": "exact-service-release", "dimension": "release", "status": "fail", "claimIds": [], "note": "Neither reference pins the current service revision or establishes that a named Devin milestone is the tested build." },
+        { "id": "exact-offering", "dimension": "offering", "status": "fail", "claimIds": [], "note": "Enterprise Cloud, Customer Dedicated or another deployment is not identified." },
+        { "id": "exact-runtime", "dimension": "runtime", "status": "fail", "claimIds": [], "note": "Devbox image, platform, outpost, session mode and parent-child configuration are not completely pinned." },
+        { "id": "exact-model", "dimension": "model", "status": "fail", "claimIds": [], "note": "A Challenges article names models for an initial experiment, but this does not identify the service backend, routing or full model configuration for the catalog record." },
+        { "id": "exact-configuration", "dimension": "configuration", "status": "fail", "claimIds": [], "note": "Approval, network, repository, identity, prompt and other effective settings are not fully disclosed." },
+        { "id": "disclosure-completeness", "dimension": "disclosure", "status": "fail", "claimIds": [], "note": "The references do not provide a complete, record-applicable evaluator, submitter and configuration disclosure." },
+        { "id": "public-artifacts", "dimension": "public-artifacts", "status": "fail", "claimIds": [], "note": "No matching verified leaderboard entry or public Devin trajectory bundle was identified for this record." }
+      ],
+      "includedTestIds": [],
+      "limitations": ["Exclusion means the admission gates did not pass; it is not a claim that Devin has never been evaluated independently."]
+    }
+  ]
+}

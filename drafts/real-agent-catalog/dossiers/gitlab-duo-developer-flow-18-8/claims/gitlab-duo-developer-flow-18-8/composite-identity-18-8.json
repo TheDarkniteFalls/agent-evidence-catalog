@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8",
+  "slug": "composite-identity-18-8",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "identity.execution",
+    "statement": "GitLab's history says composite identity became generally available in GitLab 18.8, while the setting to turn it on or off was removed in 18.9 when it became automatically included in the Duo Agent Platform."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/composite_identity/",
+    "title": "Composite identity",
+    "locator": "History",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "18.8 with 18.9 transition" },
+    "configuration": { "scope": "alternatives", "values": ["18.8 composite identity setting enabled", "18.8 composite identity setting disabled", "18.9+ automatic inclusion"] },
+    "platform": { "scope": "named", "values": ["runner-executed flows and agents"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "configuration-dependent", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated"] }
+  },
+  "lifecycle": { "status": "historical", "changedAt": "2026-02-19", "reason": "The 18.8 configurable state was superseded by automatic inclusion in 18.9." },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["release-history-change", "identity-behavior-correction"]
+  },
+  "limitations": [
+    "The 18.8 release line and the 18.9-or-later automatic state are mutually scoped alternatives.",
+    "The history does not establish the effective setting for a particular 18.8 instance or project."
+  ],
+  "unknowns": [
+    "Whether composite identity was enabled for any 18.8 execution is unknown.",
+    "Offering-specific rollout timing and token implementation revisions are unknown."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-current",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The 18.8 state could be configured; current documentation describes automatic inclusion after the 18.9 setting removal."
+    }
+  ],
+  "validationRefs": []
+}

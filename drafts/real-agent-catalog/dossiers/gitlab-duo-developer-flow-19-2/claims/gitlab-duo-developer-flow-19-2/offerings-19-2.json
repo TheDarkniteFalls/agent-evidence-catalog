@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.developer-flow.offerings-19-2",
+  "slug": "offerings-19-2",
+  "subject": {
+    "id": "com.gitlab.duo.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitLab Duo Developer Flow",
+      "slug": "gitlab-duo-developer-flow-19-2"
+    }
+  },
+  "claim": {
+    "category": "identity.offering",
+    "statement": "The GitLab 19.2 release notes list the foundational-flow Agentic Chat handoff for Free, Premium and Ultimate tiers across GitLab.com, GitLab Self-Managed and GitLab Dedicated."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "GitLab, Inc."
+  },
+  "source": {
+    "uri": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/",
+    "title": "GitLab 19.2 release notes",
+    "locator": "Tier and Offering labels for Start foundational flows from Agentic Chat",
+    "publishedAt": "2026-07-16T00:00:00Z",
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "19.2 release line"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Free",
+        "Premium",
+        "Ultimate"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "GitLab.com",
+        "Self-Managed",
+        "Dedicated"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-16",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Availability can still depend on credits, configuration, feature state and prerequisites."
+  ],
+  "unknowns": [
+    "The effective subscription, credit pool and feature state are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

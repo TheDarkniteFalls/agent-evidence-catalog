@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current",
+  "slug": "offering-scope-current",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "identity.offering",
+    "statement": "GitLab's current Developer Flow documentation lists GitLab.com, GitLab Self-Managed and GitLab Dedicated as supported offerings."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+    "title": "Developer Flow",
+    "locator": "Page availability details: Offering",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "alternatives", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated"] },
+    "platform": { "scope": "alternatives", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated"] },
+    "model": { "scope": "configuration-dependent", "values": ["GitLab-managed model", "self-hosted model where supported"] },
+    "deployment": { "scope": "alternatives", "values": ["GitLab SaaS", "customer-managed instance", "GitLab Dedicated"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["documentation-change", "offering-change", "tier-change"]
+  },
+  "limitations": [
+    "The mutable page does not identify when each offering became available or pin a backend revision.",
+    "Current availability must not be projected to the start of the 18.8 release cycle."
+  ],
+  "unknowns": [
+    "The effective service version and feature flags for each offering are unknown.",
+    "Offering-specific runner, network, model and approval differences were not observed."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Current three-offering availability postdates the launch-day statement that Dedicated was planned during the 18.8 release cycle."
+    }
+  ],
+  "validationRefs": []
+}

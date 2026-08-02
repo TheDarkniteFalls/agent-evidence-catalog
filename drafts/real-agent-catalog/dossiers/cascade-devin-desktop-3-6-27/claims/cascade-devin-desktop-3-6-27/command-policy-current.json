@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin-desktop.cascade.command-policy-current",
+  "slug": "command-policy-current",
+  "subject": { "id": "com.cognition.devin-desktop.cascade", "name": "Cascade in Devin Desktop", "publisher": "Cognition AI, Inc.", "surface": { "kind": "desktop-app", "name": "Cascade in Devin Desktop", "slug": "cascade-devin-desktop-3-6-27" } },
+  "claim": { "category": "authority.command-policy", "statement": "Current terminal documentation says Teams and Enterprise administrators can set the maximum auto-execution level; team and user allowlists and denylists are combined, denylist entries take precedence, and a denied command requires approval rather than being represented as an unconditional block." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/desktop/terminal", "title": "Terminal", "locator": "Team settings; allowlist and denylist merging; precedence", "publishedAt": null, "capturedAt": "2026-08-01T22:13:40Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "conditional", "values": ["administrator maximum", "team allowlist", "user allowlist", "team denylist", "user denylist", "human approval for denied command"] }, "platform": { "scope": "all", "values": [] }, "model": { "scope": "not-applicable", "values": [] }, "deployment": { "scope": "named", "values": ["Cascade Teams or Enterprise command policy"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher command-policy documentation." },
+  "review": { "reviewedAt": "2026-08-02", "recheckAfter": "2026-09-02", "invalidatedBy": ["team-setting-change", "list-precedence-change", "approval-semantics-change"] },
+  "limitations": ["A denylist match is documented as requiring approval, so the catalog does not treat it as a security sandbox or absolute execution prohibition."],
+  "unknowns": ["The account plan, administrator maximum, merged list contents, matching behavior and any user approvals are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

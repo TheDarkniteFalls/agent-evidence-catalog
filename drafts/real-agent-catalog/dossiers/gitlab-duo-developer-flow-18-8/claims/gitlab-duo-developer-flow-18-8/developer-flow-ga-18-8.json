@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.developer-flow-ga-18-8",
+  "slug": "developer-flow-ga-18-8",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "identity.lifecycle",
+    "statement": "GitLab's 18.8 release page presents the Developer (Issue to Merge Request) Flow as part of the generally available Duo Agent Platform and describes it as automating a ready issue into a structured merge request."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://about.gitlab.com/whats-new/18-8/",
+    "title": "What's new in GitLab 18.8",
+    "locator": "GitLab 18.8 release date and Developer (Issue to Merge Request) Flow feature entry",
+    "publishedAt": "2026-01-15T00:00:00Z",
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "18.8" },
+    "configuration": { "scope": "named", "values": ["Duo Agent Platform enabled", "Developer foundational flow enabled"] },
+    "platform": { "scope": "configuration-dependent", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated release-cycle scope"] },
+    "model": { "scope": "configuration-dependent", "values": ["model not identified by this release entry"] },
+    "deployment": { "scope": "named", "values": ["repository-integrated background flow"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-01-15", "reason": "General-availability release-line milestone." },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["publisher-correction", "feature-withdrawal", "release-history-change"]
+  },
+  "limitations": [
+    "The release page is a product milestone, not a receipt for an exact flow execution or effective configuration.",
+    "Later Developer Flow capabilities and invocation paths must not be projected into 18.8 from this short release description."
+  ],
+  "unknowns": [
+    "The exact 18.8 flow definition, runner executor, model and approval behavior are unknown.",
+    "The patch release and service revision used by any particular organization are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

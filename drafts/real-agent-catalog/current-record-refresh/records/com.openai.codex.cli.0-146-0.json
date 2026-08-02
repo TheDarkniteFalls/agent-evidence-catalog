@@ -1,0 +1,2747 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-02",
+  "sourceDossier": {
+    "path": "dossiers/openai-codex-cli-0-146-0/dossier-source.json",
+    "sha256": "2f0f10e23946cb97c189fc7991b423eb2aa431043517798a3b760f74515392e9",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.openai.codex.cli.0-146-0",
+    "agent": {
+      "id": "com.openai.codex.cli",
+      "name": "OpenAI Codex CLI"
+    },
+    "publisher": {
+      "id": "openai",
+      "name": "OpenAI"
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "Codex CLI",
+      "slug": "openai-codex-cli-0-146-0",
+      "deliveryModel": "local"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "0.146.0",
+      "releaseTag": "rust-v0.146.0",
+      "sourceRevision": "e363b08c9175ac1cbe5893615dd2cb9ddf95043b",
+      "releasedAt": "2026-07-29T01:42:51Z",
+      "channel": "GitHub release",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "npm package",
+          "Homebrew cask",
+          "platform-specific release binary"
+        ],
+        "note": "No artifact was downloaded or installed, so the invoked package path, platform build, architecture, executable digest and effective runtime remain unresolved."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "source-revision-0-146-0",
+        "kind": "source-revision",
+        "identityStatus": "exact",
+        "uri": "https://github.com/openai/codex/commit/e363b08c9175ac1cbe5893615dd2cb9ddf95043b",
+        "ecosystem": "git",
+        "version": "0.146.0",
+        "digest": null,
+        "note": "Exact commit resolved from the annotated rust-v0.146.0 tag; the Git commit identifier is not represented as a SHA-256 artifact digest."
+      },
+      {
+        "id": "npm-release-asset-0-146-0",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/openai/codex/releases/download/rust-v0.146.0/codex-npm-0.146.0.tgz",
+        "ecosystem": "GitHub release asset / npm package archive",
+        "version": "0.146.0",
+        "digest": "8050af14387e23b8d46026f023f0c1d33a2eefb39267bf36abe8cec2cec17b49",
+        "note": "Publisher release metadata supplies this SHA-256 digest. The catalog did not download the archive or independently recompute the digest."
+      },
+      {
+        "id": "config-schema-0-146-0",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/openai/codex/releases/download/rust-v0.146.0/config-schema.json",
+        "ecosystem": "GitHub release asset",
+        "version": "0.146.0",
+        "digest": "da0f92a68f2bd5dbdc8937ad8e29b4d98a688effd72fd305539b0ffdc2c773ae",
+        "note": "Publisher release metadata supplies this SHA-256 digest. Exact claims use the corresponding tagged repository schema; the release asset was not downloaded."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "openai",
+        "name": "OpenAI",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-release-identity-0-146-0",
+      "uri": "https://github.com/openai/codex/releases/tag/rust-v0.146.0",
+      "title": "OpenAI Codex 0.146.0 release",
+      "locator": "Release heading, Latest marker, tag and release metadata",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "openai",
+      "publishedAt": "2026-07-29T01:42:51Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official exact release and tag page; no release asset was downloaded."
+      }
+    },
+    {
+      "id": "source-local-cli-delivery-0-146-0",
+      "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/README.md",
+      "title": "Codex README at rust-v0.146.0",
+      "locator": "Opening description and installation sections",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official repository README at the exact rust-v0.146.0 tag."
+      }
+    },
+    {
+      "id": "source-release-artifacts-0-146-0",
+      "uri": "https://api.github.com/repos/openai/codex/releases/tags/rust-v0.146.0",
+      "title": "GitHub release API metadata for OpenAI Codex 0.146.0",
+      "locator": "assets entries for codex-npm-0.146.0.tgz and config-schema.json",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "openai",
+      "publishedAt": "2026-07-29T01:42:51Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official repository release metadata captured through a read-only API request. Publisher digests were not independently recomputed."
+      }
+    },
+    {
+      "id": "source-authentication-paths-0-146-0",
+      "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/README.md",
+      "title": "Codex README at rust-v0.146.0",
+      "locator": "Sign in with ChatGPT and API key sections",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official repository README at the exact rust-v0.146.0 tag."
+      }
+    },
+    {
+      "id": "source-approval-policies-0-146-0",
+      "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+      "title": "Codex 0.146.0 generated configuration schema",
+      "locator": "$defs.AskForApproval and properties.approval_policy",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Generated configuration schema in the official repository at the exact release tag."
+      }
+    },
+    {
+      "id": "source-sandbox-modes-0-146-0",
+      "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+      "title": "Codex 0.146.0 generated configuration schema",
+      "locator": "$defs.SandboxMode, properties.sandbox_mode and sandbox_workspace_write",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Generated configuration schema in the official repository at the exact release tag."
+      }
+    },
+    {
+      "id": "source-network-access-0-146-0",
+      "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+      "title": "Codex 0.146.0 generated configuration schema",
+      "locator": "sandbox_workspace_write network_access property and default",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Generated configuration schema in the official repository at the exact release tag."
+      }
+    },
+    {
+      "id": "source-model-provider-configuration-0-146-0",
+      "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+      "title": "Codex 0.146.0 generated configuration schema",
+      "locator": "properties.model, model_provider, model_providers and $defs.ModelProviderInfo",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Generated configuration schema in the official repository at the exact release tag."
+      }
+    },
+    {
+      "id": "source-tool-configuration-0-146-0",
+      "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+      "title": "Codex 0.146.0 generated configuration schema",
+      "locator": "properties.tools, properties.web_search and tool-related feature flags",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Generated configuration schema in the official repository at the exact release tag."
+      }
+    },
+    {
+      "id": "source-mcp-configuration-0-146-0",
+      "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+      "title": "Codex 0.146.0 generated configuration schema",
+      "locator": "properties.mcp_servers and $defs.RawMcpServerConfig",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Generated configuration schema in the official repository at the exact release tag."
+      }
+    },
+    {
+      "id": "source-plugin-configuration-0-146-0",
+      "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+      "title": "Codex 0.146.0 generated configuration schema",
+      "locator": "properties.plugins and plugin configuration definitions",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Generated configuration schema in the official repository at the exact release tag."
+      }
+    },
+    {
+      "id": "source-skills-configuration-0-146-0",
+      "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+      "title": "Codex 0.146.0 generated configuration schema",
+      "locator": "properties.skills and skill configuration definitions",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Generated configuration schema in the official repository at the exact release tag."
+      }
+    },
+    {
+      "id": "source-app-server-remote-host-0-146-0",
+      "uri": "https://github.com/openai/codex/releases/tag/rust-v0.146.0",
+      "title": "OpenAI Codex 0.146.0 release",
+      "locator": "New features: app-server remote Code Mode hosts over WebSocket",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "openai",
+      "publishedAt": "2026-07-29T01:42:51Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official exact release and tag page; no release asset was downloaded."
+      }
+    },
+    {
+      "id": "source-proxy-routing-0-146-0",
+      "uri": "https://github.com/openai/codex/releases/tag/rust-v0.146.0",
+      "title": "OpenAI Codex 0.146.0 release",
+      "locator": "Bug fixes: configured proxy routing across networked paths",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "openai",
+      "publishedAt": "2026-07-29T01:42:51Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official exact release and tag page; no release asset was downloaded."
+      }
+    },
+    {
+      "id": "source-security-layers-current-0-146-0",
+      "uri": "https://learn.chatgpt.com/docs/agent-approvals-security",
+      "title": "OpenAI agent approvals and security documentation",
+      "locator": "Sandbox, approval policy and network-access sections",
+      "sourceKind": "publisher-policy",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-02T01:40:08Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current OpenAI security documentation captured as rolling-current evidence only."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "No artifact or effective session configuration was inspected. Every axis preserves publisher-documented alternatives without selecting or collapsing them.",
+    "axes": [
+      {
+        "id": "artifact-path",
+        "label": "Invoked distribution path",
+        "scope": "mutually-exclusive",
+        "dimension": "artifact",
+        "alternatives": [
+          {
+            "id": "npm-package",
+            "label": "npm package",
+            "claimIds": [
+              "com.openai.codex.cli.local-cli-delivery-0-146-0",
+              "com.openai.codex.cli.release-artifacts-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "homebrew-cask",
+              "release-binary"
+            ]
+          },
+          {
+            "id": "homebrew-cask",
+            "label": "Homebrew cask",
+            "claimIds": [
+              "com.openai.codex.cli.local-cli-delivery-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "npm-package",
+              "release-binary"
+            ]
+          },
+          {
+            "id": "release-binary",
+            "label": "Platform-specific release binary",
+            "claimIds": [
+              "com.openai.codex.cli.local-cli-delivery-0-146-0",
+              "com.openai.codex.cli.release-artifacts-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "npm-package",
+              "homebrew-cask"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The installed and invoked artifact, platform, architecture and independently verified executable digest are unresolved."
+        ]
+      },
+      {
+        "id": "authentication-path",
+        "label": "Authentication path",
+        "scope": "mutually-exclusive",
+        "dimension": "credential",
+        "alternatives": [
+          {
+            "id": "chatgpt-sign-in",
+            "label": "ChatGPT sign-in",
+            "claimIds": [
+              "com.openai.codex.cli.authentication-paths-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "openai-api-key"
+            ]
+          },
+          {
+            "id": "openai-api-key",
+            "label": "OpenAI API key",
+            "claimIds": [
+              "com.openai.codex.cli.authentication-paths-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "chatgpt-sign-in"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective authentication path, identity, credential scope, storage and lifetime are unknown."
+        ]
+      },
+      {
+        "id": "approval-policy",
+        "label": "Action approval policy",
+        "scope": "mutually-exclusive",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "untrusted",
+            "label": "untrusted",
+            "claimIds": [
+              "com.openai.codex.cli.approval-policies-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "on-request",
+              "granular-policy",
+              "never"
+            ]
+          },
+          {
+            "id": "on-request",
+            "label": "on-request",
+            "claimIds": [
+              "com.openai.codex.cli.approval-policies-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "untrusted",
+              "granular-policy",
+              "never"
+            ]
+          },
+          {
+            "id": "granular-policy",
+            "label": "Granular policy object",
+            "claimIds": [
+              "com.openai.codex.cli.approval-policies-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "untrusted",
+              "on-request",
+              "never"
+            ]
+          },
+          {
+            "id": "never",
+            "label": "never",
+            "claimIds": [
+              "com.openai.codex.cli.approval-policies-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "untrusted",
+              "on-request",
+              "granular-policy"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective policy and complete action coverage are unknown."
+        ]
+      },
+      {
+        "id": "sandbox-mode",
+        "label": "Command sandbox mode",
+        "scope": "mutually-exclusive",
+        "dimension": "sandbox",
+        "alternatives": [
+          {
+            "id": "read-only",
+            "label": "read-only",
+            "claimIds": [
+              "com.openai.codex.cli.sandbox-modes-0-146-0",
+              "com.openai.codex.cli.security-layers-current-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "workspace-write",
+              "danger-full-access"
+            ]
+          },
+          {
+            "id": "workspace-write",
+            "label": "workspace-write",
+            "claimIds": [
+              "com.openai.codex.cli.sandbox-modes-0-146-0",
+              "com.openai.codex.cli.security-layers-current-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "read-only",
+              "danger-full-access"
+            ]
+          },
+          {
+            "id": "danger-full-access",
+            "label": "danger-full-access",
+            "claimIds": [
+              "com.openai.codex.cli.sandbox-modes-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "read-only",
+              "workspace-write"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective sandbox, writable roots, platform enforcement and containment behavior are unknown."
+        ]
+      },
+      {
+        "id": "workspace-network",
+        "label": "workspace-write network access",
+        "scope": "mutually-exclusive",
+        "dimension": "network",
+        "alternatives": [
+          {
+            "id": "network-disabled",
+            "label": "Network access disabled",
+            "claimIds": [
+              "com.openai.codex.cli.network-access-0-146-0",
+              "com.openai.codex.cli.security-layers-current-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "network-enabled"
+            ]
+          },
+          {
+            "id": "network-enabled",
+            "label": "Network access enabled",
+            "claimIds": [
+              "com.openai.codex.cli.network-access-0-146-0",
+              "com.openai.codex.cli.security-layers-current-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "network-disabled"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective network flag, destinations, DNS path, proxy behavior and subprocess coverage are unknown."
+        ]
+      },
+      {
+        "id": "network-proxy",
+        "label": "Configured proxy route",
+        "scope": "mutually-exclusive",
+        "dimension": "network",
+        "alternatives": [
+          {
+            "id": "proxy-unconfigured",
+            "label": "Proxy unconfigured",
+            "claimIds": [
+              "com.openai.codex.cli.proxy-routing-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "proxy-configured"
+            ]
+          },
+          {
+            "id": "proxy-configured",
+            "label": "Proxy configured",
+            "claimIds": [
+              "com.openai.codex.cli.proxy-routing-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "proxy-unconfigured"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective proxy state, rules, DNS behavior and path coverage are unknown."
+        ]
+      },
+      {
+        "id": "model-selection",
+        "label": "Model selection",
+        "scope": "unresolved",
+        "dimension": "model",
+        "alternatives": [
+          {
+            "id": "explicit-model",
+            "label": "Explicit model identifier",
+            "claimIds": [
+              "com.openai.codex.cli.model-provider-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The selected model and provider-side model revision are unknown."
+        ]
+      },
+      {
+        "id": "model-provider",
+        "label": "Model provider route",
+        "scope": "unresolved",
+        "dimension": "model",
+        "alternatives": [
+          {
+            "id": "explicit-provider",
+            "label": "Explicit provider or custom provider definition",
+            "claimIds": [
+              "com.openai.codex.cli.model-provider-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The provider, endpoint revision, authentication requirement and request path are unknown."
+        ]
+      },
+      {
+        "id": "tool-surface",
+        "label": "Configured built-in tool surface",
+        "scope": "composable",
+        "dimension": "tool-surface",
+        "alternatives": [
+          {
+            "id": "web-search-disabled",
+            "label": "Web search disabled",
+            "claimIds": [
+              "com.openai.codex.cli.tool-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "web-search-cached",
+              "web-search-indexed",
+              "web-search-live"
+            ]
+          },
+          {
+            "id": "web-search-cached",
+            "label": "Web search cached",
+            "claimIds": [
+              "com.openai.codex.cli.tool-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "web-search-disabled",
+              "web-search-indexed",
+              "web-search-live"
+            ]
+          },
+          {
+            "id": "web-search-indexed",
+            "label": "Web search indexed",
+            "claimIds": [
+              "com.openai.codex.cli.tool-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "web-search-disabled",
+              "web-search-cached",
+              "web-search-live"
+            ]
+          },
+          {
+            "id": "web-search-live",
+            "label": "Web search live",
+            "claimIds": [
+              "com.openai.codex.cli.tool-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "web-search-disabled",
+              "web-search-cached",
+              "web-search-indexed"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The complete built-in tool inventory, enabled flags, annotations, approval coverage and side effects are unknown."
+        ]
+      },
+      {
+        "id": "mcp-surface",
+        "label": "MCP server and tool surface",
+        "scope": "composable",
+        "dimension": "tool-surface",
+        "alternatives": [
+          {
+            "id": "mcp-unconfigured",
+            "label": "No configured MCP server",
+            "claimIds": [
+              "com.openai.codex.cli.mcp-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "mcp-configured"
+            ]
+          },
+          {
+            "id": "mcp-configured",
+            "label": "Configured MCP server and tool policy",
+            "claimIds": [
+              "com.openai.codex.cli.mcp-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "mcp-unconfigured"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Server identities, transports, credentials, tools, approvals, data access and destinations are unknown."
+        ]
+      },
+      {
+        "id": "plugin-surface",
+        "label": "Agent Plugin surface",
+        "scope": "composable",
+        "dimension": "tool-surface",
+        "alternatives": [
+          {
+            "id": "plugins-unconfigured",
+            "label": "Plugins unconfigured",
+            "claimIds": [
+              "com.openai.codex.cli.plugin-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "plugin-configured"
+            ]
+          },
+          {
+            "id": "plugin-configured",
+            "label": "Plugin configured",
+            "claimIds": [
+              "com.openai.codex.cli.plugin-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "plugins-unconfigured"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Plugin identities, versions, provenance, components, permissions and side effects are unknown."
+        ]
+      },
+      {
+        "id": "skills-surface",
+        "label": "Skills surface",
+        "scope": "composable",
+        "dimension": "tool-surface",
+        "alternatives": [
+          {
+            "id": "skills-unconfigured",
+            "label": "Skills unconfigured",
+            "claimIds": [
+              "com.openai.codex.cli.skills-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "skills-configured"
+            ]
+          },
+          {
+            "id": "skills-configured",
+            "label": "Configured or executor-provided skills",
+            "claimIds": [
+              "com.openai.codex.cli.skills-configuration-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "skills-unconfigured"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Skill source paths, contents, enablement, resource scope and invocation are unknown."
+        ]
+      },
+      {
+        "id": "app-server-remote-host",
+        "label": "App-server remote-host route",
+        "scope": "mutually-exclusive",
+        "dimension": "execution-location",
+        "alternatives": [
+          {
+            "id": "remote-host-unconfigured",
+            "label": "Remote host unconfigured",
+            "claimIds": [
+              "com.openai.codex.cli.app-server-remote-host-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "remote-host-configured"
+            ]
+          },
+          {
+            "id": "remote-host-configured",
+            "label": "App-server remote Code Mode host over WebSocket",
+            "claimIds": [
+              "com.openai.codex.cli.app-server-remote-host-0-146-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "remote-host-unconfigured"
+            ]
+          }
+        ],
+        "unknowns": [
+          "App-server use, host identity, authentication, transport security, execution placement and tool authority are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "com.openai.codex.cli.release-identity-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/release-identity-0-146-0.json",
+      "rawRecordSha256": "21b836a9ac028f524faeb3929a97f020fe54893fbe43d575eb42a10a9f8cedf8",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.release-identity-0-146-0",
+        "slug": "release-identity-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "OpenAI's official latest-release metadata identifies Codex CLI 0.146.0, tag rust-v0.146.0, publication time 2026-07-29T01:42:51Z and tagged source commit e363b08c9175ac1cbe5893615dd2cb9ddf95043b."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/releases/tag/rust-v0.146.0",
+          "title": "OpenAI Codex 0.146.0 release",
+          "locator": "Release heading, Latest marker, tag and release metadata",
+          "publishedAt": "2026-07-29T01:42:51Z",
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Codex CLI release artifact"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-08-09",
+          "invalidatedBy": [
+            "new-official-latest-release",
+            "source-unavailable",
+            "claimant-correction",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Release metadata identifies the published source release, not the package or executable invoked by a particular session.",
+          "The catalog did not download or execute a 0.146.0 artifact."
+        ],
+        "unknowns": [
+          "The installed package path, operating-system build, architecture, executable digest and effective runtime identity remain unresolved."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-release-identity-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "adopter",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.local-cli-delivery-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/local-cli-delivery-0-146-0.json",
+      "rawRecordSha256": "5b4e0389941649bec977c35a7614e89a4f397706c2b4054ff96027555f3df23f",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.local-cli-delivery-0-146-0",
+        "slug": "local-cli-delivery-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery",
+          "statement": "The README at tag rust-v0.146.0 describes Codex CLI as a local coding agent and documents install-script, npm, Homebrew and platform-binary acquisition paths."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/README.md",
+          "title": "Codex README at rust-v0.146.0",
+          "locator": "Opening description and installation sections",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "npm package",
+              "Homebrew cask",
+              "platform-specific release binary"
+            ]
+          },
+          "platform": {
+            "scope": "alternatives",
+            "values": [
+              "supported macOS",
+              "supported Linux",
+              "supported Windows"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Codex CLI"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Documented acquisition routes do not prove which artifact a user installed or invoked.",
+          "The README also names IDE, desktop and web products; those surfaces are outside this CLI record."
+        ],
+        "unknowns": [
+          "The effective installation route, platform, architecture and executable identity are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-local-cli-delivery-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity"
+      ],
+      "personaIds": [
+        "adopter",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.release-artifacts-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/release-artifacts-0-146-0.json",
+      "rawRecordSha256": "3491dbe937042e58db37aeba7f21f35df0ce728e55307c2e0fadd405066c4ee8",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.release-artifacts-0-146-0",
+        "slug": "release-artifacts-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "identity.artifact",
+          "statement": "OpenAI's release API for rust-v0.146.0 publishes SHA-256 digests for release assets including codex-npm-0.146.0.tgz and config-schema.json."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://api.github.com/repos/openai/codex/releases/tags/rust-v0.146.0",
+          "title": "GitHub release API metadata for OpenAI Codex 0.146.0",
+          "locator": "assets entries for codex-npm-0.146.0.tgz and config-schema.json",
+          "publishedAt": "2026-07-29T01:42:51Z",
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "npm release asset",
+              "configuration-schema release asset"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "GitHub release assets"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "release-asset-replacement",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "These are publisher-supplied digests from release metadata.",
+          "The catalog did not download an asset or independently recompute any digest."
+        ],
+        "unknowns": [
+          "Whether any listed asset is the artifact installed or invoked by a real session remains unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-release-artifacts-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity"
+      ],
+      "personaIds": [
+        "adopter",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.authentication-paths-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/authentication-paths-0-146-0.json",
+      "rawRecordSha256": "7cfd882daeaa95f5c11275b4b0a957a6c897f857c938831af3b6cb5ef3d4697e",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.authentication-paths-0-146-0",
+        "slug": "authentication-paths-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "authority.authentication",
+          "statement": "The README at tag rust-v0.146.0 documents ChatGPT sign-in and API-key setup as separate Codex CLI authentication paths."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/README.md",
+          "title": "Codex README at rust-v0.146.0",
+          "locator": "Sign in with ChatGPT and API key sections",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "ChatGPT sign-in",
+              "OpenAI API key"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Codex CLI authentication"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "authentication-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The source documents supported sign-in paths; it does not identify the path used by any session.",
+          "Provider-specific credentials for configured custom providers are a separate configuration boundary."
+        ],
+        "unknowns": [
+          "The effective authentication path, account, credential scope, storage and token lifetime are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-authentication-paths-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authentication-model"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.approval-policies-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/approval-policies-0-146-0.json",
+      "rawRecordSha256": "faf6b560ff221f815d78ee3ce6b01e19e1ec007b1462bf0bc89cec2f3eae4d85",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.approval-policies-0-146-0",
+        "slug": "approval-policies-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "authority.approval",
+          "statement": "The generated configuration schema at tag rust-v0.146.0 defines untrusted, on-request, granular policy-object and never approval-policy alternatives; on-failure is not an enumerated 0.146.0 alternative."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+          "title": "Codex 0.146.0 generated configuration schema",
+          "locator": "$defs.AskForApproval and properties.approval_policy",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "untrusted",
+              "on-request",
+              "granular policy object",
+              "never"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Codex CLI approval configuration"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The schema documents available policy shapes and descriptions; it does not demonstrate runtime interception or enforcement.",
+          "Approval policy is separate from sandbox mode, network access and per-tool approval configuration."
+        ],
+        "unknowns": [
+          "The effective approval policy and complete action coverage of that policy are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-approval-policies-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authority"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.sandbox-modes-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/sandbox-modes-0-146-0.json",
+      "rawRecordSha256": "adf5b61a3c0eec36823455af3449a79f0f6bf73f02c40166cc74ef5facf223ea",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.sandbox-modes-0-146-0",
+        "slug": "sandbox-modes-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "authority.sandbox",
+          "statement": "The generated configuration schema at tag rust-v0.146.0 enumerates read-only, workspace-write and danger-full-access sandbox modes, with workspace-write writable-root settings represented separately."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+          "title": "Codex 0.146.0 generated configuration schema",
+          "locator": "$defs.SandboxMode, properties.sandbox_mode and sandbox_workspace_write",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "read-only",
+              "workspace-write",
+              "danger-full-access"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Codex CLI command execution"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The schema enumerates configuration alternatives but does not prove operating-system enforcement or containment.",
+          "Sandbox selection is separate from approval, network and tool authority."
+        ],
+        "unknowns": [
+          "The effective sandbox mode, writable roots, platform enforcement and escape resistance are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-sandbox-modes-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authority"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.network-access-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/network-access-0-146-0.json",
+      "rawRecordSha256": "8473b87be7b279e904dee988560add364672f5a4a7ab1964e7e4ba366fc487fd",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.network-access-0-146-0",
+        "slug": "network-access-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "authority.network",
+          "statement": "The generated configuration schema at tag rust-v0.146.0 represents workspace-write network access as a separate boolean setting that defaults to false."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+          "title": "Codex 0.146.0 generated configuration schema",
+          "locator": "sandbox_workspace_write network_access property and default",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "network disabled",
+              "network enabled"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "workspace-write sandbox network setting"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "A schema default does not prove the effective value or all network paths of a session.",
+          "Proxy routing, web-search mode and remote-host transport remain separate boundaries."
+        ],
+        "unknowns": [
+          "The effective network flag, destinations, DNS path, subprocess coverage and enforcement are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-network-access-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "network"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.model-provider-configuration-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/model-provider-configuration-0-146-0.json",
+      "rawRecordSha256": "0428d8eb51ad9b9b38ee598da867d202740b5626636cf22f09f66b01a3f49e20",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.model-provider-configuration-0-146-0",
+        "slug": "model-provider-configuration-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "configuration.model-provider",
+          "statement": "The generated configuration schema at tag rust-v0.146.0 exposes separate model, model_provider and model_providers configuration, including provider endpoint and authentication fields; it does not identify an effective model or provider revision."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+          "title": "Codex 0.146.0 generated configuration schema",
+          "locator": "properties.model, model_provider, model_providers and $defs.ModelProviderInfo",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "model override",
+              "provider selection",
+              "custom provider definition"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "alternatives",
+            "values": [
+              "configured model identifier",
+              "provider-defined model route"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Codex CLI model request configuration"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Configuration fields establish selectable routes, not the effective runtime request path.",
+          "A model name does not identify the provider-side model revision or endpoint deployment."
+        ],
+        "unknowns": [
+          "The selected model, model revision, provider, endpoint revision, reasoning settings, credentials and request path are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-model-provider-configuration-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authentication-model"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.tool-configuration-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/tool-configuration-0-146-0.json",
+      "rawRecordSha256": "edf2126f101b3ae79caad8d29991a0da75af9d0ff96572d8b102b3ed73e827b2",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.tool-configuration-0-146-0",
+        "slug": "tool-configuration-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "configuration.tools",
+          "statement": "The generated configuration schema at tag rust-v0.146.0 exposes tool-related settings including web-search modes and selected tool or feature toggles; configured MCP and plugin tools retain separate enablement and approval boundaries."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+          "title": "Codex 0.146.0 generated configuration schema",
+          "locator": "properties.tools, properties.web_search and tool-related feature flags",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "web search disabled",
+              "web search cached",
+              "web search indexed",
+              "web search live",
+              "configured tool toggles"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Codex CLI configured tool surface"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The schema is not a complete observed inventory of every tool exposed in a session.",
+          "Tool availability, approval and side effects can also depend on MCP servers, plugins, skills, feature flags and provider support."
+        ],
+        "unknowns": [
+          "The enabled built-in tools, web-search mode, tool annotations, approval coverage and side effects are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-tool-configuration-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "network",
+        "extensions"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.mcp-configuration-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/mcp-configuration-0-146-0.json",
+      "rawRecordSha256": "3f95f8fcdbe04af8031a49d503fca56453e3f2144a8ba52d9dc16abd75e187a4",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.mcp-configuration-0-146-0",
+        "slug": "mcp-configuration-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "configuration.mcp",
+          "statement": "The generated configuration schema at tag rust-v0.146.0 exposes MCP server transport, authentication, enabled or disabled tool lists and per-tool approval configuration as composable settings."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+          "title": "Codex 0.146.0 generated configuration schema",
+          "locator": "properties.mcp_servers and $defs.RawMcpServerConfig",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "no configured MCP server",
+              "configured stdio MCP server",
+              "configured URL MCP server",
+              "per-tool enablement and approval"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Codex CLI MCP client configuration"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Configuration support does not identify an active MCP server or prove its behavior.",
+          "MCP server identity, tool annotations, credentials and effects belong to the configured server and session, not the CLI version alone."
+        ],
+        "unknowns": [
+          "Configured MCP servers, transports, credentials, available tools, per-tool approval and destinations are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-mcp-configuration-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "extensions"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.plugin-configuration-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/plugin-configuration-0-146-0.json",
+      "rawRecordSha256": "1ddd00f4e745486ae3bbcf86492b167f21f49100578ace6fe8626cd6425b0929",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.plugin-configuration-0-146-0",
+        "slug": "plugin-configuration-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "configuration.plugins",
+          "statement": "The generated configuration schema at tag rust-v0.146.0 exposes plugin configuration, including enablement and plugin-provided MCP tool policy settings."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+          "title": "Codex 0.146.0 generated configuration schema",
+          "locator": "properties.plugins and plugin configuration definitions",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "plugins unconfigured",
+              "plugin configured",
+              "plugin-provided MCP tool policy"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Codex plugin configuration available to the 0.146.0 release"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Release and schema support do not identify any installed or enabled plugin.",
+          "Plugin contents, bundled skills, apps, MCP servers, credentials and tools require their own artifact and configuration review."
+        ],
+        "unknowns": [
+          "Installed plugins, versions, provenance, enabled components, permissions and side effects are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-plugin-configuration-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "extensions"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.skills-configuration-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/skills-configuration-0-146-0.json",
+      "rawRecordSha256": "37061d8faf41c09201291d24b461b007f5b1fa8704b05efd35907511f39371cc",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.skills-configuration-0-146-0",
+        "slug": "skills-configuration-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "configuration.skills",
+          "statement": "The generated configuration schema at tag rust-v0.146.0 represents skill enablement and configured skill paths separately from plugins, MCP servers and built-in tools."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+          "title": "Codex 0.146.0 generated configuration schema",
+          "locator": "properties.skills and skill configuration definitions",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "skills unconfigured",
+              "configured skill",
+              "executor-provided skill"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Codex skill discovery and executor-provided skill path"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Feature support does not identify which skills are present, selected or trusted.",
+          "A skill may alter instructions and resource access without being a model, plugin, MCP server or built-in tool."
+        ],
+        "unknowns": [
+          "Available skills, their source paths, contents, enablement, resource scope and invocation are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-skills-configuration-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "extensions"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.app-server-remote-host-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/app-server-remote-host-0-146-0.json",
+      "rawRecordSha256": "1d9f1cf60f6b904a85f64189a03bdb3c69fecc12291f7db5d741fec3677cb1b9",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.app-server-remote-host-0-146-0",
+        "slug": "app-server-remote-host-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "deployment.app-server",
+          "statement": "The 0.146.0 release announces app-server support for connecting remote Code Mode hosts over WebSocket; this is an app-server or remote-host path and is not evidence that an ordinary local CLI terminal session executes remotely."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/releases/tag/rust-v0.146.0",
+          "title": "OpenAI Codex 0.146.0 release",
+          "locator": "New features: app-server remote Code Mode hosts over WebSocket",
+          "publishedAt": "2026-07-29T01:42:51Z",
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "app-server remote host unconfigured",
+              "app-server remote Code Mode host over WebSocket"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Codex app-server companion surface",
+              "remote Code Mode host"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "transport-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The release note identifies support, not an observed remote-host deployment or its transport security.",
+          "The app-server path is a companion surface with a different runtime and transport boundary from local CLI terminal execution."
+        ],
+        "unknowns": [
+          "Whether app-server is used, the remote host identity, transport authentication, TLS, network reachability, execution placement and tool authority are unknown."
+        ],
+        "relationships": [
+          {
+            "targetClaimId": "com.openai.codex.cli.local-cli-delivery-0-146-0",
+            "type": "scope-differs",
+            "extent": "full",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "analysis": {
+              "classification": "scope-difference",
+              "scopeDimensions": [
+                "offering",
+                "runtime"
+              ],
+              "resolutionSourceIds": [],
+              "note": "The release distinguishes local CLI delivery from the app-server remote-host companion path."
+            },
+            "note": "Remote app-server support must not be transferred to ordinary local CLI terminal behavior."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-app-server-remote-host-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "remote-host"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.proxy-routing-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/proxy-routing-0-146-0.json",
+      "rawRecordSha256": "65e5e672b1beba123385cf5c6b7f2037399d09637ae7a747b2bc279e1636b16b",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.proxy-routing-0-146-0",
+        "slug": "proxy-routing-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "authority.network-proxy",
+          "statement": "The 0.146.0 release reports fixes for applying configured proxies across authentication, plugin downloads, MCP authentication, remote execution, WebSockets, redirects and LM Studio paths."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://github.com/openai/codex/releases/tag/rust-v0.146.0",
+          "title": "OpenAI Codex 0.146.0 release",
+          "locator": "Bug fixes: configured proxy routing across networked paths",
+          "publishedAt": "2026-07-29T01:42:51Z",
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.146.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "proxy unconfigured",
+              "proxy configured"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "configuration-dependent Codex network paths"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-10-31",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "product-version-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "A release-note fix does not prove a proxy was configured or that every subprocess and protocol is covered.",
+          "Each named path retains its own authentication, destination and side-effect boundary."
+        ],
+        "unknowns": [
+          "The effective proxy configuration, rules, DNS handling, destinations and enforcement completeness are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-proxy-routing-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "network"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cli.security-layers-current-0-146-0",
+      "rawRecordPath": "dossiers/openai-codex-cli-0-146-0/claims/openai-codex-cli-0-146-0/security-layers-current.json",
+      "rawRecordSha256": "f168280c119a60c052a8c6b5f89343c9cf60ec95a9579dfdf8364fada7268607",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cli.security-layers-current-0-146-0",
+        "slug": "security-layers-current-0-146-0",
+        "subject": {
+          "id": "com.openai.codex.cli",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0"
+          }
+        },
+        "claim": {
+          "category": "authority.security",
+          "statement": "Current OpenAI security documentation describes sandbox enforcement, approval policy and network access as separate control layers for Codex local execution; this is rolling-current policy evidence and is not treated as an immutable 0.146.0 runtime observation."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://learn.chatgpt.com/docs/agent-approvals-security",
+          "title": "OpenAI agent approvals and security documentation",
+          "locator": "Sandbox, approval policy and network-access sections",
+          "publishedAt": null,
+          "capturedAt": "2026-08-02T01:40:08Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": "current as of 2026-08-02"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "sandbox policy",
+              "approval policy",
+              "network access policy"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "current Codex local execution security model"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-02",
+          "recheckAfter": "2026-08-09",
+          "invalidatedBy": [
+            "source-unavailable",
+            "claimant-correction",
+            "documentation-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is rolling documentation, not tagged 0.146.0 source or a runtime test.",
+          "Documented control layers do not establish the effective settings or enforcement of any session."
+        ],
+        "unknowns": [
+          "Which rolling statements were implemented identically in every 0.146.0 platform build and configuration remain unknown."
+        ],
+        "relationships": [
+          {
+            "targetClaimId": "com.openai.codex.cli.approval-policies-0-146-0",
+            "type": "scope-differs",
+            "extent": "full",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "analysis": {
+              "classification": "scope-difference",
+              "scopeDimensions": [
+                "version",
+                "time",
+                "source"
+              ],
+              "resolutionSourceIds": [],
+              "note": "Rolling policy documentation and exact tagged schema answer different applicability questions."
+            },
+            "note": "The rolling approval description is not back-projected as exact 0.146.0 runtime evidence."
+          },
+          {
+            "targetClaimId": "com.openai.codex.cli.sandbox-modes-0-146-0",
+            "type": "scope-differs",
+            "extent": "full",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "analysis": {
+              "classification": "scope-difference",
+              "scopeDimensions": [
+                "version",
+                "time",
+                "source"
+              ],
+              "resolutionSourceIds": [],
+              "note": "Rolling policy documentation and exact tagged schema answer different applicability questions."
+            },
+            "note": "The rolling sandbox description is not back-projected as exact 0.146.0 runtime evidence."
+          },
+          {
+            "targetClaimId": "com.openai.codex.cli.network-access-0-146-0",
+            "type": "scope-differs",
+            "extent": "full",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "analysis": {
+              "classification": "scope-difference",
+              "scopeDimensions": [
+                "version",
+                "time",
+                "source"
+              ],
+              "resolutionSourceIds": [],
+              "note": "Rolling policy documentation and exact tagged schema answer different applicability questions."
+            },
+            "note": "The rolling network description is not back-projected as exact 0.146.0 runtime evidence."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-security-layers-current-0-146-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "authority",
+        "network"
+      ],
+      "personaIds": [
+        "adopter",
+        "reviewer",
+        "auditor"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "relationship-01",
+      "fromClaimId": "com.openai.codex.cli.app-server-remote-host-0-146-0",
+      "toClaimId": "com.openai.codex.cli.local-cli-delivery-0-146-0",
+      "kind": "scope-differs",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "analysis": {
+        "classification": "scope-difference",
+        "scopeDimensions": [
+          "offering",
+          "runtime"
+        ],
+        "resolutionSourceIds": [],
+        "note": "The release distinguishes local CLI delivery from the app-server remote-host companion path."
+      },
+      "note": "Remote app-server support must not be transferred to ordinary local CLI terminal behavior."
+    },
+    {
+      "id": "relationship-02",
+      "fromClaimId": "com.openai.codex.cli.security-layers-current-0-146-0",
+      "toClaimId": "com.openai.codex.cli.approval-policies-0-146-0",
+      "kind": "scope-differs",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "analysis": {
+        "classification": "scope-difference",
+        "scopeDimensions": [
+          "version",
+          "time",
+          "source"
+        ],
+        "resolutionSourceIds": [],
+        "note": "Rolling policy documentation and exact tagged schema answer different applicability questions."
+      },
+      "note": "The rolling approval description is not back-projected as exact 0.146.0 runtime evidence."
+    },
+    {
+      "id": "relationship-03",
+      "fromClaimId": "com.openai.codex.cli.security-layers-current-0-146-0",
+      "toClaimId": "com.openai.codex.cli.sandbox-modes-0-146-0",
+      "kind": "scope-differs",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "analysis": {
+        "classification": "scope-difference",
+        "scopeDimensions": [
+          "version",
+          "time",
+          "source"
+        ],
+        "resolutionSourceIds": [],
+        "note": "Rolling policy documentation and exact tagged schema answer different applicability questions."
+      },
+      "note": "The rolling sandbox description is not back-projected as exact 0.146.0 runtime evidence."
+    },
+    {
+      "id": "relationship-04",
+      "fromClaimId": "com.openai.codex.cli.security-layers-current-0-146-0",
+      "toClaimId": "com.openai.codex.cli.network-access-0-146-0",
+      "kind": "scope-differs",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "analysis": {
+        "classification": "scope-difference",
+        "scopeDimensions": [
+          "version",
+          "time",
+          "source"
+        ],
+        "resolutionSourceIds": [],
+        "note": "Rolling policy documentation and exact tagged schema answer different applicability questions."
+      },
+      "note": "The rolling network description is not back-projected as exact 0.146.0 runtime evidence."
+    }
+  ],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "exact-0-146-0-independent-evidence-search",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "evaluator-independence",
+          "dimension": "evaluator-independence",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate reached evaluator-identity review."
+        },
+        {
+          "id": "exact-release",
+          "dimension": "release",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed the exact stable 0.146.0 artifact cell."
+        },
+        {
+          "id": "model-identity",
+          "dimension": "model",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed a complete model and model-revision cell for exact 0.146.0."
+        },
+        {
+          "id": "configuration-cell",
+          "dimension": "configuration",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed the complete approval, sandbox, network, tool and extension configuration cell."
+        },
+        {
+          "id": "disclosure-completeness",
+          "dimension": "disclosure",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate supplied complete independence, funding, conflict and evaluation-method disclosures."
+        },
+        {
+          "id": "public-artifacts",
+          "dimension": "public-artifacts",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate exposed a reproducible public artifact bundle for the exact cell."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "A bounded official, repository, web and security search found product reports and adjacent-version material but no qualifying independent exact-0.146.0 evaluation candidate."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "OpenAI's exact Codex CLI 0.146.0 release, tag and source commit are identified with publisher-supplied artifact digests. Official sources describe separate configuration-dependent authentication, approval, sandbox, network, model/provider, tool, MCP, plugin, skill and app-server remote-host boundaries; no artifact was installed, run or independently evaluated.",
+    "releaseContext": {
+      "statement": "OpenAI's latest-release metadata identifies Codex CLI 0.146.0, tag rust-v0.146.0, publication time 2026-07-29T01:42:51Z and source commit e363b08c9175ac1cbe5893615dd2cb9ddf95043b. Publisher-supplied release-asset digests are preserved, but no installed runtime variant was selected or inspected.",
+      "sourceId": "source-release-identity-0-146-0",
+      "legacySource": null
+    },
+    "limitations": [
+      "All substantive behavior statements are publisher-attributed; the catalog did not download, install or run Codex CLI.",
+      "Exact-version claims use the 0.146.0 release or tagged repository source; rolling security documentation is not treated as exact-version evidence.",
+      "Publisher-provided artifact digests were recorded from official metadata but were not independently recomputed.",
+      "Configuration alternatives identify possible authority surfaces, not effective settings or enforcement in any session.",
+      "App-server remote-host behavior is scoped as a companion deployment path and is not transferred to ordinary local CLI terminal behavior.",
+      "No independent candidate passed evaluator independence, exact 0.146.0 applicability, model, configuration, disclosure and public-artifact gates."
+    ],
+    "unknowns": [
+      "The package, binary, platform build, architecture, installation path and executable digest used by any real session.",
+      "The selected model and provider-side model revision.",
+      "The selected provider, endpoint revision, reasoning settings and request path.",
+      "The effective authentication path, account identity, credential scope, storage and lifetime.",
+      "The effective approval policy and coverage of consequential shell, file, app, MCP, plugin, skill and indirect actions.",
+      "The effective sandbox, writable roots, operating-system enforcement, escape resistance and behavior outside the working directory.",
+      "The effective network flag, proxy state, rules, DNS path, WebSocket handling, destinations and subprocess coverage.",
+      "The complete built-in tool inventory, enabled flags, annotations, approvals and side effects.",
+      "Configured MCP servers, transports, tools, credentials, data access, approvals and destinations.",
+      "Installed plugins, versions, provenance, components, permissions and side effects.",
+      "Available skills, their source paths, contents, enablement, resource scope and invocation.",
+      "Whether app-server is used, the remote-host identity, transport authentication, TLS, execution placement and remote tool authority.",
+      "The contents, permissions, retention, encryption, backup and deletion behavior of local configuration, credentials, history and logs.",
+      "Which rolling security statements were implemented identically in every 0.146.0 platform build and configuration.",
+      "Whether a reproducible independent evaluation of the exact 0.146.0 artifact and disclosed execution cell becomes publicly available."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "adopter",
+        "label": "Considering a pilot",
+        "prompt": "Trace exact artifact, authority, network, extension and remote-host boundaries.",
+        "propositionIds": [
+          "identity",
+          "authentication-model",
+          "authority",
+          "network",
+          "extensions",
+          "remote-host",
+          "evaluation"
+        ]
+      },
+      {
+        "id": "reviewer",
+        "label": "Reviewing authority",
+        "prompt": "Inspect every configuration axis without assuming an effective session.",
+        "propositionIds": [
+          "authentication-model",
+          "authority",
+          "network",
+          "extensions",
+          "remote-host"
+        ]
+      },
+      {
+        "id": "auditor",
+        "label": "Checking evidence",
+        "prompt": "Open each tagged source, rolling boundary, limitation, unknown and independent-evidence gate.",
+        "propositionIds": [
+          "identity",
+          "authentication-model",
+          "authority",
+          "network",
+          "extensions",
+          "remote-host",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Release and artifact",
+        "question": "Which Codex CLI does this dossier identify?",
+        "status": "Exact source release; installed runtime unresolved",
+        "answer": "Official metadata identifies Codex CLI 0.146.0 at tag rust-v0.146.0 and commit e363b08c. Publisher-supplied asset digests are preserved, while the installed package, binary and executable digest remain unknown.",
+        "whyItMatters": "An exact release does not identify the executable a particular session invoked.",
+        "claimIds": [
+          "com.openai.codex.cli.release-identity-0-146-0",
+          "com.openai.codex.cli.local-cli-delivery-0-146-0",
+          "com.openai.codex.cli.release-artifacts-0-146-0"
+        ]
+      },
+      {
+        "id": "authentication-model",
+        "eyebrow": "Identity and inference route",
+        "question": "Which authentication, model and provider route applies?",
+        "status": "Configurable; effective route unresolved",
+        "answer": "The tagged README separates ChatGPT sign-in from API-key setup, and the tagged schema separates model, provider and custom-provider configuration. No effective authentication path, model, model revision, provider or endpoint is inferred.",
+        "whyItMatters": "Artifact identity and inference identity are different applicability boundaries.",
+        "claimIds": [
+          "com.openai.codex.cli.authentication-paths-0-146-0",
+          "com.openai.codex.cli.model-provider-configuration-0-146-0"
+        ]
+      },
+      {
+        "id": "authority",
+        "eyebrow": "Approval and sandbox",
+        "question": "Which local authority alternatives does 0.146.0 expose?",
+        "status": "Four approval shapes and three sandbox modes",
+        "answer": "The tagged schema separates untrusted, on-request, granular and never approval policies from read-only, workspace-write and danger-full-access sandbox modes. Current security documentation describes these as separate layers, but no effective pair or runtime enforcement is observed.",
+        "whyItMatters": "Approval and containment change authority independently.",
+        "claimIds": [
+          "com.openai.codex.cli.approval-policies-0-146-0",
+          "com.openai.codex.cli.sandbox-modes-0-146-0",
+          "com.openai.codex.cli.security-layers-current-0-146-0"
+        ]
+      },
+      {
+        "id": "network",
+        "eyebrow": "Outbound access",
+        "question": "How is network reachability scoped?",
+        "status": "Separate network, proxy and web-search configuration",
+        "answer": "The tagged schema separates workspace-write network access and web-search modes, while the release reports proxy-routing fixes across several conditional paths. Effective network, proxy, DNS and destination behavior remain unknown.",
+        "whyItMatters": "Network reach is not determined by product version alone.",
+        "claimIds": [
+          "com.openai.codex.cli.network-access-0-146-0",
+          "com.openai.codex.cli.tool-configuration-0-146-0",
+          "com.openai.codex.cli.proxy-routing-0-146-0",
+          "com.openai.codex.cli.security-layers-current-0-146-0"
+        ]
+      },
+      {
+        "id": "extensions",
+        "eyebrow": "Tools and extensions",
+        "question": "Which configurable surfaces can extend the agent?",
+        "status": "Tools, MCP, plugins and skills remain separate",
+        "answer": "Tagged sources expose built-in tool settings, MCP server and per-tool policy, Agent Plugins and executor-provided or configured skills. None is treated as present or enabled without effective configuration and artifact evidence.",
+        "whyItMatters": "Each extension route changes instructions, credentials, tools or side effects differently.",
+        "claimIds": [
+          "com.openai.codex.cli.tool-configuration-0-146-0",
+          "com.openai.codex.cli.mcp-configuration-0-146-0",
+          "com.openai.codex.cli.plugin-configuration-0-146-0",
+          "com.openai.codex.cli.skills-configuration-0-146-0"
+        ]
+      },
+      {
+        "id": "remote-host",
+        "eyebrow": "App-server and placement",
+        "question": "Does 0.146.0 imply remote execution?",
+        "status": "Only a separate app-server remote-host path is documented",
+        "answer": "The release announces app-server connections to remote Code Mode hosts over WebSocket. This is kept outside the ordinary local CLI terminal boundary, and no host, transport or execution placement is inferred.",
+        "whyItMatters": "A companion remote-host feature must not be transferred to every CLI session.",
+        "claimIds": [
+          "com.openai.codex.cli.app-server-remote-host-0-146-0"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was the exact record independently evaluated?",
+        "status": "No qualifying independent evidence located",
+        "answer": "No independent finding or test is included because the bounded search located no candidate that passed evaluator independence, exact 0.146.0 artifact applicability, model, configuration, disclosure and public-artifact gates.",
+        "whyItMatters": "Publisher documentation establishes claims and configuration boundaries, not observed suitability or safety.",
+        "claimIds": [
+          "com.openai.codex.cli.release-identity-0-146-0"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source claims only. No independent test, suitability calculation, catalog page or public integration is included."
+  }
+}

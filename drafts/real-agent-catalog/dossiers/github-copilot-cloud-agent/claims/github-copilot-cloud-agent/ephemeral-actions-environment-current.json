@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.cloud-agent.ephemeral-actions-environment-current",
+  "slug": "ephemeral-actions-environment-current",
+  "subject": {
+    "id": "com.github.copilot.cloud-agent",
+    "name": "GitHub Copilot cloud agent",
+    "publisher": "GitHub",
+    "surface": { "kind": "hosted-service", "name": "GitHub Copilot cloud agent", "slug": "github-copilot-cloud-agent" }
+  },
+  "claim": {
+    "category": "delivery",
+    "statement": "GitHub's current service overview says Copilot cloud agent has its own ephemeral development environment powered by GitHub Actions, where it can explore code, make changes and execute automated tests and linters."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitHub" },
+  "source": {
+    "uri": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent",
+    "title": "About GitHub Copilot cloud agent",
+    "locator": "Overview of Copilot cloud agent; paragraph beginning While working on a coding task",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T22:45:15Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "documented-default", "values": ["GitHub-hosted GitHub Actions environment"] },
+    "platform": { "scope": "named", "values": ["GitHub Actions"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["Copilot cloud agent coding task"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "configuration-change", "platform-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "This is rolling documentation and is not applied to an exact service build or dated milestone.",
+    "The term ephemeral is publisher wording and was not tested for image reuse, storage persistence, cleanup or isolation."
+  ],
+  "unknowns": [
+    "The runner image digest, hardware, region, tenancy, persistence and cleanup behavior are unknown.",
+    "The full command, file, process, credential and network authority available within a particular task is unknown."
+  ],
+  "relationships": [
+    {
+      "type": "contradicts",
+      "targetClaimId": "com.github.copilot.cloud-agent.self-hosted-runner-current",
+      "extent": "full",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "GitHub-hosted and self-hosted runners are configuration alternatives with different infrastructure and firewall boundaries."
+    }
+  ],
+  "validationRefs": []
+}

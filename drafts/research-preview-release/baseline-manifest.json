@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "research-preview-preservation/0.1-draft",
+  "asOf": "2026-08-02",
+  "gitHead": "9f111e9fb5087690602d1450e8d934995960628c",
+  "gitBranch": "main",
+  "algorithm": "sha256 of sorted rows formatted as file-sha256, two spaces, repository-relative path, newline",
+  "roots": ["."],
+  "skipDirectoryNames": [".git"],
+  "skipExactPaths": [".DS_Store"],
+  "authorizedExistingFileChanges": [
+    "CONTRIBUTING.md",
+    "CORRECTIONS.md",
+    "QA.md",
+    "README.md",
+    "docs/claims-first-mvp.md",
+    "docs/real-agent-mvp-pilot.md",
+    "drafts/real-agent-catalog/CURRENTNESS_LIFECYCLE_AUDIT.md",
+    "drafts/real-agent-catalog/README.md",
+    "drafts/real-agent-catalog/SCHEMA_RETROSPECTIVE.md",
+    "drafts/real-agent-catalog/claims-board-expansion-pilot/README.md",
+    "drafts/real-agent-catalog/claims-board-expansion-pilot/validate.mjs",
+    "drafts/real-agent-catalog/claims-board-pilot/README.md",
+    "drafts/real-agent-catalog/claims-board-pilot/validate.mjs",
+    "drafts/real-agent-catalog/lifecycle/README.md",
+    "drafts/real-agent-catalog/lifecycle/lifecycle-source.json",
+    "drafts/real-agent-catalog/scripts/build-real-catalog.mjs",
+    "drafts/real-agent-catalog/scripts/real-catalog-lib.mjs",
+    "drafts/real-agent-catalog/scripts/validate-batch-source-lib.mjs",
+    "drafts/real-agent-catalog/scripts/validate-discovery-layer.mjs",
+    "drafts/real-agent-catalog/scripts/validate-lifecycle-layer.mjs",
+    "drafts/real-agent-catalog/scripts/validate-openai-codex-0-146-0-refresh.mjs",
+    "drafts/real-agent-catalog/scripts/validate-openai-codex-source.mjs",
+    "drafts/real-agent-catalog/scripts/validate-real-catalog.mjs",
+    "drafts/real-agent-source-watch/README.md",
+    "drafts/real-agent-source-watch/source-registry.json",
+    "drafts/real-agent-source-watch/source-watch-v0.schema.json",
+    "drafts/real-agent-source-watch/source-watch.mjs",
+    "drafts/real-agent-source-watch/validate-source-watch.mjs",
+    "dist/CONTRIBUTING.md",
+    "dist/CORRECTIONS.md",
+    "dist/app.js",
+    "dist/styles.css",
+    "scripts/catalog.mjs",
+    "site/app.js",
+    "site/index.html",
+    "site/styles.css",
+    "dist/build-manifest.json",
+    "dist/index.html"
+  ],
+  "authorizedNewPaths": [
+    "GOVERNANCE.md",
+    "PUBLICATION_READINESS.md",
+    "RESEARCH_PREVIEW.md",
+    "ROADMAP.md",
+    "SECURITY.md",
+    "dist/GOVERNANCE.md",
+    "dist/PUBLICATION_READINESS.md",
+    "dist/RESEARCH_PREVIEW.md",
+    "dist/ROADMAP.md",
+    "dist/SECURITY.md",
+    "drafts/real-agent-catalog/claimed-attribute-study/anthropic-claude-code-cli-2-1-220-mapping.json",
+    "drafts/real-agent-catalog/claimed-attribute-study/cline-vscode-extension-4-1-3-mapping.json",
+    "drafts/real-agent-catalog/claimed-attribute-study/gitlab-duo-developer-flow-19-2-mapping.json",
+    "drafts/real-agent-catalog/claimed-attribute-study/gitlab-duo-developer-flow-19-2-1-mapping.json",
+    "drafts/real-agent-catalog/claimed-attribute-study/zed-agent-stable-1-12-1-mapping.json",
+    "drafts/real-agent-catalog/current-record-refresh/records/com.anthropic.claude-code.cli.2-1-220.json",
+    "drafts/real-agent-catalog/current-record-refresh/records/com.cline.bot.vscode-extension.4-1-3.json",
+    "drafts/real-agent-catalog/current-record-refresh/records/com.gitlab.duo.developer-flow.19-2.json",
+    "drafts/real-agent-catalog/current-record-refresh/records/com.gitlab.duo.developer-flow.19-2-1.json",
+    "drafts/real-agent-catalog/current-record-refresh/records/com.zed.agent.native.stable.1-12-1.json",
+    "drafts/real-agent-catalog/scripts/build-research-preview.mjs",
+    "drafts/real-agent-catalog/scripts/validate-anthropic-claude-code-2-1-220-source.mjs",
+    "drafts/real-agent-catalog/scripts/validate-current-record-refreshes.mjs",
+    "drafts/real-agent-catalog/scripts/validate-documentation-consistency.mjs",
+    "drafts/real-agent-catalog/scripts/validate-gitlab-duo-developer-flow-19-2-source.mjs",
+    "drafts/real-agent-catalog/scripts/validate-governance.mjs",
+    "drafts/real-agent-catalog/scripts/validate-research-preview.mjs",
+    "drafts/real-agent-catalog/scripts/validate-zed-agent-stable-1-12-1-source.mjs",
+    "scripts/research-preview-v0.1.mjs",
+    "site/record.html",
+    "dist/record.html"
+  ],
+  "authorizedNewPathPrefixes": [
+    "dist/research-preview/",
+    "drafts/real-agent-catalog/dossiers/anthropic-claude-code-cli-2-1-220/",
+    "drafts/real-agent-catalog/dossiers/cline-vscode-extension-4-1-3/",
+    "drafts/real-agent-catalog/dossiers/gitlab-duo-developer-flow-19-2/",
+    "drafts/real-agent-catalog/dossiers/gitlab-duo-developer-flow-19-2-1/",
+    "drafts/real-agent-catalog/dossiers/zed-agent-stable-1-12-1/",
+    "drafts/real-agent-catalog/research-preview/",
+    "drafts/research-preview-release/",
+    "site/research-preview/"
+  ],
+  "pathMigrations": [
+    {
+      "from": "drafts/real-agent-catalog/dossiers/replit-agent-4-hosted/claims/replit-agent-4-hosted/secrets-current.json",
+      "to": "drafts/real-agent-catalog/dossiers/replit-agent-4-hosted/claims/replit-agent-4-hosted/environment-value-controls-current.json",
+      "sha256": "9455fe33c8b62f02b6ce563949b7f505a1708bf8f2b7f01e954a8be20bfc2911"
+    },
+    {
+      "from": "drafts/real-agent-catalog/dossiers/replit-agent-4-hosted/claims/replit-agent-4-hosted/background-tasks-current.json",
+      "to": "drafts/real-agent-catalog/dossiers/replit-agent-4-hosted/claims/replit-agent-4-hosted/background-execution-current.json",
+      "sha256": "2382ea111ce16a689e579c964c88c5a294c09a6afe74834ccce7510fe3d6186e"
+    },
+    {
+      "from": "drafts/real-agent-catalog/dossiers/zed-agent-1-13-1/claims/zed-agent-1-13-1/profiles-current.json",
+      "to": "drafts/real-agent-catalog/dossiers/zed-agent-1-13-1/claims/zed-agent-1-13-1/configuration-presets-current.json",
+      "sha256": "38766ee50ce46a48c78de64391544fccfd38bcf0301006db01d40261aff027f9"
+    },
+    {
+      "from": "drafts/real-agent-catalog/dossiers/openai-codex-cli-0-90-0/claims/openai-codex-cli-0-90-0/connectors-0-90-0.json",
+      "to": "drafts/real-agent-catalog/dossiers/openai-codex-cli-0-90-0/claims/openai-codex-cli-0-90-0/external-integrations-0-90-0.json",
+      "sha256": "bca32338f9d6362456017d260071e9eecf55f01965a715ef84080e8c6bf610aa"
+    },
+    {
+      "from": "drafts/real-agent-catalog/dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/agents-secrets-current.json",
+      "to": "drafts/real-agent-catalog/dossiers/github-copilot-cloud-agent/claims/github-copilot-cloud-agent/agent-environment-controls-current.json",
+      "sha256": "f74d1ddeff2b6b66a4bd7f82cffa866f3bfcd0e36e9dbc1ecf7a1541be43adaf"
+    },
+    {
+      "from": "drafts/cline-vscode-extension/records/cline-vscode-extension/cline-key-user-content-path.json",
+      "to": "drafts/cline-vscode-extension/records/cline-vscode-extension/cline-content-storage-current.json",
+      "sha256": "a2cb98bde4cfac64a6d976a1c467ccd467304d87e023202f07c65bdc2a5ee0c4"
+    },
+    {
+      "from": "site/profile.html",
+      "to": "site/record.html",
+      "sha256": "43f3730fe58adba3a0b0fe22dea17768a5d19bbb033c0b4e33ca08f3a7e470cc"
+    },
+    {
+      "from": "dist/profile.html",
+      "to": "dist/record.html",
+      "sha256": "43f3730fe58adba3a0b0fe22dea17768a5d19bbb033c0b4e33ca08f3a7e470cc"
+    }
+  ],
+  "originalProtectedFileCount": 451,
+  "originalAggregateSha256": "7b5d7f926ab92918e189573c278a9b2922f5fd0527198f5f81bb97f729bb2329",
+  "protectionBoundaryAdjustments": [
+    {
+      "asOf": "2026-08-02",
+      "paths": ["dist/CONTRIBUTING.md", "dist/CORRECTIONS.md"],
+      "reason": "Generated copies of authorized root governance-document changes; no evidence or catalog-data path was exempted."
+    },
+    {
+      "asOf": "2026-08-02",
+      "paths": [
+        "drafts/real-agent-catalog/scripts/validate-batch-source-lib.mjs",
+        "drafts/real-agent-catalog/scripts/validate-discovery-layer.mjs",
+        "drafts/real-agent-catalog/scripts/validate-openai-codex-source.mjs",
+        "site/app.js",
+        "dist/app.js"
+      ],
+      "reason": "Compatibility-only path resolution and links for the predeclared byte-identical publication-safe migrations; accepted dossier, raw-claim and record contents remain protected."
+    },
+    {
+      "asOf": "2026-08-02",
+      "paths": [
+        "drafts/real-agent-catalog/claims-board-expansion-pilot/validate.mjs",
+        "drafts/real-agent-catalog/claims-board-pilot/validate.mjs"
+      ],
+      "reason": "Compatibility-only path resolution for the predeclared byte-identical publication-safe claim-file migration; claims-board data, mappings and projections remain protected."
+    },
+    {
+      "asOf": "2026-08-02",
+      "paths": ["drafts/real-agent-catalog/scripts/validate-openai-codex-0-146-0-refresh.mjs"],
+      "reason": "Release-aware compatibility update: delegate global preservation to the Phase 0 manifest and distinguish a visible Codex trial gate from integration of the withheld record."
+    }
+  ],
+  "protectedFileCount": 438,
+  "aggregateSha256": "995bb0ab1272c9c99f92becaf687b83a624349c9d2000802ac0ef1b59fe594f2"
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.openhands.cli.cloud-delegation-current",
+  "slug": "cloud-delegation-current",
+  "subject": {
+    "id": "org.openhands.cli",
+    "name": "OpenHands",
+    "publisher": "OpenHands",
+    "surface": { "kind": "cli", "name": "OpenHands CLI", "slug": "openhands-cli" }
+  },
+  "claim": {
+    "category": "delegation",
+    "statement": "The publisher's current CLI cloud guide states that the openhands cloud command can authenticate to OpenHands Cloud or a custom server and create a hosted conversation from task text or a local file; the guide distinguishes cloud-hosted compute and cloud persistence from local CLI compute and local files."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenHands" },
+  "source": {
+    "uri": "https://docs.openhands.dev/openhands/usage/cli/cloud",
+    "title": "OpenHands CLI Cloud guide",
+    "locator": "Authentication; Creating Cloud Conversations; Cloud vs Local",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T21:47:27Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "multiple", "values": ["default OpenHands Cloud server", "custom OpenHands server"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["openhands cloud command"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "product-surface-change", "configuration-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "This is rolling publisher documentation and is not silently applied to the exact 1.16.0 release.",
+    "The guide describes the location of compute and persistence at a high level; it is not a privacy, retention or security audit."
+  ],
+  "unknowns": [
+    "The exact data uploaded from a task file, repository or configured integration is unknown.",
+    "Cloud retention, deletion, training, subprocess authority and network destinations were not established by the selected passages."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

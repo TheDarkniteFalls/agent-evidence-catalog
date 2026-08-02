@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.agent-plan-modes-current", "slug": "agent-plan-modes-current",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Build mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Build mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "interaction.mode", "statement": "Current Lovable documentation calls its autonomous execution surface Build mode, explicitly says it was previously named Agent mode, and separates Build mode for implementing and verifying changes from Plan mode for exploring and deciding an approach." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/features/agent-mode", "title": "Implement changes in Build mode", "locator": "Choose a mode and Overview", "publishedAt": null, "capturedAt": "2026-08-01T11:46:36Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["Plan mode", "Build mode", "Agent mode (former publisher name)"] }, "platform": { "scope": "named", "values": ["Lovable hosted browser workspace"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["Lovable hosted service"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["mode-documentation-change", "authority-change"] },
+  "limitations": ["The current and former mode labels do not identify an immutable backend or prove enforcement in a particular task."],
+  "unknowns": ["The active mode, exact rename date, transition history, prompts, models and effective service revision are unknown."],
+  "relationships": [], "validationRefs": []
+}

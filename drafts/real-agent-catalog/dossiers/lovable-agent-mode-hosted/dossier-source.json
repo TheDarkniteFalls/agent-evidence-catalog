@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "asOf": "2026-08-01",
+  "identity": {
+    "recordId": "com.lovable.agent.hosted.rolling",
+    "agent": { "id": "com.lovable.agent.hosted", "name": "Lovable Build mode" },
+    "publisher": { "id": "lovable", "name": "Lovable" },
+    "surface": { "kind": "hosted-service", "name": "Lovable Build mode", "slug": "lovable-agent-mode-hosted", "deliveryModel": "hosted" },
+    "release": {
+      "scope": "rolling-service", "version": null, "releaseTag": null, "sourceRevision": null, "releasedAt": null, "channel": "Lovable hosted service",
+      "additionalIdentities": [
+        { "id": "agent-mode-default-milestone", "kind": "release-line", "status": "known", "value": "Agent mode default milestone — 2025-08-11", "scopeBindings": [{ "axisId": "interaction-mode", "alternativeId": "build-mode" }], "artifactRefs": ["agent-mode-default-milestone-2025-08-11"], "sourceIds": ["source-agent-default-milestone-2025-08-11"], "claimIds": ["com.lovable.agent.hosted.agent-default-milestone-2025-08-11"], "note": "The dated changelog milestone preserves the former Agent mode name for the execution surface now documented as Build mode; it does not identify an immutable current runtime." },
+        { "id": "build-mode-current-name", "kind": "other", "status": "known", "value": "Build mode (previously Agent mode)", "scopeBindings": [{ "axisId": "interaction-mode", "alternativeId": "build-mode" }], "artifactRefs": ["lovable-agent-rolling-service"], "sourceIds": ["source-agent-plan-modes-current"], "claimIds": ["com.lovable.agent.hosted.agent-plan-modes-current"], "note": "Current publisher documentation supplies the canonical Build mode name and explicitly identifies Agent mode as its former name; the rename does not freeze a service revision." },
+        { "id": "model-service-milestone", "kind": "service-revision", "status": "known", "value": "Opus 4.6 incorporated — 2026-04-24 milestone", "scopeBindings": [{ "axisId": "model-route", "alternativeId": "publisher-managed-route" }], "artifactRefs": ["lovable-service-milestone-2026-04-24"], "sourceIds": ["source-model-service-milestone-2026-04-24"], "claimIds": ["com.lovable.agent.hosted.model-service-milestone-2026-04-24"], "note": "The dated changelog names a model incorporated into the Agent; exact routing, provider revision and continued current applicability remain unresolved." },
+        { "id": "current-service-revision", "kind": "service-revision", "status": "unresolved", "value": null, "scopeBindings": [], "artifactRefs": ["lovable-agent-rolling-service"], "sourceIds": ["source-agent-plan-modes-current", "source-agent-file-execution-current"], "claimIds": ["com.lovable.agent.hosted.agent-plan-modes-current", "com.lovable.agent.hosted.agent-file-execution-current"], "note": "The effective hosted service, prompt, tool and model revisions are not publicly pinned." }
+      ],
+      "installedRuntimeVariant": {
+        "status": "unresolved", "value": null,
+        "alternatives": ["Lovable project without Cloud", "Lovable Cloud project"],
+        "alternativeDetails": [
+          { "id": "project-without-cloud", "label": "Lovable project without Cloud", "kind": "environment", "identityStatus": "unresolved", "artifactRefs": ["lovable-agent-rolling-service"], "scopeBindings": [{ "axisId": "cloud-state", "alternativeId": "cloud-disabled" }], "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "note": "The project backend state is unknown." },
+          { "id": "lovable-cloud-project", "label": "Lovable Cloud project", "kind": "environment", "identityStatus": "unresolved", "artifactRefs": ["lovable-cloud-runtime"], "scopeBindings": [{ "axisId": "cloud-state", "alternativeId": "cloud-enabled" }], "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "note": "Cloud enablement, region and tool policy are unknown." }
+        ],
+        "note": "No Lovable project, account, region or service runtime was inspected."
+      }
+    },
+    "artifacts": [
+      { "id": "agent-mode-default-milestone-2025-08-11", "kind": "hosted-release", "identityStatus": "exact", "uri": "https://docs.lovable.dev/changelog?page=1", "ecosystem": "Lovable hosted service changelog", "version": "2025-08-11 milestone", "digest": null, "note": "Dated Agent-mode transition; not an immutable service snapshot." },
+      { "id": "lovable-service-milestone-2026-04-24", "kind": "hosted-release", "identityStatus": "exact", "uri": "https://docs.lovable.dev/changelog?page=1", "ecosystem": "Lovable hosted service changelog", "version": "2026-04-24 milestone", "digest": null, "note": "Dated model and Cloud update milestone; not an immutable runtime." },
+      { "id": "lovable-agent-rolling-service", "kind": "hosted-release", "identityStatus": "unresolved", "uri": "https://lovable.dev/", "ecosystem": "Lovable hosted service", "version": null, "digest": null, "note": "Current service revision, prompt and tool implementations are unresolved." },
+      { "id": "lovable-cloud-runtime", "kind": "hosted-release", "identityStatus": "unresolved", "uri": "https://docs.lovable.dev/integrations/cloud", "ecosystem": "Lovable Cloud", "version": null, "digest": null, "note": "Cloud enablement, region and backend revision are unresolved." }
+    ]
+  },
+  "roles": {
+    "claimants": [{ "id": "lovable", "name": "Lovable", "kind": "publisher" }],
+    "sourceCapturers": [{ "id": "catalog-source-capturer", "name": "Agent Evidence Catalog maintainer", "kind": "catalog-maintainer" }],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://docs.lovable.dev/changelog?page=1": { "sourceKind": "publisher-release-metadata", "snapshotStatus": "live-page", "note": "Rolling changelog with dated service milestones; not an immutable service snapshot." },
+    "https://docs.lovable.dev/features/agent-mode": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current Build and Plan mode documentation; explicitly identifies Agent mode as the former Build-mode name." },
+    "https://docs.lovable.dev/features/subagents": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current temporary read-only subagent and parallel-investigation documentation." },
+    "https://docs.lovable.dev/features/testing": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current verification-tool documentation." },
+    "https://docs.lovable.dev/features/browser-testing": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current remote browser-testing documentation." },
+    "https://docs.lovable.dev/integrations/cloud": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current Lovable Cloud permission and region documentation." },
+    "https://docs.lovable.dev/integrations/github": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current GitHub App, repository scope and sync documentation." },
+    "https://docs.lovable.dev/features/publish": { "sourceKind": "publisher-rolling-documentation", "snapshotStatus": "live-page", "note": "Current explicit publishing boundary documentation." }
+  },
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Interaction mode, serial main-task queue, temporary read-only subagent execution, verification path, Cloud state and tool policy, region, GitHub connection, model route and publish state are separate dimensions; none was observed.",
+    "axes": [
+      { "id": "interaction-mode", "label": "Interaction mode", "scope": "mutually-exclusive", "dimension": "interaction-mode", "alternatives": [
+        { "id": "plan-mode", "label": "Plan mode", "claimIds": ["com.lovable.agent.hosted.agent-plan-modes-current"], "mutuallyExclusiveWith": ["build-mode"], "controlMode": "automatic-deny", "humanInteraction": "possible" },
+        { "id": "build-mode", "label": "Build mode (previously Agent mode)", "claimIds": ["com.lovable.agent.hosted.agent-default-milestone-2025-08-11", "com.lovable.agent.hosted.agent-plan-modes-current", "com.lovable.agent.hosted.agent-file-execution-current"], "mutuallyExclusiveWith": ["plan-mode"], "controlMode": "automatic-allow", "humanInteraction": "possible" }
+      ], "unknowns": ["The effective mode and service revision are unknown."] },
+      { "id": "prompt-queue", "label": "Prompt queue", "scope": "unresolved", "dimension": "trigger", "alternatives": [
+        { "id": "serial-task-queue", "label": "One active task with queued prompts", "claimIds": ["com.lovable.agent.hosted.serial-prompt-queue-current"], "mutuallyExclusiveWith": [] }
+      ], "unknowns": ["Queue contents, order, repeats, paused state and active task are unknown."] },
+      { "id": "subagent-execution", "label": "Temporary subagent execution", "scope": "unresolved", "dimension": "runtime", "alternatives": [
+        { "id": "publisher-decided-read-only-subagents", "label": "Publisher-decided temporary read-only subagents", "claimIds": ["com.lovable.agent.hosted.parallel-read-only-subagents-current"], "mutuallyExclusiveWith": [], "controlMode": "classifier-mediated", "humanInteraction": "possible" }
+      ], "unknowns": ["Whether subagents ran, their count, task briefings, model routes, tool calls, findings and timing are unknown."] },
+      { "id": "verification-path", "label": "Verification path", "scope": "composable", "dimension": "tool-surface", "alternatives": [
+        { "id": "browser-testing", "label": "Remote browser testing", "claimIds": ["com.lovable.agent.hosted.verification-tools-current", "com.lovable.agent.hosted.browser-testing-current"], "mutuallyExclusiveWith": [] },
+        { "id": "frontend-tests", "label": "Frontend tests", "claimIds": ["com.lovable.agent.hosted.verification-tools-current"], "mutuallyExclusiveWith": [] },
+        { "id": "edge-verification", "label": "Edge function verification", "claimIds": ["com.lovable.agent.hosted.verification-tools-current"], "mutuallyExclusiveWith": [] }
+      ], "unknowns": ["Requested tools, test code, credentials, environment, results and side effects are unknown."] },
+      { "id": "browser-test-trigger", "label": "Browser-test trigger", "scope": "mutually-exclusive", "dimension": "approval-authority", "alternatives": [
+        { "id": "explicit-request", "label": "Explicit user request", "claimIds": ["com.lovable.agent.hosted.browser-testing-current"], "mutuallyExclusiveWith": ["agent-offer-confirmed"] , "controlMode": "manual-approval", "humanInteraction": "required" },
+        { "id": "agent-offer-confirmed", "label": "Agent offers and user confirms", "claimIds": ["com.lovable.agent.hosted.browser-testing-current"], "mutuallyExclusiveWith": ["explicit-request"], "controlMode": "manual-approval", "humanInteraction": "required" }
+      ], "unknowns": ["Trigger, confirmation, target flow and authenticated session are unknown."] },
+      { "id": "cloud-state", "label": "Lovable Cloud state", "scope": "mutually-exclusive", "dimension": "runtime", "alternatives": [
+        { "id": "cloud-disabled", "label": "Lovable Cloud disabled", "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "mutuallyExclusiveWith": ["cloud-enabled"], "controlMode": "disabled", "humanInteraction": "possible" },
+        { "id": "cloud-enabled", "label": "Lovable Cloud enabled", "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "mutuallyExclusiveWith": ["cloud-disabled"], "controlMode": "conditional-policy", "humanInteraction": "possible" }
+      ], "unknowns": ["Cloud enablement and backend revision are unknown."] },
+      { "id": "cloud-tool-policy", "label": "Lovable Cloud tool policy", "scope": "mutually-exclusive", "dimension": "approval-authority", "alternatives": [
+        { "id": "always-allow", "label": "Always allow", "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "mutuallyExclusiveWith": ["ask-each-time", "never-allow"], "controlMode": "automatic-allow", "humanInteraction": "possible" },
+        { "id": "ask-each-time", "label": "Ask each time", "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "mutuallyExclusiveWith": ["always-allow", "never-allow"], "controlMode": "manual-approval", "humanInteraction": "required" },
+        { "id": "never-allow", "label": "Never allow", "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "mutuallyExclusiveWith": ["always-allow", "ask-each-time"], "controlMode": "automatic-deny", "humanInteraction": "unavailable" }
+      ], "unknowns": ["Per-tool permission values and defaults in the project are unknown."] },
+      { "id": "cloud-region", "label": "Cloud region", "scope": "mutually-exclusive", "dimension": "execution-location", "alternatives": [
+        { "id": "closest", "label": "Closest to user", "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "mutuallyExclusiveWith": ["americas", "europe", "asia-pacific"] },
+        { "id": "americas", "label": "Americas", "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "mutuallyExclusiveWith": ["closest", "europe", "asia-pacific"] },
+        { "id": "europe", "label": "Europe", "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "mutuallyExclusiveWith": ["closest", "americas", "asia-pacific"] },
+        { "id": "asia-pacific", "label": "Asia Pacific", "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"], "mutuallyExclusiveWith": ["closest", "americas", "europe"] }
+      ], "unknowns": ["Region and migration availability are unknown."] },
+      { "id": "github-connection", "label": "GitHub connection", "scope": "mutually-exclusive", "dimension": "credential", "alternatives": [
+        { "id": "not-connected", "label": "No GitHub connection", "claimIds": ["com.lovable.agent.hosted.github-sync-current"], "mutuallyExclusiveWith": ["selected-repositories", "all-repositories"], "controlMode": "disabled", "humanInteraction": "possible" },
+        { "id": "selected-repositories", "label": "GitHub App limited to selected repositories", "claimIds": ["com.lovable.agent.hosted.github-sync-current"], "mutuallyExclusiveWith": ["not-connected", "all-repositories"], "controlMode": "conditional-policy", "humanInteraction": "required" },
+        { "id": "all-repositories", "label": "GitHub App granted all repositories", "claimIds": ["com.lovable.agent.hosted.github-sync-current"], "mutuallyExclusiveWith": ["not-connected", "selected-repositories"], "controlMode": "conditional-policy", "humanInteraction": "required" }
+      ], "unknowns": ["Account, organization, App installation, repository and default branch are unknown."] },
+      { "id": "model-route", "label": "Hosted model route", "scope": "unresolved", "dimension": "model", "alternatives": [
+        { "id": "publisher-managed-route", "label": "Publisher-managed Agent model route", "claimIds": ["com.lovable.agent.hosted.model-service-milestone-2026-04-24"], "mutuallyExclusiveWith": [] }
+      ], "unknowns": ["Current model mix, provider, endpoint, routing and inference revision are unknown."] },
+      { "id": "publish-state", "label": "Publish state", "scope": "mutually-exclusive", "dimension": "output-route", "alternatives": [
+        { "id": "unpublished-project", "label": "Unpublished project changes", "claimIds": ["com.lovable.agent.hosted.publish-boundary-current"], "mutuallyExclusiveWith": ["user-published-snapshot"], "controlMode": "automatic-deny", "humanInteraction": "required" },
+        { "id": "user-published-snapshot", "label": "User-triggered published snapshot", "claimIds": ["com.lovable.agent.hosted.publish-boundary-current"], "mutuallyExclusiveWith": ["unpublished-project"], "controlMode": "manual-approval", "humanInteraction": "required" }
+      ], "unknowns": ["Published state, live URL, access policy and deployed snapshot are unknown."] }
+    ]
+  },
+  "independentEvidenceAdmissions": [{
+    "id": "no-independent-lovable-candidate", "candidateLabel": null, "candidateSourceIds": [], "decision": "no-candidate",
+    "gates": [{ "id": "bounded-search", "dimension": "other", "status": "not-assessed", "claimIds": [], "note": "No independent public evaluation with a reproducible Lovable service revision, model, project, Cloud and permission configuration was identified." }],
+    "includedTestIds": [], "limitations": ["Publisher-reported performance or security claims are not independent evidence and contribute no test."]
+  }],
+  "dossier": {
+    "summary": "Lovable Build mode is represented as a rolling hosted service whose publisher documentation explicitly identifies Agent mode as its former name; dated Agent-mode and model milestones are preserved, while current sources separate a serial main-task queue from conditional parallel read-only subagents, verification tools, Cloud permissions, GitHub sync and explicit publishing without freezing the effective service runtime.",
+    "releaseContext": { "statement": "Lovable's changelog says Agent mode became the default on 2025-08-11 and records a 2026-04-24 model and Cloud milestone. Neither date identifies an immutable current hosted runtime.", "sourceUri": "https://docs.lovable.dev/changelog?page=1", "legacySource": null },
+    "limitations": [
+      "All service claims are attributed to Lovable public sources; no service behavior was observed.",
+      "No account, project, Cloud environment, repository connection, browser test or deployment was created or run.",
+      "Dated changelog milestones do not freeze current prompts, tools, models, infrastructure or policy.",
+      "Plan, Build, serial main-task queue, read-only subagent, verification, Cloud, GitHub and publish paths are separately scoped.",
+      "Parallel subagent evidence applies only to temporary read-only investigations; it does not support parallel project-writing agents.",
+      "GitHub synchronization is distinct from Lovable's own publish action and neither is inferred to have occurred.",
+      "No independent evaluation was admitted.",
+      "No capability quality, safety, privacy, performance or suitability conclusion is supported."
+    ],
+    "unknowns": [
+      "The current Lovable service, prompt, tool and orchestration revisions are unknown.",
+      "The exact current model mix, provider endpoints, routing and inference configuration are unknown.",
+      "The project type, source files, dependencies, build state and access policy are unknown.",
+      "The active Plan or Build mode, task queue, repeat count and interruption state are unknown.",
+      "Whether temporary subagents ran, their count, task briefings, model routes, tools, findings and timing are unknown.",
+      "The verification tools requested, environment, authenticated user, test inputs and results are unknown.",
+      "Lovable Cloud enablement, backend revision, region and per-tool permission settings are unknown.",
+      "GitHub OAuth identity, App installation, repository scope, linked repository and branch state are unknown.",
+      "The execution principal and attribution of synced commits are unresolved.",
+      "The publish state, deployed snapshot, live URL, website access and project access are unknown.",
+      "Retention, training, telemetry and organization policy applicable to a particular account are not yet researched in this dossier.",
+      "No independently attributable reproducible service evaluation artifact was identified."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      { "id": "service-auditor", "label": "Service auditor", "prompt": "Inspect dated milestones without treating them as immutable runtime versions.", "propositionIds": ["identity", "model"] },
+      { "id": "authority-reviewer", "label": "Authority reviewer", "prompt": "Inspect mode, tool, repository and publish authority separately.", "propositionIds": ["workspace", "verification", "cloud", "output"] },
+      { "id": "workflow-reviewer", "label": "Workflow reviewer", "prompt": "Inspect the serial main-task queue and conditional read-only subagent execution separately.", "propositionIds": ["queue", "evaluation"] }
+    ],
+    "propositions": [
+      { "id": "identity", "eyebrow": "Rolling service", "question": "Which Lovable Build mode runtime is identified?", "status": "Current name and dated milestones; runtime unresolved", "tone": "attention", "answer": "Current publisher documentation names Build mode and identifies Agent mode as its former name; the dated Agent-mode transition and model milestone do not identify the current service revision.", "whyItMatters": "A publisher-sourced rename and hosted milestones do not freeze the runtime behind a later task.", "claimIds": ["com.lovable.agent.hosted.agent-default-milestone-2025-08-11", "com.lovable.agent.hosted.model-service-milestone-2026-04-24", "com.lovable.agent.hosted.agent-plan-modes-current"] },
+      { "id": "model", "eyebrow": "Model route", "question": "Which model executes a task?", "status": "Publisher-managed and unresolved", "tone": "attention", "answer": "A dated changelog entry names an incorporated model, but current routing and endpoint identity remain unknown.", "whyItMatters": "Service identity and model identity change on different schedules.", "claimIds": ["com.lovable.agent.hosted.model-service-milestone-2026-04-24"] },
+      { "id": "workspace", "eyebrow": "Project changes", "question": "What does Build mode change?", "status": "Direct project changes claimed", "tone": "qualified", "answer": "Current docs distinguish non-writing Plan mode from Build mode that applies multi-file changes and exposes diffs and summaries.", "whyItMatters": "The active mode determines file authority.", "claimIds": ["com.lovable.agent.hosted.agent-plan-modes-current", "com.lovable.agent.hosted.agent-file-execution-current"] },
+      { "id": "queue", "eyebrow": "Concurrency", "question": "Where can work run in parallel?", "status": "Serial main queue; conditional parallel read-only subagents", "tone": "qualified", "answer": "The main Build-mode prompt queue processes one task at a time, while temporary read-only subagents may perform separate investigations in parallel and report findings to the main agent.", "whyItMatters": "Parallel read-only investigation is not parallel project-writing authority.", "claimIds": ["com.lovable.agent.hosted.serial-prompt-queue-current", "com.lovable.agent.hosted.parallel-read-only-subagents-current"] },
+      { "id": "verification", "eyebrow": "Verification", "question": "Which checks may run?", "status": "Tool and trigger dependent", "tone": "attention", "answer": "Browser, frontend and edge checks are documented, with many paths requiring an explicit request or confirmation.", "whyItMatters": "Tool availability does not prove any check ran.", "claimIds": ["com.lovable.agent.hosted.verification-tools-current", "com.lovable.agent.hosted.browser-testing-current"] },
+      { "id": "cloud", "eyebrow": "Cloud authority", "question": "Which backend actions and region apply?", "status": "Per-tool alternatives; unresolved", "tone": "attention", "answer": "Cloud tools can be always allowed, asked each time or denied, and new projects can use several regions.", "whyItMatters": "Backend mutation authority and execution location are separately configurable.", "claimIds": ["com.lovable.agent.hosted.cloud-tool-permissions-current"] },
+      { "id": "output", "eyebrow": "Repository and publish output", "question": "Where do changes go?", "status": "GitHub sync and publish are separate", "tone": "attention", "answer": "A connected GitHub App can sync the linked repository, while a live deployment requires an explicit Publish or Update action.", "whyItMatters": "Repository mutation does not automatically imply live deployment.", "claimIds": ["com.lovable.agent.hosted.github-sync-current", "com.lovable.agent.hosted.publish-boundary-current"] },
+      { "id": "evaluation", "eyebrow": "Independent evidence", "question": "Was this service independently evaluated here?", "status": "No", "tone": "neutral", "answer": "No reproducible exact-service evaluation passed into this dossier.", "whyItMatters": "Publisher documentation is attribution, not observed behavior.", "claimIds": ["com.lovable.agent.hosted.agent-default-milestone-2025-08-11"] }
+    ]
+  },
+  "boundaries": { "publisherContacted": false, "intakeOpened": false, "agentInstalled": false, "agentRun": false, "independentlyTested": false, "catalogEvaluation": false, "ranking": false, "recommendation": false, "safetyCertification": false, "published": false, "note": "Unpublished public-source attribution only; current and former names, dated milestones, rolling runtime, serial main tasks, read-only subagents and configured authority remain separate." },
+  "rawClaimPaths": [
+    "claims/lovable-agent-mode-hosted/agent-default-milestone-2025-08-11.json",
+    "claims/lovable-agent-mode-hosted/model-service-milestone-2026-04-24.json",
+    "claims/lovable-agent-mode-hosted/agent-plan-modes-current.json",
+    "claims/lovable-agent-mode-hosted/agent-file-execution-current.json",
+    "claims/lovable-agent-mode-hosted/serial-prompt-queue-current.json",
+    "claims/lovable-agent-mode-hosted/parallel-read-only-subagents-current.json",
+    "claims/lovable-agent-mode-hosted/verification-tools-current.json",
+    "claims/lovable-agent-mode-hosted/browser-testing-current.json",
+    "claims/lovable-agent-mode-hosted/cloud-tool-permissions-current.json",
+    "claims/lovable-agent-mode-hosted/github-sync-current.json",
+    "claims/lovable-agent-mode-hosted/publish-boundary-current.json"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.release-identity-0-90-0",
+  "slug": "release-identity-0-90-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-90-0" }
+  },
+  "claim": {
+    "category": "identity",
+    "statement": "OpenAI's official release identifies Codex CLI 0.90.0 at tag rust-v0.90.0; the annotated tag resolves to source commit b4e230f8de8f71d08f48c469443ed61a9f365af3 and the release was published at 2026-01-25T16:37:37Z."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "OpenAI" },
+  "source": {
+    "uri": "https://github.com/openai/codex/releases/tag/rust-v0.90.0",
+    "title": "OpenAI Codex release 0.90.0",
+    "locator": "Release heading, tag rust-v0.90.0, annotated tag object and publication metadata",
+    "publishedAt": "2026-01-25T16:37:37Z",
+    "capturedAt": "2026-08-01T00:47:47Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "0.90.0" },
+    "configuration": { "scope": "unspecified", "values": [] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["local Codex CLI release"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-01-25", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "release-tag-rewrite", "manual-review"]
+  },
+  "limitations": [
+    "The release and tag identify publisher source, not the package or executable installed by any user.",
+    "The catalog did not download or execute the release and did not independently verify the tag or runtime."
+  ],
+  "unknowns": [
+    "The installed artifact, platform, architecture, executable digest and effective configuration are unknown.",
+    "The annotated tag is unsigned according to the tag API response; no independent source-signing assessment was performed."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

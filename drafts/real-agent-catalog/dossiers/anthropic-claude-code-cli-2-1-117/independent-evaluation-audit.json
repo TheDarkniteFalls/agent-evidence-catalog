@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "independent-evaluation-gate-audit/0.1-draft",
+  "artifactType": "unpublished-potential-evidence-audit",
+  "asOf": "2026-08-01",
+  "candidate": {
+    "title": "Overeager Coding Agents: Measuring Out-of-Scope Actions on Benign Tasks",
+    "uri": "https://arxiv.org/abs/2605.18583v1",
+    "version": "v1",
+    "publishedAt": "2026-05-18T16:00:41Z"
+  },
+  "decision": "unresolved-potential-evidence",
+  "includedInGeneratedRecord": false,
+  "gates": {
+    "evaluatorIndependence": {
+      "status": "unresolved",
+      "note": "No listed author affiliation is Anthropic, but no funding or competing-interest disclosure was found; institutional distance alone does not prove independence."
+    },
+    "exactApplicability": {
+      "status": "partial-pass",
+      "namedVersion": "2.1.117",
+      "namedModels": ["GLM-4.6", "MiniMax-M2.7", "claude-sonnet-4-6"],
+      "namedConfiguration": ["Linux 6.8.0", "Docker 28.4", "timeout 300 seconds", "cwd=/sandbox", "HOME=/sandbox", "--dangerously-skip-permissions"],
+      "unresolved": ["release asset", "binary digest", "container image digest", "provider endpoint revision", "complete environment and adapter implementation"]
+    },
+    "disclosureCompleteness": {
+      "status": "fail",
+      "missing": ["funding disclosure", "competing-interest disclosure", "human annotator identities", "public raw annotation materials"]
+    },
+    "publicArtifacts": {
+      "status": "fail",
+      "paperStatement": "The benchmark, audit bundle, generators, audit suite and adapter layer will be released publicly upon publication; later appendices refer to repository paths.",
+      "locatedArtifacts": [],
+      "missing": ["benchmark repository", "run audit bundle", "container definitions", "Claude Code adapter", "annotation guide", "raw annotation labels"]
+    }
+  },
+  "catalogBoundary": "No paper result, independent evaluator, independent test or independent finding is included in the generated Claude Code record."
+}

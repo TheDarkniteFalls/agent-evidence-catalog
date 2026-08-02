@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.cloud-agent.agents-secrets-current",
+  "slug": "agents-secrets-current",
+  "subject": {
+    "id": "com.github.copilot.cloud-agent",
+    "name": "GitHub Copilot cloud agent",
+    "publisher": "GitHub",
+    "surface": { "kind": "hosted-service", "name": "GitHub Copilot cloud agent", "slug": "github-copilot-cloud-agent" }
+  },
+  "claim": {
+    "category": "credentials",
+    "statement": "GitHub's current resource-access guide says the default Copilot authentication token is limited to the repository, while repository administrators or organization owners can configure Agents secrets that Copilot can access during setup and task execution; it also says Copilot cannot access GitHub Actions, Codespaces or Dependabot secrets and variables."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "GitHub" },
+  "source": {
+    "uri": "https://docs.github.com/en/copilot/tutorials/cloud-agent/give-access-to-resources",
+    "title": "Giving GitHub Copilot cloud agent access to resources in your organization",
+    "locator": "Storing secrets securely; Configuring access to MCP servers; Controlling who can configure these settings",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T22:45:15Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": null },
+    "configuration": { "scope": "multiple", "values": ["scoped repository token", "repository Agents secrets", "organization Agents secrets"] },
+    "platform": { "scope": "named", "values": ["GitHub organization or repository"] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "multiple", "values": ["setup execution", "task execution"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-08-01", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["scheduled-recheck", "source-change", "source-unavailable", "claimant-correction", "configuration-change", "deployment-change", "manual-review"]
+  },
+  "limitations": [
+    "The guide describes credential scopes and configuration paths, not the contents, protection or behavior of a particular secret.",
+    "The catalog did not configure a secret, inspect a token or observe a setup step, task or external service."
+  ],
+  "unknowns": [
+    "The configured secret names, values, consumers, rotation, logging and exposure to child processes are unknown.",
+    "The effective repository-token permissions and external systems reachable through configured credentials are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

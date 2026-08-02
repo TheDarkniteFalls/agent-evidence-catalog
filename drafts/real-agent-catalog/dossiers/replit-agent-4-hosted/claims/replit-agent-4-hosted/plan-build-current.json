@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.replit.agent.hosted.plan-build-current",
+  "slug": "plan-build-current",
+  "subject": { "id": "com.replit.agent.hosted", "name": "Replit Agent", "publisher": "Replit", "surface": { "kind": "hosted-service", "name": "Replit Agent hosted workspace", "slug": "replit-agent-4-hosted" } },
+  "claim": { "category": "approval-authority", "statement": "Replit's current Plan Mode page says Plan mode does not modify project code or data and that selecting Start building approves the proposed tasks, switches Agent to Build mode and begins implementation; continuing to chat instead refines the plan." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Replit" },
+  "source": { "uri": "https://docs.replit.com/features/agent/plan-mode", "title": "Plan Mode — Replit", "locator": "What is Plan Mode?; Task Approval; Transition to Build Mode", "publishedAt": null, "capturedAt": "2026-08-01T06:29:56Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["Plan mode", "Build mode", "Start building", "continue refining"] }, "platform": { "scope": "named", "values": ["Replit App with Agent enabled"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["Replit hosted Project Editor"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["plan-mode-change", "approval-flow-change", "build-mode-change"] },
+  "limitations": ["The documented button flow is not evidence of a particular plan, approver, authorization decision or resulting write."],
+  "unknowns": ["The effective interaction mode, task list, approver identity, approval receipt and resulting changes are unknown."],
+  "relationships": [], "validationRefs": []
+}

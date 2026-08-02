@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Give an agent structured PatchPilot evidence with sources, exact scope, disagreements and limits.">
+    <title>Use PatchPilot evidence with an agent · Agent Evidence Catalog</title>
+    <link rel="alternate" type="application/json" href="agent-dossier.json" title="PatchPilot evidence data for agents">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="claims.css">
+  </head>
+  <body data-page="agent-access">
+    <a class="skip-link" href="#agentMain">Skip to agent instructions</a>
+    <header class="site-header claims-header report-header">
+      <a class="brand" href="index.html" aria-label="Agent Evidence Catalog home">Agent Evidence Catalog</a>
+      <nav aria-label="Evidence pages">
+        <a href="claims.html">Evidence summary</a>
+        <a href="report.html">Sources and details</a>
+      </nav>
+    </header>
+    <aside class="synthetic-banner claims-banner" aria-label="Fictional example notice">
+      <strong>Fictional example.</strong> The data below demonstrates how an agent can consume evidence; it is not an independent test, ranking or recommendation.
+    </aside>
+
+    <main id="agentMain" class="agent-main">
+      <section id="agentError" class="claims-error" role="alert" hidden></section>
+      <header class="agent-title">
+        <p class="section-kicker">For agent workflows</p>
+        <h1>Use PatchPilot evidence with an agent</h1>
+        <p>Give an agent the JSON URL below so it can identify exact versions, sources, disagreements and limits without scraping this page.</p>
+      </header>
+
+      <section class="agent-endpoint" aria-labelledby="endpoint-heading">
+        <div>
+          <p class="section-kicker">Give your agent this URL</p>
+          <h2 id="endpoint-heading"><code>agent-dossier.json</code></h2>
+          <p>It returns <code>application/json</code> and is linked from the summary and details pages. Ask your agent to cite statement IDs and respect the decision limits before drawing conclusions.</p>
+        </div>
+        <dl id="agentSummary" class="agent-summary"></dl>
+      </section>
+
+      <section class="agent-contract" aria-labelledby="contract-title">
+        <header>
+          <div>
+            <p class="section-kicker">Preview what the agent receives</p>
+            <h2 id="contract-title">Structured evidence data</h2>
+          </div>
+          <p>Includes the product, practical questions, who made each statement, exact scope, conflicts, limits and links to the source data.</p>
+        </header>
+        <pre id="agentJson" tabindex="0" aria-label="PatchPilot agent evidence dossier JSON"></pre>
+      </section>
+    </main>
+
+    <script src="agent-dossier.js"></script>
+    <script src="agent-app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0", "id": "com.lovable.agent.hosted.agent-default-milestone-2025-08-11", "slug": "agent-default-milestone-2025-08-11",
+  "subject": { "id": "com.lovable.agent.hosted", "name": "Lovable Agent mode", "publisher": "Lovable", "surface": { "kind": "hosted-service", "name": "Lovable Agent mode", "slug": "lovable-agent-mode-hosted" } },
+  "claim": { "category": "service.release-milestone", "statement": "Lovable's changelog says Agent mode became the default mode on 2025-08-11 and that the prior non-agent legacy mode was scheduled to sunset on 2025-09-01." },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "Lovable" },
+  "source": { "uri": "https://docs.lovable.dev/changelog?page=1", "title": "Lovable changelog", "locator": "Aug 11, 2025 — Agent Mode is the new default mode", "publishedAt": "2025-08-11T00:00:00Z", "capturedAt": "2026-08-01T10:46:26Z", "snapshot": null },
+  "applicability": { "version": { "kind": "release-line", "value": "2025-08-11 hosted service milestone" }, "configuration": { "scope": "named", "values": ["Agent mode default", "legacy non-agent mode transition"] }, "platform": { "scope": "named", "values": ["Lovable hosted browser workspace"] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["Lovable hosted service"] } },
+  "lifecycle": { "status": "historical", "changedAt": "2025-08-11T00:00:00Z", "reason": "Dated service transition retained as an identity anchor." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["changelog-correction", "mode-renaming"] },
+  "limitations": ["The milestone does not freeze the current service implementation, prompts, tools, models or infrastructure."],
+  "unknowns": ["The exact runtime revision deployed on the milestone date is unavailable."],
+  "relationships": [], "validationRefs": []
+}
+

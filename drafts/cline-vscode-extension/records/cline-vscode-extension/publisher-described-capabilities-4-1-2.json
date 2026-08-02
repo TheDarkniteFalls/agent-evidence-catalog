@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.publisher-described-capabilities-4-1-2",
+  "slug": "publisher-described-capabilities-4-1-2",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension"
+    }
+  },
+  "claim": {
+    "category": "capability",
+    "statement": "The publisher's README at the 4.1.2 release commit describes the VS Code extension as able to create files, run commands, browse the web and use tools with human-in-the-loop approval."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://github.com/cline/cline/blob/644e84173724b50d6a248f813d01c7f1dad9ecf2/README.md",
+    "title": "Cline README at the VS Code 4.1.2 release commit",
+    "locator": "VS Code Extension; Edits Code Across Your Project; Runs Bash Commands",
+    "publishedAt": null,
+    "capturedAt": "2026-07-31T10:37:35Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "4.1.2"
+    },
+    "configuration": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": ["VS Code extension"]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-31",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-07-31",
+    "recheckAfter": "2026-10-29",
+    "invalidatedBy": [
+      "scheduled-recheck",
+      "source-unavailable",
+      "claimant-correction",
+      "product-version-change",
+      "product-surface-change",
+      "configuration-change"
+    ]
+  },
+  "limitations": [
+    "This is a publisher description of capabilities and approval framing; the catalog did not exercise any capability.",
+    "The exact-version mapping uses the README and package metadata at the same release commit rather than an installed artifact."
+  ],
+  "unknowns": [
+    "Whether every described capability behaves identically in the Legacy and Next 4.1.2 variants is unknown.",
+    "Platform, model-provider and effective-tool differences were not established."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

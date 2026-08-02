@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.service-user-attribution-current",
+  "slug": "service-user-attribution-current",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "authority.identity", "statement": "Cognition's authentication reference distinguishes service-user API keys from closed-beta human Personal Access Tokens; says service-user-created sessions are attributed to the service user by default; and requires ImpersonateOrgSessions when create_as_user_id attributes a session to a specific human user." },
+  "provenance": { "kind": "publisher-declared", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/api-reference/authentication", "title": "Authentication", "locator": "Credential principal distinction; Service users; Session attribution with create_as_user_id; Personal access tokens", "publishedAt": null, "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "v3 authentication captured 2026-08-01" },
+    "configuration": { "scope": "alternatives", "values": ["service-user API key", "human PAT closed beta", "service-user default attribution", "create_as_user_id human attribution", "ImpersonateOrgSessions permission"] },
+    "platform": { "scope": "named", "values": ["Devin v3 API"] },
+    "model": { "scope": "not-applicable", "values": [] },
+    "deployment": { "scope": "alternatives", "values": ["organization API", "enterprise API", "dedicated custom API domain"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-08-15", "invalidatedBy": ["authentication-change", "pat-availability-change", "permission-change", "attribution-change"] },
+  "limitations": ["Documented identity and permission rules do not establish the principal, target or successful authorization of any request."],
+  "unknowns": ["The credential type, service user, target human, roles, organization membership and audit attribution are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

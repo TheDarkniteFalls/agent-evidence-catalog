@@ -1,0 +1,2868 @@
+{
+  "schemaVersion": "real-agent-dossier/0.1-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-01",
+  "sourceDossier": {
+    "path": "dossiers/gitlab-duo-developer-flow-18-8/dossier-source.json",
+    "sha256": "98a233bf770270cf3aa8e1af93278c0d009da995542820e3fd95d8e87c33fd48",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+    "agent": {
+      "id": "com.gitlab.duo-agent-platform.developer-flow",
+      "name": "GitLab Duo Developer Flow"
+    },
+    "publisher": {
+      "id": "gitlab-inc",
+      "name": "GitLab, Inc."
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitLab Duo Developer Flow",
+      "slug": "gitlab-duo-developer-flow-18-8",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "18.8.0-ee",
+      "releaseTag": "v18.8.0-ee",
+      "sourceRevision": "1010a9b2b769993080ce8399fd25e77c54e1ad1c",
+      "releasedAt": null,
+      "channel": "GitLab 18.8 Enterprise Edition source release and Duo Agent Platform GA milestone",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "GitLab.com rolling service",
+          "GitLab Self-Managed 18.8 EE deployment",
+          "GitLab Dedicated rolling service",
+          "GitLab-hosted runner",
+          "user-managed runner"
+        ],
+        "note": "The exact source tag is not a complete hosted or executed runtime. No GitLab service, package, runner, Duo CLI executor, model endpoint, feature-flag state or project configuration was installed, invoked or inspected."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "gitlab-source-tag-v18-8-0-ee",
+        "kind": "source-revision",
+        "identityStatus": "exact",
+        "uri": "https://gitlab.com/gitlab-org/gitlab/-/tags/v18.8.0-ee",
+        "ecosystem": "GitLab Enterprise Edition source",
+        "version": "18.8.0-ee",
+        "digest": "1010a9b2b769993080ce8399fd25e77c54e1ad1c",
+        "note": "Protected publisher tag and linked source revision. No source archive or built package was downloaded."
+      },
+      {
+        "id": "gitlab-18-8-ga-release",
+        "kind": "hosted-release",
+        "identityStatus": "exact",
+        "uri": "https://about.gitlab.com/whats-new/18-8/",
+        "ecosystem": "GitLab release history",
+        "version": "18.8",
+        "digest": null,
+        "note": "Dated release-line milestone for Duo Agent Platform and Developer Flow GA, not a service-revision identifier."
+      },
+      {
+        "id": "gitlab-managed-service-runtime",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": null,
+        "ecosystem": "GitLab.com or GitLab Dedicated service",
+        "version": null,
+        "digest": null,
+        "note": "No immutable service revision, deployment receipt or offering-specific backend identity was available."
+      },
+      {
+        "id": "duo-runner-executor-runtime",
+        "kind": "other",
+        "identityStatus": "unresolved",
+        "uri": null,
+        "ecosystem": "GitLab Runner, @gitlab/duo-cli and Duo Workflow Service",
+        "version": null,
+        "digest": null,
+        "note": "Publisher documentation says the executor is GitLab-managed and updated; no package version, runner image or Workflow Service revision was captured."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "gitlab-inc",
+        "name": "GitLab, Inc.",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-release-identity-18-8-0-ee",
+      "uri": "https://gitlab.com/gitlab-org/gitlab/-/tags/v18.8.0-ee",
+      "title": "GitLab v18.8.0-ee tag",
+      "locator": "Protected tag, version label and linked Update VERSION files revision",
+      "sourceKind": "publisher-versioned-source",
+      "claimantId": "gitlab-inc",
+      "publishedAt": "2026-01-14T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Protected exact Enterprise Edition source tag linked to revision 1010a9b2b769993080ce8399fd25e77c54e1ad1c."
+      }
+    },
+    {
+      "id": "source-developer-flow-ga-18-8",
+      "uri": "https://about.gitlab.com/whats-new/18-8/",
+      "title": "What's new in GitLab 18.8",
+      "locator": "GitLab 18.8 release date and Developer (Issue to Merge Request) Flow feature entry",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "gitlab-inc",
+      "publishedAt": "2026-01-15T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Dated GitLab 18.8 release page and Developer Flow GA milestone."
+      }
+    },
+    {
+      "id": "source-offering-scope-ga-18-8",
+      "uri": "https://about.gitlab.com/press/releases/2026-01-15-gitlab-announces-duo-agent-platform-general-availability/",
+      "title": "GitLab announces Duo Agent Platform general availability",
+      "locator": "Availability paragraph and GitLab 18.8 release-cycle statement",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "gitlab-inc",
+      "publishedAt": "2026-01-15T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Dated publisher announcement preserving launch-day GitLab.com, Self-Managed and planned Dedicated scope."
+      }
+    },
+    {
+      "id": "source-offering-scope-current",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+      "title": "Developer Flow",
+      "locator": "Page availability details: Offering",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling capability, prerequisite, offering and invocation documentation with embedded release history."
+      }
+    },
+    {
+      "id": "source-developer-capabilities-current",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+      "title": "Developer Flow",
+      "locator": "Overview task list",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling capability, prerequisite, offering and invocation documentation with embedded release history."
+      }
+    },
+    {
+      "id": "source-trigger-framework-ga-18-8",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/triggers/",
+      "title": "Triggers",
+      "locator": "History and configuration-source history",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling trigger configuration and event documentation with release-line history."
+      }
+    },
+    {
+      "id": "source-trigger-paths-current",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+      "title": "Developer Flow",
+      "locator": "Use the flow and Agentic Chat history sections",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling capability, prerequisite, offering and invocation documentation with embedded release history."
+      }
+    },
+    {
+      "id": "source-composite-identity-18-8",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/composite_identity/",
+      "title": "Composite identity",
+      "locator": "History",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling identity and token-scope architecture with 18.8 and 18.9 history."
+      }
+    },
+    {
+      "id": "source-composite-identity-current",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/composite_identity/",
+      "title": "Composite identity",
+      "locator": "How composite identity works and Composite identity workflow",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling identity and token-scope architecture with 18.8 and 18.9 history."
+      }
+    },
+    {
+      "id": "source-flow-executor-current",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+      "title": "Configure flow execution",
+      "locator": "Executor architecture",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling CI/CD executor, runner, sandbox and agent-config documentation."
+      }
+    },
+    {
+      "id": "source-runner-configuration-current",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+      "title": "Configure flow execution",
+      "locator": "Configure runners to execute flows",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling CI/CD executor, runner, sandbox and agent-config documentation."
+      }
+    },
+    {
+      "id": "source-agent-config-current",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+      "title": "Configure flow execution",
+      "locator": "Configure CI/CD execution, Create the agent configuration file and Configure setup scripts",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling CI/CD executor, runner, sandbox and agent-config documentation."
+      }
+    },
+    {
+      "id": "source-model-selection-18-8",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/model_selection/",
+      "title": "Agent Platform AI models",
+      "locator": "Select a model for a feature: History",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling defaults and supported-model table plus versioned feature-flag history."
+      }
+    },
+    {
+      "id": "source-model-selection-current",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/model_selection/",
+      "title": "Agent Platform AI models",
+      "locator": "Default models, Select a model for a feature and Model is not available",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling defaults and supported-model table plus versioned feature-flag history."
+      }
+    },
+    {
+      "id": "source-background-tool-governance-19-3",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/agents/tool-governance/",
+      "title": "Agent tool governance",
+      "locator": "History, background-flow enforcement and Known issues",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Rolling beta governance page. Background-flow enforcement is a 19.3 feature-flagged boundary and is not projected into 18.8."
+      }
+    },
+    {
+      "id": "source-security-controls-current",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/security_threats/",
+      "title": "Security threats in agentic systems",
+      "locator": "Content protection layers and execution-mode security-control table",
+      "sourceKind": "publisher-policy",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-01T03:07:57Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Current publisher security architecture and threat-model guidance, not an independent security evaluation."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "The source release, three offerings, composite identity, trigger path, CI/CD runner, executor, agent-config, model and approval authority remain independent applicability dimensions. No effective instance or session configuration was inspected.",
+    "axes": [
+      {
+        "id": "offering",
+        "label": "GitLab offering",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "gitlab-com",
+            "label": "GitLab.com",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+              "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "self-managed",
+              "dedicated"
+            ]
+          },
+          {
+            "id": "self-managed",
+            "label": "GitLab Self-Managed",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.release-identity-18-8-0-ee",
+              "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+              "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "gitlab-com",
+              "dedicated"
+            ]
+          },
+          {
+            "id": "dedicated",
+            "label": "GitLab Dedicated",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+              "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "gitlab-com",
+              "self-managed"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective offering, tier, service revision, patch release and rollout state are unresolved."
+        ]
+      },
+      {
+        "id": "trigger-path",
+        "label": "Developer Flow trigger path",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "mention",
+            "label": "Configured mention",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.trigger-framework-ga-18-8",
+              "com.gitlab.duo-agent-platform.developer-flow.trigger-paths-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "assign",
+              "implement-control",
+              "agentic-chat"
+            ]
+          },
+          {
+            "id": "assign",
+            "label": "Service-account assignment",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.trigger-framework-ga-18-8",
+              "com.gitlab.duo-agent-platform.developer-flow.trigger-paths-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "mention",
+              "implement-control",
+              "agentic-chat"
+            ]
+          },
+          {
+            "id": "implement-control",
+            "label": "Implement work item control",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.trigger-paths-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "mention",
+              "assign",
+              "agentic-chat"
+            ]
+          },
+          {
+            "id": "agentic-chat",
+            "label": "Agentic Chat, 19.2+ feature-flagged",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.trigger-paths-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "mention",
+              "assign",
+              "implement-control"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The invoked path, event configuration, initiator and feature flags are unresolved. Agentic Chat postdates 18.8."
+        ]
+      },
+      {
+        "id": "execution-identity",
+        "label": "Runner execution identity",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "composite-configured-18-8",
+            "label": "18.8 composite identity enabled",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8"
+            ],
+            "mutuallyExclusiveWith": [
+              "composite-disabled-18-8",
+              "composite-automatic"
+            ]
+          },
+          {
+            "id": "composite-disabled-18-8",
+            "label": "18.8 composite identity disabled",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8"
+            ],
+            "mutuallyExclusiveWith": [
+              "composite-configured-18-8",
+              "composite-automatic"
+            ]
+          },
+          {
+            "id": "composite-automatic",
+            "label": "18.9+ automatic composite identity",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8",
+              "com.gitlab.duo-agent-platform.developer-flow.composite-identity-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "composite-configured-18-8",
+              "composite-disabled-18-8"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The initiating human, service account, roles, project intersection, token types and effective scopes are unresolved."
+        ]
+      },
+      {
+        "id": "runner-provider",
+        "label": "CI/CD runner provider",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "hosted-runner",
+            "label": "GitLab-hosted runner",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.flow-executor-current",
+              "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "user-managed-runner"
+            ]
+          },
+          {
+            "id": "user-managed-runner",
+            "label": "User-managed runner",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.flow-executor-current",
+              "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "hosted-runner"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The runner owner, registration scope, runner version, instance, capacity and ephemeral-state behavior are unresolved."
+        ]
+      },
+      {
+        "id": "runner-executor",
+        "label": "User-managed runner executor",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "docker",
+            "label": "Docker",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "docker-autoscaler",
+              "kubernetes",
+              "unsupported-shell"
+            ]
+          },
+          {
+            "id": "docker-autoscaler",
+            "label": "Docker Autoscaler",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "docker",
+              "kubernetes",
+              "unsupported-shell"
+            ]
+          },
+          {
+            "id": "kubernetes",
+            "label": "Kubernetes",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "docker",
+              "docker-autoscaler",
+              "unsupported-shell"
+            ]
+          },
+          {
+            "id": "unsupported-shell",
+            "label": "Shell, unsupported",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "docker",
+              "docker-autoscaler",
+              "kubernetes"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The executor and its isolation, privilege and filesystem settings are unresolved."
+        ]
+      },
+      {
+        "id": "execution-sandbox",
+        "label": "Execution sandbox and image",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "default-srt",
+            "label": "Default Agent Platform image with SRT",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+              "com.gitlab.duo-agent-platform.developer-flow.agent-config-current",
+              "com.gitlab.duo-agent-platform.developer-flow.security-controls-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "custom-srt",
+              "custom-no-srt",
+              "hardened-ubi-no-sandbox"
+            ]
+          },
+          {
+            "id": "custom-srt",
+            "label": "Custom image with SRT",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+              "com.gitlab.duo-agent-platform.developer-flow.agent-config-current",
+              "com.gitlab.duo-agent-platform.developer-flow.security-controls-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "default-srt",
+              "custom-no-srt",
+              "hardened-ubi-no-sandbox"
+            ]
+          },
+          {
+            "id": "custom-no-srt",
+            "label": "Custom image without SRT",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+              "com.gitlab.duo-agent-platform.developer-flow.agent-config-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "default-srt",
+              "custom-srt",
+              "hardened-ubi-no-sandbox"
+            ]
+          },
+          {
+            "id": "hardened-ubi-no-sandbox",
+            "label": "Hardened UBI image without sandbox support",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+              "com.gitlab.duo-agent-platform.developer-flow.security-controls-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "default-srt",
+              "custom-srt",
+              "custom-no-srt"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The image digest, SRT version, privileged-runner state, sandbox paths and effective network policy are unresolved."
+        ]
+      },
+      {
+        "id": "agent-config",
+        "label": "Default-branch execution configuration",
+        "scope": "composable",
+        "alternatives": [
+          {
+            "id": "image",
+            "label": "Container image",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.agent-config-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "setup-script",
+            "label": "Pre-SRT setup script",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.agent-config-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "network-policy",
+            "label": "Network policy",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.agent-config-current",
+              "com.gitlab.duo-agent-platform.developer-flow.security-controls-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "cache",
+            "label": "CI/CD cache",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.agent-config-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The default-branch file, branch protections, image, commands, variables, credentials, destinations and cache contents are unresolved."
+        ]
+      },
+      {
+        "id": "model-selection",
+        "label": "Agent Platform model",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "rolling-default",
+            "label": "GitLab-managed rolling default",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+              "com.gitlab.duo-agent-platform.developer-flow.model-selection-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "selected-model"
+            ]
+          },
+          {
+            "id": "selected-model",
+            "label": "Administrator-selected supported model",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+              "com.gitlab.duo-agent-platform.developer-flow.model-selection-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "rolling-default"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The exact model, provider, checkpoint, endpoint, namespace setting, inheritance, reasoning parameters and change time are unresolved."
+        ]
+      },
+      {
+        "id": "background-tool-authority",
+        "label": "Background tool authority",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "18-8-unresolved",
+            "label": "GitLab 18.8 behavior unresolved",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.security-controls-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "19-3-flag-disabled",
+              "19-3-always-allow",
+              "19-3-always-deny"
+            ]
+          },
+          {
+            "id": "19-3-flag-disabled",
+            "label": "19.3 background governance flag disabled",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.background-tool-governance-19-3"
+            ],
+            "mutuallyExclusiveWith": [
+              "18-8-unresolved",
+              "19-3-always-allow",
+              "19-3-always-deny"
+            ]
+          },
+          {
+            "id": "19-3-always-allow",
+            "label": "19.3+ Always Allow",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.background-tool-governance-19-3"
+            ],
+            "mutuallyExclusiveWith": [
+              "18-8-unresolved",
+              "19-3-flag-disabled",
+              "19-3-always-deny"
+            ]
+          },
+          {
+            "id": "19-3-always-deny",
+            "label": "19.3+ Always Deny",
+            "claimIds": [
+              "com.gitlab.duo-agent-platform.developer-flow.background-tool-governance-19-3"
+            ],
+            "mutuallyExclusiveWith": [
+              "18-8-unresolved",
+              "19-3-flag-disabled",
+              "19-3-always-allow"
+            ]
+          }
+        ],
+        "unknowns": [
+          "GitLab 18.8 tool-approval behavior is unresolved. Current background flows have no interactive Always Ask path because no user is present."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.release-identity-18-8-0-ee",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/release-identity-18-8-0-ee.json",
+      "rawRecordSha256": "59d5b23e6efa0f8a29e9f336169ff1bfe6b3b0e6b984bd0c73d92d6e7720fa50",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.release-identity-18-8-0-ee",
+        "slug": "release-identity-18-8-0-ee",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "GitLab's protected v18.8.0-ee tag identifies the Enterprise Edition source release at revision 1010a9b2b769993080ce8399fd25e77c54e1ad1c."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://gitlab.com/gitlab-org/gitlab/-/tags/v18.8.0-ee",
+          "title": "GitLab v18.8.0-ee tag",
+          "locator": "Protected tag, version label and linked Update VERSION files revision",
+          "publishedAt": "2026-01-14T00:00:00Z",
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "18.8.0-ee"
+          },
+          "configuration": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitLab Enterprise Edition source"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "GitLab Self-Managed source release"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "historical",
+          "changedAt": "2026-01-14",
+          "reason": "Exact source tag retained as the dossier identity anchor."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "publisher-tag-correction",
+            "source-revision-correction"
+          ]
+        },
+        "limitations": [
+          "A GitLab application source tag does not identify the GitLab.com or Dedicated service revision, runner image, GitLab Duo CLI package, Agent Platform service or model backend.",
+          "No source archive, Linux package, container image or running instance was downloaded, hashed or inspected."
+        ],
+        "unknowns": [
+          "The package or container digest and the deployed patch version of any Self-Managed instance are unknown.",
+          "The exact relationship between this source revision and GitLab-managed hosted services is unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-release-identity-18-8-0-ee",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "platform-owner",
+        "evidence-auditor"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.developer-flow-ga-18-8",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/developer-flow-ga-18-8.json",
+      "rawRecordSha256": "77ec22040192ee3b5ee7a156d1853b529832b87246f71943e0a60cdcf5dc4dcf",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.developer-flow-ga-18-8",
+        "slug": "developer-flow-ga-18-8",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "identity.lifecycle",
+          "statement": "GitLab's 18.8 release page presents the Developer (Issue to Merge Request) Flow as part of the generally available Duo Agent Platform and describes it as automating a ready issue into a structured merge request."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://about.gitlab.com/whats-new/18-8/",
+          "title": "What's new in GitLab 18.8",
+          "locator": "GitLab 18.8 release date and Developer (Issue to Merge Request) Flow feature entry",
+          "publishedAt": "2026-01-15T00:00:00Z",
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "18.8"
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Duo Agent Platform enabled",
+              "Developer foundational flow enabled"
+            ]
+          },
+          "platform": {
+            "scope": "configuration-dependent",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated release-cycle scope"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": [
+              "model not identified by this release entry"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "repository-integrated background flow"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-01-15",
+          "reason": "General-availability release-line milestone."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "publisher-correction",
+            "feature-withdrawal",
+            "release-history-change"
+          ]
+        },
+        "limitations": [
+          "The release page is a product milestone, not a receipt for an exact flow execution or effective configuration.",
+          "Later Developer Flow capabilities and invocation paths must not be projected into 18.8 from this short release description."
+        ],
+        "unknowns": [
+          "The exact 18.8 flow definition, runner executor, model and approval behavior are unknown.",
+          "The patch release and service revision used by any particular organization are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-developer-flow-ga-18-8",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "capability"
+      ],
+      "personaIds": [
+        "platform-owner",
+        "evidence-auditor"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/offering-scope-ga-18-8.json",
+      "rawRecordSha256": "8fe5bfb24ababb8b4f22054cabc1914b181e144546ba0a7c38e5a65075f3cd6a",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+        "slug": "offering-scope-ga-18-8",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "identity.offering",
+          "statement": "At the January 15, 2026 GA announcement, GitLab said Duo Agent Platform was available to Premium and Ultimate customers on GitLab.com and Self-Managed, while GitLab Dedicated availability was planned during the 18.8 release cycle."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://about.gitlab.com/press/releases/2026-01-15-gitlab-announces-duo-agent-platform-general-availability/",
+          "title": "GitLab announces Duo Agent Platform general availability",
+          "locator": "Availability paragraph and GitLab 18.8 release-cycle statement",
+          "publishedAt": "2026-01-15T00:00:00Z",
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "18.8 GA announcement"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab.com available",
+              "Self-Managed available",
+              "Dedicated planned during 18.8 release cycle"
+            ]
+          },
+          "platform": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": [
+              "GitLab-managed model",
+              "Self-Managed self-hosted model"
+            ]
+          },
+          "deployment": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab SaaS",
+              "customer-managed GitLab instance",
+              "GitLab Dedicated"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "historical",
+          "changedAt": "2026-01-15",
+          "reason": "Launch-day offering scope retained separately from later availability."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "publisher-correction",
+            "offering-history-correction"
+          ]
+        },
+        "limitations": [
+          "The announcement applies to the Agent Platform release cycle and does not identify an exact backend revision for any offering.",
+          "Planned Dedicated availability is not evidence that Dedicated was available on the announcement date."
+        ],
+        "unknowns": [
+          "The date and service revision at which Dedicated availability became effective during or after the 18.8 cycle are unknown.",
+          "The selected offering, tier, namespace settings and add-on state of any execution are unknown."
+        ],
+        "relationships": [
+          {
+            "type": "scope-differs",
+            "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The launch announcement distinguishes available and planned offerings; current documentation lists all three. The catalog preserves the different time scopes."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-offering-scope-ga-18-8",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "offering"
+      ],
+      "personaIds": [
+        "platform-owner"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/offering-scope-current.json",
+      "rawRecordSha256": "d00fabc884a599845c68562a0c2938d4e90e0cf72d23fc246a23701739e22468",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current",
+        "slug": "offering-scope-current",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "identity.offering",
+          "statement": "GitLab's current Developer Flow documentation lists GitLab.com, GitLab Self-Managed and GitLab Dedicated as supported offerings."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+          "title": "Developer Flow",
+          "locator": "Page availability details: Offering",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": "captured 2026-08-01"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated"
+            ]
+          },
+          "platform": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": [
+              "GitLab-managed model",
+              "self-hosted model where supported"
+            ]
+          },
+          "deployment": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab SaaS",
+              "customer-managed instance",
+              "GitLab Dedicated"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "documentation-change",
+            "offering-change",
+            "tier-change"
+          ]
+        },
+        "limitations": [
+          "The mutable page does not identify when each offering became available or pin a backend revision.",
+          "Current availability must not be projected to the start of the 18.8 release cycle."
+        ],
+        "unknowns": [
+          "The effective service version and feature flags for each offering are unknown.",
+          "Offering-specific runner, network, model and approval differences were not observed."
+        ],
+        "relationships": [
+          {
+            "type": "scope-differs",
+            "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "Current three-offering availability postdates the launch-day statement that Dedicated was planned during the 18.8 release cycle."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-offering-scope-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "offering"
+      ],
+      "personaIds": [
+        "platform-owner"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.developer-capabilities-current",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/developer-capabilities-current.json",
+      "rawRecordSha256": "a9aea70929ad29c39e7c278cdba644c54519d718776cb33d1edde9ffcb4c9945",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.developer-capabilities-current",
+        "slug": "developer-capabilities-current",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "capability.development-workflow",
+          "statement": "GitLab's current documentation says the Developer Flow can create a draft merge request from an issue, iterate on review feedback, research implementation approaches, split a large merge request and resolve merge conflicts."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+          "title": "Developer Flow",
+          "locator": "Overview task list",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": "captured 2026-08-01"
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Allow foundational flows enabled",
+              "Developer flow enabled",
+              "eligible project role",
+              "service-account push rules",
+              "hosted or user-managed runner"
+            ]
+          },
+          "platform": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "repository-integrated background flow"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "documentation-change",
+            "capability-change",
+            "prerequisite-change"
+          ]
+        },
+        "limitations": [
+          "These are publisher-attributed capabilities, not catalog-observed behavior or successful task receipts.",
+          "The list is rolling-current and must not be projected into the exact 18.8.0-ee source revision."
+        ],
+        "unknowns": [
+          "Which tasks were available under each offering and patch release are unknown.",
+          "Task success, output quality, repository compatibility and side effects were not independently evaluated."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-developer-capabilities-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "capability"
+      ],
+      "personaIds": []
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.trigger-framework-ga-18-8",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/trigger-framework-ga-18-8.json",
+      "rawRecordSha256": "49b45cbdb9d9398777c1998f1985b4bba66dcbd53fc33fa8f30071085ae675a2",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.trigger-framework-ga-18-8",
+        "slug": "trigger-framework-ga-18-8",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "trigger.release",
+          "statement": "GitLab's trigger history says flow triggers became generally available in GitLab 18.8; in that release line an additional disabled-by-default feature flag was required for a configuration-path source."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/triggers/",
+          "title": "Triggers",
+          "locator": "History and configuration-source history",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "18.8"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "AI Catalog configuration source",
+              "configuration path with ai_catalog_create_third_party_flows enabled"
+            ]
+          },
+          "platform": {
+            "scope": "configuration-dependent",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated release-cycle scope"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "project trigger bound to a service account and flow configuration"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-01-15",
+          "reason": "General-availability release-line milestone."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "release-history-change",
+            "feature-flag-history-change"
+          ]
+        },
+        "limitations": [
+          "The mutable history block identifies a release line, not a particular trigger created in a project.",
+          "Event types added after 18.8 are not included in the 18.8 release-line claim."
+        ],
+        "unknowns": [
+          "The exact event set and feature-flag state for each 18.8 patch and offering are unknown.",
+          "No trigger record, service account or flow configuration was inspected."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-trigger-framework-ga-18-8",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "configuration"
+      ],
+      "personaIds": [
+        "platform-owner",
+        "evidence-auditor"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.trigger-paths-current",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/trigger-paths-current.json",
+      "rawRecordSha256": "1a4911d114ed44b4f11b9222515fd8d61ab7f0bcd53de1641a47b6cc1ed761fb",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.trigger-paths-current",
+        "slug": "trigger-paths-current",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "trigger.invocation",
+          "statement": "GitLab's current documentation describes distinct Developer Flow invocation paths through a configured mention, assignment to the Duo Developer service account, the Implement work item control and, from GitLab 19.2 behind a feature flag, Agentic Chat."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+          "title": "Developer Flow",
+          "locator": "Use the flow and Agentic Chat history sections",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": "captured 2026-08-01; Agentic Chat path introduced 19.2"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "Mention event configured",
+              "Assign event configured",
+              "Implement work item UI",
+              "Agentic Chat with agentic_foundational_flow_tool enabled"
+            ]
+          },
+          "platform": {
+            "scope": "alternatives",
+            "values": [
+              "issue or merge request discussion",
+              "issue assignment",
+              "work item UI",
+              "Agentic Chat"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": []
+          },
+          "deployment": {
+            "scope": "configuration-dependent",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-06-18",
+          "reason": "Current documentation includes a later Agentic Chat path separately marked as introduced in 19.2."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "documentation-change",
+            "trigger-change",
+            "feature-flag-change"
+          ]
+        },
+        "limitations": [
+          "The four invocation paths have different release and configuration scopes and are not interchangeable.",
+          "The Agentic Chat path postdates 18.8 and is not evidence about the exact 18.8.0-ee source release."
+        ],
+        "unknowns": [
+          "The enabled trigger events, selected service account and effective feature flags are unknown.",
+          "The exact current UI and backend revision for each offering are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-trigger-paths-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "configuration"
+      ],
+      "personaIds": [
+        "platform-owner",
+        "evidence-auditor"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/composite-identity-18-8.json",
+      "rawRecordSha256": "4b9d125abc9d511707b4d0085b96d64ddb91a6c3b97aa25c1d96fc7f2de32c8a",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8",
+        "slug": "composite-identity-18-8",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "identity.execution",
+          "statement": "GitLab's history says composite identity became generally available in GitLab 18.8, while the setting to turn it on or off was removed in 18.9 when it became automatically included in the Duo Agent Platform."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/composite_identity/",
+          "title": "Composite identity",
+          "locator": "History",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "18.8 with 18.9 transition"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "18.8 composite identity setting enabled",
+              "18.8 composite identity setting disabled",
+              "18.9+ automatic inclusion"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "runner-executed flows and agents"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "configuration-dependent",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "historical",
+          "changedAt": "2026-02-19",
+          "reason": "The 18.8 configurable state was superseded by automatic inclusion in 18.9."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "release-history-change",
+            "identity-behavior-correction"
+          ]
+        },
+        "limitations": [
+          "The 18.8 release line and the 18.9-or-later automatic state are mutually scoped alternatives.",
+          "The history does not establish the effective setting for a particular 18.8 instance or project."
+        ],
+        "unknowns": [
+          "Whether composite identity was enabled for any 18.8 execution is unknown.",
+          "Offering-specific rollout timing and token implementation revisions are unknown."
+        ],
+        "relationships": [
+          {
+            "type": "scope-differs",
+            "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-current",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The 18.8 state could be configured; current documentation describes automatic inclusion after the 18.9 setting removal."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-composite-identity-18-8",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity-authority"
+      ],
+      "personaIds": [
+        "security-reviewer"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-current",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/composite-identity-current.json",
+      "rawRecordSha256": "024aa972dc27d6ab6d7a195bb64166cb6651a5cca1c10fcad46ce694250a401d",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-current",
+        "slug": "composite-identity-current",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "identity.execution",
+          "statement": "GitLab's current documentation says runner-executed flows use a one-time composite identity combining the initiating human with a Developer-role service account, applying the more restrictive role and project-access intersection."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/composite_identity/",
+          "title": "Composite identity",
+          "locator": "How composite identity works and Composite identity workflow",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": "captured 2026-08-01; automatic inclusion applies 18.9+"
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "runner-executed flow",
+              "human initiator",
+              "enabled flow service account",
+              "intersection of human and service-account project access"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "foundational flow on a runner"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "configuration-dependent",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-02-19",
+          "reason": "Automatic inclusion after the 18.9 setting removal."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "documentation-change",
+            "permission-model-change",
+            "token-scope-change"
+          ]
+        },
+        "limitations": [
+          "This is GitLab's described authorization design, not an observed token or permission trace.",
+          "OAuth ai_workflows and mcp scopes and CI job-token permissions are distinct; the statement does not collapse them."
+        ],
+        "unknowns": [
+          "The human user, service account, effective role, project intersection and token contents for any execution are unknown.",
+          "The exact token implementation and audit-log representation per offering were not inspected."
+        ],
+        "relationships": [
+          {
+            "type": "scope-differs",
+            "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "Current automatic inclusion follows the 18.8 configurable state and 18.9 setting removal."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-composite-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity-authority"
+      ],
+      "personaIds": [
+        "security-reviewer"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.flow-executor-current",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/flow-executor-current.json",
+      "rawRecordSha256": "1d52b64dc84db99cb23d4b73902b414e412f8cf5571e7b1b20c3fe7903f16122",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.flow-executor-current",
+        "slug": "flow-executor-current",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "execution.architecture",
+          "statement": "GitLab's current execution documentation says a UI-started flow uses CI/CD: the runner downloads @gitlab/duo-cli, the CLI connects by WebSocket to the Duo Workflow Service, and the runner executes file and Git tools directed by the AI model."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+          "title": "Configure flow execution",
+          "locator": "Executor architecture",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": "captured 2026-08-01"
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "flow started from GitLab UI",
+              "CI/CD execution",
+              "runner can reach npm registry and Duo Workflow Service"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitLab CI/CD runner"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": [
+              "AI model selected by namespace configuration"
+            ]
+          },
+          "deployment": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab-hosted runner",
+              "user-managed runner"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "documentation-change",
+            "executor-change",
+            "package-delivery-change",
+            "workflow-service-change"
+          ]
+        },
+        "limitations": [
+          "GitLab says the executor version is GitLab-managed and updated with regular releases, so this architecture does not pin a Duo CLI package or Workflow Service revision.",
+          "IDE-local flows are expressly outside this repository-integrated background-flow record."
+        ],
+        "unknowns": [
+          "The @gitlab/duo-cli version, integrity digest, Workflow Service revision and tool protocol are unknown.",
+          "The runner image, network path and tool calls of any execution were not observed."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-flow-executor-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "execution"
+      ],
+      "personaIds": [
+        "platform-owner"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/runner-configuration-current.json",
+      "rawRecordSha256": "7aa1453833f02b52de86877dac34725bd77b3fb2c45534049a076c00d3abe2c2",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+        "slug": "runner-configuration-current",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "execution.runner",
+          "statement": "GitLab's current documentation says GitLab.com flows can use enabled-by-default hosted runners or a user-managed runner; a user-managed flow runner needs the gitlab--duo tag and a Docker-image-capable executor, while the shell executor is unsupported."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+          "title": "Configure flow execution",
+          "locator": "Configure runners to execute flows",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": "captured 2026-08-01"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab.com hosted runner",
+              "user-managed docker executor",
+              "user-managed docker-autoscaler executor",
+              "user-managed kubernetes executor",
+              "unsupported shell executor"
+            ]
+          },
+          "platform": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab-hosted runner",
+              "instance runner",
+              "top-level group runner",
+              "project or subgroup runner where restrictions permit"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "documentation-change",
+            "runner-requirement-change",
+            "executor-support-change"
+          ]
+        },
+        "limitations": [
+          "Hosted and user-managed runners have different ownership, networking and isolation boundaries.",
+          "A configured runner is not necessarily sandboxed; sandbox support depends on its image and privileged configuration."
+        ],
+        "unknowns": [
+          "The runner provider, runner version, executor, image, tag scope, network policy and ephemeral-state behavior are unknown.",
+          "Offering-specific hosted-runner availability beyond the explicit GitLab.com statement is unresolved."
+        ],
+        "relationships": [
+          {
+            "type": "scope-differs",
+            "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.security-controls-current",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "Runner eligibility and executor support do not establish sandbox or network isolation; those depend on separate security configuration."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-runner-configuration-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "configuration",
+        "execution"
+      ],
+      "personaIds": [
+        "platform-owner",
+        "evidence-auditor"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.agent-config-current",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/agent-config-current.json",
+      "rawRecordSha256": "dbfd8967945d26e0386038a6b986fb5775a79d7b5b95ffa89435b3b1883e52f6",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.agent-config-current",
+        "slug": "agent-config-current",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "configuration.execution",
+          "statement": "GitLab's current documentation says CI/CD flow execution reads .gitlab/duo/agent-config.yml from the project's default branch and can configure the image, setup script, network policy and cache; setup scripts run before the Secure Runtime and can access flow environment variables and identity tokens."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+          "title": "Configure flow execution",
+          "locator": "Configure CI/CD execution, Create the agent configuration file and Configure setup scripts",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": "captured 2026-08-01"
+          },
+          "configuration": {
+            "scope": "composable",
+            "values": [
+              "default-branch agent-config.yml",
+              "container image",
+              "setup_script",
+              "network_policy",
+              "cache"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "CI/CD flow execution"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab-hosted runner",
+              "user-managed runner"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "documentation-change",
+            "configuration-schema-change",
+            "secure-runtime-change"
+          ]
+        },
+        "limitations": [
+          "Setup scripts execute outside the Secure Runtime boundary and therefore cannot be described as sandboxed by that control.",
+          "The default-branch configuration source gives repository maintainers authority over the execution environment and requires separate branch-protection analysis."
+        ],
+        "unknowns": [
+          "The selected image, setup commands, network policy, cache, variables and branch protections are unknown.",
+          "The exact agent-config schema and behavior at GitLab 18.8.0-ee are not pinned by this rolling page."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-agent-config-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "configuration",
+        "execution"
+      ],
+      "personaIds": [
+        "platform-owner",
+        "evidence-auditor"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/model-selection-18-8.json",
+      "rawRecordSha256": "d286d82230755e3370b0757cc6c9f185eb3603f1ee66b64f4d70825946251cfa",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+        "slug": "model-selection-18-8",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "model.configuration",
+          "statement": "GitLab's model-selection history places the 18.8 GitLab.com release line between enabling the duo_agent_platform_model_selection feature flag in 18.6 and removing that flag in 18.9; it does not name the Developer Flow's effective 18.8 model."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/model_selection/",
+          "title": "Agent Platform AI models",
+          "locator": "Select a model for a feature: History",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "18.8"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "namespace default model",
+              "administrator-selected Agent Platform model",
+              "duo_agent_platform_model_selection enabled"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "GitLab.com"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": [
+              "effective 18.8 model unresolved"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "top-level group configuration inherited by child groups and projects"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "historical",
+          "changedAt": "2026-02-19",
+          "reason": "The Agent Platform model-selection flag was removed in 18.9."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-10-30",
+          "invalidatedBy": [
+            "release-history-change",
+            "feature-flag-history-change",
+            "model-history-correction"
+          ]
+        },
+        "limitations": [
+          "The release history applies explicitly to GitLab.com model selection and does not establish Self-Managed or Dedicated behavior.",
+          "An enabled feature flag does not identify the default or selected model used by any execution."
+        ],
+        "unknowns": [
+          "The Developer Flow default model, selected model, provider, checkpoint and reasoning configuration in 18.8 are unknown.",
+          "The namespace model setting and inheritance state for any project are unknown."
+        ],
+        "relationships": [
+          {
+            "type": "scope-differs",
+            "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.model-selection-current",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The 18.8 release-line feature-flag state does not freeze the rolling current default and selectable model set."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-model-selection-18-8",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "model"
+      ],
+      "personaIds": [
+        "security-reviewer"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.model-selection-current",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/model-selection-current.json",
+      "rawRecordSha256": "33e70043fa6dc3654835c2d2e56794e73b89ce38e89e9d51cc54e08a2fbeb353",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.model-selection-current",
+        "slug": "model-selection-current",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "model.configuration",
+          "statement": "GitLab's current documentation says every Agent Platform feature has a default model that GitLab may update, while a supported administrator-selected model persists until changed and has no automatic fallback when unavailable."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/model_selection/",
+          "title": "Agent Platform AI models",
+          "locator": "Default models, Select a model for a feature and Model is not available",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": "captured 2026-08-01"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab-managed default model",
+              "administrator-selected supported model"
+            ]
+          },
+          "platform": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": [
+              "rolling default",
+              "selected supported model"
+            ]
+          },
+          "deployment": {
+            "scope": "configuration-dependent",
+            "values": [
+              "top-level group model setting",
+              "child-group and project inheritance"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-08-31",
+          "invalidatedBy": [
+            "documentation-change",
+            "default-model-change",
+            "supported-model-change",
+            "fallback-change"
+          ]
+        },
+        "limitations": [
+          "The mutable default and supported-model tables are not exact-release evidence.",
+          "The page does not demonstrate which model served any Developer Flow request."
+        ],
+        "unknowns": [
+          "The effective model, provider endpoint, checkpoint, routing, reasoning parameters and change time are unknown.",
+          "Self-Managed self-hosted model compatibility and Dedicated rollout details for this surface are unresolved."
+        ],
+        "relationships": [
+          {
+            "type": "scope-differs",
+            "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The current rolling model policy and tables are not projected into GitLab 18.8."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-model-selection-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "model"
+      ],
+      "personaIds": [
+        "security-reviewer"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.background-tool-governance-19-3",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/background-tool-governance-19-3.json",
+      "rawRecordSha256": "ee2194a9a69861effde64c92edcff35949976935d428ea29c61fa5dd8dff8363",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.background-tool-governance-19-3",
+        "slug": "background-tool-governance-19-3",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "authority.tool-governance",
+          "statement": "GitLab's current beta documentation says tool-governance enforcement for background flows such as Duo Developer was added in GitLab 19.3 behind a disabled-by-default feature flag; background flows support Always Allow and Always Deny, not Always Ask, and an unconfigured background rule defaults to Always Allow."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/agents/tool-governance/",
+          "title": "Agent tool governance",
+          "locator": "History, background-flow enforcement and Known issues",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "19.3 beta"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "duo_workflow_background_tool_governance disabled",
+              "Always Allow",
+              "Always Deny",
+              "unconfigured background rule defaults to Always Allow"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "background Developer Flow"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "configuration-dependent",
+            "values": [
+              "GitLab.com",
+              "GitLab Self-Managed",
+              "GitLab Dedicated"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-16",
+          "reason": "Background enforcement introduced as a feature-flagged beta after the dossier's 18.8 anchor."
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-08-31",
+          "invalidatedBy": [
+            "beta-change",
+            "feature-flag-change",
+            "background-approval-change",
+            "default-policy-change"
+          ]
+        },
+        "limitations": [
+          "This claim postdates GitLab 18.8 and does not establish 18.8 approval behavior.",
+          "Always Ask does not apply to the background path because no user is present to answer an inline prompt."
+        ],
+        "unknowns": [
+          "The tool-authority policy used by Developer Flow in GitLab 18.8 remains unresolved.",
+          "The effective 19.3 feature flag and group or project rules for any execution are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-background-tool-governance-19-3",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "approval"
+      ],
+      "personaIds": [
+        "security-reviewer"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo-agent-platform.developer-flow.security-controls-current",
+      "rawRecordPath": "dossiers/gitlab-duo-developer-flow-18-8/claims/gitlab-duo-developer-flow-18-8/security-controls-current.json",
+      "rawRecordSha256": "1d0c509d3b0e2ce923b46d8f6b45eb97e572af03676459c72aea6fab5f42aecf",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo-agent-platform.developer-flow.security-controls-current",
+        "slug": "security-controls-current",
+        "subject": {
+          "id": "com.gitlab.duo-agent-platform.developer-flow",
+          "name": "GitLab Duo Developer Flow",
+          "publisher": "GitLab, Inc.",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitLab Duo Developer Flow",
+            "slug": "gitlab-duo-developer-flow-18-8"
+          }
+        },
+        "claim": {
+          "category": "security.architecture",
+          "statement": "GitLab's current security documentation describes remote flows as using runner execution with composite identity, sandbox and network controls, flow-defined tool restrictions, server-side tool-response sanitization and prompt-injection detection, while stating that human-in-the-loop approval is not applied to flows."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "GitLab, Inc."
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/security_threats/",
+          "title": "Security threats in agentic systems",
+          "locator": "Content protection layers and execution-mode security-control table",
+          "publishedAt": null,
+          "capturedAt": "2026-08-01T03:07:57Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": "captured 2026-08-01"
+          },
+          "configuration": {
+            "scope": "composable",
+            "values": [
+              "composite identity",
+              "SRT-compatible sandbox configuration",
+              "network allowlist or denylist",
+              "flow-defined tool restrictions",
+              "server-side sanitization",
+              "prompt-injection detection",
+              "no human-in-the-loop approval"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "remote flow in GitLab CI"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": []
+          },
+          "deployment": {
+            "scope": "alternatives",
+            "values": [
+              "GitLab-hosted runner",
+              "user-managed runner configured for secure execution"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-01",
+          "recheckAfter": "2026-08-31",
+          "invalidatedBy": [
+            "documentation-change",
+            "security-control-change",
+            "sandbox-requirement-change",
+            "approval-change"
+          ]
+        },
+        "limitations": [
+          "These are publisher-described controls and threat-model boundaries, not independent penetration-test or execution receipts.",
+          "The separate execution documentation makes sandbox availability conditional on an SRT-compatible image and privileged runner configuration; custom non-SRT and hardened UBI images are excluded."
+        ],
+        "unknowns": [
+          "Which controls were enabled, effective and correctly enforced in any execution are unknown.",
+          "Control versions, detection thresholds, sanitizer behavior, allowed destinations and residual risks were not independently evaluated."
+        ],
+        "relationships": [
+          {
+            "type": "scope-differs",
+            "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The security architecture describes the secure remote-flow mode; runner documentation shows that the sandbox depends on image and privileged-runner configuration."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-security-controls-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "execution",
+        "approval"
+      ],
+      "personaIds": [
+        "platform-owner",
+        "security-reviewer"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "relationship-01",
+      "fromClaimId": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+      "toClaimId": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current",
+      "kind": "scope-differs",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The launch announcement distinguishes available and planned offerings; current documentation lists all three. The catalog preserves the different time scopes."
+    },
+    {
+      "id": "relationship-02",
+      "fromClaimId": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current",
+      "toClaimId": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+      "kind": "scope-differs",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Current three-offering availability postdates the launch-day statement that Dedicated was planned during the 18.8 release cycle."
+    },
+    {
+      "id": "relationship-03",
+      "fromClaimId": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8",
+      "toClaimId": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-current",
+      "kind": "scope-differs",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The 18.8 state could be configured; current documentation describes automatic inclusion after the 18.9 setting removal."
+    },
+    {
+      "id": "relationship-04",
+      "fromClaimId": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-current",
+      "toClaimId": "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8",
+      "kind": "scope-differs",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Current automatic inclusion follows the 18.8 configurable state and 18.9 setting removal."
+    },
+    {
+      "id": "relationship-05",
+      "fromClaimId": "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+      "toClaimId": "com.gitlab.duo-agent-platform.developer-flow.security-controls-current",
+      "kind": "scope-differs",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Runner eligibility and executor support do not establish sandbox or network isolation; those depend on separate security configuration."
+    },
+    {
+      "id": "relationship-06",
+      "fromClaimId": "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+      "toClaimId": "com.gitlab.duo-agent-platform.developer-flow.model-selection-current",
+      "kind": "scope-differs",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The 18.8 release-line feature-flag state does not freeze the rolling current default and selectable model set."
+    },
+    {
+      "id": "relationship-07",
+      "fromClaimId": "com.gitlab.duo-agent-platform.developer-flow.model-selection-current",
+      "toClaimId": "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+      "kind": "scope-differs",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The current rolling model policy and tables are not projected into GitLab 18.8."
+    },
+    {
+      "id": "relationship-08",
+      "fromClaimId": "com.gitlab.duo-agent-platform.developer-flow.security-controls-current",
+      "toClaimId": "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+      "kind": "scope-differs",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The security architecture describes the secure remote-flow mode; runner documentation shows that the sandbox depends on image and privileged-runner configuration."
+    }
+  ],
+  "independentTests": [],
+  "dossier": {
+    "summary": "GitLab 18.8.0-ee supplies an exact Enterprise Edition source identity and GitLab 18.8 supplies the Developer Flow GA release line, while GitLab.com, Self-Managed and Dedicated service state, composite identity, trigger path, CI/CD runner, executor, model and approval authority remain separately scoped and unresolved at runtime.",
+    "releaseContext": {
+      "statement": "The protected v18.8.0-ee tag pins GitLab Enterprise Edition source revision 1010a9b2b769993080ce8399fd25e77c54e1ad1c, and the dated 18.8 release page pins the Developer Flow GA milestone. Neither freezes a hosted service, runner executor, Duo CLI package, model backend or effective project configuration.",
+      "sourceId": "source-release-identity-18-8-0-ee",
+      "legacySource": null
+    },
+    "limitations": [
+      "All claims are attributed to official GitLab public sources; no behavior was observed.",
+      "No GitLab package, instance, service, runner, Duo CLI, model or flow was installed, configured, invoked, downloaded or hashed.",
+      "The exact 18.8.0-ee source identity is not a complete GitLab.com, Dedicated or runner-executed runtime identity.",
+      "The GitLab 18.8 GA milestone is a release-line claim and does not pin a patch-specific Developer Flow implementation.",
+      "GitLab.com, Self-Managed and Dedicated have different release, ownership, network and model boundaries.",
+      "GitLab-hosted and user-managed runners remain distinct execution alternatives.",
+      "A supported runner executor does not establish that the Secure Runtime sandbox was enabled or effective.",
+      "Setup scripts run before the Secure Runtime and can access flow identity tokens and environment variables.",
+      "Model defaults and supported choices are rolling service configuration, not exact-version identity.",
+      "Background tool-governance enforcement is documented only from 19.3 behind a feature flag; 18.8 approval authority remains unresolved.",
+      "Current publisher security controls are architecture claims, not independent security findings.",
+      "No independent public evaluation passed exact release, offering, runner, executor, model, agent-config, trigger, identity and approval applicability.",
+      "No independent behavior, enforcement, performance, quality, privacy or safety conclusion is supported."
+    ],
+    "unknowns": [
+      "The package or image digest and deployed patch release of any Self-Managed instance are unknown.",
+      "The GitLab.com or GitLab Dedicated service revision and rollout state are unknown.",
+      "The date and backend revision at which Dedicated availability became effective are unknown.",
+      "The effective offering, tier, add-on, namespace and feature-flag state are unknown.",
+      "The effective Developer Flow definition and iteration limits are unknown.",
+      "The invocation path, trigger events, configuration source and triggering user are unknown.",
+      "The service account, composite-identity setting in 18.8, human identity, effective role and project intersection are unknown.",
+      "The OAuth, CI job and service token values and exact scopes are unknown.",
+      "The runner provider, version, registration scope, executor and ephemeral-state behavior are unknown.",
+      "The @gitlab/duo-cli package version, digest and Duo Workflow Service revision are unknown.",
+      "The image digest, SRT version, privileged mode, sandbox paths and effective network policy are unknown.",
+      "The default-branch agent-config, branch protections, setup commands, variables, cache and credentials are unknown.",
+      "The model, provider, checkpoint, endpoint, namespace setting, routing and reasoning parameters are unknown.",
+      "The exact 18.8 tool inventory, tool restrictions and approval behavior are unknown.",
+      "The current 19.3 background-governance feature flag and per-tool rules are unknown.",
+      "Task completion, output correctness, merge-request quality, rollback, containment, data handling and safety were not independently tested."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "platform-owner",
+        "label": "Platform owner",
+        "prompt": "Inspect offering, runner, service-account and project-configuration boundaries without inferring suitability.",
+        "propositionIds": [
+          "identity",
+          "offering",
+          "execution",
+          "configuration"
+        ]
+      },
+      {
+        "id": "security-reviewer",
+        "label": "Security reviewer",
+        "prompt": "Inspect composite identity, sandbox, model and approval boundaries while preserving unresolved enforcement.",
+        "propositionIds": [
+          "identity-authority",
+          "model",
+          "approval"
+        ]
+      },
+      {
+        "id": "evidence-auditor",
+        "label": "Evidence auditor",
+        "prompt": "Trace every proposition to exact raw claims and verify that publisher statements are not treated as observations.",
+        "propositionIds": [
+          "identity",
+          "configuration",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Release identity",
+        "question": "What exact GitLab artifact and release line does this record identify?",
+        "status": "18.8.0-ee source revision exact; executed runtime unresolved",
+        "answer": "The protected v18.8.0-ee tag identifies Enterprise Edition source revision 1010a9b2b769993080ce8399fd25e77c54e1ad1c, while the 18.8 release page identifies the Developer Flow GA milestone.",
+        "whyItMatters": "An exact application source tag does not identify a hosted service, runner executor or model runtime.",
+        "claimIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.release-identity-18-8-0-ee",
+          "com.gitlab.duo-agent-platform.developer-flow.developer-flow-ga-18-8"
+        ]
+      },
+      {
+        "id": "offering",
+        "eyebrow": "Offering scope",
+        "question": "How do GitLab.com, Self-Managed and Dedicated applicability differ?",
+        "status": "Launch-day and current scopes preserved separately",
+        "answer": "The GA announcement said GitLab.com and Self-Managed were available while Dedicated was planned during the 18.8 cycle; current documentation lists all three offerings.",
+        "whyItMatters": "Current availability cannot be silently projected to the first day of the 18.8 release line.",
+        "claimIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+          "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current"
+        ]
+      },
+      {
+        "id": "capability",
+        "eyebrow": "Developer Flow",
+        "question": "What work does GitLab say this background flow can perform?",
+        "status": "Publisher-attributed rolling capabilities",
+        "answer": "Current documentation describes draft merge requests, review-feedback iteration, implementation research, merge-request splitting and conflict resolution, subject to project prerequisites.",
+        "whyItMatters": "Documented capability is not observed completion, quality or safety.",
+        "claimIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.developer-flow-ga-18-8",
+          "com.gitlab.duo-agent-platform.developer-flow.developer-capabilities-current"
+        ]
+      },
+      {
+        "id": "configuration",
+        "eyebrow": "Trigger and environment",
+        "question": "Which invocation and execution configuration was effective?",
+        "status": "Unresolved across nine explicit axes",
+        "answer": "Offering, trigger path, identity, runner provider, runner executor, sandbox image, agent-config, model and background tool authority remain distinct alternatives.",
+        "whyItMatters": "The same product label covers materially different service and execution boundaries.",
+        "claimIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.trigger-framework-ga-18-8",
+          "com.gitlab.duo-agent-platform.developer-flow.trigger-paths-current",
+          "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+          "com.gitlab.duo-agent-platform.developer-flow.agent-config-current"
+        ]
+      },
+      {
+        "id": "identity-authority",
+        "eyebrow": "Service-account authority",
+        "question": "Whose identity and permissions execute the flow?",
+        "status": "18.8 setting unresolved; current one-time composite identity described",
+        "answer": "Current documentation describes a human-plus-service-account composite identity constrained by the more restrictive role and shared project access. The effective 18.8 setting is unknown.",
+        "whyItMatters": "The service account, initiator, token type and project intersection define different authority boundaries.",
+        "claimIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.composite-identity-18-8",
+          "com.gitlab.duo-agent-platform.developer-flow.composite-identity-current"
+        ]
+      },
+      {
+        "id": "execution",
+        "eyebrow": "CI/CD execution",
+        "question": "Where and how does the background flow execute?",
+        "status": "Runner, executor, package and sandbox unresolved",
+        "answer": "GitLab says UI-started flows run through CI/CD, download Duo CLI and connect to the Workflow Service. Hosted and user-managed runners and sandbox-capable and non-capable images remain separate.",
+        "whyItMatters": "Runner ownership and configuration determine code, credential, network and isolation boundaries.",
+        "claimIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.flow-executor-current",
+          "com.gitlab.duo-agent-platform.developer-flow.runner-configuration-current",
+          "com.gitlab.duo-agent-platform.developer-flow.agent-config-current",
+          "com.gitlab.duo-agent-platform.developer-flow.security-controls-current"
+        ]
+      },
+      {
+        "id": "model",
+        "eyebrow": "Model configuration",
+        "question": "Which model served the Developer Flow?",
+        "status": "Unknown; release-line flag and rolling defaults separated",
+        "answer": "GitLab's 18.8 history identifies a model-selection feature-flag state, not a model. Current defaults may change and selected supported models persist until changed.",
+        "whyItMatters": "Application release identity and model runtime identity are independent.",
+        "claimIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.model-selection-18-8",
+          "com.gitlab.duo-agent-platform.developer-flow.model-selection-current"
+        ]
+      },
+      {
+        "id": "approval",
+        "eyebrow": "Approval authority",
+        "question": "Can a human approve each background tool action?",
+        "status": "18.8 unresolved; no background Always Ask in current 19.3 beta governance",
+        "answer": "Current documentation says background tool-governance enforcement arrived only in 19.3 behind a disabled-by-default flag and supports Allow or Deny, not interactive Ask. The 18.8 behavior remains unknown.",
+        "whyItMatters": "Later governance cannot be back-projected into the dossier's 18.8 anchor.",
+        "claimIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.background-tool-governance-19-3",
+          "com.gitlab.duo-agent-platform.developer-flow.security-controls-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this exact GitLab record independently evaluated?",
+        "status": "No applicable independent evaluation included",
+        "answer": "No candidate public evaluation pinned the exact release, offering, runner, executor, model, agent-config, trigger, service identity and approval scope required for admission.",
+        "whyItMatters": "Publisher architecture and capability statements must remain attributed rather than treated as observed behavior.",
+        "claimIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.release-identity-18-8-0-ee"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source claims only. The exact source release, GA release line, three offerings, runtime configuration, later governance and absent independent evaluation remain explicitly separate."
+  }
+}

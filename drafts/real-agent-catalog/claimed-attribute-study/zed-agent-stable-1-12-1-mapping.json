@@ -1,0 +1,153 @@
+{
+  "schemaVersion": "claimed-attribute-mapping/0.1-study-extension",
+  "status": "unpublished-current-record-overlay",
+  "taxonomyPath": "taxonomy.json",
+  "baseMappingPath": "mapping.json",
+  "priorOverlayPath": "openai-codex-cli-0-146-0-mapping.json",
+  "asOf": "2026-08-02",
+  "mappingRule": "This additive mapping uses the completed taxonomy unchanged. The states array follows taxonomy.attributeOrder exactly, evidence references stay within this record, conditional states retain named applicability boundaries, and no independent-test credit or suitability calculation is introduced.",
+  "records": [
+    {
+      "recordId": "com.zed.agent.native.stable.1-12-1",
+      "comparisonFrame": "interactive-ide",
+      "states": [
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "conditional",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "not-applicable",
+        "not-applicable",
+        "not-applicable",
+        "conditional",
+        "conditional",
+        "unknown",
+        "not-applicable",
+        "conditional",
+        "conditional",
+        "conditional",
+        "unknown",
+        "conditional",
+        "unknown",
+        "not-applicable",
+        "not-applicable"
+      ],
+      "evidence": {
+        "cap.file-read": {
+          "claimIds": [
+            "com.zed.agent.native.path-current-stable-1-12-1",
+            "com.zed.agent.native.tool-presets-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "agent-path",
+            "tool-preset"
+          ]
+        },
+        "cap.file-modify": {
+          "claimIds": [
+            "com.zed.agent.native.path-current-stable-1-12-1",
+            "com.zed.agent.native.tool-presets-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "agent-path",
+            "tool-preset"
+          ]
+        },
+        "cap.command-execution": {
+          "claimIds": [
+            "com.zed.agent.native.path-current-stable-1-12-1",
+            "com.zed.agent.native.tool-permissions-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "agent-path",
+            "tool-permission"
+          ]
+        },
+        "cap.browser-or-web-tool": {
+          "claimIds": [
+            "com.zed.agent.native.sandbox-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "sandbox"
+          ]
+        },
+        "cap.external-tool-protocol": {
+          "claimIds": [
+            "com.zed.agent.native.mcp-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "extensions"
+          ]
+        },
+        "cap.model-or-provider-selection": {
+          "claimIds": [
+            "com.zed.agent.native.model-routes-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "model-route"
+          ]
+        },
+        "authority.action-confirmation": {
+          "claimIds": [
+            "com.zed.agent.native.tool-permissions-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "tool-permission"
+          ]
+        },
+        "authority.auto-approval-or-bypass": {
+          "claimIds": [
+            "com.zed.agent.native.tool-permissions-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "tool-permission"
+          ]
+        },
+        "authority.tool-allow-deny": {
+          "claimIds": [
+            "com.zed.agent.native.tool-presets-current-stable-1-12-1",
+            "com.zed.agent.native.tool-permissions-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "tool-preset",
+            "tool-permission"
+          ]
+        },
+        "authority.sandbox-or-isolation": {
+          "claimIds": [
+            "com.zed.agent.native.sandbox-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "sandbox"
+          ]
+        },
+        "authority.network-restriction": {
+          "claimIds": [
+            "com.zed.agent.native.sandbox-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "sandbox"
+          ]
+        },
+        "authority.credential-or-secret-scope": {
+          "claimIds": [
+            "com.zed.agent.native.model-routes-current-stable-1-12-1",
+            "com.zed.agent.native.mcp-current-stable-1-12-1"
+          ],
+          "axisIds": [
+            "model-route",
+            "extensions"
+          ],
+          "note": "Provider and MCP credentials remain separate configuration paths; effective credential storage and scope were not observed."
+        }
+      }
+    }
+  ]
+}

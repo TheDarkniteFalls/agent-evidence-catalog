@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 
 import { createHash } from "node:crypto";
+import { execFile } from "node:child_process";
 import { copyFile, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { dirname, extname, join } from "node:path";
+import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const CATALOG = join(ROOT, "catalog");
 const DIST = join(ROOT, "dist");
+const execFileAsync = promisify(execFile);
 const STATUSES = new Set(["verified", "observed", "declared", "stale", "unknown", "not-applicable"]);
 const ACTION_SCOPES = new Set(["none", "selected-only", "allowlisted", "broad", "unknown"]);
 const CONFIRMATIONS = new Set(["none", "exact", "before-external-action", "always-forbidden", "not-applicable", "unknown"]);
@@ -462,22 +465,69 @@ async function commandBuild() {
   await rm(DIST, { recursive: true, force: true });
   await mkdir(join(DIST, "records"), { recursive: true });
   await mkdir(join(DIST, "schemas"), { recursive: true });
-  for (const source of ["index.html", "compare.html", "styles.css", "app.js"]) {
+  await mkdir(join(DIST, "research-preview", "records"), { recursive: true });
+  for (const source of ["index.html", "compare.html", "record.html", "catalog-classic.html", "compare-classic.html", "styles.css", "app.js"]) {
     await copyFile(join(ROOT, "site", source), join(DIST, source));
   }
   for (const source of ["agent-record-v1.schema.json", "evidence-receipt-predicate-v1.schema.json"]) {
     await copyFile(join(ROOT, "schemas", source), join(DIST, "schemas", source));
   }
-  for (const source of ["PERMISSION_DECLARATION.md", "CONTRIBUTING.md", "CORRECTIONS.md", "LICENSE"]) {
+  for (const source of ["PERMISSION_DECLARATION.md", "CONTRIBUTING.md", "CORRECTIONS.md", "GOVERNANCE.md", "PUBLICATION_READINESS.md", "RESEARCH_PREVIEW.md", "ROADMAP.md", "SECURITY.md", "LICENSE"]) {
     await copyFile(join(ROOT, source), join(DIST, source));
   }
   const profiles = loaded.map((item) => item.profile).sort((a, b) => a.name.localeCompare(b.name));
   const safeJson = JSON.stringify(profiles).replaceAll("<", "\\u003c");
   await writeFile(join(DIST, "catalog-data.js"), `window.CATALOG_PROFILES = ${safeJson};\n`, "utf8");
   for (const item of loaded) await copyFile(join(CATALOG, item.name), join(DIST, "records", item.name));
+  for (const source of ["index.html", "styles.css", "app.js"]) {
+    await copyFile(join(ROOT, "site", "research-preview", source), join(DIST, "research-preview", source));
+  }
+  const researchPreviewSource = join(ROOT, "drafts", "real-agent-catalog", "research-preview", "catalog.json");
+  const researchPreviewRaw = await readFile(researchPreviewSource, "utf8");
+  const researchPreview = JSON.parse(researchPreviewRaw);
+  if (researchPreview.boundaries?.independentTestCredit !== false || researchPreview.counts?.independentTestsCredited !== 0) {
+    throw new Error("research preview must assign zero independent-test credit");
+  }
+  await copyFile(researchPreviewSource, join(DIST, "research-preview", "catalog.json"));
+  await copyFile(join(ROOT, "drafts", "real-agent-catalog", "research-preview", "lifecycle.json"), join(DIST, "research-preview", "lifecycle.json"));
+  const researchPreviewSafeJson = JSON.stringify(researchPreview).replaceAll("<", "\\u003c");
+  await writeFile(join(DIST, "research-preview", "data.js"), `window.RESEARCH_PREVIEW = ${researchPreviewSafeJson};\n`, "utf8");
+  for (const record of researchPreview.previewRecords) {
+    await copyFile(join(ROOT, record.recordPath), join(DIST, "research-preview", "records", `${record.recordId}.json`));
+  }
+  await execFileAsync(process.execPath, [join(ROOT, "scripts", "claim-record.mjs"), "build-synthetic"], {
+    cwd: ROOT,
+    encoding: "utf8"
+  });
+  const claimsManifestRaw = await readFile(join(DIST, "claims-build-manifest.json"), "utf8");
+  const claimsManifest = JSON.parse(claimsManifestRaw);
+  if (claimsManifest.synthetic !== true || claimsManifest.recordCount < 1 || claimsManifest.asOf === undefined) {
+    throw new Error("synthetic claims build manifest is missing required boundary metadata");
+  }
   const manifest = {
     schemaVersion: "1.0",
     profileCount: profiles.length,
+    syntheticClaims: {
+      entryPoint: "claims.html",
+      manifest: "claims-build-manifest.json",
+      manifestSha256: createHash("sha256").update(claimsManifestRaw).digest("hex"),
+      asOf: claimsManifest.asOf,
+      recordCount: claimsManifest.recordCount,
+      synthetic: true
+    },
+    researchPreview: {
+      entryPoint: "research-preview/index.html",
+      data: "research-preview/catalog.json",
+      dataSha256: createHash("sha256").update(researchPreviewRaw).digest("hex"),
+      asOf: researchPreview.asOf,
+      releaseCandidateStatus: researchPreview.releaseCandidateStatus,
+      surfaces: researchPreview.counts.surfaces,
+      currentRecordsPresented: researchPreview.counts.currentRecordsPresented,
+      historyRecordsPresented: researchPreview.counts.recordsPresentedIncludingHistory - researchPreview.counts.currentRecordsPresented,
+      recordsPresentedIncludingHistory: researchPreview.counts.recordsPresentedIncludingHistory,
+      independentTestsCredited: researchPreview.counts.independentTestsCredited,
+      openIntake: researchPreview.boundaries.openIntake
+    },
     records: loaded.map((item) => ({
       id: item.profile.id,
       version: item.profile.version.number,
@@ -486,7 +536,7 @@ async function commandBuild() {
     }))
   };
   await writeFile(join(DIST, "build-manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
-  process.stdout.write(`PASS built ${profiles.length} profiles to ${DIST}\n`);
+  process.stdout.write(`PASS built ${profiles.length} profiles and ${claimsManifest.recordCount} synthetic claims to ${DIST}\n`);
 }
 
 const command = process.argv[2];

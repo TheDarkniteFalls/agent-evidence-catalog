@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-ga-18-8",
+  "slug": "offering-scope-ga-18-8",
+  "subject": {
+    "id": "com.gitlab.duo-agent-platform.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": { "kind": "hosted-service", "name": "GitLab Duo Developer Flow", "slug": "gitlab-duo-developer-flow-18-8" }
+  },
+  "claim": {
+    "category": "identity.offering",
+    "statement": "At the January 15, 2026 GA announcement, GitLab said Duo Agent Platform was available to Premium and Ultimate customers on GitLab.com and Self-Managed, while GitLab Dedicated availability was planned during the 18.8 release cycle."
+  },
+  "provenance": { "kind": "publisher-release-metadata", "claimant": "GitLab, Inc." },
+  "source": {
+    "uri": "https://about.gitlab.com/press/releases/2026-01-15-gitlab-announces-duo-agent-platform-general-availability/",
+    "title": "GitLab announces Duo Agent Platform general availability",
+    "locator": "Availability paragraph and GitLab 18.8 release-cycle statement",
+    "publishedAt": "2026-01-15T00:00:00Z",
+    "capturedAt": "2026-08-01T03:07:57Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "release-line", "value": "18.8 GA announcement" },
+    "configuration": { "scope": "alternatives", "values": ["GitLab.com available", "Self-Managed available", "Dedicated planned during 18.8 release cycle"] },
+    "platform": { "scope": "alternatives", "values": ["GitLab.com", "GitLab Self-Managed", "GitLab Dedicated"] },
+    "model": { "scope": "configuration-dependent", "values": ["GitLab-managed model", "Self-Managed self-hosted model"] },
+    "deployment": { "scope": "alternatives", "values": ["GitLab SaaS", "customer-managed GitLab instance", "GitLab Dedicated"] }
+  },
+  "lifecycle": { "status": "historical", "changedAt": "2026-01-15", "reason": "Launch-day offering scope retained separately from later availability." },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["publisher-correction", "offering-history-correction"]
+  },
+  "limitations": [
+    "The announcement applies to the Agent Platform release cycle and does not identify an exact backend revision for any offering.",
+    "Planned Dedicated availability is not evidence that Dedicated was available on the announcement date."
+  ],
+  "unknowns": [
+    "The date and service revision at which Dedicated availability became effective during or after the 18.8 cycle are unknown.",
+    "The selected offering, tier, namespace settings and add-on state of any execution are unknown."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.gitlab.duo-agent-platform.developer-flow.offering-scope-current",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The launch announcement distinguishes available and planned offerings; current documentation lists all three. The catalog preserves the different time scopes."
+    }
+  ],
+  "validationRefs": []
+}
+

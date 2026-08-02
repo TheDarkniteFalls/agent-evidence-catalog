@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.approval-policies-0-90-0",
+  "slug": "approval-policies-0-90-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": { "kind": "cli", "name": "Codex CLI", "slug": "openai-codex-cli-0-90-0" }
+  },
+  "claim": {
+    "category": "authority.approval",
+    "statement": "The generated configuration schema at tag rust-v0.90.0 enumerates four command approval policies: untrusted, on-failure, on-request and never, with different conditions for consulting the user or escalating a failed command."
+  },
+  "provenance": { "kind": "publisher-declared", "claimant": "OpenAI" },
+  "source": {
+    "uri": "https://github.com/openai/codex/blob/rust-v0.90.0/codex-rs/core/config.schema.json",
+    "title": "Codex 0.90.0 generated configuration schema",
+    "locator": "definitions.AskForApproval and properties.approval_policy",
+    "publishedAt": null,
+    "capturedAt": "2026-08-01T00:47:47Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": { "kind": "exact-version", "value": "0.90.0" },
+    "configuration": { "scope": "alternatives", "values": ["untrusted", "on-failure", "on-request", "never"] },
+    "platform": { "scope": "unspecified", "values": [] },
+    "model": { "scope": "unspecified", "values": [] },
+    "deployment": { "scope": "named", "values": ["local Codex CLI command execution"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": "2026-01-25", "reason": null },
+  "review": {
+    "reviewedAt": "2026-08-01",
+    "recheckAfter": "2026-10-30",
+    "invalidatedBy": ["source-unavailable", "claimant-correction", "product-version-change", "configuration-change", "manual-review"]
+  },
+  "limitations": [
+    "The schema documents available values and descriptions; it does not demonstrate runtime interception or enforcement.",
+    "The four values are mutually exclusive for one effective approval_policy and must not be averaged or collapsed."
+  ],
+  "unknowns": [
+    "The effective approval policy of any session is unknown.",
+    "Approval coverage for every command, file operation, app, connector, MCP tool, spawned thread and indirect side effect is unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
+

@@ -1,0 +1,510 @@
+{
+  "schemaVersion": "real-agent-lifecycle/0.1-draft",
+  "artifactType": "unpublished-real-agent-lifecycle-overlay",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-02",
+  "interpretationBoundary": {
+    "recordsModified": false,
+    "publisherSourcesOnly": true,
+    "claimsOrObservationsAdded": false,
+    "catalogIntegration": false,
+    "note": "This additive currentness overlay derives lifecycle state from the preserved research-preview lifecycle plus validated successor records. It does not rewrite accepted dossiers, raw claims, records, mappings, watcher baselines or catalog pages."
+  },
+  "sources": [
+    {
+      "id": "cline-marketplace-listing",
+      "publisher": "Cline Bot Inc.",
+      "title": "Cline - Visual Studio Marketplace",
+      "uri": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+      "kind": "marketplace-listing",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "openhands-cli-release-list",
+      "publisher": "OpenHands",
+      "title": "OpenHands CLI releases",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI/releases",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "openhands-cli-readme",
+      "publisher": "OpenHands",
+      "title": "OpenHands V1 CLI repository README",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "github-copilot-cloud-agent-changelog",
+      "publisher": "GitHub",
+      "title": "Research, plan, and code with Copilot cloud agent",
+      "uri": "https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/",
+      "kind": "changelog",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "google-jules-changelog",
+      "publisher": "Google",
+      "title": "Jules changelog",
+      "uri": "https://jules.google/docs/changelog/",
+      "kind": "changelog",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "openai-codex-latest-release",
+      "publisher": "OpenAI",
+      "title": "Latest OpenAI Codex release",
+      "uri": "https://github.com/openai/codex/releases/latest",
+      "kind": "latest-release",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "cursor-desktop-download",
+      "publisher": "Anysphere, Inc.",
+      "title": "Cursor desktop download archive",
+      "uri": "https://cursor.com/download",
+      "kind": "download-page",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "gitlab-developer-flow-documentation",
+      "publisher": "GitLab, Inc.",
+      "title": "GitLab Duo Developer Flow documentation",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "gitlab-19-2-release-notes",
+      "publisher": "GitLab, Inc.",
+      "title": "GitLab 19.2 release notes",
+      "uri": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "cognition-devin-2026-release-notes",
+      "publisher": "Cognition AI, Inc.",
+      "title": "Devin 2026 release notes",
+      "uri": "https://docs.devin.ai/release-notes/2026",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "anthropic-claude-code-latest-release",
+      "publisher": "Anthropic PBC",
+      "title": "Latest Claude Code release",
+      "uri": "https://github.com/anthropics/claude-code/releases/latest",
+      "kind": "latest-release",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "zed-stable-releases",
+      "publisher": "Zed Industries, Inc.",
+      "title": "Zed stable releases",
+      "uri": "https://zed.dev/releases/stable",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "zed-preview-releases",
+      "publisher": "Zed Industries, Inc.",
+      "title": "Zed preview releases",
+      "uri": "https://zed.dev/releases/preview?b=1",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "replit-agent-4-announcement",
+      "publisher": "Replit",
+      "title": "Introducing Replit Agent 4: Built for Creativity",
+      "uri": "https://replit.com/blog/introducing-agent-4-built-for-creativity",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "aider-latest-release",
+      "publisher": "Aider-AI project",
+      "title": "Latest Aider release",
+      "uri": "https://github.com/Aider-AI/aider/releases/latest",
+      "kind": "latest-release",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "kiro-ide-changelog",
+      "publisher": "Amazon Web Services",
+      "title": "Kiro IDE changelog",
+      "uri": "https://kiro.dev/changelog/ide/",
+      "kind": "changelog",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "lovable-build-mode-documentation",
+      "publisher": "Lovable",
+      "title": "Implement changes in Build mode",
+      "uri": "https://docs.lovable.dev/features/agent-mode",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "opencode-latest-release",
+      "publisher": "Anomaly Innovations, Inc.",
+      "title": "Latest OpenCode release",
+      "uri": "https://github.com/anomalyco/opencode/releases/latest",
+      "kind": "latest-release",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "cognition-devin-desktop-releases",
+      "publisher": "Cognition AI, Inc.",
+      "title": "Devin Desktop releases",
+      "uri": "https://docs.devin.ai/desktop/releases",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "cognition-cascade-documentation",
+      "publisher": "Cognition AI, Inc.",
+      "title": "Devin Desktop Cascade overview",
+      "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "gitlab-19-2-1-patch-release",
+      "publisher": "GitLab, Inc.",
+      "title": "GitLab Patch Release 19.2.1",
+      "uri": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-1-released/",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "gitlab-19-2-1-protected-tag",
+      "publisher": "GitLab, Inc.",
+      "title": "GitLab protected tag v19.2.1-ee",
+      "uri": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.1-ee",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-02"
+    }
+  ],
+  "entries": [
+    {
+      "recordId": "com.cline.bot.vscode-extension.4-1-2",
+      "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
+      "status": "superseded",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "cline-marketplace-listing"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": "com.cline.bot.vscode-extension.4-1-3",
+      "historicalSignificance": null,
+      "note": "The official Marketplace listing identified exact version 4.1.3 on 2026-08-02. The accepted 4.1.2 record remains unchanged and is linked only through this same-surface lifecycle overlay."
+    },
+    {
+      "recordId": "org.openhands.cli.1-16-0",
+      "surfaceKey": "org.openhands.openhands.cli.stable",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "openhands-cli-release-list",
+        "openhands-cli-readme"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The publisher labels 1.16.0 latest and describes V1 CLI as feature-complete and stability-maintained rather than discontinued."
+    },
+    {
+      "recordId": "com.github.copilot.cloud-agent.rolling",
+      "surfaceKey": "com.github.copilot.cloud-agent.rolling-service",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "github-copilot-cloud-agent-changelog"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Current means the rolling hosted surface remains offered as of review; it does not identify an immutable service or model revision."
+    },
+    {
+      "recordId": "com.google.jules.hosted.rolling",
+      "surfaceKey": "com.google.jules.hosted.rolling-service",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "google-jules-changelog"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Current means the rolling hosted surface remains documented as of review; undisclosed runtime and model revisions remain unresolved."
+    },
+    {
+      "recordId": "com.openai.codex.cli.0-90-0",
+      "surfaceKey": "com.openai.codex.cli.stable",
+      "status": "superseded",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "openai-codex-latest-release"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": "com.openai.codex.cli.0-146-0",
+      "historicalSignificance": null,
+      "note": "The publisher latest-release endpoint resolves to 0.146.0. The separate unpublished 0.146.0 record now supplies the reciprocal same-surface successor link; 0.90.0 remains superseded and is not reclassified as historical."
+    },
+    {
+      "recordId": "com.cursor.ide.foreground-agent.3-14",
+      "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "cursor-desktop-download"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The desktop download archive labels 3.14 latest. This lifecycle entry does not collapse the rolling service, model backend, Agent mode, or authority configuration into the exact client identity."
+    },
+    {
+      "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "status": "historical",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "gitlab-developer-flow-documentation",
+        "gitlab-19-2-release-notes"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": "com.gitlab.duo.developer-flow.19-2",
+      "historicalSignificance": "GitLab 18.8 is the publisher-documented general-availability milestone for Developer Flow.",
+      "note": "GitLab 18.8 remains the publisher-documented general-availability milestone. Its direct successor is the preserved 19.2.0-ee record, which is now itself superseded by 19.2.1-ee."
+    },
+    {
+      "recordId": "com.cognition.devin.hosted.rolling",
+      "surfaceKey": "com.cognition.devin.hosted.rolling-service",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "cognition-devin-2026-release-notes"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Current means the Cognition-managed hosted surface remains documented as of review; it does not import claims from Devin Desktop, Cascade, or Devin Local."
+    },
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-117",
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "status": "superseded",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "anthropic-claude-code-latest-release"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": "com.anthropic.claude-code.cli.2-1-220",
+      "historicalSignificance": null,
+      "note": "The publisher latest-release endpoint resolves to v2.1.220. No superseding catalog record exists yet, so the direct record link remains null rather than naming an uncreated fixture. The additive research-preview lifecycle supplies the reciprocal current-record link without changing the accepted record."
+    },
+    {
+      "recordId": "dev.zed.agent.native.1-13-1",
+      "surfaceKey": "dev.zed.agent.native.desktop-stable",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "zed-stable-releases"
+      ],
+      "supersedesRecordId": "com.zed.agent.native.stable.1-12-1",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Zed's official stable page lists 1.13.1 dated 2026-07-29. The accepted source-only dossier, generated record and taxonomy mapping were losslessly revalidated; installed package and hosted model identity remain unresolved."
+    },
+    {
+      "recordId": "com.replit.agent.hosted.agent-4",
+      "surfaceKey": "com.replit.agent.hosted.agent-4-service",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "replit-agent-4-announcement"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Current is scoped to the Agent 4 generation anchor and rolling Replit-managed service as of review; no Agent 5 publisher identity was identified in the bounded audit."
+    },
+    {
+      "recordId": "org.aider-ai.aider.cli.0-86-0",
+      "surfaceKey": "org.aider-ai.aider.cli.stable",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "aider-latest-release"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The publisher latest-release endpoint still resolves to v0.86.0; release age alone is not treated as supersession."
+    },
+    {
+      "recordId": "com.amazon.kiro.ide.1-0-242",
+      "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "kiro-ide-changelog"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The publisher IDE changelog lists 1.0.242 as the latest 1.0.x patch on the reviewed date."
+    },
+    {
+      "recordId": "com.lovable.agent.hosted.rolling",
+      "surfaceKey": "com.lovable.build-mode.hosted.rolling-service",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "lovable-build-mode-documentation"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Current publisher documentation uses Build mode as the canonical name and Agent mode as its former name; the sourced rename does not create a second surface."
+    },
+    {
+      "recordId": "com.anomaly.opencode.cli.1-18-11",
+      "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "opencode-latest-release"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The publisher latest-release endpoint resolves to immutable v1.18.11. Desktop release-note content is not transferred to this CLI/TUI surface."
+    },
+    {
+      "recordId": "com.cognition.devin-desktop.cascade.3-6-27",
+      "surfaceKey": "com.cognition.devin-desktop.cascade.desktop-stable",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "cognition-devin-desktop-releases",
+        "cognition-cascade-documentation"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The publisher lists Desktop v3.6.27 first and continues to document Cascade. Exact client identity remains separate from rolling service and model backend identity and from Devin Local or hosted Devin."
+    },
+    {
+      "recordId": "com.openai.codex.cli.0-146-0",
+      "surfaceKey": "com.openai.codex.cli.stable",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "openai-codex-latest-release"
+      ],
+      "supersedesRecordId": "com.openai.codex.cli.0-90-0",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The official latest-release endpoint resolves to the exact 0.146.0 record. Currentness is scoped to the Codex CLI stable release surface and does not identify the installed runtime, model, authentication path, configuration, app-server host or any other Codex surface."
+    },
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-220",
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "anthropic-claude-code-latest-release"
+      ],
+      "supersedesRecordId": "com.anthropic.claude-code.cli.2-1-117",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The publisher latest-release endpoint resolves to v2.1.220. Exact client identity remains separate from rolling authentication, permission, sandbox, model, tool, MCP and extension documentation."
+    },
+    {
+      "recordId": "com.gitlab.duo.developer-flow.19-2",
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "status": "superseded",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "gitlab-developer-flow-documentation",
+        "gitlab-19-2-release-notes"
+      ],
+      "supersedesRecordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+      "supersededByRecordId": "com.gitlab.duo.developer-flow.19-2-1",
+      "historicalSignificance": null,
+      "note": "GitLab 19.2.1-ee is the current protected patch tag for the 19.2 release line. The accepted 19.2.0-ee record remains unchanged and keeps its reciprocal historical link to the 18.8 GA record."
+    },
+    {
+      "recordId": "com.zed.agent.native.stable.1-12-1",
+      "surfaceKey": "dev.zed.agent.native.desktop-stable",
+      "status": "superseded",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "zed-stable-releases",
+        "zed-preview-releases"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": "dev.zed.agent.native.1-13-1",
+      "historicalSignificance": null,
+      "note": "Zed's official stable page now lists 1.13.1. The accepted 1.12.1 stable record remains unchanged and is linked here to the accepted 1.13.1 same-surface successor."
+    },
+    {
+      "recordId": "com.cline.bot.vscode-extension.4-1-3",
+      "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "cline-marketplace-listing"
+      ],
+      "supersedesRecordId": "com.cline.bot.vscode-extension.4-1-2",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The official Marketplace listing identifies exact version 4.1.3. The installed VSIX, platform runtime, model route and effective configuration remain unresolved applicability boundaries."
+    },
+    {
+      "recordId": "com.gitlab.duo.developer-flow.19-2-1",
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "status": "current",
+      "reviewedAt": "2026-08-02",
+      "basisSourceIds": [
+        "gitlab-19-2-1-patch-release",
+        "gitlab-19-2-1-protected-tag",
+        "gitlab-developer-flow-documentation",
+        "gitlab-19-2-release-notes"
+      ],
+      "supersedesRecordId": "com.gitlab.duo.developer-flow.19-2",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The protected v19.2.1-ee tag is current for the exact patch identity. The 19.2 feature line and rolling Agent Platform service, runner, model and project configuration remain separate applicability boundaries."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unpublished comparison structure for the first real-agent Cline pilot record.">
+  <title>Compare unpublished real-agent evidence · Agent Evidence Catalog</title>
+  <link rel="stylesheet" href="pilot.css?v=pilot3">
+</head>
+<body data-page="pilot-compare">
+  <a class="skip-link" href="#main">Skip to comparison</a>
+  <header class="site-header">
+    <a class="brand" href="browse.html">Agent Evidence Catalog</a>
+    <nav aria-label="Pilot navigation">
+      <a href="browse.html">Browse</a>
+      <a class="active" aria-current="page" href="compare.html">Compare</a>
+      <a href="detail.html">Cline detail</a>
+      <a href="../report.html">Source report</a>
+    </nav>
+  </header>
+  <aside class="pilot-banner" aria-label="Unpublished pilot boundary"><strong>Unpublished real-agent pilot.</strong> One real record is available; empty slots are not synthetic stand-ins.</aside>
+
+  <main id="main" class="comparison-main">
+    <section class="compare-intro" aria-labelledby="compare-title">
+      <h1 id="compare-title">Compare evidence boundaries</h1>
+      <p>The pilot can expose Cline's record and configuration-dependent differences, but cannot perform a cross-agent comparison until another real record exists. No score is calculated.</p>
+    </section>
+    <section id="comparisonSlots" class="comparison-slots" aria-label="Real-agent comparison slots"></section>
+    <section id="realDecisionSummary" class="decision-summary" aria-label="Decision-first evidence summary"></section>
+    <section class="configuration-section" aria-labelledby="configuration-title">
+      <div class="section-heading-row">
+        <div><h2 id="configuration-title">Configuration changes the proposition</h2><p>The apparent disagreements below are preserved as resolved scope differences.</p></div>
+        <div class="segment-control" role="group" aria-label="Configuration comparison focus">
+          <button class="active" type="button" data-focus="all">All differences</button>
+          <button type="button" data-focus="approval">Approval behavior</button>
+          <button type="button" data-focus="data">User-content path</button>
+        </div>
+      </div>
+      <div id="configurationGroups"></div>
+    </section>
+  </main>
+  <footer><p>Publisher-attributed claims only. Cline was not installed, run or independently tested.</p></footer>
+  <script src="pilot-data.js"></script>
+  <script src="pilot-app.js?v=pilot1"></script>
+</body>
+</html>

@@ -1,0 +1,1096 @@
+{
+  "schemaVersion": "real-agent-source-watch/0.1-draft",
+  "artifactType": "unpublished-primary-source-watch-registry",
+  "unpublished": true,
+  "readOnly": true,
+  "asOf": "2026-08-02",
+  "boundaries": {
+    "acceptedEvidenceModified": false,
+    "claimsInferred": false,
+    "replacementDossiersCreated": false,
+    "sourceChangeIsProductObservation": false,
+    "networkWritesAllowed": false,
+    "note": "The registry watches publisher-controlled public sources for review signals. A source change is not an agent observation, evidence claim, lifecycle conclusion, or authorization to alter an accepted record."
+  },
+  "cadencePolicies": {
+    "daily": {
+      "automated": true,
+      "purpose": "Fetch fast-moving release feeds, download pages, and service changelogs and emit a read-only change report.",
+      "allowedOutput": "A deterministic report to standard output or an operator-selected external capture path; no catalog file is written.",
+      "humanBoundary": "Every material signal waits for evidence and applicability review. Source failures do not change catalog state."
+    },
+    "weekly": {
+      "automated": false,
+      "purpose": "Triage accumulated change signals, review rolling documentation and lifecycle notices, and resolve source availability problems.",
+      "allowedOutput": "A reviewed maintenance decision outside accepted evidence, or a bounded proposal for later dossier work.",
+      "humanBoundary": "Only a person may decide that a signal justifies new evidence capture, a rename conclusion, or a discontinuation review."
+    },
+    "monthly": {
+      "automated": false,
+      "purpose": "Review source coverage, cadence fitness, unresolved applicability, and whether curated primary anchors have moved.",
+      "allowedOutput": "Registry maintenance after review; accepted dossiers and records remain immutable unless separately authorized.",
+      "humanBoundary": "Do not treat age, a redirect, or missing content as supersession or discontinuation without defensible publisher evidence."
+    },
+    "quarterly": {
+      "automated": false,
+      "purpose": "Review security sources, source ownership, lifecycle coverage, normalization behavior, and scheduling safety.",
+      "allowedOutput": "A maintenance retrospective and separately authorized backward-compatible watcher changes.",
+      "humanBoundary": "Policy, schema, catalog lifecycle, scoring, publication, outreach, and product testing remain outside the watcher."
+    }
+  },
+  "surfaces": [
+    {
+      "recordId": "com.cline.bot.vscode-extension.4-1-2",
+      "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
+      "publisher": "Cline Bot Inc.",
+      "product": "Cline",
+      "surface": "VS Code extension",
+      "deliveryModel": "local",
+      "sourceIds": [
+        "cline-marketplace-listing"
+      ],
+      "lifecycleRecordIds": [
+        "com.cline.bot.vscode-extension.4-1-2",
+        "com.cline.bot.vscode-extension.4-1-3"
+      ],
+      "currentLifecycleRecordId": "com.cline.bot.vscode-extension.4-1-3"
+    },
+    {
+      "recordId": "org.openhands.cli.1-16-0",
+      "surfaceKey": "org.openhands.openhands.cli.stable",
+      "publisher": "OpenHands",
+      "product": "OpenHands",
+      "surface": "CLI stable release",
+      "deliveryModel": "hybrid",
+      "sourceIds": [
+        "openhands-cli-release-feed",
+        "openhands-cli-readme-lifecycle"
+      ],
+      "lifecycleRecordIds": [
+        "org.openhands.cli.1-16-0"
+      ],
+      "currentLifecycleRecordId": "org.openhands.cli.1-16-0"
+    },
+    {
+      "recordId": "com.github.copilot.cloud-agent.rolling",
+      "surfaceKey": "com.github.copilot.cloud-agent.rolling-service",
+      "publisher": "GitHub",
+      "product": "GitHub Copilot",
+      "surface": "Copilot cloud agent rolling service",
+      "deliveryModel": "hosted",
+      "sourceIds": [
+        "github-copilot-cloud-agent-lifecycle"
+      ],
+      "lifecycleRecordIds": [
+        "com.github.copilot.cloud-agent.rolling"
+      ],
+      "currentLifecycleRecordId": "com.github.copilot.cloud-agent.rolling"
+    },
+    {
+      "recordId": "com.google.jules.hosted.rolling",
+      "surfaceKey": "com.google.jules.hosted.rolling-service",
+      "publisher": "Google",
+      "product": "Jules",
+      "surface": "Hosted rolling service",
+      "deliveryModel": "hosted",
+      "sourceIds": [
+        "google-jules-service-changelog"
+      ],
+      "lifecycleRecordIds": [
+        "com.google.jules.hosted.rolling"
+      ],
+      "currentLifecycleRecordId": "com.google.jules.hosted.rolling"
+    },
+    {
+      "recordId": "com.openai.codex.cli.0-90-0",
+      "lifecycleRecordIds": [
+        "com.openai.codex.cli.0-90-0",
+        "com.openai.codex.cli.0-146-0"
+      ],
+      "currentLifecycleRecordId": "com.openai.codex.cli.0-146-0",
+      "surfaceKey": "com.openai.codex.cli.stable",
+      "publisher": "OpenAI",
+      "product": "Codex",
+      "surface": "CLI stable release (0.90.0 pilot anchor; 0.146.0 current lifecycle record)",
+      "deliveryModel": "local",
+      "sourceIds": [
+        "openai-codex-release-feed",
+        "openai-codex-security-policy"
+      ]
+    },
+    {
+      "recordId": "com.cursor.ide.foreground-agent.3-14",
+      "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
+      "publisher": "Anysphere, Inc.",
+      "product": "Cursor",
+      "surface": "IDE foreground Agent desktop stable",
+      "deliveryModel": "hybrid",
+      "sourceIds": [
+        "cursor-desktop-download"
+      ],
+      "lifecycleRecordIds": [
+        "com.cursor.ide.foreground-agent.3-14"
+      ],
+      "currentLifecycleRecordId": "com.cursor.ide.foreground-agent.3-14"
+    },
+    {
+      "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "publisher": "GitLab, Inc.",
+      "product": "GitLab Duo Agent Platform",
+      "surface": "Developer Flow release line",
+      "deliveryModel": "hybrid",
+      "sourceIds": [
+        "gitlab-developer-flow-documentation",
+        "gitlab-19-2-immutable-release"
+      ],
+      "lifecycleRecordIds": [
+        "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+        "com.gitlab.duo.developer-flow.19-2-1"
+      ],
+      "currentLifecycleRecordId": "com.gitlab.duo.developer-flow.19-2-1"
+    },
+    {
+      "recordId": "com.cognition.devin.hosted.rolling",
+      "surfaceKey": "com.cognition.devin.hosted.rolling-service",
+      "publisher": "Cognition AI, Inc.",
+      "product": "Devin",
+      "surface": "Hosted coding agent rolling service",
+      "deliveryModel": "hosted",
+      "sourceIds": [
+        "cognition-devin-service-changelog",
+        "cognition-enterprise-security"
+      ],
+      "lifecycleRecordIds": [
+        "com.cognition.devin.hosted.rolling"
+      ],
+      "currentLifecycleRecordId": "com.cognition.devin.hosted.rolling"
+    },
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-117",
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "publisher": "Anthropic PBC",
+      "product": "Claude Code",
+      "surface": "CLI stable release",
+      "deliveryModel": "local",
+      "sourceIds": [
+        "anthropic-claude-code-release-feed"
+      ],
+      "lifecycleRecordIds": [
+        "com.anthropic.claude-code.cli.2-1-117",
+        "com.anthropic.claude-code.cli.2-1-220"
+      ],
+      "currentLifecycleRecordId": "com.anthropic.claude-code.cli.2-1-220"
+    },
+    {
+      "recordId": "dev.zed.agent.native.1-13-1",
+      "surfaceKey": "dev.zed.agent.native.desktop-stable",
+      "publisher": "Zed Industries, Inc.",
+      "product": "Zed",
+      "surface": "Native Agent desktop channel",
+      "deliveryModel": "hybrid",
+      "sourceIds": [
+        "zed-stable-release-page",
+        "zed-preview-release-page"
+      ],
+      "lifecycleRecordIds": [
+        "dev.zed.agent.native.1-13-1"
+      ],
+      "currentLifecycleRecordId": "dev.zed.agent.native.1-13-1"
+    },
+    {
+      "recordId": "com.replit.agent.hosted.agent-4",
+      "surfaceKey": "com.replit.agent.hosted.agent-4-service",
+      "publisher": "Replit",
+      "product": "Replit Agent",
+      "surface": "Agent 4 hosted generation",
+      "deliveryModel": "hosted",
+      "sourceIds": [
+        "replit-agent-4-immutable-announcement"
+      ],
+      "lifecycleRecordIds": [
+        "com.replit.agent.hosted.agent-4"
+      ],
+      "currentLifecycleRecordId": "com.replit.agent.hosted.agent-4"
+    },
+    {
+      "recordId": "org.aider-ai.aider.cli.0-86-0",
+      "surfaceKey": "org.aider-ai.aider.cli.stable",
+      "publisher": "Aider-AI project",
+      "product": "Aider",
+      "surface": "CLI stable release",
+      "deliveryModel": "local",
+      "sourceIds": [
+        "aider-release-feed"
+      ],
+      "lifecycleRecordIds": [
+        "org.aider-ai.aider.cli.0-86-0"
+      ],
+      "currentLifecycleRecordId": "org.aider-ai.aider.cli.0-86-0"
+    },
+    {
+      "recordId": "com.amazon.kiro.ide.1-0-242",
+      "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
+      "publisher": "Amazon Web Services",
+      "product": "Kiro",
+      "surface": "IDE desktop stable",
+      "deliveryModel": "hybrid",
+      "sourceIds": [
+        "kiro-ide-service-changelog"
+      ],
+      "lifecycleRecordIds": [
+        "com.amazon.kiro.ide.1-0-242"
+      ],
+      "currentLifecycleRecordId": "com.amazon.kiro.ide.1-0-242"
+    },
+    {
+      "recordId": "com.lovable.agent.hosted.rolling",
+      "surfaceKey": "com.lovable.build-mode.hosted.rolling-service",
+      "publisher": "Lovable",
+      "product": "Lovable",
+      "surface": "Build mode hosted rolling service",
+      "deliveryModel": "hosted",
+      "sourceIds": [
+        "lovable-build-mode-lifecycle"
+      ],
+      "lifecycleRecordIds": [
+        "com.lovable.agent.hosted.rolling"
+      ],
+      "currentLifecycleRecordId": "com.lovable.agent.hosted.rolling"
+    },
+    {
+      "recordId": "com.anomaly.opencode.cli.1-18-11",
+      "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
+      "publisher": "Anomaly Innovations, Inc.",
+      "product": "OpenCode",
+      "surface": "CLI/TUI stable release",
+      "deliveryModel": "local",
+      "sourceIds": [
+        "opencode-release-feed"
+      ],
+      "lifecycleRecordIds": [
+        "com.anomaly.opencode.cli.1-18-11"
+      ],
+      "currentLifecycleRecordId": "com.anomaly.opencode.cli.1-18-11"
+    },
+    {
+      "recordId": "com.cognition.devin-desktop.cascade.3-6-27",
+      "surfaceKey": "com.cognition.devin-desktop.cascade.desktop-stable",
+      "publisher": "Cognition AI, Inc.",
+      "product": "Devin Desktop",
+      "surface": "Cascade desktop stable",
+      "deliveryModel": "hybrid",
+      "sourceIds": [
+        "cognition-devin-desktop-download",
+        "cognition-cascade-documentation",
+        "cognition-enterprise-security"
+      ],
+      "lifecycleRecordIds": [
+        "com.cognition.devin-desktop.cascade.3-6-27"
+      ],
+      "currentLifecycleRecordId": "com.cognition.devin-desktop.cascade.3-6-27"
+    }
+  ],
+  "sources": [
+    {
+      "id": "cline-marketplace-listing",
+      "title": "Cline - Visual Studio Marketplace",
+      "uri": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+      "sourceType": "download-page",
+      "owner": {
+        "kind": "publisher",
+        "name": "Cline Bot Inc.",
+        "canonicalDomains": [
+          "marketplace.visualstudio.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.cline.bot.vscode-extension.4-1-2",
+          "com.cline.bot.vscode-extension.4-1-3"
+        ],
+        "surfaceKeys": [
+          "com.cline.bot.cline.vscode-extension.marketplace"
+        ],
+        "scopeNote": "Applies only to the Cline VS Code Marketplace surface; Desktop releases are excluded. The additive research-preview watcher view also applies this unchanged baseline to com.cline.bot.vscode-extension.4-1-3; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "weekly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The listing remained available at review; the exact current version was not exposed by the audited rendering."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "839742c7c7a882e634e4a9c9d7e8d59059ceb0c8d8077f15fd0e3d32afc2e2f0"
+      },
+      "changeClassification": "release-available",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "openhands-cli-release-feed",
+      "title": "OpenHands CLI release feed",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI/releases.atom",
+      "sourceType": "release-feed",
+      "owner": {
+        "kind": "publisher",
+        "name": "OpenHands",
+        "canonicalDomains": [
+          "github.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "org.openhands.cli.1-16-0"
+        ],
+        "surfaceKeys": [
+          "org.openhands.openhands.cli.stable"
+        ],
+        "scopeNote": "Applies to the OpenHands V1 CLI repository release line, not the separate OpenHands platform repository. The additive research-preview watcher view also applies this unchanged baseline to org.openhands.cli.1-16-0; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The release list identified 1.16.0 as latest; its exact publication date was not needed for the lifecycle audit."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "56fe75405c7e8be5f55f36f18c3144142a5075a461761e7ec72b537c5b5c6d8c"
+      },
+      "changeClassification": "release-available",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "openhands-cli-readme-lifecycle",
+      "title": "OpenHands V1 CLI repository README",
+      "uri": "https://github.com/OpenHands/OpenHands-CLI",
+      "sourceType": "lifecycle-notice",
+      "owner": {
+        "kind": "publisher",
+        "name": "OpenHands",
+        "canonicalDomains": [
+          "github.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "org.openhands.cli.1-16-0"
+        ],
+        "surfaceKeys": [
+          "org.openhands.openhands.cli.stable"
+        ],
+        "scopeNote": "Used only to review the V1 CLI maintenance lifecycle; it does not transfer platform claims into the CLI record. The additive research-preview watcher view also applies this unchanged baseline to org.openhands.cli.1-16-0; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "monthly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The README described V1 CLI as feature-complete and primarily stability-maintained, not discontinued."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "82aaa9eea4604be0b7e38a5858dbc118fc9549e4e1ff3be76c14c83f05cd2ee6"
+      },
+      "changeClassification": "possible-discontinuation",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "github-copilot-cloud-agent-lifecycle",
+      "title": "Research, plan, and code with Copilot cloud agent",
+      "uri": "https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/",
+      "sourceType": "lifecycle-notice",
+      "owner": {
+        "kind": "publisher",
+        "name": "GitHub",
+        "canonicalDomains": [
+          "github.blog"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.github.copilot.cloud-agent.rolling"
+        ],
+        "surfaceKeys": [
+          "com.github.copilot.cloud-agent.rolling-service"
+        ],
+        "scopeNote": "Applies to GitHub's rolling Copilot cloud agent surface and its documented former coding-agent name. The additive research-preview watcher view also applies this unchanged baseline to com.github.copilot.cloud-agent.rolling; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "weekly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": "2026-04-01",
+        "summary": "GitHub documented Copilot cloud agent as the current name and Copilot coding agent as the former name."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "a8487922b4d07ff934762e1b851025ef1354ed6ba4ecf1b4704ba5420a0a2cef"
+      },
+      "changeClassification": "possible-rename",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "google-jules-service-changelog",
+      "title": "Jules changelog",
+      "uri": "https://jules.google/docs/changelog/",
+      "sourceType": "service-changelog",
+      "owner": {
+        "kind": "publisher",
+        "name": "Google",
+        "canonicalDomains": [
+          "jules.google"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.google.jules.hosted.rolling"
+        ],
+        "surfaceKeys": [
+          "com.google.jules.hosted.rolling-service"
+        ],
+        "scopeNote": "Applies to the rolling Jules hosted service; dated entries do not identify an immutable backend revision. The additive research-preview watcher view also applies this unchanged baseline to com.google.jules.hosted.rolling; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The active changelog contained 2026 service and model entries at review."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "cd9e4ac5f8014ca0ad1a9d933c4ae00869065496610dd8fd9cb25e89e2183a80"
+      },
+      "changeClassification": "rolling-documentation-changed",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "openai-codex-release-feed",
+      "title": "OpenAI Codex release feed",
+      "uri": "https://github.com/openai/codex/releases.atom",
+      "sourceType": "release-feed",
+      "owner": {
+        "kind": "publisher",
+        "name": "OpenAI",
+        "canonicalDomains": [
+          "github.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.openai.codex.cli.0-90-0",
+          "com.openai.codex.cli.0-146-0"
+        ],
+        "surfaceKeys": [
+          "com.openai.codex.cli.stable"
+        ],
+        "scopeNote": "Applies to the accepted 0.90.0 pilot anchor and the separate current 0.146.0 record on the same Codex CLI stable surface; future release-feed changes are human review signals and do not alter either record automatically. The additive research-preview watcher view also applies this unchanged baseline to com.openai.codex.cli.0-146-0; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": "2026-07-29",
+        "summary": "The lifecycle audit observed Codex CLI 0.146.0 as the latest immutable release."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "eae196475de96a8415d2665bfbb682a7b1d8e00eba9794c547c900d35623dd83"
+      },
+      "changeClassification": "release-available",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "openai-codex-security-policy",
+      "title": "OpenAI Codex repository security policy",
+      "uri": "https://github.com/openai/codex/security/policy",
+      "sourceType": "security-source",
+      "owner": {
+        "kind": "publisher",
+        "name": "OpenAI",
+        "canonicalDomains": [
+          "github.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.openai.codex.cli.0-90-0",
+          "com.openai.codex.cli.0-146-0"
+        ],
+        "surfaceKeys": [
+          "com.openai.codex.cli.stable"
+        ],
+        "scopeNote": "Publisher security source for the Codex repository and both lifecycle records on the stable CLI surface; a page change requires exact-version and rolling applicability review before any dossier use. The additive research-preview watcher view also applies this unchanged baseline to com.openai.codex.cli.0-146-0; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "quarterly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "No material-change date was established; the source is registered for quarterly policy review."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "0d6ac75e6ebb82d3beb8c8eb5d607f02c23b8e10bd99d3572fc9f0188f9e422d"
+      },
+      "changeClassification": "applicability-review-needed",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "cursor-desktop-download",
+      "title": "Cursor desktop download archive",
+      "uri": "https://cursor.com/download",
+      "sourceType": "download-page",
+      "owner": {
+        "kind": "publisher",
+        "name": "Anysphere, Inc.",
+        "canonicalDomains": [
+          "cursor.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.cursor.ide.foreground-agent.3-14"
+        ],
+        "surfaceKeys": [
+          "com.cursor.ide.foreground-agent.desktop-stable"
+        ],
+        "scopeNote": "Applies to the exact desktop client surface; it does not identify the rolling model or service backend. The additive research-preview watcher view also applies this unchanged baseline to com.cursor.ide.foreground-agent.3-14; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The archive labeled desktop client 3.14 latest at review."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "977132763d0e94d89258dbf852eddc6f58ff85ee9c7fd3deaa9405ec49e45625"
+      },
+      "changeClassification": "release-available",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "gitlab-developer-flow-documentation",
+      "title": "GitLab Duo Developer Flow documentation",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+      "sourceType": "rolling-documentation",
+      "owner": {
+        "kind": "publisher",
+        "name": "GitLab, Inc.",
+        "canonicalDomains": [
+          "docs.gitlab.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+          "com.gitlab.duo.developer-flow.19-2-1"
+        ],
+        "surfaceKeys": [
+          "com.gitlab.duo-agent-platform.developer-flow.release-line"
+        ],
+        "scopeNote": "Rolling documentation spans offerings and later release lines; any change needs exact offering, runner, trigger, model, and approval applicability review. The additive research-preview watcher view also applies this unchanged baseline to com.gitlab.duo.developer-flow.19-2-1; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "weekly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The page retained the 18.8 GA milestone and documented later changes through 19.2."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "15246cc8ee83665560a836ad702acfcbb0923b59daad0d4307f98cd592cef8a2"
+      },
+      "changeClassification": "applicability-review-needed",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "gitlab-19-2-immutable-release",
+      "title": "GitLab 19.2 release notes",
+      "uri": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/",
+      "sourceType": "immutable-release",
+      "owner": {
+        "kind": "publisher",
+        "name": "GitLab, Inc.",
+        "canonicalDomains": [
+          "docs.gitlab.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
+          "com.gitlab.duo.developer-flow.19-2-1"
+        ],
+        "surfaceKeys": [
+          "com.gitlab.duo-agent-platform.developer-flow.release-line"
+        ],
+        "scopeNote": "A future release-line anchor and supersession signal; it does not alter the accepted 18.8 GA fixture. The additive research-preview watcher view also applies this unchanged baseline to com.gitlab.duo.developer-flow.19-2-1; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "monthly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The audit observed 19.2 release notes adding an Agentic Chat handoff while retaining offering boundaries."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "3d18be85ce31767a0560cf352cbe01c2c66109b9e598a57c75c496742cb57aeb"
+      },
+      "changeClassification": "applicability-review-needed",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "cognition-devin-service-changelog",
+      "title": "Devin 2026 release notes",
+      "uri": "https://docs.devin.ai/release-notes/2026",
+      "sourceType": "service-changelog",
+      "owner": {
+        "kind": "publisher",
+        "name": "Cognition AI, Inc.",
+        "canonicalDomains": [
+          "docs.devin.ai"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.cognition.devin.hosted.rolling"
+        ],
+        "surfaceKeys": [
+          "com.cognition.devin.hosted.rolling-service"
+        ],
+        "scopeNote": "Applies only to the hosted Devin rolling service; Devin Desktop, Cascade, Devin Local, and ACP surfaces are excluded. The additive research-preview watcher view also applies this unchanged baseline to com.cognition.devin.hosted.rolling; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The active 2026 release-note stream continued to document the managed service."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "e5d9e79f12e5780848696a5ff35c82c99b8e78174631f17fc6ffc8dd6e03a173"
+      },
+      "changeClassification": "rolling-documentation-changed",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "anthropic-claude-code-release-feed",
+      "title": "Claude Code release feed",
+      "uri": "https://github.com/anthropics/claude-code/releases.atom",
+      "sourceType": "release-feed",
+      "owner": {
+        "kind": "publisher",
+        "name": "Anthropic PBC",
+        "canonicalDomains": [
+          "github.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.anthropic.claude-code.cli.2-1-117",
+          "com.anthropic.claude-code.cli.2-1-220"
+        ],
+        "surfaceKeys": [
+          "com.anthropic.claude-code.cli.stable"
+        ],
+        "scopeNote": "Applies to exact Claude Code CLI releases; model and rolling permission documentation remain separate applicability axes. The additive research-preview watcher view also applies this unchanged baseline to com.anthropic.claude-code.cli.2-1-220; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": "2026-07-25",
+        "summary": "The lifecycle audit observed Claude Code v2.1.220 as the latest release."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "53ca9a66ed58df05ae02759a29b8e3639a3dc9e2994e0f76a982e257583b1c55"
+      },
+      "changeClassification": "release-available",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "zed-stable-release-page",
+      "title": "Zed stable releases",
+      "uri": "https://zed.dev/releases/stable",
+      "sourceType": "release-feed",
+      "owner": {
+        "kind": "publisher",
+        "name": "Zed Industries, Inc.",
+        "canonicalDomains": [
+          "zed.dev"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "dev.zed.agent.native.1-13-1"
+        ],
+        "surfaceKeys": [
+          "dev.zed.agent.native.desktop-stable"
+        ],
+        "scopeNote": "Stable-channel source only; preview and external-agent applicability cannot be transferred. The additive research-preview watcher view also applies this unchanged baseline to dev.zed.agent.native.1-13-1; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The lifecycle audit found 1.12.1 on the stable page, conflicting with the accepted record's stable-channel identity."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "d56b1ac96f2d70bba0362acb3f72bf329185d128c0a63c252aca992506b2c301"
+      },
+      "changeClassification": "applicability-review-needed",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "zed-preview-release-page",
+      "title": "Zed preview releases",
+      "uri": "https://zed.dev/releases/preview?b=1",
+      "sourceType": "release-feed",
+      "owner": {
+        "kind": "publisher",
+        "name": "Zed Industries, Inc.",
+        "canonicalDomains": [
+          "zed.dev"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "dev.zed.agent.native.1-13-1"
+        ],
+        "surfaceKeys": [
+          "dev.zed.agent.native.desktop-stable"
+        ],
+        "scopeNote": "Used only to investigate the channel conflict; preview changes do not become stable-channel claims. The additive research-preview watcher view also applies this unchanged baseline to dev.zed.agent.native.1-13-1; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "weekly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The lifecycle audit found 1.13.1 identified as preview."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "4cefa4e141e67608e44e5fb5763b1cc0a1e3cbc6702d79500ffe5e643666a35b"
+      },
+      "changeClassification": "applicability-review-needed",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "replit-agent-4-immutable-announcement",
+      "title": "Introducing Replit Agent 4: Built for Creativity",
+      "uri": "https://replit.com/blog/introducing-agent-4-built-for-creativity",
+      "sourceType": "immutable-release",
+      "owner": {
+        "kind": "publisher",
+        "name": "Replit",
+        "canonicalDomains": [
+          "replit.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.replit.agent.hosted.agent-4"
+        ],
+        "surfaceKeys": [
+          "com.replit.agent.hosted.agent-4-service"
+        ],
+        "scopeNote": "Generation anchor for Agent 4; the page does not freeze the rolling hosted backend or model revision. The additive research-preview watcher view also applies this unchanged baseline to com.replit.agent.hosted.agent-4; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "monthly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The announcement remained the current Agent 4 generation anchor; no Agent 5 identity was identified."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "775b2d40a8fa4dc4de0a8187aa6bff0d141f94bc3fb8d2c80218a1e58b302916"
+      },
+      "changeClassification": "applicability-review-needed",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "aider-release-feed",
+      "title": "Aider release feed",
+      "uri": "https://github.com/Aider-AI/aider/releases.atom",
+      "sourceType": "release-feed",
+      "owner": {
+        "kind": "publisher",
+        "name": "Aider-AI project",
+        "canonicalDomains": [
+          "github.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "org.aider-ai.aider.cli.0-86-0"
+        ],
+        "surfaceKeys": [
+          "org.aider-ai.aider.cli.stable"
+        ],
+        "scopeNote": "Applies to Aider CLI repository releases; no package was installed or executed. The additive research-preview watcher view also applies this unchanged baseline to org.aider-ai.aider.cli.0-86-0; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The lifecycle audit found v0.86.0 still resolving as latest."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "628ced321c1661cf411aa70b786bab6df75d0af51c249b03884ea6c845e1bc6f"
+      },
+      "changeClassification": "release-available",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "kiro-ide-service-changelog",
+      "title": "Kiro IDE changelog",
+      "uri": "https://kiro.dev/changelog/ide/",
+      "sourceType": "service-changelog",
+      "owner": {
+        "kind": "publisher",
+        "name": "Amazon Web Services",
+        "canonicalDomains": [
+          "kiro.dev"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.amazon.kiro.ide.1-0-242"
+        ],
+        "surfaceKeys": [
+          "com.amazon.kiro.ide.desktop-stable"
+        ],
+        "scopeNote": "Applies to the Kiro IDE line; changed rolling content needs exact client and service applicability review. The additive research-preview watcher view also applies this unchanged baseline to com.amazon.kiro.ide.1-0-242; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": "2026-07-28",
+        "summary": "The changelog listed IDE 1.0.242 as the latest 1.0.x patch at audit."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "8ea56fb09f2ff87149c8dd906d07fe3c48a48f7bc010331382ea16e892246e53"
+      },
+      "changeClassification": "rolling-documentation-changed",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "lovable-build-mode-lifecycle",
+      "title": "Implement changes in Build mode",
+      "uri": "https://docs.lovable.dev/features/agent-mode",
+      "sourceType": "lifecycle-notice",
+      "owner": {
+        "kind": "publisher",
+        "name": "Lovable",
+        "canonicalDomains": [
+          "docs.lovable.dev"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.lovable.agent.hosted.rolling"
+        ],
+        "surfaceKeys": [
+          "com.lovable.build-mode.hosted.rolling-service"
+        ],
+        "scopeNote": "Canonical-name source for Build mode and its publisher-sourced former Agent mode name; subagent execution scope remains separate. The additive research-preview watcher view also applies this unchanged baseline to com.lovable.agent.hosted.rolling; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "weekly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "Current documentation used Build mode as canonical and identified Agent mode as the former name."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "9ed4329532dbd20bf5c5211a19e2770d9fd943eaa4c87b38d958c32a62c8c07b"
+      },
+      "changeClassification": "possible-rename",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "opencode-release-feed",
+      "title": "OpenCode release feed",
+      "uri": "https://github.com/anomalyco/opencode/releases.atom",
+      "sourceType": "release-feed",
+      "owner": {
+        "kind": "publisher",
+        "name": "Anomaly Innovations, Inc.",
+        "canonicalDomains": [
+          "github.com"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.anomaly.opencode.cli.1-18-11"
+        ],
+        "surfaceKeys": [
+          "com.anomaly.opencode.cli-tui.stable"
+        ],
+        "scopeNote": "Applies only to CLI/TUI releases; Desktop release content cannot be transferred. The additive research-preview watcher view also applies this unchanged baseline to com.anomaly.opencode.cli.1-18-11; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": "2026-08-01",
+        "summary": "The lifecycle audit observed immutable v1.18.11 as latest."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "b8cd450d99049aee78b87b53eb479bb3bb3618605785be49797bb596d537bfb5"
+      },
+      "changeClassification": "release-available",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "cognition-devin-desktop-download",
+      "title": "Devin Desktop releases",
+      "uri": "https://docs.devin.ai/desktop/releases",
+      "sourceType": "download-page",
+      "owner": {
+        "kind": "publisher",
+        "name": "Cognition AI, Inc.",
+        "canonicalDomains": [
+          "docs.devin.ai"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.cognition.devin-desktop.cascade.3-6-27"
+        ],
+        "surfaceKeys": [
+          "com.cognition.devin-desktop.cascade.desktop-stable"
+        ],
+        "scopeNote": "Exact Devin Desktop client source; hosted Devin, Devin Local, and external ACP agents are excluded. The additive research-preview watcher view also applies this unchanged baseline to com.cognition.devin-desktop.cascade.3-6-27; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "daily",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": "2026-08-01",
+        "summary": "The page listed Devin Desktop v3.6.27 first at audit."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "6a790dbf200f2960a96f78fb81ad2b9b0cb64068ec61592ab4b04f5641f90512"
+      },
+      "changeClassification": "release-available",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "cognition-cascade-documentation",
+      "title": "Devin Desktop Cascade overview",
+      "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+      "sourceType": "rolling-documentation",
+      "owner": {
+        "kind": "publisher",
+        "name": "Cognition AI, Inc.",
+        "canonicalDomains": [
+          "docs.devin.ai"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.cognition.devin-desktop.cascade.3-6-27"
+        ],
+        "surfaceKeys": [
+          "com.cognition.devin-desktop.cascade.desktop-stable"
+        ],
+        "scopeNote": "Rolling Cascade documentation; exact client, service/model backend, mode, permissions, and runtime identity remain separate. The additive research-preview watcher view also applies this unchanged baseline to com.cognition.devin-desktop.cascade.3-6-27; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "weekly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "The page identified Cascade as a Devin Desktop local agent with Code and Chat modes at audit."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "1a8724c9fe73665afaff6e9290fb0a1d710270ca1d6d85251a646a64ec8de88e"
+      },
+      "changeClassification": "applicability-review-needed",
+      "requiresHumanEvidenceReviewOnChange": true
+    },
+    {
+      "id": "cognition-enterprise-security",
+      "title": "Cognition enterprise security",
+      "uri": "https://docs.devin.ai/enterprise/security-access/security/enterprise-security",
+      "sourceType": "security-source",
+      "owner": {
+        "kind": "publisher",
+        "name": "Cognition AI, Inc.",
+        "canonicalDomains": [
+          "docs.devin.ai"
+        ]
+      },
+      "publisherControlled": true,
+      "applicability": {
+        "recordIds": [
+          "com.cognition.devin.hosted.rolling",
+          "com.cognition.devin-desktop.cascade.3-6-27"
+        ],
+        "surfaceKeys": [
+          "com.cognition.devin.hosted.rolling-service",
+          "com.cognition.devin-desktop.cascade.desktop-stable"
+        ],
+        "scopeNote": "Publisher security source with offering-dependent applicability; it cannot transfer hosted-service claims to Desktop or vice versa. The additive research-preview watcher view also applies this unchanged baseline to com.cognition.devin.hosted.rolling; any future change remains only a human-review signal. The additive research-preview watcher view also applies this unchanged baseline to com.cognition.devin-desktop.cascade.3-6-27; any future change remains only a human-review signal."
+      },
+      "expectedReviewCadence": "quarterly",
+      "lastCheckedDate": "2026-08-02",
+      "lastObservedChange": {
+        "date": null,
+        "summary": "Registered after current primary-source verification; no stable public material-change date was identified."
+      },
+      "contentFingerprint": {
+        "algorithm": "sha256",
+        "normalization": "source-watch-normalized-response-v1",
+        "value": "12d3934aeb8528ae36101f6d03c6a2b81611f2ecf6e4083797213448b3487cb0"
+      },
+      "changeClassification": "applicability-review-needed",
+      "requiresHumanEvidenceReviewOnChange": true
+    }
+  ]
+}

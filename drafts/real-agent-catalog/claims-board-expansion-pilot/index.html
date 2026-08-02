@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Expanded experimental claims board · Agent Evidence Catalog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#claims-board">Skip to claims board</a>
+  <header class="page-header">
+    <div>
+      <h1>Expanded experimental claims board</h1>
+      <p class="lead">Publisher claims only. Not independently verified.</p>
+      <p class="context">Fourteen records are grouped by comparison frame before percentages are shown.</p>
+    </div>
+    <div class="header-facts" aria-label="Prototype facts">
+      <span><strong id="recordTotal">—</strong> exact records</span>
+      <span><strong id="attributeTotal">—</strong> atomic attributes</span>
+    </div>
+  </header>
+  <div class="boundary-banner" role="note">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 10v6M12 7h.01"></path></svg>
+    <span class="boundary-desktop">Unpublished expansion derivative · No score, winner, tier, recommendation or suitability judgment.</span>
+    <span class="boundary-mobile">Unpublished · No scores or recommendations</span>
+  </div>
+  <main id="claims-board">
+    <button class="filter-toggle" id="filterToggle" type="button" aria-controls="filterPanel" aria-expanded="false">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16l-6.3 7.2v5.5l-3.4 1.8v-7.3L4 5Z"></path></svg>
+      Filters
+      <svg class="chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"></path></svg>
+    </button>
+    <section class="filters" id="filterPanel" aria-label="Claims-board filters">
+      <label>Comparison frame<select id="frameFilter"><option value="all">All frames — grouped</option></select></label>
+      <label class="search-label">Search records or attributes<span class="search-field"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><input id="searchInput" type="search" placeholder="Search records or attributes" autocomplete="off"></span></label>
+      <label>Attribute type<select id="kindFilter"><option value="all">All types</option><option value="capability">Capabilities</option><option value="authority">Authority</option></select></label>
+      <label>State<select id="statusFilter"><option value="all">All states</option><option value="claimed">Claimed</option><option value="conditional">Conditional</option><option value="explicit-limitation">Explicit limitation</option><option value="unknown">Unknown</option><option value="unresolved">Unresolved</option><option value="not-applicable">Not applicable</option></select></label>
+      <button class="reset-button" id="resetFilters" type="button">Reset</button>
+    </section>
+    <section class="status-legend" aria-labelledby="legendTitle">
+      <div><h2 id="legendTitle">State key</h2><p>Every cell is one evidence mapping state. Color never changes its meaning.</p></div>
+      <ul>
+        <li><span class="legend-swatch status-claimed"></span>Claimed</li>
+        <li><span class="legend-swatch status-conditional"></span>Conditional</li>
+        <li><span class="legend-swatch status-explicit-limitation"></span>Explicit limitation</li>
+        <li><span class="legend-swatch status-unknown"></span>Unknown</li>
+        <li><span class="legend-swatch status-unresolved"></span>Unresolved</li>
+        <li><span class="legend-swatch status-not-applicable"></span>Not applicable</li>
+      </ul>
+    </section>
+    <div class="result-line" aria-live="polite" id="resultLine">Loading deterministic mapping…</div>
+    <div id="boardGroups"></div>
+    <div class="empty-state" id="emptyState" hidden><h2>No mapped cells match these filters.</h2><p>Reset the filters to restore all frame-grouped records and attributes.</p></div>
+  </main>
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="evidence-drawer" id="evidenceDrawer" aria-labelledby="drawerTitle" aria-hidden="true">
+    <div class="drawer-handle" aria-hidden="true"></div>
+    <header class="drawer-header"><div><h2 id="drawerTitle">Claim evidence</h2><p id="drawerContext"></p></div><button class="icon-button" id="closeDrawer" type="button" aria-label="Close claim evidence"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></svg></button></header>
+    <div class="drawer-body" id="drawerBody"></div>
+  </aside>
+  <noscript>This experimental board requires JavaScript to derive its view from the completed taxonomy and additive mapping.</noscript>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+

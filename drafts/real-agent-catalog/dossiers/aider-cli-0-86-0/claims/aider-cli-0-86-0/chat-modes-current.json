@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0", "id": "org.aider-ai.aider.cli.chat-modes-current", "slug": "chat-modes-current",
+  "subject": { "id": "org.aider-ai.aider.cli", "name": "Aider CLI", "publisher": "Aider-AI project", "surface": { "kind": "cli", "name": "Aider CLI", "slug": "aider-cli-0-86-0" } },
+  "claim": { "category": "interaction.mode", "statement": "Current Aider documentation separates code mode, which changes files; ask mode, which discusses code without changing files; architect mode, which uses an architect and editor path; and help mode." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Aider-AI project" },
+  "source": { "uri": "https://aider.chat/docs/usage/modes.html", "title": "Aider chat modes", "locator": "Chat modes and Architect mode and the editor model", "publishedAt": null, "capturedAt": "2026-08-01T10:46:26Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["code mode", "ask mode", "architect mode", "help mode"] }, "platform": { "scope": "all", "values": [] }, "model": { "scope": "unresolved", "values": [] }, "deployment": { "scope": "named", "values": ["interactive CLI session"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["mode-documentation-change", "authority-change"] },
+  "limitations": ["Mode names do not establish the effective mode of any session or prove enforcement of a non-writing boundary."],
+  "unknowns": ["The active mode, per-message override, models and auto-accept behavior are unknown."],
+  "relationships": [], "validationRefs": []
+}
+

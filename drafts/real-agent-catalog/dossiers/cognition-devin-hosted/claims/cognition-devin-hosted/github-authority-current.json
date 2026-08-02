@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin.github-authority-current",
+  "slug": "github-authority-current",
+  "subject": { "id": "com.cognition.devin", "name": "Devin", "publisher": "Cognition AI, Inc.", "surface": { "kind": "hosted-service", "name": "Devin hosted coding agent", "slug": "cognition-devin-hosted" } },
+  "claim": { "category": "authority.repository", "statement": "Cognition's current GitHub integration documentation says an administrator can grant Devin all organization repositories or selected repositories and that the GitHub App requests read/write access for checks, commit statuses, contents, discussions, issues, pull requests, projects and workflows so Devin can push branches, open pull requests and participate in pull-request discussions." },
+  "provenance": { "kind": "publisher-declared", "claimant": "Cognition AI, Inc." },
+  "source": { "uri": "https://docs.devin.ai/integrations/gh", "title": "GitHub", "locator": "Managing Devin's Permissions in GitHub", "publishedAt": null, "capturedAt": "2026-08-01T04:32:21Z", "snapshot": null },
+  "applicability": {
+    "version": { "kind": "rolling-current", "value": "captured 2026-08-01" },
+    "configuration": { "scope": "alternatives", "values": ["all organization repositories", "selected repositories", "GitHub App read/write permissions"] },
+    "platform": { "scope": "named", "values": ["GitHub integration"] },
+    "model": { "scope": "not-applicable", "values": [] },
+    "deployment": { "scope": "configuration-dependent", "values": ["GitHub App installation"] }
+  },
+  "lifecycle": { "status": "active", "changedAt": null, "reason": null },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-08-15", "invalidatedBy": ["github-app-permission-change", "repository-scope-change", "output-authority-change"] },
+  "limitations": ["Requested integration permissions do not prove installation, effective access, successful writes, review acceptance or merge authority."],
+  "unknowns": ["The installation owner, repository scope, branch protections, token permissions, pushed branches and pull-request outcomes are unknown."],
+  "relationships": [],
+  "validationRefs": []
+}

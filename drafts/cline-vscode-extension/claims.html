@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>What the public sources say about Cline</title>
+  <link rel="stylesheet" href="dossier.css">
+</head>
+<body data-page="brief">
+  <header class="site-header">
+    <a class="brand" href="claims.html" aria-label="Agent Catalog Cline evidence brief">
+      <span class="brand-mark" aria-hidden="true">AC</span>
+      <span>Agent Catalog</span>
+    </a>
+    <nav aria-label="Dossier views">
+      <a class="nav-link is-current" href="claims.html">Evidence brief</a>
+      <a class="nav-link" href="report.html">Source details</a>
+      <a class="nav-link" href="agent.html">For agents</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow-row">
+          <span class="draft-pill">Unpublished research draft</span>
+          <span>Reviewed 31 July 2026</span>
+          <span id="activeView" class="view-pill" hidden></span>
+        </div>
+        <p class="kicker">Cline · VS Code extension</p>
+        <h1>What the public sources say about Cline</h1>
+        <p class="lede">A practical guide to what it can do, when it asks, where content can go and what recovery the publisher describes.</p>
+      </div>
+      <aside class="boundary-card" aria-label="Evidence boundary">
+        <p class="boundary-label">Know what you are reading</p>
+        <p><strong>Publisher statements, not a product test.</strong> Cline was not installed or run. This page does not recommend, rank or certify it.</p>
+        <p class="source-set"><strong>Source set:</strong> All eight selected statements are attributed to Cline Bot Inc.; no independent third-party report is included.</p>
+        <a href="report.html#limits">See every limitation and unknown</a>
+      </aside>
+    </section>
+
+    <section class="summary-strip shell" aria-label="Dossier summary">
+      <div><strong>4.1.2</strong><span>exact release identity</span></div>
+      <div><strong>2</strong><span>version-pinned statements</span></div>
+      <div><strong>6</strong><span>rolling-current statements</span></div>
+      <div><strong>0</strong><span>independent test results</span></div>
+      <div><strong>2</strong><span>configuration-dependent questions</span></div>
+    </section>
+
+    <section class="persona-section shell" aria-labelledby="persona-title">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="kicker">Start with your reason for visiting</p>
+          <h2 id="persona-title">What are you trying to decide?</h2>
+        </div>
+        <button class="text-button" id="showAll" type="button">Show all questions</button>
+      </div>
+      <div class="persona-grid" id="personaChooser" role="group" aria-label="Choose a reading path"></div>
+    </section>
+
+    <section class="questions-section shell" aria-labelledby="questions-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">Questions that affect a real decision</p>
+          <h2 id="questions-title">Read the proposition, then check its scope</h2>
+        </div>
+        <p id="questionCount" class="count-label" aria-live="polite"></p>
+      </div>
+      <div class="question-list" id="questionGroups"></div>
+    </section>
+
+    <section class="unknowns-section shell" aria-labelledby="unknowns-title">
+      <div class="unknowns-copy">
+        <p class="kicker">Before relying on the claims</p>
+        <h2 id="unknowns-title">What this research still does not tell you</h2>
+        <p>The most important gap is behavioral: no one working on this catalog ran Cline. Release variants, effective settings, model-provider handling and recovery behavior remain unobserved.</p>
+      </div>
+      <ul id="globalUnknowns" class="unknowns-list"></ul>
+    </section>
+
+    <section class="next-step shell">
+      <div>
+        <p class="kicker">Need to check the evidence?</p>
+        <h2>Every source and scope decision is available.</h2>
+        <p>Open the technical report for exact attribution, applicability, relationships, limitations and unknowns for all eight statements.</p>
+      </div>
+      <div class="action-row">
+        <a class="primary-action" href="report.html">See sources and full details</a>
+        <a class="secondary-action" href="agent.html">Use this evidence with an agent</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <p>Local unpublished draft · Public sources only · Not independently tested</p>
+    <p><a href="agent-dossier.json">Open canonical JSON</a></p>
+  </footer>
+
+  <script src="dossier-data.js"></script>
+  <script src="dossier-app.js"></script>
+</body>
+</html>

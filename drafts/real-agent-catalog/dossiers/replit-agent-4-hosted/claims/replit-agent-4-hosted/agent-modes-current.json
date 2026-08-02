@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.replit.agent.hosted.agent-modes-current",
+  "slug": "agent-modes-current",
+  "subject": { "id": "com.replit.agent.hosted", "name": "Replit Agent", "publisher": "Replit", "surface": { "kind": "hosted-service", "name": "Replit Agent hosted workspace", "slug": "replit-agent-4-hosted" } },
+  "claim": { "category": "configuration.runtime", "statement": "Replit's current Agent Modes page documents Lite, Economy and Power as selectable execution modes and says each collaborator's mode and Agent settings apply to that collaborator's next message." },
+  "provenance": { "kind": "publisher-documentation", "claimant": "Replit" },
+  "source": { "uri": "https://docs.replit.com/features/agent/agent-modes", "title": "Agent Modes — Replit", "locator": "Lite mode; Economy mode; Power mode; Settings in shared projects", "publishedAt": null, "capturedAt": "2026-08-01T06:29:56Z", "snapshot": null },
+  "applicability": { "version": { "kind": "rolling-current", "value": null }, "configuration": { "scope": "named", "values": ["Lite", "Economy", "Power", "per-collaborator settings"] }, "platform": { "scope": "named", "values": ["Replit Agent settings dropdown"] }, "model": { "scope": "unresolved", "values": ["mode-dependent primary model"] }, "deployment": { "scope": "named", "values": ["Replit-managed hosted service"] } },
+  "lifecycle": { "status": "current", "changedAt": null, "reason": "Rolling publisher documentation captured on 2026-08-01." },
+  "review": { "reviewedAt": "2026-08-01", "recheckAfter": "2026-09-01", "invalidatedBy": ["mode-list-change", "settings-scope-change", "model-catalog-change"] },
+  "limitations": ["Mode labels describe current publisher routing choices but do not identify an immutable backend or model used for a task."],
+  "unknowns": ["The effective mode, collaborator identity, entitlement, service revision and routed model are unknown."],
+  "relationships": [], "validationRefs": []
+}

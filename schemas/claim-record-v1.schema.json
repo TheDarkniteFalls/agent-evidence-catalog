@@ -1,0 +1,391 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-evidence-catalog.example/schemas/claim-record-v1.schema.json",
+  "title": "Agent Evidence Catalog claim record v1",
+  "description": "One attributable public claim about one agent product surface, without an evaluation result or recommendation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "slug",
+    "subject",
+    "claim",
+    "provenance",
+    "source",
+    "applicability",
+    "lifecycle",
+    "review",
+    "limitations",
+    "unknowns",
+    "relationships",
+    "validationRefs"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "id": { "$ref": "#/$defs/id" },
+    "slug": { "$ref": "#/$defs/slug" },
+    "subject": { "$ref": "#/$defs/subject" },
+    "claim": { "$ref": "#/$defs/claim" },
+    "provenance": { "$ref": "#/$defs/provenance" },
+    "source": { "$ref": "#/$defs/source" },
+    "applicability": { "$ref": "#/$defs/applicability" },
+    "lifecycle": { "$ref": "#/$defs/lifecycle" },
+    "review": { "$ref": "#/$defs/review" },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 32,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/longText" }
+    },
+    "unknowns": {
+      "type": "array",
+      "maxItems": 32,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/longText" }
+    },
+    "relationships": {
+      "type": "array",
+      "maxItems": 32,
+      "items": { "$ref": "#/$defs/relationship" }
+    },
+    "validationRefs": {
+      "type": "array",
+      "maxItems": 32,
+      "items": { "$ref": "#/$defs/validationRef" }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)+$",
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 200
+    },
+    "shortText": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^(?!\\s)(?!.*\\s$)[^\\u0000-\\u001f\\u007f]+$"
+    },
+    "longText": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000,
+      "pattern": "^(?!\\s)(?!.*\\s$)[^\\u0000-\\u001f\\u007f]+$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "httpsUri": {
+      "type": "string",
+      "pattern": "^(?!\\s)(?!.*\\s$)https://(?![^/?#]*@)[^\\u0000-\\u001f\\u007f]+$",
+      "format": "uri",
+      "maxLength": 2000
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "format": "date"
+    },
+    "dateTime": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
+      "format": "date-time"
+    },
+    "surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "name", "slug"],
+      "properties": {
+        "kind": {
+          "enum": ["cli", "ide-extension", "desktop-app", "browser-extension", "hosted-service", "api", "sdk", "other"]
+        },
+        "name": { "$ref": "#/$defs/shortText" },
+        "slug": { "$ref": "#/$defs/slug" }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "publisher", "surface"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "$ref": "#/$defs/shortText" },
+        "publisher": { "$ref": "#/$defs/shortText" },
+        "surface": { "$ref": "#/$defs/surface" }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "statement"],
+      "properties": {
+        "category": {
+          "enum": [
+            "identity",
+            "artifact",
+            "delivery",
+            "authority.read",
+            "authority.draft",
+            "authority.change",
+            "authority.communicate",
+            "authority.spend",
+            "filesystem",
+            "process",
+            "network",
+            "credentials",
+            "data-handling",
+            "delegation",
+            "interoperability",
+            "capability",
+            "cost",
+            "reported-result",
+            "security",
+            "other"
+          ]
+        },
+        "statement": { "$ref": "#/$defs/longText" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "claimant"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "publisher-declared",
+            "publisher-release-metadata",
+            "publisher-reported-result",
+            "publisher-funded-third-party-report",
+            "independent-third-party-report"
+          ]
+        },
+        "claimant": { "$ref": "#/$defs/shortText" }
+      }
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uri", "sha256"],
+      "properties": {
+        "uri": { "$ref": "#/$defs/httpsUri" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uri", "title", "locator", "publishedAt", "capturedAt", "snapshot"],
+      "properties": {
+        "uri": { "$ref": "#/$defs/httpsUri" },
+        "title": { "$ref": "#/$defs/shortText" },
+        "locator": { "$ref": "#/$defs/shortText" },
+        "publishedAt": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/dateTime" }
+          ]
+        },
+        "capturedAt": { "$ref": "#/$defs/dateTime" },
+        "snapshot": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/snapshot" }
+          ]
+        }
+      }
+    },
+    "versionApplicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": { "enum": ["exact-version", "version-range", "release-line", "rolling-current", "unspecified"] },
+        "value": {
+          "type": ["string", "null"],
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^(?!\\s)(?!.*\\s$)[^\\u0000-\\u001f\\u007f]+$"
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "kind": { "enum": ["exact-version", "version-range", "release-line"] } } },
+          "then": { "properties": { "value": { "type": "string", "minLength": 1 } } }
+        },
+        {
+          "if": { "properties": { "kind": { "enum": ["rolling-current", "unspecified"] } } },
+          "then": { "properties": { "value": { "type": "null" } } }
+        }
+      ]
+    },
+    "dimensionApplicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "values"],
+      "properties": {
+        "scope": { "enum": ["named", "documented-default", "multiple", "unspecified", "not-applicable"] },
+        "values": {
+          "type": "array",
+          "maxItems": 32,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/shortText" }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "scope": { "enum": ["named", "documented-default"] } } },
+          "then": { "properties": { "values": { "minItems": 1, "maxItems": 1 } } }
+        },
+        {
+          "if": { "properties": { "scope": { "const": "multiple" } } },
+          "then": { "properties": { "values": { "minItems": 2 } } }
+        },
+        {
+          "if": { "properties": { "scope": { "enum": ["unspecified", "not-applicable"] } } },
+          "then": { "properties": { "values": { "maxItems": 0 } } }
+        }
+      ]
+    },
+    "applicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "configuration", "platform", "model", "deployment"],
+      "properties": {
+        "version": { "$ref": "#/$defs/versionApplicability" },
+        "configuration": { "$ref": "#/$defs/dimensionApplicability" },
+        "platform": { "$ref": "#/$defs/dimensionApplicability" },
+        "model": { "$ref": "#/$defs/dimensionApplicability" },
+        "deployment": { "$ref": "#/$defs/dimensionApplicability" }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "changedAt", "reason"],
+      "properties": {
+        "status": { "enum": ["active", "stale", "superseded", "withdrawn"] },
+        "changedAt": { "$ref": "#/$defs/date" },
+        "reason": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/longText" }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "active" } } },
+          "then": { "properties": { "reason": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "status": { "enum": ["stale", "superseded", "withdrawn"] } } },
+          "then": { "properties": { "reason": { "type": "string", "minLength": 1 } } }
+        }
+      ]
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewedAt", "recheckAfter", "invalidatedBy"],
+      "properties": {
+        "reviewedAt": { "$ref": "#/$defs/date" },
+        "recheckAfter": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/date" }
+          ]
+        },
+        "invalidatedBy": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "scheduled-recheck",
+              "source-change",
+              "source-unavailable",
+              "claimant-correction",
+              "claimant-withdrawal",
+              "product-version-change",
+              "product-surface-change",
+              "configuration-change",
+              "platform-change",
+              "model-change",
+              "deployment-change",
+              "contradictory-source",
+              "manual-review"
+            ]
+          }
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "targetClaimId", "extent", "status", "resolution", "note"],
+      "properties": {
+        "type": { "enum": ["contradicts", "corroborates", "supersedes"] },
+        "targetClaimId": { "$ref": "#/$defs/id" },
+        "extent": { "enum": ["full", "partial"] },
+        "status": { "enum": ["active", "resolved"] },
+        "resolution": {
+          "type": ["string", "null"],
+          "enum": [null, "attributable-correction", "claimant-withdrawal", "superseding-source", "scope-difference"]
+        },
+        "note": { "$ref": "#/$defs/longText" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "active" } } },
+          "then": { "properties": { "resolution": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "status": { "const": "resolved" } } },
+          "then": { "properties": { "resolution": { "type": "string" } } }
+        }
+      ]
+    },
+    "profileReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "fileSha256", "id", "version", "artifactSha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^catalog/[a-z0-9]+(?:-[a-z0-9]+)*\\.json$",
+          "maxLength": 300
+        },
+        "fileSha256": { "$ref": "#/$defs/sha256" },
+        "id": { "$ref": "#/$defs/id" },
+        "version": { "$ref": "#/$defs/shortText" },
+        "artifactSha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "validationRef": {
+      "description": "Forward-compatible link to a separately authorized evaluated profile receipt. The claims-first repository policy requires validationRefs to remain empty until that layer is opened.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relationship", "profile", "receiptPointer", "testId"],
+      "properties": {
+        "relationship": { "enum": ["consistent-with", "inconsistent-with", "inconclusive"] },
+        "profile": { "$ref": "#/$defs/profileReference" },
+        "receiptPointer": {
+          "type": "string",
+          "pattern": "^/evidenceReceipts/[0-9]+$",
+          "maxLength": 100
+        },
+        "testId": { "$ref": "#/$defs/shortText" }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+# Agent Evidence Catalog roadmap
+
+Updated: 2026-08-02. This roadmap records intended work; it does not authorize
+publication, GitHub changes, publisher contact, agent execution, open intake or
+a response-time commitment.
+
+## Current position
+
+The local research-preview candidate contains 16 current agent-surface records
+and six explicit-history records: five superseded identities plus the GitLab
+18.8 historical milestone. It is static, maintainer-curated and based
+only on attributed publisher sources. It assigns zero independent-test credit
+and provides no rankings, recommendations or suitability calculation.
+
+The validated 2026-08-02 currentness repair is integrated into the local v0.1
+baseline candidate. Publication still requires explicitly authorized remote
+action and the normal public-lane pre-push gate from the intended commit.
+
+## Near-term roadmap
+
+### 1. Release decision and bounded concept review
+
+Status: concept review passed locally; local baseline consolidation in progress.
+
+- Review whether the landing page explains the catalog's audience, question and
+  limitations quickly enough.
+- Test a few representative reading journeys: finding the current record,
+  understanding an applicability boundary and opening history.
+- Decide whether to publish the current candidate as a dated research preview.
+- Do not expand scope merely to make the first release appear comprehensive.
+
+The bounded stranger-first pass now identifies the audience, useful question,
+fastest reading path and source-versus-behavior boundary in the preview and
+documentation. Done when a human either authorizes release of the current
+bounded preview or records a specific remaining release blocker.
+
+### 2. Refresh workflow
+
+Status: post-preview priority.
+
+- Define a maintainer command or dashboard workflow that identifies source
+  changes without promoting them into evidence automatically.
+- Show reviewed dates, overdue checks and possible upstream changes clearly.
+- Support the human sequence: inspect change, update source-only dossier,
+  validate, generate record and mapping, update lifecycle, rebuild, review and
+  publish.
+- Add automation only through a separate operational decision; the initial
+  preview may use manual refreshes.
+
+Done when a maintainer can refresh one changed current surface repeatably and
+the public view exposes freshness without implying unattended verification.
+
+### 3. Inventory expansion
+
+Status: selective after concept or release feedback.
+
+- Identify meaningful missing surfaces rather than chasing a raw record count.
+- Prefer agents that improve coverage across delivery models, authority models,
+  ecosystems or user questions.
+- Use the same source-only dossier-before-record sequence and retain exact
+  version, channel, configuration and surface boundaries.
+- Keep zero independent-test credit unless a separate evidence-admission policy
+  is approved.
+
+Done for each batch when every added current surface passes source, mapping,
+lifecycle, preservation and presentation validation.
+
+### 4. Concept and presentation review
+
+Status: v0.1 local pass complete; continue with real-world feedback.
+
+- Define the primary reader and the decision the catalog helps them make.
+- Check terminology, navigation, record density and the balance between current
+  identity, provenance, authority boundaries and unknowns.
+- Collect public-safe feedback after release without treating feedback as
+  evidence or opening record intake.
+- Record changes that improve comprehension separately from changes that alter
+  evidence or lifecycle conclusions.
+
+Done when readers can explain what the catalog does, what it does not do and how
+to inspect one claim without maintainer guidance.
+
+### 5. Private reporting route
+
+Status: deferred; not a blocker for the static closed-intake research preview.
+
+- Enable and verify a private route before accepting sensitive evidence,
+  confidential withdrawals, embargoed vulnerability detail or open intake.
+- Publish the exact route and handling boundary only after it exists.
+- Do not promise acknowledgement, remediation or disclosure timelines unless a
+  later policy explicitly creates them.
+
+Until then, the repository accepts only public-safe material and instructs
+people not to submit sensitive information.
+
+## Later, separate decisions
+
+- Whether to open third-party record intake.
+- Whether to admit independent evaluations or run agents.
+- Whether to add signed receipts, automated hosting, analytics or scheduled
+  currentness monitoring.
+- Whether the catalog should remain a research artifact or become a maintained
+  service.
+
+Each requires its own scope, authority, cost and governance decision.

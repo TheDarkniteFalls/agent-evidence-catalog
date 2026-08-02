@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.zed.agent.native.preview-boundary-stable-1-12-1",
+  "slug": "preview-boundary-stable-1-12-1",
+  "subject": {
+    "id": "com.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Native Zed Agent",
+      "slug": "zed-agent-stable-1-12-1"
+    }
+  },
+  "claim": {
+    "category": "identity.channel",
+    "statement": "Zed's official Preview Releases page places 1.13.1 on the preview channel, so its claims are not transferred into the native stable 1.12.1 record even though GitHub marks v1.13.1 as a non-prerelease release object."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://zed.dev/releases/preview?b=1",
+    "title": "Preview Releases - Zed",
+    "locator": "Preview release heading 1.13.1",
+    "publishedAt": "2026-07-29T16:07:04Z",
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "preview channel"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Zed preview desktop client"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-29",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "This claim resolves channel applicability only and does not describe stable 1.12.1 behavior."
+  ],
+  "unknowns": [
+    "Why the GitHub release object is not marked prerelease while Zed's product pages separate preview is unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

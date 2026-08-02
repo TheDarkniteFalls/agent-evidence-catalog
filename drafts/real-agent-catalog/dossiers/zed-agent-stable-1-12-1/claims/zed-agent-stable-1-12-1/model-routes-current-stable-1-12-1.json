@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.zed.agent.native.model-routes-current-stable-1-12-1",
+  "slug": "model-routes-current-stable-1-12-1",
+  "subject": {
+    "id": "com.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Native Zed Agent",
+      "slug": "zed-agent-stable-1-12-1"
+    }
+  },
+  "claim": {
+    "category": "identity.model",
+    "statement": "Current official documentation separates Zed-hosted models, direct provider API access, existing subscriptions, gateways and local models for Zed-owned AI features; these routes do not configure External Agents or Terminal Threads."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://zed.dev/docs/ai/llm-providers",
+    "title": "LLM Providers - Zed Docs",
+    "locator": "Choose a model access path",
+    "publishedAt": null,
+    "capturedAt": "2026-08-02T02:51:14Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Zed-hosted",
+        "API",
+        "subscription",
+        "gateway",
+        "local"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "native Zed Agent"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "No model route is inferred from Zed client version."
+  ],
+  "unknowns": [
+    "The effective model, provider, endpoint, revision, account and billing route are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

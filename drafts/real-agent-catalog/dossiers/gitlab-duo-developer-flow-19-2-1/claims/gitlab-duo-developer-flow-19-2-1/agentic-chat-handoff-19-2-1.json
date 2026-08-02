@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.developer-flow.agentic-chat-handoff-19-2-1",
+  "slug": "agentic-chat-handoff-19-2-1",
+  "subject": {
+    "id": "com.gitlab.duo.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitLab Duo Developer Flow",
+      "slug": "gitlab-duo-developer-flow-19-2-1"
+    }
+  },
+  "claim": {
+    "category": "authority.approval",
+    "statement": "GitLab 19.2 adds Developer Flow handoff from Agentic Chat: matching requests can be handed to the flow after the user approves the handoff, with progress shown in Chat or AI Sessions."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "GitLab, Inc."
+  },
+  "source": {
+    "uri": "https://docs.gitlab.com/releases/19/gitlab-19-2-1-released/",
+    "title": "GitLab 19.2 release notes",
+    "locator": "Start foundational flows from Agentic Chat",
+    "publishedAt": "2026-07-16T00:00:00Z",
+    "capturedAt": "2026-08-02T06:58:22Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "release-line",
+      "value": "19.2"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Agentic Chat",
+        "approved handoff"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "GitLab UI"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-16",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-02",
+    "recheckAfter": "2026-08-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Handoff approval is not evidence of per-tool or per-commit approval inside the Developer Flow."
+  ],
+  "unknowns": [
+    "The complete handoff classifier, flow configuration and post-handoff approval policy are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
