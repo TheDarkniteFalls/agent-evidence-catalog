@@ -1,13 +1,17 @@
 {
   "schemaVersion": "research-preview-release-manifest/0.1",
-  "asOf": "2026-08-02",
+  "asOf": "2026-08-04",
   "targetRepository": "agent-evidence-catalog",
   "primaryProduct": "real-agent-research-preview-v0.1",
+  "publicationStatus": "public-research-preview-v0.1",
+  "canonicalPublicUrl": "https://thedarknitefalls.github.io/agent-evidence-catalog/",
+  "canonicalResearchUrl": "https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/",
   "canonicalPublicEntryPoint": "dist/index.html",
   "canonicalResearchRoute": "dist/research-preview/index.html",
   "secondarySyntheticEntryPoint": "dist/catalog-classic.html",
   "stagePaths": [
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/workflows/pages.yml",
     "CONTRIBUTING.md",
     "CORRECTIONS.md",
     "GOVERNANCE.md",
@@ -592,6 +596,7 @@
     "drafts/research-preview-release/currentness-2026-08-02/validate-source-dossiers.mjs",
     "drafts/research-preview-release/path-classification.json",
     "drafts/research-preview-release/release-yes-list.json",
+    "drafts/research-preview-release/v0.1-pages-stage-paths.txt",
     "drafts/research-preview-release/v0.1-stage-paths.txt",
     "drafts/research-preview-release/validate-preservation.mjs",
     "fixtures/claim-record-v1/cases/invalid-asymmetric-contradiction/patchpilot-cli/asymmetric-publisher-claim.json",
@@ -723,6 +728,7 @@
     "independentTestsAdmitted": 0,
     "rankingOrSuitability": false,
     "agentExecution": false,
+    "githubPagesArtifactPath": "dist/",
     "remoteGitHubMutationAuthorized": false
   }
 }

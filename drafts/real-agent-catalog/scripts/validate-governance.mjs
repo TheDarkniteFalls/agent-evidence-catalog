@@ -37,10 +37,12 @@ assert(security.includes("No response, triage, remediation or disclosure timelin
 assert(contributing.includes("intake is closed"));
 assert(corrections.includes("not for the\nstatic closed-intake preview"));
 assert(method.includes("zero independent tests"));
-assert(method.includes("ready for a human release decision"));
-assert(readiness.includes("Current outcome: **LOCAL V0.1 BASELINE RELEASE CANDIDATE**"));
-assert(readiness.includes("Codex CLI 0.146.0 current record | PASS locally"));
-assert(readiness.includes("REMOTE ACTION NOT AUTHORIZED"));
+assert(method.includes("public Research Preview v0.1"));
+assert(method.includes("https://thedarknitefalls.github.io/agent-evidence-catalog/"));
+assert(readiness.includes("Current outcome: **RESEARCH PREVIEW V0.1 PUBLICATION**"));
+assert(readiness.includes("Codex CLI 0.146.0 current record | PASS"));
+assert(readiness.includes("PAGES V0.1 AUTHORIZED"));
+assert(readiness.includes("does not extend to a pull request, GitHub release, custom domain or future mutation"));
 assert(roadmap.includes("Private reporting route"));
 assert(roadmap.includes("not a blocker for the static closed-intake research preview"));
 

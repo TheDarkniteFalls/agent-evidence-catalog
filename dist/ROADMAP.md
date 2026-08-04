@@ -1,26 +1,28 @@
 # Agent Evidence Catalog roadmap
 
-Updated: 2026-08-02. This roadmap records intended work; it does not authorize
+Updated: 2026-08-04. This roadmap records intended work; it does not authorize
 publication, GitHub changes, publisher contact, agent execution, open intake or
 a response-time commitment.
 
 ## Current position
 
-The local research-preview candidate contains 16 current agent-surface records
+The public [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
+contains 16 current agent-surface records
 and six explicit-history records: five superseded identities plus the GitLab
 18.8 historical milestone. It is static, maintainer-curated and based
 only on attributed publisher sources. It assigns zero independent-test credit
 and provides no rankings, recommendations or suitability calculation.
 
-The validated 2026-08-02 currentness repair is integrated into the local v0.1
-baseline candidate. Publication still requires explicitly authorized remote
-action and the normal public-lane pre-push gate from the intended commit.
+The validated 2026-08-02 currentness repair is integrated into v0.1. A pinned,
+least-privilege GitHub Pages workflow publishes only the committed `dist/`
+tree. Every later push still requires explicit authorization and the normal
+public-lane pre-push gate.
 
 ## Near-term roadmap
 
 ### 1. Release decision and bounded concept review
 
-Status: concept review passed locally; local baseline consolidation in progress.
+Status: complete for Research Preview v0.1.
 
 - Review whether the landing page explains the catalog's audience, question and
   limitations quickly enough.
@@ -29,10 +31,10 @@ Status: concept review passed locally; local baseline consolidation in progress.
 - Decide whether to publish the current candidate as a dated research preview.
 - Do not expand scope merely to make the first release appear comprehensive.
 
-The bounded stranger-first pass now identifies the audience, useful question,
-fastest reading path and source-versus-behavior boundary in the preview and
-documentation. Done when a human either authorizes release of the current
-bounded preview or records a specific remaining release blocker.
+The bounded stranger-first pass identifies the audience, useful question,
+fastest reading path and source-versus-behavior boundary in the published
+preview and documentation. Future changes belong to the feedback-driven
+concept review in step 4.
 
 ### 2. Refresh workflow
 
@@ -97,8 +99,8 @@ people not to submit sensitive information.
 
 - Whether to open third-party record intake.
 - Whether to admit independent evaluations or run agents.
-- Whether to add signed receipts, automated hosting, analytics or scheduled
-  currentness monitoring.
+- Whether to add signed receipts, analytics or scheduled currentness
+  monitoring beyond the current static Pages deployment.
 - Whether the catalog should remain a research artifact or become a maintained
   service.
 

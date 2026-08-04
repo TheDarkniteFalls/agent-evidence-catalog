@@ -30,7 +30,8 @@ for (const [name, content] of Object.entries(documents)) {
 }
 
 for (const phrase of [
-  "local, unpublished release candidate",
+  "public static preview",
+  "https://thedarknitefalls.github.io/agent-evidence-catalog/",
   "16 current surfaces",
   "zero independent-test credit",
   "intake is not open",
@@ -104,7 +105,9 @@ const distHtml = await read("dist/research-preview/index.html");
 assert.equal(distHtml, siteHtml, "Built research-preview HTML differs from source");
 const landingHtml = await read("site/index.html");
 assert.equal(await read("dist/index.html"), landingHtml, "Built landing HTML differs from source");
-assert(landingHtml.includes("Research Preview v0.1 release candidate"));
+assert(landingHtml.includes("Research Preview v0.1."));
+assert(landingHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/"'));
+assert(siteHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/"'));
 assert(landingHtml.includes('href="research-preview/"'));
 assert(landingHtml.includes('href="catalog-classic.html">Synthetic reference'));
 for (const target of ["../RESEARCH_PREVIEW.md", "../PUBLICATION_READINESS.md", "../ROADMAP.md", "../CORRECTIONS.md"]) {

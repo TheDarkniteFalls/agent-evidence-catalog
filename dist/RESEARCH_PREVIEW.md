@@ -1,6 +1,8 @@
 # Agent Evidence Catalog research preview
 
-Status: unpublished release candidate, reviewed 2026-08-02.
+Status: Research Preview v0.1, published at
+https://thedarknitefalls.github.io/agent-evidence-catalog/ and based on the
+2026-08-02 source-currentness review.
 
 This research preview is a static, maintainer-curated view of attributed
 publisher claims about 16 coding-agent surface keys. It asks a deliberately
@@ -57,18 +59,18 @@ The machine-readable source is
 copies only that projection and its 22 presentable record files to
 `dist/research-preview/`.
 
-## Release position
+## Published position
 
-The local candidate is ready for a human release decision:
+The public Research Preview v0.1 keeps the accepted release boundaries:
 
 - all 16 current surface records are present, including Codex CLI 0.146.0 as
   the reciprocal same-surface successor to preserved 0.90.0 history;
 - five superseded records plus the GitLab 18.8 historical milestone remain
   available through explicit history;
 - deterministic, preservation, source-link, browser and publication-safety
-  checks have a local passing path; and
-- the artifact remains unpublished until a human authorizes remote publication
-  actions and the final pre-publication checks pass.
+  checks passed for the release; and
+- GitHub Pages serves only the committed `dist/` projection through a pinned,
+  least-privilege workflow. It does not rebuild evidence or run agents.
 
 The catalog does not yet provide an operational private reporting route. That
 is a documented limitation and a roadmap requirement before accepting

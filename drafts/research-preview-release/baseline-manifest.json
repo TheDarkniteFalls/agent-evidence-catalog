@@ -48,6 +48,7 @@
     "dist/index.html"
   ],
   "authorizedNewPaths": [
+    ".github/workflows/pages.yml",
     "GOVERNANCE.md",
     "PUBLICATION_READINESS.md",
     "RESEARCH_PREVIEW.md",
@@ -164,6 +165,11 @@
       "asOf": "2026-08-02",
       "paths": ["drafts/real-agent-catalog/scripts/validate-openai-codex-0-146-0-refresh.mjs"],
       "reason": "Release-aware compatibility update: delegate global preservation to the Phase 0 manifest and distinguish a visible Codex trial gate from integration of the withheld record."
+    },
+    {
+      "asOf": "2026-08-04",
+      "paths": [".github/workflows/pages.yml"],
+      "reason": "Exact new release-control path for the authorized least-privilege GitHub Pages deployment; no accepted evidence, catalog data or prior research artifact is exempted."
     }
   ],
   "protectedFileCount": 438,

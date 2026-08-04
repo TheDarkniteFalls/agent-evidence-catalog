@@ -4,11 +4,11 @@ A small, static research index for researchers, builders and maintainers who nee
 
 The fastest reading path is to search for a product, confirm the current identity and applicability note, then inspect the attributed publisher claims and sources. The catalog presents exact identities, authority boundaries, lifecycle state and known gaps; it is not a buying guide or a claim about observed agent behavior.
 
-This package deliberately has no accounts, database server, hosted execution, submission form, analytics, or deployment configuration. Git is the data store, but public intake is closed and the current real-agent work is maintainer-curated only.
+This package deliberately has no accounts, database server, hosted execution, submission form, analytics, or external-service integration. Git is the data store, public intake is closed, and the current real-agent work is maintainer-curated only. One least-privilege GitHub Pages workflow publishes the already committed `dist/` tree without rebuilding it in CI.
 
 The real-agent research preview is the canonical v0.1 product. Its source projection lives under `drafts/real-agent-catalog/research-preview/`, and the static build presents it from the primary landing page and `research-preview/` route. The earlier `catalog/` and generated catalog pages remain a clearly labeled secondary synthetic reference. Real-product records report attributed documentation, not observed behavior, independent verification, endorsement, ranking, recommendation, certification, or a general safety claim. Product names and marks belong to their owners; inclusion does not imply affiliation.
 
-Publication status: Research Preview v0.1 is a local, unpublished release candidate. It presents exactly 16 current surfaces by default and retains five superseded records plus the GitLab 18.8 historical milestone in explicit history. The validated current transitions are Cline 4.1.3, GitLab Duo Developer Flow 19.2.1-ee, Zed 1.13.1, Claude Code 2.1.220 and Codex CLI 0.146.0; all predecessor dossiers and records remain preserved. An operational private reporting route is deferred to `ROADMAP.md` and is required before sensitive evidence or open intake, not before this static public-source preview. Real-agent intake is not open, and no review or response is promised.
+Publication status: [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/) is the public static preview. It presents exactly 16 current surfaces by default and retains five superseded records plus the GitLab 18.8 historical milestone in explicit history. The validated current transitions are Cline 4.1.3, GitLab Duo Developer Flow 19.2.1-ee, Zed 1.13.1, Claude Code 2.1.220 and Codex CLI 0.146.0; all predecessor dossiers and records remain preserved. An operational private reporting route is deferred to `ROADMAP.md` and is required before sensitive evidence or open intake, not before this static public-source preview. Real-agent intake is not open, and no review or response is promised.
 
 `docs/claims-first-mvp.md` records the accepted claims-first direction: catalog attributable publisher sources first and defer maintainer-run agent evaluation. The research preview applies that method to real products without installing or running them and gives zero independent-test credit. The secondary synthetic reference includes a clearly labeled fictional PatchPilot example, and `docs/real-agent-mvp-pilot.md` remains a deferred optional validation design. Neither document opens intake.
 
@@ -54,7 +54,7 @@ The Real-Agent MVP scaffold can be generated and verified without installing or 
 
 ## Intake boundary
 
-There is no web upload path and no open real-agent submission path. Research-preview records are selected and maintained by the named repository maintainer. Public-safe corrections may be proposed through the repository only after publication and only within the boundaries in `CORRECTIONS.md`. The repository is not equipped to receive sensitive reports; a private route is a future roadmap requirement before sensitive evidence or open intake. No contribution, correction, or report creates a response-time commitment.
+There is no web upload path and no open real-agent submission path. Research-preview records are selected and maintained by the named repository maintainer. Public-safe corrections may be proposed through the repository only within the boundaries in `CORRECTIONS.md`. The repository is not equipped to receive sensitive reports; a private route is a future roadmap requirement before sensitive evidence or open intake. No contribution, correction, or report creates a response-time commitment.
 
 ## Standards boundary
 
@@ -84,4 +84,4 @@ The package is licensed under Apache-2.0. Contributions intentionally submitted 
 
 The public artifact can remain nearly free when hosted from an ordinary static Git host: storage is text and small assets, search runs in the browser, and validation runs during pull-request review. The recurring work is human review, dependency/standard updates, stale-evidence handling, and abuse moderation—not servers.
 
-The package intentionally omits CI and deployment files so adopting it does not create an external service or ongoing commitment. A future maintainer can add a free static-host workflow only after deciding where it belongs and who owns review.
+The only deployment automation is the pinned, least-privilege GitHub Pages workflow in `.github/workflows/pages.yml`. It uploads the committed `dist/` tree and does not run agents, call models, rebuild evidence, open intake, add analytics, or authorize any other remote action.

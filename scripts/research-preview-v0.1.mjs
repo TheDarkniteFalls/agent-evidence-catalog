@@ -11,6 +11,7 @@ const classificationPath = path.join(releaseRoot, "path-classification.json");
 const yesListPath = path.join(releaseRoot, "release-yes-list.json");
 const stagePathsPath = path.join(releaseRoot, "v0.1-stage-paths.txt");
 const browserReceiptPath = path.join(releaseRoot, "browser-qa-receipt.json");
+const pagesWorkflowPath = path.join(packageRoot, ".github", "workflows", "pages.yml");
 const serialize = (value) => `${JSON.stringify(value, null, 2)}\n`;
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 
@@ -96,7 +97,7 @@ function artifacts(files) {
   ]));
   return {
     schemaVersion: "research-preview-path-classification/0.1",
-    asOf: "2026-08-02",
+    asOf: "2026-08-04",
     repository: "agent-evidence-catalog",
     classificationRule: "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
     counts,
@@ -108,9 +109,12 @@ function releaseManifest(files) {
   const distPaths = files.filter((relativePath) => relativePath.startsWith("dist/"));
   return {
     schemaVersion: "research-preview-release-manifest/0.1",
-    asOf: "2026-08-02",
+    asOf: "2026-08-04",
     targetRepository: "agent-evidence-catalog",
     primaryProduct: "real-agent-research-preview-v0.1",
+    publicationStatus: "public-research-preview-v0.1",
+    canonicalPublicUrl: "https://thedarknitefalls.github.io/agent-evidence-catalog/",
+    canonicalResearchUrl: "https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/",
     canonicalPublicEntryPoint: "dist/index.html",
     canonicalResearchRoute: "dist/research-preview/index.html",
     secondarySyntheticEntryPoint: "dist/catalog-classic.html",
@@ -123,6 +127,7 @@ function releaseManifest(files) {
       independentTestsAdmitted: 0,
       rankingOrSuitability: false,
       agentExecution: false,
+      githubPagesArtifactPath: "dist/",
       remoteGitHubMutationAuthorized: false
     }
   };
@@ -237,7 +242,7 @@ const validatorCommands = [
 async function validateBrowserReceipt() {
   const receipt = JSON.parse(await readFile(browserReceiptPath, "utf8"));
   assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.1");
-  assert.equal(receipt.asOf, "2026-08-02");
+  assert.equal(receipt.asOf, "2026-08-04");
   assert.equal(receipt.sourceDigests.landingHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "index.html"))));
   assert.equal(receipt.sourceDigests.previewHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"))));
   assert.equal(receipt.sourceDigests.previewDataSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "catalog.json"))));
@@ -246,8 +251,28 @@ async function validateBrowserReceipt() {
     assert.equal(receipt.journeys[device].consoleErrors, 0, `${device} browser journey has console errors`);
     assert.equal(receipt.journeys[device].currentCards, 16, `${device} browser journey current-card count drift`);
     assert.equal(receipt.journeys[device].historyCardsAfterToggle, 6, `${device} browser journey history-card count drift`);
+    assert.equal(receipt.journeys[device].canonicalPublicUrlRendered, true, `${device} canonical public URL was not rendered`);
   }
+  assert.equal(receipt.boundaries.recordJsonLinkPresent, true, "Record JSON link was not present in browser QA");
   console.log("PASS digest-bound desktop and mobile browser journeys: 16 current, 6 history, zero console errors");
+}
+
+async function validatePagesWorkflow() {
+  const workflow = await readFile(pagesWorkflowPath, "utf8");
+  for (const expected of [
+    "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6",
+    "actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5",
+    "actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4",
+    "actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4",
+    "persist-credentials: false",
+    "path: dist",
+    "pages: write",
+    "id-token: write",
+    "name: github-pages"
+  ]) assert(workflow.includes(expected), `Pages workflow is missing ${expected}`);
+  assert(!workflow.includes("run:"), "Pages workflow must upload committed dist without running a build");
+  assert(!workflow.includes("pull_request_target"), "Pages workflow must not use pull_request_target");
+  console.log("PASS pinned least-privilege GitHub Pages workflow uploads only committed dist");
 }
 
 async function validateRelease({ browser }) {
@@ -258,6 +283,7 @@ async function validateRelease({ browser }) {
   assert.equal(secondDigest, firstDigest, "Deterministic double build produced different dist trees");
   console.log(`PASS deterministic double source-to-dist build ${firstDigest}`);
   for (const [label, relativePath, ...args] of validatorCommands) node(label, relativePath, ...args);
+  await validatePagesWorkflow();
   await validateManifest();
   run("unstaged and staged whitespace/error diff check", "git", ["diff", "--check"]);
   run("public-lane safety scan", "python3", ["-B", "../scripts/publicctl.py", "check", "."]);

@@ -2,12 +2,13 @@
 
 The canonical Research Preview v0.1 contains attributed publisher-source
 records, while a separate secondary reference contains synthetic demonstration
-records. The preview remains an unpublished local candidate. Neither certifies
+records. The static preview is published at
+https://thedarknitefalls.github.io/agent-evidence-catalog/. Neither certifies
 agents, investigates publishers, or promises a response or remediation time.
 
 ## Public-safe correction
 
-After publication, propose a pull request that changes only the affected
+For a public-safe correction, propose a pull request that changes only the affected
 exact-version record or adds a corrected immutable record, and explain:
 
 - what was wrong;

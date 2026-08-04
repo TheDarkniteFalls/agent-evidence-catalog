@@ -1,18 +1,24 @@
 {
   "schemaVersion": "research-preview-path-classification/0.1",
-  "asOf": "2026-08-02",
+  "asOf": "2026-08-04",
   "repository": "agent-evidence-catalog",
   "classificationRule": "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
   "counts": {
     "accepted-evidence-provenance": 370,
     "canonical-source": 68,
     "generated-publication-output": 79,
-    "release-control-artifact": 27,
+    "release-control-artifact": 29,
     "retained-experiment": 87
   },
   "entries": [
     {
       "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Repository governance, release metadata, license or publication control."
+    },
+    {
+      "path": ".github/workflows/pages.yml",
       "classification": "release-control-artifact",
       "publicationBoundary": "git-research-or-source-only",
       "rationale": "Repository governance, release metadata, license or publication control."
@@ -3517,6 +3523,12 @@
     },
     {
       "path": "drafts/research-preview-release/release-yes-list.json",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/v0.1-pages-stage-paths.txt",
       "classification": "release-control-artifact",
       "publicationBoundary": "git-research-or-source-only",
       "rationale": "Baseline, preservation, manifest or release-validation control."

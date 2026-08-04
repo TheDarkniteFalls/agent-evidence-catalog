@@ -1,11 +1,12 @@
 # Research-preview publication readiness
 
-Reviewed: 2026-08-02. Current outcome: **LOCAL V0.1 BASELINE RELEASE CANDIDATE**.
+Reviewed: 2026-08-04. Current outcome: **RESEARCH PREVIEW V0.1 PUBLICATION**.
 
-The local research-preview candidate is structurally complete and has a passing
-local release path. The baseline-consolidation task authorizes one exact local
-commit if every final gate passes. It does not authorize a push, pull request,
-release, Pages, hosting or any other remote GitHub change.
+The validated static artifact is published at
+https://thedarknitefalls.github.io/agent-evidence-catalog/. GitHub Pages uploads
+only the committed `dist/` tree through a pinned, least-privilege workflow. The
+workflow does not rebuild evidence, install or run agents, call models, open
+intake, add analytics or authorize any other GitHub mutation.
 
 ## Governance ledger
 
@@ -28,21 +29,20 @@ release, Pages, hosting or any other remote GitHub change.
 
 | Gate | Status | Release condition |
 |---|---|---|
-| Codex CLI 0.146.0 current record | PASS locally | The validated source-derived record is integrated as current; 0.90.0 remains unchanged in explicit history through reciprocal same-surface links. |
-| Current-default and explicit-history data/UI | PASS locally | Loopback browser QA covers 16 current cards by default, collapsed history, filters, toggle, footer targets and console health. |
-| Stranger-first concept and presentation | PASS locally | The landing page names the primary readers and useful question, supplies a direct reading path, distinguishes publisher claims from observed behavior and describes the inventory as selected rather than comprehensive. |
+| Codex CLI 0.146.0 current record | PASS | The validated source-derived record is integrated as current; 0.90.0 remains unchanged in explicit history through reciprocal same-surface links. |
+| Current-default and explicit-history data/UI | PASS | Local and public browser QA cover 16 current cards by default, collapsed history, filters, toggle, footer targets and console health. |
+| Stranger-first concept and presentation | PASS | The landing page names the primary readers and useful question, supplies a direct reading path, distinguishes publisher claims from observed behavior and describes the inventory as selected rather than comprehensive. |
 | Independent-test credit | PASS | Must remain exactly zero. |
 | Rankings, recommendations and calculations | PASS | Must remain absent. |
 | Publication-safety scan | PASS | Unmodified `publicctl.py check` reports no findings, no symlinks and a GitHub noreply commit email. |
-| Deterministic, preservation and source-link validation | PASS locally | Generated output is repeatable; the preservation manifest and eight byte-identical path migrations pass; every preview source link must remain HTTPS, publisher-attributed, non-search and claim-linked. |
-| Public-lane pre-push check | REQUIRED AGAINST LOCAL BASELINE COMMIT | The consolidation command may create one local commit after every prior gate passes; the pre-push check must then pass against that commit before handoff. |
-| GitHub publication state | REMOTE ACTION NOT AUTHORIZED | Push, pull request, release, Pages/features and other remote GitHub changes require separate explicit authorization. |
+| Deterministic, preservation and source-link validation | PASS | Generated output is repeatable; the preservation manifest and eight byte-identical path migrations pass; every preview source link remains HTTPS, publisher-attributed, non-search and claim-linked. |
+| Public-lane pre-push check | REQUIRED FOR EACH PUSH | The exact release commit must pass the unchanged public-lane gate before it is pushed. |
+| GitHub publication state | PAGES V0.1 AUTHORIZED | Authorization is limited to the exact Pages release commit, enabling the GitHub Actions publishing source and verifying its deployment. It does not extend to a pull request, GitHub release, custom domain or future mutation. |
 
 ## Release decision rule
 
-The candidate may move to publication only after the validated 2026-08-02
-currentness receipt remains applicable, deterministic and public-lane
-validation pass from the intended release state, the exact release manifest is
-reviewed, and the user separately authorizes remote actions. Keep intake closed
-and zero independent-test credit. The private route remains a roadmap
+The published preview remains valid only while the dated currentness receipt is
+presented honestly, deterministic and public-lane validation continue to pass,
+and later source changes receive human review before promotion. Keep intake
+closed and zero independent-test credit. The private route remains a roadmap
 prerequisite for sensitive evidence or open intake.
