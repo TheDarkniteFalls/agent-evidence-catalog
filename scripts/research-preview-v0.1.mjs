@@ -368,7 +368,26 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.boundaries.compactSectionIndexWorked, true, "Compact record section navigation did not work");
   assert.equal(receipt.boundaries.allRecordPagesStructurallyValidated, 22, "Browser receipt is not paired with all 22 structurally validated pages");
   assert.equal(receipt.boundaries.sourceLinkTargetsInspectedInRenderedDom, true, "Rendered official-source link targets were not inspected");
-  console.log("PASS digest-bound desktop and mobile browser journeys: 22 primary detail links plus exact-version, rolling-service, superseded and fallback-group samples with zero console errors");
+  assert.deepEqual(
+    receipt.boundaries.responsiveRecordMatrix.recordIds,
+    buildManifest.researchPreview.recordDetails.records.map((record) => record.recordId),
+    "Responsive browser matrix does not cover the exact 22 built records"
+  );
+  assert.deepEqual(receipt.boundaries.responsiveRecordMatrix.viewports, [
+    {
+      label: "mobile",
+      width: 390,
+      height: 844,
+      horizontalOverflowRecordIds: []
+    },
+    {
+      label: "desktop",
+      width: 1440,
+      height: 900,
+      horizontalOverflowRecordIds: []
+    }
+  ], "Responsive browser matrix is missing an overflow-free required viewport");
+  console.log("PASS digest-bound desktop and mobile browser journeys: all 22 record pages overflow-free at 390px and 1440px plus exact-version, rolling-service, superseded and fallback-group samples with zero console errors");
 }
 
 async function validatePagesWorkflow() {

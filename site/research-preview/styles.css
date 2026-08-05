@@ -103,11 +103,11 @@ footer p { margin-bottom: 5px; }
 .identity-grid dd { margin: 5px 0 0; overflow-wrap: anywhere; }
 .identity-grid .mono-value { font-family: var(--mono); font-size: 12px; }
 .claim-groups { display: grid; gap: 14px; }
-.claim-group { padding: 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.claim-group { min-width: 0; padding: 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow-wrap: anywhere; }
 .claim-group > header { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .claim-group > header p { margin-bottom: 0; color: var(--muted); }
 .claim-list { display: grid; gap: 0; }
-.claim-item { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.claim-item { min-width: 0; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .claim-item:last-child { padding-bottom: 0; border-bottom: 0; }
 .claim-item h4 { margin: 0 0 7px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .claim-statement { font-size: 16px; }
