@@ -2,7 +2,7 @@
   "schemaVersion": "research-preview-browser-qa/0.1",
   "artifactType": "local-rendered-browser-qa-receipt",
   "asOf": "2026-08-04",
-  "checkedAt": "2026-08-04T08:40:43Z",
+  "checkedAt": "2026-08-04T10:24:32Z",
   "browser": "Codex In-app Browser",
   "server": {
     "url": "http://localhost:4173/",
@@ -12,9 +12,13 @@
     "externalNetworkUsed": false
   },
   "sourceDigests": {
-    "landingHtmlSha256": "91a020713ab28d806adc6b6b3c54ca513ab42f8b198e7eba94223cd90f032c0a",
-    "previewHtmlSha256": "799b0eb4b8872f72fe055d9322fdd6448984af94ea0b727f48dcada939afefad",
-    "previewDataSha256": "ecec67a63f4413e6928ea6f2b1e1fd6f6cb09e355b31fd05049b37e23bc25a3d"
+    "landingHtmlSha256": "37724c51e7071af36787d750dbc311038a6b5c683c7a44af00ddb873ae3c84aa",
+    "previewHtmlSha256": "68ad6716f3b284642e6adced83a1e63752210fbbbb18a69ec25b5d8bddc8344c",
+    "previewDataSha256": "ecec67a63f4413e6928ea6f2b1e1fd6f6cb09e355b31fd05049b37e23bc25a3d",
+    "previewAppSha256": "6c1a119fd04aa4cb3a09a40aa246f49b41e3966dbba332d27b26431ee619c388",
+    "recordDetailAppSha256": "fe10e63d289441803da2b3074872411e66f9df9771d093116d7412802af29fe1",
+    "previewStylesSha256": "6b4a524f4f60e2ff0ca566fbad93a18d827477b944bd254e1f35abaf89637413",
+    "recordDetailsManifestSha256": "c0f41626da6779e39dfc3cb2c4c73126648468cbd3dc4dc0d1fbdc1571a3aefb"
   },
   "journeys": {
     "desktop": {
@@ -24,34 +28,136 @@
       "canonicalLandingReached": true,
       "canonicalPublicUrlRendered": true,
       "primaryPreviewLinkWorked": true,
+      "landingHumanReadablePathExplained": true,
       "currentCards": 16,
       "historyInitiallyCollapsed": true,
       "historyCardsAfterToggle": 6,
-      "searchQuery": "OpenAI Codex",
+      "searchQuery": "Codex",
       "searchResultCards": 1,
       "searchResultName": "OpenAI Codex CLI",
       "filterResetToCurrentCards": 16,
       "bodyHorizontalOverflow": false,
+      "catalogContextRoundTrip": {
+        "delivery": "hosted",
+        "deliveryResultCards": 5,
+        "search": "Jules",
+        "combinedResultCards": 1,
+        "currentLinksCarriedContext": true,
+        "historyLinksCarriedContext": true,
+        "detailReturnLinksCarriedContext": true,
+        "returnRestoredSearchAndDelivery": true
+      },
+      "recordDetails": {
+        "currentCatalogDetailLinks": 16,
+        "allCatalogDetailLinksAfterHistory": 22,
+        "rawJsonSecondaryOnCards": true,
+        "samples": [
+          {
+            "recordId": "com.openai.codex.cli.0-146-0",
+            "lifecycleStatus": "current",
+            "pageOpened": true,
+            "title": "OpenAI Codex CLI 0.146.0 · Agent Evidence Catalog",
+            "publisherClaims": 15,
+            "plainLanguageClaimGroups": 6,
+            "configurationBoundaries": 13,
+            "unresolvedUnknowns": 15,
+            "namedSourceEntries": 15,
+            "reciprocalLifecycleSteps": 2,
+            "sourceLinksAllHttps": true,
+            "rawJsonPresentedAsSecondary": true,
+            "compactIdentityFields": 4,
+            "sectionIndexLinks": 6,
+            "heroViewportShare": 0.224,
+            "identityStartsAtViewport": 0.422,
+            "titleFontSizePx": 44,
+            "bodyHorizontalOverflow": false
+          },
+          {
+            "recordId": "com.google.jules.hosted.rolling",
+            "lifecycleStatus": "current",
+            "pageOpened": true,
+            "title": "Google Jules Rolling Service · Agent Evidence Catalog",
+            "publisherClaims": 10,
+            "plainLanguageClaimGroups": 6,
+            "configurationBoundaries": 6,
+            "unresolvedUnknowns": 10,
+            "namedSourceEntries": 10,
+            "reciprocalLifecycleSteps": 1,
+            "sourceLinksAllHttps": true,
+            "rawJsonPresentedAsSecondary": true,
+            "compactIdentityFields": 4,
+            "sectionIndexLinks": 6,
+            "heroViewportShare": 0.205,
+            "rollingScopeNotDuplicated": true,
+            "bodyHorizontalOverflow": false
+          }
+        ]
+      },
       "consoleErrors": 0,
       "consoleWarnings": 0,
       "visualInspection": "PASS"
     },
     "mobile": {
       "result": "PASS",
-      "requestedViewport": { "width": 390, "height": 844 },
-      "reportedViewport": { "width": 433, "height": 938 },
+      "requestedViewport": { "width": 390, "height": 800 },
+      "reportedViewport": { "width": 433, "height": 889 },
       "canonicalLandingReached": true,
       "canonicalPublicUrlRendered": true,
       "primaryPreviewLinkWorked": true,
+      "landingHumanReadablePathExplained": true,
       "landingSummaryCardsStacked": true,
       "currentCards": 16,
       "historyInitiallyCollapsed": true,
       "historyCardsAfterToggle": 6,
-      "searchQuery": "Cline",
-      "searchResultCards": 1,
-      "searchResultName": "Cline",
-      "filterResetToCurrentCards": 16,
       "bodyHorizontalOverflow": false,
+      "recordDetails": {
+        "currentCatalogDetailLinks": 16,
+        "allCatalogDetailLinksAfterHistory": 22,
+        "rawJsonSecondaryOnCards": true,
+        "samples": [
+          {
+            "recordId": "com.gitlab.duo.developer-flow.19-2",
+            "lifecycleStatus": "superseded",
+            "pageOpened": true,
+            "title": "GitLab Duo Developer Flow 19.2.0-ee · Agent Evidence Catalog",
+            "publisherClaims": 10,
+            "plainLanguageClaimGroups": 5,
+            "configurationBoundaries": 6,
+            "unresolvedUnknowns": 9,
+            "namedSourceEntries": 10,
+            "reciprocalLifecycleSteps": 3,
+            "sourceLinksAllHttps": true,
+            "rawJsonPresentedAsSecondary": true,
+            "compactIdentityFields": 4,
+            "sectionIndexLinks": 6,
+            "heroViewportShare": 0.415,
+            "identityStartsAtViewport": 0.751,
+            "titleFontSizePx": 30,
+            "historyJumpLinkWorked": true,
+            "bodyHorizontalOverflow": false
+          },
+          {
+            "recordId": "com.anthropic.claude-code.cli.2-1-117",
+            "lifecycleStatus": "superseded",
+            "pageOpened": true,
+            "title": "Claude Code CLI 2.1.117 · Agent Evidence Catalog",
+            "publisherClaims": 8,
+            "plainLanguageClaimGroups": 6,
+            "configurationBoundaries": 5,
+            "unresolvedUnknowns": 8,
+            "namedSourceEntries": 8,
+            "reciprocalLifecycleSteps": 2,
+            "sourceLinksAllHttps": true,
+            "fallbackClaimGroupPresent": true,
+            "rawJsonPresentedAsSecondary": true,
+            "compactIdentityFields": 4,
+            "sectionIndexLinks": 6,
+            "heroViewportShare": 0.406,
+            "publisherClaimsJumpLinkWorked": true,
+            "bodyHorizontalOverflow": false
+          }
+        ]
+      },
       "consoleErrors": 0,
       "consoleWarnings": 0,
       "visualInspection": "PASS"
@@ -69,6 +175,11 @@
     "publisherClaimsReverifiedByBrowser": false,
     "independentEvidenceCreated": false,
     "recordJsonLinkPresent": true,
-    "directRawJsonNavigationBlockedByBrowserClient": true
+    "rawJsonSecondaryAcrossCatalogAndDetails": true,
+    "catalogSearchAndDeliveryContextPreserved": true,
+    "compactIdentityInFirstViewport": true,
+    "compactSectionIndexWorked": true,
+    "allRecordPagesStructurallyValidated": 22,
+    "sourceLinkTargetsInspectedInRenderedDom": true
   }
 }

@@ -203,21 +203,35 @@ async function assertNoPublicIntegration() {
     const relative = path.relative(packageRoot, file).split(path.sep).join("/");
     if (relative.startsWith("site/research-preview/") || relative.startsWith("dist/research-preview/")) continue;
     const content = await readFile(file, "utf8");
-    assert(!content.includes("com.github.copilot.cloud-agent"), `GitHub Copilot cloud agent leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.google.jules.hosted"), `Google Jules leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("org.openhands.cli"), `OpenHands leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.cline.bot"), `Cline leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.openai.codex.cli"), `OpenAI Codex CLI leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.cursor.ide.foreground-agent"), `Cursor IDE foreground Agent leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.gitlab.duo-agent-platform.developer-flow"), `GitLab Duo Developer Flow leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.cognition.devin"), `Cognition Devin leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.anthropic.claude-code.cli"), `Anthropic Claude Code CLI leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("dev.zed.agent.native"), `Zed Agent leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.replit.agent.hosted"), `Replit Agent leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("org.aider-ai.aider.cli"), `Aider CLI leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.amazon.kiro.ide"), `Kiro IDE leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.lovable.agent.hosted"), `Lovable Build mode leaked into ${path.relative(packageRoot, file)}`);
-    assert(!content.includes("com.anomaly.opencode.cli"), `OpenCode CLI leaked into ${path.relative(packageRoot, file)}`);
+    let integrationScanContent = content;
+    if (relative === "dist/build-manifest.json") {
+      const manifest = JSON.parse(content);
+      const details = manifest.researchPreview.recordDetails;
+      assert.equal(details.count, 22);
+      assert.equal(details.records.length, 22);
+      assertUnique(details.records.map((entry) => entry.recordId), "Human-readable record-detail IDs");
+      for (const entry of details.records) {
+        assert.equal(entry.entryPoint, `research-preview/records/${entry.recordId}.html`);
+        assert.match(entry.htmlSha256, /^[a-f0-9]{64}$/);
+      }
+      delete manifest.researchPreview.recordDetails;
+      integrationScanContent = JSON.stringify(manifest);
+    }
+    assert(!integrationScanContent.includes("com.github.copilot.cloud-agent"), `GitHub Copilot cloud agent leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.google.jules.hosted"), `Google Jules leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("org.openhands.cli"), `OpenHands leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.cline.bot"), `Cline leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.openai.codex.cli"), `OpenAI Codex CLI leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.cursor.ide.foreground-agent"), `Cursor IDE foreground Agent leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.gitlab.duo-agent-platform.developer-flow"), `GitLab Duo Developer Flow leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.cognition.devin"), `Cognition Devin leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.anthropic.claude-code.cli"), `Anthropic Claude Code CLI leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("dev.zed.agent.native"), `Zed Agent leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.replit.agent.hosted"), `Replit Agent leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("org.aider-ai.aider.cli"), `Aider CLI leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.amazon.kiro.ide"), `Kiro IDE leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.lovable.agent.hosted"), `Lovable Build mode leaked into ${path.relative(packageRoot, file)}`);
+    assert(!integrationScanContent.includes("com.anomaly.opencode.cli"), `OpenCode CLI leaked into ${path.relative(packageRoot, file)}`);
   }
 }
 

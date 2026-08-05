@@ -5,8 +5,8 @@
   "classificationRule": "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
   "counts": {
     "accepted-evidence-provenance": 370,
-    "canonical-source": 68,
-    "generated-publication-output": 79,
+    "canonical-source": 69,
+    "generated-publication-output": 102,
     "release-control-artifact": 29,
     "retained-experiment": 87
   },
@@ -438,7 +438,25 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/record-detail.js",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.amazon.kiro.ide.1-0-242.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.amazon.kiro.ide.1-0-242.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.anomaly.opencode.cli.1-18-11.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -450,7 +468,19 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.anthropic.claude-code.cli.2-1-117.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.anthropic.claude-code.cli.2-1-117.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.anthropic.claude-code.cli.2-1-220.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -462,7 +492,19 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.cline.bot.vscode-extension.4-1-2.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.cline.bot.vscode-extension.4-1-2.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.cline.bot.vscode-extension.4-1-3.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -474,7 +516,19 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.cognition.devin-desktop.cascade.3-6-27.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.cognition.devin-desktop.cascade.3-6-27.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.cognition.devin.hosted.rolling.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -486,7 +540,19 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.cursor.ide.foreground-agent.3-14.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.cursor.ide.foreground-agent.3-14.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.github.copilot.cloud-agent.rolling.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -498,7 +564,19 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.gitlab.duo.developer-flow.19-2-1.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -510,7 +588,19 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.gitlab.duo.developer-flow.19-2.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.gitlab.duo.developer-flow.19-2.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.google.jules.hosted.rolling.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -522,7 +612,19 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.lovable.agent.hosted.rolling.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.lovable.agent.hosted.rolling.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.openai.codex.cli.0-146-0.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -534,7 +636,19 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.openai.codex.cli.0-90-0.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.openai.codex.cli.0-90-0.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.replit.agent.hosted.agent-4.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -546,7 +660,19 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.zed.agent.native.stable.1-12-1.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.zed.agent.native.stable.1-12-1.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/dev.zed.agent.native.1-13-1.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -558,7 +684,19 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/org.aider-ai.aider.cli.0-86-0.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/org.aider-ai.aider.cli.0-86-0.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/org.openhands.cli.1-16-0.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -3793,6 +3931,12 @@
     },
     {
       "path": "site/research-preview/index.html",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Canonical static site, schema, method or deterministic build source."
+    },
+    {
+      "path": "site/research-preview/record-detail.js",
       "classification": "canonical-source",
       "publicationBoundary": "git-research-or-source-only",
       "rationale": "Canonical static site, schema, method or deterministic build source."

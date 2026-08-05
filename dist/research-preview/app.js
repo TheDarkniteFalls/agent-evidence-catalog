@@ -22,7 +22,20 @@
   const historyToggle = document.querySelector("#historyToggle");
   historyToggle.textContent = `Show ${historyRecords.length} history records`;
 
-  const versionLabel = (record) => record.release.version ? `v${record.release.version}` : (record.release.releaseTag ?? record.release.scope);
+  const requestedState = new URLSearchParams(window.location.search);
+  const requestedDelivery = requestedState.get("delivery");
+  search.value = requestedState.get("q") ?? "";
+  if (["all", "local", "hybrid", "hosted"].includes(requestedDelivery)) delivery.value = requestedDelivery;
+
+  const titleCase = (value) => String(value).replaceAll("-", " ").replace(/(^|\s)\S/g, (match) => match.toUpperCase());
+  const versionLabel = (record) => record.release.version ? `v${record.release.version}` : (record.release.releaseTag ?? titleCase(record.release.scope));
+  const catalogState = () => {
+    const params = new URLSearchParams();
+    if (search.value.trim()) params.set("q", search.value.trim());
+    if (delivery.value !== "all") params.set("delivery", delivery.value);
+    const query = params.toString();
+    return query ? `?${query}` : "";
+  };
   const recordCard = (record, history = false) => {
     const article = document.createElement("article");
     article.className = `record-card${history ? " history-card" : ""}`;
@@ -60,9 +73,14 @@
     boundary.textContent = record.lifecycleNote;
     const links = document.createElement("div");
     links.className = "card-links";
+    const detailLink = document.createElement("a");
+    detailLink.className = "primary-record-link";
+    detailLink.href = `records/${encodeURIComponent(record.recordId)}.html${catalogState()}`;
+    detailLink.textContent = "Read the evidence record";
+    links.append(detailLink);
     const rawLink = document.createElement("a");
     rawLink.href = `records/${encodeURIComponent(record.recordId)}.json`;
-    rawLink.textContent = "Inspect record and sources (JSON)";
+    rawLink.textContent = "Raw JSON";
     links.append(rawLink);
     article.append(heading, identity, metrics, boundary, links);
     return article;
@@ -76,11 +94,12 @@
       return (!query || haystack.includes(query)) && (deliveryValue === "all" || record.surface.deliveryModel === deliveryValue);
     });
     currentRoot.replaceChildren(...visible.map((record) => recordCard(record)));
+    historyRoot.replaceChildren(...historyRecords.map((record) => recordCard(byId.get(record.recordId), true)));
     resultCount.textContent = `${visible.length} of ${currentRecords.length} current records`;
     emptyState.hidden = visible.length !== 0;
+    window.history.replaceState(null, "", `${window.location.pathname}${catalogState()}${window.location.hash}`);
   }
 
-  historyRoot.replaceChildren(...historyRecords.map((record) => recordCard(byId.get(record.recordId), true)));
   historyToggle.addEventListener("click", (event) => {
     const expanded = event.currentTarget.getAttribute("aria-expanded") === "true";
     event.currentTarget.setAttribute("aria-expanded", String(!expanded));

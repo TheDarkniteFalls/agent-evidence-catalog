@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { createSixteenRecordCatalog, draftRoot, packageRoot, sha256 } from "./real-catalog-lib.mjs";
 
@@ -127,6 +127,7 @@ visit(preview);
 
 const siteHtml = await readFile(path.join(packageRoot, "site", "research-preview", "index.html"), "utf8");
 const siteApp = await readFile(path.join(packageRoot, "site", "research-preview", "app.js"), "utf8");
+const recordDetailApp = await readFile(path.join(packageRoot, "site", "research-preview", "record-detail.js"), "utf8");
 assert(siteHtml.includes('id="currentRecords"'));
 assert(siteHtml.includes('id="historyRecords" class="record-grid history-grid" hidden'));
 assert(siteHtml.includes('aria-expanded="false"'));
@@ -141,13 +142,102 @@ assert(siteApp.includes("surface.currentRecord").valueOf());
 assert(siteApp.includes("surface.history").valueOf());
 assert(siteApp.includes('"Publisher claims"'));
 assert(siteApp.includes('"Publisher sources"'));
-assert(siteApp.includes("Inspect record and sources (JSON)"));
+assert(siteApp.includes("Read the evidence record"));
+assert(siteApp.includes('"Raw JSON"'));
+assert(!siteApp.includes("detailPilot"));
+assert(siteApp.includes('new URLSearchParams(window.location.search)'));
+assert(siteApp.includes('detailLink.href = `records/${encodeURIComponent(record.recordId)}.html${catalogState()}`'));
+assert(siteApp.includes('window.history.replaceState'));
+assert(recordDetailApp.includes('[data-catalog-return]'));
+assert(recordDetailApp.includes('[data-record-detail-link]'));
+assert(recordDetailApp.includes('["local", "hybrid", "hosted"].includes(delivery)'));
+assert.equal(
+  await readFile(path.join(packageRoot, "dist", "research-preview", "record-detail.js"), "utf8"),
+  recordDetailApp,
+  "Built record-detail navigation differs from its shared source"
+);
 const distPreview = await readJson(path.join(packageRoot, "dist", "research-preview", "catalog.json"));
 assert.deepEqual(distPreview, preview, "Built research-preview data differs from source data");
+const builtRecords = new Map();
 for (const record of preview.previewRecords) {
   const builtRecord = await readJson(path.join(packageRoot, "dist", "research-preview", "records", `${record.recordId}.json`));
   assert.equal(builtRecord.identity.recordId, record.recordId);
   assert.equal(builtRecord.independentTests.length, 0);
+  builtRecords.set(record.recordId, builtRecord);
+}
+const buildManifest = await readJson(path.join(packageRoot, "dist", "build-manifest.json"));
+const detailsRoot = path.join(packageRoot, "dist", "research-preview", "records");
+const detailHtmlFiles = (await readdir(detailsRoot)).filter((name) => name.endsWith(".html")).sort();
+const expectedDetailHtmlFiles = preview.previewRecords.map((record) => `${record.recordId}.html`).sort();
+assert.deepEqual(detailHtmlFiles, expectedDetailHtmlFiles, "Every projected record must have exactly one human-readable detail page");
+assert.equal(buildManifest.researchPreview.recordDetails.count, 22);
+assert.equal(buildManifest.researchPreview.recordDetails.records.length, 22);
+const manifestDetailsById = new Map(buildManifest.researchPreview.recordDetails.records.map((entry) => [entry.recordId, entry]));
+assert.equal(manifestDetailsById.size, 22, "Human-readable record-detail manifest IDs must be unique");
+
+const escapeHtml = (value) => String(value)
+  .replaceAll("&", "&amp;")
+  .replaceAll("<", "&lt;")
+  .replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;")
+  .replaceAll("'", "&#39;");
+const plainLabel = (value) => String(value).replaceAll("-", " ").replace(/(^|\s)\S/g, (match) => match.toUpperCase());
+
+for (const summary of preview.previewRecords) {
+  const record = builtRecords.get(summary.recordId);
+  const lifecycleEntry = lifecycleById.get(summary.recordId);
+  const detailName = `${summary.recordId}.html`;
+  const detailHtml = await readFile(path.join(detailsRoot, detailName), "utf8");
+  const displayRelease = summary.release.version ?? plainLabel(summary.release.scope);
+  const displayScope = summary.release.version ? `${summary.release.version} · ${plainLabel(summary.release.scope)}` : plainLabel(summary.release.scope);
+  const expectedLifecycle = lifecycle.entries.filter((entry) => entry.surfaceKey === lifecycleEntry.surfaceKey);
+
+  assert(detailHtml.includes(`Human-readable publisher-source evidence record for ${escapeHtml(`${summary.name} ${displayRelease}`)}.`));
+  assert(detailHtml.includes(`<strong>Lifecycle note:</strong> ${escapeHtml(lifecycleEntry.note)}`));
+  assert(detailHtml.includes(`<div><dt>Publisher</dt><dd>${escapeHtml(record.identity.publisher.name)}</dd></div>`));
+  assert(detailHtml.includes(`<div><dt>Surface</dt><dd>${escapeHtml(record.identity.surface.name)} · ${escapeHtml(record.identity.surface.deliveryModel)}</dd></div>`));
+  assert(detailHtml.includes(`<div><dt>Version scope</dt><dd>${escapeHtml(displayScope)}</dd></div>`));
+  assert(detailHtml.includes(`${record.claims.length} publisher claims · ${record.sources.length} named sources · 0 independent tests`));
+  for (const heading of ["Record identity", "Publisher claims", "Applicability boundaries", "Unresolved unknowns", "Named official sources", "Reciprocal lifecycle history", "Reading boundary"]) {
+    assert(detailHtml.includes(heading), `${summary.recordId} omitted ${heading}`);
+  }
+  for (const section of ["identity", "publisher-claims", "boundaries", "unknowns", "sources", "lifecycle"]) {
+    assert(detailHtml.includes(`href="#${section}"`), `${summary.recordId} omitted the compact ${section} section-index link`);
+    assert(detailHtml.includes(`id="${section}"`), `${summary.recordId} omitted the ${section} section target`);
+  }
+  const sectionIndex = detailHtml.indexOf('class="detail-section-nav"');
+  const claimsJump = detailHtml.indexOf('href="#publisher-claims">Claims</a>', sectionIndex);
+  const rawAction = detailHtml.indexOf(`class="secondary-link" href="${summary.recordId}.json">Raw JSON</a>`, sectionIndex);
+  assert(sectionIndex >= 0 && claimsJump > sectionIndex && rawAction > claimsJump, `${summary.recordId} must keep raw JSON secondary to human-readable section navigation`);
+  assert(detailHtml.includes('data-catalog-return href="../index.html"'), `${summary.recordId} omitted catalog return-state hooks`);
+  assert(detailHtml.includes('../record-detail.js?v=2026-08-04-density-pass'), `${summary.recordId} omitted shared record navigation logic`);
+  if (!summary.release.version) assert(!detailHtml.includes(`${displayRelease} · ${plainLabel(summary.release.scope)}`), `${summary.recordId} repeated its rolling-service scope`);
+  assert.equal((detailHtml.match(/class="claim-item"/g) ?? []).length, record.claims.length, `${summary.recordId} claim count drift`);
+  assert.equal((detailHtml.match(/data-source-id=/g) ?? []).length, record.sources.length, `${summary.recordId} source count drift`);
+  assert.equal((detailHtml.match(/data-lifecycle-record-id=/g) ?? []).length, expectedLifecycle.length, `${summary.recordId} lifecycle count drift`);
+  for (const claim of record.claims) {
+    assert.equal((detailHtml.match(new RegExp(`data-claim-id="${claim.id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`, "g")) ?? []).length, 1, `${summary.recordId} must present publisher claim ${claim.id} exactly once`);
+  }
+  for (const source of record.sources) {
+    assert(detailHtml.includes(`data-source-id="${escapeHtml(source.id)}"`), `${summary.recordId} omitted named source ${source.id}`);
+    assert(detailHtml.includes(`href="${escapeHtml(source.uri)}"`), `${summary.recordId} omitted official source link ${source.uri}`);
+  }
+  for (const unknown of record.dossier.unknowns) {
+    assert(detailHtml.includes(escapeHtml(unknown)), `${summary.recordId} omitted unresolved unknown: ${unknown}`);
+  }
+  for (const limitation of record.dossier.limitations) {
+    assert(detailHtml.includes(escapeHtml(limitation)), `${summary.recordId} omitted limitation: ${limitation}`);
+  }
+  for (const entry of expectedLifecycle) {
+    assert(detailHtml.includes(`data-lifecycle-record-id="${escapeHtml(entry.recordId)}"`), `${summary.recordId} omitted lifecycle record ${entry.recordId}`);
+    assert(detailHtml.includes(`data-record-detail-link href="${escapeHtml(entry.recordId)}.html"`), `${summary.recordId} lifecycle link cannot retain catalog context`);
+    if (entry.supersedesRecordId) assert(detailHtml.includes(`<strong>Supersedes:</strong> ${escapeHtml(entry.supersedesRecordId)}`));
+    if (entry.supersededByRecordId) assert(detailHtml.includes(`<strong>Superseded by:</strong> ${escapeHtml(entry.supersededByRecordId)}`));
+  }
+  const manifestDetail = manifestDetailsById.get(summary.recordId);
+  assert(manifestDetail, `${summary.recordId} is missing from the human-readable detail manifest`);
+  assert.equal(manifestDetail.entryPoint, `research-preview/records/${detailName}`);
+  assert.equal(manifestDetail.htmlSha256, sha256(detailHtml));
 }
 
 console.log("PASS additive 22-entry lifecycle: 16 current, 5 superseded, 1 historical and 0 unresolved");
@@ -155,3 +245,5 @@ console.log("PASS derived 16-surface watcher retains all 22 source URLs, fingerp
 console.log("PASS current-default research preview presents all 16 current records and 6 explicit-history records with zero independent-test credit");
 console.log("PASS Codex 0.146.0 is integrated as the current same-surface successor to preserved 0.90.0 history without a waiting-period gate");
 console.log("PASS static current-default presentation and collapsed explicit-history control match the source dataset");
+console.log("PASS one deterministic record-agnostic template presents all 22 records with every claim, official source link, unknown, limitation and reciprocal lifecycle link preserved");
+console.log("PASS compact record identity, section navigation and catalog search/delivery return state are shared across all 22 pages");

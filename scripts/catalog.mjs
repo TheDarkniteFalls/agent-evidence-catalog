@@ -54,6 +54,310 @@ function uri(value) {
   }
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function label(value) {
+  return String(value)
+    .replaceAll("-", " ")
+    .replace(/(^|\s)\S/g, (match) => match.toUpperCase())
+    .replace(/\b(Api|Cli|Dns|Ide|Json|Mcp|Os|Tls|Tui|Vsix)\b/g, (match) => match.toUpperCase());
+}
+
+function valueOrUnknown(value, fallback = "Not established by the accepted record") {
+  return value === null || value === undefined || value === "" ? fallback : String(value);
+}
+
+function releaseLabel(release) {
+  return release.version ?? label(release.scope);
+}
+
+function releaseScopeLabel(release) {
+  return release.version ? `${release.version} · ${label(release.scope)}` : label(release.scope);
+}
+
+function applicabilityText(applicability) {
+  const dimension = (name, value) => {
+    const values = value.values.length ? ` — ${value.values.join(", ")}` : "";
+    return `${name}: ${label(value.scope)}${values}`;
+  };
+  return [
+    `Version: ${label(applicability.version.kind)} — ${applicability.version.value}`,
+    dimension("Configuration", applicability.configuration),
+    dimension("Platform", applicability.platform),
+    dimension("Model", applicability.model),
+    dimension("Deployment", applicability.deployment)
+  ].join("; ");
+}
+
+function renderRecordDetail(record, preview, lifecycle) {
+  const recordId = record.identity.recordId;
+  const summary = preview.previewRecords.find((candidate) => candidate.recordId === recordId);
+  const selected = lifecycle.entries.find((entry) => entry.recordId === recordId);
+  if (!summary || !selected) throw new Error(`Record detail ${recordId} is missing its public summary or lifecycle entry`);
+
+  const lifecycleById = new Map(lifecycle.entries.map((entry) => [entry.recordId, entry]));
+  if (selected.supersedesRecordId) {
+    const predecessor = lifecycleById.get(selected.supersedesRecordId);
+    if (!predecessor || predecessor.supersededByRecordId !== selected.recordId || predecessor.surfaceKey !== selected.surfaceKey) {
+      throw new Error(`Record detail ${recordId} has a non-reciprocal predecessor`);
+    }
+  }
+  if (selected.supersededByRecordId) {
+    const successor = lifecycleById.get(selected.supersededByRecordId);
+    if (!successor || successor.supersedesRecordId !== selected.recordId || successor.surfaceKey !== selected.surfaceKey) {
+      throw new Error(`Record detail ${recordId} has a non-reciprocal successor`);
+    }
+  }
+
+  const sourcesById = new Map(record.sources.map((source) => [source.id, source]));
+  const assignedClaimIds = new Set();
+  const claimGroups = record.mappings.propositions
+    .filter((proposition) => proposition.id !== "evaluation")
+    .map((proposition) => {
+      const claims = record.claims.filter((claim) => !assignedClaimIds.has(claim.id) && (
+        claim.propositionIds.includes(proposition.id) || proposition.claimIds.includes(claim.id)
+      ));
+      claims.forEach((claim) => assignedClaimIds.add(claim.id));
+      return { proposition, claims };
+    })
+    .filter((group) => group.claims.length);
+  const ungroupedClaims = record.claims.filter((claim) => !assignedClaimIds.has(claim.id));
+  if (ungroupedClaims.length) {
+    claimGroups.push({
+      proposition: {
+        id: "additional-publisher-claims",
+        eyebrow: "Additional publisher claims",
+        question: "What else do the named sources state?",
+        answer: "These accepted publisher claims have no plain-language proposition mapping in the record, so they are presented without a newly inferred category."
+      },
+      claims: ungroupedClaims
+    });
+  }
+  const groupedClaimIds = claimGroups.flatMap((group) => group.claims.map((claim) => claim.id));
+  if (groupedClaimIds.length !== record.claims.length || new Set(groupedClaimIds).size !== record.claims.length) {
+    throw new Error(`Record detail ${recordId} must group every publisher claim exactly once`);
+  }
+
+  const claimGroupsHtml = claimGroups.map(({ proposition, claims }) => `
+        <section class="claim-group" aria-labelledby="group-${escapeHtml(proposition.id)}">
+          <header>
+            <p class="eyebrow">${escapeHtml(proposition.eyebrow)}</p>
+            <h3 id="group-${escapeHtml(proposition.id)}">${escapeHtml(proposition.question)}</h3>
+            <p>${escapeHtml(proposition.answer)}</p>
+          </header>
+          <div class="claim-list">
+            ${claims.map((claim) => {
+              const raw = claim.rawRecord;
+              const source = sourcesById.get(claim.sourceId);
+              if (!source) throw new Error(`Record detail claim ${claim.id} has no named source`);
+              return `<article class="claim-item" data-claim-id="${escapeHtml(claim.id)}">
+              <h4>${escapeHtml(raw.claim.category.split(".").map(label).join(" · "))}</h4>
+              <p class="claim-statement">${escapeHtml(raw.claim.statement)}</p>
+              <dl class="claim-meta">
+                <dt>Applies to</dt><dd>${escapeHtml(applicabilityText(raw.applicability))}</dd>
+                <dt>Official source</dt><dd><a href="${escapeHtml(source.uri)}">${escapeHtml(source.title)}</a> · ${escapeHtml(source.locator)}</dd>
+                <dt>Review</dt><dd>Reviewed ${escapeHtml(raw.review.reviewedAt)} · recheck after ${escapeHtml(raw.review.recheckAfter)}</dd>
+              </dl>
+            </article>`;
+            }).join("\n            ")}
+          </div>
+        </section>`).join("\n");
+
+  const axesHtml = record.configurationModel.axes.map((axis) => `
+          <article class="boundary-card">
+            <h3>${escapeHtml(axis.label)}</h3>
+            <p><strong>${escapeHtml(label(axis.scope))}.</strong> ${escapeHtml(axis.alternatives.map((alternative) => alternative.label).join(" · "))}</p>
+            <p class="boundary-unknown"><strong>Still unresolved:</strong> ${escapeHtml(axis.unknowns.join(" "))}</p>
+          </article>`).join("\n");
+
+  const sourcesHtml = record.sources.map((source) => `
+          <li data-source-id="${escapeHtml(source.id)}">
+            <a href="${escapeHtml(source.uri)}"><strong>${escapeHtml(source.title)}</strong></a>
+            <span>${escapeHtml(label(source.sourceKind))} · ${escapeHtml(source.locator)} · captured ${escapeHtml(source.capture.capturedAt)}</span>
+          </li>`).join("\n");
+
+  const identity = record.identity;
+  const release = identity.release;
+  const sourceRevision = identity.artifacts.find((artifact) => artifact.kind === "source-revision");
+  const installed = release.installedRuntimeVariant;
+  const rawJson = `${recordId}.json`;
+  const displayRelease = releaseLabel(release);
+  const displayTitle = `${summary.name} ${displayRelease}`;
+  const sourceRevisionHtml = sourceRevision?.uri && release.sourceRevision
+    ? `<a href="${escapeHtml(sourceRevision.uri)}">${escapeHtml(release.sourceRevision)}</a>`
+    : escapeHtml(valueOrUnknown(release.sourceRevision));
+
+  let firstLifecycle = selected;
+  while (firstLifecycle.supersedesRecordId) firstLifecycle = lifecycleById.get(firstLifecycle.supersedesRecordId);
+  const lifecycleChain = [];
+  let lifecycleCursor = firstLifecycle;
+  while (lifecycleCursor) {
+    lifecycleChain.push(lifecycleCursor);
+    lifecycleCursor = lifecycleCursor.supersededByRecordId ? lifecycleById.get(lifecycleCursor.supersededByRecordId) : null;
+  }
+  const lifecycleStepsHtml = lifecycleChain.map((entry, index) => {
+    const entrySummary = preview.previewRecords.find((candidate) => candidate.recordId === entry.recordId);
+    if (!entrySummary) throw new Error(`Record detail ${recordId} cannot name lifecycle record ${entry.recordId}`);
+    const relations = [
+      entry.supersedesRecordId ? `<strong>Supersedes:</strong> ${escapeHtml(entry.supersedesRecordId)}` : null,
+      entry.supersededByRecordId ? `<strong>Superseded by:</strong> ${escapeHtml(entry.supersededByRecordId)}` : null
+    ].filter(Boolean);
+    const relationship = relations.length ? relations.join(" · ") : "No linked predecessor or successor";
+    const step = `<article class="lifecycle-step${entry.recordId === recordId ? " lifecycle-selected" : ""}" data-lifecycle-record-id="${escapeHtml(entry.recordId)}">
+            <span class="lifecycle lifecycle-${escapeHtml(entry.status)}">${escapeHtml(entry.status)}</span>
+            <h3>${escapeHtml(entrySummary.name)} ${escapeHtml(releaseLabel(entrySummary.release))}</h3>
+            <p class="mono-value">${escapeHtml(entry.recordId)}</p>
+            <p>${relationship} · reviewed ${escapeHtml(entry.reviewedAt)}</p>
+            <p>${escapeHtml(entry.note)}</p>
+            <p class="lifecycle-links"><a data-record-detail-link href="${escapeHtml(entry.recordId)}.html">${entry.recordId === recordId ? "This human-readable record" : "Read human-readable record"}</a> · <a href="${escapeHtml(entry.recordId)}.json">Raw JSON</a></p>
+          </article>`;
+    return index === 0 ? step : `<div class="lifecycle-arrow" aria-hidden="true">→</div>\n          ${step}`;
+  }).join("\n          ");
+  const lifecycleHeading = lifecycleChain.length === 1
+    ? "No linked same-surface predecessor or successor"
+    : "Preserved same-surface sequence";
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Human-readable publisher-source evidence record for ${escapeHtml(displayTitle)}.">
+    <title>${escapeHtml(displayTitle)} · Agent Evidence Catalog</title>
+    <link rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/records/${escapeHtml(recordId)}.html">
+    <link rel="stylesheet" href="../styles.css?v=2026-08-04-density-pass">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to record</a>
+    <header class="site-header">
+      <a class="brand" href="../../index.html">Agent Evidence Catalog</a>
+      <nav aria-label="Record navigation">
+        <a data-catalog-return href="../index.html">Research preview</a>
+      </nav>
+    </header>
+
+    <aside class="preview-banner" aria-label="Research preview status">
+      <strong>Human-readable record.</strong> Publisher-source research only. No agent was installed or run, and no independent-test credit is assigned.
+    </aside>
+
+    <main id="main" class="detail-main">
+      <section class="detail-hero" aria-labelledby="record-title">
+        <p class="eyebrow">${escapeHtml(label(selected.status))} record · reviewed ${escapeHtml(selected.reviewedAt)}</p>
+        <h1 id="record-title">${escapeHtml(summary.name)} <span class="mono-value">${escapeHtml(displayRelease)}</span></h1>
+        <dl class="detail-summary" aria-label="Compact record identity">
+          <div><dt>Publisher</dt><dd>${escapeHtml(identity.publisher.name)}</dd></div>
+          <div><dt>Surface</dt><dd>${escapeHtml(identity.surface.name)} · ${escapeHtml(identity.surface.deliveryModel)}</dd></div>
+          <div><dt>Version scope</dt><dd>${escapeHtml(releaseScopeLabel(release))}</dd></div>
+          <div><dt>Record coverage</dt><dd>${escapeHtml(record.claims.length)} publisher claims · ${escapeHtml(record.sources.length)} named sources · 0 independent tests</dd></div>
+        </dl>
+        <p class="detail-status"><strong>Lifecycle note:</strong> ${escapeHtml(selected.note)}</p>
+      </section>
+
+      <nav class="detail-section-nav" aria-label="Record sections">
+        <span>Jump to</span>
+        <a href="#identity">Identity</a>
+        <a href="#publisher-claims">Claims</a>
+        <a href="#boundaries">Boundaries</a>
+        <a href="#unknowns">Unknowns</a>
+        <a href="#sources">Sources</a>
+        <a href="#lifecycle">History</a>
+        <a class="secondary-link" href="${rawJson}">Raw JSON</a>
+      </nav>
+
+      <section id="identity" class="detail-section" aria-labelledby="identity-heading">
+        <header>
+          <p class="eyebrow">Record identity</p>
+          <h2 id="identity-heading">What this record identifies</h2>
+          <p>The accepted record identifies the release or rolling-service scope below. It does not establish the executable or service state used by any real session.</p>
+        </header>
+        <dl class="identity-grid">
+          <div><dt>Record ID</dt><dd class="mono-value">${escapeHtml(identity.recordId)}</dd></div>
+          <div><dt>Publisher</dt><dd>${escapeHtml(identity.publisher.name)}</dd></div>
+          <div><dt>Surface</dt><dd>${escapeHtml(identity.surface.name)} · ${escapeHtml(identity.surface.deliveryModel)}</dd></div>
+          <div><dt>Version scope</dt><dd>${escapeHtml(releaseScopeLabel(release))}</dd></div>
+          <div><dt>Release tag</dt><dd class="mono-value">${escapeHtml(valueOrUnknown(release.releaseTag))}</dd></div>
+          <div><dt>Source revision</dt><dd class="mono-value">${sourceRevisionHtml}</dd></div>
+          <div><dt>Published</dt><dd>${escapeHtml(valueOrUnknown(release.releasedAt))} · ${escapeHtml(valueOrUnknown(release.channel))}</dd></div>
+          <div><dt>Effective runtime</dt><dd>${escapeHtml(label(installed.status))}</dd></div>
+          <div><dt>Runtime or deployment alternatives</dt><dd>${escapeHtml(installed.alternatives.join(" · "))}</dd></div>
+          <div><dt>Independent evidence</dt><dd>${escapeHtml(record.independentTests.length)} admitted tests</dd></div>
+        </dl>
+        <p class="boundary-callout"><strong>Runtime boundary:</strong> ${escapeHtml(installed.note)}</p>
+      </section>
+
+      <section id="publisher-claims" class="detail-section" aria-labelledby="claims-heading">
+        <header>
+          <p class="eyebrow">Publisher claims</p>
+          <h2 id="claims-heading">What ${escapeHtml(identity.publisher.name)}'s named sources say</h2>
+          <p>All ${escapeHtml(record.claims.length)} accepted claims appear once below, grouped by the record's existing plain-language mapping. Each statement keeps its own version, configuration, platform, model and deployment boundary.</p>
+        </header>
+        <div class="claim-groups">${claimGroupsHtml}
+        </div>
+      </section>
+
+      <section id="boundaries" class="detail-section" aria-labelledby="boundaries-heading">
+        <header>
+          <p class="eyebrow">Applicability boundaries</p>
+          <h2 id="boundaries-heading">Configuration choices the record does not collapse</h2>
+          <p>${escapeHtml(record.configurationModel.note)}</p>
+        </header>
+        <div class="boundary-grid">${axesHtml}
+        </div>
+        <h3>Record limitations</h3>
+        <ul class="detail-list">${record.dossier.limitations.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+      </section>
+
+      <section id="unknowns" class="detail-section" aria-labelledby="unknowns-heading">
+        <header>
+          <p class="eyebrow">Unresolved unknowns</p>
+          <h2 id="unknowns-heading">What the admitted sources do not establish</h2>
+          <p>Unknown does not mean absent. It means the accepted publisher sources do not establish the fact for an effective session.</p>
+        </header>
+        <ol class="detail-list">${record.dossier.unknowns.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
+      </section>
+
+      <section id="sources" class="detail-section" aria-labelledby="sources-heading">
+        <header>
+          <p class="eyebrow">Named official sources</p>
+          <h2 id="sources-heading">Open the publisher material</h2>
+          <p>These are the ${escapeHtml(record.sources.length)} source entries admitted by the accepted record. Repeated titles identify distinct claim locators, not independent corroboration.</p>
+        </header>
+        <ul class="source-list">${sourcesHtml}
+        </ul>
+      </section>
+
+      <section id="lifecycle" class="detail-section" aria-labelledby="lifecycle-heading">
+        <header>
+          <p class="eyebrow">Reciprocal lifecycle history</p>
+          <h2 id="lifecycle-heading">${escapeHtml(lifecycleHeading)}</h2>
+          <p>The lifecycle overlay preserves the selected status and every same-surface predecessor or successor link. Where links exist, each direction is reciprocal.</p>
+        </header>
+        <div class="lifecycle-flow">${lifecycleStepsHtml}
+        </div>
+      </section>
+
+      <section class="detail-section boundary-callout" aria-labelledby="reading-boundary-heading">
+        <h2 id="reading-boundary-heading">Reading boundary</h2>
+        <p>This page changes presentation only. It does not change the accepted dossier, claims, record, sources, mappings or lifecycle data; admit independent evidence; calculate suitability; or rank or recommend agents.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Static research artifact. Inclusion is not endorsement; absence is not an adverse finding.</p>
+      <p><a data-catalog-return href="../index.html">Back to catalog</a> · <a href="${rawJson}">Raw JSON</a> · <a href="../../RESEARCH_PREVIEW.md">Method</a> · <a href="../../CORRECTIONS.md">Corrections</a></p>
+    </footer>
+    <script src="../record-detail.js?v=2026-08-04-density-pass"></script>
+  </body>
+</html>
+`;
+}
+
 function validator() {
   const errors = [];
   const check = (condition, path, message) => {
@@ -479,7 +783,7 @@ async function commandBuild() {
   const safeJson = JSON.stringify(profiles).replaceAll("<", "\\u003c");
   await writeFile(join(DIST, "catalog-data.js"), `window.CATALOG_PROFILES = ${safeJson};\n`, "utf8");
   for (const item of loaded) await copyFile(join(CATALOG, item.name), join(DIST, "records", item.name));
-  for (const source of ["index.html", "styles.css", "app.js"]) {
+  for (const source of ["index.html", "styles.css", "app.js", "record-detail.js"]) {
     await copyFile(join(ROOT, "site", "research-preview", source), join(DIST, "research-preview", source));
   }
   const researchPreviewSource = join(ROOT, "drafts", "real-agent-catalog", "research-preview", "catalog.json");
@@ -489,11 +793,26 @@ async function commandBuild() {
     throw new Error("research preview must assign zero independent-test credit");
   }
   await copyFile(researchPreviewSource, join(DIST, "research-preview", "catalog.json"));
-  await copyFile(join(ROOT, "drafts", "real-agent-catalog", "research-preview", "lifecycle.json"), join(DIST, "research-preview", "lifecycle.json"));
+  const researchPreviewLifecycleSource = join(ROOT, "drafts", "real-agent-catalog", "research-preview", "lifecycle.json");
+  const researchPreviewLifecycle = JSON.parse(await readFile(researchPreviewLifecycleSource, "utf8"));
+  await copyFile(researchPreviewLifecycleSource, join(DIST, "research-preview", "lifecycle.json"));
   const researchPreviewSafeJson = JSON.stringify(researchPreview).replaceAll("<", "\\u003c");
   await writeFile(join(DIST, "research-preview", "data.js"), `window.RESEARCH_PREVIEW = ${researchPreviewSafeJson};\n`, "utf8");
+  const recordDetails = [];
   for (const record of researchPreview.previewRecords) {
-    await copyFile(join(ROOT, record.recordPath), join(DIST, "research-preview", "records", `${record.recordId}.json`));
+    const recordSource = join(ROOT, record.recordPath);
+    await copyFile(recordSource, join(DIST, "research-preview", "records", `${record.recordId}.json`));
+    const detailHtml = renderRecordDetail(JSON.parse(await readFile(recordSource, "utf8")), researchPreview, researchPreviewLifecycle);
+    const entryPoint = `research-preview/records/${record.recordId}.html`;
+    await writeFile(join(DIST, entryPoint), detailHtml, "utf8");
+    recordDetails.push({
+      recordId: record.recordId,
+      entryPoint,
+      htmlSha256: createHash("sha256").update(detailHtml).digest("hex")
+    });
+  }
+  if (recordDetails.length !== researchPreview.counts.recordsPresentedIncludingHistory) {
+    throw new Error("Research-preview human-readable detail count does not match the public projection");
   }
   await execFileAsync(process.execPath, [join(ROOT, "scripts", "claim-record.mjs"), "build-synthetic"], {
     cwd: ROOT,
@@ -526,7 +845,11 @@ async function commandBuild() {
       historyRecordsPresented: researchPreview.counts.recordsPresentedIncludingHistory - researchPreview.counts.currentRecordsPresented,
       recordsPresentedIncludingHistory: researchPreview.counts.recordsPresentedIncludingHistory,
       independentTestsCredited: researchPreview.counts.independentTestsCredited,
-      openIntake: researchPreview.boundaries.openIntake
+      openIntake: researchPreview.boundaries.openIntake,
+      recordDetails: {
+        count: recordDetails.length,
+        records: recordDetails
+      }
     },
     records: loaded.map((item) => ({
       id: item.profile.id,

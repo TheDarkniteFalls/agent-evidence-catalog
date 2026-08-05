@@ -241,20 +241,134 @@ const validatorCommands = [
 
 async function validateBrowserReceipt() {
   const receipt = JSON.parse(await readFile(browserReceiptPath, "utf8"));
+  const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
   assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.1");
   assert.equal(receipt.asOf, "2026-08-04");
   assert.equal(receipt.sourceDigests.landingHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "index.html"))));
   assert.equal(receipt.sourceDigests.previewHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"))));
   assert.equal(receipt.sourceDigests.previewDataSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "catalog.json"))));
+  assert.equal(receipt.sourceDigests.previewAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "app.js"))));
+  assert.equal(receipt.sourceDigests.recordDetailAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "record-detail.js"))));
+  assert.equal(receipt.sourceDigests.previewStylesSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "styles.css"))));
+  assert.equal(receipt.sourceDigests.recordDetailsManifestSha256, sha256(serialize(buildManifest.researchPreview.recordDetails)));
+  const expectedSamples = {
+    desktop: [
+      {
+        recordId: "com.openai.codex.cli.0-146-0",
+        lifecycleStatus: "current",
+        pageOpened: true,
+        title: "OpenAI Codex CLI 0.146.0 · Agent Evidence Catalog",
+        publisherClaims: 15,
+        plainLanguageClaimGroups: 6,
+        configurationBoundaries: 13,
+        unresolvedUnknowns: 15,
+        namedSourceEntries: 15,
+        reciprocalLifecycleSteps: 2,
+        sourceLinksAllHttps: true,
+        rawJsonPresentedAsSecondary: true,
+        compactIdentityFields: 4,
+        sectionIndexLinks: 6,
+        heroViewportShare: 0.224,
+        identityStartsAtViewport: 0.422,
+        titleFontSizePx: 44,
+        bodyHorizontalOverflow: false
+      },
+      {
+        recordId: "com.google.jules.hosted.rolling",
+        lifecycleStatus: "current",
+        pageOpened: true,
+        title: "Google Jules Rolling Service · Agent Evidence Catalog",
+        publisherClaims: 10,
+        plainLanguageClaimGroups: 6,
+        configurationBoundaries: 6,
+        unresolvedUnknowns: 10,
+        namedSourceEntries: 10,
+        reciprocalLifecycleSteps: 1,
+        sourceLinksAllHttps: true,
+        rawJsonPresentedAsSecondary: true,
+        compactIdentityFields: 4,
+        sectionIndexLinks: 6,
+        heroViewportShare: 0.205,
+        rollingScopeNotDuplicated: true,
+        bodyHorizontalOverflow: false
+      }
+    ],
+    mobile: [
+      {
+        recordId: "com.gitlab.duo.developer-flow.19-2",
+        lifecycleStatus: "superseded",
+        pageOpened: true,
+        title: "GitLab Duo Developer Flow 19.2.0-ee · Agent Evidence Catalog",
+        publisherClaims: 10,
+        plainLanguageClaimGroups: 5,
+        configurationBoundaries: 6,
+        unresolvedUnknowns: 9,
+        namedSourceEntries: 10,
+        reciprocalLifecycleSteps: 3,
+        sourceLinksAllHttps: true,
+        rawJsonPresentedAsSecondary: true,
+        compactIdentityFields: 4,
+        sectionIndexLinks: 6,
+        heroViewportShare: 0.415,
+        identityStartsAtViewport: 0.751,
+        titleFontSizePx: 30,
+        historyJumpLinkWorked: true,
+        bodyHorizontalOverflow: false
+      },
+      {
+        recordId: "com.anthropic.claude-code.cli.2-1-117",
+        lifecycleStatus: "superseded",
+        pageOpened: true,
+        title: "Claude Code CLI 2.1.117 · Agent Evidence Catalog",
+        publisherClaims: 8,
+        plainLanguageClaimGroups: 6,
+        configurationBoundaries: 5,
+        unresolvedUnknowns: 8,
+        namedSourceEntries: 8,
+        reciprocalLifecycleSteps: 2,
+        sourceLinksAllHttps: true,
+        fallbackClaimGroupPresent: true,
+        rawJsonPresentedAsSecondary: true,
+        compactIdentityFields: 4,
+        sectionIndexLinks: 6,
+        heroViewportShare: 0.406,
+        publisherClaimsJumpLinkWorked: true,
+        bodyHorizontalOverflow: false
+      }
+    ]
+  };
   for (const device of ["desktop", "mobile"]) {
     assert.equal(receipt.journeys[device].result, "PASS", `${device} browser journey did not pass`);
     assert.equal(receipt.journeys[device].consoleErrors, 0, `${device} browser journey has console errors`);
+    assert.equal(receipt.journeys[device].consoleWarnings, 0, `${device} browser journey has console warnings`);
     assert.equal(receipt.journeys[device].currentCards, 16, `${device} browser journey current-card count drift`);
     assert.equal(receipt.journeys[device].historyCardsAfterToggle, 6, `${device} browser journey history-card count drift`);
     assert.equal(receipt.journeys[device].canonicalPublicUrlRendered, true, `${device} canonical public URL was not rendered`);
+    assert.equal(receipt.journeys[device].landingHumanReadablePathExplained, true, `${device} landing page did not explain the primary human-readable path`);
+    assert.equal(receipt.journeys[device].bodyHorizontalOverflow, false, `${device} catalog journey overflowed horizontally`);
+    assert.equal(receipt.journeys[device].recordDetails.currentCatalogDetailLinks, 16, `${device} current detail-link count drift`);
+    assert.equal(receipt.journeys[device].recordDetails.allCatalogDetailLinksAfterHistory, 22, `${device} total detail-link count drift`);
+    assert.equal(receipt.journeys[device].recordDetails.rawJsonSecondaryOnCards, true, `${device} card hierarchy drift`);
+    assert.deepEqual(receipt.journeys[device].recordDetails.samples, expectedSamples[device], `${device} human-readable detail samples drift`);
   }
+  assert.deepEqual(receipt.journeys.desktop.catalogContextRoundTrip, {
+    delivery: "hosted",
+    deliveryResultCards: 5,
+    search: "Jules",
+    combinedResultCards: 1,
+    currentLinksCarriedContext: true,
+    historyLinksCarriedContext: true,
+    detailReturnLinksCarriedContext: true,
+    returnRestoredSearchAndDelivery: true
+  }, "Desktop catalog context round trip drift");
   assert.equal(receipt.boundaries.recordJsonLinkPresent, true, "Record JSON link was not present in browser QA");
-  console.log("PASS digest-bound desktop and mobile browser journeys: 16 current, 6 history, zero console errors");
+  assert.equal(receipt.boundaries.rawJsonSecondaryAcrossCatalogAndDetails, true, "Raw JSON did not remain secondary in browser QA");
+  assert.equal(receipt.boundaries.catalogSearchAndDeliveryContextPreserved, true, "Catalog search and delivery state was not preserved through record navigation");
+  assert.equal(receipt.boundaries.compactIdentityInFirstViewport, true, "Compact identity was not present in the first viewport");
+  assert.equal(receipt.boundaries.compactSectionIndexWorked, true, "Compact record section navigation did not work");
+  assert.equal(receipt.boundaries.allRecordPagesStructurallyValidated, 22, "Browser receipt is not paired with all 22 structurally validated pages");
+  assert.equal(receipt.boundaries.sourceLinkTargetsInspectedInRenderedDom, true, "Rendered official-source link targets were not inspected");
+  console.log("PASS digest-bound desktop and mobile browser journeys: 22 primary detail links plus exact-version, rolling-service, superseded and fallback-group samples with zero console errors");
 }
 
 async function validatePagesWorkflow() {
