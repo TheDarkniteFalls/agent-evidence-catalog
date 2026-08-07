@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/github-copilot-vscode-agent-rolling/dossier-source.json",
+    "sha256": "26e108c1df3aa62d1e388b520c981e760f804abd847a95e2f03bb8e9f8ad08ce",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.github.copilot.vscode-agent.rolling",
+    "agent": {
+      "id": "com.github.copilot.vscode-agent",
+      "name": "Copilot agent harness in Visual Studio Code"
+    },
+    "publisher": {
+      "id": "github-and-microsoft",
+      "name": "GitHub and Microsoft"
+    },
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Copilot agent harness in Visual Studio Code",
+      "slug": "github-copilot-vscode-agent-rolling",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Versioned VS Code client plus rolling Copilot service",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "github-copilot-vscode-agent-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://code.visualstudio.com/docs/agents/concepts/agents",
+        "ecosystem": "Versioned VS Code client plus rolling Copilot service",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "github-and-microsoft",
+        "name": "GitHub and Microsoft",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-current",
+      "uri": "https://code.visualstudio.com/docs/agents/concepts/agents",
+      "title": "Agents in Visual Studio Code",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-and-microsoft",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+      "title": "Choose and use an agent harness",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-and-microsoft",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Copilot agent harness in Visual Studio Code",
+            "claimIds": [
+              "com.github.copilot.vscode-agent.identity-current",
+              "com.github.copilot.vscode-agent.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "VS Code build, harness/Agent Host configuration, Copilot account policy, selected model, permission level and sandbox must be scoped",
+          "The local Copilot harness must not inherit claims from the accepted GitHub-hosted cloud agent or the separate Copilot CLI"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.github.copilot.vscode-agent.identity-current",
+      "rawRecordPath": "dossiers/github-copilot-vscode-agent-rolling/claims/github-copilot-vscode-agent-rolling/identity-current.json",
+      "rawRecordSha256": "cf86643e32c53c3d9cdde7216517f873ddf2dd84a57e12ac71cbe1e997169702",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.vscode-agent.identity-current",
+        "slug": "identity-current",
+        "subject": {
+          "id": "com.github.copilot.vscode-agent",
+          "name": "Copilot agent harness in Visual Studio Code",
+          "publisher": "GitHub and Microsoft",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Copilot agent harness in Visual Studio Code",
+            "slug": "github-copilot-vscode-agent-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "GitHub and Microsoft's official source names and documents Copilot agent harness in Visual Studio Code as a distinct current software-development agent surface in the reviewed Versioned VS Code client plus rolling Copilot service."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "GitHub and Microsoft"
+        },
+        "source": {
+          "uri": "https://code.visualstudio.com/docs/agents/concepts/agents",
+          "title": "Agents in Visual Studio Code",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "VS Code build, harness/Agent Host configuration, Copilot account policy, selected model, permission level and sandbox must be scoped",
+          "The local Copilot harness must not inherit claims from the accepted GitHub-hosted cloud agent or the separate Copilot CLI"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github-and-microsoft",
+      "sourceId": "source-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.github.copilot.vscode-agent.delivery-boundary-current",
+      "rawRecordPath": "dossiers/github-copilot-vscode-agent-rolling/claims/github-copilot-vscode-agent-rolling/delivery-boundary-current.json",
+      "rawRecordSha256": "c862223fb4697455560c9192ade69ebfc237a91c4ba820b266d0a75f2ef36cf9",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.vscode-agent.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.github.copilot.vscode-agent",
+          "name": "Copilot agent harness in Visual Studio Code",
+          "publisher": "GitHub and Microsoft",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Copilot agent harness in Visual Studio Code",
+            "slug": "github-copilot-vscode-agent-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "GitHub and Microsoft's official documentation describes Copilot agent harness in Visual Studio Code as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other GitHub Copilot surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "GitHub and Microsoft"
+        },
+        "source": {
+          "uri": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose and use an agent harness",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "VS Code build, harness/Agent Host configuration, Copilot account policy, selected model, permission level and sandbox must be scoped",
+          "The local Copilot harness must not inherit claims from the accepted GitHub-hosted cloud agent or the separate Copilot CLI"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github-and-microsoft",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-github-copilot-vscode-agent-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Copilot agent harness in Visual Studio Code is represented only as the Copilot agent harness in Visual Studio Code surface at the reviewed Versioned VS Code client plus rolling Copilot service boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Copilot agent harness in Visual Studio Code is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceId": "source-identity-current",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "VS Code build, harness/Agent Host configuration, Copilot account policy, selected model, permission level and sandbox must be scoped",
+      "The local Copilot harness must not inherit claims from the accepted GitHub-hosted cloud agent or the separate Copilot CLI",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "GitHub and Microsoft's official source names and documents Copilot agent harness in Visual Studio Code as a distinct current software-development agent surface in the reviewed Versioned VS Code client plus rolling Copilot service.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.github.copilot.vscode-agent.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "GitHub and Microsoft's official documentation describes Copilot agent harness in Visual Studio Code as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other GitHub Copilot surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.github.copilot.vscode-agent.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.github.copilot.vscode-agent.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

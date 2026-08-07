@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.q-developer.ide-plugins.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.amazon.q-developer.ide-plugins",
+    "name": "Amazon Q Developer IDE plugins",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Amazon Q Developer IDE plugins",
+      "slug": "aws-amazon-q-developer-ide-sunset"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "Amazon Web Services's official source names and documents Amazon Q Developer IDE plugins as a distinct current software-development agent surface in the reviewed Existing-customer support through 2027-04-30."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
+    "title": "Amazon Q Developer end-of-support announcement",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "IDE family/plugin version and subscriber eligibility differ",
+    "Current behavior during the Kiro migration may change before support ends"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

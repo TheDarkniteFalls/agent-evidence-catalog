@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.q-developer.github.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.amazon.q-developer.github",
+    "name": "Amazon Q Developer for GitHub",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Amazon Q Developer for GitHub",
+      "slug": "amazon-q-developer-github-preview"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Amazon Web Services's official documentation describes Amazon Q Developer for GitHub as a publisher-hosted service; the catalog keeps that delivery path separate from other Amazon Q Developer surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html",
+    "title": "Amazon Q Developer documentation history",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "Development and code-review agents are separate sub-surfaces with different triggers",
+    "Preview service, GitHub App installation, AWS registration, region and quota affect applicability"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

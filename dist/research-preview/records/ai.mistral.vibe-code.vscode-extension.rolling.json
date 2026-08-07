@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/mistral-vibe-code-vscode-rolling/dossier-source.json",
+    "sha256": "b1c8b7438df288b539280437a3402c1048c6633dbb8b90f83f62bd1793e00e7e",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "ai.mistral.vibe-code.vscode-extension.rolling",
+    "agent": {
+      "id": "ai.mistral.vibe-code.vscode-extension",
+      "name": "Vibe Code VS Code extension"
+    },
+    "publisher": {
+      "id": "mistral-ai",
+      "name": "Mistral AI"
+    },
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Vibe Code VS Code extension",
+      "slug": "mistral-vibe-code-vscode-rolling",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Vibe 2.0 extension and rolling service",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "mistral-vibe-code-vscode-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://docs.mistral.ai/vibe/choose-chat-work-code",
+        "ecosystem": "Vibe 2.0 extension and rolling service",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "mistral-ai",
+        "name": "Mistral AI",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-current",
+      "uri": "https://docs.mistral.ai/vibe/choose-chat-work-code",
+      "title": "Choose Vibe Chat, Work or Code",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "mistral-ai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://docs.mistral.ai/resources/changelogs",
+      "title": "Mistral changelog",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "mistral-ai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Vibe Code VS Code extension",
+            "claimIds": [
+              "ai.mistral.vibe-code.vscode-extension.identity-current",
+              "ai.mistral.vibe-code.vscode-extension.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Extension version and rolling Vibe service revision differ",
+          "CLI, VS Code and web claims require separate applicability"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "ai.mistral.vibe-code.vscode-extension.identity-current",
+      "rawRecordPath": "dossiers/mistral-vibe-code-vscode-rolling/claims/mistral-vibe-code-vscode-rolling/identity-current.json",
+      "rawRecordSha256": "b9d451fbfa1e1b8fb61a8d87a271f807ae3d606b1f0857c53679f08c0446dc4b",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "ai.mistral.vibe-code.vscode-extension.identity-current",
+        "slug": "identity-current",
+        "subject": {
+          "id": "ai.mistral.vibe-code.vscode-extension",
+          "name": "Vibe Code VS Code extension",
+          "publisher": "Mistral AI",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Vibe Code VS Code extension",
+            "slug": "mistral-vibe-code-vscode-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "Mistral AI's official source names and documents Vibe Code VS Code extension as a distinct current software-development agent surface in the reviewed Vibe 2.0 extension and rolling service."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Mistral AI"
+        },
+        "source": {
+          "uri": "https://docs.mistral.ai/vibe/choose-chat-work-code",
+          "title": "Choose Vibe Chat, Work or Code",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "Extension version and rolling Vibe service revision differ",
+          "CLI, VS Code and web claims require separate applicability"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "mistral-ai",
+      "sourceId": "source-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "ai.mistral.vibe-code.vscode-extension.delivery-boundary-current",
+      "rawRecordPath": "dossiers/mistral-vibe-code-vscode-rolling/claims/mistral-vibe-code-vscode-rolling/delivery-boundary-current.json",
+      "rawRecordSha256": "bb5ed4aa1694db7e88e54e68195d8bfa5e214378f6621a725b1ff5ddb4e6e065",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "ai.mistral.vibe-code.vscode-extension.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "ai.mistral.vibe-code.vscode-extension",
+          "name": "Vibe Code VS Code extension",
+          "publisher": "Mistral AI",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Vibe Code VS Code extension",
+            "slug": "mistral-vibe-code-vscode-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Mistral AI's official documentation describes Vibe Code VS Code extension as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Vibe Code surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Mistral AI"
+        },
+        "source": {
+          "uri": "https://docs.mistral.ai/resources/changelogs",
+          "title": "Mistral changelog",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "Extension version and rolling Vibe service revision differ",
+          "CLI, VS Code and web claims require separate applicability"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "mistral-ai",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-mistral-vibe-code-vscode-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Vibe Code VS Code extension is represented only as the Vibe Code VS Code extension surface at the reviewed Vibe 2.0 extension and rolling service boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Vibe Code VS Code extension is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceId": "source-identity-current",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Extension version and rolling Vibe service revision differ",
+      "CLI, VS Code and web claims require separate applicability",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "Mistral AI's official source names and documents Vibe Code VS Code extension as a distinct current software-development agent surface in the reviewed Vibe 2.0 extension and rolling service.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "ai.mistral.vibe-code.vscode-extension.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "Mistral AI's official documentation describes Vibe Code VS Code extension as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Vibe Code surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "ai.mistral.vibe-code.vscode-extension.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "ai.mistral.vibe-code.vscode-extension.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

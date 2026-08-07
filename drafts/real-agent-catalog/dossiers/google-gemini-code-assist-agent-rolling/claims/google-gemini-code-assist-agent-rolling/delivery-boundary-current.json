@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.google.gemini-code-assist.ide-agent.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.google.gemini-code-assist.ide-agent",
+    "name": "Gemini Code Assist IDE agent mode",
+    "publisher": "Google",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "IDE agent mode",
+      "slug": "google-gemini-code-assist-agent-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Google's official documentation describes IDE agent mode as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Gemini Code Assist surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Google"
+  },
+  "source": {
+    "uri": "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+    "title": "Gemini CLI and Code Assist transition",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "Individual, Google AI plan, Cloud enterprise and API-key users now have different availability",
+    "IDE, extension version and service behavior are not jointly frozen"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

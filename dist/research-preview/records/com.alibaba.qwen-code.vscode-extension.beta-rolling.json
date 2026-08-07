@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/alibaba-qwen-code-vscode-beta/dossier-source.json",
+    "sha256": "56f1797bc1862b09e0cf0b3775e0931933d5a1ef855000ac73241c288ed65eee",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.alibaba.qwen-code.vscode-extension.beta-rolling",
+    "agent": {
+      "id": "com.alibaba.qwen-code.vscode-extension",
+      "name": "Qwen Code VS Code extension"
+    },
+    "publisher": {
+      "id": "alibaba-cloud-qwen",
+      "name": "Alibaba Cloud Qwen team"
+    },
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Qwen Code VS Code extension",
+      "slug": "alibaba-qwen-code-vscode-beta",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Qwen Code VS Code integration beta",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "alibaba-qwen-code-vscode-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
+        "ecosystem": "Qwen Code VS Code integration beta",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "alibaba-cloud-qwen",
+        "name": "Alibaba Cloud Qwen team",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-current",
+      "uri": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
+      "title": "Qwen Code quickstart with VS Code integration",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "alibaba-cloud-qwen",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://qwenlm.github.io/qwen-code-docs/en/developers/roadmap/",
+      "title": "Qwen Code roadmap",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "alibaba-cloud-qwen",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Qwen Code VS Code extension",
+            "claimIds": [
+              "com.alibaba.qwen-code.vscode-extension.identity-current",
+              "com.alibaba.qwen-code.vscode-extension.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Extension packaging and shared CLI core versions must be pinned independently",
+          "Beta status and provider configuration limit rolling claims"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.alibaba.qwen-code.vscode-extension.identity-current",
+      "rawRecordPath": "dossiers/alibaba-qwen-code-vscode-beta/claims/alibaba-qwen-code-vscode-beta/identity-current.json",
+      "rawRecordSha256": "d8937ae6d2af5bd748eff82538f87329dfd3c225929a1ef9da1cc06d8aa21740",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.alibaba.qwen-code.vscode-extension.identity-current",
+        "slug": "identity-current",
+        "subject": {
+          "id": "com.alibaba.qwen-code.vscode-extension",
+          "name": "Qwen Code VS Code extension",
+          "publisher": "Alibaba Cloud Qwen team",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Qwen Code VS Code extension",
+            "slug": "alibaba-qwen-code-vscode-beta"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "Alibaba Cloud Qwen team's official source names and documents Qwen Code VS Code extension as a distinct current software-development agent surface in the reviewed Qwen Code VS Code integration beta."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Alibaba Cloud Qwen team"
+        },
+        "source": {
+          "uri": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
+          "title": "Qwen Code quickstart with VS Code integration",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "Extension packaging and shared CLI core versions must be pinned independently",
+          "Beta status and provider configuration limit rolling claims"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "alibaba-cloud-qwen",
+      "sourceId": "source-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.alibaba.qwen-code.vscode-extension.delivery-boundary-current",
+      "rawRecordPath": "dossiers/alibaba-qwen-code-vscode-beta/claims/alibaba-qwen-code-vscode-beta/delivery-boundary-current.json",
+      "rawRecordSha256": "e67fcc479e778b60bb107c3d15c3150b54f5aabda4626cdb38679bc6ece27592",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.alibaba.qwen-code.vscode-extension.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.alibaba.qwen-code.vscode-extension",
+          "name": "Qwen Code VS Code extension",
+          "publisher": "Alibaba Cloud Qwen team",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Qwen Code VS Code extension",
+            "slug": "alibaba-qwen-code-vscode-beta"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Alibaba Cloud Qwen team's official documentation describes Qwen Code VS Code extension as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Qwen Code surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Alibaba Cloud Qwen team"
+        },
+        "source": {
+          "uri": "https://qwenlm.github.io/qwen-code-docs/en/developers/roadmap/",
+          "title": "Qwen Code roadmap",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "Extension packaging and shared CLI core versions must be pinned independently",
+          "Beta status and provider configuration limit rolling claims"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "alibaba-cloud-qwen",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-alibaba-qwen-code-vscode-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Qwen Code VS Code extension is represented only as the Qwen Code VS Code extension surface at the reviewed Qwen Code VS Code integration beta boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Qwen Code VS Code extension is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceId": "source-identity-current",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Extension packaging and shared CLI core versions must be pinned independently",
+      "Beta status and provider configuration limit rolling claims",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "Alibaba Cloud Qwen team's official source names and documents Qwen Code VS Code extension as a distinct current software-development agent surface in the reviewed Qwen Code VS Code integration beta.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.alibaba.qwen-code.vscode-extension.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "Alibaba Cloud Qwen team's official documentation describes Qwen Code VS Code extension as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Qwen Code surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.alibaba.qwen-code.vscode-extension.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.alibaba.qwen-code.vscode-extension.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

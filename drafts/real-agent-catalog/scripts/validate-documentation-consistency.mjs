@@ -32,7 +32,7 @@ for (const [name, content] of Object.entries(documents)) {
 for (const phrase of [
   "public static preview",
   "https://thedarknitefalls.github.io/agent-evidence-catalog/",
-  "16 current surfaces",
+  "55 defensible agent surfaces",
   "zero independent-test credit",
   "intake is not open",
   "researchers, builders and maintainers",
@@ -40,8 +40,8 @@ for (const phrase of [
 ]) assert(documents.root.includes(phrase), `Root README is missing ${phrase}`);
 
 for (const phrase of [
-  "16 coding-agent surface keys",
-  "22 presentable record files",
+  "55 coding-agent surface keys",
+  "61 presentable record files",
   "zero independent tests",
   "Codex CLI 0.146.0",
   "primary readers are researchers, builders and maintainers",
@@ -53,14 +53,14 @@ for (const phrase of ["All 16 reviewed surfaces", "Three material transitions", 
 }
 assert(documents.currentnessAudit.includes("20 records across"), "Preserved pre-repair audit lost its dated scope");
 
-assert.equal(preview.counts.surfaces, 16);
-assert.equal(preview.counts.currentLifecycleRecords, 16);
-assert.equal(preview.counts.currentRecordsPresented, 16);
-assert.equal(preview.counts.recordsPresentedIncludingHistory, 22);
+assert.equal(preview.counts.surfaces, 55);
+assert.equal(preview.counts.currentLifecycleRecords, 53);
+assert.equal(preview.counts.currentRecordsPresented, 53);
+assert.equal(preview.counts.recordsPresentedIncludingHistory, 61);
 assert.equal(preview.counts.independentTestsCredited, 0);
-assert.equal(lifecycle.entries.length, 22);
+assert.equal(lifecycle.entries.length, 61);
 assert.deepEqual(preview.gates, {});
-assert.equal(preview.surfaces.flatMap((surface) => surface.history).length, 6);
+assert.equal(preview.surfaces.flatMap((surface) => surface.history).length, 8);
 
 const recordIds = new Set();
 let checkedSources = 0;
@@ -124,6 +124,6 @@ for (const phrase of ["Refresh workflow", "Inventory expansion", "Concept and pr
   assert(documents.roadmap.includes(phrase), `Roadmap is missing ${phrase}`);
 }
 
-console.log("PASS documentation agrees on 16 surfaces, 22 lifecycle entries, 16 current cards and 6 explicit-history records");
+console.log("PASS documentation agrees on 55 surfaces, 61 lifecycle entries, 53 current cards and 8 explicit-history records");
 console.log(`PASS ${checkedSources} preview source links are HTTPS, publisher-attributed, non-search URLs and claim-linked`);
 console.log("PASS built governance documents and research-preview footer links match their source files");

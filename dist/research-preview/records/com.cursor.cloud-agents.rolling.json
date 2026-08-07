@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/cursor-cloud-agents-rolling/dossier-source.json",
+    "sha256": "544c1ec9f5058d2e85bba7d6bbc255f768a3cf65ab0da36f13dd5a271d60775d",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.cursor.cloud-agents.rolling",
+    "agent": {
+      "id": "com.cursor.cloud-agents",
+      "name": "Cursor Cloud Agents"
+    },
+    "publisher": {
+      "id": "anysphere",
+      "name": "Anysphere"
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Cursor Cloud Agents (formerly Background Agents)",
+      "slug": "cursor-cloud-agents-rolling",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Renamed Cursor Cloud Agents service",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "cursor-background-agents-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://cursor.com/cloud",
+        "ecosystem": "Renamed Cursor Cloud Agents service",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "anysphere",
+        "name": "Anysphere",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-current",
+      "uri": "https://cursor.com/cloud",
+      "title": "Cursor Cloud Agents",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anysphere",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://cursor.com/changelog/2-0",
+      "title": "Cursor 2.0 rename milestone",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anysphere",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Cursor Cloud Agents (formerly Background Agents)",
+            "claimIds": [
+              "com.cursor.cloud-agents.identity-current",
+              "com.cursor.cloud-agents.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Web, mobile, desktop, Slack, GitHub and API initiation paths can differ in initiating authority",
+          "Model, development environment, internet, secrets and repository permissions are configuration-specific"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.cursor.cloud-agents.identity-current",
+      "rawRecordPath": "dossiers/cursor-cloud-agents-rolling/claims/cursor-cloud-agents-rolling/identity-current.json",
+      "rawRecordSha256": "f5604ee41ba6a98f338c5882dc00ba28ad61fa1f4f0ee9bc94f1c2fc5ffd9362",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.cloud-agents.identity-current",
+        "slug": "identity-current",
+        "subject": {
+          "id": "com.cursor.cloud-agents",
+          "name": "Cursor Cloud Agents",
+          "publisher": "Anysphere",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Cursor Cloud Agents (formerly Background Agents)",
+            "slug": "cursor-cloud-agents-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "Anysphere's official source names and documents Cursor Cloud Agents (formerly Background Agents) as a distinct current software-development agent surface in the reviewed Renamed Cursor Cloud Agents service."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Anysphere"
+        },
+        "source": {
+          "uri": "https://cursor.com/cloud",
+          "title": "Cursor Cloud Agents",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "Web, mobile, desktop, Slack, GitHub and API initiation paths can differ in initiating authority",
+          "Model, development environment, internet, secrets and repository permissions are configuration-specific"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.cloud-agents.delivery-boundary-current",
+      "rawRecordPath": "dossiers/cursor-cloud-agents-rolling/claims/cursor-cloud-agents-rolling/delivery-boundary-current.json",
+      "rawRecordSha256": "50597575c67cd1354181da392a85a03054499902efa4d994c8f7cfafa313b8bc",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.cloud-agents.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.cursor.cloud-agents",
+          "name": "Cursor Cloud Agents",
+          "publisher": "Anysphere",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Cursor Cloud Agents (formerly Background Agents)",
+            "slug": "cursor-cloud-agents-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Anysphere's official documentation describes Cursor Cloud Agents (formerly Background Agents) as a publisher-hosted service; the catalog keeps that delivery path separate from other Cursor surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Anysphere"
+        },
+        "source": {
+          "uri": "https://cursor.com/changelog/2-0",
+          "title": "Cursor 2.0 rename milestone",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "Web, mobile, desktop, Slack, GitHub and API initiation paths can differ in initiating authority",
+          "Model, development environment, internet, secrets and repository permissions are configuration-specific"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-cursor-background-agents-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Cursor Cloud Agents is represented only as the Cursor Cloud Agents (formerly Background Agents) surface at the reviewed Renamed Cursor Cloud Agents service boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Cursor Cloud Agents (formerly Background Agents) is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceId": "source-identity-current",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Web, mobile, desktop, Slack, GitHub and API initiation paths can differ in initiating authority",
+      "Model, development environment, internet, secrets and repository permissions are configuration-specific",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "Anysphere's official source names and documents Cursor Cloud Agents (formerly Background Agents) as a distinct current software-development agent surface in the reviewed Renamed Cursor Cloud Agents service.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.cursor.cloud-agents.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hosted",
+        "tone": "attention",
+        "answer": "Anysphere's official documentation describes Cursor Cloud Agents (formerly Background Agents) as a publisher-hosted service; the catalog keeps that delivery path separate from other Cursor surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.cursor.cloud-agents.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.cursor.cloud-agents.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

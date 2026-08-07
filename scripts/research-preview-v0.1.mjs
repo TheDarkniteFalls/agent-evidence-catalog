@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
 import { readFile, readdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -12,6 +13,11 @@ const yesListPath = path.join(releaseRoot, "release-yes-list.json");
 const stagePathsPath = path.join(releaseRoot, "v0.1-stage-paths.txt");
 const browserReceiptPath = path.join(releaseRoot, "browser-qa-receipt.json");
 const pagesWorkflowPath = path.join(packageRoot, ".github", "workflows", "pages.yml");
+const publicctlPath = [
+  path.resolve(packageRoot, "..", "scripts", "publicctl.py"),
+  path.resolve(packageRoot, "../../..", "scripts", "publicctl.py")
+].find((candidate) => existsSync(candidate));
+assert(publicctlPath, "Public-lane checker was not found beside the repository or its clean-worktree host");
 const serialize = (value) => `${JSON.stringify(value, null, 2)}\n`;
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 
@@ -97,7 +103,7 @@ function artifacts(files) {
   ]));
   return {
     schemaVersion: "research-preview-path-classification/0.1",
-    asOf: "2026-08-04",
+    asOf: "2026-08-08",
     repository: "agent-evidence-catalog",
     classificationRule: "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
     counts,
@@ -109,7 +115,7 @@ function releaseManifest(files) {
   const distPaths = files.filter((relativePath) => relativePath.startsWith("dist/"));
   return {
     schemaVersion: "research-preview-release-manifest/0.1",
-    asOf: "2026-08-04",
+    asOf: "2026-08-08",
     targetRepository: "agent-evidence-catalog",
     primaryProduct: "real-agent-research-preview-v0.1",
     publicationStatus: "public-research-preview-v0.1",
@@ -192,8 +198,9 @@ function buildOneWayProjection() {
   node("validated Cline and GitLab successor generation", "drafts/research-preview-release/currentness-2026-08-02/build-generated-successors.mjs", "all");
   node("generated-successor validation", "drafts/research-preview-release/currentness-2026-08-02/validate-generated-successors.mjs", "all");
   node("accepted sixteen-record source projection", "drafts/real-agent-catalog/scripts/build-real-catalog.mjs");
-  node("dated currentness lifecycle and receipt", "drafts/research-preview-release/currentness-2026-08-02/build-lifecycle-and-receipt.mjs");
-  node("dated lifecycle and currentness validation", "drafts/research-preview-release/currentness-2026-08-02/validate-lifecycle-and-receipt.mjs");
+  node("preserved dated lifecycle and currentness receipt", "drafts/research-preview-release/currentness-2026-08-02/validate-lifecycle-and-receipt.mjs");
+  node("critical-mass source-only dossiers and records", "drafts/real-agent-catalog/scripts/build-critical-mass-expansion.mjs");
+  node("critical-mass source-only validation", "drafts/real-agent-catalog/scripts/validate-critical-mass-expansion.mjs");
   node("unified research-preview source projection", "drafts/real-agent-catalog/scripts/build-research-preview.mjs");
   node("static source-to-dist build", "scripts/catalog.mjs", "build");
 }
@@ -233,7 +240,8 @@ const validatorCommands = [
   ["Codex 0.146.0 source dossier", "drafts/real-agent-catalog/scripts/validate-openai-codex-0-146-0-source.mjs"],
   ["Codex 0.146.0 generated refresh", "drafts/real-agent-catalog/scripts/validate-openai-codex-0-146-0-refresh.mjs"],
   ["pre-currentness generated refreshes", "drafts/real-agent-catalog/scripts/validate-current-record-refreshes.mjs"],
-  ["unified 22-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
+  ["critical-mass expansion", "drafts/real-agent-catalog/scripts/validate-critical-mass-expansion.mjs"],
+  ["unified 61-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
   ["governance requirements", "drafts/real-agent-catalog/scripts/validate-governance.mjs"],
   ["documentation and publisher source links", "drafts/real-agent-catalog/scripts/validate-documentation-consistency.mjs"],
   ["protected corpus preservation", "drafts/research-preview-release/validate-preservation.mjs"]
@@ -242,8 +250,11 @@ const validatorCommands = [
 async function validateBrowserReceipt() {
   const receipt = JSON.parse(await readFile(browserReceiptPath, "utf8"));
   const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
-  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.1");
-  assert.equal(receipt.asOf, "2026-08-04");
+  const expectedRecordIds = buildManifest.researchPreview.recordDetails.records.map((record) => record.recordId);
+
+  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.2");
+  assert.equal(receipt.asOf, "2026-08-08");
+  assert.doesNotThrow(() => new Date(receipt.checkedAt).toISOString());
   assert.equal(receipt.sourceDigests.landingHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "index.html"))));
   assert.equal(receipt.sourceDigests.previewHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"))));
   assert.equal(receipt.sourceDigests.previewDataSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "catalog.json"))));
@@ -251,224 +262,94 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.sourceDigests.recordDetailAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "record-detail.js"))));
   assert.equal(receipt.sourceDigests.previewStylesSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "styles.css"))));
   assert.equal(receipt.sourceDigests.recordDetailsManifestSha256, sha256(serialize(buildManifest.researchPreview.recordDetails)));
-  const expectedSamples = {
-    desktop: [
-      {
-        recordId: "com.openai.codex.cli.0-146-0",
-        lifecycleStatus: "current",
-        pageOpened: true,
-        title: "OpenAI Codex CLI 0.146.0 · Agent Evidence Catalog",
-        publisherClaims: 15,
-        plainLanguageClaimGroups: 6,
-        configurationBoundaries: 13,
-        unresolvedUnknowns: 15,
-        namedSourceEntries: 15,
-        reciprocalLifecycleSteps: 2,
-        sourceLinksAllHttps: true,
-        rawJsonPresentedAsSecondary: true,
-        compactIdentityFields: 4,
-        sectionIndexLinks: 6,
-        heroViewportShare: 0.224,
-        identityStartsAtViewport: 0.422,
-        titleFontSizePx: 44,
-        bodyHorizontalOverflow: false
-      },
-      {
-        recordId: "com.google.jules.hosted.rolling",
-        lifecycleStatus: "current",
-        pageOpened: true,
-        title: "Google Jules Rolling Service · Agent Evidence Catalog",
-        publisherClaims: 10,
-        plainLanguageClaimGroups: 6,
-        configurationBoundaries: 6,
-        unresolvedUnknowns: 10,
-        namedSourceEntries: 10,
-        reciprocalLifecycleSteps: 1,
-        sourceLinksAllHttps: true,
-        rawJsonPresentedAsSecondary: true,
-        compactIdentityFields: 4,
-        sectionIndexLinks: 6,
-        heroViewportShare: 0.205,
-        rollingScopeNotDuplicated: true,
-        bodyHorizontalOverflow: false
-      }
-    ],
-    mobile: [
-      {
-        recordId: "com.gitlab.duo.developer-flow.19-2",
-        lifecycleStatus: "superseded",
-        pageOpened: true,
-        title: "GitLab Duo Developer Flow 19.2.0-ee · Agent Evidence Catalog",
-        publisherClaims: 10,
-        plainLanguageClaimGroups: 5,
-        configurationBoundaries: 6,
-        unresolvedUnknowns: 9,
-        namedSourceEntries: 10,
-        reciprocalLifecycleSteps: 3,
-        sourceLinksAllHttps: true,
-        rawJsonPresentedAsSecondary: true,
-        compactIdentityFields: 4,
-        sectionIndexLinks: 6,
-        heroViewportShare: 0.415,
-        identityStartsAtViewport: 0.751,
-        titleFontSizePx: 30,
-        historyJumpLinkWorked: true,
-        bodyHorizontalOverflow: false
-      },
-      {
-        recordId: "com.anthropic.claude-code.cli.2-1-117",
-        lifecycleStatus: "superseded",
-        pageOpened: true,
-        title: "Claude Code CLI 2.1.117 · Agent Evidence Catalog",
-        publisherClaims: 8,
-        plainLanguageClaimGroups: 6,
-        configurationBoundaries: 5,
-        unresolvedUnknowns: 8,
-        namedSourceEntries: 8,
-        reciprocalLifecycleSteps: 2,
-        sourceLinksAllHttps: true,
-        fallbackClaimGroupPresent: true,
-        rawJsonPresentedAsSecondary: true,
-        compactIdentityFields: 4,
-        sectionIndexLinks: 6,
-        heroViewportShare: 0.406,
-        publisherClaimsJumpLinkWorked: true,
-        bodyHorizontalOverflow: false
-      }
-    ]
-  };
-  for (const device of ["desktop", "mobile"]) {
-    assert.equal(receipt.journeys[device].result, "PASS", `${device} browser journey did not pass`);
-    assert.equal(receipt.journeys[device].consoleErrors, 0, `${device} browser journey has console errors`);
-    assert.equal(receipt.journeys[device].consoleWarnings, 0, `${device} browser journey has console warnings`);
-    assert.equal(receipt.journeys[device].currentCards, 16, `${device} browser journey current-card count drift`);
-    assert.equal(receipt.journeys[device].historyCardsAfterToggle, 6, `${device} browser journey history-card count drift`);
-    assert.equal(receipt.journeys[device].canonicalPublicUrlRendered, true, `${device} canonical public URL was not rendered`);
-    assert.equal(receipt.journeys[device].landingHumanReadablePathExplained, true, `${device} landing page did not explain the primary human-readable path`);
-    assert.equal(receipt.journeys[device].bodyHorizontalOverflow, false, `${device} catalog journey overflowed horizontally`);
-    assert.equal(receipt.journeys[device].recordDetails.currentCatalogDetailLinks, 16, `${device} current detail-link count drift`);
-    assert.equal(receipt.journeys[device].recordDetails.allCatalogDetailLinksAfterHistory, 22, `${device} total detail-link count drift`);
-    assert.equal(receipt.journeys[device].recordDetails.rawJsonSecondaryOnCards, true, `${device} card hierarchy drift`);
-    assert.deepEqual(receipt.journeys[device].recordDetails.samples, expectedSamples[device], `${device} human-readable detail samples drift`);
-  }
-  assert.deepEqual(receipt.journeys.desktop.catalogContextRoundTrip, {
-    delivery: "hosted",
-    deliveryResultCards: 5,
-    search: "Jules",
-    combinedResultCards: 1,
-    currentLinksCarriedContext: true,
-    historyLinksCarriedContext: true,
-    detailReturnLinksCarriedContext: true,
+
+  assert.equal(receipt.journeys.landing.result, "PASS");
+  assert.equal(receipt.journeys.landing.headline, "Research coding agents without starting from scratch.");
+  assert.deepEqual(receipt.journeys.landing.sectionOrder, [
+    "See the research before you search.",
+    "What this saves you",
+    "Start with what is known. Test what is not."
+  ]);
+  assert.deepEqual(receipt.journeys.landing.teaserRecordIds, [
+    "com.alibaba.qwen-code.cli.0-21-7",
+    "com.openai.codex.cli.0-146-0",
+    "com.anthropic.claude-code.cli.2-1-220",
+    "com.cursor.cloud-agents.rolling"
+  ]);
+  assert.deepEqual(receipt.journeys.landing.desktop, {
+    width: 1440,
+    height: 900,
+    horizontalOverflow: false,
+    teaserRows: 4
+  });
+  assert.deepEqual(receipt.journeys.landing.mobile, {
+    width: 390,
+    height: 844,
+    horizontalOverflow: false,
+    teaserTableScrollable: true,
+    teaserTableContained: true
+  });
+
+  assert.equal(receipt.journeys.catalog.result, "PASS");
+  assert.equal(receipt.journeys.catalog.surfaceCount, 55);
+  assert.equal(receipt.journeys.catalog.currentCards, 53);
+  assert.equal(receipt.journeys.catalog.historyCards, 8);
+  assert.equal(receipt.journeys.catalog.historyCollapsedInitially, true);
+  assert.equal(receipt.journeys.catalog.historyExpandedOnRequest, true);
+  assert.equal(receipt.journeys.catalog.rawJsonSecondaryLinks, 61);
+  assert.equal(receipt.journeys.catalog.desktopHorizontalOverflow, false);
+  assert.equal(receipt.journeys.catalog.mobileHorizontalOverflow, false);
+  assert.deepEqual(receipt.journeys.catalog.contextRoundTrip, {
+    search: "Qwen",
+    delivery: "hybrid",
+    resultCards: 2,
+    openedRecordId: "com.alibaba.qwen-code.cli.0-21-7",
+    detailReturnLinkCarriedContext: true,
     returnRestoredSearchAndDelivery: true
-  }, "Desktop catalog context round trip drift");
-  assert.equal(receipt.boundaries.recordJsonLinkPresent, true, "Record JSON link was not present in browser QA");
-  assert.equal(receipt.boundaries.rawJsonSecondaryAcrossCatalogAndDetails, true, "Raw JSON did not remain secondary in browser QA");
-  assert.equal(receipt.boundaries.catalogSearchAndDeliveryContextPreserved, true, "Catalog search and delivery state was not preserved through record navigation");
-  assert.equal(receipt.boundaries.compactIdentityInFirstViewport, true, "Compact identity was not present in the first viewport");
-  assert.equal(receipt.boundaries.compactSectionIndexWorked, true, "Compact record section navigation did not work");
-  assert.equal(receipt.boundaries.allRecordPagesStructurallyValidated, 22, "Browser receipt is not paired with all 22 structurally validated pages");
-  assert.equal(receipt.boundaries.sourceLinkTargetsInspectedInRenderedDom, true, "Rendered official-source link targets were not inspected");
-  assert.deepEqual(receipt.boundaries.benefitLedLanding, {
-    checkedAt: "2026-08-06T09:33:47Z",
-    headline: "Research coding agents without starting from scratch.",
-    primaryCta: "Find an agent and inspect the evidence",
-    valueHeading: "What this saves you",
-    benefitCards: [
-      "Start with the current identity",
-      "Go straight to the source",
-      "See what the sources do not establish"
-    ],
-    desktopViewport: { width: 1440, height: 1000 },
-    mobileViewport: { width: 390, height: 844 },
-    desktopHorizontalOverflow: false,
-    mobileHorizontalOverflow: false,
-    researchBoundaryVisible: true,
-    primaryCtaOpenedCurrentPreview: true,
-    consoleErrors: 0,
-    consoleWarnings: 0
-  }, "Benefit-led landing browser proof drift");
-  assert.deepEqual(receipt.boundaries.catalogTeaser, {
-    checkedAt: "2026-08-07T10:48:22Z",
-    heading: "See the research before you search.",
-    sectionOrder: [
-      "Research coding agents without starting from scratch.",
-      "See the research before you search.",
-      "What this saves you",
-      "Start with what is known. Test what is not."
-    ],
-    teaserImmediatelyFollowsHero: true,
-    benefitSectionFollowsTeaser: true,
-    selectionBoundary: "Representative current records spanning local, hybrid and hosted delivery; not a popularity list or product ranking.",
-    metricBoundary: "Counts describe catalog documentation, not capability, quality, safety or popularity.",
-    columns: [
-      "Agent and current identity",
-      "Delivery",
-      "Accepted claims",
-      "Named sources",
-      "Unresolved unknowns",
-      "Human-readable record"
-    ],
-    rows: [
-      {
-        recordId: "com.openai.codex.cli.0-146-0",
-        identity: "Exact version 0.146.0",
-        delivery: "Local",
-        acceptedClaims: 15,
-        namedSources: 15,
-        unresolvedUnknowns: 15
-      },
-      {
-        recordId: "com.anthropic.claude-code.cli.2-1-220",
-        identity: "Exact version 2.1.220",
-        delivery: "Hybrid",
-        acceptedClaims: 9,
-        namedSources: 9,
-        unresolvedUnknowns: 9
-      },
-      {
-        recordId: "com.github.copilot.cloud-agent.rolling",
-        identity: "Rolling service",
-        delivery: "Hosted",
-        acceptedClaims: 11,
-        namedSources: 11,
-        unresolvedUnknowns: 11
-      }
-    ],
-    desktopViewport: { width: 1440, height: 1000 },
-    mobileViewport: { width: 390, height: 844 },
-    desktopHorizontalOverflow: false,
-    mobileHorizontalOverflow: false,
-    desktopTableFitsViewport: true,
-    mobileTableScrollable: true,
-    mobileFirstColumnSticky: true,
-    mobileSwipeCueVisible: true,
-    humanReadableRecordOpened: "com.openai.codex.cli.0-146-0",
-    rawJsonRemainedSecondary: true,
-    consoleErrors: 0,
-    consoleWarnings: 0
-  }, "Catalog teaser browser proof drift");
-  assert.deepEqual(
-    receipt.boundaries.responsiveRecordMatrix.recordIds,
-    buildManifest.researchPreview.recordDetails.records.map((record) => record.recordId),
-    "Responsive browser matrix does not cover the exact 22 built records"
-  );
-  assert.deepEqual(receipt.boundaries.responsiveRecordMatrix.viewports, [
-    {
-      label: "mobile",
-      width: 390,
-      height: 844,
-      horizontalOverflowRecordIds: []
-    },
+  });
+
+  assert.equal(receipt.journeys.records.result, "PASS");
+  assert.deepEqual(receipt.journeys.records.recordIds, expectedRecordIds);
+  assert.equal(expectedRecordIds.length, 61);
+  assert(Object.values(receipt.journeys.records.checksAppliedToEveryPage).every((value) => value === true));
+  assert.deepEqual(receipt.journeys.records.viewports, [
     {
       label: "desktop",
       width: 1440,
       height: 900,
-      horizontalOverflowRecordIds: []
+      pagesAudited: 61,
+      uniquePagesAudited: 61,
+      failureRecordIds: []
+    },
+    {
+      label: "mobile",
+      width: 390,
+      height: 844,
+      pagesAudited: 61,
+      uniquePagesAudited: 61,
+      failureRecordIds: []
     }
-  ], "Responsive browser matrix is missing an overflow-free required viewport");
-  console.log("PASS digest-bound browser journeys: benefit-led landing at desktop and mobile plus all 22 record pages overflow-free at 390px and 1440px with zero console errors");
-}
+  ]);
+  assert.equal(receipt.journeys.records.representativeQwenRecord.recordId, "com.alibaba.qwen-code.cli.0-21-7");
+  assert.equal(receipt.journeys.records.representativeQwenRecord.publisherClaims, 2);
+  assert.equal(receipt.journeys.records.representativeQwenRecord.namedSources, 2);
+  assert.equal(receipt.journeys.records.representativeQwenRecord.unresolvedUnknowns, 4);
+  assert.equal(receipt.journeys.records.representativeQwenRecord.sectionIndexLinks, 7);
 
+  assert.equal(receipt.sourceLinks.projectedClaimLinkedHttpsEntries, 309);
+  assert.equal(receipt.sourceLinks.liveExpansionUniqueUrls, 72);
+  assert.equal(receipt.sourceLinks.liveExpansionHttpFailures, 0);
+  assert.equal(receipt.sourceLinks.liveExpansionSuccessStatus, 200);
+  assert.deepEqual(receipt.console, { errors: 0, warnings: 0 });
+  assert.equal(receipt.boundaries.publisherSourcesOnly, true);
+  assert.equal(receipt.boundaries.agentsInstalledOrRun, false);
+  assert.equal(receipt.boundaries.independentTestsCredited, 0);
+  assert.equal(receipt.boundaries.rankingsOrSuitabilityCalculations, false);
+  assert.equal(receipt.boundaries.acceptedEvidenceOrLifecycleRewritten, false);
+  assert.equal(receipt.boundaries.githubStateChanged, false);
+
+  console.log("PASS digest-bound browser journeys: landing and catalog context at 1440px and 390px, plus all 61 record pages overflow-free with zero console errors");
+}
 async function validatePagesWorkflow() {
   const workflow = await readFile(pagesWorkflowPath, "utf8");
   for (const expected of [
@@ -498,7 +379,7 @@ async function validateRelease({ browser }) {
   await validatePagesWorkflow();
   await validateManifest();
   run("unstaged and staged whitespace/error diff check", "git", ["diff", "--check"]);
-  run("public-lane safety scan", "python3", ["-B", "../scripts/publicctl.py", "check", "."]);
+  run("public-lane safety scan", "python3", ["-B", publicctlPath, "check", "."]);
   if (browser) await validateBrowserReceipt();
   console.log(`PASS complete Research Preview v0.1 ${browser ? "release" : "core"} validation`);
 }

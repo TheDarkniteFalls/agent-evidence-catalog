@@ -1,7 +1,7 @@
 {
   "registryVersion": "candidate-registry-v0",
   "artifactType": "unpublished-real-agent-candidate-registry",
-  "asOf": "2026-08-02",
+  "asOf": "2026-08-07",
   "unpublished": true,
   "scope": {
     "definition": "A distinct software-development agent surface that can plan and take multi-step action on a code workspace, repository, development environment, or software artifact.",
@@ -14,32 +14,75 @@
     ]
   },
   "acceptedBaseline": [
-    "Cline VS Code extension 4.1.2",
-    "OpenHands CLI 1.16.0",
-    "GitHub Copilot cloud agent rolling service",
-    "Google Jules rolling service",
-    "OpenAI Codex CLI 0.90.0",
-    "Cursor IDE foreground Agent 3.14",
-    "GitLab Duo Developer Flow 18.8",
-    "Cognition Devin hosted rolling service",
-    "Claude Code CLI 2.1.117",
-    "Zed Agent 1.13.1",
-    "Replit Agent 4 hosted service",
-    "Aider CLI 0.86.0",
     "Kiro IDE 1.0.242",
-    "Lovable Build mode rolling service"
+    "OpenCode CLI 1.18.11",
+    "Claude Code CLI 2.1.220",
+    "Cline VS Code extension 4.1.3",
+    "Cascade in Devin Desktop 3.6.27",
+    "Cognition Devin hosted rolling service",
+    "Cursor IDE foreground Agent 3.14",
+    "GitHub Copilot cloud agent rolling service",
+    "GitLab Duo Developer Flow 19.2.1-ee",
+    "Google Jules rolling service",
+    "Lovable Build mode rolling service",
+    "OpenAI Codex CLI 0.146.0",
+    "Replit Agent 4 hosted service",
+    "Zed Agent 1.13.1",
+    "Aider CLI 0.86.0",
+    "OpenHands CLI 1.16.0"
   ],
   "acceptedFixtureIdsPresentInRecords": [
     "anthropic-claude-code-cli",
     "openai-codex-cli",
+    "google-gemini-cli",
+    "google-antigravity-cli",
     "aider-cli",
+    "aaif-goose-cli",
+    "anomaly-opencode-cli",
+    "alibaba-qwen-code-cli",
+    "mistral-vibe-cli",
+    "amp-cli",
+    "github-copilot-cli",
+    "jetbrains-junie-cli",
+    "aws-kiro-cli",
+    "cline-cli",
+    "augment-auggie-cli",
+    "factory-droid-cli",
     "cursor-ide-agent",
+    "cognition-devin-desktop-cascade",
+    "roo-code-vscode",
+    "continue-vscode-agent",
+    "jetbrains-junie-ide",
+    "aws-kiro-ide",
+    "aws-amazon-q-developer-ide",
+    "google-gemini-code-assist-agent",
+    "github-copilot-vscode-agent",
+    "openai-codex-ide-extension",
+    "alibaba-qwen-code-vscode",
+    "mistral-vibe-code-vscode",
+    "tabnine-agent-ide",
+    "warp-agent-mode-desktop",
+    "augment-ide-agent",
+    "zed-agent-panel",
     "cognition-devin",
     "replit-agent",
+    "openai-codex-cloud",
+    "cursor-background-agents",
     "gitlab-duo-developer-flow",
-    "aws-kiro-ide",
-    "zed-agent-panel",
-    "lovable-agent-mode"
+    "gitlab-duo-software-development-flow",
+    "gitlab-duo-code-review-flow",
+    "mistral-vibe-code-web",
+    "aws-kiro-web",
+    "openhands-cloud",
+    "github-anthropic-claude-agent",
+    "github-openai-codex-agent",
+    "factory-cloud-droids",
+    "warp-cloud-agents",
+    "amazon-q-developer-github",
+    "stackblitz-bolt-claude-agent",
+    "lovable-agent-mode",
+    "vercel-v0-agent",
+    "vercel-agent"
   ],
   "classificationDefinitions": {
     "dossier-ready": "Publisher-controlled sources establish a distinct surface and a defensible exact release, release line, or rolling-service identity. Remaining gaps can be represented as unknowns.",
@@ -61,13 +104,30 @@
       "surface": "Claude Code CLI",
       "category": "local-cli",
       "deliveryModel": "local terminal client with publisher-hosted model service",
-      "identity": {"kind": "exact-version-available", "value": "2.1.117 is evaluation-pinned; current publisher changelog continues beyond it", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-available",
+        "value": "2.1.117 is evaluation-pinned; current publisher changelog continues beyond it",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "Claude Code overview", "url": "https://code.claude.com/docs/en/overview"},
-        {"title": "Claude Code changelog", "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"}
+        {
+          "title": "Claude Code overview",
+          "url": "https://code.claude.com/docs/en/overview"
+        },
+        {
+          "title": "Claude Code changelog",
+          "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+        }
       ],
-      "applicabilityGaps": ["Current client version must be frozen separately from the evaluated 2.1.117 version", "Model, permission mode, sandbox and tool configuration must be claim-scoped"],
-      "potentialIndependentEvaluation": {"status": "strong-potential", "url": "https://arxiv.org/html/2605.18583", "note": "Overeager Coding Agents pins Claude Code 2.1.117, model and run configuration; evaluator disclosures and the promised audit bundle still require verification."},
+      "applicabilityGaps": [
+        "Current client version must be frozen separately from the evaluated 2.1.117 version",
+        "Model, permission mode, sandbox and tool configuration must be claim-scoped"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "strong-potential",
+        "url": "https://arxiv.org/html/2605.18583",
+        "note": "Overeager Coding Agents pins Claude Code 2.1.117, model and run configuration; evaluator disclosures and the promised audit bundle still require verification."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Publisher docs and changelog support exact client identity; the independent study offers a separately scoped historical-version test."
     },
@@ -78,13 +138,30 @@
       "surface": "Codex CLI",
       "category": "local-cli",
       "deliveryModel": "open-source local terminal client with configurable model provider or hosted service",
-      "identity": {"kind": "exact-version-available", "value": "rust-v0.90.0 is evaluation-pinned; immutable official releases are available", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-available",
+        "value": "rust-v0.90.0 is evaluation-pinned; immutable official releases are available",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "OpenAI Codex repository and releases", "url": "https://github.com/openai/codex/releases"},
-        {"title": "Codex CLI documentation", "url": "https://developers.openai.com/codex/cli/"}
+        {
+          "title": "OpenAI Codex repository and releases",
+          "url": "https://github.com/openai/codex/releases"
+        },
+        {
+          "title": "Codex CLI documentation",
+          "url": "https://developers.openai.com/codex/cli/"
+        }
       ],
-      "applicabilityGaps": ["0.90.0 must not be conflated with the current release", "Model, approval policy, sandbox and network settings materially change applicability"],
-      "potentialIndependentEvaluation": {"status": "strong-potential", "url": "https://arxiv.org/html/2605.18583", "note": "Overeager Coding Agents pins Codex CLI 0.90.0, model and run configuration; public artifact availability and independence disclosures need an audit."},
+      "applicabilityGaps": [
+        "0.90.0 must not be conflated with the current release",
+        "Model, approval policy, sandbox and network settings materially change applicability"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "strong-potential",
+        "url": "https://arxiv.org/html/2605.18583",
+        "note": "Overeager Coding Agents pins Codex CLI 0.90.0, model and run configuration; public artifact availability and independence disclosures need an audit."
+      },
       "classification": "dossier-ready",
       "classificationReason": "An exact open-source release can be paired with unusually specific independent-evaluation applicability without applying the result to rolling Codex."
     },
@@ -95,15 +172,32 @@
       "surface": "Gemini CLI",
       "category": "local-cli",
       "deliveryModel": "open-source local terminal client with Google or configurable model service",
-      "identity": {"kind": "transitioning-release-line", "value": "0.14.0 is evaluation-pinned; consumer distribution transitioned toward Antigravity CLI on 2026-06-18", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-plus-transitioning-service",
+        "value": "official v0.54.4 release, 2026-08-07; consumer distribution transition and enterprise/API-key paths remain separately scoped",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Gemini CLI releases", "url": "https://github.com/google-gemini/gemini-cli/releases"},
-        {"title": "Gemini CLI to Antigravity CLI transition", "url": "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"}
+        {
+          "title": "Gemini CLI v0.54.4 release",
+          "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.54.4"
+        },
+        {
+          "title": "Gemini CLI to Antigravity CLI transition",
+          "url": "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"
+        }
       ],
-      "applicabilityGaps": ["Consumer, enterprise and API-key availability now diverge", "The 0.14.0 evaluation does not establish current Antigravity CLI behavior"],
-      "potentialIndependentEvaluation": {"status": "strong-potential", "url": "https://arxiv.org/html/2605.18583", "note": "Overeager Coding Agents pins Gemini CLI 0.14.0, model and configuration, but only that pre-transition surface is potentially applicable."},
-      "classification": "watch",
-      "classificationReason": "The exact evaluated release is preservable, but the publisher-directed surface transition should settle before a current dossier is chosen."
+      "applicabilityGaps": [
+        "Consumer, enterprise and API-key availability now diverge",
+        "The 0.14.0 evaluation does not establish current Antigravity CLI behavior"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "strong-potential",
+        "url": "https://arxiv.org/html/2605.18583",
+        "note": "Overeager Coding Agents pins Gemini CLI 0.14.0, model and configuration, but only that pre-transition surface is potentially applicable."
+      },
+      "classification": "dossier-ready",
+      "classificationReason": "The 2026-08-07 official release supplies a current exact client boundary while the publisher transition notice keeps consumer, enterprise and API-key routes separately scoped."
     },
     {
       "id": "google-antigravity-cli",
@@ -112,13 +206,30 @@
       "surface": "Antigravity CLI",
       "category": "local-cli",
       "deliveryModel": "open-source local terminal client with Google or configurable model service",
-      "identity": {"kind": "exact-version-available", "value": "official v1.1.6 release, 2026-07-24", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-available",
+        "value": "official v1.1.11 release, 2026-08-07",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Antigravity CLI releases", "url": "https://github.com/google-antigravity/antigravity-cli/releases"},
-        {"title": "Antigravity CLI overview", "url": "https://antigravity.google/docs/cli-overview"}
+        {
+          "title": "Antigravity CLI 1.1.11 release",
+          "url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.11"
+        },
+        {
+          "title": "Antigravity CLI overview",
+          "url": "https://antigravity.google/docs/cli-overview"
+        }
       ],
-      "applicabilityGaps": ["Shared lineage with Gemini CLI must not erase the new product and service boundary", "Authentication tier, model and sandbox configuration remain claim-specific"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "The Gemini CLI 0.14.0 study is not transferable to Antigravity CLI."},
+      "applicabilityGaps": [
+        "Shared lineage with Gemini CLI must not erase the new product and service boundary",
+        "Authentication tier, model and sandbox configuration remain claim-specific"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "The Gemini CLI 0.14.0 study is not transferable to Antigravity CLI."
+      },
       "classification": "dossier-ready",
       "classificationReason": "The publisher supplies a new product identity and immutable release immediately after the transition."
     },
@@ -129,13 +240,30 @@
       "surface": "Aider CLI",
       "category": "local-cli",
       "deliveryModel": "open-source local terminal client with user-selected model provider",
-      "identity": {"kind": "exact-version-available", "value": "v0.86.0, 2025-08-09", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-available",
+        "value": "v0.86.0, 2025-08-09",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "Aider documentation", "url": "https://aider.chat/docs/"},
-        {"title": "Aider releases", "url": "https://github.com/Aider-AI/aider/releases"}
+        {
+          "title": "Aider documentation",
+          "url": "https://aider.chat/docs/"
+        },
+        {
+          "title": "Aider releases",
+          "url": "https://github.com/Aider-AI/aider/releases"
+        }
       ],
-      "applicabilityGaps": ["The latest official release is comparatively old and maintenance status needs confirmation", "Model provider, repository map, edit format and test command are configuration axes"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "Publisher-run benchmark results are not independent evidence."},
+      "applicabilityGaps": [
+        "The latest official release is comparatively old and maintenance status needs confirmation",
+        "Model provider, repository map, edit format and test command are configuration axes"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "Publisher-run benchmark results are not independent evidence."
+      },
       "classification": "dossier-ready",
       "classificationReason": "A stable exact release and extensive versioned documentation make a bounded historical-current dossier possible."
     },
@@ -146,15 +274,32 @@
       "surface": "Goose CLI",
       "category": "local-cli",
       "deliveryModel": "open-source local terminal client with configurable model provider",
-      "identity": {"kind": "versioned-client-publisher-transition", "value": "versioned GitHub releases under aaif-goose; governance moved from Block to the Agentic AI Foundation", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-plus-publisher-transition",
+        "value": "official v1.45.0 release under aaif-goose, 2026-07-29; current claimant is the Agentic AI Foundation",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Goose documentation", "url": "https://block.github.io/goose/"},
-        {"title": "Goose releases", "url": "https://github.com/block/goose/releases"}
+        {
+          "title": "Goose repository and documentation",
+          "url": "https://github.com/aaif-goose/goose"
+        },
+        {
+          "title": "Goose v1.45.0 release",
+          "url": "https://github.com/aaif-goose/goose/releases/tag/v1.45.0"
+        }
       ],
-      "applicabilityGaps": ["Publisher/governance identity must be reconciled across legacy Block URLs and current AAIF ownership", "Provider, extension and permission configurations are mutually scoped alternatives"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No version-defensible independent result was identified in this pass."},
-      "classification": "needs identity research",
-      "classificationReason": "The surface and release artifacts are strong, but the claimant identity changed and must be represented precisely."
+      "applicabilityGaps": [
+        "Publisher/governance identity must be reconciled across legacy Block URLs and current AAIF ownership",
+        "Provider, extension and permission configurations are mutually scoped alternatives"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No version-defensible independent result was identified in this pass."
+      },
+      "classification": "dossier-ready",
+      "classificationReason": "The AAIF repository and exact v1.45.0 release reconcile current claimant and client identity while preserving the legacy Block boundary as history."
     },
     {
       "id": "anomaly-opencode-cli",
@@ -163,13 +308,31 @@
       "surface": "OpenCode CLI",
       "category": "local-cli",
       "deliveryModel": "open-source local terminal client with user-selected or OpenCode-hosted model service",
-      "identity": {"kind": "exact-version-available", "value": "v1.18.11, released 2026-08-01 as an immutable official release; selected future dossier boundary is CLI/TUI only", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-available",
+        "value": "v1.18.11, released 2026-08-01 as an immutable official release; selected future dossier boundary is CLI/TUI only",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "OpenCode CLI documentation", "url": "https://opencode.ai/docs/"},
-        {"title": "OpenCode v1.18.11 immutable release", "url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.11"}
+        {
+          "title": "OpenCode CLI documentation",
+          "url": "https://opencode.ai/docs/"
+        },
+        {
+          "title": "OpenCode v1.18.11 immutable release",
+          "url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.11"
+        }
       ],
-      "applicabilityGaps": ["The exact v1.18.11 client does not pin the selected model, model revision, provider, OpenCode Zen path, permission policy or tool configuration", "The CLI/TUI, desktop and IDE surfaces must not be merged", "Plan and Build modes are mutually scoped authority alternatives"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "The current verified Terminal-Bench 2.0 listing does not expose an OpenCode entry. If one appears later, evaluator independence, exact release and configuration, disclosures and public artifacts would still require a separate gate audit."},
+      "applicabilityGaps": [
+        "The exact v1.18.11 client does not pin the selected model, model revision, provider, OpenCode Zen path, permission policy or tool configuration",
+        "The CLI/TUI, desktop and IDE surfaces must not be merged",
+        "Plan and Build modes are mutually scoped authority alternatives"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "The current verified Terminal-Bench 2.0 listing does not expose an OpenCode entry. If one appears later, evaluator independence, exact release and configuration, disclosures and public artifacts would still require a separate gate audit."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Publisher documentation separates terminal, desktop and IDE surfaces, and the immutable v1.18.11 release supplies an exact CLI artifact boundary while provider and authority variants remain explicitly scoped."
     },
@@ -180,13 +343,30 @@
       "surface": "Qwen Code CLI",
       "category": "local-cli",
       "deliveryModel": "open-source local terminal client with Alibaba Cloud or configurable model provider",
-      "identity": {"kind": "exact-version-available", "value": "versioned NPM, GitHub release and container artifacts; dossier version not yet frozen", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-available",
+        "value": "official v0.21.7 release, 2026-08-06, with versioned package and container paths",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Qwen Code overview", "url": "https://qwenlm.github.io/qwen-code-docs/en/"},
-        {"title": "Qwen Code release process", "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/development/deployment/"}
+        {
+          "title": "Qwen Code overview",
+          "url": "https://qwenlm.github.io/qwen-code-docs/en/"
+        },
+        {
+          "title": "Qwen Code v0.21.7 release",
+          "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.7"
+        }
       ],
-      "applicabilityGaps": ["Alibaba Coding Plan, API key and third-party provider paths differ", "Sandbox container and unsandboxed local execution must be scoped separately"],
-      "potentialIndependentEvaluation": {"status": "potential", "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0?verified=true", "note": "A public benchmark path exists, but exact client and evaluator applicability need verification."},
+      "applicabilityGaps": [
+        "Alibaba Coding Plan, API key and third-party provider paths differ",
+        "Sandbox container and unsandboxed local execution must be scoped separately"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "potential",
+        "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0?verified=true",
+        "note": "A public benchmark path exists, but exact client and evaluator applicability need verification."
+      },
       "classification": "dossier-ready",
       "classificationReason": "The publisher documents package, container and GitHub release artifacts plus execution boundaries."
     },
@@ -197,13 +377,30 @@
       "surface": "Vibe CLI",
       "category": "local-cli",
       "deliveryModel": "local terminal client with Mistral-hosted or configurable model profiles",
-      "identity": {"kind": "release-line-available", "value": "Vibe 2.0 release family announced 2026-01-27; exact CLI package version must be frozen", "frozenForDossier": false},
+      "identity": {
+        "kind": "release-line-available",
+        "value": "Vibe 2.0 release family announced 2026-01-27; exact CLI package version must be frozen",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Vibe overview", "url": "https://docs.mistral.ai/vibe/overview"},
-        {"title": "Install the Vibe CLI", "url": "https://docs.mistral.ai/getting-started/quickstarts/vibe-code/install-cli"}
+        {
+          "title": "Vibe overview",
+          "url": "https://docs.mistral.ai/vibe/overview"
+        },
+        {
+          "title": "Install the Vibe CLI",
+          "url": "https://docs.mistral.ai/getting-started/quickstarts/vibe-code/install-cli"
+        }
       ],
-      "applicabilityGaps": ["Vibe rebranding and Vibe 2.0 product line must be separated from older Mistral Vibe claims", "Profiles, model endpoint, autonomy and teleport-to-web paths are configuration-specific"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No version-defensible independent evaluation was identified."},
+      "applicabilityGaps": [
+        "Vibe rebranding and Vibe 2.0 product line must be separated from older Mistral Vibe claims",
+        "Profiles, model endpoint, autonomy and teleport-to-web paths are configuration-specific"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No version-defensible independent evaluation was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "The official docs distinguish CLI, VS Code and web surfaces and provide a dated release family."
     },
@@ -214,13 +411,30 @@
       "surface": "Amp CLI",
       "category": "local-cli",
       "deliveryModel": "local terminal client backed by a rolling publisher service",
-      "identity": {"kind": "rolling-service-with-client", "value": "current Owner's Manual; no immutable agent-engine identity frozen", "frozenForDossier": false},
+      "identity": {
+        "kind": "rolling-service-with-client",
+        "value": "current Owner's Manual; no immutable agent-engine identity frozen",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Amp Owner's Manual", "url": "https://ampcode.com/manual"},
-        {"title": "Amp, Rebuilt", "url": "https://ampcode.com/news/neo"}
+        {
+          "title": "Amp Owner's Manual",
+          "url": "https://ampcode.com/manual"
+        },
+        {
+          "title": "Amp, Rebuilt",
+          "url": "https://ampcode.com/news/neo"
+        }
       ],
-      "applicabilityGaps": ["Sourcegraph corporate ownership, Amp product branding and service claimant must be aligned", "Client updates, model routing and rolling server behavior are not one exact artifact"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independently attributable exact-surface evaluation was identified."},
+      "applicabilityGaps": [
+        "Sourcegraph corporate ownership, Amp product branding and service claimant must be aligned",
+        "Client updates, model routing and rolling server behavior are not one exact artifact"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independently attributable exact-surface evaluation was identified."
+      },
       "classification": "needs identity research",
       "classificationReason": "The surface is well documented, but its client/service/release boundary needs a dedicated identity pass."
     },
@@ -231,13 +445,30 @@
       "surface": "GitHub Copilot CLI",
       "category": "local-cli",
       "deliveryModel": "local terminal client backed by GitHub's rolling Copilot service",
-      "identity": {"kind": "versioned-client-plus-rolling-service", "value": "versioned official CLI releases with rolling model service", "frozenForDossier": false},
+      "identity": {
+        "kind": "versioned-client-plus-rolling-service",
+        "value": "official v1.0.78 client, 2026-08-03, with rolling Copilot model service",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "About GitHub Copilot CLI", "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli"},
-        {"title": "GitHub Copilot CLI releases", "url": "https://github.com/github/copilot-cli/releases"}
+        {
+          "title": "About GitHub Copilot CLI",
+          "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli"
+        },
+        {
+          "title": "GitHub Copilot CLI v1.0.78 release",
+          "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.78"
+        }
       ],
-      "applicabilityGaps": ["Exact client version does not freeze model or server behavior", "Plan, model, permission, MCP and repository settings must be scoped"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact current CLI evaluation with independent attribution was identified."},
+      "applicabilityGaps": [
+        "Exact client version does not freeze model or server behavior",
+        "Plan, model, permission, MCP and repository settings must be scoped"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact current CLI evaluation with independent attribution was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "GitHub supplies distinct CLI documentation and versioned client releases; rolling-service unknowns can remain explicit."
     },
@@ -248,13 +479,30 @@
       "surface": "Junie CLI",
       "category": "local-cli",
       "deliveryModel": "local terminal client backed by configurable hosted model services",
-      "identity": {"kind": "public-beta", "value": "Junie CLI beta announced 2026-03; rolling beta client", "frozenForDossier": false},
+      "identity": {
+        "kind": "public-beta",
+        "value": "Junie CLI beta announced 2026-03; rolling beta client",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Junie CLI beta announcement", "url": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/"},
-        {"title": "Junie documentation", "url": "https://junie.jetbrains.com/docs/"}
+        {
+          "title": "Junie CLI beta announcement",
+          "url": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/"
+        },
+        {
+          "title": "Junie documentation",
+          "url": "https://junie.jetbrains.com/docs/"
+        }
       ],
-      "applicabilityGaps": ["Beta update channel and artifact version need an immutable checkpoint", "Bundled and user-supplied model paths differ"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No version-pinned independent result was identified."},
+      "applicabilityGaps": [
+        "Beta update channel and artifact version need an immutable checkpoint",
+        "Bundled and user-supplied model paths differ"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No version-pinned independent result was identified."
+      },
       "classification": "watch",
       "classificationReason": "The CLI is a distinct official surface, but its beta identity is still moving."
     },
@@ -265,13 +513,30 @@
       "surface": "Kiro CLI",
       "category": "local-cli",
       "deliveryModel": "local terminal client backed by AWS-hosted identity and model services",
-      "identity": {"kind": "versioned-client", "value": "current Kiro CLI release stream; exact next dossier version not frozen", "frozenForDossier": false},
+      "identity": {
+        "kind": "versioned-client",
+        "value": "current Kiro CLI release stream; exact next dossier version not frozen",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Kiro product surfaces", "url": "https://kiro.dev/"},
-        {"title": "Kiro CLI documentation", "url": "https://kiro.dev/docs/cli/"}
+        {
+          "title": "Kiro product surfaces",
+          "url": "https://kiro.dev/"
+        },
+        {
+          "title": "Kiro CLI documentation",
+          "url": "https://kiro.dev/docs/cli/"
+        }
       ],
-      "applicabilityGaps": ["Kiro CLI lineage and migration from Q Developer CLI require a dated boundary", "Authentication, custom agent, power, MCP and permission settings are configuration axes"],
-      "potentialIndependentEvaluation": {"status": "potential", "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0?verified=true", "note": "Any leaderboard row requires exact-version, submitter and configuration reconciliation."},
+      "applicabilityGaps": [
+        "Kiro CLI lineage and migration from Q Developer CLI require a dated boundary",
+        "Authentication, custom agent, power, MCP and permission settings are configuration axes"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "potential",
+        "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0?verified=true",
+        "note": "Any leaderboard row requires exact-version, submitter and configuration reconciliation."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Kiro is publisher-defined as a distinct CLI surface with current official documentation."
     },
@@ -282,15 +547,32 @@
       "surface": "Cline CLI",
       "category": "local-cli",
       "deliveryModel": "local terminal client with user-selected model provider",
-      "identity": {"kind": "versioned-client-unresolved", "value": "separate official CLI surface; exact artifact and release linkage not frozen", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-available",
+        "value": "official CLI v3.0.51 release, 2026-08-06; separate from extension and desktop release streams",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Cline CLI overview", "url": "https://docs.cline.bot/cline-cli/overview"},
-        {"title": "Cline repository releases", "url": "https://github.com/cline/cline/releases"}
+        {
+          "title": "Cline CLI overview",
+          "url": "https://docs.cline.bot/usage/cli-overview"
+        },
+        {
+          "title": "Cline CLI v3.0.51 release",
+          "url": "https://github.com/cline/cline/releases/tag/cli-v3.0.51"
+        }
       ],
-      "applicabilityGaps": ["CLI package identity must be separated from the accepted VS Code extension 4.1.2", "Shared documentation cannot be presumed to apply equally to both surfaces"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact CLI-specific independent evaluation was identified."},
-      "classification": "needs identity research",
-      "classificationReason": "The surface is official, but lossless mapping requires a release artifact independent of the accepted extension record."
+      "applicabilityGaps": [
+        "CLI package identity must be separated from the accepted VS Code extension 4.1.2",
+        "Shared documentation cannot be presumed to apply equally to both surfaces"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact CLI-specific independent evaluation was identified."
+      },
+      "classification": "dossier-ready",
+      "classificationReason": "The CLI-specific v3.0.51 release supplies an exact artifact boundary independent of the accepted VS Code extension and the separate desktop stream."
     },
     {
       "id": "augment-auggie-cli",
@@ -299,13 +581,30 @@
       "surface": "Auggie CLI",
       "category": "local-cli",
       "deliveryModel": "local terminal client backed by Augment's hosted context and model services",
-      "identity": {"kind": "versioned-client-unresolved", "value": "documented version command and auto-update channel; immutable package version not frozen", "frozenForDossier": false},
+      "identity": {
+        "kind": "versioned-client-unresolved",
+        "value": "documented version command and auto-update channel; immutable package version not frozen",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Auggie CLI reference", "url": "https://docs.augmentcode.com/cli/reference"},
-        {"title": "Augment quickstart", "url": "https://docs.augmentcode.com/quickstart"}
+        {
+          "title": "Auggie CLI reference",
+          "url": "https://docs.augmentcode.com/cli/reference"
+        },
+        {
+          "title": "Augment quickstart",
+          "url": "https://docs.augmentcode.com/quickstart"
+        }
       ],
-      "applicabilityGaps": ["CLI version, hosted context-engine revision and available models change independently", "Agent, print, MCP-server and ACP modes must be scoped separately"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact independently evaluated Auggie configuration was identified."},
+      "applicabilityGaps": [
+        "CLI version, hosted context-engine revision and available models change independently",
+        "Agent, print, MCP-server and ACP modes must be scoped separately"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact independently evaluated Auggie configuration was identified."
+      },
       "classification": "needs identity research",
       "classificationReason": "Authority controls are richly documented, but the exact distributable/service identity needs one more pass."
     },
@@ -316,15 +615,32 @@
       "surface": "Droid CLI",
       "category": "local-cli",
       "deliveryModel": "local terminal client with Factory-hosted models and optional remote execution",
-      "identity": {"kind": "exact-version-available", "value": "versioned CLI release notes; dossier version not yet frozen", "frozenForDossier": false},
+      "identity": {
+        "kind": "rolling-client-with-version-command",
+        "value": "current Droid CLI release stream reviewed 2026-08-07; exact installed client remains unresolved",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Factory documentation", "url": "https://docs.factory.ai/welcome/index"},
-        {"title": "Droid CLI updates", "url": "https://docs.factory.ai/changelog/cli-updates"}
+        {
+          "title": "Droid CLI overview",
+          "url": "https://docs.factory.ai/cli/getting-started/overview"
+        },
+        {
+          "title": "Droid CLI release notes",
+          "url": "https://docs.factory.ai/changelog/release-notes"
+        }
       ],
-      "applicabilityGaps": ["Local CLI, remote Droid Computer and desktop control surfaces must remain distinct", "Model, autonomy and enterprise deployment choices are scoped alternatives"],
-      "potentialIndependentEvaluation": {"status": "potential", "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0?verified=true", "note": "Potential benchmark evidence requires exact CLI version and submitter verification."},
+      "applicabilityGaps": [
+        "Local CLI, remote Droid Computer and desktop control surfaces must remain distinct",
+        "Model, autonomy and enterprise deployment choices are scoped alternatives"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "potential",
+        "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0?verified=true",
+        "note": "Potential benchmark evidence requires exact CLI version and submitter verification."
+      },
       "classification": "dossier-ready",
-      "classificationReason": "Official versioned CLI notes and a distinct surface boundary support exact identity capture."
+      "classificationReason": "Current official CLI documentation and release notes establish the distinct rolling client while the installed version remains an explicit unknown."
     },
     {
       "id": "cursor-ide-agent",
@@ -333,13 +649,30 @@
       "surface": "Cursor IDE foreground Agent",
       "category": "ide-desktop",
       "deliveryModel": "desktop IDE client with publisher-hosted model routing and local workspace tools",
-      "identity": {"kind": "versioned-client-plus-rolling-service", "value": "versioned Cursor client with rolling Agent service and model catalog", "frozenForDossier": false},
+      "identity": {
+        "kind": "versioned-client-plus-rolling-service",
+        "value": "versioned Cursor client with rolling Agent service and model catalog",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "Cursor Agent overview", "url": "https://docs.cursor.com/chat/overview"},
-        {"title": "Cursor changelog", "url": "https://cursor.com/changelog"}
+        {
+          "title": "Cursor Agent overview",
+          "url": "https://docs.cursor.com/chat/overview"
+        },
+        {
+          "title": "Cursor changelog",
+          "url": "https://cursor.com/changelog"
+        }
       ],
-      "applicabilityGaps": ["Client build does not freeze server prompts, model routing or model versions", "Foreground Agent, Background Agents and web/mobile agents are distinct authority surfaces"],
-      "potentialIndependentEvaluation": {"status": "potential", "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/", "note": "METR publicly studied experienced developers using Cursor, but exact client, Agent mode and model applicability must be reconstructed before any finding is cataloged."},
+      "applicabilityGaps": [
+        "Client build does not freeze server prompts, model routing or model versions",
+        "Foreground Agent, Background Agents and web/mobile agents are distinct authority surfaces"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "potential",
+        "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+        "note": "METR publicly studied experienced developers using Cursor, but exact client, Agent mode and model applicability must be reconstructed before any finding is cataloged."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Official docs distinguish foreground Agent behavior and a versioned editor client; unresolved backend identity can be recorded honestly."
     },
@@ -350,13 +683,31 @@
       "surface": "Cascade in Devin Desktop",
       "category": "ide-desktop",
       "deliveryModel": "desktop IDE client with publisher-hosted model service and local workspace tools",
-      "identity": {"kind": "exact-version-available-after-product-transition", "value": "Devin Desktop v3.6.27, released 2026-08-01; the publisher changelog labels the release family 'Devin Desktop (Windsurf)'", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-available-after-product-transition",
+        "value": "Devin Desktop v3.6.27, released 2026-08-01; the publisher changelog labels the release family 'Devin Desktop (Windsurf)'",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "Devin Desktop Cascade overview", "url": "https://docs.devin.ai/desktop/cascade/cascade"},
-        {"title": "Devin Desktop changelog", "url": "https://docs.devin.ai/desktop/changelog"}
+        {
+          "title": "Devin Desktop Cascade overview",
+          "url": "https://docs.devin.ai/desktop/cascade/cascade"
+        },
+        {
+          "title": "Devin Desktop changelog",
+          "url": "https://docs.devin.ai/desktop/changelog"
+        }
       ],
-      "applicabilityGaps": ["Legacy Windsurf Editor evidence must be dated and related explicitly to the current Devin Desktop identity rather than transferred as current Cascade evidence", "Cascade, Devin Local and external ACP agents are distinct alternatives inside the same desktop product", "The exact desktop client does not identify the rolling model or service revision, and Cascade Code and Chat modes have different write authority"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact independently attributable Cascade build/configuration was identified."},
+      "applicabilityGaps": [
+        "Legacy Windsurf Editor evidence must be dated and related explicitly to the current Devin Desktop identity rather than transferred as current Cascade evidence",
+        "Cascade, Devin Local and external ACP agents are distinct alternatives inside the same desktop product",
+        "The exact desktop client does not identify the rolling model or service revision, and Cascade Code and Chat modes have different write authority"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact independently attributable Cascade build/configuration was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Current Cognition documentation names Cascade as one of Devin Desktop's local agents and the v3.6.27 changelog provides an exact client boundary while preserving the Windsurf transition and rolling backend gaps."
     },
@@ -367,13 +718,30 @@
       "surface": "Roo Code VS Code extension",
       "category": "ide-desktop",
       "deliveryModel": "local VS Code extension with user-selected model provider",
-      "identity": {"kind": "historical-exact-release", "value": "v3.54.0; extension shut down 2026-05-15", "frozenForDossier": false},
+      "identity": {
+        "kind": "historical-exact-release",
+        "value": "v3.54.0; extension shut down 2026-05-15",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Roo Code repository", "url": "https://github.com/RooCodeInc/Roo-Code"},
-        {"title": "Roo Code installation documentation", "url": "https://roocodeinc.github.io/Roo-Code/getting-started/installing/"}
+        {
+          "title": "Roo Code repository",
+          "url": "https://github.com/RooCodeInc/Roo-Code"
+        },
+        {
+          "title": "Roo Code installation documentation",
+          "url": "https://roocodeinc.github.io/Roo-Code/getting-started/installing/"
+        }
       ],
-      "applicabilityGaps": ["Only pre-shutdown artifacts and documentation are applicable", "Cloud or successor behavior cannot be inferred from the retired extension"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact independent evaluation was identified for the final extension release."},
+      "applicabilityGaps": [
+        "Only pre-shutdown artifacts and documentation are applicable",
+        "Cloud or successor behavior cannot be inferred from the retired extension"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact independent evaluation was identified for the final extension release."
+      },
       "classification": "historical",
       "classificationReason": "The publisher repository states that the extension shut down and preserves a final exact release."
     },
@@ -384,13 +752,30 @@
       "surface": "Continue IDE extension Agent mode",
       "category": "ide-desktop",
       "deliveryModel": "local IDE extension with configurable model providers",
-      "identity": {"kind": "historical-exact-release", "value": "final 2.0.0 line; repository documented as read-only/no longer maintained", "frozenForDossier": false},
+      "identity": {
+        "kind": "historical-exact-release",
+        "value": "final 2.0.0 line; repository documented as read-only/no longer maintained",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Continue documentation", "url": "https://docs.continue.dev/"},
-        {"title": "Continue Agent mode quickstart", "url": "https://docs.continue.dev/ide-extensions/agent/quick-start"}
+        {
+          "title": "Continue documentation",
+          "url": "https://docs.continue.dev/"
+        },
+        {
+          "title": "Continue Agent mode quickstart",
+          "url": "https://docs.continue.dev/ide-extensions/agent/quick-start"
+        }
       ],
-      "applicabilityGaps": ["The final 2.0.0 extension must be separated from newer or successor Continue offerings", "Provider and configuration variability remains substantial even for a frozen client"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independently evaluated final-release configuration was identified."},
+      "applicabilityGaps": [
+        "The final 2.0.0 extension must be separated from newer or successor Continue offerings",
+        "Provider and configuration variability remains substantial even for a frozen client"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independently evaluated final-release configuration was identified."
+      },
       "classification": "historical",
       "classificationReason": "Publisher docs identify a final release and maintenance end, making this historical rather than a next-batch current dossier."
     },
@@ -401,13 +786,30 @@
       "surface": "Junie IDE plugin",
       "category": "ide-desktop",
       "deliveryModel": "IDE plugin for JetBrains IDEs with publisher-hosted or configured models and local tools",
-      "identity": {"kind": "versioned-plugin-plus-rolling-service", "value": "JetBrains plugin release stream with rolling model availability", "frozenForDossier": false},
+      "identity": {
+        "kind": "versioned-plugin-plus-rolling-service",
+        "value": "Junie plugin 262.132.31, updated 2026-07-28, with rolling model availability",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Junie agent documentation", "url": "https://www.jetbrains.com/help/ai-assistant/junie-agent.html"},
-        {"title": "Junie IDE plugin documentation", "url": "https://junie.jetbrains.com/docs/junie-ide-plugin.html"}
+        {
+          "title": "Junie plugin 262.132.31",
+          "url": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1013527"
+        },
+        {
+          "title": "Junie IDE plugin documentation",
+          "url": "https://junie.jetbrains.com/docs/junie-ide-plugin.html"
+        }
       ],
-      "applicabilityGaps": ["IDE family, plugin version, AI subscription and model choice must be scoped", "Junie plugin behavior must not be merged with Junie CLI beta"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact plugin/version evaluation with independent attribution was identified."},
+      "applicabilityGaps": [
+        "IDE family, plugin version, AI subscription and model choice must be scoped",
+        "Junie plugin behavior must not be merged with Junie CLI beta"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact plugin/version evaluation with independent attribution was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Official documentation establishes a distinct IDE surface and its local approval/tool boundary."
     },
@@ -418,13 +820,30 @@
       "surface": "Kiro IDE",
       "category": "ide-desktop",
       "deliveryModel": "Code OSS-based desktop IDE with local workspace tools and AWS-hosted services",
-      "identity": {"kind": "versioned-desktop-client", "value": "current Kiro IDE release stream; exact dossier build not frozen", "frozenForDossier": false},
+      "identity": {
+        "kind": "versioned-desktop-client",
+        "value": "current Kiro IDE release stream; exact dossier build not frozen",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "Kiro IDE overview", "url": "https://kiro.dev/ide/"},
-        {"title": "Kiro documentation", "url": "https://kiro.dev/docs/"}
+        {
+          "title": "Kiro IDE overview",
+          "url": "https://kiro.dev/ide/"
+        },
+        {
+          "title": "Kiro documentation",
+          "url": "https://kiro.dev/docs/"
+        }
       ],
-      "applicabilityGaps": ["IDE, CLI and web agents share branding but not authority or runtime", "Specs, vibe mode, hooks, steering, custom agents and powers are configuration axes"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact Kiro IDE evaluation with independent attribution was identified."},
+      "applicabilityGaps": [
+        "IDE, CLI and web agents share branding but not authority or runtime",
+        "Specs, vibe mode, hooks, steering, custom agents and powers are configuration axes"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact Kiro IDE evaluation with independent attribution was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "The official product and docs define a separately delivered, versionable desktop agent surface."
     },
@@ -435,13 +854,30 @@
       "surface": "Amazon Q Developer IDE plugins",
       "category": "ide-desktop",
       "deliveryModel": "IDE plugins backed by AWS-hosted service",
-      "identity": {"kind": "announced-sunset", "value": "current plugins remain supported for existing customers until 2027-04-30; new signups ended 2026-05-15", "frozenForDossier": false},
+      "identity": {
+        "kind": "announced-sunset",
+        "value": "current plugins remain supported for existing customers until 2027-04-30; new signups ended 2026-05-15",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Amazon Q Developer end-of-support announcement", "url": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/"},
-        {"title": "Amazon Q Developer documentation", "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html"}
+        {
+          "title": "Amazon Q Developer end-of-support announcement",
+          "url": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/"
+        },
+        {
+          "title": "Amazon Q Developer documentation",
+          "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html"
+        }
       ],
-      "applicabilityGaps": ["IDE family/plugin version and subscriber eligibility differ", "Current behavior during the Kiro migration may change before support ends"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independently evaluated current plugin identity was identified."},
+      "applicabilityGaps": [
+        "IDE family/plugin version and subscriber eligibility differ",
+        "Current behavior during the Kiro migration may change before support ends"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independently evaluated current plugin identity was identified."
+      },
       "classification": "watch",
       "classificationReason": "The surface remains available but is in a publisher-announced migration and sunset window."
     },
@@ -452,13 +888,30 @@
       "surface": "IDE agent mode",
       "category": "ide-desktop",
       "deliveryModel": "IDE extensions backed by Google's hosted Gemini service",
-      "identity": {"kind": "transitioning-service", "value": "individual consumer access transitioned to Antigravity on 2026-06-18; enterprise/API-key paths remain", "frozenForDossier": false},
+      "identity": {
+        "kind": "transitioning-service",
+        "value": "individual consumer access transitioned to Antigravity on 2026-06-18; enterprise/API-key paths remain",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Gemini Code Assist agent mode", "url": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer"},
-        {"title": "Gemini CLI and Code Assist transition", "url": "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"}
+        {
+          "title": "Gemini Code Assist agent mode",
+          "url": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer"
+        },
+        {
+          "title": "Gemini CLI and Code Assist transition",
+          "url": "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"
+        }
       ],
-      "applicabilityGaps": ["Individual, Google AI plan, Cloud enterprise and API-key users now have different availability", "IDE, extension version and service behavior are not jointly frozen"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "The Gemini CLI study does not apply to the IDE agent surface."},
+      "applicabilityGaps": [
+        "Individual, Google AI plan, Cloud enterprise and API-key users now have different availability",
+        "IDE, extension version and service behavior are not jointly frozen"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "The Gemini CLI study does not apply to the IDE agent surface."
+      },
       "classification": "watch",
       "classificationReason": "Publisher sources clearly describe the agent but also a recent audience-specific transition."
     },
@@ -466,18 +919,35 @@
       "id": "github-copilot-vscode-agent",
       "publisher": "GitHub and Microsoft",
       "product": "GitHub Copilot",
-      "surface": "local agent mode in Visual Studio Code",
+      "surface": "Copilot agent harness in Visual Studio Code",
       "category": "ide-desktop",
-      "deliveryModel": "VS Code extension and editor integration backed by GitHub's rolling Copilot service",
-      "identity": {"kind": "versioned-client-plus-rolling-service", "value": "VS Code and Copilot extension versions are available; model service remains rolling", "frozenForDossier": false},
+      "deliveryModel": "Visual Studio Code agent harness running on the local Agent Host with GitHub's rolling Copilot model service",
+      "identity": {
+        "kind": "versioned-client-plus-rolling-service",
+        "value": "versioned VS Code client and Copilot harness/Agent Host with a rolling model service",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Types of agents in Visual Studio Code", "url": "https://code.visualstudio.com/docs/copilot/agents/overview"},
-        {"title": "Use agent mode in Visual Studio Code", "url": "https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode"}
+        {
+          "title": "Agents in Visual Studio Code",
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agents"
+        },
+        {
+          "title": "Choose and use an agent harness",
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses"
+        }
       ],
-      "applicabilityGaps": ["VS Code core, Copilot extension, model and account policy versions must be separated", "Local agent mode must not inherit claims from the accepted GitHub-hosted cloud agent"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact current local-agent configuration with independent evaluation was identified."},
+      "applicabilityGaps": [
+        "VS Code build, harness/Agent Host configuration, Copilot account policy, selected model, permission level and sandbox must be scoped",
+        "The local Copilot harness must not inherit claims from the accepted GitHub-hosted cloud agent or the separate Copilot CLI"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact current local-agent configuration with independent evaluation was identified."
+      },
       "classification": "dossier-ready",
-      "classificationReason": "Publisher documentation expressly distinguishes local, background, cloud and third-party agent types."
+      "classificationReason": "Current publisher documentation identifies the Copilot harness and local Agent Host boundary separately from Copilot CLI and cloud-agent sessions."
     },
     {
       "id": "openai-codex-ide-extension",
@@ -486,13 +956,30 @@
       "surface": "Codex IDE extension",
       "category": "ide-desktop",
       "deliveryModel": "IDE extension backed by OpenAI's Codex service with local workspace access",
-      "identity": {"kind": "versioned-extension-plus-rolling-service", "value": "extension build is versioned; backend model/service remains rolling", "frozenForDossier": false},
+      "identity": {
+        "kind": "versioned-extension-plus-rolling-service",
+        "value": "extension build is versioned; backend model/service remains rolling",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Codex IDE extension documentation", "url": "https://developers.openai.com/codex/ide/"},
-        {"title": "Codex product overview", "url": "https://openai.com/codex/"}
+        {
+          "title": "Codex IDE extension documentation",
+          "url": "https://developers.openai.com/codex/ide/"
+        },
+        {
+          "title": "Codex developer overview",
+          "url": "https://developers.openai.com/codex/"
+        }
       ],
-      "applicabilityGaps": ["IDE extension, Codex CLI and Codex cloud are different surfaces", "Exact extension version cannot freeze hosted model or account features"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "The Codex CLI 0.90.0 study is not applicable to the IDE extension."},
+      "applicabilityGaps": [
+        "IDE extension, Codex CLI and Codex cloud are different surfaces",
+        "Exact extension version cannot freeze hosted model or account features"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "The Codex CLI 0.90.0 study is not applicable to the IDE extension."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Official documentation establishes a distinct IDE delivery surface; rolling-service limits can be explicit."
     },
@@ -503,13 +990,30 @@
       "surface": "Qwen Code VS Code extension",
       "category": "ide-desktop",
       "deliveryModel": "VS Code extension sharing Qwen Code components and configurable model providers",
-      "identity": {"kind": "beta-versioned-extension", "value": "official VS Code integration/companion release stream; exact extension version not frozen", "frozenForDossier": false},
+      "identity": {
+        "kind": "beta-versioned-extension",
+        "value": "official VS Code integration/companion release stream; exact extension version not frozen",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Qwen Code quickstart with VS Code integration", "url": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/"},
-        {"title": "Qwen Code roadmap", "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/roadmap/"}
+        {
+          "title": "Qwen Code quickstart with VS Code integration",
+          "url": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/"
+        },
+        {
+          "title": "Qwen Code roadmap",
+          "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/roadmap/"
+        }
       ],
-      "applicabilityGaps": ["Extension packaging and shared CLI core versions must be pinned independently", "Beta status and provider configuration limit rolling claims"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No extension-specific independent evaluation was identified."},
+      "applicabilityGaps": [
+        "Extension packaging and shared CLI core versions must be pinned independently",
+        "Beta status and provider configuration limit rolling claims"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No extension-specific independent evaluation was identified."
+      },
       "classification": "watch",
       "classificationReason": "The official surface exists, but its beta packaging and exact release identity need to stabilize."
     },
@@ -520,13 +1024,30 @@
       "surface": "Vibe Code VS Code extension",
       "category": "ide-desktop",
       "deliveryModel": "VS Code extension backed by Mistral services and local workspace tools",
-      "identity": {"kind": "release-line-plus-rolling-service", "value": "Vibe 2.0 product line with a separately delivered VS Code extension", "frozenForDossier": false},
+      "identity": {
+        "kind": "release-line-plus-rolling-service",
+        "value": "Vibe 2.0 product line with a separately delivered VS Code extension",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Choose Vibe Chat, Work or Code", "url": "https://docs.mistral.ai/vibe/choose-chat-work-code"},
-        {"title": "Mistral changelog", "url": "https://docs.mistral.ai/resources/changelogs"}
+        {
+          "title": "Choose Vibe Chat, Work or Code",
+          "url": "https://docs.mistral.ai/vibe/choose-chat-work-code"
+        },
+        {
+          "title": "Mistral changelog",
+          "url": "https://docs.mistral.ai/resources/changelogs"
+        }
       ],
-      "applicabilityGaps": ["Extension version and rolling Vibe service revision differ", "CLI, VS Code and web claims require separate applicability"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No extension-specific independent evidence was identified."},
+      "applicabilityGaps": [
+        "Extension version and rolling Vibe service revision differ",
+        "CLI, VS Code and web claims require separate applicability"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No extension-specific independent evidence was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Publisher sources distinguish the extension and dated Vibe 2.0 release family."
     },
@@ -537,13 +1058,30 @@
       "surface": "Tabnine Agent in IDE",
       "category": "ide-desktop",
       "deliveryModel": "IDE plugins backed by SaaS, private cloud or on-premises model deployment",
-      "identity": {"kind": "versioned-plugin-and-deployment-lines", "value": "documented 5.x/6.x feature releases across multiple deployment channels", "frozenForDossier": false},
+      "identity": {
+        "kind": "versioned-plugin-and-deployment-lines",
+        "value": "documented 5.x/6.x feature releases across multiple deployment channels",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Tabnine Agent", "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent"},
-        {"title": "Tabnine release notes", "url": "https://docs.tabnine.com/main/administering-tabnine/release-notes"}
+        {
+          "title": "Tabnine Agent",
+          "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent"
+        },
+        {
+          "title": "Tabnine release notes",
+          "url": "https://docs.tabnine.com/main/administering-tabnine/release-notes"
+        }
       ],
-      "applicabilityGaps": ["IDE, plugin version, SaaS/private deployment and model selection create mutually scoped alternatives", "Private-install release notes may not describe the SaaS channel"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact independently evaluated Agent release/deployment was identified."},
+      "applicabilityGaps": [
+        "IDE, plugin version, SaaS/private deployment and model selection create mutually scoped alternatives",
+        "Private-install release notes may not describe the SaaS channel"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact independently evaluated Agent release/deployment was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Official docs expose explicit release and deployment axes that the real-agent schema is designed to preserve."
     },
@@ -554,15 +1092,32 @@
       "surface": "Agent Mode in Warp desktop terminal",
       "category": "ide-desktop",
       "deliveryModel": "desktop terminal application with local command execution and Warp-hosted or configured model service",
-      "identity": {"kind": "exact-version-available", "value": "weekly versioned desktop releases; current release can be frozen from official changelog", "frozenForDossier": false},
+      "identity": {
+        "kind": "rolling-desktop-client-plus-agent-service",
+        "value": "current Warp desktop and Oz local-agent surface reviewed 2026-08-07; exact installed build unresolved",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Warp Agent capabilities", "url": "https://docs.warp.dev/agent-platform/capabilities"},
-        {"title": "Warp changelog", "url": "https://docs.warp.dev/changelog"}
+        {
+          "title": "Warp and Oz overview",
+          "url": "https://docs.warp.dev/?fallback=true"
+        },
+        {
+          "title": "Warp changelog",
+          "url": "https://docs.warp.dev/changelog"
+        }
       ],
-      "applicabilityGaps": ["Desktop Agent Mode and Warp cloud-agent orchestration are different runtime boundaries", "OS build, autonomy permissions, model and remote handoff settings must be scoped"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact independently evaluated Warp desktop release was identified."},
+      "applicabilityGaps": [
+        "Desktop Agent Mode and Warp cloud-agent orchestration are different runtime boundaries",
+        "OS build, autonomy permissions, model and remote handoff settings must be scoped"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact independently evaluated Warp desktop release was identified."
+      },
       "classification": "dossier-ready",
-      "classificationReason": "The publisher provides dated exact desktop releases and explicit local permission controls."
+      "classificationReason": "Current official Warp and Oz documentation separates local agent execution from cloud orchestration while the installed desktop build remains explicit."
     },
     {
       "id": "augment-ide-agent",
@@ -571,13 +1126,30 @@
       "surface": "Augment Agent in VS Code and JetBrains IDEs",
       "category": "ide-desktop",
       "deliveryModel": "IDE plugins backed by Augment's hosted context and model services",
-      "identity": {"kind": "versioned-plugin-plus-rolling-service", "value": "versioned IDE extensions with rolling context engine and model catalog", "frozenForDossier": false},
+      "identity": {
+        "kind": "versioned-plugin-plus-rolling-service",
+        "value": "versioned IDE extensions with rolling context engine and model catalog",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Using Augment Agent", "url": "https://docs.augmentcode.com/using-augment/agent"},
-        {"title": "Augment quickstart", "url": "https://docs.augmentcode.com/quickstart"}
+        {
+          "title": "Using Augment Agent",
+          "url": "https://docs.augmentcode.com/using-augment/agent"
+        },
+        {
+          "title": "Augment quickstart",
+          "url": "https://docs.augmentcode.com/quickstart"
+        }
       ],
-      "applicabilityGaps": ["VS Code and JetBrains versions may differ", "Agent, Agent Auto and read-only Quick Ask are mutually scoped modes"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independently evaluated exact plugin/mode configuration was identified."},
+      "applicabilityGaps": [
+        "VS Code and JetBrains versions may differ",
+        "Agent, Agent Auto and read-only Quick Ask are mutually scoped modes"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independently evaluated exact plugin/mode configuration was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "The docs clearly define mode-specific authority and a separate IDE surface."
     },
@@ -588,13 +1160,30 @@
       "surface": "Zed Agent Panel",
       "category": "ide-desktop",
       "deliveryModel": "desktop editor with native local agent tools, configurable providers and external ACP agents",
-      "identity": {"kind": "exact-version-available", "value": "Zed 1.9.0 stable released 2026-07-01; weekly stable release stream", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-version-available",
+        "value": "Zed 1.9.0 stable released 2026-07-01; weekly stable release stream",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "AI agents in Zed", "url": "https://zed.dev/docs/ai/agents"},
-        {"title": "Zed stable releases", "url": "https://zed.dev/releases/stable"}
+        {
+          "title": "AI agents in Zed",
+          "url": "https://zed.dev/docs/ai/agents"
+        },
+        {
+          "title": "Zed stable releases",
+          "url": "https://zed.dev/releases/stable"
+        }
       ],
-      "applicabilityGaps": ["Native Zed Agent, external ACP agents and provider-specific models are alternatives", "Editor version does not freeze third-party model endpoints"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact Zed Agent profile/provider evaluation was identified."},
+      "applicabilityGaps": [
+        "Native Zed Agent, external ACP agents and provider-specific models are alternatives",
+        "Editor version does not freeze third-party model endpoints"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact Zed Agent profile/provider evaluation was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "A recent immutable editor release and official agent/profile documentation support exact client identity with scoped provider unknowns."
     },
@@ -605,13 +1194,30 @@
       "surface": "Devin hosted coding agent",
       "category": "hosted-background",
       "deliveryModel": "publisher-hosted agent workspace and compute environment with repository integrations",
-      "identity": {"kind": "rolling-service-with-release-notes", "value": "rolling service documented by dated Devin release notes", "frozenForDossier": false},
+      "identity": {
+        "kind": "rolling-service-with-release-notes",
+        "value": "rolling service documented by dated Devin release notes",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "Devin getting started", "url": "https://docs.devin.ai/get-started/first-run"},
-        {"title": "Devin release notes", "url": "https://docs.devin.ai/release-notes/overview"}
+        {
+          "title": "Devin getting started",
+          "url": "https://docs.devin.ai/get-started/first-run"
+        },
+        {
+          "title": "Devin release notes",
+          "url": "https://docs.devin.ai/release-notes/overview"
+        }
       ],
-      "applicabilityGaps": ["Service revisions, model selection and account tier are not immutable", "Interactive sessions, autonomous sessions and enterprise deployment controls require scope"],
-      "potentialIndependentEvaluation": {"status": "potential", "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0?verified=true", "note": "Public benchmark references may exist, but service revision, submitter and configuration applicability require audit."},
+      "applicabilityGaps": [
+        "Service revisions, model selection and account tier are not immutable",
+        "Interactive sessions, autonomous sessions and enterprise deployment controls require scope"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "potential",
+        "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0?verified=true",
+        "note": "Public benchmark references may exist, but service revision, submitter and configuration applicability require audit."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Dated publisher release notes and clear hosted workspace boundaries support a rolling-service dossier."
     },
@@ -622,13 +1228,30 @@
       "surface": "Replit hosted Agent workspace",
       "category": "hosted-background",
       "deliveryModel": "publisher-hosted browser development environment, agent runtime and deployment platform",
-      "identity": {"kind": "named-release-plus-rolling-service", "value": "Agent 3 launched 2025-09-12; current rolling service includes Lite, Economy, Power and Turbo modes", "frozenForDossier": false},
+      "identity": {
+        "kind": "named-release-plus-rolling-service",
+        "value": "Agent 3 launched 2025-09-12; current rolling service includes Lite, Economy, Power and Turbo modes",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "Replit Agent 3 launch changelog", "url": "https://docs.replit.com/updates/2025/09/12/changelog"},
-        {"title": "Replit April 2026 changelog", "url": "https://docs.replit.com/updates/2026/04/17/changelog"}
+        {
+          "title": "Replit Agent 3 launch changelog",
+          "url": "https://docs.replit.com/updates/2025/09/12/changelog"
+        },
+        {
+          "title": "Replit April 2026 changelog",
+          "url": "https://docs.replit.com/updates/2026/04/17/changelog"
+        }
       ],
-      "applicabilityGaps": ["Named Agent generation does not freeze subsequent rolling modes or models", "App type, mode, integrations, testing and deployment permissions are configuration axes"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact current Agent 3 service configuration with independently attributable testing was identified."},
+      "applicabilityGaps": [
+        "Named Agent generation does not freeze subsequent rolling modes or models",
+        "App type, mode, integrations, testing and deployment permissions are configuration axes"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact current Agent 3 service configuration with independently attributable testing was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Publisher changelogs provide dated service milestones and current mode distinctions."
     },
@@ -639,13 +1262,30 @@
       "surface": "Codex cloud/web agent",
       "category": "hosted-background",
       "deliveryModel": "OpenAI-hosted asynchronous agent environments connected to repositories",
-      "identity": {"kind": "rolling-service-with-dated-milestones", "value": "rolling Codex cloud service; dated launch and update posts available", "frozenForDossier": false},
+      "identity": {
+        "kind": "rolling-service-with-dated-milestones",
+        "value": "rolling Codex cloud service; dated launch and update posts available",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Introducing Codex", "url": "https://openai.com/index/introducing-codex/"},
-        {"title": "Codex product overview", "url": "https://openai.com/codex/"}
+        {
+          "title": "Codex cloud overview",
+          "url": "https://developers.openai.com/codex/cloud/"
+        },
+        {
+          "title": "Codex cloud environments",
+          "url": "https://developers.openai.com/codex/cloud/environments"
+        }
       ],
-      "applicabilityGaps": ["Cloud task environment, model and account plan are rolling", "Codex CLI and IDE evidence must not be applied to this hosted runtime"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "The exact Codex CLI 0.90.0 study does not apply to Codex cloud."},
+      "applicabilityGaps": [
+        "Cloud task environment, model and account plan are rolling",
+        "Codex CLI and IDE evidence must not be applied to this hosted runtime"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "The exact Codex CLI 0.90.0 study does not apply to Codex cloud."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Official sources establish the hosted runtime and dated service milestones despite unresolved per-task backend versions."
     },
@@ -653,18 +1293,39 @@
       "id": "cursor-background-agents",
       "publisher": "Anysphere",
       "product": "Cursor",
-      "surface": "Cursor Background Agents",
+      "surface": "Cursor Cloud Agents (formerly Background Agents)",
       "category": "hosted-background",
       "deliveryModel": "publisher-hosted asynchronous agents in isolated remote machines with GitHub write access",
-      "identity": {"kind": "rolling-service", "value": "rolling Background Agents service and beta API", "frozenForDossier": false},
+      "identity": {
+        "kind": "renamed-rolling-service",
+        "value": "rolling Cursor Cloud Agents service; Background Agents renamed to Cloud Agents in Cursor 2.0 on 2025-10-29",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Cursor Background Agents", "url": "https://docs.cursor.com/background-agent"},
-        {"title": "Background Agents API", "url": "https://docs.cursor.com/background-agent/api/overview"}
+        {
+          "title": "Cursor Cloud Agents",
+          "url": "https://cursor.com/cloud"
+        },
+        {
+          "title": "Cursor 2.0 rename milestone",
+          "url": "https://cursor.com/changelog/2-0"
+        },
+        {
+          "title": "Cloud Agents with Computer Use",
+          "url": "https://cursor.com/changelog/02-24-26"
+        }
       ],
-      "applicabilityGaps": ["Web/mobile, IDE handoff and API initiation share a runtime but differ in initiating authority", "Model, machine image, internet, secrets and repository permissions are configuration-specific"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "The METR Cursor study does not establish Background Agent behavior."},
+      "applicabilityGaps": [
+        "Web, mobile, desktop, Slack, GitHub and API initiation paths can differ in initiating authority",
+        "Model, development environment, internet, secrets and repository permissions are configuration-specific"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "The METR Cursor study does not establish Cloud Agent behavior."
+      },
       "classification": "dossier-ready",
-      "classificationReason": "Publisher docs give unusually clear runtime, network, repository and retention boundaries for a rolling hosted service."
+      "classificationReason": "Current publisher sources establish the renamed rolling service, isolated cloud runtime and cross-surface initiation boundary."
     },
     {
       "id": "gitlab-duo-developer-flow",
@@ -673,13 +1334,30 @@
       "surface": "Developer Flow",
       "category": "repository-integrated",
       "deliveryModel": "GitLab-integrated agent flow executed through CI/CD runners and a service account",
-      "identity": {"kind": "release-line-available", "value": "GA in GitLab 18.8; later GitLab versions add Agentic Chat invocation paths", "frozenForDossier": false},
+      "identity": {
+        "kind": "release-line-available",
+        "value": "GA in GitLab 18.8; later GitLab versions add Agentic Chat invocation paths",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "GitLab Duo Agent Platform", "url": "https://docs.gitlab.com/user/duo_agent_platform/"},
-        {"title": "Developer Flow", "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/"}
+        {
+          "title": "GitLab Duo Agent Platform",
+          "url": "https://docs.gitlab.com/user/duo_agent_platform/"
+        },
+        {
+          "title": "Developer Flow",
+          "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/"
+        }
       ],
-      "applicabilityGaps": ["GitLab.com, Self-Managed and Dedicated offerings must be scoped by version and feature availability", "Runner type, service account, model, namespace, trigger and approval path are configuration axes"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No exact GitLab release/configuration independent evaluation was identified."},
+      "applicabilityGaps": [
+        "GitLab.com, Self-Managed and Dedicated offerings must be scoped by version and feature availability",
+        "Runner type, service account, model, namespace, trigger and approval path are configuration axes"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No exact GitLab release/configuration independent evaluation was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Official docs provide GA history, offering scope, runtime, identity and invocation details that exercise repository authority cleanly."
     },
@@ -690,13 +1368,30 @@
       "surface": "Software Development Flow",
       "category": "repository-integrated",
       "deliveryModel": "GitLab-integrated multi-agent planning and implementation flow executed through configured runners",
-      "identity": {"kind": "gitlab-release-scoped-service", "value": "version-scoped GitLab Duo foundational flow; maturity and feature-flag history documented", "frozenForDossier": false},
+      "identity": {
+        "kind": "gitlab-release-scoped-service",
+        "value": "version-scoped GitLab Duo foundational flow; maturity and feature-flag history documented",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "GitLab Duo Agent Platform", "url": "https://docs.gitlab.com/user/duo_agent_platform/"},
-        {"title": "Software Development Flow", "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/software_development/"}
+        {
+          "title": "GitLab Duo Agent Platform",
+          "url": "https://docs.gitlab.com/user/duo_agent_platform/"
+        },
+        {
+          "title": "Software Development Flow",
+          "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/software_development/"
+        }
       ],
-      "applicabilityGaps": ["Maturity and release history must be pinned to one GitLab version", "Planner/executor agents, runner, model and approval behavior must not collapse into Developer Flow claims"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independent release-specific flow evaluation was identified."},
+      "applicabilityGaps": [
+        "Maturity and release history must be pinned to one GitLab version",
+        "Planner/executor agents, runner, model and approval behavior must not collapse into Developer Flow claims"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independent release-specific flow evaluation was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "It is a publisher-defined, separately documented flow whose multi-agent planning boundary differs materially from Developer Flow."
     },
@@ -707,14 +1402,36 @@
       "surface": "Code Review Flow",
       "category": "repository-integrated",
       "deliveryModel": "GitLab-integrated review agent executed as a CI/CD job with repository and merge-request context",
-      "identity": {"kind": "exact-release-line", "value": "selected future boundary is GitLab 19.2, released 2026-07-16; Code Review Flow was beta in 18.7, GA in 18.8, gained its current default model in 19.1 and an Agentic Chat trigger in 19.2", "frozenForDossier": false},
+      "identity": {
+        "kind": "exact-release-line",
+        "value": "selected future boundary is GitLab 19.2, released 2026-07-16; Code Review Flow was beta in 18.7, GA in 18.8, gained its current default model in 19.1 and an Agentic Chat trigger in 19.2",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Code Review Flow", "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/code_review/"},
-        {"title": "GitLab 19.2 release notes", "url": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/"},
-        {"title": "GitLab 19.2 documentation archive", "url": "https://docs.gitlab.com/archives/"}
+        {
+          "title": "Code Review Flow",
+          "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/code_review/"
+        },
+        {
+          "title": "GitLab 19.2 release notes",
+          "url": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/"
+        },
+        {
+          "title": "GitLab 19.2 documentation archive",
+          "url": "https://docs.gitlab.com/archives/"
+        }
       ],
-      "applicabilityGaps": ["GitLab release, GitLab.com versus Self-Managed versus Dedicated offering, selected or self-hosted model, runner and top-level group settings determine applicability", "Agentic Code Review Flow must be separated from the non-agentic GitLab Duo Code Review feature", "Manual reviewer assignment, Agentic Chat handoff and automatic review are distinct trigger and approval paths", "Features documented for unreleased GitLab 19.3 are outside the selected 19.2 boundary"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independently evaluated exact GitLab release/model combination was identified."},
+      "applicabilityGaps": [
+        "GitLab release, GitLab.com versus Self-Managed versus Dedicated offering, selected or self-hosted model, runner and top-level group settings determine applicability",
+        "Agentic Code Review Flow must be separated from the non-agentic GitLab Duo Code Review feature",
+        "Manual reviewer assignment, Agentic Chat handoff and automatic review are distinct trigger and approval paths",
+        "Features documented for unreleased GitLab 19.3 are outside the selected 19.2 boundary"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independently evaluated exact GitLab release/model combination was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "The released GitLab 19.2 line, version archive and current flow history establish a defensible repository-integrated review surface with explicit offering, model, runner, service-account, trigger and approval boundaries."
     },
@@ -725,13 +1442,30 @@
       "surface": "Vibe Code Web",
       "category": "hosted-background",
       "deliveryModel": "publisher-hosted remote coding agents in managed cloud sandboxes connected to GitHub",
-      "identity": {"kind": "rolling-service-release-family", "value": "Vibe 2.0-era rolling web service with dated documentation updates", "frozenForDossier": false},
+      "identity": {
+        "kind": "rolling-service-release-family",
+        "value": "Vibe 2.0-era rolling web service with dated documentation updates",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Vibe Code Web getting started", "url": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started"},
-        {"title": "Mistral changelog", "url": "https://docs.mistral.ai/resources/changelogs"}
+        {
+          "title": "Vibe Code Web getting started",
+          "url": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started"
+        },
+        {
+          "title": "Mistral changelog",
+          "url": "https://docs.mistral.ai/resources/changelogs"
+        }
       ],
-      "applicabilityGaps": ["Progressive rollout, plan, model behavior and session limits are rolling", "CLI teleport and web-created sessions need separate initiation provenance"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independently evaluated exact web-service state was identified."},
+      "applicabilityGaps": [
+        "Progressive rollout, plan, model behavior and session limits are rolling",
+        "CLI teleport and web-created sessions need separate initiation provenance"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independently evaluated exact web-service state was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Official docs name the managed sandbox, repository and branch/PR boundaries and distinguish it from CLI and VS Code."
     },
@@ -742,13 +1476,30 @@
       "surface": "Kiro Web",
       "category": "hosted-background",
       "deliveryModel": "publisher-hosted browser agent in isolated cloud sandboxes connected to GitHub or GitLab",
-      "identity": {"kind": "public-preview-rolling-service", "value": "Kiro Web Preview; documented page update 2026-06-11", "frozenForDossier": false},
+      "identity": {
+        "kind": "public-preview-rolling-service",
+        "value": "Kiro Web Preview; documented page update 2026-06-11",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Working with the Kiro Web agent", "url": "https://kiro.dev/docs/web/using-the-agent/"},
-        {"title": "Kiro product surfaces", "url": "https://kiro.dev/"}
+        {
+          "title": "Working with the Kiro Web agent",
+          "url": "https://kiro.dev/docs/web/using-the-agent/"
+        },
+        {
+          "title": "Kiro product surfaces",
+          "url": "https://kiro.dev/"
+        }
       ],
-      "applicabilityGaps": ["Preview service has collaborative, autonomous and spec modes with different authority", "Repository provider, cross-repository scope, web search and retention must be claim-scoped"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independent evaluation pinned to the Kiro Web preview was identified."},
+      "applicabilityGaps": [
+        "Preview service has collaborative, autonomous and spec modes with different authority",
+        "Repository provider, cross-repository scope, web search and retention must be claim-scoped"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independent evaluation pinned to the Kiro Web preview was identified."
+      },
       "classification": "watch",
       "classificationReason": "The runtime boundary is well documented, but preview status and rapid June-July updates make a short watch prudent."
     },
@@ -759,13 +1510,30 @@
       "surface": "OpenHands Cloud",
       "category": "hosted-background",
       "deliveryModel": "publisher-hosted OpenHands service connected to GitHub, GitLab or Bitbucket repositories",
-      "identity": {"kind": "rolling-service", "value": "rolling OpenHands Cloud service at app.all-hands.dev", "frozenForDossier": false},
+      "identity": {
+        "kind": "rolling-service",
+        "value": "rolling OpenHands Cloud service at app.all-hands.dev",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "OpenHands Cloud getting started", "url": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud"},
-        {"title": "OpenHands documentation", "url": "https://docs.openhands.dev/"}
+        {
+          "title": "OpenHands Cloud getting started",
+          "url": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud"
+        },
+        {
+          "title": "OpenHands documentation",
+          "url": "https://docs.openhands.dev/"
+        }
       ],
-      "applicabilityGaps": ["Cloud service revision is independent of accepted OpenHands CLI 1.16.0", "Repository provider, account plan, runtime image and secrets change authority"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "The OpenHands 0.59.1 CLI/runtime study is not transferable to OpenHands Cloud."},
+      "applicabilityGaps": [
+        "Cloud service revision is independent of accepted OpenHands CLI 1.16.0",
+        "Repository provider, account plan, runtime image and secrets change authority"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "The OpenHands 0.59.1 CLI/runtime study is not transferable to OpenHands Cloud."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Official docs identify a distinct hosted service and repository authorization path; service unknowns can be explicit."
     },
@@ -776,13 +1544,30 @@
       "surface": "GitHub-hosted third-party Claude coding agent",
       "category": "repository-integrated",
       "deliveryModel": "GitHub-orchestrated asynchronous agent using an Anthropic GitHub App and GitHub Actions environment",
-      "identity": {"kind": "public-preview-rolling-service", "value": "GitHub third-party coding agents public preview; Anthropic Claude partner agent", "frozenForDossier": false},
+      "identity": {
+        "kind": "public-preview-rolling-service",
+        "value": "GitHub third-party coding agents public preview; Anthropic Claude partner agent",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "About third-party coding agents", "url": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents"},
-        {"title": "Claude Code GitHub Actions", "url": "https://docs.anthropic.com/en/docs/claude-code/github-actions"}
+        {
+          "title": "About third-party coding agents",
+          "url": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents"
+        },
+        {
+          "title": "Claude Code GitHub Actions",
+          "url": "https://docs.anthropic.com/en/docs/claude-code/github-actions"
+        }
       ],
-      "applicabilityGaps": ["GitHub partner-agent orchestration must not inherit local Claude Code CLI claims", "GitHub policy, model, Actions environment, app identity and repository permissions are rolling"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "The exact Claude Code CLI study is not applicable to GitHub's partner-agent runtime."},
+      "applicabilityGaps": [
+        "GitHub partner-agent orchestration must not inherit local Claude Code CLI claims",
+        "GitHub policy, model, Actions environment, app identity and repository permissions are rolling"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "The exact Claude Code CLI study is not applicable to GitHub's partner-agent runtime."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Joint publisher docs identify the partner App, initiation surfaces, model choices and GitHub security boundary."
     },
@@ -793,13 +1578,30 @@
       "surface": "GitHub-hosted third-party Codex coding agent",
       "category": "repository-integrated",
       "deliveryModel": "GitHub-orchestrated asynchronous agent using an OpenAI GitHub App and GitHub Actions environment",
-      "identity": {"kind": "public-preview-rolling-service", "value": "GitHub third-party coding agents public preview; OpenAI Codex partner agent", "frozenForDossier": false},
+      "identity": {
+        "kind": "public-preview-rolling-service",
+        "value": "GitHub third-party coding agents public preview; OpenAI Codex partner agent",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "About third-party coding agents", "url": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents"},
-        {"title": "Codex product overview", "url": "https://openai.com/codex/"}
+        {
+          "title": "About third-party coding agents",
+          "url": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents"
+        },
+        {
+          "title": "Codex developer overview",
+          "url": "https://developers.openai.com/codex/"
+        }
       ],
-      "applicabilityGaps": ["GitHub partner-agent orchestration must not inherit Codex CLI or Codex cloud claims", "GitHub policy, selected model, Actions environment, app identity and repository permissions are rolling"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "The exact Codex CLI 0.90.0 study does not apply to this GitHub-hosted partner agent."},
+      "applicabilityGaps": [
+        "GitHub partner-agent orchestration must not inherit Codex CLI or Codex cloud claims",
+        "GitHub policy, selected model, Actions environment, app identity and repository permissions are rolling"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "The exact Codex CLI 0.90.0 study does not apply to this GitHub-hosted partner agent."
+      },
       "classification": "dossier-ready",
       "classificationReason": "GitHub documents the distinct partner App, initiation points, model menu and security processing."
     },
@@ -807,35 +1609,69 @@
       "id": "factory-cloud-droids",
       "publisher": "Factory AI",
       "product": "Droids",
-      "surface": "remote Cloud Droids / Droid Computers",
+      "surface": "Factory-managed Droid Computers",
       "category": "hosted-background",
-      "deliveryModel": "publisher-hosted persistent or ephemeral remote development machines controlled through Factory surfaces",
-      "identity": {"kind": "rolling-service-with-versioned-clients", "value": "rolling cloud runtime associated with versioned Droid CLI and desktop clients", "frozenForDossier": false},
+      "deliveryModel": "publisher-hosted persistent remote development machines controlled through Factory surfaces",
+      "identity": {
+        "kind": "rolling-persistent-compute-service",
+        "value": "Factory-managed persistent Droid Computers reviewed 2026-08-07; daemon and client revisions remain separate",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Factory documentation", "url": "https://docs.factory.ai/welcome/index"},
-        {"title": "Factory Droids product", "url": "https://factory.ai/product/droids"}
+        {
+          "title": "Droid Computers overview",
+          "url": "https://docs.factory.ai/cli/features/droid-computers"
+        },
+        {
+          "title": "Droid Computers product",
+          "url": "https://factory.ai/product/droid-computers"
+        }
       ],
-      "applicabilityGaps": ["Droid Computer persistence, hosting region, client and enterprise deployment boundaries need exact identity work", "CLI-initiated and desktop-initiated sessions may not have identical authority"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independent evaluation pinned to the cloud runtime revision was identified."},
-      "classification": "needs identity research",
-      "classificationReason": "The hosted surface is clear, but the persistent-machine artifact and rolling service boundaries require another identity pass."
+      "applicabilityGaps": [
+        "Droid Computer persistence, hosting region, client and enterprise deployment boundaries need exact identity work",
+        "CLI-initiated and desktop-initiated sessions may not have identical authority"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independent evaluation pinned to the cloud runtime revision was identified."
+      },
+      "classification": "dossier-ready",
+      "classificationReason": "Current publisher documentation distinguishes Factory-managed persistent computers from BYOM machines and from the local CLI while keeping daemon and client revisions separate."
     },
     {
       "id": "warp-cloud-agents",
       "publisher": "Warp",
       "product": "Warp",
-      "surface": "Warp Cloud Agents",
+      "surface": "Oz Cloud Agents (Warp)",
       "category": "hosted-background",
       "deliveryModel": "publisher-hosted background agent sessions with desktop/web orchestration and local-to-cloud handoff",
-      "identity": {"kind": "rolling-service", "value": "rolling cloud-agent platform documented in 2026 product and changelog updates", "frozenForDossier": false},
+      "identity": {
+        "kind": "rolling-service-renamed-platform",
+        "value": "rolling Oz Cloud Agents service reviewed 2026-08-07; Warp is the interactive surface and Oz is the orchestration platform",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Warp agent platform", "url": "https://docs.warp.dev/agent-platform"},
-        {"title": "Warp changelog", "url": "https://docs.warp.dev/changelog"}
+        {
+          "title": "Warp and Oz overview",
+          "url": "https://docs.warp.dev/?fallback=true"
+        },
+        {
+          "title": "Warp changelog",
+          "url": "https://docs.warp.dev/changelog"
+        }
       ],
-      "applicabilityGaps": ["Cloud agent, local Agent Mode and third-party harness orchestration must be separated", "Remote machine, model, trigger channel, permissions and handoff behavior are rolling"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independent evaluation pinned to the cloud-agent service was identified."},
-      "classification": "needs identity research",
-      "classificationReason": "The surface is current, but rapid platform expansion makes its service and client boundary insufficiently frozen."
+      "applicabilityGaps": [
+        "Cloud agent, local Agent Mode and third-party harness orchestration must be separated",
+        "Remote machine, model, trigger channel, permissions and handoff behavior are rolling"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independent evaluation pinned to the cloud-agent service was identified."
+      },
+      "classification": "dossier-ready",
+      "classificationReason": "Current official documentation now names Oz as the orchestration layer and explicitly separates local Warp agents from autonomous cloud-agent execution."
     },
     {
       "id": "amazon-q-developer-github",
@@ -844,13 +1680,30 @@
       "surface": "Amazon Q Developer for GitHub",
       "category": "repository-integrated",
       "deliveryModel": "AWS-hosted GitHub App with development and code-review agents acting on issues and pull requests",
-      "identity": {"kind": "public-preview-rolling-service", "value": "current AWS-documented preview service", "frozenForDossier": false},
+      "identity": {
+        "kind": "public-preview-rolling-service",
+        "value": "current AWS-documented preview service",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Amazon Q Developer for GitHub", "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html"},
-        {"title": "Amazon Q Developer documentation history", "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html"}
+        {
+          "title": "Amazon Q Developer for GitHub",
+          "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html"
+        },
+        {
+          "title": "Amazon Q Developer documentation history",
+          "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html"
+        }
       ],
-      "applicabilityGaps": ["Development and code-review agents are separate sub-surfaces with different triggers", "Preview service, GitHub App installation, AWS registration, region and quota affect applicability"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independent evaluation pinned to this preview service was identified."},
+      "applicabilityGaps": [
+        "Development and code-review agents are separate sub-surfaces with different triggers",
+        "Preview service, GitHub App installation, AWS registration, region and quota affect applicability"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independent evaluation pinned to this preview service was identified."
+      },
       "classification": "watch",
       "classificationReason": "The repository-integrated identity is strong, but preview status and two specialized agent roles warrant a short watch or later split."
     },
@@ -861,13 +1714,30 @@
       "surface": "Claude Agent in Bolt",
       "category": "hosted-background",
       "deliveryModel": "publisher-hosted browser application-development workspace and agent runtime",
-      "identity": {"kind": "named-rolling-service", "value": "Claude Agent is the default current surface; legacy v1 Agent retirement completes 2026-08-03", "frozenForDossier": false},
+      "identity": {
+        "kind": "named-rolling-service",
+        "value": "Claude Agent is the default current surface; legacy v1 Agent retirement completes 2026-08-03",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Bolt release notes", "url": "https://support.bolt.new/release-notes"},
-        {"title": "Switch v1 projects to Claude Agent", "url": "https://support.bolt.new/building/switch-v1-projects"}
+        {
+          "title": "Bolt release notes",
+          "url": "https://support.bolt.new/release-notes"
+        },
+        {
+          "title": "Switch v1 projects to Claude Agent",
+          "url": "https://support.bolt.new/building/switch-v1-projects"
+        }
       ],
-      "applicabilityGaps": ["The final v1-to-Claude migration date falls two days after this registry snapshot", "Model selection, project generation, GitHub integration, database and hosting authority are rolling"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independently evaluated exact Bolt Claude Agent service state was identified."},
+      "applicabilityGaps": [
+        "The final v1-to-Claude migration date falls two days after this registry snapshot",
+        "Model selection, project generation, GitHub integration, database and hosting authority are rolling"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independently evaluated exact Bolt Claude Agent service state was identified."
+      },
       "classification": "watch",
       "classificationReason": "Publisher identity is clear, but the active legacy-to-Claude transition should be rechecked immediately after 2026-08-03."
     },
@@ -878,13 +1748,30 @@
       "surface": "Lovable Agent mode",
       "category": "hosted-background",
       "deliveryModel": "publisher-hosted browser development workspace with agent execution and managed verification tools",
-      "identity": {"kind": "rolling-service-with-dated-milestone", "value": "Agent mode became default 2025-08-11; current rolling service", "frozenForDossier": false},
+      "identity": {
+        "kind": "rolling-service-with-dated-milestone",
+        "value": "Agent mode became default 2025-08-11; current rolling service",
+        "frozenForDossier": false
+      },
       "primarySources": [
-        {"title": "Build in Agent mode", "url": "https://docs.lovable.dev/features/agent-mode"},
-        {"title": "Lovable changelog", "url": "https://docs.lovable.dev/changelog?page=1"}
+        {
+          "title": "Build in Agent mode",
+          "url": "https://docs.lovable.dev/features/agent-mode"
+        },
+        {
+          "title": "Lovable changelog",
+          "url": "https://docs.lovable.dev/changelog?page=1"
+        }
       ],
-      "applicabilityGaps": ["Rolling models, managed testing tools, cloud region and plan affect claims", "Plan mode and Agent mode are mutually scoped alternatives"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independent evaluation with a reproducible Lovable service snapshot was identified."},
+      "applicabilityGaps": [
+        "Rolling models, managed testing tools, cloud region and plan affect claims",
+        "Plan mode and Agent mode are mutually scoped alternatives"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independent evaluation with a reproducible Lovable service snapshot was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "Publisher docs clearly define the acting mode, visible tasks, direct file changes and verification boundaries."
     },
@@ -895,13 +1782,30 @@
       "surface": "v0 hosted development agent",
       "category": "hosted-background",
       "deliveryModel": "publisher-hosted browser editor, agent and sandbox connected to GitHub and Vercel projects",
-      "identity": {"kind": "dated-generation-plus-rolling-service", "value": "major v0 service update released 2026-02-04; rolling agent thereafter", "frozenForDossier": false},
+      "identity": {
+        "kind": "dated-generation-plus-rolling-service",
+        "value": "major v0 service update released 2026-02-04; rolling agent thereafter",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "v0 FAQ and 2026 product update", "url": "https://api2.v0.dev/docs/faqs"},
-        {"title": "v0 documentation", "url": "https://v0.dev/docs"}
+        {
+          "title": "v0 FAQ and 2026 product update",
+          "url": "https://api2.v0.dev/docs/faqs"
+        },
+        {
+          "title": "v0 documentation",
+          "url": "https://v0.dev/docs"
+        }
       ],
-      "applicabilityGaps": ["The service is optimized for web applications and should not be generalized to arbitrary repositories", "GitHub import, Vercel project, sandbox, model and integration choices alter scope"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independent evaluation pinned to the February 2026 service generation was identified."},
+      "applicabilityGaps": [
+        "The service is optimized for web applications and should not be generalized to arbitrary repositories",
+        "GitHub import, Vercel project, sandbox, model and integration choices alter scope"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independent evaluation pinned to the February 2026 service generation was identified."
+      },
       "classification": "dossier-ready",
       "classificationReason": "A dated major service generation and official repository/sandbox boundaries support a rolling hosted dossier."
     },
@@ -912,45 +1816,51 @@
       "surface": "Vercel dashboard and repository-integrated Agent",
       "category": "repository-integrated",
       "deliveryModel": "Vercel-hosted agent with deployment telemetry, connected repository access, sandboxed code suggestions and approval-gated actions",
-      "identity": {"kind": "public-beta-dated-service", "value": "expanded public beta launched 2026-06-30", "frozenForDossier": false},
+      "identity": {
+        "kind": "public-beta-dated-service",
+        "value": "expanded public beta launched 2026-06-30",
+        "frozenForDossier": true
+      },
       "primarySources": [
-        {"title": "Expanded Vercel Agent public beta", "url": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta"},
-        {"title": "Automatic build fix suggestions with Vercel Agent", "url": "https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent"}
+        {
+          "title": "Expanded Vercel Agent public beta",
+          "url": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta"
+        },
+        {
+          "title": "Automatic build fix suggestions with Vercel Agent",
+          "url": "https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent"
+        }
       ],
-      "applicabilityGaps": ["Dashboard investigation, code review, build-fix and approved-action paths have different triggers and authority", "Public beta rollout, connected repository, project permissions, model routing and sandbox behavior are rolling"],
-      "potentialIndependentEvaluation": {"status": "none-identified", "url": null, "note": "No independent evaluation pinned to the expanded June 2026 beta was identified."},
+      "applicabilityGaps": [
+        "Dashboard investigation, code review, build-fix and approved-action paths have different triggers and authority",
+        "Public beta rollout, connected repository, project permissions, model routing and sandbox behavior are rolling"
+      ],
+      "potentialIndependentEvaluation": {
+        "status": "none-identified",
+        "url": null,
+        "note": "No independent evaluation pinned to the expanded June 2026 beta was identified."
+      },
       "classification": "watch",
       "classificationReason": "The service/release identity is unusually clear for a new hosted agent, but public beta rollout and multiple action paths should settle before dossier capture."
     }
   ],
-  "nextBatch": [
-    {
-      "order": 1,
-      "id": "anomaly-opencode-cli",
-      "independentEvaluationSchemaTest": false,
-      "reason": "OpenCode CLI v1.18.11 supplies an immutable open-source client boundary while model provider, model revision, Plan/Build mode, permissions and tools remain separately scoped. No independent evaluation is designated because the refreshed verified Terminal-Bench listing does not expose an OpenCode entry."
-    },
-    {
-      "order": 2,
-      "id": "cognition-devin-desktop-cascade",
-      "independentEvaluationSchemaTest": false,
-      "reason": "Cascade in Devin Desktop v3.6.27 adds a versioned desktop client over rolling model and service state, with a publisher-documented Windsurf-to-Devin identity transition and mutually distinct Cascade, Devin Local and ACP agent alternatives."
-    },
-    {
-      "order": 3,
-      "id": "gitlab-duo-code-review-flow",
-      "independentEvaluationSchemaTest": false,
-      "reason": "GitLab 19.2 Code Review Flow adds a non-authoring repository-review authority model with CI/CD runner execution, service-account identity, multiple trigger and approval paths, selectable models and explicit GitLab.com, Self-Managed and Dedicated scope."
-    }
-  ],
+  "nextBatch": [],
   "boundaries": {
     "noSuitabilityAssessment": true,
     "noRanking": true,
     "noRecommendation": true,
     "noProductTesting": true,
-    "noSelectedBatchDossiersCreated": true,
+    "noSelectedBatchDossiersCreated": false,
     "notPublished": true,
-    "independentEvaluationLimitForNextBatch": 1,
-    "countMeaning": "Registry coverage and dossier readiness only; accepted fixture IDs retained in records are excluded from pending-candidate counts, and no count implies product quality, importance or suitability."
+    "independentEvaluationLimitForNextBatch": 0,
+    "countMeaning": "Registry coverage and dossier completion only; no count implies product quality, importance or suitability."
+  },
+  "criticalMassAdmission": {
+    "sourcePath": "../critical-mass-expansion/admission-source.json",
+    "reviewedAt": "2026-08-07T08:00:00Z",
+    "admittedCandidateCount": 39,
+    "completedSurfaceCount": 55,
+    "currentRecordCount": 53,
+    "retainedHistoryRecordCount": 8
   }
 }

@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/openai-codex-cloud-rolling/dossier-source.json",
+    "sha256": "02edb2786f290508efcd0505cb165b5a9cb30975ace11ee15a12c9743948527e",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.openai.codex.cloud.rolling",
+    "agent": {
+      "id": "com.openai.codex.cloud",
+      "name": "Codex cloud agent"
+    },
+    "publisher": {
+      "id": "openai",
+      "name": "OpenAI"
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Codex cloud/web agent",
+      "slug": "openai-codex-cloud-rolling",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Codex cloud rolling service",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "openai-codex-cloud-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://developers.openai.com/codex/cloud/",
+        "ecosystem": "Codex cloud rolling service",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "openai",
+        "name": "OpenAI",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-current",
+      "uri": "https://developers.openai.com/codex/cloud/",
+      "title": "Codex cloud overview",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://developers.openai.com/codex/cloud/environments",
+      "title": "Codex cloud environments",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "openai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Codex cloud/web agent",
+            "claimIds": [
+              "com.openai.codex.cloud.identity-current",
+              "com.openai.codex.cloud.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Cloud task environment, model and account plan are rolling",
+          "Codex CLI and IDE evidence must not be applied to this hosted runtime"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.openai.codex.cloud.identity-current",
+      "rawRecordPath": "dossiers/openai-codex-cloud-rolling/claims/openai-codex-cloud-rolling/identity-current.json",
+      "rawRecordSha256": "f02b37ca967728d7154106f103d3e68700bc4ad23feeaf45f9cff8255e4cc850",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cloud.identity-current",
+        "slug": "identity-current",
+        "subject": {
+          "id": "com.openai.codex.cloud",
+          "name": "Codex cloud agent",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Codex cloud/web agent",
+            "slug": "openai-codex-cloud-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "OpenAI's official source names and documents Codex cloud/web agent as a distinct current software-development agent surface in the reviewed Codex cloud rolling service."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://developers.openai.com/codex/cloud/",
+          "title": "Codex cloud overview",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "Cloud task environment, model and account plan are rolling",
+          "Codex CLI and IDE evidence must not be applied to this hosted runtime"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.openai.codex.cloud.delivery-boundary-current",
+      "rawRecordPath": "dossiers/openai-codex-cloud-rolling/claims/openai-codex-cloud-rolling/delivery-boundary-current.json",
+      "rawRecordSha256": "a8b602dd876c58826ea92d955d474dba318af9815dc35bad6321617172fb7476",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.openai.codex.cloud.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.openai.codex.cloud",
+          "name": "Codex cloud agent",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Codex cloud/web agent",
+            "slug": "openai-codex-cloud-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "OpenAI's official documentation describes Codex cloud/web agent as a publisher-hosted service; the catalog keeps that delivery path separate from other Codex surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "OpenAI"
+        },
+        "source": {
+          "uri": "https://developers.openai.com/codex/cloud/environments",
+          "title": "Codex cloud environments",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "Cloud task environment, model and account plan are rolling",
+          "Codex CLI and IDE evidence must not be applied to this hosted runtime"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "openai",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-openai-codex-cloud-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Codex cloud agent is represented only as the Codex cloud/web agent surface at the reviewed Codex cloud rolling service boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Codex cloud/web agent is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceId": "source-identity-current",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Cloud task environment, model and account plan are rolling",
+      "Codex CLI and IDE evidence must not be applied to this hosted runtime",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "OpenAI's official source names and documents Codex cloud/web agent as a distinct current software-development agent surface in the reviewed Codex cloud rolling service.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.openai.codex.cloud.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hosted",
+        "tone": "attention",
+        "answer": "OpenAI's official documentation describes Codex cloud/web agent as a publisher-hosted service; the catalog keeps that delivery path separate from other Codex surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.openai.codex.cloud.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.openai.codex.cloud.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

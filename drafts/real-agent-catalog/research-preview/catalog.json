@@ -1,7 +1,7 @@
 {
   "schemaVersion": "agent-evidence-research-preview/0.1-draft",
   "artifactType": "unpublished-maintainer-curated-research-preview",
-  "asOf": "2026-08-02",
+  "asOf": "2026-08-07",
   "releaseCandidateStatus": "ready-for-release-review",
   "boundaries": {
     "static": true,
@@ -21,6 +21,10 @@
     "currentnessReceiptPath": "drafts/research-preview-release/currentness-2026-08-02/currentness-receipt.json",
     "currentnessLifecyclePath": "drafts/research-preview-release/currentness-2026-08-02/lifecycle-overlay.json",
     "currentnessLifecycleSha256": "e1bca6067071205e5e60c101f634243dd871f6ab961feb1fa74942e28ed34db7",
+    "criticalMassAdmissionPath": "drafts/real-agent-catalog/critical-mass-expansion/admission-source.json",
+    "criticalMassAdmissionSha256": "6b8c58e102cf9168bc20ac7ff4f23ff4195901e1c03654dbbc6e287e0eab9b18",
+    "criticalMassLifecyclePath": "drafts/real-agent-catalog/critical-mass-expansion/lifecycle-additions.json",
+    "criticalMassLifecycleSha256": "70ef0ba556b0b0a16c4c160286fcebbb5289532d6a93b95ff4da2490acc23a67",
     "baseWatcherSha256": "c2ccb0379cb2e9f84faf4e6008db68bb6c345898d8302d331887fa0d34400954",
     "unifiedLifecyclePath": "drafts/real-agent-catalog/research-preview/lifecycle.json",
     "unifiedWatcherPath": "drafts/real-agent-catalog/research-preview/source-registry.json",
@@ -28,13 +32,341 @@
   },
   "gates": {},
   "counts": {
-    "surfaces": 16,
-    "currentLifecycleRecords": 16,
-    "currentRecordsPresented": 16,
-    "recordsPresentedIncludingHistory": 22,
+    "surfaces": 55,
+    "currentLifecycleRecords": 53,
+    "currentRecordsPresented": 53,
+    "recordsPresentedIncludingHistory": 61,
     "independentTestsCredited": 0
   },
   "surfaces": [
+    {
+      "surfaceKey": "ai.factory.droid-computers.service",
+      "currentRecordId": "ai.factory.droid-computers.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "ai.factory.droid-computers.rolling",
+        "name": "Factory-managed Droid Computers",
+        "publisher": "Factory AI",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Factory-managed Droid Computers",
+          "slug": "factory-droid-computers-rolling",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Factory-managed persistent Droid Computers",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/ai.factory.droid-computers.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Factory-managed Droid Computers boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "ai.factory.droid.cli.release-stream",
+      "currentRecordId": "ai.factory.droid.cli.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "ai.factory.droid.cli.rolling",
+        "name": "Droid CLI",
+        "publisher": "Factory AI",
+        "surface": {
+          "kind": "cli",
+          "name": "Droid CLI",
+          "slug": "factory-droid-cli-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "unresolved",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Droid CLI rolling release stream",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/ai.factory.droid.cli.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Droid CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "ai.mistral.vibe-code.vscode-extension.service",
+      "currentRecordId": "ai.mistral.vibe-code.vscode-extension.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "ai.mistral.vibe-code.vscode-extension.rolling",
+        "name": "Vibe Code VS Code extension",
+        "publisher": "Mistral AI",
+        "surface": {
+          "kind": "ide-extension",
+          "name": "Vibe Code VS Code extension",
+          "slug": "mistral-vibe-code-vscode-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Vibe 2.0 extension and rolling service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/ai.mistral.vibe-code.vscode-extension.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Vibe Code VS Code extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "ai.mistral.vibe-code.web.service",
+      "currentRecordId": "ai.mistral.vibe-code.web.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "ai.mistral.vibe-code.web.rolling",
+        "name": "Vibe Code Web",
+        "publisher": "Mistral AI",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Vibe Code Web",
+          "slug": "mistral-vibe-code-web-rolling",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Vibe Code Web rolling service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/ai.mistral.vibe-code.web.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Vibe Code Web boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "ai.mistral.vibe.cli.release-stream",
+      "currentRecordId": "ai.mistral.vibe.cli.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "ai.mistral.vibe.cli.rolling",
+        "name": "Vibe CLI",
+        "publisher": "Mistral AI",
+        "surface": {
+          "kind": "cli",
+          "name": "Vibe CLI",
+          "slug": "mistral-vibe-cli-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "unresolved",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Vibe 2.0 CLI release family",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/ai.mistral.vibe.cli.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Vibe CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
+      "currentRecordId": "com.alibaba.qwen-code.cli.0-21-7",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.alibaba.qwen-code.cli.0-21-7",
+        "name": "Qwen Code CLI",
+        "publisher": "Alibaba Cloud Qwen team",
+        "surface": {
+          "kind": "cli",
+          "name": "Qwen Code CLI",
+          "slug": "alibaba-qwen-code-cli-0-21-7",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "0.21.7",
+          "releaseTag": "v0.21.7",
+          "sourceRevision": null,
+          "releasedAt": "2026-08-06T23:19:06Z",
+          "channel": "Qwen Code CLI release stream",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.alibaba.qwen-code.cli.0-21-7.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Qwen Code CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.alibaba.qwen-code.vscode-extension.beta",
+      "currentRecordId": "com.alibaba.qwen-code.vscode-extension.beta-rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.alibaba.qwen-code.vscode-extension.beta-rolling",
+        "name": "Qwen Code VS Code extension",
+        "publisher": "Alibaba Cloud Qwen team",
+        "surface": {
+          "kind": "ide-extension",
+          "name": "Qwen Code VS Code extension",
+          "slug": "alibaba-qwen-code-vscode-beta",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Qwen Code VS Code integration beta",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.alibaba.qwen-code.vscode-extension.beta-rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Qwen Code VS Code extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.amazon.kiro.cli.release-stream",
+      "currentRecordId": "com.amazon.kiro.cli.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.amazon.kiro.cli.rolling",
+        "name": "Kiro CLI",
+        "publisher": "Amazon Web Services",
+        "surface": {
+          "kind": "cli",
+          "name": "Kiro CLI",
+          "slug": "aws-kiro-cli-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "unresolved",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Kiro CLI auto-updating release stream",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.amazon.kiro.cli.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Kiro CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
     {
       "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
       "currentRecordId": "com.amazon.kiro.ide.1-0-242",
@@ -233,6 +565,129 @@
         "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/com.amazon.kiro.ide.1-0-242.json",
         "mappingPath": null,
         "lifecycleNote": "The publisher IDE changelog lists 1.0.242 as the latest 1.0.x patch on the reviewed date."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.amazon.kiro.web.preview",
+      "currentRecordId": "com.amazon.kiro.web.preview-rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.amazon.kiro.web.preview-rolling",
+        "name": "Kiro Web",
+        "publisher": "Amazon Web Services",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Kiro Web",
+          "slug": "aws-kiro-web-preview",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Kiro Web public preview",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.amazon.kiro.web.preview-rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Kiro Web boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.amazon.q-developer.github.preview",
+      "currentRecordId": "com.amazon.q-developer.github.preview-rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.amazon.q-developer.github.preview-rolling",
+        "name": "Amazon Q Developer for GitHub",
+        "publisher": "Amazon Web Services",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Amazon Q Developer for GitHub",
+          "slug": "amazon-q-developer-github-preview",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Amazon Q Developer for GitHub public preview",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.amazon.q-developer.github.preview-rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Amazon Q Developer for GitHub boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.amazon.q-developer.ide-plugins.supported-sunset",
+      "currentRecordId": "com.amazon.q-developer.ide-plugins.sunset",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.amazon.q-developer.ide-plugins.sunset",
+        "name": "Amazon Q Developer IDE plugins",
+        "publisher": "Amazon Web Services",
+        "surface": {
+          "kind": "ide-extension",
+          "name": "Amazon Q Developer IDE plugins",
+          "slug": "aws-amazon-q-developer-ide-sunset",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Existing-customer support through 2027-04-30",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.amazon.q-developer.ide-plugins.sunset.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Amazon Q Developer IDE plugins boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
       },
       "gate": null,
       "history": []
@@ -660,6 +1115,129 @@
           "lifecycleNote": "The publisher latest-release endpoint resolves to v2.1.220. No superseding catalog record exists yet, so the direct record link remains null rather than naming an uncreated fixture. The additive research-preview lifecycle supplies the reciprocal current-record link without changing the accepted record."
         }
       ]
+    },
+    {
+      "surfaceKey": "com.augmentcode.agent.ide.plugins",
+      "currentRecordId": "com.augmentcode.agent.ide.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.augmentcode.agent.ide.rolling",
+        "name": "Augment Agent in IDE",
+        "publisher": "Augment Code",
+        "surface": {
+          "kind": "ide-extension",
+          "name": "Augment Agent in VS Code and JetBrains IDEs",
+          "slug": "augment-ide-agent-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Versioned IDE plugins plus rolling Augment services",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.augmentcode.agent.ide.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Augment Agent in VS Code and JetBrains IDEs boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.augmentcode.auggie.cli.release-stream",
+      "currentRecordId": "com.augmentcode.auggie.cli.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.augmentcode.auggie.cli.rolling",
+        "name": "Auggie CLI",
+        "publisher": "Augment Code",
+        "surface": {
+          "kind": "cli",
+          "name": "Auggie CLI",
+          "slug": "augment-auggie-cli-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "unresolved",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Auggie auto-updating CLI",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.augmentcode.auggie.cli.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Auggie CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.cline.bot.cli.release-stream",
+      "currentRecordId": "com.cline.bot.cli.3-0-51",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.cline.bot.cli.3-0-51",
+        "name": "Cline CLI",
+        "publisher": "Cline Bot Inc.",
+        "surface": {
+          "kind": "cli",
+          "name": "Cline CLI",
+          "slug": "cline-cli-3-0-51",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "3.0.51",
+          "releaseTag": "cli-v3.0.51",
+          "sourceRevision": null,
+          "releasedAt": "2026-08-06T07:46:56Z",
+          "channel": "Cline CLI release stream",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.cline.bot.cli.3-0-51.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Cline CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
     },
     {
       "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
@@ -1285,6 +1863,90 @@
       "history": []
     },
     {
+      "surfaceKey": "com.continue.dev.ide-agent.final",
+      "currentRecordId": null,
+      "currentRecordAvailable": false,
+      "currentRecord": null,
+      "gate": null,
+      "history": [
+        {
+          "recordId": "com.continue.dev.ide-agent.2-0-0",
+          "name": "Continue IDE Agent mode",
+          "publisher": "Continue Dev, Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Continue IDE extension Agent mode",
+            "slug": "continue-vscode-agent-2-0-0",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "2.0.0",
+            "releaseTag": null,
+            "sourceRevision": null,
+            "releasedAt": null,
+            "channel": "Final Continue IDE extension line",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [],
+              "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+            }
+          },
+          "lifecycleStatus": "historical",
+          "reviewedAt": "2026-08-07",
+          "claimCount": 2,
+          "sourceCount": 2,
+          "unknownCount": 4,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.continue.dev.ide-agent.2-0-0.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+          "lifecycleNote": "Final 2.0.0 IDE agent line retained after the publisher marked the repository read-only and no longer actively maintained. The accepted record remains publisher-source attribution only."
+        }
+      ]
+    },
+    {
+      "surfaceKey": "com.cursor.cloud-agents.service",
+      "currentRecordId": "com.cursor.cloud-agents.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.cursor.cloud-agents.rolling",
+        "name": "Cursor Cloud Agents",
+        "publisher": "Anysphere",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Cursor Cloud Agents (formerly Background Agents)",
+          "slug": "cursor-cloud-agents-rolling",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Renamed Cursor Cloud Agents service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.cursor.cloud-agents.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Cursor Cloud Agents (formerly Background Agents) boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
       "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
       "currentRecordId": "com.cursor.ide.foreground-agent.3-14",
       "currentRecordAvailable": true,
@@ -1340,6 +2002,88 @@
       "history": []
     },
     {
+      "surfaceKey": "com.github.anthropic.claude-agent.preview",
+      "currentRecordId": "com.github.anthropic.claude-agent.preview-rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.github.anthropic.claude-agent.preview-rolling",
+        "name": "Claude coding agent on GitHub",
+        "publisher": "GitHub and Anthropic",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "GitHub-hosted third-party Claude coding agent",
+          "slug": "github-anthropic-claude-agent-preview",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "GitHub third-party coding agents public preview",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.github.anthropic.claude-agent.preview-rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed GitHub-hosted third-party Claude coding agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.github.copilot.cli.release-stream",
+      "currentRecordId": "com.github.copilot.cli.1-0-78",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.github.copilot.cli.1-0-78",
+        "name": "GitHub Copilot CLI",
+        "publisher": "GitHub",
+        "surface": {
+          "kind": "cli",
+          "name": "GitHub Copilot CLI",
+          "slug": "github-copilot-cli-1-0-78",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "1.0.78",
+          "releaseTag": "v1.0.78",
+          "sourceRevision": null,
+          "releasedAt": "2026-08-03T23:30:25Z",
+          "channel": "GitHub Copilot CLI release stream plus rolling service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.github.copilot.cli.1-0-78.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed GitHub Copilot CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
       "surfaceKey": "com.github.copilot.cloud-agent.rolling-service",
       "currentRecordId": "com.github.copilot.cloud-agent.rolling",
       "currentRecordAvailable": true,
@@ -1379,6 +2123,88 @@
         "recordPath": "drafts/real-agent-catalog/records/com.github.copilot.cloud-agent.rolling.json",
         "mappingPath": null,
         "lifecycleNote": "Current means the rolling hosted surface remains offered as of review; it does not identify an immutable service or model revision."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.github.copilot.vscode-agent.local-host",
+      "currentRecordId": "com.github.copilot.vscode-agent.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.github.copilot.vscode-agent.rolling",
+        "name": "Copilot agent harness in Visual Studio Code",
+        "publisher": "GitHub and Microsoft",
+        "surface": {
+          "kind": "ide-extension",
+          "name": "Copilot agent harness in Visual Studio Code",
+          "slug": "github-copilot-vscode-agent-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Versioned VS Code client plus rolling Copilot service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.github.copilot.vscode-agent.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Copilot agent harness in Visual Studio Code boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.github.openai.codex-agent.preview",
+      "currentRecordId": "com.github.openai.codex-agent.preview-rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.github.openai.codex-agent.preview-rolling",
+        "name": "Codex coding agent on GitHub",
+        "publisher": "GitHub and OpenAI",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "GitHub-hosted third-party Codex coding agent",
+          "slug": "github-openai-codex-agent-preview",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "GitHub third-party coding agents public preview",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.github.openai.codex-agent.preview-rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed GitHub-hosted third-party Codex coding agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
       },
       "gate": null,
       "history": []
@@ -1512,6 +2338,211 @@
       ]
     },
     {
+      "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
+      "currentRecordId": "com.gitlab.duo.code-review-flow.19-2",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.gitlab.duo.code-review-flow.19-2",
+        "name": "GitLab Code Review Flow",
+        "publisher": "GitLab",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Code Review Flow",
+          "slug": "gitlab-duo-code-review-flow-19-2",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "19.2.0-ee",
+          "releaseTag": "v19.2.0-ee",
+          "sourceRevision": null,
+          "releasedAt": "2026-07-16T00:00:00Z",
+          "channel": "GitLab 19.2 release line plus rolling Agent Platform service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 6,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.gitlab.duo.code-review-flow.19-2.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Code Review Flow boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.gitlab.duo.software-development-flow.service",
+      "currentRecordId": "com.gitlab.duo.software-development-flow.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.gitlab.duo.software-development-flow.rolling",
+        "name": "GitLab Software Development Flow",
+        "publisher": "GitLab",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Software Development Flow",
+          "slug": "gitlab-duo-software-development-flow-rolling",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "GitLab release-scoped Agent Platform service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.gitlab.duo.software-development-flow.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Software Development Flow boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.google.antigravity.cli.release-stream",
+      "currentRecordId": "com.google.antigravity.cli.1-1-11",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.google.antigravity.cli.1-1-11",
+        "name": "Antigravity CLI",
+        "publisher": "Google",
+        "surface": {
+          "kind": "cli",
+          "name": "Antigravity CLI",
+          "slug": "google-antigravity-cli-1-1-11",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "1.1.11",
+          "releaseTag": "1.1.11",
+          "sourceRevision": null,
+          "releasedAt": "2026-08-07T02:35:23Z",
+          "channel": "Antigravity CLI release stream",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.google.antigravity.cli.1-1-11.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Antigravity CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.google.gemini-code-assist.ide-agent.service",
+      "currentRecordId": "com.google.gemini-code-assist.ide-agent.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.google.gemini-code-assist.ide-agent.rolling",
+        "name": "Gemini Code Assist IDE agent mode",
+        "publisher": "Google",
+        "surface": {
+          "kind": "ide-extension",
+          "name": "IDE agent mode",
+          "slug": "google-gemini-code-assist-agent-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Audience-dependent Gemini Code Assist service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.google.gemini-code-assist.ide-agent.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed IDE agent mode boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.google.gemini.cli.release-stream",
+      "currentRecordId": "com.google.gemini.cli.0-54-4",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.google.gemini.cli.0-54-4",
+        "name": "Gemini CLI",
+        "publisher": "Google",
+        "surface": {
+          "kind": "cli",
+          "name": "Gemini CLI",
+          "slug": "google-gemini-cli-0-54-4",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "0.54.4",
+          "releaseTag": "v0.54.4",
+          "sourceRevision": null,
+          "releasedAt": "2026-08-07T04:44:19Z",
+          "channel": "Gemini CLI release stream",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.google.gemini.cli.0-54-4.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Gemini CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
       "surfaceKey": "com.google.jules.hosted.rolling-service",
       "currentRecordId": "com.google.jules.hosted.rolling",
       "currentRecordAvailable": true,
@@ -1551,6 +2582,88 @@
         "recordPath": "drafts/real-agent-catalog/records/com.google.jules.hosted.rolling.json",
         "mappingPath": null,
         "lifecycleNote": "Current means the rolling hosted surface remains documented as of review; undisclosed runtime and model revisions remain unresolved."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.jetbrains.junie.cli.beta",
+      "currentRecordId": "com.jetbrains.junie.cli.beta-rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.jetbrains.junie.cli.beta-rolling",
+        "name": "Junie CLI",
+        "publisher": "JetBrains",
+        "surface": {
+          "kind": "cli",
+          "name": "Junie CLI",
+          "slug": "jetbrains-junie-cli-beta",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Junie CLI public beta",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.jetbrains.junie.cli.beta-rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Junie CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
+      "currentRecordId": "com.jetbrains.junie.ide-plugin.262-132-31",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.jetbrains.junie.ide-plugin.262-132-31",
+        "name": "Junie IDE plugin",
+        "publisher": "JetBrains",
+        "surface": {
+          "kind": "ide-extension",
+          "name": "Junie IDE plugin",
+          "slug": "jetbrains-junie-ide-262-132-31",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "262.132.31",
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": "2026-07-28T00:00:00Z",
+          "channel": "JetBrains Marketplace stable plugin",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.jetbrains.junie.ide-plugin.262-132-31.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Junie IDE plugin boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
       },
       "gate": null,
       "history": []
@@ -1811,6 +2924,88 @@
       ]
     },
     {
+      "surfaceKey": "com.openai.codex.cloud.service",
+      "currentRecordId": "com.openai.codex.cloud.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.openai.codex.cloud.rolling",
+        "name": "Codex cloud agent",
+        "publisher": "OpenAI",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Codex cloud/web agent",
+          "slug": "openai-codex-cloud-rolling",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Codex cloud rolling service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.openai.codex.cloud.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Codex cloud/web agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.openai.codex.ide-extension.service",
+      "currentRecordId": "com.openai.codex.ide-extension.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.openai.codex.ide-extension.rolling",
+        "name": "Codex IDE extension",
+        "publisher": "OpenAI",
+        "surface": {
+          "kind": "ide-extension",
+          "name": "Codex IDE extension",
+          "slug": "openai-codex-ide-extension-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Versioned IDE extension plus rolling Codex service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.openai.codex.ide-extension.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Codex IDE extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
       "surfaceKey": "com.replit.agent.hosted.agent-4-service",
       "currentRecordId": "com.replit.agent.hosted.agent-4",
       "currentRecordAvailable": true,
@@ -1966,6 +3161,336 @@
         "recordPath": "drafts/real-agent-catalog/records/com.replit.agent.hosted.agent-4.json",
         "mappingPath": null,
         "lifecycleNote": "Current is scoped to the Agent 4 generation anchor and rolling Replit-managed service as of review; no Agent 5 publisher identity was identified in the bounded audit."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.roocode.vscode-extension.final",
+      "currentRecordId": null,
+      "currentRecordAvailable": false,
+      "currentRecord": null,
+      "gate": null,
+      "history": [
+        {
+          "recordId": "com.roocode.vscode-extension.3-54-0",
+          "name": "Roo Code VS Code extension",
+          "publisher": "Roo Code, Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Roo Code VS Code extension",
+            "slug": "roo-code-vscode-3-54-0",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "3.54.0",
+            "releaseTag": "v3.54.0",
+            "sourceRevision": null,
+            "releasedAt": null,
+            "channel": "Final Roo Code VS Code extension release",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [],
+              "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+            }
+          },
+          "lifecycleStatus": "discontinued",
+          "reviewedAt": "2026-08-07",
+          "claimCount": 2,
+          "sourceCount": 2,
+          "unknownCount": 4,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.roocode.vscode-extension.3-54-0.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+          "lifecycleNote": "Final exact extension release retained after the publisher-announced 2026-05-15 shutdown. The accepted record remains publisher-source attribution only."
+        }
+      ]
+    },
+    {
+      "surfaceKey": "com.sourcegraph.amp.cli.release-stream",
+      "currentRecordId": "com.sourcegraph.amp.cli.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.sourcegraph.amp.cli.rolling",
+        "name": "Amp CLI",
+        "publisher": "Sourcegraph",
+        "surface": {
+          "kind": "cli",
+          "name": "Amp CLI",
+          "slug": "amp-cli-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "unresolved",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Amp rolling client and service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.sourcegraph.amp.cli.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Amp CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.stackblitz.bolt.claude-agent.service",
+      "currentRecordId": "com.stackblitz.bolt.claude-agent.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.stackblitz.bolt.claude-agent.rolling",
+        "name": "Claude Agent in Bolt",
+        "publisher": "StackBlitz",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Claude Agent in Bolt",
+          "slug": "stackblitz-bolt-claude-agent-rolling",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Bolt Claude Agent rolling service after v1 retirement",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.stackblitz.bolt.claude-agent.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Claude Agent in Bolt boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.tabnine.agent.ide.deployment-lines",
+      "currentRecordId": "com.tabnine.agent.ide.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.tabnine.agent.ide.rolling",
+        "name": "Tabnine Agent in IDE",
+        "publisher": "Tabnine",
+        "surface": {
+          "kind": "ide-extension",
+          "name": "Tabnine Agent in IDE",
+          "slug": "tabnine-agent-ide-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Plugin and deployment-specific release lines",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.tabnine.agent.ide.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Tabnine Agent in IDE boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.vercel.agent.public-beta",
+      "currentRecordId": "com.vercel.agent.public-beta",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.vercel.agent.public-beta",
+        "name": "Vercel Agent",
+        "publisher": "Vercel",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Vercel dashboard and repository-integrated Agent",
+          "slug": "vercel-agent-public-beta",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": "2026-06-30T00:00:00Z",
+          "channel": "Expanded Vercel Agent public beta",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.vercel.agent.public-beta.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Vercel dashboard and repository-integrated Agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "com.vercel.v0.agent.service",
+      "currentRecordId": "com.vercel.v0.agent.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "com.vercel.v0.agent.rolling",
+        "name": "v0 hosted development agent",
+        "publisher": "Vercel",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "v0 hosted development agent",
+          "slug": "vercel-v0-agent-rolling",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "v0 rolling hosted development service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.vercel.v0.agent.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed v0 hosted development agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "dev.warp.oz.cloud-agents.service",
+      "currentRecordId": "dev.warp.oz.cloud-agents.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "dev.warp.oz.cloud-agents.rolling",
+        "name": "Oz Cloud Agents",
+        "publisher": "Warp",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "Oz Cloud Agents (Warp)",
+          "slug": "warp-oz-cloud-agents-rolling",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Oz Cloud Agents rolling service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/dev.warp.oz.cloud-agents.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Oz Cloud Agents (Warp) boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "dev.warp.oz.local-agent.desktop",
+      "currentRecordId": "dev.warp.oz.local-agent.desktop.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "dev.warp.oz.local-agent.desktop.rolling",
+        "name": "Oz local Agent in Warp desktop",
+        "publisher": "Warp",
+        "surface": {
+          "kind": "desktop-app",
+          "name": "Agent Mode in Warp desktop terminal",
+          "slug": "warp-agent-mode-desktop-rolling",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "unresolved",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "Warp desktop client plus Oz local agent service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/dev.warp.oz.local-agent.desktop.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Agent Mode in Warp desktop terminal boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
       },
       "gate": null,
       "history": []
@@ -2158,6 +3683,47 @@
       ]
     },
     {
+      "surfaceKey": "org.aaif.goose.cli.release-stream",
+      "currentRecordId": "org.aaif.goose.cli.1-45-0",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "org.aaif.goose.cli.1-45-0",
+        "name": "Goose CLI",
+        "publisher": "Agentic AI Foundation",
+        "surface": {
+          "kind": "cli",
+          "name": "Goose CLI",
+          "slug": "aaif-goose-cli-1-45-0",
+          "deliveryModel": "hybrid"
+        },
+        "release": {
+          "scope": "exact-version",
+          "version": "1.45.0",
+          "releaseTag": "v1.45.0",
+          "sourceRevision": null,
+          "releasedAt": "2026-07-29T20:11:39Z",
+          "channel": "AAIF Goose release stream",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/org.aaif.goose.cli.1-45-0.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed Goose CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
       "surfaceKey": "org.aider-ai.aider.cli.stable",
       "currentRecordId": "org.aider-ai.aider.cli.0-86-0",
       "currentRecordAvailable": true,
@@ -2279,6 +3845,47 @@
         "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/org.aider-ai.aider.cli.0-86-0.json",
         "mappingPath": null,
         "lifecycleNote": "The publisher latest-release endpoint still resolves to v0.86.0; release age alone is not treated as supersession."
+      },
+      "gate": null,
+      "history": []
+    },
+    {
+      "surfaceKey": "org.openhands.cloud.service",
+      "currentRecordId": "org.openhands.cloud.rolling",
+      "currentRecordAvailable": true,
+      "currentRecord": {
+        "recordId": "org.openhands.cloud.rolling",
+        "name": "OpenHands Cloud",
+        "publisher": "OpenHands AI",
+        "surface": {
+          "kind": "hosted-service",
+          "name": "OpenHands Cloud",
+          "slug": "openhands-cloud-rolling",
+          "deliveryModel": "hosted"
+        },
+        "release": {
+          "scope": "rolling-service",
+          "version": null,
+          "releaseTag": null,
+          "sourceRevision": null,
+          "releasedAt": null,
+          "channel": "OpenHands Cloud rolling service",
+          "installedRuntimeVariant": {
+            "status": "unresolved",
+            "value": null,
+            "alternatives": [],
+            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+          }
+        },
+        "lifecycleStatus": "current",
+        "reviewedAt": "2026-08-07",
+        "claimCount": 2,
+        "sourceCount": 2,
+        "unknownCount": 4,
+        "independentTestCount": 0,
+        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/org.openhands.cloud.rolling.json",
+        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+        "lifecycleNote": "Official publisher sources identify this as the current reviewed OpenHands Cloud boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
       },
       "gate": null,
       "history": []
@@ -4503,6 +6110,1332 @@
       "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.gitlab.duo.developer-flow.19-2-1.json",
       "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/gitlab-duo-developer-flow-19-2-1-mapping.json",
       "lifecycleNote": "The protected v19.2.1-ee tag is current for the exact patch identity. The 19.2 feature line and rolling Agent Platform service, runner, model and project configuration remain separate applicability boundaries."
+    },
+    {
+      "recordId": "com.google.gemini.cli.0-54-4",
+      "name": "Gemini CLI",
+      "publisher": "Google",
+      "surface": {
+        "kind": "cli",
+        "name": "Gemini CLI",
+        "slug": "google-gemini-cli-0-54-4",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "0.54.4",
+        "releaseTag": "v0.54.4",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-07T04:44:19Z",
+        "channel": "Gemini CLI release stream",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.google.gemini.cli.0-54-4.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Gemini CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.google.antigravity.cli.1-1-11",
+      "name": "Antigravity CLI",
+      "publisher": "Google",
+      "surface": {
+        "kind": "cli",
+        "name": "Antigravity CLI",
+        "slug": "google-antigravity-cli-1-1-11",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.1.11",
+        "releaseTag": "1.1.11",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-07T02:35:23Z",
+        "channel": "Antigravity CLI release stream",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.google.antigravity.cli.1-1-11.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Antigravity CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "org.aaif.goose.cli.1-45-0",
+      "name": "Goose CLI",
+      "publisher": "Agentic AI Foundation",
+      "surface": {
+        "kind": "cli",
+        "name": "Goose CLI",
+        "slug": "aaif-goose-cli-1-45-0",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.45.0",
+        "releaseTag": "v1.45.0",
+        "sourceRevision": null,
+        "releasedAt": "2026-07-29T20:11:39Z",
+        "channel": "AAIF Goose release stream",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/org.aaif.goose.cli.1-45-0.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Goose CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.alibaba.qwen-code.cli.0-21-7",
+      "name": "Qwen Code CLI",
+      "publisher": "Alibaba Cloud Qwen team",
+      "surface": {
+        "kind": "cli",
+        "name": "Qwen Code CLI",
+        "slug": "alibaba-qwen-code-cli-0-21-7",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "0.21.7",
+        "releaseTag": "v0.21.7",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-06T23:19:06Z",
+        "channel": "Qwen Code CLI release stream",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.alibaba.qwen-code.cli.0-21-7.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Qwen Code CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "ai.mistral.vibe.cli.rolling",
+      "name": "Vibe CLI",
+      "publisher": "Mistral AI",
+      "surface": {
+        "kind": "cli",
+        "name": "Vibe CLI",
+        "slug": "mistral-vibe-cli-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "unresolved",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Vibe 2.0 CLI release family",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/ai.mistral.vibe.cli.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Vibe CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.sourcegraph.amp.cli.rolling",
+      "name": "Amp CLI",
+      "publisher": "Sourcegraph",
+      "surface": {
+        "kind": "cli",
+        "name": "Amp CLI",
+        "slug": "amp-cli-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "unresolved",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Amp rolling client and service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.sourcegraph.amp.cli.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Amp CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.github.copilot.cli.1-0-78",
+      "name": "GitHub Copilot CLI",
+      "publisher": "GitHub",
+      "surface": {
+        "kind": "cli",
+        "name": "GitHub Copilot CLI",
+        "slug": "github-copilot-cli-1-0-78",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.0.78",
+        "releaseTag": "v1.0.78",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-03T23:30:25Z",
+        "channel": "GitHub Copilot CLI release stream plus rolling service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.github.copilot.cli.1-0-78.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed GitHub Copilot CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.jetbrains.junie.cli.beta-rolling",
+      "name": "Junie CLI",
+      "publisher": "JetBrains",
+      "surface": {
+        "kind": "cli",
+        "name": "Junie CLI",
+        "slug": "jetbrains-junie-cli-beta",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Junie CLI public beta",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.jetbrains.junie.cli.beta-rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Junie CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.amazon.kiro.cli.rolling",
+      "name": "Kiro CLI",
+      "publisher": "Amazon Web Services",
+      "surface": {
+        "kind": "cli",
+        "name": "Kiro CLI",
+        "slug": "aws-kiro-cli-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "unresolved",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Kiro CLI auto-updating release stream",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.amazon.kiro.cli.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Kiro CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.cline.bot.cli.3-0-51",
+      "name": "Cline CLI",
+      "publisher": "Cline Bot Inc.",
+      "surface": {
+        "kind": "cli",
+        "name": "Cline CLI",
+        "slug": "cline-cli-3-0-51",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "3.0.51",
+        "releaseTag": "cli-v3.0.51",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-06T07:46:56Z",
+        "channel": "Cline CLI release stream",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.cline.bot.cli.3-0-51.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Cline CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.augmentcode.auggie.cli.rolling",
+      "name": "Auggie CLI",
+      "publisher": "Augment Code",
+      "surface": {
+        "kind": "cli",
+        "name": "Auggie CLI",
+        "slug": "augment-auggie-cli-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "unresolved",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Auggie auto-updating CLI",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.augmentcode.auggie.cli.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Auggie CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "ai.factory.droid.cli.rolling",
+      "name": "Droid CLI",
+      "publisher": "Factory AI",
+      "surface": {
+        "kind": "cli",
+        "name": "Droid CLI",
+        "slug": "factory-droid-cli-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "unresolved",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Droid CLI rolling release stream",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/ai.factory.droid.cli.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Droid CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.roocode.vscode-extension.3-54-0",
+      "name": "Roo Code VS Code extension",
+      "publisher": "Roo Code, Inc.",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Roo Code VS Code extension",
+        "slug": "roo-code-vscode-3-54-0",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "3.54.0",
+        "releaseTag": "v3.54.0",
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Final Roo Code VS Code extension release",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "discontinued",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.roocode.vscode-extension.3-54-0.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Final exact extension release retained after the publisher-announced 2026-05-15 shutdown. The accepted record remains publisher-source attribution only."
+    },
+    {
+      "recordId": "com.continue.dev.ide-agent.2-0-0",
+      "name": "Continue IDE Agent mode",
+      "publisher": "Continue Dev, Inc.",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Continue IDE extension Agent mode",
+        "slug": "continue-vscode-agent-2-0-0",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "2.0.0",
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Final Continue IDE extension line",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "historical",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.continue.dev.ide-agent.2-0-0.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Final 2.0.0 IDE agent line retained after the publisher marked the repository read-only and no longer actively maintained. The accepted record remains publisher-source attribution only."
+    },
+    {
+      "recordId": "com.jetbrains.junie.ide-plugin.262-132-31",
+      "name": "Junie IDE plugin",
+      "publisher": "JetBrains",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Junie IDE plugin",
+        "slug": "jetbrains-junie-ide-262-132-31",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "262.132.31",
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": "2026-07-28T00:00:00Z",
+        "channel": "JetBrains Marketplace stable plugin",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.jetbrains.junie.ide-plugin.262-132-31.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Junie IDE plugin boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.amazon.q-developer.ide-plugins.sunset",
+      "name": "Amazon Q Developer IDE plugins",
+      "publisher": "Amazon Web Services",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Amazon Q Developer IDE plugins",
+        "slug": "aws-amazon-q-developer-ide-sunset",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Existing-customer support through 2027-04-30",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.amazon.q-developer.ide-plugins.sunset.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Amazon Q Developer IDE plugins boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.google.gemini-code-assist.ide-agent.rolling",
+      "name": "Gemini Code Assist IDE agent mode",
+      "publisher": "Google",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "IDE agent mode",
+        "slug": "google-gemini-code-assist-agent-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Audience-dependent Gemini Code Assist service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.google.gemini-code-assist.ide-agent.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed IDE agent mode boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.github.copilot.vscode-agent.rolling",
+      "name": "Copilot agent harness in Visual Studio Code",
+      "publisher": "GitHub and Microsoft",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Copilot agent harness in Visual Studio Code",
+        "slug": "github-copilot-vscode-agent-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Versioned VS Code client plus rolling Copilot service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.github.copilot.vscode-agent.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Copilot agent harness in Visual Studio Code boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.openai.codex.ide-extension.rolling",
+      "name": "Codex IDE extension",
+      "publisher": "OpenAI",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Codex IDE extension",
+        "slug": "openai-codex-ide-extension-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Versioned IDE extension plus rolling Codex service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.openai.codex.ide-extension.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Codex IDE extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.alibaba.qwen-code.vscode-extension.beta-rolling",
+      "name": "Qwen Code VS Code extension",
+      "publisher": "Alibaba Cloud Qwen team",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Qwen Code VS Code extension",
+        "slug": "alibaba-qwen-code-vscode-beta",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Qwen Code VS Code integration beta",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.alibaba.qwen-code.vscode-extension.beta-rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Qwen Code VS Code extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "ai.mistral.vibe-code.vscode-extension.rolling",
+      "name": "Vibe Code VS Code extension",
+      "publisher": "Mistral AI",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Vibe Code VS Code extension",
+        "slug": "mistral-vibe-code-vscode-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Vibe 2.0 extension and rolling service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/ai.mistral.vibe-code.vscode-extension.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Vibe Code VS Code extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.tabnine.agent.ide.rolling",
+      "name": "Tabnine Agent in IDE",
+      "publisher": "Tabnine",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Tabnine Agent in IDE",
+        "slug": "tabnine-agent-ide-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Plugin and deployment-specific release lines",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.tabnine.agent.ide.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Tabnine Agent in IDE boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "dev.warp.oz.local-agent.desktop.rolling",
+      "name": "Oz local Agent in Warp desktop",
+      "publisher": "Warp",
+      "surface": {
+        "kind": "desktop-app",
+        "name": "Agent Mode in Warp desktop terminal",
+        "slug": "warp-agent-mode-desktop-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "unresolved",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Warp desktop client plus Oz local agent service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/dev.warp.oz.local-agent.desktop.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Agent Mode in Warp desktop terminal boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.augmentcode.agent.ide.rolling",
+      "name": "Augment Agent in IDE",
+      "publisher": "Augment Code",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Augment Agent in VS Code and JetBrains IDEs",
+        "slug": "augment-ide-agent-rolling",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Versioned IDE plugins plus rolling Augment services",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.augmentcode.agent.ide.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Augment Agent in VS Code and JetBrains IDEs boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.openai.codex.cloud.rolling",
+      "name": "Codex cloud agent",
+      "publisher": "OpenAI",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Codex cloud/web agent",
+        "slug": "openai-codex-cloud-rolling",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Codex cloud rolling service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.openai.codex.cloud.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Codex cloud/web agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.cursor.cloud-agents.rolling",
+      "name": "Cursor Cloud Agents",
+      "publisher": "Anysphere",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Cursor Cloud Agents (formerly Background Agents)",
+        "slug": "cursor-cloud-agents-rolling",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Renamed Cursor Cloud Agents service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.cursor.cloud-agents.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Cursor Cloud Agents (formerly Background Agents) boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.gitlab.duo.software-development-flow.rolling",
+      "name": "GitLab Software Development Flow",
+      "publisher": "GitLab",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Software Development Flow",
+        "slug": "gitlab-duo-software-development-flow-rolling",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "GitLab release-scoped Agent Platform service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.gitlab.duo.software-development-flow.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Software Development Flow boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.gitlab.duo.code-review-flow.19-2",
+      "name": "GitLab Code Review Flow",
+      "publisher": "GitLab",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Code Review Flow",
+        "slug": "gitlab-duo-code-review-flow-19-2",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "19.2.0-ee",
+        "releaseTag": "v19.2.0-ee",
+        "sourceRevision": null,
+        "releasedAt": "2026-07-16T00:00:00Z",
+        "channel": "GitLab 19.2 release line plus rolling Agent Platform service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 6,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.gitlab.duo.code-review-flow.19-2.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Code Review Flow boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "ai.mistral.vibe-code.web.rolling",
+      "name": "Vibe Code Web",
+      "publisher": "Mistral AI",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Vibe Code Web",
+        "slug": "mistral-vibe-code-web-rolling",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Vibe Code Web rolling service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/ai.mistral.vibe-code.web.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Vibe Code Web boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.amazon.kiro.web.preview-rolling",
+      "name": "Kiro Web",
+      "publisher": "Amazon Web Services",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Kiro Web",
+        "slug": "aws-kiro-web-preview",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Kiro Web public preview",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.amazon.kiro.web.preview-rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Kiro Web boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "org.openhands.cloud.rolling",
+      "name": "OpenHands Cloud",
+      "publisher": "OpenHands AI",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "OpenHands Cloud",
+        "slug": "openhands-cloud-rolling",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "OpenHands Cloud rolling service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/org.openhands.cloud.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed OpenHands Cloud boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.github.anthropic.claude-agent.preview-rolling",
+      "name": "Claude coding agent on GitHub",
+      "publisher": "GitHub and Anthropic",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "GitHub-hosted third-party Claude coding agent",
+        "slug": "github-anthropic-claude-agent-preview",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "GitHub third-party coding agents public preview",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.github.anthropic.claude-agent.preview-rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed GitHub-hosted third-party Claude coding agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.github.openai.codex-agent.preview-rolling",
+      "name": "Codex coding agent on GitHub",
+      "publisher": "GitHub and OpenAI",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "GitHub-hosted third-party Codex coding agent",
+        "slug": "github-openai-codex-agent-preview",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "GitHub third-party coding agents public preview",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.github.openai.codex-agent.preview-rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed GitHub-hosted third-party Codex coding agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "ai.factory.droid-computers.rolling",
+      "name": "Factory-managed Droid Computers",
+      "publisher": "Factory AI",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Factory-managed Droid Computers",
+        "slug": "factory-droid-computers-rolling",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Factory-managed persistent Droid Computers",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/ai.factory.droid-computers.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Factory-managed Droid Computers boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "dev.warp.oz.cloud-agents.rolling",
+      "name": "Oz Cloud Agents",
+      "publisher": "Warp",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Oz Cloud Agents (Warp)",
+        "slug": "warp-oz-cloud-agents-rolling",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Oz Cloud Agents rolling service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/dev.warp.oz.cloud-agents.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Oz Cloud Agents (Warp) boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.amazon.q-developer.github.preview-rolling",
+      "name": "Amazon Q Developer for GitHub",
+      "publisher": "Amazon Web Services",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Amazon Q Developer for GitHub",
+        "slug": "amazon-q-developer-github-preview",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Amazon Q Developer for GitHub public preview",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.amazon.q-developer.github.preview-rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Amazon Q Developer for GitHub boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.stackblitz.bolt.claude-agent.rolling",
+      "name": "Claude Agent in Bolt",
+      "publisher": "StackBlitz",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Claude Agent in Bolt",
+        "slug": "stackblitz-bolt-claude-agent-rolling",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Bolt Claude Agent rolling service after v1 retirement",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.stackblitz.bolt.claude-agent.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Claude Agent in Bolt boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.vercel.v0.agent.rolling",
+      "name": "v0 hosted development agent",
+      "publisher": "Vercel",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "v0 hosted development agent",
+        "slug": "vercel-v0-agent-rolling",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "v0 rolling hosted development service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.vercel.v0.agent.rolling.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed v0 hosted development agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.vercel.agent.public-beta",
+      "name": "Vercel Agent",
+      "publisher": "Vercel",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Vercel dashboard and repository-integrated Agent",
+        "slug": "vercel-agent-public-beta",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "rolling-service",
+        "version": null,
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": "2026-06-30T00:00:00Z",
+        "channel": "Expanded Vercel Agent public beta",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-07",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.vercel.agent.public-beta.json",
+      "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+      "lifecycleNote": "Official publisher sources identify this as the current reviewed Vercel dashboard and repository-integrated Agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
     }
   ]
 }

@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/aws-kiro-web-preview/dossier-source.json",
+    "sha256": "ad719e0da6d16782e9649520353e8ea181d9a5035b92aa8996f7c316d8967b3b",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.amazon.kiro.web.preview-rolling",
+    "agent": {
+      "id": "com.amazon.kiro.web",
+      "name": "Kiro Web"
+    },
+    "publisher": {
+      "id": "amazon-web-services",
+      "name": "Amazon Web Services"
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Kiro Web",
+      "slug": "aws-kiro-web-preview",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Kiro Web public preview",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "aws-kiro-web-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://kiro.dev/docs/web/using-the-agent/",
+        "ecosystem": "Kiro Web public preview",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "amazon-web-services",
+        "name": "Amazon Web Services",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-current",
+      "uri": "https://kiro.dev/docs/web/using-the-agent/",
+      "title": "Working with the Kiro Web agent",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "amazon-web-services",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://kiro.dev/",
+      "title": "Kiro product surfaces",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "amazon-web-services",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Kiro Web",
+            "claimIds": [
+              "com.amazon.kiro.web.identity-current",
+              "com.amazon.kiro.web.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Preview service has collaborative, autonomous and spec modes with different authority",
+          "Repository provider, cross-repository scope, web search and retention must be claim-scoped"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.amazon.kiro.web.identity-current",
+      "rawRecordPath": "dossiers/aws-kiro-web-preview/claims/aws-kiro-web-preview/identity-current.json",
+      "rawRecordSha256": "966a5ddb3f06931bdd92d70a406836106699817a02d9c36892c7c8a1948f971d",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.amazon.kiro.web.identity-current",
+        "slug": "identity-current",
+        "subject": {
+          "id": "com.amazon.kiro.web",
+          "name": "Kiro Web",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Kiro Web",
+            "slug": "aws-kiro-web-preview"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "Amazon Web Services's official source names and documents Kiro Web as a distinct current software-development agent surface in the reviewed Kiro Web public preview."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Amazon Web Services"
+        },
+        "source": {
+          "uri": "https://kiro.dev/docs/web/using-the-agent/",
+          "title": "Working with the Kiro Web agent",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "Preview service has collaborative, autonomous and spec modes with different authority",
+          "Repository provider, cross-repository scope, web search and retention must be claim-scoped"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "amazon-web-services",
+      "sourceId": "source-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.amazon.kiro.web.delivery-boundary-current",
+      "rawRecordPath": "dossiers/aws-kiro-web-preview/claims/aws-kiro-web-preview/delivery-boundary-current.json",
+      "rawRecordSha256": "468d572ee630bab000dd9e0b3278a720ea2f6be9aaf20128280a80cee9c13cd2",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.amazon.kiro.web.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.amazon.kiro.web",
+          "name": "Kiro Web",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Kiro Web",
+            "slug": "aws-kiro-web-preview"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Amazon Web Services's official documentation describes Kiro Web as a publisher-hosted service; the catalog keeps that delivery path separate from other Kiro surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Amazon Web Services"
+        },
+        "source": {
+          "uri": "https://kiro.dev/",
+          "title": "Kiro product surfaces",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "Preview service has collaborative, autonomous and spec modes with different authority",
+          "Repository provider, cross-repository scope, web search and retention must be claim-scoped"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "amazon-web-services",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-aws-kiro-web-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Kiro Web is represented only as the Kiro Web surface at the reviewed Kiro Web public preview boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Kiro Web is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceId": "source-identity-current",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Preview service has collaborative, autonomous and spec modes with different authority",
+      "Repository provider, cross-repository scope, web search and retention must be claim-scoped",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "Amazon Web Services's official source names and documents Kiro Web as a distinct current software-development agent surface in the reviewed Kiro Web public preview.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.amazon.kiro.web.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hosted",
+        "tone": "attention",
+        "answer": "Amazon Web Services's official documentation describes Kiro Web as a publisher-hosted service; the catalog keeps that delivery path separate from other Kiro surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.amazon.kiro.web.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.amazon.kiro.web.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

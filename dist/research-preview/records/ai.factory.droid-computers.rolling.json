@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/factory-droid-computers-rolling/dossier-source.json",
+    "sha256": "607ee3dbd84ae49c6ee5c6e159446d38ae014e781fcaab0c8bc6c6b0f8b54056",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "ai.factory.droid-computers.rolling",
+    "agent": {
+      "id": "ai.factory.droid-computers",
+      "name": "Factory-managed Droid Computers"
+    },
+    "publisher": {
+      "id": "factory-ai",
+      "name": "Factory AI"
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Factory-managed Droid Computers",
+      "slug": "factory-droid-computers-rolling",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Factory-managed persistent Droid Computers",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "factory-cloud-droids-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://docs.factory.ai/cli/features/droid-computers",
+        "ecosystem": "Factory-managed persistent Droid Computers",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "factory-ai",
+        "name": "Factory AI",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-current",
+      "uri": "https://docs.factory.ai/cli/features/droid-computers",
+      "title": "Droid Computers overview",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "factory-ai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://factory.ai/product/droid-computers",
+      "title": "Droid Computers product",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "factory-ai",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Factory-managed Droid Computers",
+            "claimIds": [
+              "ai.factory.droid-computers.identity-current",
+              "ai.factory.droid-computers.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Droid Computer persistence, hosting region, client and enterprise deployment boundaries need exact identity work",
+          "CLI-initiated and desktop-initiated sessions may not have identical authority"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "ai.factory.droid-computers.identity-current",
+      "rawRecordPath": "dossiers/factory-droid-computers-rolling/claims/factory-droid-computers-rolling/identity-current.json",
+      "rawRecordSha256": "e2d735a6a2b0f57266a27f47aa8aea43f2c15e1f469948db1ac83c2dced190ae",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "ai.factory.droid-computers.identity-current",
+        "slug": "identity-current",
+        "subject": {
+          "id": "ai.factory.droid-computers",
+          "name": "Factory-managed Droid Computers",
+          "publisher": "Factory AI",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Factory-managed Droid Computers",
+            "slug": "factory-droid-computers-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "Factory AI's official source names and documents Factory-managed Droid Computers as a distinct current software-development agent surface in the reviewed Factory-managed persistent Droid Computers."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Factory AI"
+        },
+        "source": {
+          "uri": "https://docs.factory.ai/cli/features/droid-computers",
+          "title": "Droid Computers overview",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "Droid Computer persistence, hosting region, client and enterprise deployment boundaries need exact identity work",
+          "CLI-initiated and desktop-initiated sessions may not have identical authority"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "factory-ai",
+      "sourceId": "source-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "ai.factory.droid-computers.delivery-boundary-current",
+      "rawRecordPath": "dossiers/factory-droid-computers-rolling/claims/factory-droid-computers-rolling/delivery-boundary-current.json",
+      "rawRecordSha256": "eb3febed1458755033b4cd658bea49f0de6e618d8f788fe4ba652925c9449dcb",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "ai.factory.droid-computers.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "ai.factory.droid-computers",
+          "name": "Factory-managed Droid Computers",
+          "publisher": "Factory AI",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Factory-managed Droid Computers",
+            "slug": "factory-droid-computers-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Factory AI's official documentation describes Factory-managed Droid Computers as a publisher-hosted service; the catalog keeps that delivery path separate from other Droids surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Factory AI"
+        },
+        "source": {
+          "uri": "https://factory.ai/product/droid-computers",
+          "title": "Droid Computers product",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "Droid Computer persistence, hosting region, client and enterprise deployment boundaries need exact identity work",
+          "CLI-initiated and desktop-initiated sessions may not have identical authority"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "factory-ai",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-factory-cloud-droids-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Factory-managed Droid Computers is represented only as the Factory-managed Droid Computers surface at the reviewed Factory-managed persistent Droid Computers boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Factory-managed Droid Computers is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceId": "source-identity-current",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Droid Computer persistence, hosting region, client and enterprise deployment boundaries need exact identity work",
+      "CLI-initiated and desktop-initiated sessions may not have identical authority",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "Factory AI's official source names and documents Factory-managed Droid Computers as a distinct current software-development agent surface in the reviewed Factory-managed persistent Droid Computers.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "ai.factory.droid-computers.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hosted",
+        "tone": "attention",
+        "answer": "Factory AI's official documentation describes Factory-managed Droid Computers as a publisher-hosted service; the catalog keeps that delivery path separate from other Droids surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "ai.factory.droid-computers.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "ai.factory.droid-computers.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

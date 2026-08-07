@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.continue.dev.ide-agent.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.continue.dev.ide-agent",
+    "name": "Continue IDE Agent mode",
+    "publisher": "Continue Dev, Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Continue IDE extension Agent mode",
+      "slug": "continue-vscode-agent-2-0-0"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Continue Dev, Inc.'s official documentation describes Continue IDE extension Agent mode as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Continue surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Continue Dev, Inc."
+  },
+  "source": {
+    "uri": "https://docs.continue.dev/ide-extensions/agent/quick-start",
+    "title": "Continue Agent mode quickstart",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "2.0.0"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "historical",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "The final 2.0.0 extension must be separated from newer or successor Continue offerings",
+    "Provider and configuration variability remains substantial even for a frozen client"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

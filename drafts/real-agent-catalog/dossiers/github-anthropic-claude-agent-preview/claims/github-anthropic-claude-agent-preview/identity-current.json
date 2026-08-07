@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.anthropic.claude-agent.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.github.anthropic.claude-agent",
+    "name": "Claude coding agent on GitHub",
+    "publisher": "GitHub and Anthropic",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitHub-hosted third-party Claude coding agent",
+      "slug": "github-anthropic-claude-agent-preview"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "GitHub and Anthropic's official source names and documents GitHub-hosted third-party Claude coding agent as a distinct current software-development agent surface in the reviewed GitHub third-party coding agents public preview."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "GitHub and Anthropic"
+  },
+  "source": {
+    "uri": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+    "title": "About third-party coding agents",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "GitHub partner-agent orchestration must not inherit local Claude Code CLI claims",
+    "GitHub policy, model, Actions environment, app identity and repository permissions are rolling"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

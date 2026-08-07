@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.augmentcode.agent.ide.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.augmentcode.agent.ide",
+    "name": "Augment Agent in IDE",
+    "publisher": "Augment Code",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Augment Agent in VS Code and JetBrains IDEs",
+      "slug": "augment-ide-agent-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "Augment Code's official source names and documents Augment Agent in VS Code and JetBrains IDEs as a distinct current software-development agent surface in the reviewed Versioned IDE plugins plus rolling Augment services."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Augment Code"
+  },
+  "source": {
+    "uri": "https://docs.augmentcode.com/using-augment/agent",
+    "title": "Using Augment Agent",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "VS Code and JetBrains versions may differ",
+    "Agent, Agent Auto and read-only Quick Ask are mutually scoped modes"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

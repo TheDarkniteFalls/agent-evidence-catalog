@@ -200,9 +200,10 @@ async function assertNoPublicIntegration() {
   const roots = ["catalog", "site", "dist"].map((name) => path.join(packageRoot, name));
   const files = (await Promise.all(roots.map(walk))).flat();
   const landingTeaserRecords = [
+    "com.alibaba.qwen-code.cli.0-21-7",
     "com.openai.codex.cli.0-146-0",
     "com.anthropic.claude-code.cli.2-1-220",
-    "com.github.copilot.cloud-agent.rolling"
+    "com.cursor.cloud-agents.rolling"
   ];
   for (const file of files) {
     const relative = path.relative(packageRoot, file).split(path.sep).join("/");
@@ -221,8 +222,8 @@ async function assertNoPublicIntegration() {
     if (relative === "dist/build-manifest.json") {
       const manifest = JSON.parse(content);
       const details = manifest.researchPreview.recordDetails;
-      assert.equal(details.count, 22);
-      assert.equal(details.records.length, 22);
+      assert.equal(details.count, 61);
+      assert.equal(details.records.length, 61);
       assertUnique(details.records.map((entry) => entry.recordId), "Human-readable record-detail IDs");
       for (const entry of details.records) {
         assert.equal(entry.entryPoint, `research-preview/records/${entry.recordId}.html`);
@@ -506,8 +507,8 @@ assert.equal(
 );
 assert.equal(
   await treeDigest([path.join(draftRoot, "candidate-registry")]),
-  "6c3b9956ef0ec6fc66b926f28e4fa3f4a8a151b8e56b5bac4310bae9cc0543c0",
-  "Accepted candidate registry changed"
+  "152d6ca82c3244a110c36fa09dce7c7fa3f2749a528a376f78b85f35d0abe6e4",
+  "Completed 55-surface registry changed"
 );
 assert.equal(
   sha256(await readFile(path.join(draftRoot, "schemas", "real-agent-dossier-v0.schema.json"))),
@@ -581,5 +582,5 @@ console.log("PASS Terminal-Bench Devin candidate is excluded and contributes no 
 console.log("PASS Claude Code CLI 2.1.117: 8 claims, exact and rolling applicability separated; Overeager evidence unresolved with zero admitted tests");
 console.log("PASS Zed Agent 1.13.1: 8 claims; native, External Agent and Terminal Thread paths remain separate");
 console.log("PASS Replit Agent 4 hosted workspace: 8 claims, dated generation separated from rolling service/model identity and chained approvals");
-console.log("PASS preserved all eight accepted dossiers and generated records, candidate registry, completed seven-record retrospective, and synthetic/public lanes by SHA-256");
+console.log("PASS preserved all eight accepted dossiers and generated records, completed 55-surface registry, completed seven-record retrospective, and synthetic/public lanes by SHA-256");
 console.log("PASS real-agent records remain absent from the accepted synthetic catalog and from site/dist paths outside the dedicated research-preview route");

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.copilot.vscode-agent.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.github.copilot.vscode-agent",
+    "name": "Copilot agent harness in Visual Studio Code",
+    "publisher": "GitHub and Microsoft",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Copilot agent harness in Visual Studio Code",
+      "slug": "github-copilot-vscode-agent-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "GitHub and Microsoft's official source names and documents Copilot agent harness in Visual Studio Code as a distinct current software-development agent surface in the reviewed Versioned VS Code client plus rolling Copilot service."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "GitHub and Microsoft"
+  },
+  "source": {
+    "uri": "https://code.visualstudio.com/docs/agents/concepts/agents",
+    "title": "Agents in Visual Studio Code",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "VS Code build, harness/Agent Host configuration, Copilot account policy, selected model, permission level and sandbox must be scoped",
+    "The local Copilot harness must not inherit claims from the accepted GitHub-hosted cloud agent or the separate Copilot CLI"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

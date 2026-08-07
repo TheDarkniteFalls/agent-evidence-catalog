@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.cloud-agents.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.cursor.cloud-agents",
+    "name": "Cursor Cloud Agents",
+    "publisher": "Anysphere",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Cursor Cloud Agents (formerly Background Agents)",
+      "slug": "cursor-cloud-agents-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Anysphere's official documentation describes Cursor Cloud Agents (formerly Background Agents) as a publisher-hosted service; the catalog keeps that delivery path separate from other Cursor surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Anysphere"
+  },
+  "source": {
+    "uri": "https://cursor.com/changelog/2-0",
+    "title": "Cursor 2.0 rename milestone",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "Web, mobile, desktop, Slack, GitHub and API initiation paths can differ in initiating authority",
+    "Model, development environment, internet, secrets and repository permissions are configuration-specific"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

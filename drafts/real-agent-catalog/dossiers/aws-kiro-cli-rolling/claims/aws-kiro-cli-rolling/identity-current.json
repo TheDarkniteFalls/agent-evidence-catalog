@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.kiro.cli.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.amazon.kiro.cli",
+    "name": "Kiro CLI",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "cli",
+      "name": "Kiro CLI",
+      "slug": "aws-kiro-cli-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "Amazon Web Services's official source names and documents Kiro CLI as a distinct current software-development agent surface in the reviewed Kiro CLI auto-updating release stream."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://kiro.dev/",
+    "title": "Kiro product surfaces",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "unresolved",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "Kiro CLI lineage and migration from Q Developer CLI require a dated boundary",
+    "Authentication, custom agent, power, MCP and permission settings are configuration axes"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

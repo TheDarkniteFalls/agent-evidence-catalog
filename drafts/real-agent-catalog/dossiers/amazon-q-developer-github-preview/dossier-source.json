@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier-source",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "identity": {
+    "recordId": "com.amazon.q-developer.github.preview-rolling",
+    "agent": {
+      "id": "com.amazon.q-developer.github",
+      "name": "Amazon Q Developer for GitHub"
+    },
+    "publisher": {
+      "id": "amazon-web-services",
+      "name": "Amazon Web Services"
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Amazon Q Developer for GitHub",
+      "slug": "amazon-q-developer-github-preview",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Amazon Q Developer for GitHub public preview",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "amazon-q-developer-github-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
+        "ecosystem": "Amazon Q Developer for GitHub public preview",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "amazon-web-services",
+        "name": "Amazon Web Services",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+    },
+    "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+    }
+  },
+  "rawClaimPaths": [
+    "claims/amazon-q-developer-github-preview/identity-current.json",
+    "claims/amazon-q-developer-github-preview/delivery-boundary-current.json"
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Amazon Q Developer for GitHub",
+            "claimIds": [
+              "com.amazon.q-developer.github.identity-current",
+              "com.amazon.q-developer.github.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Development and code-review agents are separate sub-surfaces with different triggers",
+          "Preview service, GitHub App installation, AWS registration, region and quota affect applicability"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-amazon-q-developer-github-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Amazon Q Developer for GitHub is represented only as the Amazon Q Developer for GitHub surface at the reviewed Amazon Q Developer for GitHub public preview boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Amazon Q Developer for GitHub is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceUri": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Development and code-review agents are separate sub-surfaces with different triggers",
+      "Preview service, GitHub App installation, AWS registration, region and quota affect applicability",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "Amazon Web Services's official source names and documents Amazon Q Developer for GitHub as a distinct current software-development agent surface in the reviewed Amazon Q Developer for GitHub public preview.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.amazon.q-developer.github.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hosted",
+        "tone": "attention",
+        "answer": "Amazon Web Services's official documentation describes Amazon Q Developer for GitHub as a publisher-hosted service; the catalog keeps that delivery path separate from other Amazon Q Developer surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.amazon.q-developer.github.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.amazon.q-developer.github.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

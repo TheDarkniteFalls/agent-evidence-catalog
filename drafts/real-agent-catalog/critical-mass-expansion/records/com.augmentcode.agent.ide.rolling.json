@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/augment-ide-agent-rolling/dossier-source.json",
+    "sha256": "3daaa70e58b03d073b5fa8b6f17bec915300eda02962598790714a481a7feb16",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.augmentcode.agent.ide.rolling",
+    "agent": {
+      "id": "com.augmentcode.agent.ide",
+      "name": "Augment Agent in IDE"
+    },
+    "publisher": {
+      "id": "augment-code",
+      "name": "Augment Code"
+    },
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Augment Agent in VS Code and JetBrains IDEs",
+      "slug": "augment-ide-agent-rolling",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Versioned IDE plugins plus rolling Augment services",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "augment-ide-agent-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://docs.augmentcode.com/using-augment/agent",
+        "ecosystem": "Versioned IDE plugins plus rolling Augment services",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "augment-code",
+        "name": "Augment Code",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-current",
+      "uri": "https://docs.augmentcode.com/using-augment/agent",
+      "title": "Using Augment Agent",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "augment-code",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://docs.augmentcode.com/quickstart",
+      "title": "Augment quickstart",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "augment-code",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Augment Agent in VS Code and JetBrains IDEs",
+            "claimIds": [
+              "com.augmentcode.agent.ide.identity-current",
+              "com.augmentcode.agent.ide.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "VS Code and JetBrains versions may differ",
+          "Agent, Agent Auto and read-only Quick Ask are mutually scoped modes"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.augmentcode.agent.ide.identity-current",
+      "rawRecordPath": "dossiers/augment-ide-agent-rolling/claims/augment-ide-agent-rolling/identity-current.json",
+      "rawRecordSha256": "6d483960b2a534346f0ee69c2cb4d8aee7650c3809e468bb0b51ac9adfd1b9ac",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.augmentcode.agent.ide.identity-current",
+        "slug": "identity-current",
+        "subject": {
+          "id": "com.augmentcode.agent.ide",
+          "name": "Augment Agent in IDE",
+          "publisher": "Augment Code",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Augment Agent in VS Code and JetBrains IDEs",
+            "slug": "augment-ide-agent-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "Augment Code's official source names and documents Augment Agent in VS Code and JetBrains IDEs as a distinct current software-development agent surface in the reviewed Versioned IDE plugins plus rolling Augment services."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Augment Code"
+        },
+        "source": {
+          "uri": "https://docs.augmentcode.com/using-augment/agent",
+          "title": "Using Augment Agent",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "VS Code and JetBrains versions may differ",
+          "Agent, Agent Auto and read-only Quick Ask are mutually scoped modes"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "augment-code",
+      "sourceId": "source-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.augmentcode.agent.ide.delivery-boundary-current",
+      "rawRecordPath": "dossiers/augment-ide-agent-rolling/claims/augment-ide-agent-rolling/delivery-boundary-current.json",
+      "rawRecordSha256": "37e7fbe8ca14dc718c565ceaf033b6076cf155c2f6a105866ae8dfeba2bac9c0",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.augmentcode.agent.ide.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.augmentcode.agent.ide",
+          "name": "Augment Agent in IDE",
+          "publisher": "Augment Code",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Augment Agent in VS Code and JetBrains IDEs",
+            "slug": "augment-ide-agent-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Augment Code's official documentation describes Augment Agent in VS Code and JetBrains IDEs as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Augment surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Augment Code"
+        },
+        "source": {
+          "uri": "https://docs.augmentcode.com/quickstart",
+          "title": "Augment quickstart",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "VS Code and JetBrains versions may differ",
+          "Agent, Agent Auto and read-only Quick Ask are mutually scoped modes"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "augment-code",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-augment-ide-agent-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Augment Agent in IDE is represented only as the Augment Agent in VS Code and JetBrains IDEs surface at the reviewed Versioned IDE plugins plus rolling Augment services boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Augment Agent in VS Code and JetBrains IDEs is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceId": "source-identity-current",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "VS Code and JetBrains versions may differ",
+      "Agent, Agent Auto and read-only Quick Ask are mutually scoped modes",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "Augment Code's official source names and documents Augment Agent in VS Code and JetBrains IDEs as a distinct current software-development agent surface in the reviewed Versioned IDE plugins plus rolling Augment services.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.augmentcode.agent.ide.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "Augment Code's official documentation describes Augment Agent in VS Code and JetBrains IDEs as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Augment surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.augmentcode.agent.ide.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.augmentcode.agent.ide.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

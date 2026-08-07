@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/vercel-v0-agent-rolling/dossier-source.json",
+    "sha256": "ae86d5bb9543608c077e526c9f4ef3838e40da1c0fa62a163ed287e904cfd32c",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.vercel.v0.agent.rolling",
+    "agent": {
+      "id": "com.vercel.v0.agent",
+      "name": "v0 hosted development agent"
+    },
+    "publisher": {
+      "id": "vercel",
+      "name": "Vercel"
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "v0 hosted development agent",
+      "slug": "vercel-v0-agent-rolling",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "v0 rolling hosted development service",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "vercel-v0-agent-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://api2.v0.dev/docs/faqs",
+        "ecosystem": "v0 rolling hosted development service",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "vercel",
+        "name": "Vercel",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-current",
+      "uri": "https://api2.v0.dev/docs/faqs",
+      "title": "v0 FAQ and 2026 product update",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "vercel",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://v0.dev/docs",
+      "title": "v0 documentation",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "vercel",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "v0 hosted development agent",
+            "claimIds": [
+              "com.vercel.v0.agent.identity-current",
+              "com.vercel.v0.agent.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The service is optimized for web applications and should not be generalized to arbitrary repositories",
+          "GitHub import, Vercel project, sandbox, model and integration choices alter scope"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.vercel.v0.agent.identity-current",
+      "rawRecordPath": "dossiers/vercel-v0-agent-rolling/claims/vercel-v0-agent-rolling/identity-current.json",
+      "rawRecordSha256": "85eb55d17bc793eba1a7eaa4304450120376885193b0ba3d75208ede6d27546a",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.vercel.v0.agent.identity-current",
+        "slug": "identity-current",
+        "subject": {
+          "id": "com.vercel.v0.agent",
+          "name": "v0 hosted development agent",
+          "publisher": "Vercel",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "v0 hosted development agent",
+            "slug": "vercel-v0-agent-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "Vercel's official source names and documents v0 hosted development agent as a distinct current software-development agent surface in the reviewed v0 rolling hosted development service."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Vercel"
+        },
+        "source": {
+          "uri": "https://api2.v0.dev/docs/faqs",
+          "title": "v0 FAQ and 2026 product update",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "The service is optimized for web applications and should not be generalized to arbitrary repositories",
+          "GitHub import, Vercel project, sandbox, model and integration choices alter scope"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "vercel",
+      "sourceId": "source-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.vercel.v0.agent.delivery-boundary-current",
+      "rawRecordPath": "dossiers/vercel-v0-agent-rolling/claims/vercel-v0-agent-rolling/delivery-boundary-current.json",
+      "rawRecordSha256": "2c12444dc17491783eb61325190ff6a07910aff82fdd88a391266dd8bb42cd32",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.vercel.v0.agent.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.vercel.v0.agent",
+          "name": "v0 hosted development agent",
+          "publisher": "Vercel",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "v0 hosted development agent",
+            "slug": "vercel-v0-agent-rolling"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Vercel's official documentation describes v0 hosted development agent as a publisher-hosted service; the catalog keeps that delivery path separate from other v0 surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Vercel"
+        },
+        "source": {
+          "uri": "https://v0.dev/docs",
+          "title": "v0 documentation",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "The service is optimized for web applications and should not be generalized to arbitrary repositories",
+          "GitHub import, Vercel project, sandbox, model and integration choices alter scope"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "vercel",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-vercel-v0-agent-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "v0 hosted development agent is represented only as the v0 hosted development agent surface at the reviewed v0 rolling hosted development service boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "v0 hosted development agent is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceId": "source-identity-current",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "The service is optimized for web applications and should not be generalized to arbitrary repositories",
+      "GitHub import, Vercel project, sandbox, model and integration choices alter scope",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "Vercel's official source names and documents v0 hosted development agent as a distinct current software-development agent surface in the reviewed v0 rolling hosted development service.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.vercel.v0.agent.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hosted",
+        "tone": "attention",
+        "answer": "Vercel's official documentation describes v0 hosted development agent as a publisher-hosted service; the catalog keeps that delivery path separate from other v0 surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.vercel.v0.agent.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.vercel.v0.agent.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

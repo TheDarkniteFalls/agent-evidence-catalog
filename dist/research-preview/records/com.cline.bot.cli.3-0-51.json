@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/cline-cli-3-0-51/dossier-source.json",
+    "sha256": "9ceee2d2bcf84344fc154a7726a9b29329748def0acafc65d10602b824b50607",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.cline.bot.cli.3-0-51",
+    "agent": {
+      "id": "com.cline.bot.cli",
+      "name": "Cline CLI"
+    },
+    "publisher": {
+      "id": "cline-bot-inc",
+      "name": "Cline Bot Inc."
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "Cline CLI",
+      "slug": "cline-cli-3-0-51",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "3.0.51",
+      "releaseTag": "cli-v3.0.51",
+      "sourceRevision": null,
+      "releasedAt": "2026-08-06T07:46:56Z",
+      "channel": "Cline CLI release stream",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "cline-cli-reviewed-artifact",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/cline/cline/releases/tag/cli-v3.0.51",
+        "ecosystem": "Cline CLI release stream",
+        "version": "3.0.51",
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "cline-bot-inc",
+        "name": "Cline Bot Inc.",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-3-0-51",
+      "uri": "https://github.com/cline/cline/releases/tag/cli-v3.0.51",
+      "title": "Cline CLI v3.0.51 release",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "cline-bot-inc",
+      "publishedAt": "2026-08-06T07:46:56Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://docs.cline.bot/usage/cli-overview",
+      "title": "Cline CLI overview",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cline-bot-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Cline CLI",
+            "claimIds": [
+              "com.cline.bot.cli.identity-3-0-51",
+              "com.cline.bot.cli.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "CLI package identity must be separated from the accepted VS Code extension 4.1.2",
+          "Shared documentation cannot be presumed to apply equally to both surfaces"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.cline.bot.cli.identity-3-0-51",
+      "rawRecordPath": "dossiers/cline-cli-3-0-51/claims/cline-cli-3-0-51/identity-3-0-51.json",
+      "rawRecordSha256": "9f5643bb846f9c98f1cfc9ca9ba57f3425b212a069ef6e596c7f1ce23be4e9eb",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cline.bot.cli.identity-3-0-51",
+        "slug": "identity-3-0-51",
+        "subject": {
+          "id": "com.cline.bot.cli",
+          "name": "Cline CLI",
+          "publisher": "Cline Bot Inc.",
+          "surface": {
+            "kind": "cli",
+            "name": "Cline CLI",
+            "slug": "cline-cli-3-0-51"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "Cline Bot Inc.'s official source identifies Cline CLI 3.0.51 as the exact client or release-line boundary reviewed for this record."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Cline Bot Inc."
+        },
+        "source": {
+          "uri": "https://github.com/cline/cline/releases/tag/cli-v3.0.51",
+          "title": "Cline CLI v3.0.51 release",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": "2026-08-06T07:46:56Z",
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "3.0.51"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "CLI package identity must be separated from the accepted VS Code extension 4.1.2",
+          "Shared documentation cannot be presumed to apply equally to both surfaces"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cline-bot-inc",
+      "sourceId": "source-identity-3-0-51",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cline.bot.cli.delivery-boundary-current",
+      "rawRecordPath": "dossiers/cline-cli-3-0-51/claims/cline-cli-3-0-51/delivery-boundary-current.json",
+      "rawRecordSha256": "6500927c289df715926795b8339247e2c83488c416dc7f8f36a54d3247ca3c65",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cline.bot.cli.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.cline.bot.cli",
+          "name": "Cline CLI",
+          "publisher": "Cline Bot Inc.",
+          "surface": {
+            "kind": "cli",
+            "name": "Cline CLI",
+            "slug": "cline-cli-3-0-51"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Cline Bot Inc.'s official documentation describes Cline CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Cline surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Cline Bot Inc."
+        },
+        "source": {
+          "uri": "https://docs.cline.bot/usage/cli-overview",
+          "title": "Cline CLI overview",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "3.0.51"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "CLI package identity must be separated from the accepted VS Code extension 4.1.2",
+          "Shared documentation cannot be presumed to apply equally to both surfaces"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cline-bot-inc",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-cline-cli-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Cline CLI is represented only as the Cline CLI surface at the reviewed Cline CLI release stream boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Cline CLI 3.0.51 is the exact reviewed identity; rolling services and effective configuration remain separate.",
+      "sourceId": "source-identity-3-0-51",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "CLI package identity must be separated from the accepted VS Code extension 4.1.2",
+      "Shared documentation cannot be presumed to apply equally to both surfaces",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Exact 3.0.51",
+        "tone": "qualified",
+        "answer": "Cline Bot Inc.'s official source identifies Cline CLI 3.0.51 as the exact client or release-line boundary reviewed for this record.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.cline.bot.cli.identity-3-0-51"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "Cline Bot Inc.'s official documentation describes Cline CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Cline surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.cline.bot.cli.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.cline.bot.cli.identity-3-0-51"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.ide-extension.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.openai.codex.ide-extension",
+    "name": "Codex IDE extension",
+    "publisher": "OpenAI",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Codex IDE extension",
+      "slug": "openai-codex-ide-extension-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "OpenAI's official documentation describes Codex IDE extension as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Codex surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "OpenAI"
+  },
+  "source": {
+    "uri": "https://developers.openai.com/codex/",
+    "title": "Codex developer overview",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "IDE extension, Codex CLI and Codex cloud are different surfaces",
+    "Exact extension version cannot freeze hosted model or account features"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

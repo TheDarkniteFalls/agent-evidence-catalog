@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.sourcegraph.amp.cli.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.sourcegraph.amp.cli",
+    "name": "Amp CLI",
+    "publisher": "Sourcegraph",
+    "surface": {
+      "kind": "cli",
+      "name": "Amp CLI",
+      "slug": "amp-cli-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "Sourcegraph's official source names and documents Amp CLI as a distinct current software-development agent surface in the reviewed Amp rolling client and service."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Sourcegraph"
+  },
+  "source": {
+    "uri": "https://ampcode.com/manual",
+    "title": "Amp Owner's Manual",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "unresolved",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "Sourcegraph corporate ownership, Amp product branding and service claimant must be aligned",
+    "Client updates, model routing and rolling server behavior are not one exact artifact"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.vercel.v0.agent.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.vercel.v0.agent",
+    "name": "v0 hosted development agent",
+    "publisher": "Vercel",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "v0 hosted development agent",
+      "slug": "vercel-v0-agent-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "Vercel's official source names and documents v0 hosted development agent as a distinct current software-development agent surface in the reviewed v0 rolling hosted development service."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Vercel"
+  },
+  "source": {
+    "uri": "https://api2.v0.dev/docs/faqs",
+    "title": "v0 FAQ and 2026 product update",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "The service is optimized for web applications and should not be generalized to arbitrary repositories",
+    "GitHub import, Vercel project, sandbox, model and integration choices alter scope"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

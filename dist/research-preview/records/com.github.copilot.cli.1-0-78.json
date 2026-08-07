@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/github-copilot-cli-1-0-78/dossier-source.json",
+    "sha256": "07680c3c6fb2fdd1d873b6708651d3403e47aebfe185650396b31337ac6f3d5e",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.github.copilot.cli.1-0-78",
+    "agent": {
+      "id": "com.github.copilot.cli",
+      "name": "GitHub Copilot CLI"
+    },
+    "publisher": {
+      "id": "github",
+      "name": "GitHub"
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "GitHub Copilot CLI",
+      "slug": "github-copilot-cli-1-0-78",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "1.0.78",
+      "releaseTag": "v1.0.78",
+      "sourceRevision": null,
+      "releasedAt": "2026-08-03T23:30:25Z",
+      "channel": "GitHub Copilot CLI release stream plus rolling service",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "github-copilot-cli-reviewed-artifact",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/github/copilot-cli/releases/tag/v1.0.78",
+        "ecosystem": "GitHub Copilot CLI release stream plus rolling service",
+        "version": "1.0.78",
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "github",
+        "name": "GitHub",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-1-0-78",
+      "uri": "https://github.com/github/copilot-cli/releases/tag/v1.0.78",
+      "title": "GitHub Copilot CLI v1.0.78 release",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "github",
+      "publishedAt": "2026-08-03T23:30:25Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli",
+      "title": "About GitHub Copilot CLI",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "GitHub Copilot CLI",
+            "claimIds": [
+              "com.github.copilot.cli.identity-1-0-78",
+              "com.github.copilot.cli.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Exact client version does not freeze model or server behavior",
+          "Plan, model, permission, MCP and repository settings must be scoped"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.github.copilot.cli.identity-1-0-78",
+      "rawRecordPath": "dossiers/github-copilot-cli-1-0-78/claims/github-copilot-cli-1-0-78/identity-1-0-78.json",
+      "rawRecordSha256": "2d9a3788b08a744376c946b7fb72fb3aee147f743ffb7c73076ddd4861ff22d4",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cli.identity-1-0-78",
+        "slug": "identity-1-0-78",
+        "subject": {
+          "id": "com.github.copilot.cli",
+          "name": "GitHub Copilot CLI",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "cli",
+            "name": "GitHub Copilot CLI",
+            "slug": "github-copilot-cli-1-0-78"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "GitHub's official source identifies GitHub Copilot CLI 1.0.78 as the exact client or release-line boundary reviewed for this record."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://github.com/github/copilot-cli/releases/tag/v1.0.78",
+          "title": "GitHub Copilot CLI v1.0.78 release",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": "2026-08-03T23:30:25Z",
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.0.78"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "Exact client version does not freeze model or server behavior",
+          "Plan, model, permission, MCP and repository settings must be scoped"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github",
+      "sourceId": "source-identity-1-0-78",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.github.copilot.cli.delivery-boundary-current",
+      "rawRecordPath": "dossiers/github-copilot-cli-1-0-78/claims/github-copilot-cli-1-0-78/delivery-boundary-current.json",
+      "rawRecordSha256": "7f16eee75244dfe31e32c46f755df034e4eabe2222fe1d93c954ce50791dae91",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.copilot.cli.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.github.copilot.cli",
+          "name": "GitHub Copilot CLI",
+          "publisher": "GitHub",
+          "surface": {
+            "kind": "cli",
+            "name": "GitHub Copilot CLI",
+            "slug": "github-copilot-cli-1-0-78"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "GitHub's official documentation describes GitHub Copilot CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other GitHub Copilot surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "GitHub"
+        },
+        "source": {
+          "uri": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli",
+          "title": "About GitHub Copilot CLI",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.0.78"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "Exact client version does not freeze model or server behavior",
+          "Plan, model, permission, MCP and repository settings must be scoped"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-github-copilot-cli-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "GitHub Copilot CLI is represented only as the GitHub Copilot CLI surface at the reviewed GitHub Copilot CLI release stream plus rolling service boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "GitHub Copilot CLI 1.0.78 is the exact reviewed identity; rolling services and effective configuration remain separate.",
+      "sourceId": "source-identity-1-0-78",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Exact client version does not freeze model or server behavior",
+      "Plan, model, permission, MCP and repository settings must be scoped",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Exact 1.0.78",
+        "tone": "qualified",
+        "answer": "GitHub's official source identifies GitHub Copilot CLI 1.0.78 as the exact client or release-line boundary reviewed for this record.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.github.copilot.cli.identity-1-0-78"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "GitHub's official documentation describes GitHub Copilot CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other GitHub Copilot surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.github.copilot.cli.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.github.copilot.cli.identity-1-0-78"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

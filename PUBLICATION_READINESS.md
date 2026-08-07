@@ -1,6 +1,6 @@
 # Research-preview publication readiness
 
-Reviewed: 2026-08-04. Current outcome: **RESEARCH PREVIEW V0.1 PUBLICATION**.
+Reviewed: 2026-08-07. Current outcome: **55-SURFACE RESEARCH PREVIEW BUILD PREPARED LOCALLY**.
 
 The validated static artifact is published at
 https://thedarknitefalls.github.io/agent-evidence-catalog/. GitHub Pages uploads
@@ -30,7 +30,8 @@ intake, add analytics or authorize any other GitHub mutation.
 | Gate | Status | Release condition |
 |---|---|---|
 | Codex CLI 0.146.0 current record | PASS | The validated source-derived record is integrated as current; 0.90.0 remains unchanged in explicit history through reciprocal same-surface links. |
-| Current-default and explicit-history data/UI | PASS | Local and public browser QA cover 16 current cards by default, collapsed history, filters, toggle, footer targets and console health. |
+| Current-default and explicit-history data/UI | PASS | The prepared build covers 53 current cards by default and eight explicit-history records across 55 surfaces; publication still requires a separately authorized commit and push. |
+| Critical-mass evidence boundary | PASS | The 39 additions admit two official publisher-source claims each for identity and delivery only. Their mappings remain wholly unknown and credit no independent evidence. |
 | Stranger-first concept and presentation | PASS | The landing page names the primary readers and useful question, supplies a direct reading path, distinguishes publisher claims from observed behavior and describes the inventory as selected rather than comprehensive. |
 | Independent-test credit | PASS | Must remain exactly zero. |
 | Rankings, recommendations and calculations | PASS | Must remain absent. |

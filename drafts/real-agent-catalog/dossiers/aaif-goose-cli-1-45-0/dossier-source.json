@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier-source",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "identity": {
+    "recordId": "org.aaif.goose.cli.1-45-0",
+    "agent": {
+      "id": "org.aaif.goose.cli",
+      "name": "Goose CLI"
+    },
+    "publisher": {
+      "id": "agentic-ai-foundation",
+      "name": "Agentic AI Foundation"
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "Goose CLI",
+      "slug": "aaif-goose-cli-1-45-0",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "1.45.0",
+      "releaseTag": "v1.45.0",
+      "sourceRevision": null,
+      "releasedAt": "2026-07-29T20:11:39Z",
+      "channel": "AAIF Goose release stream",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "aaif-goose-cli-reviewed-artifact",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/aaif-goose/goose/releases/tag/v1.45.0",
+        "ecosystem": "AAIF Goose release stream",
+        "version": "1.45.0",
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "agentic-ai-foundation",
+        "name": "Agentic AI Foundation",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://github.com/aaif-goose/goose/releases/tag/v1.45.0": {
+      "sourceKind": "publisher-release-metadata",
+      "snapshotStatus": "immutable-reference",
+      "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+    },
+    "https://github.com/aaif-goose/goose": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+    }
+  },
+  "rawClaimPaths": [
+    "claims/aaif-goose-cli-1-45-0/identity-1-45-0.json",
+    "claims/aaif-goose-cli-1-45-0/delivery-boundary-current.json"
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Goose CLI",
+            "claimIds": [
+              "org.aaif.goose.cli.identity-1-45-0",
+              "org.aaif.goose.cli.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Publisher/governance identity must be reconciled across legacy Block URLs and current AAIF ownership",
+          "Provider, extension and permission configurations are mutually scoped alternatives"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-aaif-goose-cli-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Goose CLI is represented only as the Goose CLI surface at the reviewed AAIF Goose release stream boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Goose CLI 1.45.0 is the exact reviewed identity; rolling services and effective configuration remain separate.",
+      "sourceUri": "https://github.com/aaif-goose/goose/releases/tag/v1.45.0",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Publisher/governance identity must be reconciled across legacy Block URLs and current AAIF ownership",
+      "Provider, extension and permission configurations are mutually scoped alternatives",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Exact 1.45.0",
+        "tone": "qualified",
+        "answer": "Agentic AI Foundation's official source identifies Goose CLI 1.45.0 as the exact client or release-line boundary reviewed for this record.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "org.aaif.goose.cli.identity-1-45-0"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "Agentic AI Foundation's official documentation describes Goose CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Goose surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "org.aaif.goose.cli.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "org.aaif.goose.cli.identity-1-45-0"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

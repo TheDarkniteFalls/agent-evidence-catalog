@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.stackblitz.bolt.claude-agent.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.stackblitz.bolt.claude-agent",
+    "name": "Claude Agent in Bolt",
+    "publisher": "StackBlitz",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Claude Agent in Bolt",
+      "slug": "stackblitz-bolt-claude-agent-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "StackBlitz's official source names and documents Claude Agent in Bolt as a distinct current software-development agent surface in the reviewed Bolt Claude Agent rolling service after v1 retirement."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "StackBlitz"
+  },
+  "source": {
+    "uri": "https://support.bolt.new/release-notes",
+    "title": "Bolt release notes",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "The final v1-to-Claude migration date falls two days after this registry snapshot",
+    "Model selection, project generation, GitHub integration, database and hosting authority are rolling"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

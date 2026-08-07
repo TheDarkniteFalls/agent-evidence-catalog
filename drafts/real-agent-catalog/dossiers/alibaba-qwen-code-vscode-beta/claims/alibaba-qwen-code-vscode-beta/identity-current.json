@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.alibaba.qwen-code.vscode-extension.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.alibaba.qwen-code.vscode-extension",
+    "name": "Qwen Code VS Code extension",
+    "publisher": "Alibaba Cloud Qwen team",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Qwen Code VS Code extension",
+      "slug": "alibaba-qwen-code-vscode-beta"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "Alibaba Cloud Qwen team's official source names and documents Qwen Code VS Code extension as a distinct current software-development agent surface in the reviewed Qwen Code VS Code integration beta."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Alibaba Cloud Qwen team"
+  },
+  "source": {
+    "uri": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
+    "title": "Qwen Code quickstart with VS Code integration",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "Extension packaging and shared CLI core versions must be pinned independently",
+    "Beta status and provider configuration limit rolling claims"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

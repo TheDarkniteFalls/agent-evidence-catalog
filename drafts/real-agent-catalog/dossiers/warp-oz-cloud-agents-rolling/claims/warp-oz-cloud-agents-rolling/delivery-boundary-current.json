@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.warp.oz.cloud-agents.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "dev.warp.oz.cloud-agents",
+    "name": "Oz Cloud Agents",
+    "publisher": "Warp",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Oz Cloud Agents (Warp)",
+      "slug": "warp-oz-cloud-agents-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Warp's official documentation describes Oz Cloud Agents (Warp) as a publisher-hosted service; the catalog keeps that delivery path separate from other Warp surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Warp"
+  },
+  "source": {
+    "uri": "https://docs.warp.dev/changelog",
+    "title": "Warp changelog",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "Cloud agent, local Agent Mode and third-party harness orchestration must be separated",
+    "Remote machine, model, trigger channel, permissions and handoff behavior are rolling"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,36 +1,36 @@
 # Unpublished real-agent candidate registry
 
 Status: **unpublished research draft**  
-Snapshot date: **2026-08-02**  
+Snapshot date: **2026-08-07**<br>
 Canonical data: [`registry.json`](registry.json)
 
-This registry maps the next plausible surface area of the Agent Evidence Catalog. It is an identity and evidence-planning artifact, not a product comparison. It contains no suitability score, ranking, winner, recommendation, product test, or publisher contact.
+This registry records the identity research that produced the 55-surface Agent Evidence Catalog build. It is an identity and evidence-planning artifact, not a product comparison. It contains no suitability score, ranking, winner, recommendation, product test, or publisher contact.
 
 The unit is an **agent surface**, not merely a brand. A CLI, an editor agent, and a hosted background agent can be separate records when their release, runtime, authority, or applicability boundaries differ. Completion-only tools, chat-only tools without workspace action, general-purpose agents without a documented development surface, and community wrappers without publisher-controlled identity anchors are outside this pass.
 
 ## Coverage estimate
 
-The current defensible catalog universe remains **about 55 surfaces**:
+The completed defensible catalog universe contains **55 surfaces**:
 
-- 14 accepted unpublished records in the real-agent catalog, including the accepted Aider CLI 0.86.0, Kiro IDE 1.0.242 and Lovable Build mode fixtures.
-- 41 pending candidate surfaces.
+- 16 previously published current surfaces in Research Preview v0.1.
+- 39 additive source-only admissions completed on 2026-08-07.
 
-`registry.json` still retains 10 now-accepted fixture IDs among its 51 historical registry records so the original discovery work is not discarded. Those IDs are explicitly listed in `acceptedFixtureIdsPresentInRecords` and are excluded from the pending-candidate counts below.
+`registry.json` retains all 51 researched registry rows so the original discovery work is not discarded. Every row now has a corresponding record, and `acceptedFixtureIdsPresentInRecords` lists those retained IDs. The complete 16-surface prior projection remains recorded in `acceptedBaseline`; four previously published surfaces did not have retained candidate rows in this registry. The canonical 39-surface admission is `../critical-mass-expansion/admission-source.json`.
 
-The 41 pending candidates cover:
+The 39 additive admissions cover:
 
 | Delivery category | Candidate surfaces |
 | --- | ---: |
-| Local CLI | 13 |
-| IDE / desktop | 13 |
+| Local CLI | 12 |
+| IDE / desktop | 12 |
 | Hosted / background | 9 |
 | Repository-integrated | 6 |
 
-Their research states are:
+Their pre-admission research states were:
 
 | Classification | Count | Meaning |
 | --- | ---: | --- |
-| Dossier-ready | 24 | The surface has a defensible exact release, release line, or rolling-service identity. Remaining gaps can be preserved as unknowns. |
+| Dossier-ready | 22 | The surface has a defensible exact release, release line, or rolling-service identity. Remaining gaps can be preserved as unknowns. |
 | Needs identity research | 6 | The surface is real, but its publisher, artifact, client, or service boundary needs a focused pass before claim capture. |
 | Watch | 9 | Preview, transition, access, or release churn makes a later identity checkpoint safer. |
 | Historical | 2 | The surface is retired or no longer maintained but remains catalogable historically. |
@@ -52,20 +52,21 @@ Every candidate includes:
 
 Potential independent evaluations remain leads, not admitted evidence. The refreshed verified Terminal-Bench 2.0 listing does not expose an OpenCode entry, so this batch contains **no independent-evaluation admission attempt**. No result is transferable from another client, model or configuration.
 
-## Next balanced three-agent batch
+## Completed first dossier sequence
 
 This ordering is an evidence-work sequence, not a ranking of products.
 
-1. **OpenCode CLI v1.18.11** — the immutable 2026-08-01 release provides an exact open-source CLI artifact while model provider, model revision, OpenCode Zen versus external providers, Plan/Build mode, permissions and tools remain separate applicability boundaries. No independent result is attached or designated for admission.
-2. **Cascade in Devin Desktop v3.6.27** — the 2026-08-01 client release adds an exact desktop artifact over rolling model and service state. It also tests the publisher-documented Windsurf-to-Devin naming transition without merging Cascade with Devin Local, external ACP agents or the already accepted hosted Devin surface.
-3. **GitLab Duo Code Review Flow on GitLab 19.2** — the released 2026-07-16 line adds a repository-integrated review surface rather than another code-writing agent. It exposes GitLab.com, Self-Managed and Dedicated offering scope; service-account and CI/CD runner execution; selected or self-hosted model alternatives; and manual assignment, Agentic Chat handoff and automatic-review trigger/approval paths.
+1. **Qwen Code CLI** — official NPM, GitHub release and container paths support the exact 0.21.7 client identity. Alibaba Coding Plan, API-key and third-party-provider routes, plus sandboxed and unsandboxed execution, remain separate applicability boundaries. No independent result is attached or designated for admission.
+2. **JetBrains Junie IDE plugin** — the versioned plugin adds a JetBrains editor surface over rolling model availability. IDE family, plugin version, subscription, selected model and approval mode remain separate boundaries, and the plugin must not be merged with the Junie CLI beta.
+3. **Cursor Cloud Agents (formerly Background Agents)** — the renamed rolling hosted surface exposes isolated-machine and development-environment boundaries across web, mobile, desktop, Slack, GitHub and API initiation paths. Those paths remain distinct, and no claim transfers from the published foreground Agent record.
+4. **GitLab Duo Code Review Flow on GitLab 19.2** — the released 2026-07-16 line adds a repository-integrated review surface rather than another code-writing agent. It exposes GitLab.com, Self-Managed and Dedicated offering scope; service-account and CI/CD runner execution; selected or self-hosted model alternatives; and manual assignment, Agentic Chat handoff and automatic-review trigger/approval paths.
 
-This sequence spans local CLI, IDE/desktop and repository-integrated delivery. It is balanced for schema coverage, not ordered by quality or suitability. The batch uses zero of the one permitted independent-evaluation admission attempts.
+This sequence spanned local CLI, IDE/desktop, hosted/background and repository-integrated delivery. It was balanced for schema coverage, not ordered by quality, popularity or suitability. The completed expansion uses zero independent-evaluation admission attempts.
 
 ## Boundaries
 
-- No dossier has been created for any surface in the selected next batch.
+- The generated dossiers admit identity and delivery attribution only; they add no capability or performance claim.
 - No agent was installed, run, tested, scored, ranked or recommended.
 - Accepted dossiers and generated records are used only to identify and exclude accepted fixture IDs from pending-candidate counts; their evidence is not copied into candidate claims.
-- The registry remains under `drafts/real-agent-catalog/` and is not part of `catalog/`, `site/` or `dist/`.
-- All publisher statements remain candidate source leads until captured as attributed claims in a future dossier.
+- The registry remains under `drafts/real-agent-catalog/`; only the generated public projection enters `dist/`.
+- The official identity and delivery statements are captured as attributed claims; every other publisher statement remains outside the admitted evidence.

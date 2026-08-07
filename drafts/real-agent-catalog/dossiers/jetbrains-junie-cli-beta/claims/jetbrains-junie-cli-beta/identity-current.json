@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.jetbrains.junie.cli.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.jetbrains.junie.cli",
+    "name": "Junie CLI",
+    "publisher": "JetBrains",
+    "surface": {
+      "kind": "cli",
+      "name": "Junie CLI",
+      "slug": "jetbrains-junie-cli-beta"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "JetBrains's official source names and documents Junie CLI as a distinct current software-development agent surface in the reviewed Junie CLI public beta."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "JetBrains"
+  },
+  "source": {
+    "uri": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
+    "title": "Junie CLI beta announcement",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "Beta update channel and artifact version need an immutable checkpoint",
+    "Bundled and user-supplied model paths differ"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

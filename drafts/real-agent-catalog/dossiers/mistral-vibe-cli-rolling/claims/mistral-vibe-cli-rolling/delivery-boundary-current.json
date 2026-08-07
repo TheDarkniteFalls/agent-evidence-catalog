@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "ai.mistral.vibe.cli.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "ai.mistral.vibe.cli",
+    "name": "Vibe CLI",
+    "publisher": "Mistral AI",
+    "surface": {
+      "kind": "cli",
+      "name": "Vibe CLI",
+      "slug": "mistral-vibe-cli-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Mistral AI's official documentation describes Vibe CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Vibe Code surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Mistral AI"
+  },
+  "source": {
+    "uri": "https://docs.mistral.ai/getting-started/quickstarts/vibe-code/install-cli",
+    "title": "Install the Vibe CLI",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "unresolved",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "Vibe rebranding and Vibe 2.0 product line must be separated from older Mistral Vibe claims",
+    "Profiles, model endpoint, autonomy and teleport-to-web paths are configuration-specific"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

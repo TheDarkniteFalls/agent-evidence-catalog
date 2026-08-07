@@ -147,6 +147,22 @@ const currentnessLifecyclePath = path.join(
 );
 const currentnessLifecycleText = await readFile(currentnessLifecyclePath, "utf8");
 const lifecycle = structuredClone(JSON.parse(currentnessLifecycleText));
+const criticalMassSourcePath = path.join(draftRoot, "critical-mass-expansion", "admission-source.json");
+const criticalMassSourceText = await readFile(criticalMassSourcePath, "utf8");
+const criticalMassSource = JSON.parse(criticalMassSourceText);
+const criticalMassLifecyclePath = path.join(draftRoot, "critical-mass-expansion", "lifecycle-additions.json");
+const criticalMassLifecycleText = await readFile(criticalMassLifecyclePath, "utf8");
+const criticalMassLifecycle = JSON.parse(criticalMassLifecycleText);
+const existingLifecycleIds = new Set(lifecycle.entries.map((entry) => entry.recordId));
+const existingSurfaceKeys = new Set(lifecycle.entries.map((entry) => entry.surfaceKey));
+for (const entry of criticalMassLifecycle.entries) {
+  if (existingLifecycleIds.has(entry.recordId)) throw new Error(`Critical-mass lifecycle record collision: ${entry.recordId}`);
+  if (existingSurfaceKeys.has(entry.surfaceKey)) throw new Error(`Critical-mass lifecycle surface collision: ${entry.surfaceKey}`);
+}
+lifecycle.asOf = criticalMassSource.asOf;
+lifecycle.interpretationBoundary.note = "This additive projection preserves every accepted 2026-08-02 lifecycle entry unchanged and appends the reviewed 2026-08-07 critical-mass surface records. It does not rewrite accepted dossiers, raw claims, records, mappings or watcher baselines.";
+lifecycle.sources.push(...criticalMassLifecycle.sources);
+lifecycle.entries.push(...criticalMassLifecycle.entries);
 const lifecycleById = new Map(lifecycle.entries.map((entry) => [entry.recordId, entry]));
 
 await writeFile(path.join(researchPreviewDirectory, "lifecycle.json"), serialize(lifecycle));
@@ -156,7 +172,7 @@ const baseWatcherText = await readFile(baseWatcherPath, "utf8");
 const watcher = structuredClone(JSON.parse(baseWatcherText));
 for (const currentEntry of lifecycle.entries.filter((entry) => entry.status === "current")) {
   const surface = watcher.surfaces.find((candidate) => candidate.surfaceKey === currentEntry.surfaceKey);
-  if (!surface) throw new Error(`Missing watcher surface ${currentEntry.surfaceKey}`);
+  if (!surface) continue;
   surface.lifecycleRecordIds = [...new Set([surface.recordId, ...(surface.lifecycleRecordIds ?? []), currentEntry.recordId])];
   surface.currentLifecycleRecordId = currentEntry.recordId;
   for (const sourceId of surface.sourceIds) {
@@ -176,6 +192,7 @@ const recordsById = new Map(pilot.records.map((record) => [record.identity.recor
 for (const item of refreshes) recordsById.set(item.recordId, await buildDraftSourceRecord(item.dossierSlug));
 for (const item of validatedCurrentnessRepairs) recordsById.set(item.recordId, await buildDraftSourceRecord(item.dossierSlug));
 recordsById.set("com.openai.codex.cli.0-146-0", await buildDraftSourceRecord("openai-codex-cli-0-146-0"));
+for (const item of criticalMassSource.admissions) recordsById.set(item.recordId, await buildDraftSourceRecord(item.dossierSlug));
 
 const currentRecordIds = new Set(lifecycle.entries.filter((entry) => entry.status === "current").map((entry) => entry.recordId));
 const refreshedRecordIds = new Set([
@@ -183,8 +200,10 @@ const refreshedRecordIds = new Set([
   ...validatedCurrentnessRepairs.map((item) => item.recordId),
   "com.openai.codex.cli.0-146-0"
 ]);
+const criticalMassRecordIds = new Set(criticalMassSource.admissions.map((item) => item.recordId));
 const recordPath = (recordId) => {
   if (refreshedRecordIds.has(recordId)) return `drafts/real-agent-catalog/current-record-refresh/records/${recordId}.json`;
+  if (criticalMassRecordIds.has(recordId)) return `drafts/real-agent-catalog/critical-mass-expansion/records/${recordId}.json`;
   const summary = baseSummaryById.get(recordId);
   if (!summary) return null;
   return path.posix.normalize(path.posix.join("drafts/real-agent-catalog/pilot", summary.recordHref));
@@ -192,7 +211,8 @@ const recordPath = (recordId) => {
 const mappingPathById = new Map([
   ...refreshes.map((item) => [item.recordId, `drafts/real-agent-catalog/claimed-attribute-study/${item.mappingName}`]),
   ...validatedCurrentnessRepairs.map((item) => [item.recordId, `drafts/real-agent-catalog/claimed-attribute-study/${item.mappingName}`]),
-  ["com.openai.codex.cli.0-146-0", "drafts/real-agent-catalog/claimed-attribute-study/openai-codex-cli-0-146-0-mapping.json"]
+  ["com.openai.codex.cli.0-146-0", "drafts/real-agent-catalog/claimed-attribute-study/openai-codex-cli-0-146-0-mapping.json"],
+  ...criticalMassSource.admissions.map((item) => [item.recordId, "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json"])
 ]);
 const publicRecordSummary = (record, lifecycleEntry) => ({
   recordId: record.identity.recordId,
@@ -218,10 +238,10 @@ const previewRecords = previewRecordIds.map((recordId) => publicRecordSummary(re
 const surfaces = [...new Set(lifecycle.entries.map((entry) => entry.surfaceKey))].sort().map((surfaceKey) => {
   const entries = lifecycle.entries.filter((entry) => entry.surfaceKey === surfaceKey);
   const current = entries.find((entry) => entry.status === "current");
-  const currentAvailable = recordsById.has(current.recordId);
+  const currentAvailable = Boolean(current && recordsById.has(current.recordId));
   return {
     surfaceKey,
-    currentRecordId: current.recordId,
+    currentRecordId: current?.recordId ?? null,
     currentRecordAvailable: currentAvailable,
     currentRecord: currentAvailable ? previewRecords.find((record) => record.recordId === current.recordId) : null,
     gate: null,
@@ -235,7 +255,7 @@ const surfaces = [...new Set(lifecycle.entries.map((entry) => entry.surfaceKey))
 const preview = {
   schemaVersion: "agent-evidence-research-preview/0.1-draft",
   artifactType: "unpublished-maintainer-curated-research-preview",
-  asOf: "2026-08-02",
+  asOf: criticalMassSource.asOf,
   releaseCandidateStatus: "ready-for-release-review",
   boundaries: {
     static: true,
@@ -255,6 +275,10 @@ const preview = {
     currentnessReceiptPath: "drafts/research-preview-release/currentness-2026-08-02/currentness-receipt.json",
     currentnessLifecyclePath: "drafts/research-preview-release/currentness-2026-08-02/lifecycle-overlay.json",
     currentnessLifecycleSha256: sha256(currentnessLifecycleText),
+    criticalMassAdmissionPath: "drafts/real-agent-catalog/critical-mass-expansion/admission-source.json",
+    criticalMassAdmissionSha256: sha256(criticalMassSourceText),
+    criticalMassLifecyclePath: "drafts/real-agent-catalog/critical-mass-expansion/lifecycle-additions.json",
+    criticalMassLifecycleSha256: sha256(criticalMassLifecycleText),
     baseWatcherSha256: sha256(baseWatcherText),
     unifiedLifecyclePath: "drafts/real-agent-catalog/research-preview/lifecycle.json",
     unifiedWatcherPath: "drafts/real-agent-catalog/research-preview/source-registry.json",
@@ -274,5 +298,5 @@ const preview = {
 await writeFile(path.join(researchPreviewDirectory, "catalog.json"), serialize(preview));
 
 console.log(`Built ${refreshes.length} source-derived records and ${refreshes.length} additive taxonomy mappings, then integrated ${validatedCurrentnessRepairs.length} validated currentness successors.`);
-console.log(`Built additive ${lifecycle.entries.length}-entry lifecycle and ${watcher.sources.length}-source watcher views without changing accepted watcher fingerprints.`);
+console.log(`Built additive ${lifecycle.entries.length}-entry lifecycle while preserving the ${watcher.sources.length}-source accepted watcher baseline unchanged.`);
 console.log(`Built research-preview data for ${surfaces.length} surfaces with all ${preview.counts.currentRecordsPresented} current records presented, including Codex CLI 0.146.0.`);

@@ -1,15 +1,15 @@
 # Agent Evidence Catalog roadmap
 
-Updated: 2026-08-04. This roadmap records intended work; it does not authorize
+Updated: 2026-08-07. This roadmap records intended work; it does not authorize
 publication, GitHub changes, publisher contact, agent execution, open intake or
 a response-time commitment.
 
 ## Current position
 
 The public [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
-contains 16 current agent-surface records
-and six explicit-history records: five superseded identities plus the GitLab
-18.8 historical milestone. It is static, maintainer-curated and based
+has a prepared 55-surface catalog build containing 53 current records and
+eight explicit-history records: five superseded identities, two historical
+records and one discontinued surface. It is static, maintainer-curated and based
 only on attributed publisher sources. It assigns zero independent-test credit
 and provides no rankings, recommendations or suitability calculation.
 
@@ -54,7 +54,7 @@ the public view exposes freshness without implying unattended verification.
 
 ### 3. Inventory expansion
 
-Status: selective after concept or release feedback.
+Status: 55-surface critical-mass expansion complete locally; future additions remain selective.
 
 - Identify meaningful missing surfaces rather than chasing a raw record count.
 - Prefer agents that improve coverage across delivery models, authority models,
@@ -64,7 +64,10 @@ Status: selective after concept or release feedback.
 - Keep zero independent-test credit unless a separate evidence-admission policy
   is approved.
 
-Done for each batch when every added current surface passes source, mapping,
+The 2026-08-07 batch adds 39 bounded identity-and-delivery dossiers without
+admitting independent evidence or comparison results. It brings the prepared
+catalog to 55 surfaces while keeping every applicability gap visible. Future
+batches remain done only when every added surface passes source, mapping,
 lifecycle, preservation and presentation validation.
 
 ### 4. Concept and presentation review

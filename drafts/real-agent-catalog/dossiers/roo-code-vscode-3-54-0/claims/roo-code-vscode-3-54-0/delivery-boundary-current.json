@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.roocode.vscode-extension.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.roocode.vscode-extension",
+    "name": "Roo Code VS Code extension",
+    "publisher": "Roo Code, Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Roo Code VS Code extension",
+      "slug": "roo-code-vscode-3-54-0"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Roo Code, Inc.'s official documentation describes Roo Code VS Code extension as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Roo Code surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Roo Code, Inc."
+  },
+  "source": {
+    "uri": "https://roocodeinc.github.io/Roo-Code/getting-started/installing/",
+    "title": "Roo Code installation documentation",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "3.54.0"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "discontinued",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "Only pre-shutdown artifacts and documentation are applicable",
+    "Cloud or successor behavior cannot be inferred from the retired extension"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

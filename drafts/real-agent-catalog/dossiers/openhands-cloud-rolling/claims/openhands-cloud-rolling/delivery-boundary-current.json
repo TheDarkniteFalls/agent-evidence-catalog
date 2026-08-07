@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.openhands.cloud.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "org.openhands.cloud",
+    "name": "OpenHands Cloud",
+    "publisher": "OpenHands AI",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "OpenHands Cloud",
+      "slug": "openhands-cloud-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "OpenHands AI's official documentation describes OpenHands Cloud as a publisher-hosted service; the catalog keeps that delivery path separate from other OpenHands surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "OpenHands AI"
+  },
+  "source": {
+    "uri": "https://docs.openhands.dev/",
+    "title": "OpenHands documentation",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "Cloud service revision is independent of accepted OpenHands CLI 1.16.0",
+    "Repository provider, account plan, runtime image and secrets change authority"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

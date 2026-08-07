@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.alibaba.qwen-code.vscode-extension.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.alibaba.qwen-code.vscode-extension",
+    "name": "Qwen Code VS Code extension",
+    "publisher": "Alibaba Cloud Qwen team",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Qwen Code VS Code extension",
+      "slug": "alibaba-qwen-code-vscode-beta"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Alibaba Cloud Qwen team's official documentation describes Qwen Code VS Code extension as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Qwen Code surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Alibaba Cloud Qwen team"
+  },
+  "source": {
+    "uri": "https://qwenlm.github.io/qwen-code-docs/en/developers/roadmap/",
+    "title": "Qwen Code roadmap",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "Extension packaging and shared CLI core versions must be pinned independently",
+    "Beta status and provider configuration limit rolling claims"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

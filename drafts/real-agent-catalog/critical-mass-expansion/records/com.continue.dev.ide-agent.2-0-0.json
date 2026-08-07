@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/continue-vscode-agent-2-0-0/dossier-source.json",
+    "sha256": "e87952a6cb2ef329632a9ba092435bb6a1ad0baa22e434dd02db4a2759e266ec",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.continue.dev.ide-agent.2-0-0",
+    "agent": {
+      "id": "com.continue.dev.ide-agent",
+      "name": "Continue IDE Agent mode"
+    },
+    "publisher": {
+      "id": "continue-dev-inc",
+      "name": "Continue Dev, Inc."
+    },
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Continue IDE extension Agent mode",
+      "slug": "continue-vscode-agent-2-0-0",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "2.0.0",
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Final Continue IDE extension line",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "continue-vscode-agent-reviewed-artifact",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://docs.continue.dev/",
+        "ecosystem": "Final Continue IDE extension line",
+        "version": "2.0.0",
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "continue-dev-inc",
+        "name": "Continue Dev, Inc.",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-2-0-0",
+      "uri": "https://docs.continue.dev/",
+      "title": "Continue documentation",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "continue-dev-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://docs.continue.dev/ide-extensions/agent/quick-start",
+      "title": "Continue Agent mode quickstart",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "continue-dev-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Continue IDE extension Agent mode",
+            "claimIds": [
+              "com.continue.dev.ide-agent.identity-2-0-0",
+              "com.continue.dev.ide-agent.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The final 2.0.0 extension must be separated from newer or successor Continue offerings",
+          "Provider and configuration variability remains substantial even for a frozen client"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.continue.dev.ide-agent.identity-2-0-0",
+      "rawRecordPath": "dossiers/continue-vscode-agent-2-0-0/claims/continue-vscode-agent-2-0-0/identity-2-0-0.json",
+      "rawRecordSha256": "01398004ef542b10af097b501e710bfe18a265cb36ce17ebc381d99f3469e0b3",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.continue.dev.ide-agent.identity-2-0-0",
+        "slug": "identity-2-0-0",
+        "subject": {
+          "id": "com.continue.dev.ide-agent",
+          "name": "Continue IDE Agent mode",
+          "publisher": "Continue Dev, Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Continue IDE extension Agent mode",
+            "slug": "continue-vscode-agent-2-0-0"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "Continue Dev, Inc.'s official source identifies Continue IDE extension Agent mode 2.0.0 as the exact client or release-line boundary reviewed for this record."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Continue Dev, Inc."
+        },
+        "source": {
+          "uri": "https://docs.continue.dev/",
+          "title": "Continue documentation",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "2.0.0"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "historical",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "The final 2.0.0 extension must be separated from newer or successor Continue offerings",
+          "Provider and configuration variability remains substantial even for a frozen client"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "continue-dev-inc",
+      "sourceId": "source-identity-2-0-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.continue.dev.ide-agent.delivery-boundary-current",
+      "rawRecordPath": "dossiers/continue-vscode-agent-2-0-0/claims/continue-vscode-agent-2-0-0/delivery-boundary-current.json",
+      "rawRecordSha256": "bc15a2875826cabdd5676dab81505895ac69849446994fa5f8aecf8e5a1279f5",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.continue.dev.ide-agent.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.continue.dev.ide-agent",
+          "name": "Continue IDE Agent mode",
+          "publisher": "Continue Dev, Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Continue IDE extension Agent mode",
+            "slug": "continue-vscode-agent-2-0-0"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Continue Dev, Inc.'s official documentation describes Continue IDE extension Agent mode as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Continue surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Continue Dev, Inc."
+        },
+        "source": {
+          "uri": "https://docs.continue.dev/ide-extensions/agent/quick-start",
+          "title": "Continue Agent mode quickstart",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "2.0.0"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "historical",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "The final 2.0.0 extension must be separated from newer or successor Continue offerings",
+          "Provider and configuration variability remains substantial even for a frozen client"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "continue-dev-inc",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-continue-vscode-agent-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Continue IDE Agent mode is represented only as the Continue IDE extension Agent mode surface at the reviewed Final Continue IDE extension line boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Continue IDE extension Agent mode 2.0.0 is the exact reviewed identity; rolling services and effective configuration remain separate.",
+      "sourceId": "source-identity-2-0-0",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "The final 2.0.0 extension must be separated from newer or successor Continue offerings",
+      "Provider and configuration variability remains substantial even for a frozen client",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Exact 2.0.0",
+        "tone": "qualified",
+        "answer": "Continue Dev, Inc.'s official source identifies Continue IDE extension Agent mode 2.0.0 as the exact client or release-line boundary reviewed for this record.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.continue.dev.ide-agent.identity-2-0-0"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "Continue Dev, Inc.'s official documentation describes Continue IDE extension Agent mode as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Continue surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.continue.dev.ide-agent.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.continue.dev.ide-agent.identity-2-0-0"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

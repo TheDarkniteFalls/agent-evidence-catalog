@@ -116,18 +116,16 @@ for (const entry of overlay.entries.filter((item) => item.status === "current"))
 }
 assert.equal(currentBySurface.size, 16);
 
-const intentionallyChanged = new Set([
-  "com.cline.bot.vscode-extension.4-1-2",
-  "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
-  "com.gitlab.duo.developer-flow.19-2",
-  "com.zed.agent.native.stable.1-12-1",
-  "dev.zed.agent.native.1-13-1"
-]);
-const baseById = new Map(baseLifecycle.entries.map((entry) => [entry.recordId, entry]));
-for (const [recordId, baseEntry] of baseById) {
-  if (!intentionallyChanged.has(recordId)) assert.deepEqual(byId.get(recordId), baseEntry, `Unrelated lifecycle entry changed: ${recordId}`);
-}
-assert.deepEqual(overlay.sources.slice(0, baseLifecycle.sources.length), baseLifecycle.sources);
+assert.deepEqual(
+  baseLifecycle.entries.slice(0, overlay.entries.length),
+  overlay.entries,
+  "The dated 22-entry lifecycle is not the exact preserved prefix of the expanded lifecycle"
+);
+assert.deepEqual(
+  baseLifecycle.sources.slice(0, overlay.sources.length),
+  overlay.sources,
+  "The dated lifecycle sources are not the exact preserved prefix of the expanded lifecycle sources"
+);
 
 assert.equal(receipt.scope.surfacesReviewed, 16);
 assert.equal(receipt.currentSurfaces.length, 16);
@@ -168,4 +166,4 @@ assert(markdown.endsWith("\n"));
 console.log("PASS lifecycle overlay schema, source references and reciprocal same-surface links");
 console.log("PASS lifecycle counts: 16 current, 5 superseded, 1 historical, 0 discontinued, 0 unresolved");
 console.log("PASS 16-surface receipt matches the lifecycle overlay and records three material transitions");
-console.log("PASS unrelated lifecycle entries and all base lifecycle sources remain unchanged");
+console.log("PASS dated lifecycle entries and sources remain the exact prefix of the expanded lifecycle");

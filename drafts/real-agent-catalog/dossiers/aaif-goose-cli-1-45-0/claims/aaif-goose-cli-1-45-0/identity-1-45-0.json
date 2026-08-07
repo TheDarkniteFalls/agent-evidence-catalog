@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.aaif.goose.cli.identity-1-45-0",
+  "slug": "identity-1-45-0",
+  "subject": {
+    "id": "org.aaif.goose.cli",
+    "name": "Goose CLI",
+    "publisher": "Agentic AI Foundation",
+    "surface": {
+      "kind": "cli",
+      "name": "Goose CLI",
+      "slug": "aaif-goose-cli-1-45-0"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "Agentic AI Foundation's official source identifies Goose CLI 1.45.0 as the exact client or release-line boundary reviewed for this record."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Agentic AI Foundation"
+  },
+  "source": {
+    "uri": "https://github.com/aaif-goose/goose/releases/tag/v1.45.0",
+    "title": "Goose v1.45.0 release",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": "2026-07-29T20:11:39Z",
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "1.45.0"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "Publisher/governance identity must be reconciled across legacy Block URLs and current AAIF ownership",
+    "Provider, extension and permission configurations are mutually scoped alternatives"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/alibaba-qwen-code-cli-0-21-7/dossier-source.json",
+    "sha256": "ac1bb96e07c8cf61d4b4cbd49db469f285a22443183974ab3ba91d3ff292c6dc",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.alibaba.qwen-code.cli.0-21-7",
+    "agent": {
+      "id": "com.alibaba.qwen-code.cli",
+      "name": "Qwen Code CLI"
+    },
+    "publisher": {
+      "id": "alibaba-cloud-qwen",
+      "name": "Alibaba Cloud Qwen team"
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "Qwen Code CLI",
+      "slug": "alibaba-qwen-code-cli-0-21-7",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "0.21.7",
+      "releaseTag": "v0.21.7",
+      "sourceRevision": null,
+      "releasedAt": "2026-08-06T23:19:06Z",
+      "channel": "Qwen Code CLI release stream",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "alibaba-qwen-code-cli-reviewed-artifact",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.7",
+        "ecosystem": "Qwen Code CLI release stream",
+        "version": "0.21.7",
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "alibaba-cloud-qwen",
+        "name": "Alibaba Cloud Qwen team",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-0-21-7",
+      "uri": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.7",
+      "title": "Qwen Code v0.21.7 release",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "alibaba-cloud-qwen",
+      "publishedAt": "2026-08-06T23:19:06Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://qwenlm.github.io/qwen-code-docs/en/",
+      "title": "Qwen Code overview",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "alibaba-cloud-qwen",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Qwen Code CLI",
+            "claimIds": [
+              "com.alibaba.qwen-code.cli.identity-0-21-7",
+              "com.alibaba.qwen-code.cli.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Alibaba Coding Plan, API key and third-party provider paths differ",
+          "Sandbox container and unsandboxed local execution must be scoped separately"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.alibaba.qwen-code.cli.identity-0-21-7",
+      "rawRecordPath": "dossiers/alibaba-qwen-code-cli-0-21-7/claims/alibaba-qwen-code-cli-0-21-7/identity-0-21-7.json",
+      "rawRecordSha256": "f4a3cbba54213e960789dff771b1e5dda68a4fe6c071fad2404976f47212f2ac",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.alibaba.qwen-code.cli.identity-0-21-7",
+        "slug": "identity-0-21-7",
+        "subject": {
+          "id": "com.alibaba.qwen-code.cli",
+          "name": "Qwen Code CLI",
+          "publisher": "Alibaba Cloud Qwen team",
+          "surface": {
+            "kind": "cli",
+            "name": "Qwen Code CLI",
+            "slug": "alibaba-qwen-code-cli-0-21-7"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "Alibaba Cloud Qwen team's official source identifies Qwen Code CLI 0.21.7 as the exact client or release-line boundary reviewed for this record."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Alibaba Cloud Qwen team"
+        },
+        "source": {
+          "uri": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.7",
+          "title": "Qwen Code v0.21.7 release",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": "2026-08-06T23:19:06Z",
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.21.7"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "Alibaba Coding Plan, API key and third-party provider paths differ",
+          "Sandbox container and unsandboxed local execution must be scoped separately"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "alibaba-cloud-qwen",
+      "sourceId": "source-identity-0-21-7",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.alibaba.qwen-code.cli.delivery-boundary-current",
+      "rawRecordPath": "dossiers/alibaba-qwen-code-cli-0-21-7/claims/alibaba-qwen-code-cli-0-21-7/delivery-boundary-current.json",
+      "rawRecordSha256": "cd4d618b453ea7e5dc1ca77df6ab67714703581ea2fd1ee2e33c3b34bde666d3",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.alibaba.qwen-code.cli.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.alibaba.qwen-code.cli",
+          "name": "Qwen Code CLI",
+          "publisher": "Alibaba Cloud Qwen team",
+          "surface": {
+            "kind": "cli",
+            "name": "Qwen Code CLI",
+            "slug": "alibaba-qwen-code-cli-0-21-7"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Alibaba Cloud Qwen team's official documentation describes Qwen Code CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Qwen Code surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Alibaba Cloud Qwen team"
+        },
+        "source": {
+          "uri": "https://qwenlm.github.io/qwen-code-docs/en/",
+          "title": "Qwen Code overview",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "0.21.7"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "Alibaba Coding Plan, API key and third-party provider paths differ",
+          "Sandbox container and unsandboxed local execution must be scoped separately"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "alibaba-cloud-qwen",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-alibaba-qwen-code-cli-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Qwen Code CLI is represented only as the Qwen Code CLI surface at the reviewed Qwen Code CLI release stream boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Qwen Code CLI 0.21.7 is the exact reviewed identity; rolling services and effective configuration remain separate.",
+      "sourceId": "source-identity-0-21-7",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Alibaba Coding Plan, API key and third-party provider paths differ",
+      "Sandbox container and unsandboxed local execution must be scoped separately",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Exact 0.21.7",
+        "tone": "qualified",
+        "answer": "Alibaba Cloud Qwen team's official source identifies Qwen Code CLI 0.21.7 as the exact client or release-line boundary reviewed for this record.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.alibaba.qwen-code.cli.identity-0-21-7"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "Alibaba Cloud Qwen team's official documentation describes Qwen Code CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Qwen Code surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.alibaba.qwen-code.cli.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.alibaba.qwen-code.cli.identity-0-21-7"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

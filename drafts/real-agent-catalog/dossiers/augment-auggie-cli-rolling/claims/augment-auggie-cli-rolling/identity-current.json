@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.augmentcode.auggie.cli.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.augmentcode.auggie.cli",
+    "name": "Auggie CLI",
+    "publisher": "Augment Code",
+    "surface": {
+      "kind": "cli",
+      "name": "Auggie CLI",
+      "slug": "augment-auggie-cli-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "Augment Code's official source names and documents Auggie CLI as a distinct current software-development agent surface in the reviewed Auggie auto-updating CLI."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Augment Code"
+  },
+  "source": {
+    "uri": "https://docs.augmentcode.com/cli/reference",
+    "title": "Auggie CLI reference",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "unresolved",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "CLI version, hosted context-engine revision and available models change independently",
+    "Agent, print, MCP-server and ACP modes must be scoped separately"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

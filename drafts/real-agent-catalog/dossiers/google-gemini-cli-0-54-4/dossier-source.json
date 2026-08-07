@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier-source",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "identity": {
+    "recordId": "com.google.gemini.cli.0-54-4",
+    "agent": {
+      "id": "com.google.gemini.cli",
+      "name": "Gemini CLI"
+    },
+    "publisher": {
+      "id": "google",
+      "name": "Google"
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "Gemini CLI",
+      "slug": "google-gemini-cli-0-54-4",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "0.54.4",
+      "releaseTag": "v0.54.4",
+      "sourceRevision": null,
+      "releasedAt": "2026-08-07T04:44:19Z",
+      "channel": "Gemini CLI release stream",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "google-gemini-cli-reviewed-artifact",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.54.4",
+        "ecosystem": "Gemini CLI release stream",
+        "version": "0.54.4",
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "google",
+        "name": "Google",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://github.com/google-gemini/gemini-cli/releases/tag/v0.54.4": {
+      "sourceKind": "publisher-release-metadata",
+      "snapshotStatus": "immutable-reference",
+      "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+    },
+    "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+    }
+  },
+  "rawClaimPaths": [
+    "claims/google-gemini-cli-0-54-4/identity-0-54-4.json",
+    "claims/google-gemini-cli-0-54-4/delivery-boundary-current.json"
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Gemini CLI",
+            "claimIds": [
+              "com.google.gemini.cli.identity-0-54-4",
+              "com.google.gemini.cli.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Consumer, enterprise and API-key availability now diverge",
+          "The 0.14.0 evaluation does not establish current Antigravity CLI behavior"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-google-gemini-cli-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Gemini CLI is represented only as the Gemini CLI surface at the reviewed Gemini CLI release stream boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Gemini CLI 0.54.4 is the exact reviewed identity; rolling services and effective configuration remain separate.",
+      "sourceUri": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.54.4",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Consumer, enterprise and API-key availability now diverge",
+      "The 0.14.0 evaluation does not establish current Antigravity CLI behavior",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Exact 0.54.4",
+        "tone": "qualified",
+        "answer": "Google's official source identifies Gemini CLI 0.54.4 as the exact client or release-line boundary reviewed for this record.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.google.gemini.cli.identity-0-54-4"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "Google's official documentation describes Gemini CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Gemini CLI surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.google.gemini.cli.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.google.gemini.cli.identity-0-54-4"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

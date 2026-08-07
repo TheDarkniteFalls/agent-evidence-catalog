@@ -3,13 +3,13 @@
   "artifactType": "unpublished-real-agent-lifecycle-overlay",
   "synthetic": false,
   "unpublished": true,
-  "asOf": "2026-08-02",
+  "asOf": "2026-08-07",
   "interpretationBoundary": {
     "recordsModified": false,
     "publisherSourcesOnly": true,
     "claimsOrObservationsAdded": false,
     "catalogIntegration": false,
-    "note": "This additive currentness overlay derives lifecycle state from the preserved research-preview lifecycle plus validated successor records. It does not rewrite accepted dossiers, raw claims, records, mappings, watcher baselines or catalog pages."
+    "note": "This additive projection preserves every accepted 2026-08-02 lifecycle entry unchanged and appends the reviewed 2026-08-07 critical-mass surface records. It does not rewrite accepted dossiers, raw claims, records, mappings or watcher baselines."
   },
   "sources": [
     {
@@ -209,6 +209,357 @@
       "kind": "release-list",
       "publisherControlled": true,
       "reviewedAt": "2026-08-02"
+    },
+    {
+      "id": "critical-mass-google-gemini-cli",
+      "publisher": "Google",
+      "title": "Gemini CLI v0.54.4 release",
+      "uri": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.54.4",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-google-antigravity-cli",
+      "publisher": "Google",
+      "title": "Antigravity CLI 1.1.11 release",
+      "uri": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.11",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-aaif-goose-cli",
+      "publisher": "Agentic AI Foundation",
+      "title": "Goose v1.45.0 release",
+      "uri": "https://github.com/aaif-goose/goose/releases/tag/v1.45.0",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-alibaba-qwen-code-cli",
+      "publisher": "Alibaba Cloud Qwen team",
+      "title": "Qwen Code v0.21.7 release",
+      "uri": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.7",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-mistral-vibe-cli",
+      "publisher": "Mistral AI",
+      "title": "Vibe overview",
+      "uri": "https://docs.mistral.ai/vibe/overview",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-amp-cli",
+      "publisher": "Sourcegraph",
+      "title": "Amp Owner's Manual",
+      "uri": "https://ampcode.com/manual",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-github-copilot-cli",
+      "publisher": "GitHub",
+      "title": "GitHub Copilot CLI v1.0.78 release",
+      "uri": "https://github.com/github/copilot-cli/releases/tag/v1.0.78",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-jetbrains-junie-cli",
+      "publisher": "JetBrains",
+      "title": "Junie CLI beta announcement",
+      "uri": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-aws-kiro-cli",
+      "publisher": "Amazon Web Services",
+      "title": "Kiro product surfaces",
+      "uri": "https://kiro.dev/",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-cline-cli",
+      "publisher": "Cline Bot Inc.",
+      "title": "Cline CLI v3.0.51 release",
+      "uri": "https://github.com/cline/cline/releases/tag/cli-v3.0.51",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-augment-auggie-cli",
+      "publisher": "Augment Code",
+      "title": "Auggie CLI reference",
+      "uri": "https://docs.augmentcode.com/cli/reference",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-factory-droid-cli",
+      "publisher": "Factory AI",
+      "title": "Droid CLI overview",
+      "uri": "https://docs.factory.ai/cli/getting-started/overview",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-roo-code-vscode",
+      "publisher": "Roo Code, Inc.",
+      "title": "Roo Code repository",
+      "uri": "https://github.com/RooCodeInc/Roo-Code",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-continue-vscode-agent",
+      "publisher": "Continue Dev, Inc.",
+      "title": "Continue documentation",
+      "uri": "https://docs.continue.dev/",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-jetbrains-junie-ide",
+      "publisher": "JetBrains",
+      "title": "Junie plugin 262.132.31",
+      "uri": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1013527",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-aws-amazon-q-developer-ide",
+      "publisher": "Amazon Web Services",
+      "title": "Amazon Q Developer end-of-support announcement",
+      "uri": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-google-gemini-code-assist-agent",
+      "publisher": "Google",
+      "title": "Gemini Code Assist agent mode",
+      "uri": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-github-copilot-vscode-agent",
+      "publisher": "GitHub and Microsoft",
+      "title": "Agents in Visual Studio Code",
+      "uri": "https://code.visualstudio.com/docs/agents/concepts/agents",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-openai-codex-ide-extension",
+      "publisher": "OpenAI",
+      "title": "Codex IDE extension documentation",
+      "uri": "https://developers.openai.com/codex/ide/",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-alibaba-qwen-code-vscode",
+      "publisher": "Alibaba Cloud Qwen team",
+      "title": "Qwen Code quickstart with VS Code integration",
+      "uri": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-mistral-vibe-code-vscode",
+      "publisher": "Mistral AI",
+      "title": "Choose Vibe Chat, Work or Code",
+      "uri": "https://docs.mistral.ai/vibe/choose-chat-work-code",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-tabnine-agent-ide",
+      "publisher": "Tabnine",
+      "title": "Tabnine Agent",
+      "uri": "https://docs.tabnine.com/main/getting-started/tabnine-agent",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-warp-agent-mode-desktop",
+      "publisher": "Warp",
+      "title": "Warp and Oz overview",
+      "uri": "https://docs.warp.dev/?fallback=true",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-augment-ide-agent",
+      "publisher": "Augment Code",
+      "title": "Using Augment Agent",
+      "uri": "https://docs.augmentcode.com/using-augment/agent",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-openai-codex-cloud",
+      "publisher": "OpenAI",
+      "title": "Codex cloud overview",
+      "uri": "https://developers.openai.com/codex/cloud/",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-cursor-background-agents",
+      "publisher": "Anysphere",
+      "title": "Cursor Cloud Agents",
+      "uri": "https://cursor.com/cloud",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-gitlab-duo-software-development-flow",
+      "publisher": "GitLab",
+      "title": "GitLab Duo Agent Platform",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-gitlab-duo-code-review-flow",
+      "publisher": "GitLab",
+      "title": "GitLab 19.2 release notes",
+      "uri": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/",
+      "kind": "release-notes",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-mistral-vibe-code-web",
+      "publisher": "Mistral AI",
+      "title": "Vibe Code Web getting started",
+      "uri": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-aws-kiro-web",
+      "publisher": "Amazon Web Services",
+      "title": "Working with the Kiro Web agent",
+      "uri": "https://kiro.dev/docs/web/using-the-agent/",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-openhands-cloud",
+      "publisher": "OpenHands AI",
+      "title": "OpenHands Cloud getting started",
+      "uri": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-github-anthropic-claude-agent",
+      "publisher": "GitHub and Anthropic",
+      "title": "About third-party coding agents",
+      "uri": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-github-openai-codex-agent",
+      "publisher": "GitHub and OpenAI",
+      "title": "About third-party coding agents",
+      "uri": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-factory-cloud-droids",
+      "publisher": "Factory AI",
+      "title": "Droid Computers overview",
+      "uri": "https://docs.factory.ai/cli/features/droid-computers",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-warp-cloud-agents",
+      "publisher": "Warp",
+      "title": "Warp and Oz overview",
+      "uri": "https://docs.warp.dev/?fallback=true",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-amazon-q-developer-github",
+      "publisher": "Amazon Web Services",
+      "title": "Amazon Q Developer for GitHub",
+      "uri": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-stackblitz-bolt-claude-agent",
+      "publisher": "StackBlitz",
+      "title": "Bolt release notes",
+      "uri": "https://support.bolt.new/release-notes",
+      "kind": "changelog",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-vercel-v0-agent",
+      "publisher": "Vercel",
+      "title": "v0 FAQ and 2026 product update",
+      "uri": "https://api2.v0.dev/docs/faqs",
+      "kind": "product-documentation",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
+    },
+    {
+      "id": "critical-mass-vercel-agent",
+      "publisher": "Vercel",
+      "title": "Expanded Vercel Agent public beta",
+      "uri": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta",
+      "kind": "changelog",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-07"
     }
   ],
   "entries": [
@@ -505,6 +856,513 @@
       "supersededByRecordId": null,
       "historicalSignificance": null,
       "note": "The protected v19.2.1-ee tag is current for the exact patch identity. The 19.2 feature line and rolling Agent Platform service, runner, model and project configuration remain separate applicability boundaries."
+    },
+    {
+      "recordId": "com.google.gemini.cli.0-54-4",
+      "surfaceKey": "com.google.gemini.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-google-gemini-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Gemini CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.google.antigravity.cli.1-1-11",
+      "surfaceKey": "com.google.antigravity.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-google-antigravity-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Antigravity CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "org.aaif.goose.cli.1-45-0",
+      "surfaceKey": "org.aaif.goose.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-aaif-goose-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Goose CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.alibaba.qwen-code.cli.0-21-7",
+      "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-alibaba-qwen-code-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Qwen Code CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "ai.mistral.vibe.cli.rolling",
+      "surfaceKey": "ai.mistral.vibe.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-mistral-vibe-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Vibe CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.sourcegraph.amp.cli.rolling",
+      "surfaceKey": "com.sourcegraph.amp.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-amp-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Amp CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.github.copilot.cli.1-0-78",
+      "surfaceKey": "com.github.copilot.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-github-copilot-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed GitHub Copilot CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.jetbrains.junie.cli.beta-rolling",
+      "surfaceKey": "com.jetbrains.junie.cli.beta",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-jetbrains-junie-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Junie CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.amazon.kiro.cli.rolling",
+      "surfaceKey": "com.amazon.kiro.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-aws-kiro-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Kiro CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.cline.bot.cli.3-0-51",
+      "surfaceKey": "com.cline.bot.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-cline-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Cline CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.augmentcode.auggie.cli.rolling",
+      "surfaceKey": "com.augmentcode.auggie.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-augment-auggie-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Auggie CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "ai.factory.droid.cli.rolling",
+      "surfaceKey": "ai.factory.droid.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-factory-droid-cli"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Droid CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.roocode.vscode-extension.3-54-0",
+      "surfaceKey": "com.roocode.vscode-extension.final",
+      "status": "discontinued",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-roo-code-vscode"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": "Final exact extension release retained after the publisher-announced 2026-05-15 shutdown.",
+      "note": "Final exact extension release retained after the publisher-announced 2026-05-15 shutdown. The accepted record remains publisher-source attribution only."
+    },
+    {
+      "recordId": "com.continue.dev.ide-agent.2-0-0",
+      "surfaceKey": "com.continue.dev.ide-agent.final",
+      "status": "historical",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-continue-vscode-agent"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": "Final 2.0.0 IDE agent line retained after the publisher marked the repository read-only and no longer actively maintained.",
+      "note": "Final 2.0.0 IDE agent line retained after the publisher marked the repository read-only and no longer actively maintained. The accepted record remains publisher-source attribution only."
+    },
+    {
+      "recordId": "com.jetbrains.junie.ide-plugin.262-132-31",
+      "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-jetbrains-junie-ide"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Junie IDE plugin boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.amazon.q-developer.ide-plugins.sunset",
+      "surfaceKey": "com.amazon.q-developer.ide-plugins.supported-sunset",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-aws-amazon-q-developer-ide"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Amazon Q Developer IDE plugins boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.google.gemini-code-assist.ide-agent.rolling",
+      "surfaceKey": "com.google.gemini-code-assist.ide-agent.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-google-gemini-code-assist-agent"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed IDE agent mode boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.github.copilot.vscode-agent.rolling",
+      "surfaceKey": "com.github.copilot.vscode-agent.local-host",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-github-copilot-vscode-agent"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Copilot agent harness in Visual Studio Code boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.openai.codex.ide-extension.rolling",
+      "surfaceKey": "com.openai.codex.ide-extension.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-openai-codex-ide-extension"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Codex IDE extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.alibaba.qwen-code.vscode-extension.beta-rolling",
+      "surfaceKey": "com.alibaba.qwen-code.vscode-extension.beta",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-alibaba-qwen-code-vscode"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Qwen Code VS Code extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "ai.mistral.vibe-code.vscode-extension.rolling",
+      "surfaceKey": "ai.mistral.vibe-code.vscode-extension.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-mistral-vibe-code-vscode"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Vibe Code VS Code extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.tabnine.agent.ide.rolling",
+      "surfaceKey": "com.tabnine.agent.ide.deployment-lines",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-tabnine-agent-ide"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Tabnine Agent in IDE boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "dev.warp.oz.local-agent.desktop.rolling",
+      "surfaceKey": "dev.warp.oz.local-agent.desktop",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-warp-agent-mode-desktop"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Agent Mode in Warp desktop terminal boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.augmentcode.agent.ide.rolling",
+      "surfaceKey": "com.augmentcode.agent.ide.plugins",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-augment-ide-agent"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Augment Agent in VS Code and JetBrains IDEs boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.openai.codex.cloud.rolling",
+      "surfaceKey": "com.openai.codex.cloud.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-openai-codex-cloud"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Codex cloud/web agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.cursor.cloud-agents.rolling",
+      "surfaceKey": "com.cursor.cloud-agents.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-cursor-background-agents"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Cursor Cloud Agents (formerly Background Agents) boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.gitlab.duo.software-development-flow.rolling",
+      "surfaceKey": "com.gitlab.duo.software-development-flow.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-gitlab-duo-software-development-flow"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Software Development Flow boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.gitlab.duo.code-review-flow.19-2",
+      "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-gitlab-duo-code-review-flow"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Code Review Flow boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "ai.mistral.vibe-code.web.rolling",
+      "surfaceKey": "ai.mistral.vibe-code.web.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-mistral-vibe-code-web"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Vibe Code Web boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.amazon.kiro.web.preview-rolling",
+      "surfaceKey": "com.amazon.kiro.web.preview",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-aws-kiro-web"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Kiro Web boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "org.openhands.cloud.rolling",
+      "surfaceKey": "org.openhands.cloud.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-openhands-cloud"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed OpenHands Cloud boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.github.anthropic.claude-agent.preview-rolling",
+      "surfaceKey": "com.github.anthropic.claude-agent.preview",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-github-anthropic-claude-agent"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed GitHub-hosted third-party Claude coding agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.github.openai.codex-agent.preview-rolling",
+      "surfaceKey": "com.github.openai.codex-agent.preview",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-github-openai-codex-agent"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed GitHub-hosted third-party Codex coding agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "ai.factory.droid-computers.rolling",
+      "surfaceKey": "ai.factory.droid-computers.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-factory-cloud-droids"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Factory-managed Droid Computers boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "dev.warp.oz.cloud-agents.rolling",
+      "surfaceKey": "dev.warp.oz.cloud-agents.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-warp-cloud-agents"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Oz Cloud Agents (Warp) boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.amazon.q-developer.github.preview-rolling",
+      "surfaceKey": "com.amazon.q-developer.github.preview",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-amazon-q-developer-github"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Amazon Q Developer for GitHub boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.stackblitz.bolt.claude-agent.rolling",
+      "surfaceKey": "com.stackblitz.bolt.claude-agent.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-stackblitz-bolt-claude-agent"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Claude Agent in Bolt boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.vercel.v0.agent.rolling",
+      "surfaceKey": "com.vercel.v0.agent.service",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-vercel-v0-agent"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed v0 hosted development agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.vercel.agent.public-beta",
+      "surfaceKey": "com.vercel.agent.public-beta",
+      "status": "current",
+      "reviewedAt": "2026-08-07",
+      "basisSourceIds": [
+        "critical-mass-vercel-agent"
+      ],
+      "supersedesRecordId": null,
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Official publisher sources identify this as the current reviewed Vercel dashboard and repository-integrated Agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
     }
   ]
 }

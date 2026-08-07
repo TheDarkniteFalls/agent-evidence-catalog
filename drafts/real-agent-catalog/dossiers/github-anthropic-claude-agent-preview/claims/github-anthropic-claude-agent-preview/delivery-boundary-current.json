@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.github.anthropic.claude-agent.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.github.anthropic.claude-agent",
+    "name": "Claude coding agent on GitHub",
+    "publisher": "GitHub and Anthropic",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitHub-hosted third-party Claude coding agent",
+      "slug": "github-anthropic-claude-agent-preview"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "GitHub and Anthropic's official documentation describes GitHub-hosted third-party Claude coding agent as a publisher-hosted service; the catalog keeps that delivery path separate from other Claude coding agent on GitHub surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "GitHub and Anthropic"
+  },
+  "source": {
+    "uri": "https://docs.anthropic.com/en/docs/claude-code/github-actions",
+    "title": "Claude Code GitHub Actions",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "GitHub partner-agent orchestration must not inherit local Claude Code CLI claims",
+    "GitHub policy, model, Actions environment, app identity and repository permissions are rolling"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

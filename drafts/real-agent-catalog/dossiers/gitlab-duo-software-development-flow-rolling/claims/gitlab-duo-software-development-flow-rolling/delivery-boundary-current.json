@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.software-development-flow.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.gitlab.duo.software-development-flow",
+    "name": "GitLab Software Development Flow",
+    "publisher": "GitLab",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Software Development Flow",
+      "slug": "gitlab-duo-software-development-flow-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "GitLab's official documentation describes Software Development Flow as a publisher-hosted service; the catalog keeps that delivery path separate from other GitLab Duo Agent Platform surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "GitLab"
+  },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/software_development/",
+    "title": "Software Development Flow",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "Maturity and release history must be pinned to one GitLab version",
+    "Planner/executor agents, runner, model and approval behavior must not collapse into Developer Flow claims"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/google-antigravity-cli-1-1-11/dossier-source.json",
+    "sha256": "572d77f0a4c002a2ad53be6be76e5ea279b039311a2fa72ed2b45efc5de523fa",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.google.antigravity.cli.1-1-11",
+    "agent": {
+      "id": "com.google.antigravity.cli",
+      "name": "Antigravity CLI"
+    },
+    "publisher": {
+      "id": "google",
+      "name": "Google"
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "Antigravity CLI",
+      "slug": "google-antigravity-cli-1-1-11",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "1.1.11",
+      "releaseTag": "1.1.11",
+      "sourceRevision": null,
+      "releasedAt": "2026-08-07T02:35:23Z",
+      "channel": "Antigravity CLI release stream",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "google-antigravity-cli-reviewed-artifact",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.11",
+        "ecosystem": "Antigravity CLI release stream",
+        "version": "1.1.11",
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "google",
+        "name": "Google",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-1-1-11",
+      "uri": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.11",
+      "title": "Antigravity CLI 1.1.11 release",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "google",
+      "publishedAt": "2026-08-07T02:35:23Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://antigravity.google/docs/cli-overview",
+      "title": "Antigravity CLI overview",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "google",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Antigravity CLI",
+            "claimIds": [
+              "com.google.antigravity.cli.identity-1-1-11",
+              "com.google.antigravity.cli.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Shared lineage with Gemini CLI must not erase the new product and service boundary",
+          "Authentication tier, model and sandbox configuration remain claim-specific"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.google.antigravity.cli.identity-1-1-11",
+      "rawRecordPath": "dossiers/google-antigravity-cli-1-1-11/claims/google-antigravity-cli-1-1-11/identity-1-1-11.json",
+      "rawRecordSha256": "1b7147f5c9913cd48f05261e033178aa9c6730c4e57948e13b77761d7d57fae6",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.antigravity.cli.identity-1-1-11",
+        "slug": "identity-1-1-11",
+        "subject": {
+          "id": "com.google.antigravity.cli",
+          "name": "Antigravity CLI",
+          "publisher": "Google",
+          "surface": {
+            "kind": "cli",
+            "name": "Antigravity CLI",
+            "slug": "google-antigravity-cli-1-1-11"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "Google's official source identifies Antigravity CLI 1.1.11 as the exact client or release-line boundary reviewed for this record."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.11",
+          "title": "Antigravity CLI 1.1.11 release",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": "2026-08-07T02:35:23Z",
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.1.11"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "Shared lineage with Gemini CLI must not erase the new product and service boundary",
+          "Authentication tier, model and sandbox configuration remain claim-specific"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "google",
+      "sourceId": "source-identity-1-1-11",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.google.antigravity.cli.delivery-boundary-current",
+      "rawRecordPath": "dossiers/google-antigravity-cli-1-1-11/claims/google-antigravity-cli-1-1-11/delivery-boundary-current.json",
+      "rawRecordSha256": "36d77ea3244b04d1dde4c05538dfd5c715c60626587cd5f799537a75042078cc",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.google.antigravity.cli.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.google.antigravity.cli",
+          "name": "Antigravity CLI",
+          "publisher": "Google",
+          "surface": {
+            "kind": "cli",
+            "name": "Antigravity CLI",
+            "slug": "google-antigravity-cli-1-1-11"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "Google's official documentation describes Antigravity CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Antigravity surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "Google"
+        },
+        "source": {
+          "uri": "https://antigravity.google/docs/cli-overview",
+          "title": "Antigravity CLI overview",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.1.11"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "Shared lineage with Gemini CLI must not erase the new product and service boundary",
+          "Authentication tier, model and sandbox configuration remain claim-specific"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "google",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-google-antigravity-cli-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Antigravity CLI is represented only as the Antigravity CLI surface at the reviewed Antigravity CLI release stream boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "Antigravity CLI 1.1.11 is the exact reviewed identity; rolling services and effective configuration remain separate.",
+      "sourceId": "source-identity-1-1-11",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "Shared lineage with Gemini CLI must not erase the new product and service boundary",
+      "Authentication tier, model and sandbox configuration remain claim-specific",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Exact 1.1.11",
+        "tone": "qualified",
+        "answer": "Google's official source identifies Antigravity CLI 1.1.11 as the exact client or release-line boundary reviewed for this record.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.google.antigravity.cli.identity-1-1-11"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hybrid",
+        "tone": "attention",
+        "answer": "Google's official documentation describes Antigravity CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Antigravity surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.google.antigravity.cli.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.google.antigravity.cli.identity-1-1-11"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}

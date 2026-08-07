@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.jetbrains.junie.ide-plugin.identity-262-132-31",
+  "slug": "identity-262-132-31",
+  "subject": {
+    "id": "com.jetbrains.junie.ide-plugin",
+    "name": "Junie IDE plugin",
+    "publisher": "JetBrains",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Junie IDE plugin",
+      "slug": "jetbrains-junie-ide-262-132-31"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "JetBrains's official source identifies Junie IDE plugin 262.132.31 as the exact client or release-line boundary reviewed for this record."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "JetBrains"
+  },
+  "source": {
+    "uri": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1013527",
+    "title": "Junie plugin 262.132.31",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": "2026-07-28T00:00:00Z",
+    "capturedAt": "2026-08-07T08:00:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "262.132.31"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-07",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-07",
+    "recheckAfter": "2026-11-07",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "IDE family, plugin version, AI subscription and model choice must be scoped",
+    "Junie plugin behavior must not be merged with Junie CLI beta"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-07",
+  "sourceDossier": {
+    "path": "dossiers/github-anthropic-claude-agent-preview/dossier-source.json",
+    "sha256": "4d490cede6cc9009ee58efdf1d0990a9458678a2a5015cae55ca997263e48a73",
+    "relationship": "canonical-draft-source"
+  },
+  "identity": {
+    "recordId": "com.github.anthropic.claude-agent.preview-rolling",
+    "agent": {
+      "id": "com.github.anthropic.claude-agent",
+      "name": "Claude coding agent on GitHub"
+    },
+    "publisher": {
+      "id": "github-and-anthropic",
+      "name": "GitHub and Anthropic"
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitHub-hosted third-party Claude coding agent",
+      "slug": "github-anthropic-claude-agent-preview",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "GitHub third-party coding agents public preview",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "github-anthropic-claude-agent-reviewed-artifact",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+        "ecosystem": "GitHub third-party coding agents public preview",
+        "version": null,
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "github-and-anthropic",
+        "name": "GitHub and Anthropic",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-current",
+      "uri": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "title": "About third-party coding agents",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-and-anthropic",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://docs.anthropic.com/en/docs/claude-code/github-actions",
+      "title": "Claude Code GitHub Actions",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "github-and-anthropic",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-07T08:00:00Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for identity and delivery only; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "GitHub-hosted third-party Claude coding agent",
+            "claimIds": [
+              "com.github.anthropic.claude-agent.identity-current",
+              "com.github.anthropic.claude-agent.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "GitHub partner-agent orchestration must not inherit local Claude Code CLI claims",
+          "GitHub policy, model, Actions environment, app identity and repository permissions are rolling"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.github.anthropic.claude-agent.identity-current",
+      "rawRecordPath": "dossiers/github-anthropic-claude-agent-preview/claims/github-anthropic-claude-agent-preview/identity-current.json",
+      "rawRecordSha256": "b2411244e23e72458e63a084d23c74ff45af892e03051d00bde3085a9ce696e6",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.anthropic.claude-agent.identity-current",
+        "slug": "identity-current",
+        "subject": {
+          "id": "com.github.anthropic.claude-agent",
+          "name": "Claude coding agent on GitHub",
+          "publisher": "GitHub and Anthropic",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub-hosted third-party Claude coding agent",
+            "slug": "github-anthropic-claude-agent-preview"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "GitHub and Anthropic's official source names and documents GitHub-hosted third-party Claude coding agent as a distinct current software-development agent surface in the reviewed GitHub third-party coding agents public preview."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "GitHub and Anthropic"
+        },
+        "source": {
+          "uri": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+          "title": "About third-party coding agents",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named current surface does not freeze a client build, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "GitHub partner-agent orchestration must not inherit local Claude Code CLI claims",
+          "GitHub policy, model, Actions environment, app identity and repository permissions are rolling"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github-and-anthropic",
+      "sourceId": "source-identity-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.github.anthropic.claude-agent.delivery-boundary-current",
+      "rawRecordPath": "dossiers/github-anthropic-claude-agent-preview/claims/github-anthropic-claude-agent-preview/delivery-boundary-current.json",
+      "rawRecordSha256": "223b2180ca4994f15be2a66b1c850f43b443f9c6edb03acfde829f2782802a71",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.github.anthropic.claude-agent.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.github.anthropic.claude-agent",
+          "name": "Claude coding agent on GitHub",
+          "publisher": "GitHub and Anthropic",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "GitHub-hosted third-party Claude coding agent",
+            "slug": "github-anthropic-claude-agent-preview"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "GitHub and Anthropic's official documentation describes GitHub-hosted third-party Claude coding agent as a publisher-hosted service; the catalog keeps that delivery path separate from other Claude coding agent on GitHub surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "GitHub and Anthropic"
+        },
+        "source": {
+          "uri": "https://docs.anthropic.com/en/docs/claude-code/github-actions",
+          "title": "Claude Code GitHub Actions",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-07T08:00:00Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-07",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-07",
+          "recheckAfter": "2026-11-07",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "GitHub partner-agent orchestration must not inherit local Claude Code CLI claims",
+          "GitHub policy, model, Actions environment, app identity and repository permissions are rolling"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "github-and-anthropic",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "delivery"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-github-anthropic-claude-agent-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Claude coding agent on GitHub is represented only as the GitHub-hosted third-party Claude coding agent surface at the reviewed GitHub third-party coding agents public preview boundary. The two admitted claims establish official identity and delivery, while every candidate applicability gap remains visible.",
+    "releaseContext": {
+      "statement": "GitHub-hosted third-party Claude coding agent is reviewed as a current documented surface; exact client, service and runtime revisions remain unresolved where not named.",
+      "sourceId": "source-identity-current",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "GitHub partner-agent orchestration must not inherit local Claude Code CLI claims",
+      "GitHub policy, model, Actions environment, app identity and repository permissions are rolling",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the named identity, delivery boundary and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Identity",
+        "question": "Which exact surface is represented?",
+        "status": "Current documented surface",
+        "tone": "qualified",
+        "answer": "GitHub and Anthropic's official source names and documents GitHub-hosted third-party Claude coding agent as a distinct current software-development agent surface in the reviewed GitHub third-party coding agents public preview.",
+        "whyItMatters": "Related surfaces and brands cannot inherit this record's claims.",
+        "claimIds": [
+          "com.github.anthropic.claude-agent.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Delivery boundary",
+        "question": "Where does this agent surface run?",
+        "status": "hosted",
+        "tone": "attention",
+        "answer": "GitHub and Anthropic's official documentation describes GitHub-hosted third-party Claude coding agent as a publisher-hosted service; the catalog keeps that delivery path separate from other Claude coding agent on GitHub surfaces.",
+        "whyItMatters": "Client, hosted runtime, repository integration and model service revisions can change independently.",
+        "claimIds": [
+          "com.github.anthropic.claude-agent.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this surface independently tested here?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "No independent evidence was admitted in this breadth pass.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.github.anthropic.claude-agent.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished public-source identity and delivery attribution only; no observation, comparison result or suitability claim."
+  }
+}
