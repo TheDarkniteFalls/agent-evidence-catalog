@@ -12,7 +12,7 @@
     "externalNetworkUsed": false
   },
   "sourceDigests": {
-    "landingHtmlSha256": "c59bfa5aa371d61345713c619ec8fb45cf15dc60b2c22a52e8e0fc71fe68fab7",
+    "landingHtmlSha256": "9e5e10afb2581023d87513488e1bf08649991089d4dda494f8a1534c3e151829",
     "previewHtmlSha256": "68ad6716f3b284642e6adced83a1e63752210fbbbb18a69ec25b5d8bddc8344c",
     "previewDataSha256": "ecec67a63f4413e6928ea6f2b1e1fd6f6cb09e355b31fd05049b37e23bc25a3d",
     "previewAppSha256": "6c1a119fd04aa4cb3a09a40aa246f49b41e3966dbba332d27b26431ee619c388",
@@ -197,6 +197,64 @@
       "mobileHorizontalOverflow": false,
       "researchBoundaryVisible": true,
       "primaryCtaOpenedCurrentPreview": true,
+      "consoleErrors": 0,
+      "consoleWarnings": 0
+    },
+    "catalogTeaser": {
+      "checkedAt": "2026-08-07T10:25:17Z",
+      "heading": "See the research before you search.",
+      "selectionBoundary": "Representative current records spanning local, hybrid and hosted delivery; not a popularity list or product ranking.",
+      "metricBoundary": "Counts describe catalog documentation, not capability, quality, safety or popularity.",
+      "columns": [
+        "Agent and current identity",
+        "Delivery",
+        "Accepted claims",
+        "Named sources",
+        "Unresolved unknowns",
+        "Human-readable record"
+      ],
+      "rows": [
+        {
+          "recordId": "com.openai.codex.cli.0-146-0",
+          "identity": "Exact version 0.146.0",
+          "delivery": "Local",
+          "acceptedClaims": 15,
+          "namedSources": 15,
+          "unresolvedUnknowns": 15
+        },
+        {
+          "recordId": "com.anthropic.claude-code.cli.2-1-220",
+          "identity": "Exact version 2.1.220",
+          "delivery": "Hybrid",
+          "acceptedClaims": 9,
+          "namedSources": 9,
+          "unresolvedUnknowns": 9
+        },
+        {
+          "recordId": "com.github.copilot.cloud-agent.rolling",
+          "identity": "Rolling service",
+          "delivery": "Hosted",
+          "acceptedClaims": 11,
+          "namedSources": 11,
+          "unresolvedUnknowns": 11
+        }
+      ],
+      "desktopViewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "mobileViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "desktopHorizontalOverflow": false,
+      "mobileHorizontalOverflow": false,
+      "desktopTableFitsViewport": true,
+      "mobileTableScrollable": true,
+      "mobileFirstColumnSticky": true,
+      "mobileSwipeCueVisible": true,
+      "humanReadableRecordOpened": "com.openai.codex.cli.0-146-0",
+      "rawJsonRemainedSecondary": true,
       "consoleErrors": 0,
       "consoleWarnings": 0
     },

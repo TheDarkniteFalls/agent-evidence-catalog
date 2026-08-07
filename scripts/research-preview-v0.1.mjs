@@ -387,6 +387,58 @@ async function validateBrowserReceipt() {
     consoleErrors: 0,
     consoleWarnings: 0
   }, "Benefit-led landing browser proof drift");
+  assert.deepEqual(receipt.boundaries.catalogTeaser, {
+    checkedAt: "2026-08-07T10:25:17Z",
+    heading: "See the research before you search.",
+    selectionBoundary: "Representative current records spanning local, hybrid and hosted delivery; not a popularity list or product ranking.",
+    metricBoundary: "Counts describe catalog documentation, not capability, quality, safety or popularity.",
+    columns: [
+      "Agent and current identity",
+      "Delivery",
+      "Accepted claims",
+      "Named sources",
+      "Unresolved unknowns",
+      "Human-readable record"
+    ],
+    rows: [
+      {
+        recordId: "com.openai.codex.cli.0-146-0",
+        identity: "Exact version 0.146.0",
+        delivery: "Local",
+        acceptedClaims: 15,
+        namedSources: 15,
+        unresolvedUnknowns: 15
+      },
+      {
+        recordId: "com.anthropic.claude-code.cli.2-1-220",
+        identity: "Exact version 2.1.220",
+        delivery: "Hybrid",
+        acceptedClaims: 9,
+        namedSources: 9,
+        unresolvedUnknowns: 9
+      },
+      {
+        recordId: "com.github.copilot.cloud-agent.rolling",
+        identity: "Rolling service",
+        delivery: "Hosted",
+        acceptedClaims: 11,
+        namedSources: 11,
+        unresolvedUnknowns: 11
+      }
+    ],
+    desktopViewport: { width: 1440, height: 1000 },
+    mobileViewport: { width: 390, height: 844 },
+    desktopHorizontalOverflow: false,
+    mobileHorizontalOverflow: false,
+    desktopTableFitsViewport: true,
+    mobileTableScrollable: true,
+    mobileFirstColumnSticky: true,
+    mobileSwipeCueVisible: true,
+    humanReadableRecordOpened: "com.openai.codex.cli.0-146-0",
+    rawJsonRemainedSecondary: true,
+    consoleErrors: 0,
+    consoleWarnings: 0
+  }, "Catalog teaser browser proof drift");
   assert.deepEqual(
     receipt.boundaries.responsiveRecordMatrix.recordIds,
     buildManifest.researchPreview.recordDetails.records.map((record) => record.recordId),

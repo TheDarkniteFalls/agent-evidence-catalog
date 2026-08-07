@@ -199,11 +199,25 @@ async function assertClineLossless(record) {
 async function assertNoPublicIntegration() {
   const roots = ["catalog", "site", "dist"].map((name) => path.join(packageRoot, name));
   const files = (await Promise.all(roots.map(walk))).flat();
+  const landingTeaserRecords = [
+    "com.openai.codex.cli.0-146-0",
+    "com.anthropic.claude-code.cli.2-1-220",
+    "com.github.copilot.cloud-agent.rolling"
+  ];
   for (const file of files) {
     const relative = path.relative(packageRoot, file).split(path.sep).join("/");
     if (relative.startsWith("site/research-preview/") || relative.startsWith("dist/research-preview/")) continue;
     const content = await readFile(file, "utf8");
     let integrationScanContent = content;
+    if (relative === "site/index.html" || relative === "dist/index.html") {
+      for (const recordId of landingTeaserRecords) {
+        assert.equal(content.split(recordId).length - 1, 1, `${recordId} landing teaser link count drift`);
+        assert(content.includes(`research-preview/records/${recordId}.html`), `${recordId} landing teaser did not link to its human-readable record`);
+        integrationScanContent = integrationScanContent.replaceAll(recordId, "[validated-landing-teaser-record]");
+      }
+      assert(content.includes("not a popularity list or product ranking"), "Landing teaser selection boundary is missing");
+      assert(content.includes("do not measure capability, quality, safety or popularity"), "Landing teaser metric boundary is missing");
+    }
     if (relative === "dist/build-manifest.json") {
       const manifest = JSON.parse(content);
       const details = manifest.researchPreview.recordDetails;
