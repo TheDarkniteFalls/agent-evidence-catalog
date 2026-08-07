@@ -388,8 +388,16 @@ async function validateBrowserReceipt() {
     consoleWarnings: 0
   }, "Benefit-led landing browser proof drift");
   assert.deepEqual(receipt.boundaries.catalogTeaser, {
-    checkedAt: "2026-08-07T10:25:17Z",
+    checkedAt: "2026-08-07T10:48:22Z",
     heading: "See the research before you search.",
+    sectionOrder: [
+      "Research coding agents without starting from scratch.",
+      "See the research before you search.",
+      "What this saves you",
+      "Start with what is known. Test what is not."
+    ],
+    teaserImmediatelyFollowsHero: true,
+    benefitSectionFollowsTeaser: true,
     selectionBoundary: "Representative current records spanning local, hybrid and hosted delivery; not a popularity list or product ranking.",
     metricBoundary: "Counts describe catalog documentation, not capability, quality, safety or popularity.",
     columns: [
