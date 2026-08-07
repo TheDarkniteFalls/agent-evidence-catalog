@@ -1,5 +1,17 @@
 # Agent Evidence Catalog
 
+<!-- toolkit-trust-card:start -->
+> **Public contract:** Experimental tool · about 10 min · Node.js 20+ · no model · no network
+>
+> **Operation:** Read-only check; examples may use temporary files
+>
+> **A pass establishes:** The synthetic catalog validates its exact-version profiles and receipts and rejects deliberate version, arithmetic, and unsupported-verification errors.
+>
+> **It does not establish:** The check does not fetch publisher sources, run agents, verify live behavior, rank products, or establish suitability.
+>
+> **First check:** `node scripts/catalog.mjs test`
+<!-- toolkit-trust-card:end -->
+
 A small, static research index for researchers, builders and maintainers who need to answer: which exact coding-agent version or service surface is current, what do official publisher sources say about it, and what remains unknown?
 
 The fastest reading path is to search for a product, confirm the current identity and applicability note, then inspect the attributed publisher claims and sources. The catalog presents exact identities, authority boundaries, lifecycle state and known gaps; it is not a buying guide or a claim about observed agent behavior.
