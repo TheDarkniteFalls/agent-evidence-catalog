@@ -368,6 +368,25 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.boundaries.compactSectionIndexWorked, true, "Compact record section navigation did not work");
   assert.equal(receipt.boundaries.allRecordPagesStructurallyValidated, 22, "Browser receipt is not paired with all 22 structurally validated pages");
   assert.equal(receipt.boundaries.sourceLinkTargetsInspectedInRenderedDom, true, "Rendered official-source link targets were not inspected");
+  assert.deepEqual(receipt.boundaries.benefitLedLanding, {
+    checkedAt: "2026-08-06T09:33:47Z",
+    headline: "Research coding agents without starting from scratch.",
+    primaryCta: "Find an agent and inspect the evidence",
+    valueHeading: "What this saves you",
+    benefitCards: [
+      "Start with the current identity",
+      "Go straight to the source",
+      "See what the sources do not establish"
+    ],
+    desktopViewport: { width: 1440, height: 1000 },
+    mobileViewport: { width: 390, height: 844 },
+    desktopHorizontalOverflow: false,
+    mobileHorizontalOverflow: false,
+    researchBoundaryVisible: true,
+    primaryCtaOpenedCurrentPreview: true,
+    consoleErrors: 0,
+    consoleWarnings: 0
+  }, "Benefit-led landing browser proof drift");
   assert.deepEqual(
     receipt.boundaries.responsiveRecordMatrix.recordIds,
     buildManifest.researchPreview.recordDetails.records.map((record) => record.recordId),
@@ -387,7 +406,7 @@ async function validateBrowserReceipt() {
       horizontalOverflowRecordIds: []
     }
   ], "Responsive browser matrix is missing an overflow-free required viewport");
-  console.log("PASS digest-bound desktop and mobile browser journeys: all 22 record pages overflow-free at 390px and 1440px plus exact-version, rolling-service, superseded and fallback-group samples with zero console errors");
+  console.log("PASS digest-bound browser journeys: benefit-led landing at desktop and mobile plus all 22 record pages overflow-free at 390px and 1440px with zero console errors");
 }
 
 async function validatePagesWorkflow() {
