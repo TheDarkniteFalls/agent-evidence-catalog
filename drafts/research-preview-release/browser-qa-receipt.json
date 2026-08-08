@@ -1,15 +1,22 @@
 {
   "schemaVersion": "research-preview-browser-qa/0.2",
   "asOf": "2026-08-08",
-  "checkedAt": "2026-08-07T22:23:06Z",
+  "checkedAt": "2026-08-08T10:22:55Z",
   "sourceDigests": {
-    "landingHtmlSha256": "11085e2c4a9c77a2683a19dc6b1acf0fb704476478d42c382778c493af78a225",
-    "previewHtmlSha256": "b49a878387d8ca5fb0615ac452c593d7aed8f181465dbfee0528564267016d07",
+    "landingHtmlSha256": "e76f3135322da426bc5c3efa3eb02d15f0dfbf094ffe8f03c8a0e46cf64025a8",
+    "previewHtmlSha256": "98a841d36e8b81ef77cf695dddb87818626959f9217cec67975e806fd06293a8",
     "previewDataSha256": "691c846ab123545faec4405d63c683836bfd984461f45c031cb27353208b1555",
     "previewAppSha256": "6c1a119fd04aa4cb3a09a40aa246f49b41e3966dbba332d27b26431ee619c388",
     "recordDetailAppSha256": "fe10e63d289441803da2b3074872411e66f9df9771d093116d7412802af29fe1",
     "previewStylesSha256": "67deb0f3aaeb15c9cdf085508bf88c1cabaa1be225f3606f4d9c039f9e71b227",
-    "recordDetailsManifestSha256": "77240ad28e42a9da1ececb277714fe0b5483daed20da9d2d308754c67baaf36c"
+    "recordDetailsManifestSha256": "1848f3992bd1ca2dbf802c6e14025dfbefeb96de1b187be52e77e2c3ad60d97e"
+  },
+  "viewportEnvironment": {
+    "devicePixelRatio": 0.75,
+    "desktopRequested": { "width": 1440, "height": 900 },
+    "desktopObservedCss": { "width": 1920, "height": 1200 },
+    "mobileRequested": { "width": 390, "height": 844 },
+    "mobileObservedCss": { "width": 520, "height": 1125 }
   },
   "journeys": {
     "landing": {
@@ -133,7 +140,12 @@
         "bodyHorizontalOverflowAbsent": true,
         "claimGroupOverflowAbsent": true,
         "rawJsonPresentedAsSecondary": true,
-        "readingBoundaryPresent": true
+        "readingBoundaryPresent": true,
+        "searchMetadataPresent": true,
+        "canonicalUrlMatchesRecordRoute": true,
+        "openGraphMatchesPageIdentity": true,
+        "socialPreviewMatchesPageIdentity": true,
+        "structuredMetadataMatchesAcceptedProjection": true
       },
       "viewports": [
         {
@@ -163,6 +175,48 @@
         "mobileCompactIdentityTopPx": 256.29,
         "mobileCompactIdentityBottomPx": 396.11
       }
+    },
+    "discoveryMetadata": {
+      "result": "PASS",
+      "landing": {
+        "title": "Research Coding Agents from Official Sources · Agent Evidence Catalog",
+        "canonical": "https://thedarknitefalls.github.io/agent-evidence-catalog/",
+        "openGraphType": "website",
+        "twitterCard": "summary",
+        "structuredType": "WebSite"
+      },
+      "catalog": {
+        "title": "Find Current Coding-Agent Evidence · Agent Evidence Catalog",
+        "canonical": "https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/",
+        "openGraphType": "website",
+        "twitterCard": "summary",
+        "structuredType": "CollectionPage"
+      },
+      "representativeRecordIds": [
+        "com.alibaba.qwen-code.cli.0-21-7",
+        "com.openai.codex.cli.0-146-0",
+        "com.openai.codex.cli.0-90-0",
+        "com.vercel.v0.agent.rolling"
+      ],
+      "allRecordPages": {
+        "pagesAudited": 61,
+        "uniqueCanonicalUrls": 61,
+        "openGraphFailures": 0,
+        "socialPreviewFailures": 0,
+        "structuredMetadataFailures": 0
+      },
+      "robots": {
+        "path": "dist/robots.txt",
+        "sitemapDeclared": "https://thedarknitefalls.github.io/agent-evidence-catalog/sitemap.xml"
+      },
+      "sitemap": {
+        "path": "dist/sitemap.xml",
+        "sha256": "eab9bd4310e7af5918de6bd4bd0123066140d2b9988d40a2bb90c1f412864639",
+        "humanReadableRoutes": 63,
+        "recordRoutes": 61,
+        "rawJsonRoutes": 0,
+        "duplicateRoutes": 0
+      }
     }
   },
   "sourceLinks": {
@@ -173,7 +227,17 @@
     "endpointSuccessStatus": 200,
     "liveExpansionUniqueUrls": 72,
     "liveExpansionHttpFailures": 0,
-    "liveExpansionSuccessStatus": 200
+    "liveExpansionSuccessStatus": 200,
+    "currentLiveCheck": {
+      "checkedAt": "2026-08-08T10:22:55Z",
+      "method": "Read-only GET with redirects and Range bytes=0-0",
+      "uniqueEndpointsChecked": 211,
+      "failures": 0,
+      "statusCounts": {
+        "200": 111,
+        "206": 100
+      }
+    }
   },
   "console": {
     "errors": 0,

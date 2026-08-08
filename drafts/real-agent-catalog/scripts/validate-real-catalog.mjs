@@ -232,6 +232,16 @@ async function assertNoPublicIntegration() {
       delete manifest.researchPreview.recordDetails;
       integrationScanContent = JSON.stringify(manifest);
     }
+    if (relative === "dist/sitemap.xml") {
+      const manifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
+      const details = manifest.researchPreview.recordDetails;
+      assert.equal([...content.matchAll(/<loc>/g)].length, details.count + 2, "Sitemap route count drift");
+      for (const entry of details.records) {
+        const expectedUrl = `https://thedarknitefalls.github.io/agent-evidence-catalog/${entry.entryPoint}`;
+        assert.equal(content.split(expectedUrl).length - 1, 1, `${entry.recordId} sitemap route count drift`);
+        integrationScanContent = integrationScanContent.replaceAll(entry.recordId, "[validated-research-preview-record]");
+      }
+    }
     assert(!integrationScanContent.includes("com.github.copilot.cloud-agent"), `GitHub Copilot cloud agent leaked into ${path.relative(packageRoot, file)}`);
     assert(!integrationScanContent.includes("com.google.jules.hosted"), `Google Jules leaked into ${path.relative(packageRoot, file)}`);
     assert(!integrationScanContent.includes("org.openhands.cli"), `OpenHands leaked into ${path.relative(packageRoot, file)}`);
