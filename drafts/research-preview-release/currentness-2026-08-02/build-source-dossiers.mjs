@@ -400,6 +400,7 @@ function replaceStrings(value, replacer) {
 async function buildGitLab() {
   const priorSlug = "gitlab-duo-developer-flow-19-2";
   const slug = "gitlab-duo-developer-flow-19-2-1";
+  const patchReleaseUrl = "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-1-released/";
   const priorRoot = path.join(dossierRoot, priorSlug);
   const prior = JSON.parse(await readFile(path.join(priorRoot, "dossier-source.json"), "utf8"));
   const transform = (value) => value.replaceAll("19-2", "19-2-1");
@@ -436,7 +437,7 @@ async function buildGitLab() {
       id: "gitlab-developer-flow-service-19-2-1",
       kind: "hosted-release",
       identityStatus: "unresolved",
-      uri: "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-1-released/",
+      uri: patchReleaseUrl,
       ecosystem: "GitLab.com, Self-Managed or Dedicated plus runner",
       version: "19.2.1 patch on the 19.2 release line",
       digest: null,
@@ -447,7 +448,7 @@ async function buildGitLab() {
   source.dossier.summary = "GitLab Duo Developer Flow is pinned to the protected GitLab 19.2.1-ee patch tag while the 19.2 Agentic Chat milestone and rolling offering, runner, project, service-account and model boundaries remain explicit.";
   source.dossier.releaseContext = {
     statement: "GitLab's protected v19.2.1-ee tag resolves to commit 8cb614f3, and the official 19.2.1 patch release supersedes 19.2.0 while the 19.2 Developer Flow feature milestone remains a separate release-line source.",
-    sourceUri: "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-1-released/",
+    sourceUri: patchReleaseUrl,
     legacySource: null
   };
   source.dossier.limitations = [
@@ -472,7 +473,7 @@ async function buildGitLab() {
     if (claim.slug === "release-identity-19-2-1") {
       claim.claim.statement = "GitLab's protected v19.2.1-ee tag resolves to commit 8cb614f3c9f0242582886f260763fa45d19768ab, and the official patch release identifies 19.2.1 as the successor patch for the 19.2 release line.";
       claim.source = {
-        uri: "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-1-released/",
+        uri: patchReleaseUrl,
         title: "GitLab Patch Release 19.2.1",
         locator: "Release announcement and affected 19.2 before 19.2.1 versions",
         publishedAt: "2026-07-29T00:00:00Z",
@@ -484,6 +485,7 @@ async function buildGitLab() {
       claim.limitations = ["The exact source tag does not freeze the Agent Platform service, runner or model backend."];
       claim.unknowns = ["The exact rolling service and execution revision remain unknown."];
     } else if (claim.slug === "agentic-chat-handoff-19-2-1" || claim.slug === "offerings-19-2-1") {
+      claim.source.uri = patchReleaseUrl;
       claim.applicability.version = { kind: "release-line", value: "19.2" };
     }
     claims.push(claim);
@@ -496,6 +498,11 @@ async function buildGitLab() {
     sourceKind: claim.provenance.kind === "publisher-release-metadata" ? "publisher-release-metadata" : undefined,
     snapshotStatus: claim.applicability.version.kind === "rolling-current" ? "live-page" : "immutable-reference"
   })));
+  source.sourceMetadata[patchReleaseUrl] = {
+    sourceKind: "publisher-release-metadata",
+    snapshotStatus: "immutable-reference",
+    note: "Official GitLab patch-release source shared by the exact 19.2.1 identity and 19.2 release-line claim context; no artifact was installed or run."
+  };
   const spec = {
     ...source,
     slug,
