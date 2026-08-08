@@ -13,6 +13,7 @@ const yesListPath = path.join(releaseRoot, "release-yes-list.json");
 const stagePathsPath = path.join(releaseRoot, "v0.1-stage-paths.txt");
 const browserReceiptPath = path.join(releaseRoot, "browser-qa-receipt.json");
 const pagesWorkflowPath = path.join(packageRoot, ".github", "workflows", "pages.yml");
+const canonicalBaseUrl = "https://thedarknitefalls.github.io/agent-evidence-catalog/";
 const publicctlPath = [
   path.resolve(packageRoot, "..", "scripts", "publicctl.py"),
   path.resolve(packageRoot, "../../..", "scripts", "publicctl.py")
@@ -20,6 +21,21 @@ const publicctlPath = [
 assert(publicctlPath, "Public-lane checker was not found beside the repository or its clean-worktree host");
 const serialize = (value) => `${JSON.stringify(value, null, 2)}\n`;
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function label(value) {
+  return String(value)
+    .replaceAll("-", " ")
+    .replace(/(^|\s)\S/g, (match) => match.toUpperCase());
+}
 
 function run(label, command, args) {
   const result = spawnSync(command, args, {
@@ -262,6 +278,13 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.sourceDigests.recordDetailAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "record-detail.js"))));
   assert.equal(receipt.sourceDigests.previewStylesSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "styles.css"))));
   assert.equal(receipt.sourceDigests.recordDetailsManifestSha256, sha256(serialize(buildManifest.researchPreview.recordDetails)));
+  assert.deepEqual(receipt.viewportEnvironment, {
+    devicePixelRatio: 0.75,
+    desktopRequested: { width: 1440, height: 900 },
+    desktopObservedCss: { width: 1920, height: 1200 },
+    mobileRequested: { width: 390, height: 844 },
+    mobileObservedCss: { width: 520, height: 1125 }
+  });
 
   assert.equal(receipt.journeys.landing.result, "PASS");
   assert.equal(receipt.journeys.landing.headline, "Research coding agents without starting from scratch.");
@@ -336,10 +359,58 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.journeys.records.representativeQwenRecord.unresolvedUnknowns, 4);
   assert.equal(receipt.journeys.records.representativeQwenRecord.sectionIndexLinks, 7);
 
+  assert.equal(receipt.journeys.discoveryMetadata.result, "PASS");
+  assert.deepEqual(receipt.journeys.discoveryMetadata.landing, {
+    title: "Research Coding Agents from Official Sources · Agent Evidence Catalog",
+    canonical: canonicalBaseUrl,
+    openGraphType: "website",
+    twitterCard: "summary",
+    structuredType: "WebSite"
+  });
+  assert.deepEqual(receipt.journeys.discoveryMetadata.catalog, {
+    title: "Find Current Coding-Agent Evidence · Agent Evidence Catalog",
+    canonical: `${canonicalBaseUrl}research-preview/`,
+    openGraphType: "website",
+    twitterCard: "summary",
+    structuredType: "CollectionPage"
+  });
+  assert.deepEqual(receipt.journeys.discoveryMetadata.representativeRecordIds, [
+    "com.alibaba.qwen-code.cli.0-21-7",
+    "com.openai.codex.cli.0-146-0",
+    "com.openai.codex.cli.0-90-0",
+    "com.vercel.v0.agent.rolling"
+  ]);
+  assert.deepEqual(receipt.journeys.discoveryMetadata.allRecordPages, {
+    pagesAudited: 61,
+    uniqueCanonicalUrls: 61,
+    openGraphFailures: 0,
+    socialPreviewFailures: 0,
+    structuredMetadataFailures: 0
+  });
+  assert.deepEqual(receipt.journeys.discoveryMetadata.robots, {
+    path: "dist/robots.txt",
+    sitemapDeclared: `${canonicalBaseUrl}sitemap.xml`
+  });
+  assert.deepEqual(receipt.journeys.discoveryMetadata.sitemap, {
+    path: "dist/sitemap.xml",
+    sha256: sha256(await readFile(path.join(packageRoot, "dist", "sitemap.xml"))),
+    humanReadableRoutes: 63,
+    recordRoutes: 61,
+    rawJsonRoutes: 0,
+    duplicateRoutes: 0
+  });
+
   assert.equal(receipt.sourceLinks.projectedClaimLinkedHttpsEntries, 309);
   assert.equal(receipt.sourceLinks.liveExpansionUniqueUrls, 72);
   assert.equal(receipt.sourceLinks.liveExpansionHttpFailures, 0);
   assert.equal(receipt.sourceLinks.liveExpansionSuccessStatus, 200);
+  assert.deepEqual(receipt.sourceLinks.currentLiveCheck, {
+    checkedAt: receipt.checkedAt,
+    method: "Read-only GET with redirects and Range bytes=0-0",
+    uniqueEndpointsChecked: 211,
+    failures: 0,
+    statusCounts: { "200": 111, "206": 100 }
+  });
   assert.deepEqual(receipt.console, { errors: 0, warnings: 0 });
   assert.equal(receipt.boundaries.publisherSourcesOnly, true);
   assert.equal(receipt.boundaries.agentsInstalledOrRun, false);
@@ -349,6 +420,123 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.boundaries.githubStateChanged, false);
 
   console.log("PASS digest-bound browser journeys: landing and catalog context at 1440px and 390px, plus all 61 record pages overflow-free with zero console errors");
+}
+
+function validatePageDiscovery(html, expected) {
+  const required = [
+    `<meta name="description" content="${escapeHtml(expected.description)}">`,
+    `<meta name="robots" content="index,follow">`,
+    `<title>${escapeHtml(expected.title)}</title>`,
+    `<link rel="canonical" href="${escapeHtml(expected.url)}">`,
+    `<meta property="og:type" content="${expected.openGraphType}">`,
+    `<meta property="og:site_name" content="Agent Evidence Catalog">`,
+    `<meta property="og:title" content="${escapeHtml(expected.title)}">`,
+    `<meta property="og:description" content="${escapeHtml(expected.description)}">`,
+    `<meta property="og:url" content="${escapeHtml(expected.url)}">`,
+    `<meta name="twitter:card" content="summary">`,
+    `<meta name="twitter:title" content="${escapeHtml(expected.title)}">`,
+    `<meta name="twitter:description" content="${escapeHtml(expected.description)}">`
+  ];
+  for (const fragment of required) assert(html.includes(fragment), `${expected.url} is missing ${fragment}`);
+  assert.equal([...html.matchAll(/<title>/g)].length, 1, `${expected.url} must have one title`);
+  assert.equal([...html.matchAll(/<link rel="canonical"/g)].length, 1, `${expected.url} must have one canonical URL`);
+  const structuredData = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  assert.equal(structuredData.length, 1, `${expected.url} must have one structured-data block`);
+  assert.deepEqual(JSON.parse(structuredData[0][1]), expected.structuredData, `${expected.url} structured data differs from its accepted page projection`);
+}
+
+async function validateDiscoveryMetadata() {
+  const preview = JSON.parse(await readFile(path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json"), "utf8"));
+  const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
+  const landingDescription = "Research coding agents without starting from scratch: verify publisher claims, avoid stale assumptions and see what still needs testing.";
+  const landingTitle = "Research Coding Agents from Official Sources · Agent Evidence Catalog";
+  validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "index.html"), "utf8"), {
+    title: landingTitle,
+    description: landingDescription,
+    url: canonicalBaseUrl,
+    openGraphType: "website",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Agent Evidence Catalog",
+      description: landingDescription,
+      url: canonicalBaseUrl
+    }
+  });
+
+  const catalogDescription = `Browse ${preview.counts.currentRecordsPresented} current and eight retained history records across ${preview.counts.surfaces} coding-agent surfaces, with exact identities, attributed publisher claims, lifecycle history and open unknowns.`;
+  const catalogTitle = "Find Current Coding-Agent Evidence · Agent Evidence Catalog";
+  const catalogUrl = `${canonicalBaseUrl}research-preview/`;
+  validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8"), {
+    title: catalogTitle,
+    description: catalogDescription,
+    url: catalogUrl,
+    openGraphType: "website",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Agent Evidence Catalog Research Preview",
+      description: catalogDescription,
+      url: catalogUrl,
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Agent Evidence Catalog",
+        url: canonicalBaseUrl
+      }
+    }
+  });
+
+  for (const detail of buildManifest.researchPreview.recordDetails.records) {
+    const summary = preview.previewRecords.find((record) => record.recordId === detail.recordId);
+    assert(summary, `Sitemap record ${detail.recordId} is missing from the accepted public projection`);
+    const record = JSON.parse(await readFile(path.join(packageRoot, "dist", "research-preview", "records", `${detail.recordId}.json`), "utf8"));
+    const release = record.identity.release.version ?? label(record.identity.release.scope);
+    const displayTitle = `${summary.name} ${release}`;
+    const title = `${displayTitle} Evidence Record · Agent Evidence Catalog`;
+    const description = `Inspect the exact identity, attributed ${record.identity.publisher.name} claims, applicability boundaries, lifecycle history and unresolved unknowns for ${displayTitle}.`;
+    const url = `${canonicalBaseUrl}${detail.entryPoint}`;
+    validatePageDiscovery(await readFile(path.join(packageRoot, "dist", detail.entryPoint), "utf8"), {
+      title,
+      description,
+      url,
+      openGraphType: "article",
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: `${displayTitle} Evidence Record`,
+        description,
+        url,
+        isPartOf: {
+          "@type": "WebSite",
+          name: "Agent Evidence Catalog",
+          url: canonicalBaseUrl
+        }
+      }
+    });
+  }
+
+  const expectedUrls = [
+    canonicalBaseUrl,
+    catalogUrl,
+    ...buildManifest.researchPreview.recordDetails.records.map((record) => `${canonicalBaseUrl}${record.entryPoint}`)
+  ].sort((left, right) => left.localeCompare(right));
+  const robots = await readFile(path.join(packageRoot, "dist", "robots.txt"), "utf8");
+  assert.equal(robots, `User-agent: *\nAllow: /\n\nSitemap: ${canonicalBaseUrl}sitemap.xml\n`);
+  const sitemap = await readFile(path.join(packageRoot, "dist", "sitemap.xml"), "utf8");
+  const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+  assert.deepEqual(sitemapUrls, expectedUrls, "Sitemap must list every primary human-readable route exactly once in deterministic order");
+  assert.equal(new Set(sitemapUrls).size, expectedUrls.length, "Sitemap contains duplicate routes");
+  assert(sitemapUrls.every((url) => url.startsWith(canonicalBaseUrl) && !url.endsWith(".json")), "Sitemap must contain only canonical human-readable routes");
+  assert.deepEqual(buildManifest.researchPreview.discovery, {
+    canonicalBaseUrl,
+    robots: "robots.txt",
+    sitemap: "sitemap.xml",
+    sitemapSha256: sha256(sitemap),
+    humanReadableRouteCount: expectedUrls.length,
+    humanReadableRecordRouteCount: buildManifest.researchPreview.recordDetails.count,
+    rawJsonRoutesListed: 0
+  });
+  console.log(`PASS discovery metadata on landing, catalog and all ${buildManifest.researchPreview.recordDetails.count} record pages; deterministic ${expectedUrls.length}-route sitemap excludes raw JSON`);
 }
 async function validatePagesWorkflow() {
   const workflow = await readFile(pagesWorkflowPath, "utf8");
@@ -377,6 +565,7 @@ async function validateRelease({ browser }) {
   console.log(`PASS deterministic double source-to-dist build ${firstDigest}`);
   for (const [label, relativePath, ...args] of validatorCommands) node(label, relativePath, ...args);
   await validatePagesWorkflow();
+  await validateDiscoveryMetadata();
   await validateManifest();
   run("unstaged and staged whitespace/error diff check", "git", ["diff", "--check"]);
   run("public-lane safety scan", "python3", ["-B", publicctlPath, "check", "."]);

@@ -207,10 +207,12 @@ for (const summary of preview.previewRecords) {
   const detailName = `${summary.recordId}.html`;
   const detailHtml = await readFile(path.join(detailsRoot, detailName), "utf8");
   const displayRelease = summary.release.version ?? plainLabel(summary.release.scope);
+  const displayTitle = `${summary.name} ${displayRelease}`;
   const displayScope = summary.release.version ? `${summary.release.version} · ${plainLabel(summary.release.scope)}` : plainLabel(summary.release.scope);
   const expectedLifecycle = lifecycle.entries.filter((entry) => entry.surfaceKey === lifecycleEntry.surfaceKey);
 
-  assert(detailHtml.includes(`Human-readable publisher-source evidence record for ${escapeHtml(`${summary.name} ${displayRelease}`)}.`));
+  assert(detailHtml.includes(`Inspect the exact identity, attributed ${escapeHtml(record.identity.publisher.name)} claims, applicability boundaries, lifecycle history and unresolved unknowns for ${escapeHtml(displayTitle)}.`));
+  assert(detailHtml.includes(`<title>${escapeHtml(displayTitle)} Evidence Record · Agent Evidence Catalog</title>`));
   assert(detailHtml.includes(`<strong>Lifecycle note:</strong> ${escapeHtml(lifecycleEntry.note)}`));
   assert(detailHtml.includes(`<div><dt>Publisher</dt><dd>${escapeHtml(record.identity.publisher.name)}</dd></div>`));
   assert(detailHtml.includes(`<div><dt>Surface</dt><dd>${escapeHtml(record.identity.surface.name)} · ${escapeHtml(record.identity.surface.deliveryModel)}</dd></div>`));

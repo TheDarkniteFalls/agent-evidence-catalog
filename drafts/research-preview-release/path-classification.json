@@ -6,7 +6,7 @@
   "counts": {
     "accepted-evidence-provenance": 569,
     "canonical-source": 71,
-    "generated-publication-output": 180,
+    "generated-publication-output": 182,
     "release-control-artifact": 30,
     "retained-experiment": 87
   },
@@ -1188,6 +1188,12 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/robots.txt",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/schemas/agent-record-v1.schema.json",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
@@ -1201,6 +1207,12 @@
     },
     {
       "path": "dist/schemas/evidence-receipt-predicate-v1.schema.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/sitemap.xml",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."

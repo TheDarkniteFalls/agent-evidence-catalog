@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const CATALOG = join(ROOT, "catalog");
 const DIST = join(ROOT, "dist");
+const CANONICAL_BASE_URL = "https://thedarknitefalls.github.io/agent-evidence-catalog/";
 const execFileAsync = promisify(execFile);
 const STATUSES = new Set(["verified", "observed", "declared", "stale", "unknown", "not-applicable"]);
 const ACTION_SCOPES = new Set(["none", "selected-only", "allowlisted", "broad", "unknown"]);
@@ -61,6 +62,27 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function escapeXml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&apos;");
+}
+
+function serializeJsonLd(value) {
+  return JSON.stringify(value).replaceAll("<", "\\u003c");
+}
+
+function renderSitemap(urls) {
+  const entries = [...urls]
+    .sort((left, right) => left.localeCompare(right))
+    .map((url) => `  <url>\n    <loc>${escapeXml(url)}</loc>\n  </url>`)
+    .join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>\n`;
 }
 
 function label(value) {
@@ -190,6 +212,21 @@ function renderRecordDetail(record, preview, lifecycle) {
   const rawJson = `${recordId}.json`;
   const displayRelease = releaseLabel(release);
   const displayTitle = `${summary.name} ${displayRelease}`;
+  const pageTitle = `${displayTitle} Evidence Record · Agent Evidence Catalog`;
+  const pageDescription = `Inspect the exact identity, attributed ${identity.publisher.name} claims, applicability boundaries, lifecycle history and unresolved unknowns for ${displayTitle}.`;
+  const pageUrl = `${CANONICAL_BASE_URL}research-preview/records/${recordId}.html`;
+  const pageStructuredData = serializeJsonLd({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: `${displayTitle} Evidence Record`,
+    description: pageDescription,
+    url: pageUrl,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Agent Evidence Catalog",
+      url: CANONICAL_BASE_URL
+    }
+  });
   const sourceRevisionHtml = sourceRevision?.uri && release.sourceRevision
     ? `<a href="${escapeHtml(sourceRevision.uri)}">${escapeHtml(release.sourceRevision)}</a>`
     : escapeHtml(valueOrUnknown(release.sourceRevision));
@@ -228,9 +265,19 @@ function renderRecordDetail(record, preview, lifecycle) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Human-readable publisher-source evidence record for ${escapeHtml(displayTitle)}.">
-    <title>${escapeHtml(displayTitle)} · Agent Evidence Catalog</title>
-    <link rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/records/${escapeHtml(recordId)}.html">
+    <meta name="description" content="${escapeHtml(pageDescription)}">
+    <meta name="robots" content="index,follow">
+    <title>${escapeHtml(pageTitle)}</title>
+    <link rel="canonical" href="${escapeHtml(pageUrl)}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Agent Evidence Catalog">
+    <meta property="og:title" content="${escapeHtml(pageTitle)}">
+    <meta property="og:description" content="${escapeHtml(pageDescription)}">
+    <meta property="og:url" content="${escapeHtml(pageUrl)}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
+    <meta name="twitter:description" content="${escapeHtml(pageDescription)}">
+    <script type="application/ld+json">${pageStructuredData}</script>
     <link rel="stylesheet" href="../styles.css?v=2026-08-04-density-pass">
   </head>
   <body>
@@ -814,6 +861,15 @@ async function commandBuild() {
   if (recordDetails.length !== researchPreview.counts.recordsPresentedIncludingHistory) {
     throw new Error("Research-preview human-readable detail count does not match the public projection");
   }
+  const humanReadableUrls = [
+    CANONICAL_BASE_URL,
+    `${CANONICAL_BASE_URL}research-preview/`,
+    ...recordDetails.map((record) => `${CANONICAL_BASE_URL}${record.entryPoint}`)
+  ].sort((left, right) => left.localeCompare(right));
+  const robotsRaw = `User-agent: *\nAllow: /\n\nSitemap: ${CANONICAL_BASE_URL}sitemap.xml\n`;
+  const sitemapRaw = renderSitemap(humanReadableUrls);
+  await writeFile(join(DIST, "robots.txt"), robotsRaw, "utf8");
+  await writeFile(join(DIST, "sitemap.xml"), sitemapRaw, "utf8");
   await execFileAsync(process.execPath, [join(ROOT, "scripts", "claim-record.mjs"), "build-synthetic"], {
     cwd: ROOT,
     encoding: "utf8"
@@ -849,6 +905,15 @@ async function commandBuild() {
       recordDetails: {
         count: recordDetails.length,
         records: recordDetails
+      },
+      discovery: {
+        canonicalBaseUrl: CANONICAL_BASE_URL,
+        robots: "robots.txt",
+        sitemap: "sitemap.xml",
+        sitemapSha256: createHash("sha256").update(sitemapRaw).digest("hex"),
+        humanReadableRouteCount: humanReadableUrls.length,
+        humanReadableRecordRouteCount: recordDetails.length,
+        rawJsonRoutesListed: 0
       }
     },
     records: loaded.map((item) => ({
