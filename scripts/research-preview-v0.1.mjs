@@ -322,6 +322,40 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.journeys.catalog.rawJsonSecondaryLinks, 61);
   assert.equal(receipt.journeys.catalog.desktopHorizontalOverflow, false);
   assert.equal(receipt.journeys.catalog.mobileHorizontalOverflow, false);
+  assert.deepEqual(receipt.journeys.catalog.firstScreen, {
+    landingEntryTarget: "research-preview/#catalog-controls",
+    filtersBeforeCoverageCounts: true,
+    coverageBoundary: "Coverage counts, not quality scores. These totals describe catalog documentation; they do not rank agents or establish quality, safety or suitability.",
+    directEntryViewports: [
+      {
+        label: "desktop-compact",
+        requested: { width: 960, height: 540 },
+        observedCss: { width: 1280, height: 720 },
+        searchTopPx: 479,
+        searchBottomPx: 525,
+        searchWithinFirstViewport: true,
+        horizontalOverflow: false
+      },
+      {
+        label: "mobile-compact",
+        requested: { width: 293, height: 633 },
+        observedCss: { width: 391, height: 844 },
+        searchTopPx: 648,
+        searchBottomPx: 694,
+        deliveryTopPx: 730,
+        deliveryBottomPx: 776,
+        searchWithinFirstViewport: true,
+        deliveryWithinFirstViewport: true,
+        horizontalOverflow: false
+      }
+    ],
+    anchoredEntry: {
+      observedCss: { width: 1920, height: 1200 },
+      searchTopPx: 81,
+      searchBottomPx: 127,
+      searchWithinFirstViewport: true
+    }
+  });
   assert.deepEqual(receipt.journeys.catalog.contextRoundTrip, {
     search: "Qwen",
     delivery: "hybrid",
@@ -409,7 +443,7 @@ async function validateBrowserReceipt() {
     method: "Read-only GET with redirects and Range bytes=0-0",
     uniqueEndpointsChecked: 211,
     failures: 0,
-    statusCounts: { "200": 111, "206": 100 }
+    statusCounts: { "200": 112, "206": 99 }
   });
   assert.deepEqual(receipt.console, { errors: 0, warnings: 0 });
   assert.equal(receipt.boundaries.publisherSourcesOnly, true);
@@ -538,6 +572,26 @@ async function validateDiscoveryMetadata() {
   });
   console.log(`PASS discovery metadata on landing, catalog and all ${buildManifest.researchPreview.recordDetails.count} record pages; deterministic ${expectedUrls.length}-route sitemap excludes raw JSON`);
 }
+
+async function validateFirstScreenContract() {
+  const landing = await readFile(path.join(packageRoot, "dist", "index.html"), "utf8");
+  const catalog = await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8");
+  assert.equal([...landing.matchAll(/href="research-preview\/#catalog-controls"/g)].length, 2, "Landing discovery links must target the catalog filters");
+  for (const required of [
+    "id=\"catalog-controls\"",
+    ">Search current records<",
+    "Filters apply to current records. The separate history section stays collapsed until you open it.",
+    "Coverage counts, not quality scores.",
+    "they do not rank agents or establish quality, safety or suitability"
+  ]) assert(catalog.includes(required), `Catalog first-screen contract is missing ${required}`);
+  const controlsIndex = catalog.indexOf('id="catalog-controls"');
+  const statsIndex = catalog.indexOf('class="stats"');
+  const recordsIndex = catalog.indexOf('id="currentRecords"');
+  assert(controlsIndex > catalog.indexOf("<h1"), "Catalog filters must follow the page identity");
+  assert(controlsIndex < statsIndex, "Catalog filters must precede coverage counts");
+  assert(statsIndex < recordsIndex, "Coverage counts must precede the current record grid");
+  console.log("PASS catalog first-screen contract: landing deep links, filters before counts and explicit non-scoring boundary");
+}
 async function validatePagesWorkflow() {
   const workflow = await readFile(pagesWorkflowPath, "utf8");
   for (const expected of [
@@ -566,6 +620,7 @@ async function validateRelease({ browser }) {
   for (const [label, relativePath, ...args] of validatorCommands) node(label, relativePath, ...args);
   await validatePagesWorkflow();
   await validateDiscoveryMetadata();
+  await validateFirstScreenContract();
   await validateManifest();
   run("unstaged and staged whitespace/error diff check", "git", ["diff", "--check"]);
   run("public-lane safety scan", "python3", ["-B", publicctlPath, "check", "."]);

@@ -37,6 +37,23 @@
         <p class="eyebrow">For researchers, builders and maintainers · as of 7 August 2026</p>
         <h1 id="preview-title">What official sources say about current coding agents.</h1>
         <p class="lede">Find the exact current version or service surface, see which publisher claims apply to it and inspect what remains unknown. This is a research index, not an agent test or buying guide.</p>
+        <p class="quick-start"><strong>Fastest path:</strong> Search for a product, confirm its current identity and boundary note, then inspect the attributed sources.</p>
+        <div id="catalog-controls" class="controls hero-controls" aria-label="Current record filters">
+          <label>
+            <span>Search current records</span>
+            <input id="search" type="search" placeholder="Agent, publisher, surface…" autocomplete="off">
+          </label>
+          <label>
+            <span>Delivery</span>
+            <select id="delivery">
+              <option value="all">All delivery models</option>
+              <option value="local">Local</option>
+              <option value="hybrid">Hybrid</option>
+              <option value="hosted">Hosted</option>
+            </select>
+          </label>
+        </div>
+        <p class="filter-scope">Filters apply to current records. The separate history section stays collapsed until you open it.</p>
         <div class="boundary-row" aria-label="Research boundaries">
           <span>Publisher sources only</span>
           <span>Zero independent tests</span>
@@ -44,10 +61,10 @@
           <span>Selected, not comprehensive</span>
           <span>Intake closed</span>
         </div>
-        <p class="quick-start"><strong>Fastest path:</strong> Search for a product, confirm its current identity and boundary note, then inspect the attributed sources.</p>
       </section>
 
-      <section class="stats" aria-label="Preview counts">
+      <p id="coverage-count-boundary" class="stats-boundary"><strong>Coverage counts, not quality scores.</strong> These totals describe catalog documentation; they do not rank agents or establish quality, safety or suitability.</p>
+      <section class="stats" aria-label="Preview counts" aria-describedby="coverage-count-boundary">
         <div><strong id="surfaceCount">—</strong><span>coding-agent surfaces</span></div>
         <div><strong id="currentCount">—</strong><span>current records shown</span></div>
         <div><strong id="historyCount">—</strong><span>history records</span></div>
@@ -62,22 +79,6 @@
             <p>One publisher-supported identity per surface, current as of the review date—not observed runtime behavior.</p>
           </div>
           <span id="resultCount" class="result-count" aria-live="polite"></span>
-        </div>
-
-        <div class="controls" aria-label="Current record filters">
-          <label>
-            <span>Search</span>
-            <input id="search" type="search" placeholder="Agent, publisher, surface…" autocomplete="off">
-          </label>
-          <label>
-            <span>Delivery</span>
-            <select id="delivery">
-              <option value="all">All delivery models</option>
-              <option value="local">Local</option>
-              <option value="hybrid">Hybrid</option>
-              <option value="hosted">Hosted</option>
-            </select>
-          </label>
         </div>
 
         <div id="currentRecords" class="record-grid"></div>
