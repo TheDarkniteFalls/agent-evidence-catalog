@@ -1,14 +1,14 @@
 {
   "schemaVersion": "research-preview-browser-qa/0.2",
   "asOf": "2026-08-08",
-  "checkedAt": "2026-08-08T10:22:55Z",
+  "checkedAt": "2026-08-09T06:57:01.116Z",
   "sourceDigests": {
-    "landingHtmlSha256": "e76f3135322da426bc5c3efa3eb02d15f0dfbf094ffe8f03c8a0e46cf64025a8",
-    "previewHtmlSha256": "98a841d36e8b81ef77cf695dddb87818626959f9217cec67975e806fd06293a8",
+    "landingHtmlSha256": "bb687b3d03bfa39fbb5f93c290fe132f71fb747720360bf23e68129436640d53",
+    "previewHtmlSha256": "835337722b124fb135779a6dc9280a2cdbfb2231f44accd38f2b011b398cea0f",
     "previewDataSha256": "691c846ab123545faec4405d63c683836bfd984461f45c031cb27353208b1555",
     "previewAppSha256": "6c1a119fd04aa4cb3a09a40aa246f49b41e3966dbba332d27b26431ee619c388",
     "recordDetailAppSha256": "fe10e63d289441803da2b3074872411e66f9df9771d093116d7412802af29fe1",
-    "previewStylesSha256": "67deb0f3aaeb15c9cdf085508bf88c1cabaa1be225f3606f4d9c039f9e71b227",
+    "previewStylesSha256": "b90cd4e943d4cb86e692a7f78734217fe884c6108852b344fef0115924964cc9",
     "recordDetailsManifestSha256": "1848f3992bd1ca2dbf802c6e14025dfbefeb96de1b187be52e77e2c3ad60d97e"
   },
   "viewportEnvironment": {
@@ -59,6 +59,40 @@
       "rawJsonSecondaryLinks": 61,
       "desktopHorizontalOverflow": false,
       "mobileHorizontalOverflow": false,
+      "firstScreen": {
+        "landingEntryTarget": "research-preview/#catalog-controls",
+        "filtersBeforeCoverageCounts": true,
+        "coverageBoundary": "Coverage counts, not quality scores. These totals describe catalog documentation; they do not rank agents or establish quality, safety or suitability.",
+        "directEntryViewports": [
+          {
+            "label": "desktop-compact",
+            "requested": { "width": 960, "height": 540 },
+            "observedCss": { "width": 1280, "height": 720 },
+            "searchTopPx": 479,
+            "searchBottomPx": 525,
+            "searchWithinFirstViewport": true,
+            "horizontalOverflow": false
+          },
+          {
+            "label": "mobile-compact",
+            "requested": { "width": 293, "height": 633 },
+            "observedCss": { "width": 391, "height": 844 },
+            "searchTopPx": 648,
+            "searchBottomPx": 694,
+            "deliveryTopPx": 730,
+            "deliveryBottomPx": 776,
+            "searchWithinFirstViewport": true,
+            "deliveryWithinFirstViewport": true,
+            "horizontalOverflow": false
+          }
+        ],
+        "anchoredEntry": {
+          "observedCss": { "width": 1920, "height": 1200 },
+          "searchTopPx": 81,
+          "searchBottomPx": 127,
+          "searchWithinFirstViewport": true
+        }
+      },
       "contextRoundTrip": {
         "search": "Qwen",
         "delivery": "hybrid",
@@ -229,13 +263,13 @@
     "liveExpansionHttpFailures": 0,
     "liveExpansionSuccessStatus": 200,
     "currentLiveCheck": {
-      "checkedAt": "2026-08-08T10:22:55Z",
+      "checkedAt": "2026-08-09T06:57:01.116Z",
       "method": "Read-only GET with redirects and Range bytes=0-0",
       "uniqueEndpointsChecked": 211,
       "failures": 0,
       "statusCounts": {
-        "200": 111,
-        "206": 100
+        "200": 112,
+        "206": 99
       }
     }
   },

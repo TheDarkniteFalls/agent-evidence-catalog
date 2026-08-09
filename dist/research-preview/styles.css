@@ -41,6 +41,10 @@ h3 { margin-bottom: 3px; font-size: 18px; line-height: 1.25; }
 .boundary-row span { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: 12px; font-weight: 680; }
 .quick-start { max-width: 800px; margin: 18px 0 0; padding-left: 13px; border-left: 3px solid var(--green); color: var(--muted); font-size: 14px; }
 .quick-start strong { color: var(--ink); }
+.hero-controls { max-width: 800px; margin: 18px 0 0; scroll-margin-top: 58px; }
+.filter-scope { max-width: 800px; margin: -8px 0 16px; color: var(--muted); font-size: 12px; }
+.stats-boundary { margin: 0 0 10px; color: var(--muted); font-size: 13px; }
+.stats-boundary strong { color: var(--ink); }
 .stats { margin-bottom: 54px; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; }
 .stats div { min-height: 96px; padding: 20px; display: grid; align-content: center; border-right: 1px solid var(--line); }
 .stats div:last-child { border-right: 0; }
