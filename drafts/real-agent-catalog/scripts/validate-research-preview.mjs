@@ -10,16 +10,19 @@ const baseWatcherPath = path.join(packageRoot, "drafts", "real-agent-source-watc
 const currentnessLifecyclePath = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-02", "lifecycle-overlay.json");
 const criticalMassAdmissionPath = path.join(draftRoot, "critical-mass-expansion", "admission-source.json");
 const criticalMassLifecyclePath = path.join(draftRoot, "critical-mass-expansion", "lifecycle-additions.json");
+const currentness20260809Path = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-09", "currentness-source.json");
 const baseLifecycleText = await readFile(baseLifecyclePath, "utf8");
 const baseWatcherText = await readFile(baseWatcherPath, "utf8");
 const currentnessLifecycleText = await readFile(currentnessLifecyclePath, "utf8");
 const criticalMassAdmissionText = await readFile(criticalMassAdmissionPath, "utf8");
 const criticalMassLifecycleText = await readFile(criticalMassLifecyclePath, "utf8");
+const currentness20260809Text = await readFile(currentness20260809Path, "utf8");
 const baseLifecycle = JSON.parse(baseLifecycleText);
 const baseWatcher = JSON.parse(baseWatcherText);
 const currentnessLifecycle = JSON.parse(currentnessLifecycleText);
 const criticalMassAdmission = JSON.parse(criticalMassAdmissionText);
 const criticalMassLifecycle = JSON.parse(criticalMassLifecycleText);
+const currentness20260809 = JSON.parse(currentness20260809Text);
 const lifecycle = await readJson(path.join(previewRoot, "lifecycle.json"));
 const watcher = await readJson(path.join(previewRoot, "source-registry.json"));
 const preview = await readJson(path.join(previewRoot, "catalog.json"));
@@ -27,14 +30,21 @@ const preview = await readJson(path.join(previewRoot, "catalog.json"));
 assert.equal(lifecycle.schemaVersion, "real-agent-lifecycle/0.1-draft");
 assert.equal(lifecycle.artifactType, "unpublished-real-agent-lifecycle-overlay");
 assert.deepEqual(lifecycle.sources.slice(0, currentnessLifecycle.sources.length), currentnessLifecycle.sources, "Accepted lifecycle sources changed");
-assert.deepEqual(lifecycle.entries.slice(0, currentnessLifecycle.entries.length), currentnessLifecycle.entries, "Accepted lifecycle entries changed");
-assert.deepEqual(lifecycle.sources.slice(currentnessLifecycle.sources.length), criticalMassLifecycle.sources, "Critical-mass lifecycle sources drifted");
-assert.deepEqual(lifecycle.entries.slice(currentnessLifecycle.entries.length), criticalMassLifecycle.entries, "Critical-mass lifecycle entries drifted");
-assert.equal(lifecycle.entries.length, 61);
-assert.deepEqual(lifecycle.entries.slice(1, 4), baseLifecycle.entries.slice(1, 4), "Unaffected lifecycle prefix changed");
+assert.deepEqual(
+  lifecycle.sources.slice(currentnessLifecycle.sources.length, currentnessLifecycle.sources.length + criticalMassLifecycle.sources.length),
+  criticalMassLifecycle.sources,
+  "Critical-mass lifecycle sources drifted"
+);
+const acceptedLifecycleEntries = [...currentnessLifecycle.entries, ...criticalMassLifecycle.entries];
+for (const accepted of acceptedLifecycleEntries) {
+  const projected = lifecycle.entries.find((entry) => entry.recordId === accepted.recordId);
+  assert(projected, `Accepted lifecycle record ${accepted.recordId} was not preserved`);
+  assert.equal(projected.surfaceKey, accepted.surfaceKey, `${accepted.recordId} surface key changed`);
+}
+assert.equal(lifecycle.entries.length, 73);
 const lifecycleById = new Map(lifecycle.entries.map((entry) => [entry.recordId, entry]));
 assert.equal(lifecycleById.size, lifecycle.entries.length, "Lifecycle record IDs must be unique");
-const expectedCounts = { current: 53, superseded: 5, historical: 2, discontinued: 1, unresolved: 0 };
+const expectedCounts = { current: 53, superseded: 17, historical: 2, discontinued: 1, unresolved: 0 };
 for (const [status, expected] of Object.entries(expectedCounts)) {
   assert.equal(lifecycle.entries.filter((entry) => entry.status === status).length, expected, `${status} count mismatch`);
 }
@@ -59,10 +69,14 @@ for (const [surfaceKey, count] of currentBySurface) assert.equal(count, 1, `${su
 assert.equal(currentBySurface.size, 53);
 assert.equal(lifecycleById.get("com.anthropic.claude-code.cli.2-1-117").supersededByRecordId, "com.anthropic.claude-code.cli.2-1-220");
 assert.equal(lifecycleById.get("com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee").status, "historical");
-assert.equal(lifecycleById.get("com.cline.bot.vscode-extension.4-1-3").status, "current");
+assert.equal(lifecycleById.get("com.cline.bot.vscode-extension.4-1-3").status, "superseded");
 assert.equal(lifecycleById.get("com.gitlab.duo.developer-flow.19-2-1").status, "current");
-assert.equal(lifecycleById.get("dev.zed.agent.native.1-13-1").status, "current");
-assert.equal(lifecycleById.get("dev.zed.agent.native.1-13-1").supersededByRecordId, null);
+assert.equal(lifecycleById.get("dev.zed.agent.native.1-13-1").status, "superseded");
+assert.equal(lifecycleById.get("dev.zed.agent.native.1-14-2").status, "current");
+assert.equal(lifecycleById.get("dev.zed.agent.native.1-14-2").supersededByRecordId, null);
+assert.equal(lifecycleById.get("com.anomaly.opencode.cli.1-18-15").status, "superseded");
+assert.equal(lifecycleById.get("com.anomaly.opencode.cli.1-18-15").supersededByRecordId, "com.anomaly.opencode.cli.1-18-16");
+assert.equal(lifecycleById.get("com.anomaly.opencode.cli.1-18-16").status, "current");
 
 assert.equal(watcher.schemaVersion, baseWatcher.schemaVersion);
 assert.equal(watcher.surfaces.length, 16);
@@ -101,21 +115,23 @@ assert.equal(preview.provenance.currentnessLifecycleSha256, sha256(currentnessLi
 assert.equal(preview.provenance.criticalMassAdmissionSha256, sha256(criticalMassAdmissionText));
 assert.equal(preview.provenance.criticalMassLifecycleSha256, sha256(criticalMassLifecycleText));
 assert.equal(preview.provenance.baseWatcherSha256, sha256(baseWatcherText));
+assert.equal(preview.provenance.currentness20260809Sha256, sha256(currentness20260809Text));
 assert.equal(preview.counts.surfaces, 55);
 assert.equal(preview.counts.currentLifecycleRecords, 53);
 assert.equal(preview.counts.currentRecordsPresented, 53);
-assert.equal(preview.counts.recordsPresentedIncludingHistory, 61);
+assert.equal(preview.counts.recordsPresentedIncludingHistory, 73);
 assert.equal(preview.counts.independentTestsCredited, 0);
 assert.equal(preview.surfaces.length, 55);
-assert.equal(preview.previewRecords.length, 61);
-assert.equal(new Set(preview.previewRecords.map((record) => record.recordId)).size, 61);
+assert.equal(preview.previewRecords.length, 73);
+assert.equal(new Set(preview.previewRecords.map((record) => record.recordId)).size, 73);
 assert(preview.previewRecords.every((record) => record.independentTestCount === 0));
-assert(preview.previewRecords.some((record) => record.recordId === "com.openai.codex.cli.0-146-0"));
+assert(preview.previewRecords.some((record) => record.recordId === "com.openai.codex.cli.0-147-0"));
+assert(preview.previewRecords.some((record) => record.recordId === "com.anomaly.opencode.cli.1-18-16"));
 assert.deepEqual(preview.gates, {});
 const codexSurface = preview.surfaces.find((surface) => surface.surfaceKey === "com.openai.codex.cli.stable");
-assert.equal(codexSurface.currentRecordId, "com.openai.codex.cli.0-146-0");
+assert.equal(codexSurface.currentRecordId, "com.openai.codex.cli.0-147-0");
 assert.equal(codexSurface.currentRecordAvailable, true);
-assert.equal(codexSurface.currentRecord.recordId, "com.openai.codex.cli.0-146-0");
+assert.equal(codexSurface.currentRecord.recordId, "com.openai.codex.cli.0-147-0");
 assert.equal(codexSurface.gate, null);
 for (const surface of preview.surfaces) {
   if (surface.currentRecordId) {
@@ -130,7 +146,7 @@ for (const surface of preview.surfaces) {
 
 await createSixteenRecordCatalog();
 const history = preview.surfaces.flatMap((surface) => surface.history);
-assert.equal(history.length, 8);
+assert.equal(history.length, 20);
 for (const record of history) assert(record.recordPath, `${record.recordId} history must retain an inspectable record path`);
 const forbiddenKeys = new Set(["score", "suitability", "ranking", "recommendation", "winner", "intakeform"]);
 function visit(value) {
@@ -188,10 +204,10 @@ const detailsRoot = path.join(packageRoot, "dist", "research-preview", "records"
 const detailHtmlFiles = (await readdir(detailsRoot)).filter((name) => name.endsWith(".html")).sort();
 const expectedDetailHtmlFiles = preview.previewRecords.map((record) => `${record.recordId}.html`).sort();
 assert.deepEqual(detailHtmlFiles, expectedDetailHtmlFiles, "Every projected record must have exactly one human-readable detail page");
-assert.equal(buildManifest.researchPreview.recordDetails.count, 61);
-assert.equal(buildManifest.researchPreview.recordDetails.records.length, 61);
+assert.equal(buildManifest.researchPreview.recordDetails.count, 73);
+assert.equal(buildManifest.researchPreview.recordDetails.records.length, 73);
 const manifestDetailsById = new Map(buildManifest.researchPreview.recordDetails.records.map((entry) => [entry.recordId, entry]));
-assert.equal(manifestDetailsById.size, 61, "Human-readable record-detail manifest IDs must be unique");
+assert.equal(manifestDetailsById.size, 73, "Human-readable record-detail manifest IDs must be unique");
 
 const escapeHtml = (value) => String(value)
   .replaceAll("&", "&amp;")
@@ -260,10 +276,10 @@ for (const summary of preview.previewRecords) {
   assert.equal(manifestDetail.htmlSha256, sha256(detailHtml));
 }
 
-console.log("PASS additive 61-entry lifecycle: 53 current, 5 superseded, 2 historical, 1 discontinued and 0 unresolved");
+console.log("PASS additive 73-entry lifecycle: 53 current, 17 superseded, 2 historical, 1 discontinued and 0 unresolved");
 console.log("PASS derived 16-surface watcher retains all 22 source URLs, fingerprints and check dates unchanged");
-console.log("PASS current-default research preview presents all 53 current records across 55 surfaces plus 8 explicit-history records with zero independent-test credit");
-console.log("PASS Codex 0.146.0 is integrated as the current same-surface successor to preserved 0.90.0 history without a waiting-period gate");
+console.log("PASS current-default research preview presents all 53 current records across 55 surfaces plus 20 explicit-history records with zero independent-test credit");
+console.log("PASS Codex 0.147.0 is integrated as the current same-surface successor while 0.146.0 and 0.90.0 remain preserved in history");
 console.log("PASS static current-default presentation and collapsed explicit-history control match the source dataset");
-console.log("PASS one deterministic record-agnostic template presents all 61 records with every claim, official source link, unknown, limitation and reciprocal lifecycle link preserved");
-console.log("PASS compact record identity, section navigation and catalog search/delivery return state are shared across all 61 pages");
+console.log("PASS one deterministic record-agnostic template presents all 73 records with every claim, official source link, unknown, limitation and reciprocal lifecycle link preserved");
+console.log("PASS compact record identity, section navigation and catalog search/delivery return state are shared across all 73 pages");

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.release-identity-2-1-226",
+  "slug": "release-identity-2-1-226",
+  "subject": {
+    "id": "com.anthropic.claude-code.cli",
+    "name": "Claude Code CLI",
+    "publisher": "Anthropic PBC",
+    "surface": {
+      "kind": "cli",
+      "name": "Claude Code CLI",
+      "slug": "anthropic-claude-code-cli-2-1-226"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "Anthropic's official latest release identifies Claude Code CLI v2.1.226, published 2026-08-08T02:48:05Z; the installed platform archive and executable identity remain unresolved."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Anthropic PBC"
+  },
+  "source": {
+    "uri": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226",
+    "title": "Claude Code v2.1.226 release",
+    "locator": "Release heading, publication metadata and tag reference",
+    "publishedAt": "2026-08-08T02:48:05Z",
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "2.1.226"
+    },
+    "configuration": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Claude Code CLI release"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-09",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The release page identifies a source release, not the installed executable in any session."
+  ],
+  "unknowns": [
+    "The installed platform asset and executable path remain unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,6 +1,6 @@
 # Research-preview publication readiness
 
-Reviewed: 2026-08-07. Current outcome: **55-SURFACE RESEARCH PREVIEW BUILD PREPARED LOCALLY**.
+Reviewed: 2026-08-10. Current outcome: **55-SURFACE ALL-ENTRY REFRESH VALIDATED FOR PUBLICATION**.
 
 The validated static artifact is published at
 https://thedarknitefalls.github.io/agent-evidence-catalog/. GitHub Pages uploads
@@ -29,8 +29,9 @@ intake, add analytics or authorize any other GitHub mutation.
 
 | Gate | Status | Release condition |
 |---|---|---|
-| Codex CLI 0.146.0 current record | PASS | The validated source-derived record is integrated as current; 0.90.0 remains unchanged in explicit history through reciprocal same-surface links. |
-| Current-default and explicit-history data/UI | PASS | The prepared build covers 53 current cards by default and eight explicit-history records across 55 surfaces; publication still requires a separately authorized commit and push. |
+| All-surface currentness review | PASS | All 55 accepted surfaces have a dated 2026-08-09 official-source decision; the 2026-08-10 release-feed follow-up adds OpenCode 1.18.16 as the twelfth exact-identity successor while all 61 prior records and OpenCode 1.18.15 remain inspectable. |
+| Codex CLI 0.147.0 current record | PASS | The validated source-derived record is integrated as current; 0.146.0 and 0.90.0 remain unchanged in explicit history through reciprocal same-surface links. |
+| Current-default and explicit-history data/UI | PASS | The prepared build covers 53 current cards by default and 20 explicit-history records across 55 surfaces. |
 | Critical-mass evidence boundary | PASS | The 39 additions admit two official publisher-source claims each for identity and delivery only. Their mappings remain wholly unknown and credit no independent evidence. |
 | Stranger-first concept and presentation | PASS | The landing page names the primary readers and useful question, supplies a direct reading path, distinguishes publisher claims from observed behavior and describes the inventory as selected rather than comprehensive. |
 | Independent-test credit | PASS | Must remain exactly zero. |
@@ -38,7 +39,7 @@ intake, add analytics or authorize any other GitHub mutation.
 | Publication-safety scan | PASS | Unmodified `publicctl.py check` reports no findings, no symlinks and a GitHub noreply commit email. |
 | Deterministic, preservation and source-link validation | PASS | Generated output is repeatable; the preservation manifest and eight byte-identical path migrations pass; every preview source link remains HTTPS, publisher-attributed, non-search and claim-linked. |
 | Public-lane pre-push check | REQUIRED FOR EACH PUSH | The exact release commit must pass the unchanged public-lane gate before it is pushed. |
-| GitHub publication state | PAGES V0.1 AUTHORIZED | Authorization is limited to the exact Pages release commit, enabling the GitHub Actions publishing source and verifying its deployment. It does not extend to a pull request, GitHub release, custom domain or future mutation. |
+| GitHub publication state | EXACT REFRESH AUTHORIZED | Authorization covers the exact validated refresh branch, pull request, merge and Pages deployment verification. It does not extend to a GitHub release, custom domain or future mutation. |
 
 ## Release decision rule
 

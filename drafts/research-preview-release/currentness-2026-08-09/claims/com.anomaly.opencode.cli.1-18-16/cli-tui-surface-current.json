@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.cli-tui-surface-current",
+  "slug": "cli-tui-surface-current",
+  "subject": {
+    "id": "com.anomaly.opencode.cli",
+    "name": "OpenCode CLI",
+    "publisher": "Anomaly Innovations, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "OpenCode CLI/TUI",
+      "slug": "opencode-cli-1-18-16"
+    }
+  },
+  "claim": {
+    "category": "surface.delivery",
+    "statement": "Current OpenCode CLI documentation says invoking opencode without a subcommand starts the terminal user interface and documents model and agent selection flags for that CLI; the desktop application and IDE integration are separate product surfaces outside this record."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Anomaly Innovations, Inc."
+  },
+  "source": {
+    "uri": "https://opencode.ai/docs/cli/",
+    "title": "OpenCode CLI",
+    "locator": "TUI command; global flags including --model and --agent",
+    "publishedAt": null,
+    "capturedAt": "2026-08-10T07:24:04Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "conditional",
+      "values": [
+        "default TUI invocation",
+        "--model",
+        "--agent"
+      ]
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local CLI/TUI"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher CLI documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-10",
+    "recheckAfter": "2026-09-10",
+    "invalidatedBy": [
+      "cli-documentation-change",
+      "surface-change",
+      "flag-change"
+    ]
+  },
+  "limitations": [
+    "This record does not transfer claims from the OpenCode desktop app, IDE integration, SDK or server-only surfaces."
+  ],
+  "unknowns": [
+    "The installed packaging path, platform, arguments, selected agent and selected model are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -39,11 +39,10 @@ assert(corrections.includes("not for the\nstatic closed-intake preview"));
 assert(method.includes("zero independent tests"));
 assert(method.includes("public Research Preview v0.1"));
 assert(method.includes("https://thedarknitefalls.github.io/agent-evidence-catalog/"));
-assert(readiness.includes("Current outcome: **55-SURFACE RESEARCH PREVIEW BUILD PREPARED LOCALLY**"));
-assert(readiness.includes("publication still requires a separately authorized commit and push"));
-assert(readiness.includes("Codex CLI 0.146.0 current record | PASS"));
-assert(readiness.includes("PAGES V0.1 AUTHORIZED"));
-assert(readiness.includes("does not extend to a pull request, GitHub release, custom domain or future mutation"));
+assert(readiness.includes("Current outcome: **55-SURFACE ALL-ENTRY REFRESH VALIDATED FOR PUBLICATION**"));
+assert(readiness.includes("Codex CLI 0.147.0 current record | PASS"));
+assert(readiness.includes("EXACT REFRESH AUTHORIZED"));
+assert(readiness.includes("does not extend to a GitHub release, custom domain or future mutation"));
 assert(roadmap.includes("Private reporting route"));
 assert(roadmap.includes("not a blocker for the static closed-intake research preview"));
 

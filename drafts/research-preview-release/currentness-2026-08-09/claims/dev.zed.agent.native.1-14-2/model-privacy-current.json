@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.zed.agent.model-privacy-current",
+  "slug": "model-privacy-current",
+  "subject": {
+    "id": "dev.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "native Zed Agent in Zed",
+      "slug": "zed-agent-1-14-2"
+    }
+  },
+  "claim": {
+    "category": "data-policy.model-route",
+    "statement": "Zed's current AI Privacy page distinguishes Zed-hosted models, provider API keys, existing subscriptions, gateways and local models as separate request paths with different handlers and terms, and states conditional retention exceptions for designated provider models."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://zed.dev/docs/ai/privacy-and-security",
+    "title": "AI Privacy",
+    "locator": "AI Request Paths and Zed-Hosted Model Commitments",
+    "publishedAt": null,
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "Zed-hosted model",
+        "provider API key",
+        "existing subscription",
+        "gateway",
+        "local model",
+        "feedback or training-data opt-in"
+      ]
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "native Zed Agent"
+      ]
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "unresolved",
+      "values": []
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher privacy and request-path statement."
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "privacy-policy-change",
+      "provider-commitment-change",
+      "request-path-change"
+    ]
+  },
+  "limitations": [
+    "The policy describes configured paths; it does not establish which path, provider, model or retention exception applied to a session."
+  ],
+  "unknowns": [
+    "Request route, provider, model, data sent, retention exception, feedback state and training-data opt-in are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

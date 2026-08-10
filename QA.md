@@ -17,23 +17,30 @@ browser receipt below.
 
 ## Research Preview v0.1 browser verification
 
-Checked 2026-08-02 with the Codex in-app browser against a loopback-only
-`python3 -m http.server` bound to a loopback-only interface on port 4173. The browser loaded and
-rendered the site even though the separately managed shell could not connect
+Checked 2026-08-10 with the Codex in-app browser against a loopback-only
+`python3 -m http.server` bound to a loopback-only interface on port 4173. The browser loaded
+and rendered the site even though the separately managed shell could not connect
 through its own `curl` path; the verified listener and rendered result identify
 that as a shell-path limitation, not a site failure.
 
 - The canonical landing page leads with the real-agent Research Preview v0.1
   and labels the synthetic catalog as a secondary reference.
-- Desktop and mobile both reached the primary research-preview route, showed 16
-  current cards and kept six history records collapsed until explicit action.
-- Desktop search `Codex` returned only OpenAI Codex CLI; mobile search `Cline`
-  returned only Cline; both reset to all 16 current cards.
-- The history control exposed exactly five superseded records and the GitLab
-  18.8 historical milestone.
+- Desktop and mobile both reached the primary research-preview route, showed 53
+  current cards across 55 surfaces and kept 20 history records collapsed until
+  explicit action.
+- Search `Qwen` plus hybrid delivery returned exactly the current Qwen Code CLI
+  and VS Code extension records. Opening Qwen Code CLI 0.21.8 carried the filter
+  context into the detail URL and the return link restored both filters.
+- The history control exposed exactly 20 preserved superseded, historical or
+  discontinued records on request.
 - The mobile landing summaries stack vertically; neither journey introduced
   body-level horizontal overflow.
-- Browser console warnings and errors were zero on both journeys.
+- All 73 human-readable record pages were checked at desktop and mobile
+  viewports. Every page had a unique identity, seven-link section index,
+  first-viewport compact identity, secondary raw-JSON link, reading boundary,
+  canonical and social metadata, and no body or claim-group overflow.
+- Browser console warnings and errors were zero across the landing, catalog and
+  all record-page journeys.
 - Method, release-readiness, roadmap and correction footer targets were present
   and match files copied into the static build.
 

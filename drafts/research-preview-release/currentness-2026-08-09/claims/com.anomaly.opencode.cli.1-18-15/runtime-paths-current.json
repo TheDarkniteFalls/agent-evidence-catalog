@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.runtime-paths-current",
+  "slug": "runtime-paths-current",
+  "subject": {
+    "id": "com.anomaly.opencode.cli",
+    "name": "OpenCode CLI",
+    "publisher": "Anomaly Innovations, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "OpenCode CLI/TUI",
+      "slug": "opencode-cli-1-18-15"
+    }
+  },
+  "claim": {
+    "category": "runtime.delivery",
+    "statement": "Current OpenCode installation documentation lists a direct install script, npm-compatible package installation, Homebrew, release binaries and a container image as alternative CLI delivery paths."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Anomaly Innovations, Inc."
+  },
+  "source": {
+    "uri": "https://opencode.ai/docs/",
+    "title": "OpenCode documentation",
+    "locator": "Install section: script, npm packages, Homebrew, binaries and Docker",
+    "publishedAt": null,
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "install script",
+        "npm-compatible package",
+        "Homebrew",
+        "release binary",
+        "container image"
+      ]
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local CLI/TUI runtime"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher installation documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "installation-documentation-change",
+      "package-name-change",
+      "distribution-channel-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery paths do not identify which artifact was installed or prove that each path resolves to source revision 012c2f57f976489d88bd4598a056b4bdcdd428ee."
+  ],
+  "unknowns": [
+    "The chosen distribution path, resolved version, platform build, package dependencies, container digest and source-to-artifact correspondence are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

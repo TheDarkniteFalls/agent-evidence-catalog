@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.zed.agent.sandbox-current",
+  "slug": "sandbox-current",
+  "subject": {
+    "id": "dev.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "native Zed Agent in Zed",
+      "slug": "zed-agent-1-14-2"
+    }
+  },
+  "claim": {
+    "category": "sandbox.network",
+    "statement": "Zed's current sandbox documentation says native Zed Agent can use OS-enforced restrictions for terminal and fetch actions, with default project-write, Git-metadata and outbound-network boundaries, while ordinary terminals, External Agents and Terminal Threads are outside that sandbox."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://zed.dev/docs/ai/sandboxing",
+    "title": "Agent Sandboxing",
+    "locator": "Sandboxed Tools, Default Access, and scope exclusions",
+    "publishedAt": null,
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "native Zed Agent",
+        "terminal tool",
+        "fetch tool",
+        "sandbox enabled",
+        "sandbox exception approval"
+      ]
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "macOS",
+        "Linux with bubblewrap",
+        "Windows with WSL"
+      ]
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local Zed Agent tool action"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling sandbox documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "sandbox-default-change",
+      "platform-support-change",
+      "scope-change"
+    ]
+  },
+  "limitations": [
+    "Publisher documentation does not prove sandbox availability, activation or enforcement in Zed 1.14.2."
+  ],
+  "unknowns": [
+    "Sandbox state, platform dependency, granted exceptions, filesystem boundary and network enforcement are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

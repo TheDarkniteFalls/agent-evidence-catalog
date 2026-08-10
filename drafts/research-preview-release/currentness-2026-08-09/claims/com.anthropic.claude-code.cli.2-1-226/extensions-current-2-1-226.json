@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.extensions-current-2-1-226",
+  "slug": "extensions-current-2-1-226",
+  "subject": {
+    "id": "com.anthropic.claude-code.cli",
+    "name": "Claude Code CLI",
+    "publisher": "Anthropic PBC",
+    "surface": {
+      "kind": "cli",
+      "name": "Claude Code CLI",
+      "slug": "anthropic-claude-code-cli-2-1-226"
+    }
+  },
+  "claim": {
+    "category": "authority.extensions",
+    "statement": "Current official documentation keeps CLAUDE.md, skills, subagents, hooks, MCP and plugins as separate extension mechanisms with different loading and execution boundaries."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anthropic PBC"
+  },
+  "source": {
+    "uri": "https://code.claude.com/docs/en/features-overview",
+    "title": "Extend Claude Code",
+    "locator": "Extension overview and feature comparison",
+    "publishedAt": null,
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "CLAUDE.md",
+        "skills",
+        "subagents",
+        "hooks",
+        "MCP",
+        "plugins"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Claude Code extension layer"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Extension documentation does not establish that any extension was configured for 2.1.226."
+  ],
+  "unknowns": [
+    "Installed plugins, skills, agents, hooks, instructions, provenance and permissions are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

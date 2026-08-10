@@ -1,7 +1,7 @@
 {
   "schemaVersion": "agent-evidence-research-preview/0.1-draft",
   "artifactType": "unpublished-maintainer-curated-research-preview",
-  "asOf": "2026-08-07",
+  "asOf": "2026-08-10",
   "releaseCandidateStatus": "ready-for-release-review",
   "boundaries": {
     "static": true,
@@ -28,14 +28,17 @@
     "baseWatcherSha256": "c2ccb0379cb2e9f84faf4e6008db68bb6c345898d8302d331887fa0d34400954",
     "unifiedLifecyclePath": "drafts/real-agent-catalog/research-preview/lifecycle.json",
     "unifiedWatcherPath": "drafts/real-agent-catalog/research-preview/source-registry.json",
-    "watcherPublicationBoundary": "local-validation-only"
+    "watcherPublicationBoundary": "local-validation-only",
+    "currentness20260809Path": "drafts/research-preview-release/currentness-2026-08-09/currentness-source.json",
+    "currentness20260809Sha256": "eecc2679f70588344173f67192dd6c195e6540f23e169eed8cd3f52ff6717880",
+    "currentness20260809ReceiptPath": "drafts/research-preview-release/currentness-2026-08-09/currentness-receipt.json"
   },
   "gates": {},
   "counts": {
     "surfaces": 55,
     "currentLifecycleRecords": 53,
     "currentRecordsPresented": 53,
-    "recordsPresentedIncludingHistory": 61,
+    "recordsPresentedIncludingHistory": 73,
     "independentTestsCredited": 0
   },
   "surfaces": [
@@ -68,7 +71,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -109,7 +112,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -150,7 +153,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -191,7 +194,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -232,7 +235,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -246,44 +249,79 @@
     },
     {
       "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
-      "currentRecordId": "com.alibaba.qwen-code.cli.0-21-7",
+      "currentRecordId": "com.alibaba.qwen-code.cli.0-21-8",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.alibaba.qwen-code.cli.0-21-7",
+        "recordId": "com.alibaba.qwen-code.cli.0-21-8",
         "name": "Qwen Code CLI",
         "publisher": "Alibaba Cloud Qwen team",
         "surface": {
           "kind": "cli",
           "name": "Qwen Code CLI",
-          "slug": "alibaba-qwen-code-cli-0-21-7",
+          "slug": "alibaba-qwen-code-cli-0-21-8",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "0.21.7",
-          "releaseTag": "v0.21.7",
+          "version": "0.21.8",
+          "releaseTag": "v0.21.8",
           "sourceRevision": null,
-          "releasedAt": "2026-08-06T23:19:06Z",
+          "releasedAt": "2026-08-08T17:07:22Z",
           "channel": "Qwen Code CLI release stream",
           "installedRuntimeVariant": {
             "status": "unresolved",
             "value": null,
             "alternatives": [],
-            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+            "note": "The official source identifies 0.21.8, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.alibaba.qwen-code.cli.0-21-7.json",
-        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
-        "lifecycleNote": "Official publisher sources identify this as the current reviewed Qwen Code CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.alibaba.qwen-code.cli.0-21-8.json",
+        "mappingPath": null,
+        "lifecycleNote": "The official release feed identifies v0.21.8 as the latest stable Qwen Code CLI release reviewed on 2026-08-09."
       },
       "gate": null,
-      "history": []
+      "history": [
+        {
+          "recordId": "com.alibaba.qwen-code.cli.0-21-7",
+          "name": "Qwen Code CLI",
+          "publisher": "Alibaba Cloud Qwen team",
+          "surface": {
+            "kind": "cli",
+            "name": "Qwen Code CLI",
+            "slug": "alibaba-qwen-code-cli-0-21-7",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "0.21.7",
+            "releaseTag": "v0.21.7",
+            "sourceRevision": null,
+            "releasedAt": "2026-08-06T23:19:06Z",
+            "channel": "Qwen Code CLI release stream",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [],
+              "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 2,
+          "sourceCount": 2,
+          "unknownCount": 4,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.alibaba.qwen-code.cli.0-21-7.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+          "lifecycleNote": "The official release feed identifies v0.21.8 as the latest stable Qwen Code CLI release reviewed on 2026-08-09. The preserved 0.21.7 record remains inspectable as the direct predecessor."
+        }
+      ]
     },
     {
       "surfaceKey": "com.alibaba.qwen-code.vscode-extension.beta",
@@ -314,7 +352,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -355,7 +393,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -369,40 +407,40 @@
     },
     {
       "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
-      "currentRecordId": "com.amazon.kiro.ide.1-0-242",
+      "currentRecordId": "com.amazon.kiro.ide.1-0-288",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.amazon.kiro.ide.1-0-242",
+        "recordId": "com.amazon.kiro.ide.1-0-288",
         "name": "Kiro IDE",
         "publisher": "Amazon Web Services",
         "surface": {
           "kind": "desktop-app",
           "name": "Kiro IDE",
-          "slug": "aws-kiro-ide-1-0-242",
+          "slug": "aws-kiro-ide-1-0-288",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "1.0.242",
-          "releaseTag": "1.0.242",
+          "version": "1.0.288",
+          "releaseTag": null,
           "sourceRevision": null,
-          "releasedAt": "2026-07-28T00:00:00Z",
+          "releasedAt": "2026-08-07T00:00:00Z",
           "channel": "Kiro IDE desktop release",
           "additionalIdentities": [
             {
               "id": "exact-desktop-release",
               "kind": "artifact-version",
               "status": "known",
-              "value": "Kiro IDE 1.0.242",
+              "value": "Kiro IDE 1.0.288",
               "scopeBindings": [],
               "artifactRefs": [
-                "kiro-ide-release-1-0-242"
+                "kiro-ide-release-1-0-288"
               ],
               "sourceIds": [
-                "source-release-identity-1-0-242"
+                "source-release-identity-1-0-288"
               ],
               "claimIds": [
-                "com.amazon.kiro.ide.release-identity-1-0-242"
+                "com.amazon.kiro.ide.release-identity-1-0-288"
               ],
               "note": "The dated desktop release is known; no platform installer or digest was captured."
             },
@@ -410,18 +448,18 @@
               "id": "code-oss-base",
               "kind": "runtime-build",
               "status": "known",
-              "value": "Code OSS 1.108.2",
+              "value": "Code OSS 1.109.5",
               "scopeBindings": [],
               "artifactRefs": [
-                "kiro-ide-release-1-0-242"
+                "kiro-ide-release-1-0-288"
               ],
               "sourceIds": [
-                "source-code-oss-base-1-0-242"
+                "source-code-oss-base-1-0-288"
               ],
               "claimIds": [
-                "com.amazon.kiro.ide.code-oss-base-1-0-242"
+                "com.amazon.kiro.ide.code-oss-base-1-0-288"
               ],
-              "note": "The 1.0.242 release note names the editor base; it does not expose a source revision or platform digest."
+              "note": "The 1.0.288 release note names the editor base; it does not expose a source revision or platform digest."
             },
             {
               "id": "rolling-kiro-service",
@@ -443,7 +481,7 @@
               "claimIds": [
                 "com.amazon.kiro.ide.model-selection-current"
               ],
-              "note": "Model inventory and automatic routing are rolling and are not frozen by desktop release 1.0.242."
+              "note": "Model inventory and automatic routing are rolling and are not frozen by desktop release 1.0.288."
             }
           ],
           "installedRuntimeVariant": {
@@ -463,7 +501,7 @@
                 "kind": "platform-build",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "kiro-platform-installers-1-0-242"
+                  "kiro-platform-installers-1-0-288"
                 ],
                 "scopeBindings": [
                   {
@@ -472,7 +510,7 @@
                   }
                 ],
                 "claimIds": [
-                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                  "com.amazon.kiro.ide.release-identity-1-0-288"
                 ],
                 "note": "No installer or digest captured."
               },
@@ -482,7 +520,7 @@
                 "kind": "platform-build",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "kiro-platform-installers-1-0-242"
+                  "kiro-platform-installers-1-0-288"
                 ],
                 "scopeBindings": [
                   {
@@ -491,7 +529,7 @@
                   }
                 ],
                 "claimIds": [
-                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                  "com.amazon.kiro.ide.release-identity-1-0-288"
                 ],
                 "note": "No installer or digest captured."
               },
@@ -501,7 +539,7 @@
                 "kind": "platform-build",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "kiro-platform-installers-1-0-242"
+                  "kiro-platform-installers-1-0-288"
                 ],
                 "scopeBindings": [
                   {
@@ -510,7 +548,7 @@
                   }
                 ],
                 "claimIds": [
-                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                  "com.amazon.kiro.ide.release-identity-1-0-288"
                 ],
                 "note": "No installer or digest captured."
               },
@@ -520,7 +558,7 @@
                 "kind": "platform-build",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "kiro-platform-installers-1-0-242"
+                  "kiro-platform-installers-1-0-288"
                 ],
                 "scopeBindings": [
                   {
@@ -529,7 +567,7 @@
                   }
                 ],
                 "claimIds": [
-                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                  "com.amazon.kiro.ide.release-identity-1-0-288"
                 ],
                 "note": "No installer or digest captured."
               },
@@ -539,7 +577,7 @@
                 "kind": "platform-build",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "kiro-platform-installers-1-0-242"
+                  "kiro-platform-installers-1-0-288"
                 ],
                 "scopeBindings": [
                   {
@@ -548,26 +586,222 @@
                   }
                 ],
                 "claimIds": [
-                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                  "com.amazon.kiro.ide.release-identity-1-0-288"
                 ],
                 "note": "No installer or digest captured."
               }
             ],
-            "note": "No Kiro installer was downloaded or inspected."
+            "note": "The official source identifies 1.0.288, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 9,
         "sourceCount": 9,
         "unknownCount": 10,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/com.amazon.kiro.ide.1-0-242.json",
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.amazon.kiro.ide.1-0-288.json",
         "mappingPath": null,
-        "lifecycleNote": "The publisher IDE changelog lists 1.0.242 as the latest 1.0.x patch on the reviewed date."
+        "lifecycleNote": "Kiro's official IDE changelog lists 1.0.288 first and dates it 2026-08-07."
       },
       "gate": null,
-      "history": []
+      "history": [
+        {
+          "recordId": "com.amazon.kiro.ide.1-0-242",
+          "name": "Kiro IDE",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Kiro IDE",
+            "slug": "aws-kiro-ide-1-0-242",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "1.0.242",
+            "releaseTag": "1.0.242",
+            "sourceRevision": null,
+            "releasedAt": "2026-07-28T00:00:00Z",
+            "channel": "Kiro IDE desktop release",
+            "additionalIdentities": [
+              {
+                "id": "exact-desktop-release",
+                "kind": "artifact-version",
+                "status": "known",
+                "value": "Kiro IDE 1.0.242",
+                "scopeBindings": [],
+                "artifactRefs": [
+                  "kiro-ide-release-1-0-242"
+                ],
+                "sourceIds": [
+                  "source-release-identity-1-0-242"
+                ],
+                "claimIds": [
+                  "com.amazon.kiro.ide.release-identity-1-0-242"
+                ],
+                "note": "The dated desktop release is known; no platform installer or digest was captured."
+              },
+              {
+                "id": "code-oss-base",
+                "kind": "runtime-build",
+                "status": "known",
+                "value": "Code OSS 1.108.2",
+                "scopeBindings": [],
+                "artifactRefs": [
+                  "kiro-ide-release-1-0-242"
+                ],
+                "sourceIds": [
+                  "source-code-oss-base-1-0-242"
+                ],
+                "claimIds": [
+                  "com.amazon.kiro.ide.code-oss-base-1-0-242"
+                ],
+                "note": "The 1.0.242 release note names the editor base; it does not expose a source revision or platform digest."
+              },
+              {
+                "id": "rolling-kiro-service",
+                "kind": "service-revision",
+                "status": "unresolved",
+                "value": null,
+                "scopeBindings": [
+                  {
+                    "axisId": "model-route",
+                    "alternativeId": "auto-route"
+                  }
+                ],
+                "artifactRefs": [
+                  "kiro-hosted-service"
+                ],
+                "sourceIds": [
+                  "source-model-selection-current"
+                ],
+                "claimIds": [
+                  "com.amazon.kiro.ide.model-selection-current"
+                ],
+                "note": "Model inventory and automatic routing are rolling and are not frozen by desktop release 1.0.242."
+              }
+            ],
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "macOS Apple Silicon",
+                "macOS Intel",
+                "Windows x64",
+                "Linux Debian/Ubuntu",
+                "Linux Universal"
+              ],
+              "alternativeDetails": [
+                {
+                  "id": "macos-apple-silicon",
+                  "label": "macOS Apple Silicon",
+                  "kind": "platform-build",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "kiro-platform-installers-1-0-242"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "platform-build",
+                      "alternativeId": "macos-apple-silicon"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.amazon.kiro.ide.release-identity-1-0-242"
+                  ],
+                  "note": "No installer or digest captured."
+                },
+                {
+                  "id": "macos-intel",
+                  "label": "macOS Intel",
+                  "kind": "platform-build",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "kiro-platform-installers-1-0-242"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "platform-build",
+                      "alternativeId": "macos-intel"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.amazon.kiro.ide.release-identity-1-0-242"
+                  ],
+                  "note": "No installer or digest captured."
+                },
+                {
+                  "id": "windows-x64",
+                  "label": "Windows x64",
+                  "kind": "platform-build",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "kiro-platform-installers-1-0-242"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "platform-build",
+                      "alternativeId": "windows-x64"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.amazon.kiro.ide.release-identity-1-0-242"
+                  ],
+                  "note": "No installer or digest captured."
+                },
+                {
+                  "id": "linux-debian",
+                  "label": "Linux Debian or Ubuntu",
+                  "kind": "platform-build",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "kiro-platform-installers-1-0-242"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "platform-build",
+                      "alternativeId": "linux-debian"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.amazon.kiro.ide.release-identity-1-0-242"
+                  ],
+                  "note": "No installer or digest captured."
+                },
+                {
+                  "id": "linux-universal",
+                  "label": "Linux Universal",
+                  "kind": "platform-build",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "kiro-platform-installers-1-0-242"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "platform-build",
+                      "alternativeId": "linux-universal"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.amazon.kiro.ide.release-identity-1-0-242"
+                  ],
+                  "note": "No installer or digest captured."
+                }
+              ],
+              "note": "No Kiro installer was downloaded or inspected."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 9,
+          "sourceCount": 9,
+          "unknownCount": 10,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/com.amazon.kiro.ide.1-0-242.json",
+          "mappingPath": null,
+          "lifecycleNote": "Kiro's official IDE changelog lists 1.0.288 first and dates it 2026-08-07. The preserved 1.0.242 record remains inspectable as the direct predecessor."
+        }
+      ]
     },
     {
       "surfaceKey": "com.amazon.kiro.web.preview",
@@ -598,7 +832,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -639,7 +873,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -680,7 +914,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -694,41 +928,41 @@
     },
     {
       "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
-      "currentRecordId": "com.anomaly.opencode.cli.1-18-11",
+      "currentRecordId": "com.anomaly.opencode.cli.1-18-16",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.anomaly.opencode.cli.1-18-11",
+        "recordId": "com.anomaly.opencode.cli.1-18-16",
         "name": "OpenCode CLI",
         "publisher": "Anomaly Innovations, Inc.",
         "surface": {
           "kind": "cli",
           "name": "OpenCode CLI/TUI",
-          "slug": "opencode-cli-1-18-11",
+          "slug": "opencode-cli-1-18-16",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "1.18.11",
-          "releaseTag": "v1.18.11",
-          "sourceRevision": "012c2f57f976489d88bd4598a056b4bdcdd428ee",
-          "releasedAt": "2026-08-01T11:44:00Z",
+          "version": "1.18.16",
+          "releaseTag": "v1.18.16",
+          "sourceRevision": null,
+          "releasedAt": "2026-08-10T06:07:08Z",
           "channel": "OpenCode GitHub release",
           "additionalIdentities": [
             {
               "id": "exact-cli-source-release",
               "kind": "artifact-version",
               "status": "known",
-              "value": "OpenCode CLI v1.18.11",
+              "value": "OpenCode CLI v1.18.16",
               "scopeBindings": [],
               "artifactRefs": [
-                "opencode-release-1-18-11",
-                "opencode-source-revision-1-18-11"
+                "opencode-release-1-18-16",
+                "opencode-source-revision-1-18-16"
               ],
               "sourceIds": [
-                "source-release-identity-1-18-11"
+                "source-release-identity-1-18-16"
               ],
               "claimIds": [
-                "com.anomaly.opencode.cli.release-identity-1-18-11"
+                "com.anomaly.opencode.cli.release-identity-1-18-16"
               ],
               "note": "The immutable release tag and linked source revision are exact; no distribution artifact was captured or hashed."
             },
@@ -818,7 +1052,7 @@
                 "kind": "binary",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "opencode-release-binary-1-18-11"
+                  "opencode-release-binary-1-18-16"
                 ],
                 "scopeBindings": [
                   {
@@ -837,7 +1071,7 @@
                 "kind": "package",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "opencode-npm-package-1-18-11"
+                  "opencode-npm-package-1-18-16"
                 ],
                 "scopeBindings": [
                   {
@@ -856,7 +1090,7 @@
                 "kind": "package",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "opencode-homebrew-package-1-18-11"
+                  "opencode-homebrew-package-1-18-16"
                 ],
                 "scopeBindings": [
                   {
@@ -875,7 +1109,7 @@
                 "kind": "binary",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "opencode-release-binary-1-18-11"
+                  "opencode-release-binary-1-18-16"
                 ],
                 "scopeBindings": [
                   {
@@ -884,7 +1118,7 @@
                   }
                 ],
                 "claimIds": [
-                  "com.anomaly.opencode.cli.release-identity-1-18-11",
+                  "com.anomaly.opencode.cli.release-identity-1-18-16",
                   "com.anomaly.opencode.cli.runtime-paths-current"
                 ],
                 "note": "The exact release page lists assets, but no platform binary was selected, downloaded or hashed."
@@ -909,42 +1143,495 @@
                 "note": "The container path is documented, but no image reference, platform manifest or digest was captured."
               }
             ],
-            "note": "No OpenCode artifact was downloaded, installed, executed or observed; the exact tag does not establish an installed runtime."
+            "note": "The official source identifies 1.18.16, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-10 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-10",
         "claimCount": 12,
         "sourceCount": 12,
         "unknownCount": 13,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/expansion-batch-4/records/com.anomaly.opencode.cli.1-18-11.json",
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.anomaly.opencode.cli.1-18-16.json",
         "mappingPath": null,
-        "lifecycleNote": "The publisher latest-release endpoint resolves to immutable v1.18.11. Desktop release-note content is not transferred to this CLI/TUI surface."
+        "lifecycleNote": "The official release feed identifies v1.18.16 as the latest stable OpenCode release reviewed on 2026-08-10."
       },
       "gate": null,
-      "history": []
+      "history": [
+        {
+          "recordId": "com.anomaly.opencode.cli.1-18-11",
+          "name": "OpenCode CLI",
+          "publisher": "Anomaly Innovations, Inc.",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenCode CLI/TUI",
+            "slug": "opencode-cli-1-18-11",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "1.18.11",
+            "releaseTag": "v1.18.11",
+            "sourceRevision": "012c2f57f976489d88bd4598a056b4bdcdd428ee",
+            "releasedAt": "2026-08-01T11:44:00Z",
+            "channel": "OpenCode GitHub release",
+            "additionalIdentities": [
+              {
+                "id": "exact-cli-source-release",
+                "kind": "artifact-version",
+                "status": "known",
+                "value": "OpenCode CLI v1.18.11",
+                "scopeBindings": [],
+                "artifactRefs": [
+                  "opencode-release-1-18-11",
+                  "opencode-source-revision-1-18-11"
+                ],
+                "sourceIds": [
+                  "source-release-identity-1-18-11"
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.release-identity-1-18-11"
+                ],
+                "note": "The immutable release tag and linked source revision are exact; no distribution artifact was captured or hashed."
+              },
+              {
+                "id": "opencode-zen-service-revision",
+                "kind": "service-revision",
+                "status": "unresolved",
+                "value": null,
+                "scopeBindings": [
+                  {
+                    "axisId": "model-route",
+                    "alternativeId": "opencode-zen"
+                  }
+                ],
+                "artifactRefs": [
+                  "opencode-zen-service"
+                ],
+                "sourceIds": [
+                  "source-model-provider-route-current",
+                  "source-zen-data-policy-current"
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.model-provider-route-current",
+                  "com.anomaly.opencode.cli.zen-data-policy-current"
+                ],
+                "note": "Zen is a separately changing hosted gateway and model catalog; no service revision, endpoint, account, region or selected model was fixed."
+              },
+              {
+                "id": "external-provider-service-revision",
+                "kind": "service-revision",
+                "status": "unresolved",
+                "value": null,
+                "scopeBindings": [
+                  {
+                    "axisId": "model-route",
+                    "alternativeId": "external-hosted-provider"
+                  }
+                ],
+                "artifactRefs": [
+                  "external-provider-service"
+                ],
+                "sourceIds": [
+                  "source-model-provider-route-current"
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.model-provider-route-current"
+                ],
+                "note": "External provider identity, endpoint, account and backend service revision are unresolved and must not inherit Zen policy."
+              },
+              {
+                "id": "selected-model-revision",
+                "kind": "service-revision",
+                "status": "unresolved",
+                "value": null,
+                "scopeBindings": [
+                  {
+                    "axisId": "model-revision",
+                    "alternativeId": "selected-model"
+                  }
+                ],
+                "artifactRefs": [
+                  "configured-model-revision"
+                ],
+                "sourceIds": [
+                  "source-model-provider-route-current"
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.model-provider-route-current"
+                ],
+                "note": "No exact model identifier, alias resolution, snapshot, fallback or inference configuration was identified."
+              }
+            ],
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "Install-script resolved binary",
+                "npm-compatible package",
+                "Homebrew package",
+                "Publisher release binary",
+                "Container image"
+              ],
+              "alternativeDetails": [
+                {
+                  "id": "install-script",
+                  "label": "Install-script resolved binary",
+                  "kind": "binary",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "opencode-release-binary-1-18-11"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "runtime-path",
+                      "alternativeId": "install-script"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anomaly.opencode.cli.runtime-paths-current"
+                  ],
+                  "note": "The current installation script is documented, but it was not invoked and its resolved artifact, version, platform and digest are unknown."
+                },
+                {
+                  "id": "npm-package",
+                  "label": "npm-compatible package",
+                  "kind": "package",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "opencode-npm-package-1-18-11"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "runtime-path",
+                      "alternativeId": "npm-package"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anomaly.opencode.cli.runtime-paths-current"
+                  ],
+                  "note": "The package channel is documented, but no package or dependency graph was downloaded and its correspondence to the tagged source was not verified."
+                },
+                {
+                  "id": "homebrew-package",
+                  "label": "Homebrew package",
+                  "kind": "package",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "opencode-homebrew-package-1-18-11"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "runtime-path",
+                      "alternativeId": "homebrew-package"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anomaly.opencode.cli.runtime-paths-current"
+                  ],
+                  "note": "The Homebrew path is documented, but no formula, bottle, dependency set or digest was inspected."
+                },
+                {
+                  "id": "release-binary",
+                  "label": "Publisher release binary",
+                  "kind": "binary",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "opencode-release-binary-1-18-11"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "runtime-path",
+                      "alternativeId": "release-binary"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anomaly.opencode.cli.release-identity-1-18-11",
+                    "com.anomaly.opencode.cli.runtime-paths-current"
+                  ],
+                  "note": "The exact release page lists assets, but no platform binary was selected, downloaded or hashed."
+                },
+                {
+                  "id": "container-image",
+                  "label": "Container image",
+                  "kind": "environment",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "opencode-container-image"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "runtime-path",
+                      "alternativeId": "container-image"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anomaly.opencode.cli.runtime-paths-current"
+                  ],
+                  "note": "The container path is documented, but no image reference, platform manifest or digest was captured."
+                }
+              ],
+              "note": "No OpenCode artifact was downloaded, installed, executed or observed; the exact tag does not establish an installed runtime."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 12,
+          "sourceCount": 12,
+          "unknownCount": 13,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/expansion-batch-4/records/com.anomaly.opencode.cli.1-18-11.json",
+          "mappingPath": null,
+          "lifecycleNote": "The official release feed identifies v1.18.15 as the latest stable OpenCode release reviewed on 2026-08-09. The preserved 1.18.11 record remains inspectable as the direct predecessor."
+        },
+        {
+          "recordId": "com.anomaly.opencode.cli.1-18-15",
+          "name": "OpenCode CLI",
+          "publisher": "Anomaly Innovations, Inc.",
+          "surface": {
+            "kind": "cli",
+            "name": "OpenCode CLI/TUI",
+            "slug": "opencode-cli-1-18-15",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "1.18.15",
+            "releaseTag": "v1.18.15",
+            "sourceRevision": null,
+            "releasedAt": "2026-08-07T06:49:55Z",
+            "channel": "OpenCode GitHub release",
+            "additionalIdentities": [
+              {
+                "id": "exact-cli-source-release",
+                "kind": "artifact-version",
+                "status": "known",
+                "value": "OpenCode CLI v1.18.15",
+                "scopeBindings": [],
+                "artifactRefs": [
+                  "opencode-release-1-18-15",
+                  "opencode-source-revision-1-18-15"
+                ],
+                "sourceIds": [
+                  "source-release-identity-1-18-15"
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.release-identity-1-18-15"
+                ],
+                "note": "The immutable release tag and linked source revision are exact; no distribution artifact was captured or hashed."
+              },
+              {
+                "id": "opencode-zen-service-revision",
+                "kind": "service-revision",
+                "status": "unresolved",
+                "value": null,
+                "scopeBindings": [
+                  {
+                    "axisId": "model-route",
+                    "alternativeId": "opencode-zen"
+                  }
+                ],
+                "artifactRefs": [
+                  "opencode-zen-service"
+                ],
+                "sourceIds": [
+                  "source-model-provider-route-current",
+                  "source-zen-data-policy-current"
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.model-provider-route-current",
+                  "com.anomaly.opencode.cli.zen-data-policy-current"
+                ],
+                "note": "Zen is a separately changing hosted gateway and model catalog; no service revision, endpoint, account, region or selected model was fixed."
+              },
+              {
+                "id": "external-provider-service-revision",
+                "kind": "service-revision",
+                "status": "unresolved",
+                "value": null,
+                "scopeBindings": [
+                  {
+                    "axisId": "model-route",
+                    "alternativeId": "external-hosted-provider"
+                  }
+                ],
+                "artifactRefs": [
+                  "external-provider-service"
+                ],
+                "sourceIds": [
+                  "source-model-provider-route-current"
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.model-provider-route-current"
+                ],
+                "note": "External provider identity, endpoint, account and backend service revision are unresolved and must not inherit Zen policy."
+              },
+              {
+                "id": "selected-model-revision",
+                "kind": "service-revision",
+                "status": "unresolved",
+                "value": null,
+                "scopeBindings": [
+                  {
+                    "axisId": "model-revision",
+                    "alternativeId": "selected-model"
+                  }
+                ],
+                "artifactRefs": [
+                  "configured-model-revision"
+                ],
+                "sourceIds": [
+                  "source-model-provider-route-current"
+                ],
+                "claimIds": [
+                  "com.anomaly.opencode.cli.model-provider-route-current"
+                ],
+                "note": "No exact model identifier, alias resolution, snapshot, fallback or inference configuration was identified."
+              }
+            ],
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "Install-script resolved binary",
+                "npm-compatible package",
+                "Homebrew package",
+                "Publisher release binary",
+                "Container image"
+              ],
+              "alternativeDetails": [
+                {
+                  "id": "install-script",
+                  "label": "Install-script resolved binary",
+                  "kind": "binary",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "opencode-release-binary-1-18-15"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "runtime-path",
+                      "alternativeId": "install-script"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anomaly.opencode.cli.runtime-paths-current"
+                  ],
+                  "note": "The current installation script is documented, but it was not invoked and its resolved artifact, version, platform and digest are unknown."
+                },
+                {
+                  "id": "npm-package",
+                  "label": "npm-compatible package",
+                  "kind": "package",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "opencode-npm-package-1-18-15"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "runtime-path",
+                      "alternativeId": "npm-package"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anomaly.opencode.cli.runtime-paths-current"
+                  ],
+                  "note": "The package channel is documented, but no package or dependency graph was downloaded and its correspondence to the tagged source was not verified."
+                },
+                {
+                  "id": "homebrew-package",
+                  "label": "Homebrew package",
+                  "kind": "package",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "opencode-homebrew-package-1-18-15"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "runtime-path",
+                      "alternativeId": "homebrew-package"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anomaly.opencode.cli.runtime-paths-current"
+                  ],
+                  "note": "The Homebrew path is documented, but no formula, bottle, dependency set or digest was inspected."
+                },
+                {
+                  "id": "release-binary",
+                  "label": "Publisher release binary",
+                  "kind": "binary",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "opencode-release-binary-1-18-15"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "runtime-path",
+                      "alternativeId": "release-binary"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anomaly.opencode.cli.release-identity-1-18-15",
+                    "com.anomaly.opencode.cli.runtime-paths-current"
+                  ],
+                  "note": "The exact release page lists assets, but no platform binary was selected, downloaded or hashed."
+                },
+                {
+                  "id": "container-image",
+                  "label": "Container image",
+                  "kind": "environment",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "opencode-container-image"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "runtime-path",
+                      "alternativeId": "container-image"
+                    }
+                  ],
+                  "claimIds": [
+                    "com.anomaly.opencode.cli.runtime-paths-current"
+                  ],
+                  "note": "The container path is documented, but no image reference, platform manifest or digest was captured."
+                }
+              ],
+              "note": "The official source identifies 1.18.15, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-10",
+          "claimCount": 12,
+          "sourceCount": 12,
+          "unknownCount": 13,
+          "independentTestCount": 0,
+          "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.anomaly.opencode.cli.1-18-15.json",
+          "mappingPath": null,
+          "lifecycleNote": "The official release feed identifies v1.18.16 as the latest stable OpenCode release reviewed on 2026-08-10. The preserved 1.18.15 record remains inspectable as the direct predecessor."
+        }
+      ]
     },
     {
       "surfaceKey": "com.anthropic.claude-code.cli.stable",
-      "currentRecordId": "com.anthropic.claude-code.cli.2-1-220",
+      "currentRecordId": "com.anthropic.claude-code.cli.2-1-226",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.anthropic.claude-code.cli.2-1-220",
+        "recordId": "com.anthropic.claude-code.cli.2-1-226",
         "name": "Claude Code CLI",
         "publisher": "Anthropic PBC",
         "surface": {
           "kind": "cli",
           "name": "Claude Code CLI",
-          "slug": "anthropic-claude-code-cli-2-1-220",
+          "slug": "anthropic-claude-code-cli-2-1-226",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "2.1.220",
-          "releaseTag": "v2.1.220",
-          "sourceRevision": "7ef6eec9d9ba84ea6f233f26c45f1df5c5991843",
-          "releasedAt": "2026-07-25T01:35:55Z",
+          "version": "2.1.226",
+          "releaseTag": "v2.1.226",
+          "sourceRevision": null,
+          "releasedAt": "2026-08-08T02:48:05Z",
           "channel": "Claude Code GitHub stable release",
           "installedRuntimeVariant": {
             "status": "unresolved",
@@ -959,18 +1646,18 @@
               "win32-arm64",
               "win32-x64"
             ],
-            "note": "Official release assets and publisher-supplied digests are known, but no asset was downloaded, installed, hashed independently or run."
+            "note": "The official source identifies 2.1.226, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
-        "claimCount": 9,
-        "sourceCount": 9,
+        "reviewedAt": "2026-08-09",
+        "claimCount": 8,
+        "sourceCount": 8,
         "unknownCount": 9,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.anthropic.claude-code.cli.2-1-220.json",
-        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/anthropic-claude-code-cli-2-1-220-mapping.json",
-        "lifecycleNote": "The publisher latest-release endpoint resolves to v2.1.220. Exact client identity remains separate from rolling authentication, permission, sandbox, model, tool, MCP and extension documentation."
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.anthropic.claude-code.cli.2-1-226.json",
+        "mappingPath": null,
+        "lifecycleNote": "Anthropic's official release feed identifies v2.1.226 as the latest stable Claude Code CLI release reviewed on 2026-08-09."
       },
       "gate": null,
       "history": [
@@ -1105,7 +1792,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-02",
+          "reviewedAt": "2026-08-09",
           "claimCount": 8,
           "sourceCount": 8,
           "unknownCount": 8,
@@ -1113,6 +1800,49 @@
           "recordPath": "drafts/real-agent-catalog/records/com.anthropic.claude-code.cli.2-1-117.json",
           "mappingPath": null,
           "lifecycleNote": "The publisher latest-release endpoint resolves to v2.1.220. No superseding catalog record exists yet, so the direct record link remains null rather than naming an uncreated fixture. The additive research-preview lifecycle supplies the reciprocal current-record link without changing the accepted record."
+        },
+        {
+          "recordId": "com.anthropic.claude-code.cli.2-1-220",
+          "name": "Claude Code CLI",
+          "publisher": "Anthropic PBC",
+          "surface": {
+            "kind": "cli",
+            "name": "Claude Code CLI",
+            "slug": "anthropic-claude-code-cli-2-1-220",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "2.1.220",
+            "releaseTag": "v2.1.220",
+            "sourceRevision": "7ef6eec9d9ba84ea6f233f26c45f1df5c5991843",
+            "releasedAt": "2026-07-25T01:35:55Z",
+            "channel": "Claude Code GitHub stable release",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "darwin-arm64",
+                "darwin-x64",
+                "linux-arm64-musl",
+                "linux-arm64",
+                "linux-x64-musl",
+                "linux-x64",
+                "win32-arm64",
+                "win32-x64"
+              ],
+              "note": "Official release assets and publisher-supplied digests are known, but no asset was downloaded, installed, hashed independently or run."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 9,
+          "sourceCount": 9,
+          "unknownCount": 9,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.anthropic.claude-code.cli.2-1-220.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/anthropic-claude-code-cli-2-1-220-mapping.json",
+          "lifecycleNote": "Anthropic's official release feed identifies v2.1.226 as the latest stable Claude Code CLI release reviewed on 2026-08-09. The preserved 2.1.220 record remains inspectable as the direct predecessor."
         }
       ]
     },
@@ -1145,7 +1875,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -1186,7 +1916,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -1200,65 +1930,100 @@
     },
     {
       "surfaceKey": "com.cline.bot.cli.release-stream",
-      "currentRecordId": "com.cline.bot.cli.3-0-51",
+      "currentRecordId": "com.cline.bot.cli.3-0-52",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.cline.bot.cli.3-0-51",
+        "recordId": "com.cline.bot.cli.3-0-52",
         "name": "Cline CLI",
         "publisher": "Cline Bot Inc.",
         "surface": {
           "kind": "cli",
           "name": "Cline CLI",
-          "slug": "cline-cli-3-0-51",
+          "slug": "cline-cli-3-0-52",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "3.0.51",
-          "releaseTag": "cli-v3.0.51",
+          "version": "3.0.52",
+          "releaseTag": "cli-v3.0.52",
           "sourceRevision": null,
-          "releasedAt": "2026-08-06T07:46:56Z",
+          "releasedAt": "2026-08-09T02:40:02Z",
           "channel": "Cline CLI release stream",
           "installedRuntimeVariant": {
             "status": "unresolved",
             "value": null,
             "alternatives": [],
-            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+            "note": "The official source identifies 3.0.52, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.cline.bot.cli.3-0-51.json",
-        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
-        "lifecycleNote": "Official publisher sources identify this as the current reviewed Cline CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.cline.bot.cli.3-0-52.json",
+        "mappingPath": null,
+        "lifecycleNote": "Cline's official release feed identifies cli-v3.0.52 as the latest CLI release reviewed on 2026-08-09."
       },
       "gate": null,
-      "history": []
+      "history": [
+        {
+          "recordId": "com.cline.bot.cli.3-0-51",
+          "name": "Cline CLI",
+          "publisher": "Cline Bot Inc.",
+          "surface": {
+            "kind": "cli",
+            "name": "Cline CLI",
+            "slug": "cline-cli-3-0-51",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "3.0.51",
+            "releaseTag": "cli-v3.0.51",
+            "sourceRevision": null,
+            "releasedAt": "2026-08-06T07:46:56Z",
+            "channel": "Cline CLI release stream",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [],
+              "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 2,
+          "sourceCount": 2,
+          "unknownCount": 4,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.cline.bot.cli.3-0-51.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+          "lifecycleNote": "Cline's official release feed identifies cli-v3.0.52 as the latest CLI release reviewed on 2026-08-09. The preserved 3.0.51 record remains inspectable as the direct predecessor."
+        }
+      ]
     },
     {
       "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
-      "currentRecordId": "com.cline.bot.vscode-extension.4-1-3",
+      "currentRecordId": "com.cline.bot.vscode-extension.4-1-7",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.cline.bot.vscode-extension.4-1-3",
+        "recordId": "com.cline.bot.vscode-extension.4-1-7",
         "name": "Cline",
         "publisher": "Cline Bot Inc.",
         "surface": {
           "kind": "ide-extension",
           "name": "Cline VS Code extension",
-          "slug": "cline-vscode-extension-4-1-3",
+          "slug": "cline-vscode-extension-4-1-7",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "4.1.3",
+          "version": "4.1.7",
           "releaseTag": null,
           "sourceRevision": null,
-          "releasedAt": null,
+          "releasedAt": "2026-08-09T04:05:18Z",
           "channel": "Visual Studio Marketplace stable listing",
           "installedRuntimeVariant": {
             "status": "unresolved",
@@ -1266,18 +2031,18 @@
             "alternatives": [
               "Visual Studio Marketplace VSIX for VS Code extension hosts"
             ],
-            "note": "The official listing identifies version 4.1.3, but no VSIX was downloaded, hashed, installed or run and no extension-host or platform variant was resolved."
+            "note": "The official source identifies 4.1.7, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 5,
         "sourceCount": 5,
         "unknownCount": 8,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.cline.bot.vscode-extension.4-1-3.json",
-        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/cline-vscode-extension-4-1-3-mapping.json",
-        "lifecycleNote": "The official Marketplace listing identifies exact version 4.1.3. The installed VSIX, platform runtime, model route and effective configuration remain unresolved applicability boundaries."
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.cline.bot.vscode-extension.4-1-7.json",
+        "mappingPath": null,
+        "lifecycleNote": "The official Marketplace surface and publisher release feed identify Cline VS Code extension 4.1.7 as current on 2026-08-09."
       },
       "gate": null,
       "history": [
@@ -1309,7 +2074,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-02",
+          "reviewedAt": "2026-08-09",
           "claimCount": 8,
           "sourceCount": 9,
           "unknownCount": 8,
@@ -1317,6 +2082,42 @@
           "recordPath": "drafts/real-agent-catalog/records/com.cline.bot.vscode-extension.4-1-2.json",
           "mappingPath": null,
           "lifecycleNote": "The official Marketplace listing identified exact version 4.1.3 on 2026-08-02. The accepted 4.1.2 record remains unchanged and is linked only through this same-surface lifecycle overlay."
+        },
+        {
+          "recordId": "com.cline.bot.vscode-extension.4-1-3",
+          "name": "Cline",
+          "publisher": "Cline Bot Inc.",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Cline VS Code extension",
+            "slug": "cline-vscode-extension-4-1-3",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "4.1.3",
+            "releaseTag": null,
+            "sourceRevision": null,
+            "releasedAt": null,
+            "channel": "Visual Studio Marketplace stable listing",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "Visual Studio Marketplace VSIX for VS Code extension hosts"
+              ],
+              "note": "The official listing identifies version 4.1.3, but no VSIX was downloaded, hashed, installed or run and no extension-host or platform variant was resolved."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 5,
+          "sourceCount": 5,
+          "unknownCount": 8,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.cline.bot.vscode-extension.4-1-3.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/cline-vscode-extension-4-1-3-mapping.json",
+          "lifecycleNote": "The official Marketplace surface and publisher release feed identify Cline VS Code extension 4.1.7 as current on 2026-08-09. The preserved 4.1.3 record remains inspectable as the direct predecessor."
         }
       ]
     },
@@ -1587,7 +2388,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 14,
         "sourceCount": 14,
         "unknownCount": 14,
@@ -1850,7 +2651,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 13,
         "sourceCount": 13,
         "unknownCount": 14,
@@ -1894,7 +2695,7 @@
             }
           },
           "lifecycleStatus": "historical",
-          "reviewedAt": "2026-08-07",
+          "reviewedAt": "2026-08-09",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -1934,7 +2735,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -1948,21 +2749,21 @@
     },
     {
       "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
-      "currentRecordId": "com.cursor.ide.foreground-agent.3-14",
+      "currentRecordId": "com.cursor.ide.foreground-agent.3-15",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.cursor.ide.foreground-agent.3-14",
+        "recordId": "com.cursor.ide.foreground-agent.3-15",
         "name": "Cursor IDE foreground Agent",
         "publisher": "Anysphere, Inc.",
         "surface": {
           "kind": "desktop-app",
           "name": "Cursor IDE foreground Agent",
-          "slug": "cursor-ide-foreground-agent-3-14",
+          "slug": "cursor-ide-foreground-agent-3-15",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "3.14",
+          "version": "3.15",
           "releaseTag": null,
           "sourceRevision": null,
           "releasedAt": null,
@@ -1985,21 +2786,70 @@
               "Linux AppImage ARM64",
               "Linux AppImage x64"
             ],
-            "note": "No package was downloaded or installed. The operating system, architecture, installer type, executable digest, opaque build target, account feature flags and effective runtime remain unresolved."
+            "note": "The official source identifies 3.15, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 12,
         "sourceCount": 12,
         "unknownCount": 12,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/records/com.cursor.ide.foreground-agent.3-14.json",
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.cursor.ide.foreground-agent.3-15.json",
         "mappingPath": null,
-        "lifecycleNote": "The desktop download archive labels 3.14 latest. This lifecycle entry does not collapse the rolling service, model backend, Agent mode, or authority configuration into the exact client identity."
+        "lifecycleNote": "Anysphere's official download archive labels Cursor desktop 3.15 as Latest."
       },
       "gate": null,
-      "history": []
+      "history": [
+        {
+          "recordId": "com.cursor.ide.foreground-agent.3-14",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-14",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "3.14",
+            "releaseTag": null,
+            "sourceRevision": null,
+            "releasedAt": null,
+            "channel": "Cursor stable desktop download archive",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "macOS ARM64 DMG",
+                "macOS x64 DMG",
+                "macOS Universal DMG",
+                "Windows x64 system installer",
+                "Windows x64 user installer",
+                "Windows ARM64 system installer",
+                "Windows ARM64 user installer",
+                "Linux DEB ARM64",
+                "Linux DEB x64",
+                "Linux RPM ARM64",
+                "Linux RPM x64",
+                "Linux AppImage ARM64",
+                "Linux AppImage x64"
+              ],
+              "note": "No package was downloaded or installed. The operating system, architecture, installer type, executable digest, opaque build target, account feature flags and effective runtime remain unresolved."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 12,
+          "sourceCount": 12,
+          "unknownCount": 12,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/records/com.cursor.ide.foreground-agent.3-14.json",
+          "mappingPath": null,
+          "lifecycleNote": "Anysphere's official download archive labels Cursor desktop 3.15 as Latest. The preserved 3.14 record remains inspectable as the direct predecessor."
+        }
+      ]
     },
     {
       "surfaceKey": "com.github.anthropic.claude-agent.preview",
@@ -2030,7 +2880,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2071,7 +2921,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2115,7 +2965,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 11,
         "sourceCount": 11,
         "unknownCount": 11,
@@ -2156,7 +3006,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2197,7 +3047,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2244,7 +3094,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 10,
         "sourceCount": 10,
         "unknownCount": 9,
@@ -2286,7 +3136,7 @@
             }
           },
           "lifecycleStatus": "historical",
-          "reviewedAt": "2026-08-02",
+          "reviewedAt": "2026-08-09",
           "claimCount": 16,
           "sourceCount": 16,
           "unknownCount": 16,
@@ -2326,7 +3176,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-02",
+          "reviewedAt": "2026-08-09",
           "claimCount": 10,
           "sourceCount": 10,
           "unknownCount": 9,
@@ -2339,10 +3189,10 @@
     },
     {
       "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
-      "currentRecordId": "com.gitlab.duo.code-review-flow.19-2",
+      "currentRecordId": "com.gitlab.duo.code-review-flow.19-2-1",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.gitlab.duo.code-review-flow.19-2",
+        "recordId": "com.gitlab.duo.code-review-flow.19-2-1",
         "name": "GitLab Code Review Flow",
         "publisher": "GitLab",
         "surface": {
@@ -2353,30 +3203,65 @@
         },
         "release": {
           "scope": "exact-version",
-          "version": "19.2.0-ee",
-          "releaseTag": "v19.2.0-ee",
+          "version": "19.2.1-ee",
+          "releaseTag": "v19.2.1-ee",
           "sourceRevision": null,
-          "releasedAt": "2026-07-16T00:00:00Z",
+          "releasedAt": "2026-07-29T00:00:00Z",
           "channel": "GitLab 19.2 release line plus rolling Agent Platform service",
           "installedRuntimeVariant": {
             "status": "unresolved",
             "value": null,
             "alternatives": [],
-            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+            "note": "The official source identifies 19.2.1-ee, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 6,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.gitlab.duo.code-review-flow.19-2.json",
-        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
-        "lifecycleNote": "Official publisher sources identify this as the current reviewed Code Review Flow boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.gitlab.duo.code-review-flow.19-2-1.json",
+        "mappingPath": null,
+        "lifecycleNote": "GitLab's official patch release keeps Code Review Flow in the 19.2 release line and advances the exact patch identity to 19.2.1-ee."
       },
       "gate": null,
-      "history": []
+      "history": [
+        {
+          "recordId": "com.gitlab.duo.code-review-flow.19-2",
+          "name": "GitLab Code Review Flow",
+          "publisher": "GitLab",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Code Review Flow",
+            "slug": "gitlab-duo-code-review-flow-19-2",
+            "deliveryModel": "hosted"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "19.2.0-ee",
+            "releaseTag": "v19.2.0-ee",
+            "sourceRevision": null,
+            "releasedAt": "2026-07-16T00:00:00Z",
+            "channel": "GitLab 19.2 release line plus rolling Agent Platform service",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [],
+              "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 2,
+          "sourceCount": 2,
+          "unknownCount": 6,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.gitlab.duo.code-review-flow.19-2.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+          "lifecycleNote": "GitLab's official patch release keeps Code Review Flow in the 19.2 release line and advances the exact patch identity to 19.2.1-ee. The preserved 19.2.0-ee record remains inspectable as the direct predecessor."
+        }
+      ]
     },
     {
       "surfaceKey": "com.gitlab.duo.software-development-flow.service",
@@ -2407,7 +3292,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2448,7 +3333,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2489,7 +3374,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2530,7 +3415,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2574,7 +3459,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 10,
         "sourceCount": 10,
         "unknownCount": 10,
@@ -2615,7 +3500,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2629,44 +3514,79 @@
     },
     {
       "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
-      "currentRecordId": "com.jetbrains.junie.ide-plugin.262-132-31",
+      "currentRecordId": "com.jetbrains.junie.ide-plugin.262-132-35",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.jetbrains.junie.ide-plugin.262-132-31",
+        "recordId": "com.jetbrains.junie.ide-plugin.262-132-35",
         "name": "Junie IDE plugin",
         "publisher": "JetBrains",
         "surface": {
           "kind": "ide-extension",
           "name": "Junie IDE plugin",
-          "slug": "jetbrains-junie-ide-262-132-31",
+          "slug": "jetbrains-junie-ide-262-132-35",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "262.132.31",
-          "releaseTag": null,
+          "version": "262.132.35",
+          "releaseTag": "262.132.35",
           "sourceRevision": null,
-          "releasedAt": "2026-07-28T00:00:00Z",
+          "releasedAt": "2026-08-07T18:09:29Z",
           "channel": "JetBrains Marketplace stable plugin",
           "installedRuntimeVariant": {
             "status": "unresolved",
             "value": null,
             "alternatives": [],
-            "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+            "note": "The official source identifies 262.132.35, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.jetbrains.junie.ide-plugin.262-132-31.json",
-        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
-        "lifecycleNote": "Official publisher sources identify this as the current reviewed Junie IDE plugin boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.jetbrains.junie.ide-plugin.262-132-35.json",
+        "mappingPath": null,
+        "lifecycleNote": "JetBrains Marketplace's publisher-controlled update API lists stable Junie IDE plugin 262.132.35 as the newest reviewed update."
       },
       "gate": null,
-      "history": []
+      "history": [
+        {
+          "recordId": "com.jetbrains.junie.ide-plugin.262-132-31",
+          "name": "Junie IDE plugin",
+          "publisher": "JetBrains",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Junie IDE plugin",
+            "slug": "jetbrains-junie-ide-262-132-31",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "262.132.31",
+            "releaseTag": null,
+            "sourceRevision": null,
+            "releasedAt": "2026-07-28T00:00:00Z",
+            "channel": "JetBrains Marketplace stable plugin",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [],
+              "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 2,
+          "sourceCount": 2,
+          "unknownCount": 4,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.jetbrains.junie.ide-plugin.262-132-31.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
+          "lifecycleNote": "JetBrains Marketplace's publisher-controlled update API lists stable Junie IDE plugin 262.132.35 as the newest reviewed update. The preserved 262.132.31 record remains inspectable as the direct predecessor."
+        }
+      ]
     },
     {
       "surfaceKey": "com.lovable.build-mode.hosted.rolling-service",
@@ -2827,7 +3747,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 11,
         "sourceCount": 11,
         "unknownCount": 12,
@@ -2841,24 +3761,24 @@
     },
     {
       "surfaceKey": "com.openai.codex.cli.stable",
-      "currentRecordId": "com.openai.codex.cli.0-146-0",
+      "currentRecordId": "com.openai.codex.cli.0-147-0",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.openai.codex.cli.0-146-0",
+        "recordId": "com.openai.codex.cli.0-147-0",
         "name": "OpenAI Codex CLI",
         "publisher": "OpenAI",
         "surface": {
           "kind": "cli",
           "name": "Codex CLI",
-          "slug": "openai-codex-cli-0-146-0",
+          "slug": "openai-codex-cli-0-147-0",
           "deliveryModel": "local"
         },
         "release": {
           "scope": "exact-version",
-          "version": "0.146.0",
-          "releaseTag": "rust-v0.146.0",
-          "sourceRevision": "e363b08c9175ac1cbe5893615dd2cb9ddf95043b",
-          "releasedAt": "2026-07-29T01:42:51Z",
+          "version": "0.147.0",
+          "releaseTag": "rust-v0.147.0",
+          "sourceRevision": null,
+          "releasedAt": "2026-08-07T01:41:49Z",
           "channel": "GitHub release",
           "installedRuntimeVariant": {
             "status": "unresolved",
@@ -2868,18 +3788,18 @@
               "Homebrew cask",
               "platform-specific release binary"
             ],
-            "note": "No artifact was downloaded or installed, so the invoked package path, platform build, architecture, executable digest and effective runtime remain unresolved."
+            "note": "The official source identifies 0.147.0, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
-        "claimCount": 15,
-        "sourceCount": 15,
+        "reviewedAt": "2026-08-09",
+        "claimCount": 12,
+        "sourceCount": 12,
         "unknownCount": 15,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.openai.codex.cli.0-146-0.json",
-        "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/openai-codex-cli-0-146-0-mapping.json",
-        "lifecycleNote": "The official latest-release endpoint resolves to the exact 0.146.0 record. Currentness is scoped to the Codex CLI stable release surface and does not identify the installed runtime, model, authentication path, configuration, app-server host or any other Codex surface."
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.openai.codex.cli.0-147-0.json",
+        "mappingPath": null,
+        "lifecycleNote": "OpenAI's official release feed identifies rust-v0.147.0 as the latest stable Codex CLI release; prerelease 0.148 tags are excluded."
       },
       "gate": null,
       "history": [
@@ -2912,7 +3832,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-02",
+          "reviewedAt": "2026-08-09",
           "claimCount": 12,
           "sourceCount": 12,
           "unknownCount": 12,
@@ -2920,6 +3840,44 @@
           "recordPath": "drafts/real-agent-catalog/records/com.openai.codex.cli.0-90-0.json",
           "mappingPath": null,
           "lifecycleNote": "The publisher latest-release endpoint resolves to 0.146.0. The separate unpublished 0.146.0 record now supplies the reciprocal same-surface successor link; 0.90.0 remains superseded and is not reclassified as historical."
+        },
+        {
+          "recordId": "com.openai.codex.cli.0-146-0",
+          "name": "OpenAI Codex CLI",
+          "publisher": "OpenAI",
+          "surface": {
+            "kind": "cli",
+            "name": "Codex CLI",
+            "slug": "openai-codex-cli-0-146-0",
+            "deliveryModel": "local"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "0.146.0",
+            "releaseTag": "rust-v0.146.0",
+            "sourceRevision": "e363b08c9175ac1cbe5893615dd2cb9ddf95043b",
+            "releasedAt": "2026-07-29T01:42:51Z",
+            "channel": "GitHub release",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "npm package",
+                "Homebrew cask",
+                "platform-specific release binary"
+              ],
+              "note": "No artifact was downloaded or installed, so the invoked package path, platform build, architecture, executable digest and effective runtime remain unresolved."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 15,
+          "sourceCount": 15,
+          "unknownCount": 15,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.openai.codex.cli.0-146-0.json",
+          "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/openai-codex-cli-0-146-0-mapping.json",
+          "lifecycleNote": "OpenAI's official release feed identifies rust-v0.147.0 as the latest stable Codex CLI release; prerelease 0.148 tags are excluded. The preserved 0.146.0 record remains inspectable as the direct predecessor."
         }
       ]
     },
@@ -2952,7 +3910,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2993,7 +3951,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -3153,7 +4111,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 8,
         "sourceCount": 8,
         "unknownCount": 8,
@@ -3197,7 +4155,7 @@
             }
           },
           "lifecycleStatus": "discontinued",
-          "reviewedAt": "2026-08-07",
+          "reviewedAt": "2026-08-09",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -3237,7 +4195,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -3278,7 +4236,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -3319,7 +4277,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -3360,7 +4318,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -3401,7 +4359,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -3442,7 +4400,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -3483,7 +4441,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -3497,40 +4455,40 @@
     },
     {
       "surfaceKey": "dev.zed.agent.native.desktop-stable",
-      "currentRecordId": "dev.zed.agent.native.1-13-1",
+      "currentRecordId": "dev.zed.agent.native.1-14-2",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "dev.zed.agent.native.1-13-1",
+        "recordId": "dev.zed.agent.native.1-14-2",
         "name": "Zed Agent",
         "publisher": "Zed Industries, Inc.",
         "surface": {
           "kind": "desktop-app",
           "name": "native Zed Agent in Zed",
-          "slug": "zed-agent-1-13-1",
+          "slug": "zed-agent-1-14-2",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "1.13.1",
-          "releaseTag": null,
+          "version": "1.14.2",
+          "releaseTag": "v1.14.2",
           "sourceRevision": null,
-          "releasedAt": "2026-07-29T00:00:00Z",
+          "releasedAt": "2026-08-05T16:57:09Z",
           "channel": "Zed stable release",
           "additionalIdentities": [
             {
-              "id": "zed-stable-1-13-1",
+              "id": "zed-stable-1-14-2",
               "kind": "artifact-version",
               "status": "known",
-              "value": "Zed 1.13.1 stable",
+              "value": "Zed 1.14.2 stable",
               "scopeBindings": [],
               "artifactRefs": [
-                "zed-stable-1-13-1"
+                "zed-stable-1-14-2"
               ],
               "sourceIds": [
-                "source-release-identity-1-13-1"
+                "source-release-identity-1-14-2"
               ],
               "claimIds": [
-                "dev.zed.agent.release-identity-1-13-1"
+                "dev.zed.agent.release-identity-1-14-2"
               ],
               "note": "The publisher stable page dates the client version; platform package digests and source revision are unresolved."
             },
@@ -3561,18 +4519,18 @@
             "status": "unresolved",
             "value": null,
             "alternatives": [
-              "macOS Zed 1.13.1",
-              "Windows Zed 1.13.1",
-              "Linux Zed 1.13.1"
+              "macOS Zed 1.14.2",
+              "Windows Zed 1.14.2",
+              "Linux Zed 1.14.2"
             ],
             "alternativeDetails": [
               {
-                "id": "macos-zed-1-13-1",
-                "label": "macOS Zed 1.13.1",
+                "id": "macos-zed-1-14-2",
+                "label": "macOS Zed 1.14.2",
                 "kind": "platform-build",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "zed-stable-1-13-1"
+                  "zed-stable-1-14-2"
                 ],
                 "scopeBindings": [
                   {
@@ -3581,17 +4539,17 @@
                   }
                 ],
                 "claimIds": [
-                  "dev.zed.agent.release-identity-1-13-1"
+                  "dev.zed.agent.release-identity-1-14-2"
                 ],
                 "note": "The stable page names macOS availability but no package digest was captured."
               },
               {
-                "id": "windows-zed-1-13-1",
-                "label": "Windows Zed 1.13.1",
+                "id": "windows-zed-1-14-2",
+                "label": "Windows Zed 1.14.2",
                 "kind": "platform-build",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "zed-stable-1-13-1"
+                  "zed-stable-1-14-2"
                 ],
                 "scopeBindings": [
                   {
@@ -3600,17 +4558,17 @@
                   }
                 ],
                 "claimIds": [
-                  "dev.zed.agent.release-identity-1-13-1"
+                  "dev.zed.agent.release-identity-1-14-2"
                 ],
                 "note": "The stable page names Windows availability but no package digest was captured."
               },
               {
-                "id": "linux-zed-1-13-1",
-                "label": "Linux Zed 1.13.1",
+                "id": "linux-zed-1-14-2",
+                "label": "Linux Zed 1.14.2",
                 "kind": "platform-build",
                 "identityStatus": "unresolved",
                 "artifactRefs": [
-                  "zed-stable-1-13-1"
+                  "zed-stable-1-14-2"
                 ],
                 "scopeBindings": [
                   {
@@ -3619,26 +4577,164 @@
                   }
                 ],
                 "claimIds": [
-                  "dev.zed.agent.release-identity-1-13-1"
+                  "dev.zed.agent.release-identity-1-14-2"
                 ],
                 "note": "The stable page names Linux availability but no package digest was captured."
               }
             ],
-            "note": "No Zed build was downloaded, installed, hashed or run."
+            "note": "The official source identifies 1.14.2, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
-        "claimCount": 8,
-        "sourceCount": 8,
+        "reviewedAt": "2026-08-09",
+        "claimCount": 7,
+        "sourceCount": 7,
         "unknownCount": 8,
         "independentTestCount": 0,
-        "recordPath": "drafts/real-agent-catalog/records/dev.zed.agent.native.1-13-1.json",
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/dev.zed.agent.native.1-14-2.json",
         "mappingPath": null,
-        "lifecycleNote": "Zed's official stable page lists 1.13.1 dated 2026-07-29. The accepted source-only dossier, generated record and taxonomy mapping were losslessly revalidated; installed package and hosted model identity remain unresolved."
+        "lifecycleNote": "Zed's official stable release page and release feed identify 1.14.2 as the latest stable release; 1.15.0-pre is excluded."
       },
       "gate": null,
       "history": [
+        {
+          "recordId": "dev.zed.agent.native.1-13-1",
+          "name": "Zed Agent",
+          "publisher": "Zed Industries, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "native Zed Agent in Zed",
+            "slug": "zed-agent-1-13-1",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "1.13.1",
+            "releaseTag": null,
+            "sourceRevision": null,
+            "releasedAt": "2026-07-29T00:00:00Z",
+            "channel": "Zed stable release",
+            "additionalIdentities": [
+              {
+                "id": "zed-stable-1-13-1",
+                "kind": "artifact-version",
+                "status": "known",
+                "value": "Zed 1.13.1 stable",
+                "scopeBindings": [],
+                "artifactRefs": [
+                  "zed-stable-1-13-1"
+                ],
+                "sourceIds": [
+                  "source-release-identity-1-13-1"
+                ],
+                "claimIds": [
+                  "dev.zed.agent.release-identity-1-13-1"
+                ],
+                "note": "The publisher stable page dates the client version; platform package digests and source revision are unresolved."
+              },
+              {
+                "id": "zed-model-service-revision",
+                "kind": "service-revision",
+                "status": "unresolved",
+                "value": null,
+                "scopeBindings": [
+                  {
+                    "axisId": "model-route",
+                    "alternativeId": "zed-hosted"
+                  }
+                ],
+                "artifactRefs": [
+                  "zed-model-service"
+                ],
+                "sourceIds": [
+                  "source-model-privacy-current"
+                ],
+                "claimIds": [
+                  "dev.zed.agent.model-privacy-current"
+                ],
+                "note": "The hosted request path is documented, but the serving revision, provider routing and selected model are unresolved."
+              }
+            ],
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "macOS Zed 1.13.1",
+                "Windows Zed 1.13.1",
+                "Linux Zed 1.13.1"
+              ],
+              "alternativeDetails": [
+                {
+                  "id": "macos-zed-1-13-1",
+                  "label": "macOS Zed 1.13.1",
+                  "kind": "platform-build",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "zed-stable-1-13-1"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "client-platform",
+                      "alternativeId": "macos"
+                    }
+                  ],
+                  "claimIds": [
+                    "dev.zed.agent.release-identity-1-13-1"
+                  ],
+                  "note": "The stable page names macOS availability but no package digest was captured."
+                },
+                {
+                  "id": "windows-zed-1-13-1",
+                  "label": "Windows Zed 1.13.1",
+                  "kind": "platform-build",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "zed-stable-1-13-1"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "client-platform",
+                      "alternativeId": "windows"
+                    }
+                  ],
+                  "claimIds": [
+                    "dev.zed.agent.release-identity-1-13-1"
+                  ],
+                  "note": "The stable page names Windows availability but no package digest was captured."
+                },
+                {
+                  "id": "linux-zed-1-13-1",
+                  "label": "Linux Zed 1.13.1",
+                  "kind": "platform-build",
+                  "identityStatus": "unresolved",
+                  "artifactRefs": [
+                    "zed-stable-1-13-1"
+                  ],
+                  "scopeBindings": [
+                    {
+                      "axisId": "client-platform",
+                      "alternativeId": "linux"
+                    }
+                  ],
+                  "claimIds": [
+                    "dev.zed.agent.release-identity-1-13-1"
+                  ],
+                  "note": "The stable page names Linux availability but no package digest was captured."
+                }
+              ],
+              "note": "No Zed build was downloaded, installed, hashed or run."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-09",
+          "claimCount": 8,
+          "sourceCount": 8,
+          "unknownCount": 8,
+          "independentTestCount": 0,
+          "recordPath": "drafts/real-agent-catalog/records/dev.zed.agent.native.1-13-1.json",
+          "mappingPath": null,
+          "lifecycleNote": "Zed's official stable release page and release feed identify 1.14.2 as the latest stable release; 1.15.0-pre is excluded. The preserved 1.13.1 record remains inspectable as the direct predecessor."
+        },
         {
           "recordId": "com.zed.agent.native.stable.1-12-1",
           "name": "Zed Agent",
@@ -3671,7 +4767,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-02",
+          "reviewedAt": "2026-08-09",
           "claimCount": 11,
           "sourceCount": 11,
           "unknownCount": 10,
@@ -3711,7 +4807,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -3837,7 +4933,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 9,
         "sourceCount": 9,
         "unknownCount": 8,
@@ -3878,7 +4974,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-07",
+        "reviewedAt": "2026-08-09",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -3922,7 +5018,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-02",
+        "reviewedAt": "2026-08-09",
         "claimCount": 9,
         "sourceCount": 9,
         "unknownCount": 9,
@@ -3964,7 +5060,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 8,
       "sourceCount": 9,
       "unknownCount": 8,
@@ -4001,7 +5097,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 9,
       "sourceCount": 9,
       "unknownCount": 9,
@@ -4038,7 +5134,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 11,
       "sourceCount": 11,
       "unknownCount": 11,
@@ -4075,7 +5171,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 10,
       "sourceCount": 10,
       "unknownCount": 10,
@@ -4113,7 +5209,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 12,
@@ -4160,15 +5256,15 @@
           "note": "No package was downloaded or installed. The operating system, architecture, installer type, executable digest, opaque build target, account feature flags and effective runtime remain unresolved."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 12,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/records/com.cursor.ide.foreground-agent.3-14.json",
       "mappingPath": null,
-      "lifecycleNote": "The desktop download archive labels 3.14 latest. This lifecycle entry does not collapse the rolling service, model backend, Agent mode, or authority configuration into the exact client identity."
+      "lifecycleNote": "Anysphere's official download archive labels Cursor desktop 3.15 as Latest. The preserved 3.14 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
@@ -4201,7 +5297,7 @@
         }
       },
       "lifecycleStatus": "historical",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 16,
       "sourceCount": 16,
       "unknownCount": 16,
@@ -4457,7 +5553,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 13,
       "sourceCount": 13,
       "unknownCount": 14,
@@ -4597,7 +5693,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 8,
@@ -4734,15 +5830,15 @@
           "note": "No Zed build was downloaded, installed, hashed or run."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 8,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/records/dev.zed.agent.native.1-13-1.json",
       "mappingPath": null,
-      "lifecycleNote": "Zed's official stable page lists 1.13.1 dated 2026-07-29. The accepted source-only dossier, generated record and taxonomy mapping were losslessly revalidated; installed package and hosted model identity remain unresolved."
+      "lifecycleNote": "Zed's official stable release page and release feed identify 1.14.2 as the latest stable release; 1.15.0-pre is excluded. The preserved 1.13.1 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.replit.agent.hosted.agent-4",
@@ -4888,7 +5984,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 8,
@@ -5007,7 +6103,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 9,
       "sourceCount": 9,
       "unknownCount": 8,
@@ -5201,15 +6297,15 @@
           "note": "No Kiro installer was downloaded or inspected."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 9,
       "sourceCount": 9,
       "unknownCount": 10,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/expansion-batch-3/records/com.amazon.kiro.ide.1-0-242.json",
       "mappingPath": null,
-      "lifecycleNote": "The publisher IDE changelog lists 1.0.242 as the latest 1.0.x patch on the reviewed date."
+      "lifecycleNote": "Kiro's official IDE changelog lists 1.0.288 first and dates it 2026-08-07. The preserved 1.0.242 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.lovable.agent.hosted.rolling",
@@ -5366,7 +6462,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 11,
       "sourceCount": 11,
       "unknownCount": 12,
@@ -5591,15 +6687,15 @@
           "note": "No OpenCode artifact was downloaded, installed, executed or observed; the exact tag does not establish an installed runtime."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 13,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/expansion-batch-4/records/com.anomaly.opencode.cli.1-18-11.json",
       "mappingPath": null,
-      "lifecycleNote": "The publisher latest-release endpoint resolves to immutable v1.18.11. Desktop release-note content is not transferred to this CLI/TUI surface."
+      "lifecycleNote": "The official release feed identifies v1.18.15 as the latest stable OpenCode release reviewed on 2026-08-09. The preserved 1.18.11 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.cognition.devin-desktop.cascade.3-6-27",
@@ -5864,7 +6960,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 14,
       "sourceCount": 14,
       "unknownCount": 14,
@@ -5901,15 +6997,15 @@
           "note": "No artifact was downloaded or installed, so the invoked package path, platform build, architecture, executable digest and effective runtime remain unresolved."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 15,
       "sourceCount": 15,
       "unknownCount": 15,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.openai.codex.cli.0-146-0.json",
       "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/openai-codex-cli-0-146-0-mapping.json",
-      "lifecycleNote": "The official latest-release endpoint resolves to the exact 0.146.0 record. Currentness is scoped to the Codex CLI stable release surface and does not identify the installed runtime, model, authentication path, configuration, app-server host or any other Codex surface."
+      "lifecycleNote": "OpenAI's official release feed identifies rust-v0.147.0 as the latest stable Codex CLI release; prerelease 0.148 tags are excluded. The preserved 0.146.0 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.anthropic.claude-code.cli.2-1-220",
@@ -5944,15 +7040,15 @@
           "note": "Official release assets and publisher-supplied digests are known, but no asset was downloaded, installed, hashed independently or run."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 9,
       "sourceCount": 9,
       "unknownCount": 9,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.anthropic.claude-code.cli.2-1-220.json",
       "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/anthropic-claude-code-cli-2-1-220-mapping.json",
-      "lifecycleNote": "The publisher latest-release endpoint resolves to v2.1.220. Exact client identity remains separate from rolling authentication, permission, sandbox, model, tool, MCP and extension documentation."
+      "lifecycleNote": "Anthropic's official release feed identifies v2.1.226 as the latest stable Claude Code CLI release reviewed on 2026-08-09. The preserved 2.1.220 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.gitlab.duo.developer-flow.19-2",
@@ -5985,7 +7081,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 10,
       "sourceCount": 10,
       "unknownCount": 9,
@@ -6026,7 +7122,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 11,
       "sourceCount": 11,
       "unknownCount": 10,
@@ -6061,15 +7157,15 @@
           "note": "The official listing identifies version 4.1.3, but no VSIX was downloaded, hashed, installed or run and no extension-host or platform variant was resolved."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 5,
       "sourceCount": 5,
       "unknownCount": 8,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/current-record-refresh/records/com.cline.bot.vscode-extension.4-1-3.json",
       "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/cline-vscode-extension-4-1-3-mapping.json",
-      "lifecycleNote": "The official Marketplace listing identifies exact version 4.1.3. The installed VSIX, platform runtime, model route and effective configuration remain unresolved applicability boundaries."
+      "lifecycleNote": "The official Marketplace surface and publisher release feed identify Cline VS Code extension 4.1.7 as current on 2026-08-09. The preserved 4.1.3 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.gitlab.duo.developer-flow.19-2-1",
@@ -6102,7 +7198,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-02",
+      "reviewedAt": "2026-08-09",
       "claimCount": 10,
       "sourceCount": 10,
       "unknownCount": 9,
@@ -6136,7 +7232,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6170,7 +7266,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6204,7 +7300,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6237,15 +7333,15 @@
           "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.alibaba.qwen-code.cli.0-21-7.json",
       "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
-      "lifecycleNote": "Official publisher sources identify this as the current reviewed Qwen Code CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      "lifecycleNote": "The official release feed identifies v0.21.8 as the latest stable Qwen Code CLI release reviewed on 2026-08-09. The preserved 0.21.7 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "ai.mistral.vibe.cli.rolling",
@@ -6272,7 +7368,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6306,7 +7402,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6340,7 +7436,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6374,7 +7470,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6408,7 +7504,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6441,15 +7537,15 @@
           "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.cline.bot.cli.3-0-51.json",
       "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
-      "lifecycleNote": "Official publisher sources identify this as the current reviewed Cline CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      "lifecycleNote": "Cline's official release feed identifies cli-v3.0.52 as the latest CLI release reviewed on 2026-08-09. The preserved 3.0.51 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.augmentcode.auggie.cli.rolling",
@@ -6476,7 +7572,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6510,7 +7606,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6544,7 +7640,7 @@
         }
       },
       "lifecycleStatus": "discontinued",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6578,7 +7674,7 @@
         }
       },
       "lifecycleStatus": "historical",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6611,15 +7707,15 @@
           "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.jetbrains.junie.ide-plugin.262-132-31.json",
       "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
-      "lifecycleNote": "Official publisher sources identify this as the current reviewed Junie IDE plugin boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      "lifecycleNote": "JetBrains Marketplace's publisher-controlled update API lists stable Junie IDE plugin 262.132.35 as the newest reviewed update. The preserved 262.132.31 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.amazon.q-developer.ide-plugins.sunset",
@@ -6646,7 +7742,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6680,7 +7776,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6714,7 +7810,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6748,7 +7844,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6782,7 +7878,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6816,7 +7912,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6850,7 +7946,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6884,7 +7980,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6918,7 +8014,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6952,7 +8048,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -6986,7 +8082,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7020,7 +8116,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7053,15 +8149,15 @@
           "note": "No client, extension, desktop build, container, runner or hosted runtime was installed or observed."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 6,
       "independentTestCount": 0,
       "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.gitlab.duo.code-review-flow.19-2.json",
       "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
-      "lifecycleNote": "Official publisher sources identify this as the current reviewed Code Review Flow boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+      "lifecycleNote": "GitLab's official patch release keeps Code Review Flow in the 19.2 release line and advances the exact patch identity to 19.2.1-ee. The preserved 19.2.0-ee record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "ai.mistral.vibe-code.web.rolling",
@@ -7088,7 +8184,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7122,7 +8218,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7156,7 +8252,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7190,7 +8286,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7224,7 +8320,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7258,7 +8354,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7292,7 +8388,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7326,7 +8422,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7360,7 +8456,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7394,7 +8490,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7428,7 +8524,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-07",
+      "reviewedAt": "2026-08-09",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -7436,6 +8532,1092 @@
       "recordPath": "drafts/real-agent-catalog/critical-mass-expansion/records/com.vercel.agent.public-beta.json",
       "mappingPath": "drafts/real-agent-catalog/claimed-attribute-study/critical-mass-expansion-mapping.json",
       "lifecycleNote": "Official publisher sources identify this as the current reviewed Vercel dashboard and repository-integrated Agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named."
+    },
+    {
+      "recordId": "com.alibaba.qwen-code.cli.0-21-8",
+      "name": "Qwen Code CLI",
+      "publisher": "Alibaba Cloud Qwen team",
+      "surface": {
+        "kind": "cli",
+        "name": "Qwen Code CLI",
+        "slug": "alibaba-qwen-code-cli-0-21-8",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "0.21.8",
+        "releaseTag": "v0.21.8",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-08T17:07:22Z",
+        "channel": "Qwen Code CLI release stream",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "The official source identifies 0.21.8, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-09",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.alibaba.qwen-code.cli.0-21-8.json",
+      "mappingPath": null,
+      "lifecycleNote": "The official release feed identifies v0.21.8 as the latest stable Qwen Code CLI release reviewed on 2026-08-09."
+    },
+    {
+      "recordId": "com.amazon.kiro.ide.1-0-288",
+      "name": "Kiro IDE",
+      "publisher": "Amazon Web Services",
+      "surface": {
+        "kind": "desktop-app",
+        "name": "Kiro IDE",
+        "slug": "aws-kiro-ide-1-0-288",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.0.288",
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": "2026-08-07T00:00:00Z",
+        "channel": "Kiro IDE desktop release",
+        "additionalIdentities": [
+          {
+            "id": "exact-desktop-release",
+            "kind": "artifact-version",
+            "status": "known",
+            "value": "Kiro IDE 1.0.288",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "kiro-ide-release-1-0-288"
+            ],
+            "sourceIds": [
+              "source-release-identity-1-0-288"
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-288"
+            ],
+            "note": "The dated desktop release is known; no platform installer or digest was captured."
+          },
+          {
+            "id": "code-oss-base",
+            "kind": "runtime-build",
+            "status": "known",
+            "value": "Code OSS 1.109.5",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "kiro-ide-release-1-0-288"
+            ],
+            "sourceIds": [
+              "source-code-oss-base-1-0-288"
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.code-oss-base-1-0-288"
+            ],
+            "note": "The 1.0.288 release note names the editor base; it does not expose a source revision or platform digest."
+          },
+          {
+            "id": "rolling-kiro-service",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "auto-route"
+              }
+            ],
+            "artifactRefs": [
+              "kiro-hosted-service"
+            ],
+            "sourceIds": [
+              "source-model-selection-current"
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.model-selection-current"
+            ],
+            "note": "Model inventory and automatic routing are rolling and are not frozen by desktop release 1.0.288."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "macOS Apple Silicon",
+            "macOS Intel",
+            "Windows x64",
+            "Linux Debian/Ubuntu",
+            "Linux Universal"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "macos-apple-silicon",
+              "label": "macOS Apple Silicon",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "kiro-platform-installers-1-0-288"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "platform-build",
+                  "alternativeId": "macos-apple-silicon"
+                }
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-288"
+              ],
+              "note": "No installer or digest captured."
+            },
+            {
+              "id": "macos-intel",
+              "label": "macOS Intel",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "kiro-platform-installers-1-0-288"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "platform-build",
+                  "alternativeId": "macos-intel"
+                }
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-288"
+              ],
+              "note": "No installer or digest captured."
+            },
+            {
+              "id": "windows-x64",
+              "label": "Windows x64",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "kiro-platform-installers-1-0-288"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "platform-build",
+                  "alternativeId": "windows-x64"
+                }
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-288"
+              ],
+              "note": "No installer or digest captured."
+            },
+            {
+              "id": "linux-debian",
+              "label": "Linux Debian or Ubuntu",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "kiro-platform-installers-1-0-288"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "platform-build",
+                  "alternativeId": "linux-debian"
+                }
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-288"
+              ],
+              "note": "No installer or digest captured."
+            },
+            {
+              "id": "linux-universal",
+              "label": "Linux Universal",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "kiro-platform-installers-1-0-288"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "platform-build",
+                  "alternativeId": "linux-universal"
+                }
+              ],
+              "claimIds": [
+                "com.amazon.kiro.ide.release-identity-1-0-288"
+              ],
+              "note": "No installer or digest captured."
+            }
+          ],
+          "note": "The official source identifies 1.0.288, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-09",
+      "claimCount": 9,
+      "sourceCount": 9,
+      "unknownCount": 10,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.amazon.kiro.ide.1-0-288.json",
+      "mappingPath": null,
+      "lifecycleNote": "Kiro's official IDE changelog lists 1.0.288 first and dates it 2026-08-07."
+    },
+    {
+      "recordId": "com.anomaly.opencode.cli.1-18-15",
+      "name": "OpenCode CLI",
+      "publisher": "Anomaly Innovations, Inc.",
+      "surface": {
+        "kind": "cli",
+        "name": "OpenCode CLI/TUI",
+        "slug": "opencode-cli-1-18-15",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.18.15",
+        "releaseTag": "v1.18.15",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-07T06:49:55Z",
+        "channel": "OpenCode GitHub release",
+        "additionalIdentities": [
+          {
+            "id": "exact-cli-source-release",
+            "kind": "artifact-version",
+            "status": "known",
+            "value": "OpenCode CLI v1.18.15",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "opencode-release-1-18-15",
+              "opencode-source-revision-1-18-15"
+            ],
+            "sourceIds": [
+              "source-release-identity-1-18-15"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.release-identity-1-18-15"
+            ],
+            "note": "The immutable release tag and linked source revision are exact; no distribution artifact was captured or hashed."
+          },
+          {
+            "id": "opencode-zen-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "opencode-zen"
+              }
+            ],
+            "artifactRefs": [
+              "opencode-zen-service"
+            ],
+            "sourceIds": [
+              "source-model-provider-route-current",
+              "source-zen-data-policy-current"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.model-provider-route-current",
+              "com.anomaly.opencode.cli.zen-data-policy-current"
+            ],
+            "note": "Zen is a separately changing hosted gateway and model catalog; no service revision, endpoint, account, region or selected model was fixed."
+          },
+          {
+            "id": "external-provider-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "external-hosted-provider"
+              }
+            ],
+            "artifactRefs": [
+              "external-provider-service"
+            ],
+            "sourceIds": [
+              "source-model-provider-route-current"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.model-provider-route-current"
+            ],
+            "note": "External provider identity, endpoint, account and backend service revision are unresolved and must not inherit Zen policy."
+          },
+          {
+            "id": "selected-model-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-revision",
+                "alternativeId": "selected-model"
+              }
+            ],
+            "artifactRefs": [
+              "configured-model-revision"
+            ],
+            "sourceIds": [
+              "source-model-provider-route-current"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.model-provider-route-current"
+            ],
+            "note": "No exact model identifier, alias resolution, snapshot, fallback or inference configuration was identified."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Install-script resolved binary",
+            "npm-compatible package",
+            "Homebrew package",
+            "Publisher release binary",
+            "Container image"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "install-script",
+              "label": "Install-script resolved binary",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-release-binary-1-18-15"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "install-script"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The current installation script is documented, but it was not invoked and its resolved artifact, version, platform and digest are unknown."
+            },
+            {
+              "id": "npm-package",
+              "label": "npm-compatible package",
+              "kind": "package",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-npm-package-1-18-15"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "npm-package"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The package channel is documented, but no package or dependency graph was downloaded and its correspondence to the tagged source was not verified."
+            },
+            {
+              "id": "homebrew-package",
+              "label": "Homebrew package",
+              "kind": "package",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-homebrew-package-1-18-15"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "homebrew-package"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The Homebrew path is documented, but no formula, bottle, dependency set or digest was inspected."
+            },
+            {
+              "id": "release-binary",
+              "label": "Publisher release binary",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-release-binary-1-18-15"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "release-binary"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.release-identity-1-18-15",
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The exact release page lists assets, but no platform binary was selected, downloaded or hashed."
+            },
+            {
+              "id": "container-image",
+              "label": "Container image",
+              "kind": "environment",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-container-image"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "container-image"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The container path is documented, but no image reference, platform manifest or digest was captured."
+            }
+          ],
+          "note": "The official source identifies 1.18.15, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-10",
+      "claimCount": 12,
+      "sourceCount": 12,
+      "unknownCount": 13,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.anomaly.opencode.cli.1-18-15.json",
+      "mappingPath": null,
+      "lifecycleNote": "The official release feed identifies v1.18.16 as the latest stable OpenCode release reviewed on 2026-08-10. The preserved 1.18.15 record remains inspectable as the direct predecessor."
+    },
+    {
+      "recordId": "com.anomaly.opencode.cli.1-18-16",
+      "name": "OpenCode CLI",
+      "publisher": "Anomaly Innovations, Inc.",
+      "surface": {
+        "kind": "cli",
+        "name": "OpenCode CLI/TUI",
+        "slug": "opencode-cli-1-18-16",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.18.16",
+        "releaseTag": "v1.18.16",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-10T06:07:08Z",
+        "channel": "OpenCode GitHub release",
+        "additionalIdentities": [
+          {
+            "id": "exact-cli-source-release",
+            "kind": "artifact-version",
+            "status": "known",
+            "value": "OpenCode CLI v1.18.16",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "opencode-release-1-18-16",
+              "opencode-source-revision-1-18-16"
+            ],
+            "sourceIds": [
+              "source-release-identity-1-18-16"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.release-identity-1-18-16"
+            ],
+            "note": "The immutable release tag and linked source revision are exact; no distribution artifact was captured or hashed."
+          },
+          {
+            "id": "opencode-zen-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "opencode-zen"
+              }
+            ],
+            "artifactRefs": [
+              "opencode-zen-service"
+            ],
+            "sourceIds": [
+              "source-model-provider-route-current",
+              "source-zen-data-policy-current"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.model-provider-route-current",
+              "com.anomaly.opencode.cli.zen-data-policy-current"
+            ],
+            "note": "Zen is a separately changing hosted gateway and model catalog; no service revision, endpoint, account, region or selected model was fixed."
+          },
+          {
+            "id": "external-provider-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "external-hosted-provider"
+              }
+            ],
+            "artifactRefs": [
+              "external-provider-service"
+            ],
+            "sourceIds": [
+              "source-model-provider-route-current"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.model-provider-route-current"
+            ],
+            "note": "External provider identity, endpoint, account and backend service revision are unresolved and must not inherit Zen policy."
+          },
+          {
+            "id": "selected-model-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-revision",
+                "alternativeId": "selected-model"
+              }
+            ],
+            "artifactRefs": [
+              "configured-model-revision"
+            ],
+            "sourceIds": [
+              "source-model-provider-route-current"
+            ],
+            "claimIds": [
+              "com.anomaly.opencode.cli.model-provider-route-current"
+            ],
+            "note": "No exact model identifier, alias resolution, snapshot, fallback or inference configuration was identified."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Install-script resolved binary",
+            "npm-compatible package",
+            "Homebrew package",
+            "Publisher release binary",
+            "Container image"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "install-script",
+              "label": "Install-script resolved binary",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-release-binary-1-18-16"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "install-script"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The current installation script is documented, but it was not invoked and its resolved artifact, version, platform and digest are unknown."
+            },
+            {
+              "id": "npm-package",
+              "label": "npm-compatible package",
+              "kind": "package",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-npm-package-1-18-16"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "npm-package"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The package channel is documented, but no package or dependency graph was downloaded and its correspondence to the tagged source was not verified."
+            },
+            {
+              "id": "homebrew-package",
+              "label": "Homebrew package",
+              "kind": "package",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-homebrew-package-1-18-16"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "homebrew-package"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The Homebrew path is documented, but no formula, bottle, dependency set or digest was inspected."
+            },
+            {
+              "id": "release-binary",
+              "label": "Publisher release binary",
+              "kind": "binary",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-release-binary-1-18-16"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "release-binary"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.release-identity-1-18-16",
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The exact release page lists assets, but no platform binary was selected, downloaded or hashed."
+            },
+            {
+              "id": "container-image",
+              "label": "Container image",
+              "kind": "environment",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "opencode-container-image"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "runtime-path",
+                  "alternativeId": "container-image"
+                }
+              ],
+              "claimIds": [
+                "com.anomaly.opencode.cli.runtime-paths-current"
+              ],
+              "note": "The container path is documented, but no image reference, platform manifest or digest was captured."
+            }
+          ],
+          "note": "The official source identifies 1.18.16, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-10 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-10",
+      "claimCount": 12,
+      "sourceCount": 12,
+      "unknownCount": 13,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.anomaly.opencode.cli.1-18-16.json",
+      "mappingPath": null,
+      "lifecycleNote": "The official release feed identifies v1.18.16 as the latest stable OpenCode release reviewed on 2026-08-10."
+    },
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-226",
+      "name": "Claude Code CLI",
+      "publisher": "Anthropic PBC",
+      "surface": {
+        "kind": "cli",
+        "name": "Claude Code CLI",
+        "slug": "anthropic-claude-code-cli-2-1-226",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "2.1.226",
+        "releaseTag": "v2.1.226",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-08T02:48:05Z",
+        "channel": "Claude Code GitHub stable release",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "darwin-arm64",
+            "darwin-x64",
+            "linux-arm64-musl",
+            "linux-arm64",
+            "linux-x64-musl",
+            "linux-x64",
+            "win32-arm64",
+            "win32-x64"
+          ],
+          "note": "The official source identifies 2.1.226, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-09",
+      "claimCount": 8,
+      "sourceCount": 8,
+      "unknownCount": 9,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.anthropic.claude-code.cli.2-1-226.json",
+      "mappingPath": null,
+      "lifecycleNote": "Anthropic's official release feed identifies v2.1.226 as the latest stable Claude Code CLI release reviewed on 2026-08-09."
+    },
+    {
+      "recordId": "com.cline.bot.cli.3-0-52",
+      "name": "Cline CLI",
+      "publisher": "Cline Bot Inc.",
+      "surface": {
+        "kind": "cli",
+        "name": "Cline CLI",
+        "slug": "cline-cli-3-0-52",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "3.0.52",
+        "releaseTag": "cli-v3.0.52",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-09T02:40:02Z",
+        "channel": "Cline CLI release stream",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "The official source identifies 3.0.52, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-09",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.cline.bot.cli.3-0-52.json",
+      "mappingPath": null,
+      "lifecycleNote": "Cline's official release feed identifies cli-v3.0.52 as the latest CLI release reviewed on 2026-08-09."
+    },
+    {
+      "recordId": "com.cline.bot.vscode-extension.4-1-7",
+      "name": "Cline",
+      "publisher": "Cline Bot Inc.",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Cline VS Code extension",
+        "slug": "cline-vscode-extension-4-1-7",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "4.1.7",
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": "2026-08-09T04:05:18Z",
+        "channel": "Visual Studio Marketplace stable listing",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "Visual Studio Marketplace VSIX for VS Code extension hosts"
+          ],
+          "note": "The official source identifies 4.1.7, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-09",
+      "claimCount": 5,
+      "sourceCount": 5,
+      "unknownCount": 8,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.cline.bot.vscode-extension.4-1-7.json",
+      "mappingPath": null,
+      "lifecycleNote": "The official Marketplace surface and publisher release feed identify Cline VS Code extension 4.1.7 as current on 2026-08-09."
+    },
+    {
+      "recordId": "com.cursor.ide.foreground-agent.3-15",
+      "name": "Cursor IDE foreground Agent",
+      "publisher": "Anysphere, Inc.",
+      "surface": {
+        "kind": "desktop-app",
+        "name": "Cursor IDE foreground Agent",
+        "slug": "cursor-ide-foreground-agent-3-15",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "3.15",
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Cursor stable desktop download archive",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "macOS ARM64 DMG",
+            "macOS x64 DMG",
+            "macOS Universal DMG",
+            "Windows x64 system installer",
+            "Windows x64 user installer",
+            "Windows ARM64 system installer",
+            "Windows ARM64 user installer",
+            "Linux DEB ARM64",
+            "Linux DEB x64",
+            "Linux RPM ARM64",
+            "Linux RPM x64",
+            "Linux AppImage ARM64",
+            "Linux AppImage x64"
+          ],
+          "note": "The official source identifies 3.15, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-09",
+      "claimCount": 12,
+      "sourceCount": 12,
+      "unknownCount": 12,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.cursor.ide.foreground-agent.3-15.json",
+      "mappingPath": null,
+      "lifecycleNote": "Anysphere's official download archive labels Cursor desktop 3.15 as Latest."
+    },
+    {
+      "recordId": "com.gitlab.duo.code-review-flow.19-2-1",
+      "name": "GitLab Code Review Flow",
+      "publisher": "GitLab",
+      "surface": {
+        "kind": "hosted-service",
+        "name": "Code Review Flow",
+        "slug": "gitlab-duo-code-review-flow-19-2",
+        "deliveryModel": "hosted"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "19.2.1-ee",
+        "releaseTag": "v19.2.1-ee",
+        "sourceRevision": null,
+        "releasedAt": "2026-07-29T00:00:00Z",
+        "channel": "GitLab 19.2 release line plus rolling Agent Platform service",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "The official source identifies 19.2.1-ee, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-09",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 6,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.gitlab.duo.code-review-flow.19-2-1.json",
+      "mappingPath": null,
+      "lifecycleNote": "GitLab's official patch release keeps Code Review Flow in the 19.2 release line and advances the exact patch identity to 19.2.1-ee."
+    },
+    {
+      "recordId": "com.jetbrains.junie.ide-plugin.262-132-35",
+      "name": "Junie IDE plugin",
+      "publisher": "JetBrains",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Junie IDE plugin",
+        "slug": "jetbrains-junie-ide-262-132-35",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "262.132.35",
+        "releaseTag": "262.132.35",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-07T18:09:29Z",
+        "channel": "JetBrains Marketplace stable plugin",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "The official source identifies 262.132.35, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-09",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.jetbrains.junie.ide-plugin.262-132-35.json",
+      "mappingPath": null,
+      "lifecycleNote": "JetBrains Marketplace's publisher-controlled update API lists stable Junie IDE plugin 262.132.35 as the newest reviewed update."
+    },
+    {
+      "recordId": "com.openai.codex.cli.0-147-0",
+      "name": "OpenAI Codex CLI",
+      "publisher": "OpenAI",
+      "surface": {
+        "kind": "cli",
+        "name": "Codex CLI",
+        "slug": "openai-codex-cli-0-147-0",
+        "deliveryModel": "local"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "0.147.0",
+        "releaseTag": "rust-v0.147.0",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-07T01:41:49Z",
+        "channel": "GitHub release",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "npm package",
+            "Homebrew cask",
+            "platform-specific release binary"
+          ],
+          "note": "The official source identifies 0.147.0, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-09",
+      "claimCount": 12,
+      "sourceCount": 12,
+      "unknownCount": 15,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.openai.codex.cli.0-147-0.json",
+      "mappingPath": null,
+      "lifecycleNote": "OpenAI's official release feed identifies rust-v0.147.0 as the latest stable Codex CLI release; prerelease 0.148 tags are excluded."
+    },
+    {
+      "recordId": "dev.zed.agent.native.1-14-2",
+      "name": "Zed Agent",
+      "publisher": "Zed Industries, Inc.",
+      "surface": {
+        "kind": "desktop-app",
+        "name": "native Zed Agent in Zed",
+        "slug": "zed-agent-1-14-2",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "1.14.2",
+        "releaseTag": "v1.14.2",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-05T16:57:09Z",
+        "channel": "Zed stable release",
+        "additionalIdentities": [
+          {
+            "id": "zed-stable-1-14-2",
+            "kind": "artifact-version",
+            "status": "known",
+            "value": "Zed 1.14.2 stable",
+            "scopeBindings": [],
+            "artifactRefs": [
+              "zed-stable-1-14-2"
+            ],
+            "sourceIds": [
+              "source-release-identity-1-14-2"
+            ],
+            "claimIds": [
+              "dev.zed.agent.release-identity-1-14-2"
+            ],
+            "note": "The publisher stable page dates the client version; platform package digests and source revision are unresolved."
+          },
+          {
+            "id": "zed-model-service-revision",
+            "kind": "service-revision",
+            "status": "unresolved",
+            "value": null,
+            "scopeBindings": [
+              {
+                "axisId": "model-route",
+                "alternativeId": "zed-hosted"
+              }
+            ],
+            "artifactRefs": [
+              "zed-model-service"
+            ],
+            "sourceIds": [
+              "source-model-privacy-current"
+            ],
+            "claimIds": [
+              "dev.zed.agent.model-privacy-current"
+            ],
+            "note": "The hosted request path is documented, but the serving revision, provider routing and selected model are unresolved."
+          }
+        ],
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "macOS Zed 1.14.2",
+            "Windows Zed 1.14.2",
+            "Linux Zed 1.14.2"
+          ],
+          "alternativeDetails": [
+            {
+              "id": "macos-zed-1-14-2",
+              "label": "macOS Zed 1.14.2",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "zed-stable-1-14-2"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "client-platform",
+                  "alternativeId": "macos"
+                }
+              ],
+              "claimIds": [
+                "dev.zed.agent.release-identity-1-14-2"
+              ],
+              "note": "The stable page names macOS availability but no package digest was captured."
+            },
+            {
+              "id": "windows-zed-1-14-2",
+              "label": "Windows Zed 1.14.2",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "zed-stable-1-14-2"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "client-platform",
+                  "alternativeId": "windows"
+                }
+              ],
+              "claimIds": [
+                "dev.zed.agent.release-identity-1-14-2"
+              ],
+              "note": "The stable page names Windows availability but no package digest was captured."
+            },
+            {
+              "id": "linux-zed-1-14-2",
+              "label": "Linux Zed 1.14.2",
+              "kind": "platform-build",
+              "identityStatus": "unresolved",
+              "artifactRefs": [
+                "zed-stable-1-14-2"
+              ],
+              "scopeBindings": [
+                {
+                  "axisId": "client-platform",
+                  "alternativeId": "linux"
+                }
+              ],
+              "claimIds": [
+                "dev.zed.agent.release-identity-1-14-2"
+              ],
+              "note": "The stable page names Linux availability but no package digest was captured."
+            }
+          ],
+          "note": "The official source identifies 1.14.2, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+        }
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-09",
+      "claimCount": 7,
+      "sourceCount": 7,
+      "unknownCount": 8,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/dev.zed.agent.native.1-14-2.json",
+      "mappingPath": null,
+      "lifecycleNote": "Zed's official stable release page and release feed identify 1.14.2 as the latest stable release; 1.15.0-pre is excluded."
     }
   ]
 }

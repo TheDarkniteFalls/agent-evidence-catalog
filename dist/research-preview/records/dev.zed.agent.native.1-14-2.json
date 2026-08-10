@@ -1,0 +1,1437 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-09",
+  "sourceDossier": {
+    "path": "drafts/research-preview-release/currentness-2026-08-09/currentness-source.json",
+    "sha256": "eecc2679f70588344173f67192dd6c195e6540f23e169eed8cd3f52ff6717880",
+    "relationship": "currentness-successor-derived-from-preserved-predecessor-and-reviewed-official-sources"
+  },
+  "identity": {
+    "recordId": "dev.zed.agent.native.1-14-2",
+    "agent": {
+      "id": "dev.zed.agent.native",
+      "name": "Zed Agent"
+    },
+    "publisher": {
+      "id": "zed-industries-inc",
+      "name": "Zed Industries, Inc."
+    },
+    "surface": {
+      "kind": "desktop-app",
+      "name": "native Zed Agent in Zed",
+      "slug": "zed-agent-1-14-2",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "1.14.2",
+      "releaseTag": "v1.14.2",
+      "sourceRevision": null,
+      "releasedAt": "2026-08-05T16:57:09Z",
+      "channel": "Zed stable release",
+      "additionalIdentities": [
+        {
+          "id": "zed-stable-1-14-2",
+          "kind": "artifact-version",
+          "status": "known",
+          "value": "Zed 1.14.2 stable",
+          "scopeBindings": [],
+          "artifactRefs": [
+            "zed-stable-1-14-2"
+          ],
+          "sourceIds": [
+            "source-release-identity-1-14-2"
+          ],
+          "claimIds": [
+            "dev.zed.agent.release-identity-1-14-2"
+          ],
+          "note": "The publisher stable page dates the client version; platform package digests and source revision are unresolved."
+        },
+        {
+          "id": "zed-model-service-revision",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [
+            {
+              "axisId": "model-route",
+              "alternativeId": "zed-hosted"
+            }
+          ],
+          "artifactRefs": [
+            "zed-model-service"
+          ],
+          "sourceIds": [
+            "source-model-privacy-current"
+          ],
+          "claimIds": [
+            "dev.zed.agent.model-privacy-current"
+          ],
+          "note": "The hosted request path is documented, but the serving revision, provider routing and selected model are unresolved."
+        }
+      ],
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "macOS Zed 1.14.2",
+          "Windows Zed 1.14.2",
+          "Linux Zed 1.14.2"
+        ],
+        "alternativeDetails": [
+          {
+            "id": "macos-zed-1-14-2",
+            "label": "macOS Zed 1.14.2",
+            "kind": "platform-build",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "zed-stable-1-14-2"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "client-platform",
+                "alternativeId": "macos"
+              }
+            ],
+            "claimIds": [
+              "dev.zed.agent.release-identity-1-14-2"
+            ],
+            "note": "The stable page names macOS availability but no package digest was captured."
+          },
+          {
+            "id": "windows-zed-1-14-2",
+            "label": "Windows Zed 1.14.2",
+            "kind": "platform-build",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "zed-stable-1-14-2"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "client-platform",
+                "alternativeId": "windows"
+              }
+            ],
+            "claimIds": [
+              "dev.zed.agent.release-identity-1-14-2"
+            ],
+            "note": "The stable page names Windows availability but no package digest was captured."
+          },
+          {
+            "id": "linux-zed-1-14-2",
+            "label": "Linux Zed 1.14.2",
+            "kind": "platform-build",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "zed-stable-1-14-2"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "client-platform",
+                "alternativeId": "linux"
+              }
+            ],
+            "claimIds": [
+              "dev.zed.agent.release-identity-1-14-2"
+            ],
+            "note": "The stable page names Linux availability but no package digest was captured."
+          }
+        ],
+        "note": "The official source identifies 1.14.2, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "zed-stable-1-14-2",
+        "kind": "standalone-binary",
+        "identityStatus": "exact",
+        "uri": "https://zed.dev/releases/stable",
+        "ecosystem": "Zed stable release stream",
+        "version": "1.14.2",
+        "digest": null,
+        "note": "Exact dated release-line entry; package URLs, source revision and digests were not captured. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09."
+      },
+      {
+        "id": "zed-model-service",
+        "kind": "other",
+        "identityStatus": "unresolved",
+        "uri": null,
+        "ecosystem": "Zed-hosted or configured model provider",
+        "version": null,
+        "digest": null,
+        "note": "No exact model endpoint or service revision was selected. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "zed-industries-inc",
+        "name": "Zed Industries, Inc.",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-release-identity-1-14-2",
+      "uri": "https://zed.dev/releases/stable",
+      "title": "Stable Releases — Zed",
+      "locator": "1.14.2 — Jul 29, 2026",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "zed-industries-inc",
+      "publishedAt": "2026-08-05T16:57:09Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-09T09:48:43Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-09 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-agent-paths-current",
+      "uri": "https://zed.dev/docs/ai/agents",
+      "title": "Agents | AI Agents in Zed",
+      "locator": "agent-path comparison table",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "zed-industries-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-09T09:48:43Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-09 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-capabilities-current",
+      "uri": "https://zed.dev/docs/ai/zed-agent.html",
+      "title": "Zed Agent",
+      "locator": "Zed Agent and What Zed Agent Uses",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "zed-industries-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-09T09:48:43Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-09 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-profiles-current",
+      "uri": "https://zed.dev/docs/ai/agent-profiles",
+      "title": "Agent Profiles",
+      "locator": "Built-in Profiles and Profiles vs. Tool Permissions",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "zed-industries-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-09T09:48:43Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-09 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-tool-permissions-current",
+      "uri": "https://zed.dev/docs/ai/tool-permissions",
+      "title": "Tool Permissions",
+      "locator": "Quick Start, How It Works, and Supported Tools",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "zed-industries-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-09T09:48:43Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-09 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-sandbox-current",
+      "uri": "https://zed.dev/docs/ai/sandboxing",
+      "title": "Agent Sandboxing",
+      "locator": "Sandboxed Tools, Default Access, and scope exclusions",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "zed-industries-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-09T09:48:43Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-09 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-model-privacy-current",
+      "uri": "https://zed.dev/docs/ai/privacy-and-security",
+      "title": "AI Privacy",
+      "locator": "AI Request Paths and Zed-Hosted Model Commitments",
+      "sourceKind": "publisher-policy",
+      "claimantId": "zed-industries-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-09T09:48:43Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-09 currentness successor; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Client platform, agent path, profile, tool permission, sandbox and model route remain separate dimensions.",
+    "axes": [
+      {
+        "id": "client-platform",
+        "label": "Zed client platform",
+        "scope": "mutually-exclusive",
+        "dimension": "artifact",
+        "alternatives": [
+          {
+            "id": "macos",
+            "label": "macOS",
+            "claimIds": [
+              "dev.zed.agent.release-identity-1-14-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "windows",
+              "linux"
+            ]
+          },
+          {
+            "id": "windows",
+            "label": "Windows",
+            "claimIds": [
+              "dev.zed.agent.release-identity-1-14-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos",
+              "linux"
+            ]
+          },
+          {
+            "id": "linux",
+            "label": "Linux",
+            "claimIds": [
+              "dev.zed.agent.release-identity-1-14-2"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos",
+              "windows"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The installed platform build, architecture, package and digest are unknown."
+        ]
+      },
+      {
+        "id": "agent-path",
+        "label": "Agent execution path",
+        "scope": "mutually-exclusive",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "native-zed-agent",
+            "label": "Native Zed Agent",
+            "claimIds": [
+              "dev.zed.agent.agent-paths-current",
+              "dev.zed.agent.capabilities-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "external-acp-agent",
+              "terminal-thread"
+            ]
+          },
+          {
+            "id": "external-acp-agent",
+            "label": "External ACP agent, separate surface",
+            "claimIds": [
+              "dev.zed.agent.agent-paths-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "native-zed-agent",
+              "terminal-thread"
+            ]
+          },
+          {
+            "id": "terminal-thread",
+            "label": "Terminal CLI or TUI, separate surface",
+            "claimIds": [
+              "dev.zed.agent.agent-paths-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "native-zed-agent",
+              "external-acp-agent"
+            ]
+          }
+        ],
+        "unknowns": [
+          "This record is scoped to the native Zed Agent; the effective thread path of any installation was not observed."
+        ]
+      },
+      {
+        "id": "agent-profile",
+        "label": "Native Zed Agent profile",
+        "scope": "mutually-exclusive",
+        "dimension": "tool-surface",
+        "alternatives": [
+          {
+            "id": "write",
+            "label": "Write",
+            "claimIds": [
+              "dev.zed.agent.profiles-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "ask",
+              "minimal"
+            ]
+          },
+          {
+            "id": "ask",
+            "label": "Ask",
+            "claimIds": [
+              "dev.zed.agent.profiles-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "write",
+              "minimal"
+            ]
+          },
+          {
+            "id": "minimal",
+            "label": "Minimal",
+            "claimIds": [
+              "dev.zed.agent.profiles-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "write",
+              "ask"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The selected profile, custom profile, enabled tools and MCP servers are unknown."
+        ]
+      },
+      {
+        "id": "tool-permission",
+        "label": "Tool permission result",
+        "scope": "mutually-exclusive",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "allow",
+            "label": "Allow",
+            "claimIds": [
+              "dev.zed.agent.tool-permissions-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "deny",
+              "confirm"
+            ],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "unavailable"
+          },
+          {
+            "id": "deny",
+            "label": "Deny",
+            "claimIds": [
+              "dev.zed.agent.tool-permissions-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "allow",
+              "confirm"
+            ],
+            "controlMode": "automatic-deny",
+            "humanInteraction": "unavailable"
+          },
+          {
+            "id": "confirm",
+            "label": "Confirm",
+            "claimIds": [
+              "dev.zed.agent.tool-permissions-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "allow",
+              "deny"
+            ],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          }
+        ],
+        "unknowns": [
+          "Global, tool-specific and pattern-specific effective rules are unknown."
+        ]
+      },
+      {
+        "id": "sandbox-state",
+        "label": "Native-agent sandbox",
+        "scope": "mutually-exclusive",
+        "dimension": "sandbox",
+        "alternatives": [
+          {
+            "id": "sandbox-enforced",
+            "label": "Sandbox enforced for supported terminal and fetch actions",
+            "claimIds": [
+              "dev.zed.agent.sandbox-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "sandbox-disabled-or-unavailable"
+            ]
+          },
+          {
+            "id": "sandbox-disabled-or-unavailable",
+            "label": "Sandbox disabled or unavailable",
+            "claimIds": [
+              "dev.zed.agent.sandbox-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "sandbox-enforced"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The platform support, tool action, granted exceptions and effective filesystem or network boundary are unknown."
+        ]
+      },
+      {
+        "id": "model-route",
+        "label": "Model request path",
+        "scope": "mutually-exclusive",
+        "dimension": "model",
+        "alternatives": [
+          {
+            "id": "zed-hosted",
+            "label": "Zed-hosted model",
+            "claimIds": [
+              "dev.zed.agent.model-privacy-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "provider-api-key",
+              "existing-subscription",
+              "gateway",
+              "local-model"
+            ]
+          },
+          {
+            "id": "provider-api-key",
+            "label": "Provider API key",
+            "claimIds": [
+              "dev.zed.agent.model-privacy-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "zed-hosted",
+              "existing-subscription",
+              "gateway",
+              "local-model"
+            ]
+          },
+          {
+            "id": "existing-subscription",
+            "label": "Existing provider subscription",
+            "claimIds": [
+              "dev.zed.agent.model-privacy-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "zed-hosted",
+              "provider-api-key",
+              "gateway",
+              "local-model"
+            ]
+          },
+          {
+            "id": "gateway",
+            "label": "Configured gateway",
+            "claimIds": [
+              "dev.zed.agent.model-privacy-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "zed-hosted",
+              "provider-api-key",
+              "existing-subscription",
+              "local-model"
+            ]
+          },
+          {
+            "id": "local-model",
+            "label": "Local or self-hosted model",
+            "claimIds": [
+              "dev.zed.agent.model-privacy-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "zed-hosted",
+              "provider-api-key",
+              "existing-subscription",
+              "gateway"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The route, provider, model, endpoint, retention exception and inference revision are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "dev.zed.agent.release-identity-1-14-2",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-09/claims/dev.zed.agent.native.1-14-2/release-identity-1-14-2.json",
+      "rawRecordSha256": "6f85dc95f546d1c56fbee94694a99c613f6dd8a1ebca72ab5d2d8b15f0b5000b",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "dev.zed.agent.release-identity-1-14-2",
+        "slug": "release-identity-1-14-2",
+        "subject": {
+          "id": "dev.zed.agent.native",
+          "name": "Zed Agent",
+          "publisher": "Zed Industries, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "native Zed Agent in Zed",
+            "slug": "zed-agent-1-14-2"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "Zed Industries' stable release page identifies Zed 1.14.2, dated August 5, 2026, for macOS, Windows and Linux."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Zed Industries, Inc."
+        },
+        "source": {
+          "uri": "https://zed.dev/releases/stable",
+          "title": "Stable Releases — Zed",
+          "locator": "1.14.2 — Jul 29, 2026",
+          "publishedAt": "2026-08-05T16:57:09Z",
+          "capturedAt": "2026-08-09T09:48:43Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.14.2"
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "macOS",
+              "Windows",
+              "Linux"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "macOS",
+              "Windows",
+              "Linux"
+            ]
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Zed desktop client"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-09",
+          "reason": "Latest stable entry captured on 2026-08-01."
+        },
+        "review": {
+          "reviewedAt": "2026-08-09",
+          "recheckAfter": "2026-09-09",
+          "invalidatedBy": [
+            "stable-release-update",
+            "release-page-correction"
+          ]
+        },
+        "limitations": [
+          "The rolling stable page does not expose a source revision or package digest for the captured platform builds."
+        ],
+        "unknowns": [
+          "The installed platform artifact, architecture, package URL, source revision and digest are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "zed-industries-inc",
+      "sourceId": "source-release-identity-1-14-2",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "dev.zed.agent.agent-paths-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-09/claims/dev.zed.agent.native.1-14-2/agent-paths-current.json",
+      "rawRecordSha256": "e1ea6fa72fc7bb6d9065ededc3ac590748fcfdd70151f0dde90dfbc165bee5d5",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "dev.zed.agent.agent-paths-current",
+        "slug": "agent-paths-current",
+        "subject": {
+          "id": "dev.zed.agent.native",
+          "name": "Zed Agent",
+          "publisher": "Zed Industries, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "native Zed Agent in Zed",
+            "slug": "zed-agent-1-14-2"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "Zed's current documentation distinguishes three agent paths: native Zed Agent, External Agents connected through ACP, and Terminal Threads whose CLI or TUI owns its own authentication and configuration."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Zed Industries, Inc."
+        },
+        "source": {
+          "uri": "https://zed.dev/docs/ai/agents",
+          "title": "Agents | AI Agents in Zed",
+          "locator": "agent-path comparison table",
+          "publishedAt": null,
+          "capturedAt": "2026-08-09T09:48:43Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Zed Agent",
+              "External Agents",
+              "Terminal Threads"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Zed desktop editor"
+            ]
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "native local agent",
+              "external ACP process",
+              "terminal CLI/TUI"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-09",
+          "recheckAfter": "2026-09-09",
+          "invalidatedBy": [
+            "agent-path-change",
+            "ACP-integration-change"
+          ]
+        },
+        "limitations": [
+          "Only the native Zed Agent is the subject of this record; the comparison does not transfer external-agent behavior into it."
+        ],
+        "unknowns": [
+          "The active path of any thread, external process identity and terminal CLI identity are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "zed-industries-inc",
+      "sourceId": "source-agent-paths-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "dev.zed.agent.capabilities-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-09/claims/dev.zed.agent.native.1-14-2/capabilities-current.json",
+      "rawRecordSha256": "224f8372ff14d0ebe6adbe58fa12be78d786c0e570028986b6c69d0054367057",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "dev.zed.agent.capabilities-current",
+        "slug": "capabilities-current",
+        "subject": {
+          "id": "dev.zed.agent.native",
+          "name": "Zed Agent",
+          "publisher": "Zed Industries, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "native Zed Agent in Zed",
+            "slug": "zed-agent-1-14-2"
+          }
+        },
+        "claim": {
+          "category": "surface.capability",
+          "statement": "Zed's current native-agent page says Zed Agent runs in the Agent Panel and Threads Sidebar and can use Zed-configured models, project context, editor and terminal tools, review UI, profiles, skills, instructions and MCP."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Zed Industries, Inc."
+        },
+        "source": {
+          "uri": "https://zed.dev/docs/ai/zed-agent.html",
+          "title": "Zed Agent",
+          "locator": "Zed Agent and What Zed Agent Uses",
+          "publishedAt": null,
+          "capturedAt": "2026-08-09T09:48:43Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "native Zed Agent",
+              "configured model",
+              "Agent Profiles",
+              "Skills",
+              "Instructions",
+              "MCP"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Zed desktop editor"
+            ]
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Zed Agent with configured model route"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling native-agent documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-09",
+          "recheckAfter": "2026-09-09",
+          "invalidatedBy": [
+            "native-agent-capability-change"
+          ]
+        },
+        "limitations": [
+          "A documented capability does not establish that the corresponding tool or integration was enabled or invoked."
+        ],
+        "unknowns": [
+          "The enabled tools, profile, instructions, skills, MCP servers and model are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "zed-industries-inc",
+      "sourceId": "source-capabilities-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "dev.zed.agent.profiles-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-09/claims/dev.zed.agent.native.1-14-2/agent-configuration-current.json",
+      "rawRecordSha256": "f3b3fc5dedfe95f92867448889e669bab96ceed19e63bdfc791eba04e39bbf8c",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "dev.zed.agent.profiles-current",
+        "slug": "profiles-current",
+        "subject": {
+          "id": "dev.zed.agent.native",
+          "name": "Zed Agent",
+          "publisher": "Zed Industries, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "native Zed Agent in Zed",
+            "slug": "zed-agent-1-14-2"
+          }
+        },
+        "claim": {
+          "category": "configuration.tool-surface",
+          "statement": "Zed's current Agent Profiles documentation says native Zed Agent profiles choose a default model and available built-in or MCP tools, with built-in Write, Ask and Minimal alternatives, while permission rules separately decide whether an available tool call is allowed."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Zed Industries, Inc."
+        },
+        "source": {
+          "uri": "https://zed.dev/docs/ai/agent-profiles",
+          "title": "Agent Profiles",
+          "locator": "Built-in Profiles and Profiles vs. Tool Permissions",
+          "publishedAt": null,
+          "capturedAt": "2026-08-09T09:48:43Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Write",
+              "Ask",
+              "Minimal",
+              "custom profile",
+              "tool availability",
+              "default model"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "native Zed Agent"
+            ]
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Zed client"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling profile documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-09",
+          "recheckAfter": "2026-09-09",
+          "invalidatedBy": [
+            "profile-default-change",
+            "tool-configuration-change"
+          ]
+        },
+        "limitations": [
+          "Profiles control availability, not the outcome of a separate permission or sandbox check."
+        ],
+        "unknowns": [
+          "The selected profile, custom profile contents, default model and enabled tools are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "zed-industries-inc",
+      "sourceId": "source-profiles-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "dev.zed.agent.tool-permissions-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-09/claims/dev.zed.agent.native.1-14-2/tool-permissions-current.json",
+      "rawRecordSha256": "6a1512263b6bcdf749116627e8699fc4692bc7d4a3ffdf96429bddb0b9baf91b",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "dev.zed.agent.tool-permissions-current",
+        "slug": "tool-permissions-current",
+        "subject": {
+          "id": "dev.zed.agent.native",
+          "name": "Zed Agent",
+          "publisher": "Zed Industries, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "native Zed Agent in Zed",
+            "slug": "zed-agent-1-14-2"
+          }
+        },
+        "claim": {
+          "category": "approval-authority",
+          "statement": "Zed's current Tool Permissions page says native-agent tools can be auto-allowed, auto-denied or always confirmed through global, tool-specific and pattern-specific rules."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Zed Industries, Inc."
+        },
+        "source": {
+          "uri": "https://zed.dev/docs/ai/tool-permissions",
+          "title": "Tool Permissions",
+          "locator": "Quick Start, How It Works, and Supported Tools",
+          "publishedAt": null,
+          "capturedAt": "2026-08-09T09:48:43Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "allow",
+              "deny",
+              "confirm",
+              "global default",
+              "tool-specific rules",
+              "pattern rules"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "native Zed Agent"
+            ]
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Zed client"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling permission documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-09",
+          "recheckAfter": "2026-09-09",
+          "invalidatedBy": [
+            "permission-schema-change",
+            "tool-list-change"
+          ]
+        },
+        "limitations": [
+          "The rule examples are configuration descriptions, not evidence of an effective decision or enforcement result."
+        ],
+        "unknowns": [
+          "The effective defaults, tool patterns, precedence, prompts and user decisions are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "zed-industries-inc",
+      "sourceId": "source-tool-permissions-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "dev.zed.agent.sandbox-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-09/claims/dev.zed.agent.native.1-14-2/sandbox-current.json",
+      "rawRecordSha256": "15a0760d495286347cef4d73f23f7274362c2ed0d0b8f87fe5128ae0d6fd53f6",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "dev.zed.agent.sandbox-current",
+        "slug": "sandbox-current",
+        "subject": {
+          "id": "dev.zed.agent.native",
+          "name": "Zed Agent",
+          "publisher": "Zed Industries, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "native Zed Agent in Zed",
+            "slug": "zed-agent-1-14-2"
+          }
+        },
+        "claim": {
+          "category": "sandbox.network",
+          "statement": "Zed's current sandbox documentation says native Zed Agent can use OS-enforced restrictions for terminal and fetch actions, with default project-write, Git-metadata and outbound-network boundaries, while ordinary terminals, External Agents and Terminal Threads are outside that sandbox."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Zed Industries, Inc."
+        },
+        "source": {
+          "uri": "https://zed.dev/docs/ai/sandboxing",
+          "title": "Agent Sandboxing",
+          "locator": "Sandboxed Tools, Default Access, and scope exclusions",
+          "publishedAt": null,
+          "capturedAt": "2026-08-09T09:48:43Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "native Zed Agent",
+              "terminal tool",
+              "fetch tool",
+              "sandbox enabled",
+              "sandbox exception approval"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "macOS",
+              "Linux with bubblewrap",
+              "Windows with WSL"
+            ]
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Zed Agent tool action"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling sandbox documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-09",
+          "recheckAfter": "2026-09-09",
+          "invalidatedBy": [
+            "sandbox-default-change",
+            "platform-support-change",
+            "scope-change"
+          ]
+        },
+        "limitations": [
+          "Publisher documentation does not prove sandbox availability, activation or enforcement in Zed 1.14.2."
+        ],
+        "unknowns": [
+          "Sandbox state, platform dependency, granted exceptions, filesystem boundary and network enforcement are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "zed-industries-inc",
+      "sourceId": "source-sandbox-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "dev.zed.agent.model-privacy-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-09/claims/dev.zed.agent.native.1-14-2/model-privacy-current.json",
+      "rawRecordSha256": "d155ef47737918c4064f436abb75bc344383bb16f18a75fe525d346e3be54857",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "dev.zed.agent.model-privacy-current",
+        "slug": "model-privacy-current",
+        "subject": {
+          "id": "dev.zed.agent.native",
+          "name": "Zed Agent",
+          "publisher": "Zed Industries, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "native Zed Agent in Zed",
+            "slug": "zed-agent-1-14-2"
+          }
+        },
+        "claim": {
+          "category": "data-policy.model-route",
+          "statement": "Zed's current AI Privacy page distinguishes Zed-hosted models, provider API keys, existing subscriptions, gateways and local models as separate request paths with different handlers and terms, and states conditional retention exceptions for designated provider models."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Zed Industries, Inc."
+        },
+        "source": {
+          "uri": "https://zed.dev/docs/ai/privacy-and-security",
+          "title": "AI Privacy",
+          "locator": "AI Request Paths and Zed-Hosted Model Commitments",
+          "publishedAt": null,
+          "capturedAt": "2026-08-09T09:48:43Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Zed-hosted model",
+              "provider API key",
+              "existing subscription",
+              "gateway",
+              "local model",
+              "feedback or training-data opt-in"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "native Zed Agent"
+            ]
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "unresolved",
+            "values": []
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher privacy and request-path statement."
+        },
+        "review": {
+          "reviewedAt": "2026-08-09",
+          "recheckAfter": "2026-09-09",
+          "invalidatedBy": [
+            "privacy-policy-change",
+            "provider-commitment-change",
+            "request-path-change"
+          ]
+        },
+        "limitations": [
+          "The policy describes configured paths; it does not establish which path, provider, model or retention exception applied to a session."
+        ],
+        "unknowns": [
+          "Request route, provider, model, data sent, retention exception, feedback state and training-data opt-in are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "zed-industries-inc",
+      "sourceId": "source-model-privacy-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "zed-agent-independent-evidence",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "candidate-search",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This batch reserved its sole independent-evaluation attempt for Claude Code; no Zed study was assessed for admission."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No-candidate is a bounded research state, not a claim that no independent Zed evaluation exists."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Zed Agent 1.14.2 is the current exact publisher identity reviewed on 2026-08-09. The retained claims remain attributed to their named official sources, and installed artifact, model, effective configuration, authority and runtime behaviour remain unresolved unless a claim expressly narrows them.",
+    "releaseContext": {
+      "statement": "Zed's official stable release page and release feed identify 1.14.2 as the latest stable release; 1.15.0-pre is excluded.",
+      "sourceId": "source-release-identity-1-14-2",
+      "legacySource": null
+    },
+    "limitations": [
+      "All product claims are attributed to Zed Industries public sources; no behavior was observed.",
+      "No Zed package, Agent thread, model, tool, MCP server or sandbox was installed or run.",
+      "The stable page pins client version and date but not source revision, package digest or installed architecture.",
+      "External Agents and Terminal Threads are separate execution paths and do not inherit native Zed Agent claims.",
+      "Current docs do not prove exact 1.14.2 runtime behavior or configuration.",
+      "Tool availability, permission outcome and OS sandbox enforcement are separate layers.",
+      "Publisher privacy statements vary by request path and named provider exceptions.",
+      "No independent evaluation was attempted for this record and no suitability conclusion is supported.",
+      "The successor was created from reviewed official sources without installing or running the agent; release identity does not transfer unscoped behaviour claims.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion was added."
+    ],
+    "unknowns": [
+      "The installed Zed package, platform architecture, source revision and binary digest are unknown.",
+      "The effective native-agent path, thread type and client feature flags are unknown.",
+      "The selected profile, custom tools, skills, instructions and MCP servers are unknown.",
+      "The effective tool permission defaults, patterns, prompts and user decisions are unknown.",
+      "Sandbox enablement, platform dependencies, exceptions and enforcement results are unknown.",
+      "The model request path, provider, endpoint, model and inference revision are unknown.",
+      "Data retention, feedback opt-in and provider-specific safety-retention applicability are unknown.",
+      "Task completion, code quality, security, privacy and independent-evaluation results remain unverified."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the current identity, attributed publisher claims and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "publisher-claims",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Current identity",
+        "question": "Which exact surface is represented?",
+        "status": "1.14.2 current at review",
+        "answer": "Zed's official stable release page and release feed identify 1.14.2 as the latest stable release; 1.15.0-pre is excluded.",
+        "whyItMatters": "A newer exact publisher identity does not identify a particular installed artifact or effective session.",
+        "claimIds": [
+          "dev.zed.agent.release-identity-1-14-2",
+          "dev.zed.agent.agent-paths-current"
+        ]
+      },
+      {
+        "id": "publisher-claims",
+        "eyebrow": "Attributed evidence",
+        "question": "What does the current record retain?",
+        "status": "7 publisher-attributed claims",
+        "answer": "The record retains only claims linked to the named official sources and keeps their applicability, limitations and unknowns explicit.",
+        "whyItMatters": "Publisher documentation is not observed product behaviour or independent verification.",
+        "claimIds": [
+          "dev.zed.agent.release-identity-1-14-2",
+          "dev.zed.agent.agent-paths-current",
+          "dev.zed.agent.capabilities-current",
+          "dev.zed.agent.profiles-current",
+          "dev.zed.agent.tool-permissions-current",
+          "dev.zed.agent.sandbox-current",
+          "dev.zed.agent.model-privacy-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this exact successor independently tested here?",
+        "status": "No",
+        "answer": "No agent was installed or run and no independent evidence was admitted during this currentness refresh.",
+        "whyItMatters": "Current identity and source attribution do not establish suitability, quality or safety.",
+        "claimIds": [
+          "dev.zed.agent.release-identity-1-14-2",
+          "dev.zed.agent.agent-paths-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source currentness successor only. No product run, independent test, suitability calculation, ranking or recommendation is included."
+  }
+}

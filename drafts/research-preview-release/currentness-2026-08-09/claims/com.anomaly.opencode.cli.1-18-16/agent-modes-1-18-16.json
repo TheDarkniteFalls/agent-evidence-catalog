@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.agent-modes-1-18-16",
+  "slug": "agent-modes-1-18-16",
+  "subject": {
+    "id": "com.anomaly.opencode.cli",
+    "name": "OpenCode CLI",
+    "publisher": "Anomaly Innovations, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "OpenCode CLI/TUI",
+      "slug": "opencode-cli-1-18-16"
+    }
+  },
+  "claim": {
+    "category": "interaction.mode",
+    "statement": "At tag v1.18.16, OpenCode's default agent definitions make Build the default primary agent; make Plan a primary agent that denies edit except for named OpenCode plan paths and denies the general subagent; and define General and Explore as subagents with distinct tool permissions. The tagged Plan definition does not add a Plan-specific bash restriction."
+  },
+  "provenance": {
+    "kind": "publisher-versioned-source",
+    "claimant": "Anomaly Innovations, Inc."
+  },
+  "source": {
+    "uri": "https://github.com/anomalyco/opencode/blob/v1.18.16/packages/opencode/src/agent/agent.ts",
+    "title": "OpenCode v1.18.16 agent definitions",
+    "locator": "default agent map: build, plan, general and explore definitions",
+    "publishedAt": "2026-08-01T11:44:00Z",
+    "capturedAt": "2026-08-10T07:24:04Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "1.18.16"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Build primary agent",
+        "Plan primary agent",
+        "General subagent",
+        "Explore subagent",
+        "user permission overrides"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "CLI/TUI agent definitions in tagged source"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "historical",
+    "changedAt": "2026-08-10",
+    "reason": "Exact tagged source definition retained separately from rolling documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-10",
+    "recheckAfter": "2026-09-10",
+    "invalidatedBy": [
+      "tag-retargeting",
+      "source-correction"
+    ]
+  },
+  "limitations": [
+    "Tagged source defines defaults and merge behavior; it is not an observed runtime receipt and does not identify user overrides, custom agents or the installed artifact."
+  ],
+  "unknowns": [
+    "The selected agent, user configuration, effective permission merge and runtime enforcement are unknown."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.anomaly.opencode.cli.agent-modes-current",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The exact v1.18.16 source and rolling-current agent documentation describe different Plan permission defaults under different version/time scopes; current documentation is not projected back onto v1.18.16."
+    }
+  ],
+  "validationRefs": []
+}

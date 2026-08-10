@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.release-identity-1-18-15",
+  "slug": "release-identity-1-18-15",
+  "subject": {
+    "id": "com.anomaly.opencode.cli",
+    "name": "OpenCode CLI",
+    "publisher": "Anomaly Innovations, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "OpenCode CLI/TUI",
+      "slug": "opencode-cli-1-18-15"
+    }
+  },
+  "claim": {
+    "category": "release.identity",
+    "statement": "The official OpenCode repository release page identifies immutable release v1.18.15, published on 2026-08-07; the installed artifact, platform package and executable digest remain unresolved."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Anomaly Innovations, Inc."
+  },
+  "source": {
+    "uri": "https://github.com/anomalyco/opencode/releases/tag/v1.18.15",
+    "title": "OpenCode v1.18.15 release",
+    "locator": "Release heading, immutable-release badge, publication time, tag and linked commit",
+    "publishedAt": "2026-08-07T06:49:55Z",
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "1.18.15"
+    },
+    "configuration": {
+      "scope": "all",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "publisher source release"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "historical",
+    "changedAt": "2026-08-09",
+    "reason": "Exact released CLI source identity retained as a bounded artifact reference."
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "release-metadata-correction",
+      "tag-retargeting"
+    ]
+  },
+  "limitations": [
+    "No release asset, package, container or platform build was downloaded, hashed, installed or run."
+  ],
+  "unknowns": [
+    "The installed artifact, platform, packaging path, dependency set and artifact digest are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

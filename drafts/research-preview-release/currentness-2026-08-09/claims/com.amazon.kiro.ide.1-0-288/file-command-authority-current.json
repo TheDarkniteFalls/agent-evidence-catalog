@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.kiro.ide.file-command-authority-current",
+  "slug": "file-command-authority-current",
+  "subject": {
+    "id": "com.amazon.kiro.ide",
+    "name": "Kiro IDE",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Kiro IDE",
+      "slug": "aws-kiro-ide-1-0-288"
+    }
+  },
+  "claim": {
+    "category": "workspace.file-command-authority",
+    "statement": "Current AWS security documentation says Kiro can read, create, modify, search and delete files and run filesystem-impacting commands in both Autopilot and Supervised modes, while protected paths require explicit approval."
+  },
+  "provenance": {
+    "kind": "publisher-policy",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://kiro.dev/docs/privacy-and-security/",
+    "title": "Kiro privacy and security",
+    "locator": "Autopilot versus supervised mode and Protected paths",
+    "publishedAt": null,
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "Autopilot",
+        "Supervised",
+        "protected paths",
+        "trusted commands policy"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local IDE workspace"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher security documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "security-documentation-change",
+      "tool-authority-change"
+    ]
+  },
+  "limitations": [
+    "This is a publisher description, not an observed permission-enforcement receipt for 1.0.288."
+  ],
+  "unknowns": [
+    "Workspace, target paths, operation mode, command policy and approval results are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
