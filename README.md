@@ -14,7 +14,7 @@
 
 A small, static research index for researchers, builders and maintainers who need to answer: which exact coding-agent version or service surface is current, what do official publisher sources say about it, and what remains unknown?
 
-The fastest reading path is to search for a product, confirm the current identity and applicability note, then inspect the attributed publisher claims and sources. The catalog presents exact identities, authority boundaries, lifecycle state and known gaps; it is not a buying guide or a claim about observed agent behavior.
+The public root opens the comparison experience directly: compare two exact records or search for one product, confirm the current identity and applicability note, then inspect the attributed publisher claims and sources. The root and primary `research-preview/compare.html` route keep an ordered 2–4 record selection in the URL, align claims only when their accepted category strings are exactly equal, and link every displayed claim directly to its accepted official source. The catalog remains one navigation step away and presents exact identities, authority boundaries, lifecycle state and known gaps; this is not a buying guide or a claim about observed agent behavior.
 
 This package deliberately has no accounts, database server, hosted execution, submission form, analytics, or external-service integration. Git is the data store, public intake is closed, and the current real-agent work is maintainer-curated only. One least-privilege GitHub Pages workflow publishes the already committed `dist/` tree without rebuilding it in CI.
 
@@ -41,6 +41,7 @@ Publication status: [Research Preview v0.1](https://thedarknitefalls.github.io/a
 - `fixtures/real-agent-pilot/` and `scripts/pilot-fixture.mjs` — synthetic source templates plus a dependency-free disposable fixture generator/self-test; see `docs/synthetic-pilot-fixture.md`.
 - `LICENSE` — Apache License 2.0 for this package and accepted contributions.
 - `site/` — dependency-free Research Preview v0.1 landing page, real-agent browser and secondary synthetic reference.
+- `site/research-preview/compare.html`, `comparison-core.js`, and `compare.js` — URL-only evidence-exact comparison presentation and independently testable deterministic projector; no comparison datastore, scores, recommendations or tracking.
 - `scripts/catalog.mjs` — deterministic validator, negative-path self-test, and static builder.
 - `dist/` — generated static publication output after `build`.
 

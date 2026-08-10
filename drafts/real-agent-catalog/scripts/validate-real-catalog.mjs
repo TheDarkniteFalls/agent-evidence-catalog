@@ -199,25 +199,16 @@ async function assertClineLossless(record) {
 async function assertNoPublicIntegration() {
   const roots = ["catalog", "site", "dist"].map((name) => path.join(packageRoot, name));
   const files = (await Promise.all(roots.map(walk))).flat();
-  const landingTeaserRecords = [
-    "com.alibaba.qwen-code.cli.0-21-8",
-    "com.openai.codex.cli.0-147-0",
-    "com.anthropic.claude-code.cli.2-1-226",
-    "com.cursor.cloud-agents.rolling"
-  ];
   for (const file of files) {
     const relative = path.relative(packageRoot, file).split(path.sep).join("/");
     if (relative.startsWith("site/research-preview/") || relative.startsWith("dist/research-preview/")) continue;
     const content = await readFile(file, "utf8");
     let integrationScanContent = content;
     if (relative === "site/index.html" || relative === "dist/index.html") {
-      for (const recordId of landingTeaserRecords) {
-        assert.equal(content.split(recordId).length - 1, 1, `${recordId} landing teaser link count drift`);
-        assert(content.includes(`research-preview/records/${recordId}.html`), `${recordId} landing teaser did not link to its human-readable record`);
-        integrationScanContent = integrationScanContent.replaceAll(recordId, "[validated-landing-teaser-record]");
-      }
-      assert(content.includes("not a popularity list or product ranking"), "Landing teaser selection boundary is missing");
-      assert(content.includes("do not measure capability, quality, safety or popularity"), "Landing teaser metric boundary is missing");
+      assert(content.includes('<base href="./research-preview/">'), "Root landing must use the comparison asset base");
+      assert(content.includes('id="pickerRecords"'), "Root landing must expose the comparison picker");
+      assert(content.includes('id="comparisonMatrix"'), "Root landing must expose the comparison matrix");
+      assert(content.includes("No ranking, recommendation or independent-test result."), "Root landing comparison boundary is missing");
     }
     if (relative === "dist/build-manifest.json") {
       const manifest = JSON.parse(content);
@@ -235,7 +226,12 @@ async function assertNoPublicIntegration() {
     if (relative === "dist/sitemap.xml") {
       const manifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
       const details = manifest.researchPreview.recordDetails;
-      assert.equal([...content.matchAll(/<loc>/g)].length, details.count + 2, "Sitemap route count drift");
+      assert.equal([...content.matchAll(/<loc>/g)].length, details.count + 3, "Sitemap route count drift");
+      assert.equal(
+        content.split("https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html").length - 1,
+        1,
+        "Comparison sitemap route count drift"
+      );
       for (const entry of details.records) {
         const expectedUrl = `https://thedarknitefalls.github.io/agent-evidence-catalog/${entry.entryPoint}`;
         assert.equal(content.split(expectedUrl).length - 1, 1, `${entry.recordId} sitemap route count drift`);

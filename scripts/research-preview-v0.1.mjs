@@ -264,6 +264,7 @@ const validatorCommands = [
   ["critical-mass expansion", "drafts/real-agent-catalog/scripts/validate-critical-mass-expansion.mjs"],
   ["all-surface 2026-08-09 currentness", "drafts/research-preview-release/currentness-2026-08-09/validate-currentness.mjs"],
   ["unified 73-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
+  ["evidence-exact agent-claims comparison", "scripts/validate-comparison-mvp.mjs"],
   ["governance requirements", "drafts/real-agent-catalog/scripts/validate-governance.mjs"],
   ["documentation and publisher source links", "drafts/real-agent-catalog/scripts/validate-documentation-consistency.mjs"],
   ["protected corpus preservation", "drafts/research-preview-release/validate-preservation.mjs"]
@@ -281,6 +282,9 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.sourceDigests.previewHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"))));
   assert.equal(receipt.sourceDigests.previewDataSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "catalog.json"))));
   assert.equal(receipt.sourceDigests.previewAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "app.js"))));
+  assert.equal(receipt.sourceDigests.comparisonHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"))));
+  assert.equal(receipt.sourceDigests.comparisonCoreSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "comparison-core.js"))));
+  assert.equal(receipt.sourceDigests.comparisonAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.js"))));
   assert.equal(receipt.sourceDigests.recordDetailAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "record-detail.js"))));
   assert.equal(receipt.sourceDigests.previewStylesSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "styles.css"))));
   assert.equal(receipt.sourceDigests.recordDetailsManifestSha256, sha256(serialize(buildManifest.researchPreview.recordDetails)));
@@ -294,30 +298,35 @@ async function validateBrowserReceipt() {
   });
 
   assert.equal(receipt.journeys.landing.result, "PASS");
-  assert.equal(receipt.journeys.landing.headline, "Research coding agents without starting from scratch.");
-  assert.deepEqual(receipt.journeys.landing.sectionOrder, [
-    "See the research before you search.",
-    "What this saves you",
-    "Start with what is known. Test what is not."
+  assert.equal(receipt.journeys.landing.mode, "comparison-first");
+  assert.equal(receipt.journeys.landing.headline, "Compare agent claims, source by source.");
+  assert.equal(receipt.journeys.landing.primaryNavigation, "Compare claims");
+  assert.equal(receipt.journeys.landing.currentPickerRecords, 53);
+  assert.equal(receipt.journeys.landing.defaultSelectionCount, 0);
+  assert.deepEqual(receipt.journeys.landing.directEntryViewports, [
+    {
+      label: "desktop-compact",
+      requested: { width: 960, height: 540 },
+      observedCss: { width: 1280, height: 720 },
+      horizontalOverflow: false,
+      pickerRecords: 53,
+      selectedRecords: 0
+    },
+    {
+      label: "mobile-compact",
+      requested: { width: 293, height: 633 },
+      observedCss: { width: 391, height: 844 },
+      horizontalOverflow: false,
+      pickerRecords: 53,
+      selectedRecords: 0
+    }
   ]);
-  assert.deepEqual(receipt.journeys.landing.teaserRecordIds, [
-    "com.alibaba.qwen-code.cli.0-21-8",
-    "com.openai.codex.cli.0-147-0",
-    "com.anthropic.claude-code.cli.2-1-226",
-    "com.cursor.cloud-agents.rolling"
-  ]);
-  assert.deepEqual(receipt.journeys.landing.desktop, {
-    width: 1440,
-    height: 900,
-    horizontalOverflow: false,
-    teaserRows: 4
-  });
-  assert.deepEqual(receipt.journeys.landing.mobile, {
-    width: 390,
-    height: 844,
-    horizontalOverflow: false,
-    teaserTableScrollable: true,
-    teaserTableContained: true
+  assert.deepEqual(receipt.journeys.landing.shareableComparison, {
+    selectedRecords: 2,
+    exactCategoryRows: 13,
+    acceptedClaims: 14,
+    directOfficialSourceLinks: 14,
+    horizontalOverflow: false
   });
 
   assert.equal(receipt.journeys.catalog.result, "PASS");
@@ -338,19 +347,28 @@ async function validateBrowserReceipt() {
         label: "desktop-compact",
         requested: { width: 960, height: 540 },
         observedCss: { width: 1280, height: 720 },
-        searchTopPx: 479,
-        searchBottomPx: 525,
+        comparisonCtaTopPx: 418,
+        comparisonCtaBottomPx: 460,
+        comparisonCtaWithinFirstViewport: true,
+        searchTopPx: 541,
+        searchBottomPx: 587,
         searchWithinFirstViewport: true,
+        deliveryTopPx: 541,
+        deliveryBottomPx: 587,
+        deliveryWithinFirstViewport: true,
         horizontalOverflow: false
       },
       {
         label: "mobile-compact",
         requested: { width: 293, height: 633 },
         observedCss: { width: 391, height: 844 },
-        searchTopPx: 648,
-        searchBottomPx: 694,
-        deliveryTopPx: 730,
-        deliveryBottomPx: 776,
+        comparisonCtaTopPx: 544,
+        comparisonCtaBottomPx: 592,
+        comparisonCtaWithinFirstViewport: true,
+        searchTopPx: 716,
+        searchBottomPx: 762,
+        deliveryTopPx: 798,
+        deliveryBottomPx: 844,
         searchWithinFirstViewport: true,
         deliveryWithinFirstViewport: true,
         horizontalOverflow: false
@@ -370,6 +388,62 @@ async function validateBrowserReceipt() {
     openedRecordId: "com.alibaba.qwen-code.cli.0-21-8",
     detailReturnLinkCarriedContext: true,
     returnRestoredSearchAndDelivery: true
+  });
+
+  assert.equal(receipt.journeys.comparison.result, "PASS");
+  assert.equal(receipt.journeys.comparison.pickerCurrentRecords, 53);
+  assert.equal(receipt.journeys.comparison.defaultSelectedRecords, 0);
+  assert.equal(receipt.journeys.comparison.maximumSelectedRecords, 4);
+  assert.deepEqual(receipt.journeys.comparison.urlContract, {
+    selection: "agents=<recordId>,<recordId>",
+    claimFilter: "claim=<text>",
+    differences: "differences=1",
+    persistence: "URL and memory only",
+    reloadPreservesOrderFilterAndDifferences: true
+  });
+  assert.deepEqual(receipt.journeys.comparison.representativePair, {
+    recordIds: ["com.alibaba.qwen-code.cli.0-21-8", "com.openai.codex.cli.0-147-0"],
+    projectedAcceptedClaims: 14,
+    directOfficialSourceLinks: 14,
+    exactCategoryRows: 13,
+    missingExactCategoryCells: 12,
+    everyClaimPresentedExactlyOnce: true
+  });
+  assert.equal(receipt.journeys.comparison.allCurrentUnorderedPairsValidated, 1378);
+  assert(Object.values(receipt.journeys.comparison.journeysVerified).every((value) => value === true));
+  assert.deepEqual(receipt.journeys.comparison.desktop, {
+    requested: { width: 960, height: 540 },
+    observedCss: { width: 1280, height: 720 },
+    bodyHorizontalOverflow: false,
+    fourRecordMatrixScrollable: true,
+    stickyTrayVisible: true
+  });
+  assert.deepEqual(receipt.journeys.comparison.mobile, {
+    requested: { width: 293, height: 633 },
+    observedCss: { width: 391, height: 844 },
+    bodyHorizontalOverflow: false,
+    matrixScrollable: true,
+    stickyRowLabelAligned: true,
+    trayVisibleWithoutChipClipping: true
+  });
+  assert.deepEqual(receipt.journeys.comparison.invalidUrlState, {
+    unknownIdsReported: true,
+    duplicateIdsReported: true,
+    excessIdsReported: true,
+    firstFourValidIdsRetained: true
+  });
+  assert.deepEqual(receipt.journeys.comparison.unavailableRecordState, {
+    simulatedRecordId: "com.openai.codex.cli.0-147-0",
+    visibleStatus: "Record unavailable",
+    renderedAsCapabilityAbsence: false
+  });
+  assert.deepEqual(receipt.journeys.comparison.keyboardAndSemantics, {
+    nativeControlsAndLogicalDomOrder: true,
+    visibleFocusRule: true,
+    positiveTabindexOverrides: 0,
+    negativeTabindexControls: 0,
+    unlabelledButtons: 0,
+    unlabelledInputs: 0
   });
 
   assert.equal(receipt.journeys.records.result, "PASS");
@@ -402,11 +476,11 @@ async function validateBrowserReceipt() {
 
   assert.equal(receipt.journeys.discoveryMetadata.result, "PASS");
   assert.deepEqual(receipt.journeys.discoveryMetadata.landing, {
-    title: "Research Coding Agents from Official Sources · Agent Evidence Catalog",
+    title: "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
     canonical: canonicalBaseUrl,
     openGraphType: "website",
     twitterCard: "summary",
-    structuredType: "WebSite"
+    structuredType: "WebPage"
   });
   assert.deepEqual(receipt.journeys.discoveryMetadata.catalog, {
     title: "Find Current Coding-Agent Evidence · Agent Evidence Catalog",
@@ -414,6 +488,13 @@ async function validateBrowserReceipt() {
     openGraphType: "website",
     twitterCard: "summary",
     structuredType: "CollectionPage"
+  });
+  assert.deepEqual(receipt.journeys.discoveryMetadata.comparison, {
+    title: "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
+    canonical: `${canonicalBaseUrl}research-preview/compare.html`,
+    openGraphType: "website",
+    twitterCard: "summary",
+    structuredType: "WebPage"
   });
   assert.deepEqual(receipt.journeys.discoveryMetadata.representativeRecordIds, [
     "com.alibaba.qwen-code.cli.0-21-8",
@@ -436,7 +517,7 @@ async function validateBrowserReceipt() {
   assert.deepEqual(receipt.journeys.discoveryMetadata.sitemap, {
     path: "dist/sitemap.xml",
     sha256: sha256(await readFile(path.join(packageRoot, "dist", "sitemap.xml"))),
-    humanReadableRoutes: 75,
+    humanReadableRoutes: 76,
     recordRoutes: 73,
     rawJsonRoutes: 0,
     duplicateRoutes: 0
@@ -449,7 +530,7 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.sourceLinks.endpointSuccessStatus, 200);
   assert.deepEqual(receipt.sourceLinks.currentLiveCheck, {
     checkedAt: receipt.checkedAt,
-    method: "Read-only GET with redirects and Range bytes=0-0",
+    method: "Read-only GET with redirects",
     recordsChecked: 73,
     uniqueEndpointsChecked: 223,
     passed: 223,
@@ -464,7 +545,7 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.boundaries.currentnessLifecycleProjectionUpdated, true);
   assert.equal(receipt.boundaries.githubStateChanged, false);
 
-  console.log("PASS digest-bound browser journeys: landing and catalog context at 1440px and 390px, plus all 73 record pages overflow-free with zero console errors");
+  console.log("PASS digest-bound browser journeys: landing, catalog and evidence-exact comparison at compact desktop/mobile viewports, plus all 73 record pages overflow-free with zero console errors");
 }
 
 function validatePageDiscovery(html, expected) {
@@ -493,8 +574,8 @@ function validatePageDiscovery(html, expected) {
 async function validateDiscoveryMetadata() {
   const preview = JSON.parse(await readFile(path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json"), "utf8"));
   const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
-  const landingDescription = "Research coding agents without starting from scratch: verify publisher claims, avoid stale assumptions and see what still needs testing.";
-  const landingTitle = "Research Coding Agents from Official Sources · Agent Evidence Catalog";
+  const landingDescription = "Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.";
+  const landingTitle = "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog";
   validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "index.html"), "utf8"), {
     title: landingTitle,
     description: landingDescription,
@@ -502,10 +583,15 @@ async function validateDiscoveryMetadata() {
     openGraphType: "website",
     structuredData: {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Agent Evidence Catalog",
+      "@type": "WebPage",
+      name: "Compare Coding-Agent Claims and Sources",
       description: landingDescription,
-      url: canonicalBaseUrl
+      url: canonicalBaseUrl,
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Agent Evidence Catalog",
+        url: canonicalBaseUrl
+      }
     }
   });
 
@@ -524,6 +610,28 @@ async function validateDiscoveryMetadata() {
       name: "Agent Evidence Catalog Research Preview",
       description: catalogDescription,
       url: catalogUrl,
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Agent Evidence Catalog",
+        url: canonicalBaseUrl
+      }
+    }
+  });
+
+  const comparisonDescription = "Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.";
+  const comparisonTitle = "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog";
+  const comparisonUrl = `${canonicalBaseUrl}research-preview/compare.html`;
+  validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"), "utf8"), {
+    title: comparisonTitle,
+    description: comparisonDescription,
+    url: comparisonUrl,
+    openGraphType: "website",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Compare Coding-Agent Claims and Sources",
+      description: comparisonDescription,
+      url: comparisonUrl,
       isPartOf: {
         "@type": "WebSite",
         name: "Agent Evidence Catalog",
@@ -564,6 +672,7 @@ async function validateDiscoveryMetadata() {
   const expectedUrls = [
     canonicalBaseUrl,
     catalogUrl,
+    comparisonUrl,
     ...buildManifest.researchPreview.recordDetails.records.map((record) => `${canonicalBaseUrl}${record.entryPoint}`)
   ].sort((left, right) => left.localeCompare(right));
   const robots = await readFile(path.join(packageRoot, "dist", "robots.txt"), "utf8");
@@ -582,13 +691,19 @@ async function validateDiscoveryMetadata() {
     humanReadableRecordRouteCount: buildManifest.researchPreview.recordDetails.count,
     rawJsonRoutesListed: 0
   });
-  console.log(`PASS discovery metadata on landing, catalog and all ${buildManifest.researchPreview.recordDetails.count} record pages; deterministic ${expectedUrls.length}-route sitemap excludes raw JSON`);
+  console.log(`PASS discovery metadata on landing, catalog, comparison and all ${buildManifest.researchPreview.recordDetails.count} record pages; deterministic ${expectedUrls.length}-route sitemap excludes raw JSON`);
 }
 
 async function validateFirstScreenContract() {
   const landing = await readFile(path.join(packageRoot, "dist", "index.html"), "utf8");
   const catalog = await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8");
-  assert.equal([...landing.matchAll(/href="research-preview\/#catalog-controls"/g)].length, 2, "Landing discovery links must target the catalog filters");
+  const comparison = await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"), "utf8");
+  assert(landing.includes('<base href="./research-preview/">'), "Root landing must resolve comparison assets through the research-preview base");
+  assert(landing.includes('<a aria-current="page" href="compare.html">Compare claims</a>'), "Root landing must make comparison the active first navigation item");
+  assert(landing.includes('id="pickerRecords"'), "Root landing must expose the current-record comparison picker directly");
+  assert(landing.includes('id="comparisonMatrix"'), "Root landing must expose the evidence-exact comparison matrix directly");
+  assert(catalog.includes('class="primary-action" href="compare.html">Compare agent claims</a>'), "Catalog first screen must expose the primary comparison CTA");
+  assert(comparison.includes("Select 2–4 exact records"), "Comparison route must expose the empty picker state");
   for (const required of [
     "id=\"catalog-controls\"",
     ">Search current records<",
@@ -602,7 +717,7 @@ async function validateFirstScreenContract() {
   assert(controlsIndex > catalog.indexOf("<h1"), "Catalog filters must follow the page identity");
   assert(controlsIndex < statsIndex, "Catalog filters must precede coverage counts");
   assert(statsIndex < recordsIndex, "Coverage counts must precede the current record grid");
-  console.log("PASS catalog first-screen contract: landing deep links, filters before counts and explicit non-scoring boundary");
+  console.log("PASS comparison-first landing and catalog first-screen contract: direct picker, filters before counts and explicit non-scoring boundary");
 }
 async function validatePagesWorkflow() {
   const workflow = await readFile(pagesWorkflowPath, "utf8");

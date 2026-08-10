@@ -2,7 +2,8 @@
   "use strict";
 
   const data = window.RESEARCH_PREVIEW;
-  if (!data) throw new Error("Research-preview data is unavailable.");
+  const comparison = window.AGENT_CLAIMS_COMPARISON;
+  if (!data || !comparison) throw new Error("Research-preview data or comparison state is unavailable.");
 
   const byId = new Map(data.previewRecords.map((record) => [record.recordId, record]));
   const currentRecords = data.surfaces.map((surface) => surface.currentRecord).filter(Boolean);
@@ -13,6 +14,11 @@
   const historyRoot = document.querySelector("#historyRecords");
   const emptyState = document.querySelector("#emptyState");
   const resultCount = document.querySelector("#resultCount");
+  const selectionStatus = document.querySelector("#selectionStatus");
+  const selectionTray = document.querySelector("#selectionTray");
+  const trayChips = document.querySelector("#trayChips");
+  const trayCount = document.querySelector("#trayCount");
+  const compareSelection = document.querySelector("#compareSelection");
 
   const setText = (selector, value) => { document.querySelector(selector).textContent = String(value); };
   setText("#surfaceCount", data.counts.surfaces);
@@ -24,18 +30,55 @@
 
   const requestedState = new URLSearchParams(window.location.search);
   const requestedDelivery = requestedState.get("delivery");
+  const parsedSelection = comparison.parseRequestedIds(requestedState.get("agents"), new Set(byId.keys()));
+  let selectedIds = [...parsedSelection.ids];
   search.value = requestedState.get("q") ?? "";
   if (["all", "local", "hybrid", "hosted"].includes(requestedDelivery)) delivery.value = requestedDelivery;
+  selectionStatus.textContent = parsedSelection.messages.join(" ");
+  selectionStatus.hidden = parsedSelection.messages.length === 0;
 
   const titleCase = (value) => String(value).replaceAll("-", " ").replace(/(^|\s)\S/g, (match) => match.toUpperCase());
   const versionLabel = (record) => record.release.version ? `v${record.release.version}` : (record.release.releaseTag ?? titleCase(record.release.scope));
-  const catalogState = () => {
+  const catalogParams = () => {
     const params = new URLSearchParams();
     if (search.value.trim()) params.set("q", search.value.trim());
     if (delivery.value !== "all") params.set("delivery", delivery.value);
-    const query = params.toString();
+    if (selectedIds.length) params.set("agents", selectedIds.join(","));
+    return params;
+  };
+  const catalogState = () => {
+    const query = catalogParams().toString();
     return query ? `?${query}` : "";
   };
+
+  function announce(message) {
+    selectionStatus.textContent = message;
+    selectionStatus.hidden = !message;
+  }
+
+  function updateUrl() {
+    window.history.replaceState(null, "", `${window.location.pathname}${catalogState()}${window.location.hash}`);
+  }
+
+  function setSelection(ids, message) {
+    selectedIds = [...ids];
+    announce(message);
+    updateUrl();
+    renderCurrent();
+  }
+
+  function toggleSelection(record) {
+    if (selectedIds.includes(record.recordId)) {
+      setSelection(selectedIds.filter((id) => id !== record.recordId), `${record.name} removed from comparison.`);
+      return;
+    }
+    if (selectedIds.length >= comparison.MAX_SELECTION) {
+      announce(`You can compare up to ${comparison.MAX_SELECTION} exact records. Remove one before adding another.`);
+      return;
+    }
+    setSelection([...selectedIds, record.recordId], `${record.name} added. ${selectedIds.length + 1} of ${comparison.MAX_SELECTION} selected.`);
+  }
+
   const recordCard = (record, history = false) => {
     const article = document.createElement("article");
     article.className = `record-card${history ? " history-card" : ""}`;
@@ -73,6 +116,17 @@
     boundary.textContent = record.lifecycleNote;
     const links = document.createElement("div");
     links.className = "card-links";
+    if (!history) {
+      const selected = selectedIds.includes(record.recordId);
+      const compareButton = document.createElement("button");
+      compareButton.type = "button";
+      compareButton.className = "compare-card-button";
+      compareButton.textContent = selected ? "Remove from compare" : "Add to compare";
+      compareButton.setAttribute("aria-pressed", String(selected));
+      compareButton.setAttribute("aria-label", `${selected ? "Remove" : "Add"} ${record.name} ${versionLabel(record)} ${selected ? "from" : "to"} comparison`);
+      compareButton.addEventListener("click", () => toggleSelection(record));
+      links.append(compareButton);
+    }
     const detailLink = document.createElement("a");
     detailLink.className = "primary-record-link";
     detailLink.href = `records/${encodeURIComponent(record.recordId)}.html${catalogState()}`;
@@ -86,6 +140,28 @@
     return article;
   };
 
+  function renderTray() {
+    selectionTray.hidden = selectedIds.length === 0;
+    document.body.classList.toggle("has-selection-tray", selectedIds.length > 0);
+    trayChips.replaceChildren(...selectedIds.map((recordId, index) => {
+      const record = byId.get(recordId);
+      const chip = document.createElement("span");
+      chip.className = "selection-chip";
+      const label = document.createElement("span");
+      label.textContent = `${index + 1} ${record.name}`;
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "chip-remove";
+      remove.textContent = "×";
+      remove.setAttribute("aria-label", `Remove ${record.name} from comparison`);
+      remove.addEventListener("click", () => setSelection(selectedIds.filter((id) => id !== recordId), `${record.name} removed from comparison.`));
+      chip.append(label, remove);
+      return chip;
+    }));
+    trayCount.textContent = `${selectedIds.length} of ${comparison.MAX_SELECTION} selected`;
+    compareSelection.disabled = selectedIds.length < 2;
+  }
+
   function renderCurrent() {
     const query = search.value.trim().toLowerCase();
     const deliveryValue = delivery.value;
@@ -97,7 +173,8 @@
     historyRoot.replaceChildren(...historyRecords.map((record) => recordCard(byId.get(record.recordId), true)));
     resultCount.textContent = `${visible.length} of ${currentRecords.length} current records`;
     emptyState.hidden = visible.length !== 0;
-    window.history.replaceState(null, "", `${window.location.pathname}${catalogState()}${window.location.hash}`);
+    renderTray();
+    updateUrl();
   }
 
   historyToggle.addEventListener("click", (event) => {
@@ -108,5 +185,10 @@
   });
   search.addEventListener("input", renderCurrent);
   delivery.addEventListener("change", renderCurrent);
+  compareSelection.addEventListener("click", () => {
+    if (selectedIds.length < 2) return;
+    const params = catalogParams();
+    window.location.href = `compare.html?${params.toString()}`;
+  });
   renderCurrent();
 })();

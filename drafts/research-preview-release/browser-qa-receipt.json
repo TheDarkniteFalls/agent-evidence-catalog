@@ -1,15 +1,18 @@
 {
   "schemaVersion": "research-preview-browser-qa/0.2",
   "asOf": "2026-08-10",
-  "checkedAt": "2026-08-10T07:35:06.938Z",
+  "checkedAt": "2026-08-10T09:52:51.849Z",
   "sourceDigests": {
-    "landingHtmlSha256": "9f10d6e9489dcb4604b0960060b4f02677b679b677b40877d7dec332738ec62d",
-    "previewHtmlSha256": "55681d7cdfc5e8baac79b57cbecd850a5fa671abeca9cd5961496b9f7c29f02b",
+    "landingHtmlSha256": "42ea6c38208913e74c48778e30edbcdaab1c367ce5d65176d0070a41e8876001",
+    "previewHtmlSha256": "660863acf5c0b3c62aa57d9d8676efcc970e685ddca8c93973d9b8f81bf0018b",
     "previewDataSha256": "70b87c2eaa8ff7159f8903891c4f408014da76d1f9d9b8a3499eb55179042ea0",
-    "previewAppSha256": "6c1a119fd04aa4cb3a09a40aa246f49b41e3966dbba332d27b26431ee619c388",
-    "recordDetailAppSha256": "fe10e63d289441803da2b3074872411e66f9df9771d093116d7412802af29fe1",
-    "previewStylesSha256": "b90cd4e943d4cb86e692a7f78734217fe884c6108852b344fef0115924964cc9",
-    "recordDetailsManifestSha256": "1a402bcdeeda23bd3d2dac357087a93f9ad48821454ceea5bdbb2bb3b53a3eee"
+    "previewAppSha256": "c9dac274b251e9c1f5d32b6d8fbec64f0a7819f3d020123dadd00d957a6c1379",
+    "comparisonHtmlSha256": "008704ee340ddb28dca4864516ae6906ed0909ee6621d3d57fa6da9a1e9014a2",
+    "comparisonCoreSha256": "80607e3b19e64fd54f9649d32321553ba63472fe6e6626dd56f1a7c4908accb4",
+    "comparisonAppSha256": "503c2edf7b7e376dfd749316f58f1935e1d6c49338cb7a448b0b3167f1becaed",
+    "recordDetailAppSha256": "1f884a3c18fa8bafeda1a24e80b574ce010d097bb7de3786b2ad7226d76f0611",
+    "previewStylesSha256": "a1450a2acf9589840101dc21b26d25ea6aace7b40736c82287bbd90faf8e0e22",
+    "recordDetailsManifestSha256": "c3c3feb16777568302795d3a74a3c5cfdcba4755b2df26262dcb1b77db1176f0"
   },
   "viewportEnvironment": {
     "desktopDevicePixelRatio": 0.75,
@@ -22,32 +25,35 @@
   "journeys": {
     "landing": {
       "result": "PASS",
-      "headline": "Research coding agents without starting from scratch.",
-      "sectionOrder": [
-        "See the research before you search.",
-        "What this saves you",
-        "Start with what is known. Test what is not."
+      "mode": "comparison-first",
+      "headline": "Compare agent claims, source by source.",
+      "primaryNavigation": "Compare claims",
+      "currentPickerRecords": 53,
+      "defaultSelectionCount": 0,
+      "directEntryViewports": [
+        {
+          "label": "desktop-compact",
+          "requested": { "width": 960, "height": 540 },
+          "observedCss": { "width": 1280, "height": 720 },
+          "horizontalOverflow": false,
+          "pickerRecords": 53,
+          "selectedRecords": 0
+        },
+        {
+          "label": "mobile-compact",
+          "requested": { "width": 293, "height": 633 },
+          "observedCss": { "width": 391, "height": 844 },
+          "horizontalOverflow": false,
+          "pickerRecords": 53,
+          "selectedRecords": 0
+        }
       ],
-      "teaserRecordIds": [
-        "com.alibaba.qwen-code.cli.0-21-8",
-        "com.openai.codex.cli.0-147-0",
-        "com.anthropic.claude-code.cli.2-1-226",
-        "com.cursor.cloud-agents.rolling"
-      ],
-      "selectionBoundary": "Representative current records spanning exact and rolling, local, hybrid and hosted delivery; not a popularity list or product ranking.",
-      "metricBoundary": "Counts describe catalog documentation, not capability, quality, safety or popularity.",
-      "desktop": {
-        "width": 1440,
-        "height": 900,
-        "horizontalOverflow": false,
-        "teaserRows": 4
-      },
-      "mobile": {
-        "width": 390,
-        "height": 844,
-        "horizontalOverflow": false,
-        "teaserTableScrollable": true,
-        "teaserTableContained": true
+      "shareableComparison": {
+        "selectedRecords": 2,
+        "exactCategoryRows": 13,
+        "acceptedClaims": 14,
+        "directOfficialSourceLinks": 14,
+        "horizontalOverflow": false
       }
     },
     "catalog": {
@@ -69,19 +75,28 @@
             "label": "desktop-compact",
             "requested": { "width": 960, "height": 540 },
             "observedCss": { "width": 1280, "height": 720 },
-            "searchTopPx": 479,
-            "searchBottomPx": 525,
+            "comparisonCtaTopPx": 418,
+            "comparisonCtaBottomPx": 460,
+            "comparisonCtaWithinFirstViewport": true,
+            "searchTopPx": 541,
+            "searchBottomPx": 587,
             "searchWithinFirstViewport": true,
+            "deliveryTopPx": 541,
+            "deliveryBottomPx": 587,
+            "deliveryWithinFirstViewport": true,
             "horizontalOverflow": false
           },
           {
             "label": "mobile-compact",
             "requested": { "width": 293, "height": 633 },
             "observedCss": { "width": 391, "height": 844 },
-            "searchTopPx": 648,
-            "searchBottomPx": 694,
-            "deliveryTopPx": 730,
-            "deliveryBottomPx": 776,
+            "comparisonCtaTopPx": 544,
+            "comparisonCtaBottomPx": 592,
+            "comparisonCtaWithinFirstViewport": true,
+            "searchTopPx": 716,
+            "searchBottomPx": 762,
+            "deliveryTopPx": 798,
+            "deliveryBottomPx": 844,
             "searchWithinFirstViewport": true,
             "deliveryWithinFirstViewport": true,
             "horizontalOverflow": false
@@ -101,6 +116,81 @@
         "openedRecordId": "com.alibaba.qwen-code.cli.0-21-8",
         "detailReturnLinkCarriedContext": true,
         "returnRestoredSearchAndDelivery": true
+      }
+    },
+    "comparison": {
+      "result": "PASS",
+      "pickerCurrentRecords": 53,
+      "defaultSelectedRecords": 0,
+      "maximumSelectedRecords": 4,
+      "urlContract": {
+        "selection": "agents=<recordId>,<recordId>",
+        "claimFilter": "claim=<text>",
+        "differences": "differences=1",
+        "persistence": "URL and memory only",
+        "reloadPreservesOrderFilterAndDifferences": true
+      },
+      "representativePair": {
+        "recordIds": [
+          "com.alibaba.qwen-code.cli.0-21-8",
+          "com.openai.codex.cli.0-147-0"
+        ],
+        "projectedAcceptedClaims": 14,
+        "directOfficialSourceLinks": 14,
+        "exactCategoryRows": 13,
+        "missingExactCategoryCells": 12,
+        "everyClaimPresentedExactlyOnce": true
+      },
+      "allCurrentUnorderedPairsValidated": 1378,
+      "journeysVerified": {
+        "landingToEmptyPicker": true,
+        "qwenAndCodexSelection": true,
+        "filteredCatalogSelection": true,
+        "recordPageSelection": true,
+        "removeReorderAndFourRecordLimit": true,
+        "reloadAndShareableUrl": true,
+        "claimFilterAndClear": true,
+        "differencesToggle": true,
+        "exactVersionVersusRollingService": true,
+        "historicalDeepLink": true,
+        "sameSurfaceVersionComparison": true,
+        "invalidDuplicateAndExcessIds": true,
+        "unavailableRecord": true,
+        "catalogRecordCatalogStateRoundTrip": true
+      },
+      "desktop": {
+        "requested": { "width": 960, "height": 540 },
+        "observedCss": { "width": 1280, "height": 720 },
+        "bodyHorizontalOverflow": false,
+        "fourRecordMatrixScrollable": true,
+        "stickyTrayVisible": true
+      },
+      "mobile": {
+        "requested": { "width": 293, "height": 633 },
+        "observedCss": { "width": 391, "height": 844 },
+        "bodyHorizontalOverflow": false,
+        "matrixScrollable": true,
+        "stickyRowLabelAligned": true,
+        "trayVisibleWithoutChipClipping": true
+      },
+      "invalidUrlState": {
+        "unknownIdsReported": true,
+        "duplicateIdsReported": true,
+        "excessIdsReported": true,
+        "firstFourValidIdsRetained": true
+      },
+      "unavailableRecordState": {
+        "simulatedRecordId": "com.openai.codex.cli.0-147-0",
+        "visibleStatus": "Record unavailable",
+        "renderedAsCapabilityAbsence": false
+      },
+      "keyboardAndSemantics": {
+        "nativeControlsAndLogicalDomOrder": true,
+        "visibleFocusRule": true,
+        "positiveTabindexOverrides": 0,
+        "negativeTabindexControls": 0,
+        "unlabelledButtons": 0,
+        "unlabelledInputs": 0
       }
     },
     "records": {
@@ -226,11 +316,11 @@
     "discoveryMetadata": {
       "result": "PASS",
       "landing": {
-        "title": "Research Coding Agents from Official Sources · Agent Evidence Catalog",
+        "title": "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
         "canonical": "https://thedarknitefalls.github.io/agent-evidence-catalog/",
         "openGraphType": "website",
         "twitterCard": "summary",
-        "structuredType": "WebSite"
+        "structuredType": "WebPage"
       },
       "catalog": {
         "title": "Find Current Coding-Agent Evidence · Agent Evidence Catalog",
@@ -238,6 +328,13 @@
         "openGraphType": "website",
         "twitterCard": "summary",
         "structuredType": "CollectionPage"
+      },
+      "comparison": {
+        "title": "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
+        "canonical": "https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html",
+        "openGraphType": "website",
+        "twitterCard": "summary",
+        "structuredType": "WebPage"
       },
       "representativeRecordIds": [
         "com.alibaba.qwen-code.cli.0-21-8",
@@ -259,8 +356,8 @@
       },
       "sitemap": {
         "path": "dist/sitemap.xml",
-        "sha256": "ec9183db92787ebe84ca778bbadce52d2a0c974ddfc4a6d82f6a773a4cf00ed8",
-        "humanReadableRoutes": 75,
+        "sha256": "57033bc0421a7fcf1f08b5efe97736a1b8e3b56db40ea2e3a5459c4e3f0a0aa9",
+        "humanReadableRoutes": 76,
         "recordRoutes": 73,
         "rawJsonRoutes": 0,
         "duplicateRoutes": 0
@@ -274,8 +371,8 @@
     "endpointHttpFailures": 0,
     "endpointSuccessStatus": 200,
     "currentLiveCheck": {
-      "checkedAt": "2026-08-10T07:35:06.938Z",
-      "method": "Read-only GET with redirects and Range bytes=0-0",
+      "checkedAt": "2026-08-10T09:52:51.849Z",
+      "method": "Read-only GET with redirects",
       "recordsChecked": 73,
       "uniqueEndpointsChecked": 223,
       "passed": 223,
