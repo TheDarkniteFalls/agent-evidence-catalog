@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.kiro.ide.code-oss-base-1-0-288",
+  "slug": "code-oss-base-1-0-288",
+  "subject": {
+    "id": "com.amazon.kiro.ide",
+    "name": "Kiro IDE",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Kiro IDE",
+      "slug": "aws-kiro-ide-1-0-288"
+    }
+  },
+  "claim": {
+    "category": "runtime.editor-base",
+    "statement": "The Kiro IDE 1.0.288 release note says this build moved its editor base to Code OSS 1.109.5."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://kiro.dev/changelog/ide/1-0-288/",
+    "title": "Editor Actions, Guided Hook Creation, and Code OSS Upgrade",
+    "locator": "Release summary",
+    "publishedAt": "2026-08-07T00:00:00Z",
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "1.0.288"
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "Kiro IDE 1.0.288 editor base"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "desktop client"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-09",
+    "reason": "Exact release metadata."
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "release-note-correction"
+    ]
+  },
+  "limitations": [
+    "The named Code OSS base does not establish Kiro's source revision, patches or platform binary digest."
+  ],
+  "unknowns": [
+    "Kiro-specific patches and source-to-binary correspondence are unavailable."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

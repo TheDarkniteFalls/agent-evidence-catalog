@@ -200,9 +200,9 @@ async function assertNoPublicIntegration() {
   const roots = ["catalog", "site", "dist"].map((name) => path.join(packageRoot, name));
   const files = (await Promise.all(roots.map(walk))).flat();
   const landingTeaserRecords = [
-    "com.alibaba.qwen-code.cli.0-21-7",
-    "com.openai.codex.cli.0-146-0",
-    "com.anthropic.claude-code.cli.2-1-220",
+    "com.alibaba.qwen-code.cli.0-21-8",
+    "com.openai.codex.cli.0-147-0",
+    "com.anthropic.claude-code.cli.2-1-226",
     "com.cursor.cloud-agents.rolling"
   ];
   for (const file of files) {
@@ -222,8 +222,8 @@ async function assertNoPublicIntegration() {
     if (relative === "dist/build-manifest.json") {
       const manifest = JSON.parse(content);
       const details = manifest.researchPreview.recordDetails;
-      assert.equal(details.count, 61);
-      assert.equal(details.records.length, 61);
+      assert.equal(details.count, 73);
+      assert.equal(details.records.length, 73);
       assertUnique(details.records.map((entry) => entry.recordId), "Human-readable record-detail IDs");
       for (const entry of details.records) {
         assert.equal(entry.entryPoint, `research-preview/records/${entry.recordId}.html`);

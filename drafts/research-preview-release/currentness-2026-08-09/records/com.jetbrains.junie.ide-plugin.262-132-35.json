@@ -1,0 +1,438 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-09",
+  "sourceDossier": {
+    "path": "drafts/research-preview-release/currentness-2026-08-09/currentness-source.json",
+    "sha256": "eecc2679f70588344173f67192dd6c195e6540f23e169eed8cd3f52ff6717880",
+    "relationship": "currentness-successor-derived-from-preserved-predecessor-and-reviewed-official-sources"
+  },
+  "identity": {
+    "recordId": "com.jetbrains.junie.ide-plugin.262-132-35",
+    "agent": {
+      "id": "com.jetbrains.junie.ide-plugin",
+      "name": "Junie IDE plugin"
+    },
+    "publisher": {
+      "id": "jetbrains",
+      "name": "JetBrains"
+    },
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Junie IDE plugin",
+      "slug": "jetbrains-junie-ide-262-132-35",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "262.132.35",
+      "releaseTag": "262.132.35",
+      "sourceRevision": null,
+      "releasedAt": "2026-08-07T18:09:29Z",
+      "channel": "JetBrains Marketplace stable plugin",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "The official source identifies 262.132.35, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "jetbrains-junie-ide-reviewed-artifact",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1130261",
+        "ecosystem": "JetBrains Marketplace stable plugin",
+        "version": "262.132.35",
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "jetbrains",
+        "name": "JetBrains",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-262-132-35",
+      "uri": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1130261",
+      "title": "Junie plugin 262.132.35",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "jetbrains",
+      "publishedAt": "2026-08-07T18:09:29Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-09T09:48:43Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-09 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+      "title": "Junie IDE plugin documentation",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "jetbrains",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-09T09:48:43Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-09 currentness successor; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Junie IDE plugin",
+            "claimIds": [
+              "com.jetbrains.junie.ide-plugin.identity-262-132-35",
+              "com.jetbrains.junie.ide-plugin.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "IDE family, plugin version, AI subscription and model choice must be scoped",
+          "Junie plugin behavior must not be merged with Junie CLI beta"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.jetbrains.junie.ide-plugin.identity-262-132-35",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-09/claims/com.jetbrains.junie.ide-plugin.262-132-35/identity-262-132-35.json",
+      "rawRecordSha256": "8a74da40abb08bc20f3ebd39f80a90ff26fc4fd36004b0b91fe72062172d6f8c",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.jetbrains.junie.ide-plugin.identity-262-132-35",
+        "slug": "identity-262-132-35",
+        "subject": {
+          "id": "com.jetbrains.junie.ide-plugin",
+          "name": "Junie IDE plugin",
+          "publisher": "JetBrains",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Junie IDE plugin",
+            "slug": "jetbrains-junie-ide-262-132-35"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "JetBrains's official source identifies Junie IDE plugin 262.132.35 as the exact client or release-line boundary reviewed for this record."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "JetBrains"
+        },
+        "source": {
+          "uri": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1130261",
+          "title": "Junie plugin 262.132.35",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": "2026-08-07T18:09:29Z",
+          "capturedAt": "2026-08-09T09:48:43Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "262.132.35"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-09",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-09",
+          "recheckAfter": "2026-09-09",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "IDE family, plugin version, AI subscription and model choice must be scoped",
+          "Junie plugin behavior must not be merged with Junie CLI beta"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "jetbrains",
+      "sourceId": "source-identity-262-132-35",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.jetbrains.junie.ide-plugin.delivery-boundary-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-09/claims/com.jetbrains.junie.ide-plugin.262-132-35/delivery-boundary-current.json",
+      "rawRecordSha256": "11ce03624f14892a6253fd0e3d75169c7961d6950680de7e92050a7d54169915",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.jetbrains.junie.ide-plugin.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.jetbrains.junie.ide-plugin",
+          "name": "Junie IDE plugin",
+          "publisher": "JetBrains",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Junie IDE plugin",
+            "slug": "jetbrains-junie-ide-262-132-35"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "JetBrains's official documentation describes Junie IDE plugin as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Junie surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "JetBrains"
+        },
+        "source": {
+          "uri": "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+          "title": "Junie IDE plugin documentation",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-09T09:48:43Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "262.132.35"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hybrid"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-09",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-09",
+          "recheckAfter": "2026-09-09",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "IDE family, plugin version, AI subscription and model choice must be scoped",
+          "Junie plugin behavior must not be merged with Junie CLI beta"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "jetbrains",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-jetbrains-junie-ide-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Junie IDE plugin 262.132.35 is the current exact publisher identity reviewed on 2026-08-09. The retained claims remain attributed to their named official sources, and installed artifact, model, effective configuration, authority and runtime behaviour remain unresolved unless a claim expressly narrows them.",
+    "releaseContext": {
+      "statement": "JetBrains Marketplace's publisher-controlled update API lists stable Junie IDE plugin 262.132.35 as the newest reviewed update.",
+      "sourceId": "source-identity-262-132-35",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included.",
+      "The successor was created from reviewed official sources without installing or running the agent; release identity does not transfer unscoped behaviour claims.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion was added."
+    ],
+    "unknowns": [
+      "IDE family, plugin version, AI subscription and model choice must be scoped",
+      "Junie plugin behavior must not be merged with Junie CLI beta",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the current identity, attributed publisher claims and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "publisher-claims",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Current identity",
+        "question": "Which exact surface is represented?",
+        "status": "262.132.35 current at review",
+        "answer": "JetBrains Marketplace's publisher-controlled update API lists stable Junie IDE plugin 262.132.35 as the newest reviewed update.",
+        "whyItMatters": "A newer exact publisher identity does not identify a particular installed artifact or effective session.",
+        "claimIds": [
+          "com.jetbrains.junie.ide-plugin.identity-262-132-35",
+          "com.jetbrains.junie.ide-plugin.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "publisher-claims",
+        "eyebrow": "Attributed evidence",
+        "question": "What does the current record retain?",
+        "status": "2 publisher-attributed claims",
+        "answer": "The record retains only claims linked to the named official sources and keeps their applicability, limitations and unknowns explicit.",
+        "whyItMatters": "Publisher documentation is not observed product behaviour or independent verification.",
+        "claimIds": [
+          "com.jetbrains.junie.ide-plugin.identity-262-132-35",
+          "com.jetbrains.junie.ide-plugin.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this exact successor independently tested here?",
+        "status": "No",
+        "answer": "No agent was installed or run and no independent evidence was admitted during this currentness refresh.",
+        "whyItMatters": "Current identity and source attribution do not establish suitability, quality or safety.",
+        "claimIds": [
+          "com.jetbrains.junie.ide-plugin.identity-262-132-35",
+          "com.jetbrains.junie.ide-plugin.delivery-boundary-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source currentness successor only. No product run, independent test, suitability calculation, ranking or recommendation is included."
+  }
+}

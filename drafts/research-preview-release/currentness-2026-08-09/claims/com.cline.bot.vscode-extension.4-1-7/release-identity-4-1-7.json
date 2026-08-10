@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.release-identity-4-1-7",
+  "slug": "release-identity-4-1-7",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension-4-1-7"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "The official Visual Studio Marketplace listing identifies the Cline extension published as saoudrizwan.claude-dev at exact version 4.1.7 when reviewed on 2026-08-09."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+    "title": "Cline - Visual Studio Marketplace",
+    "locator": "Resources.Version and MoreInfo.VersionValue 4.1.7; Last Updated 2026-08-02",
+    "publishedAt": "2026-08-09T04:05:18Z",
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "4.1.7"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Marketplace listing"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "VS Code extension"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-09",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The rolling Marketplace page establishes the exact listed version at capture time, not an immutable package digest."
+  ],
+  "unknowns": [
+    "The installed VSIX, executable dependencies, platform build and effective runtime variant are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

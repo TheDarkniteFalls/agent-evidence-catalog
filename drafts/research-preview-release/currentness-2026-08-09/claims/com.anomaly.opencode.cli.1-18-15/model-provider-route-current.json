@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.model-provider-route-current",
+  "slug": "model-provider-route-current",
+  "subject": {
+    "id": "com.anomaly.opencode.cli",
+    "name": "OpenCode CLI",
+    "publisher": "Anomaly Innovations, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "OpenCode CLI/TUI",
+      "slug": "opencode-cli-1-18-15"
+    }
+  },
+  "claim": {
+    "category": "model.route",
+    "statement": "Current OpenCode provider documentation supports OpenCode Zen and numerous external or local provider integrations, with provider connection and model selection as separate configuration steps; client release v1.18.15 therefore does not identify a model provider, endpoint, model revision or inference service revision."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Anomaly Innovations, Inc."
+  },
+  "source": {
+    "uri": "https://opencode.ai/docs/providers/",
+    "title": "OpenCode Providers",
+    "locator": "Provider setup; /connect; /models; OpenCode Zen and external provider sections",
+    "publishedAt": null,
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "OpenCode Zen",
+        "external hosted provider",
+        "local provider",
+        "selected model"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "conditional",
+      "values": [
+        "provider-selected model service"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher provider documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "provider-documentation-change",
+      "provider-catalog-change",
+      "model-catalog-change"
+    ]
+  },
+  "limitations": [
+    "Provider and model availability can change independently of the CLI release; no backend was selected or queried."
+  ],
+  "unknowns": [
+    "The provider, endpoint, region, account, credentials, model identifier, alias resolution, fallback behavior, model revision and inference settings are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

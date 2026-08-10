@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.zen-data-policy-current",
+  "slug": "zen-data-policy-current",
+  "subject": {
+    "id": "com.anomaly.opencode.cli",
+    "name": "OpenCode CLI",
+    "publisher": "Anomaly Innovations, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "OpenCode CLI/TUI",
+      "slug": "opencode-cli-1-18-15"
+    }
+  },
+  "claim": {
+    "category": "data.policy",
+    "statement": "Current OpenCode Zen documentation describes Zen as an optional US-hosted model gateway and states model-dependent retention boundaries, including exceptions for named free endpoints and thirty-day retention for OpenAI and Anthropic requests."
+  },
+  "provenance": {
+    "kind": "publisher-policy",
+    "claimant": "Anomaly Innovations, Inc."
+  },
+  "source": {
+    "uri": "https://opencode.ai/docs/zen/",
+    "title": "OpenCode Zen",
+    "locator": "Overview; privacy; data retention; named model-provider exceptions",
+    "publishedAt": null,
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "conditional",
+      "values": [
+        "OpenCode Zen selected",
+        "selected Zen model",
+        "free endpoint",
+        "OpenAI route",
+        "Anthropic route"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "OpenCode Zen"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher service and privacy documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "zen-policy-change",
+      "provider-retention-change",
+      "model-route-change"
+    ]
+  },
+  "limitations": [
+    "This claim applies only when Zen is selected and remains conditional on the chosen model/provider route; it does not describe external-provider privacy terms."
+  ],
+  "unknowns": [
+    "Whether Zen was selected, the selected model route, request region, retention exception, account policy and effective downstream-provider terms are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

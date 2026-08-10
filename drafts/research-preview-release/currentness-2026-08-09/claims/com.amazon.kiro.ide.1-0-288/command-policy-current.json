@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.kiro.ide.command-policy-current",
+  "slug": "command-policy-current",
+  "subject": {
+    "id": "com.amazon.kiro.ide",
+    "name": "Kiro IDE",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Kiro IDE",
+      "slug": "aws-kiro-ide-1-0-288"
+    }
+  },
+  "claim": {
+    "category": "approval.command-policy",
+    "statement": "Current Kiro terminal documentation says commands require approval by default, can be run once or added to a prefix-based trusted list, and can be forced back to manual review by a substring-based command denylist."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://kiro.dev/docs/chat/terminal/",
+    "title": "Kiro terminal integration",
+    "locator": "Command approval and security",
+    "publishedAt": null,
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "per-command approval",
+        "trusted command prefixes",
+        "universal trust",
+        "command denylist"
+      ]
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local terminal integration"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "terminal-documentation-change",
+      "trust-matching-change"
+    ]
+  },
+  "limitations": [
+    "Prefix trust applies to an entire command string and does not establish semantic analysis of chains, pipes or redirects."
+  ],
+  "unknowns": [
+    "Trusted and denied patterns, proposed commands, modifications, approvals and outputs are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

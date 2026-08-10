@@ -1,18 +1,19 @@
 {
   "schemaVersion": "research-preview-browser-qa/0.2",
-  "asOf": "2026-08-08",
-  "checkedAt": "2026-08-09T06:57:01.116Z",
+  "asOf": "2026-08-10",
+  "checkedAt": "2026-08-10T07:35:06.938Z",
   "sourceDigests": {
-    "landingHtmlSha256": "bb687b3d03bfa39fbb5f93c290fe132f71fb747720360bf23e68129436640d53",
-    "previewHtmlSha256": "835337722b124fb135779a6dc9280a2cdbfb2231f44accd38f2b011b398cea0f",
-    "previewDataSha256": "691c846ab123545faec4405d63c683836bfd984461f45c031cb27353208b1555",
+    "landingHtmlSha256": "9f10d6e9489dcb4604b0960060b4f02677b679b677b40877d7dec332738ec62d",
+    "previewHtmlSha256": "55681d7cdfc5e8baac79b57cbecd850a5fa671abeca9cd5961496b9f7c29f02b",
+    "previewDataSha256": "70b87c2eaa8ff7159f8903891c4f408014da76d1f9d9b8a3499eb55179042ea0",
     "previewAppSha256": "6c1a119fd04aa4cb3a09a40aa246f49b41e3966dbba332d27b26431ee619c388",
     "recordDetailAppSha256": "fe10e63d289441803da2b3074872411e66f9df9771d093116d7412802af29fe1",
     "previewStylesSha256": "b90cd4e943d4cb86e692a7f78734217fe884c6108852b344fef0115924964cc9",
-    "recordDetailsManifestSha256": "1848f3992bd1ca2dbf802c6e14025dfbefeb96de1b187be52e77e2c3ad60d97e"
+    "recordDetailsManifestSha256": "1a402bcdeeda23bd3d2dac357087a93f9ad48821454ceea5bdbb2bb3b53a3eee"
   },
   "viewportEnvironment": {
-    "devicePixelRatio": 0.75,
+    "desktopDevicePixelRatio": 0.75,
+    "mobileDevicePixelRatio": 0.75,
     "desktopRequested": { "width": 1440, "height": 900 },
     "desktopObservedCss": { "width": 1920, "height": 1200 },
     "mobileRequested": { "width": 390, "height": 844 },
@@ -28,9 +29,9 @@
         "Start with what is known. Test what is not."
       ],
       "teaserRecordIds": [
-        "com.alibaba.qwen-code.cli.0-21-7",
-        "com.openai.codex.cli.0-146-0",
-        "com.anthropic.claude-code.cli.2-1-220",
+        "com.alibaba.qwen-code.cli.0-21-8",
+        "com.openai.codex.cli.0-147-0",
+        "com.anthropic.claude-code.cli.2-1-226",
         "com.cursor.cloud-agents.rolling"
       ],
       "selectionBoundary": "Representative current records spanning exact and rolling, local, hybrid and hosted delivery; not a popularity list or product ranking.",
@@ -53,10 +54,10 @@
       "result": "PASS",
       "surfaceCount": 55,
       "currentCards": 53,
-      "historyCards": 8,
+      "historyCards": 20,
       "historyCollapsedInitially": true,
       "historyExpandedOnRequest": true,
-      "rawJsonSecondaryLinks": 61,
+      "rawJsonSecondaryLinks": 73,
       "desktopHorizontalOverflow": false,
       "mobileHorizontalOverflow": false,
       "firstScreen": {
@@ -97,7 +98,7 @@
         "search": "Qwen",
         "delivery": "hybrid",
         "resultCards": 2,
-        "openedRecordId": "com.alibaba.qwen-code.cli.0-21-7",
+        "openedRecordId": "com.alibaba.qwen-code.cli.0-21-8",
         "detailReturnLinkCarriedContext": true,
         "returnRestoredSearchAndDelivery": true
       }
@@ -165,7 +166,19 @@
         "com.amazon.q-developer.github.preview-rolling",
         "com.stackblitz.bolt.claude-agent.rolling",
         "com.vercel.v0.agent.rolling",
-        "com.vercel.agent.public-beta"
+        "com.vercel.agent.public-beta",
+        "com.alibaba.qwen-code.cli.0-21-8",
+        "com.amazon.kiro.ide.1-0-288",
+        "com.anomaly.opencode.cli.1-18-15",
+        "com.anomaly.opencode.cli.1-18-16",
+        "com.anthropic.claude-code.cli.2-1-226",
+        "com.cline.bot.cli.3-0-52",
+        "com.cline.bot.vscode-extension.4-1-7",
+        "com.cursor.ide.foreground-agent.3-15",
+        "com.gitlab.duo.code-review-flow.19-2-1",
+        "com.jetbrains.junie.ide-plugin.262-132-35",
+        "com.openai.codex.cli.0-147-0",
+        "dev.zed.agent.native.1-14-2"
       ],
       "checksAppliedToEveryPage": {
         "pageLoadedWithUniqueIdentity": true,
@@ -186,28 +199,28 @@
           "label": "desktop",
           "width": 1440,
           "height": 900,
-          "pagesAudited": 61,
-          "uniquePagesAudited": 61,
+          "pagesAudited": 73,
+          "uniquePagesAudited": 73,
           "failureRecordIds": []
         },
         {
           "label": "mobile",
           "width": 390,
           "height": 844,
-          "pagesAudited": 61,
-          "uniquePagesAudited": 61,
+          "pagesAudited": 73,
+          "uniquePagesAudited": 73,
           "failureRecordIds": []
         }
       ],
       "representativeQwenRecord": {
-        "recordId": "com.alibaba.qwen-code.cli.0-21-7",
+        "recordId": "com.alibaba.qwen-code.cli.0-21-8",
         "lifecycleStatus": "current",
         "publisherClaims": 2,
         "namedSources": 2,
         "unresolvedUnknowns": 4,
         "sectionIndexLinks": 7,
-        "mobileCompactIdentityTopPx": 256.29,
-        "mobileCompactIdentityBottomPx": 396.11
+        "mobileCompactIdentityTopPx": 236.42,
+        "mobileCompactIdentityBottomPx": 360.34
       }
     },
     "discoveryMetadata": {
@@ -227,14 +240,15 @@
         "structuredType": "CollectionPage"
       },
       "representativeRecordIds": [
-        "com.alibaba.qwen-code.cli.0-21-7",
-        "com.openai.codex.cli.0-146-0",
+        "com.alibaba.qwen-code.cli.0-21-8",
+        "com.anomaly.opencode.cli.1-18-16",
+        "com.openai.codex.cli.0-147-0",
         "com.openai.codex.cli.0-90-0",
         "com.vercel.v0.agent.rolling"
       ],
       "allRecordPages": {
-        "pagesAudited": 61,
-        "uniqueCanonicalUrls": 61,
+        "pagesAudited": 73,
+        "uniqueCanonicalUrls": 73,
         "openGraphFailures": 0,
         "socialPreviewFailures": 0,
         "structuredMetadataFailures": 0
@@ -245,32 +259,27 @@
       },
       "sitemap": {
         "path": "dist/sitemap.xml",
-        "sha256": "eab9bd4310e7af5918de6bd4bd0123066140d2b9988d40a2bb90c1f412864639",
-        "humanReadableRoutes": 63,
-        "recordRoutes": 61,
+        "sha256": "ec9183db92787ebe84ca778bbadce52d2a0c974ddfc4a6d82f6a773a4cf00ed8",
+        "humanReadableRoutes": 75,
+        "recordRoutes": 73,
         "rawJsonRoutes": 0,
         "duplicateRoutes": 0
       }
     }
   },
   "sourceLinks": {
-    "projectedClaimLinkedHttpsEntries": 309,
-    "sourceUrlIdentitiesChecked": 212,
-    "uniqueEndpointsChecked": 211,
+    "projectedClaimLinkedHttpsEntries": 393,
+    "sourceUrlIdentitiesChecked": 394,
+    "uniqueEndpointsChecked": 223,
     "endpointHttpFailures": 0,
     "endpointSuccessStatus": 200,
-    "liveExpansionUniqueUrls": 72,
-    "liveExpansionHttpFailures": 0,
-    "liveExpansionSuccessStatus": 200,
     "currentLiveCheck": {
-      "checkedAt": "2026-08-09T06:57:01.116Z",
+      "checkedAt": "2026-08-10T07:35:06.938Z",
       "method": "Read-only GET with redirects and Range bytes=0-0",
-      "uniqueEndpointsChecked": 211,
-      "failures": 0,
-      "statusCounts": {
-        "200": 112,
-        "206": 99
-      }
+      "recordsChecked": 73,
+      "uniqueEndpointsChecked": 223,
+      "passed": 223,
+      "failures": 0
     }
   },
   "console": {
@@ -282,7 +291,8 @@
     "agentsInstalledOrRun": false,
     "independentTestsCredited": 0,
     "rankingsOrSuitabilityCalculations": false,
-    "acceptedEvidenceOrLifecycleRewritten": false,
+    "priorAcceptedRecordsOrSourceArtifactsRewritten": false,
+    "currentnessLifecycleProjectionUpdated": true,
     "githubStateChanged": false
   }
 }

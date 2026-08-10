@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.release-identity-3-15",
+  "slug": "release-identity-3-15",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cursor IDE foreground Agent",
+      "slug": "cursor-ide-foreground-agent-3-15"
+    }
+  },
+  "claim": {
+    "category": "identity",
+    "statement": "At capture on 9 August 2026, Anysphere's official download archive listed Cursor desktop 3.15 as the latest available client version."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Anysphere, Inc."
+  },
+  "source": {
+    "uri": "https://cursor.com/download",
+    "title": "Cursor download archive",
+    "locator": "Desktop download archive: 3.15 Latest",
+    "publishedAt": null,
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "3.15"
+    },
+    "configuration": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "Cursor desktop"
+      ]
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "desktop client release listing"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-09",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "download-listing-change",
+      "publisher-correction",
+      "version-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The download page is mutable and did not expose an exact release date or source revision for 3.15.",
+    "The listing identifies a client version; it does not version the hosted model, Router policy, backend services or server-side feature flags."
+  ],
+  "unknowns": [
+    "The exact release time and source revision for client 3.15 are unknown.",
+    "Whether a particular installation used 3.15 or received server-side feature variants is unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

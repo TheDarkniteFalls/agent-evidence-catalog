@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.checkpoints-current-4-1-7",
+  "slug": "checkpoints-current-4-1-7",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension-4-1-7"
+    }
+  },
+  "claim": {
+    "category": "authority.recovery",
+    "statement": "Current official documentation says checkpoints are enabled by default and use a separate shadow Git repository to snapshot project files after tool use, with compare and restore controls."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://docs.cline.bot/core-workflows/checkpoints",
+    "title": "Checkpoints - Cline",
+    "locator": "How It Works, Enable or Disable Checkpoints and Restoring Checkpoints",
+    "publishedAt": null,
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "checkpoints enabled",
+        "checkpoints disabled"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Cline IDE extension"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "File snapshots do not establish reversal of package installs, network actions, Git pushes or other external side effects."
+  ],
+  "unknowns": [
+    "The effective checkpoint setting, storage state, failure modes and restoration completeness are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

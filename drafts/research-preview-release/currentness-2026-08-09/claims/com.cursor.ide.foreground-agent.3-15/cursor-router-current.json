@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.cursor-router-current",
+  "slug": "cursor-router-current",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cursor IDE foreground Agent",
+      "slug": "cursor-ide-foreground-agent-3-15"
+    }
+  },
+  "claim": {
+    "category": "configuration.model",
+    "statement": "Anysphere's 22 July 2026 Cursor Router announcement says Auto analyzes each request and routes it to a model, offers Cost, Balance and Intelligence optimization modes, supports desktop, and allows administrator controls that can restrict modes and underlying models or hide the routed model."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Anysphere, Inc."
+  },
+  "source": {
+    "uri": "https://cursor.com/changelog/router",
+    "title": "Cursor Router",
+    "locator": "Auto mode, Optimization modes and Admin controls",
+    "publishedAt": "2026-07-22T00:00:00Z",
+    "capturedAt": "2026-08-09T09:48:43Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "explicit model selection",
+        "Auto Cost",
+        "Auto Balance",
+        "Auto Intelligence",
+        "administrator model allowlist",
+        "administrator model blocklist",
+        "routed model displayed",
+        "routed model hidden"
+      ]
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "Cursor desktop"
+      ]
+    },
+    "model": {
+      "scope": "dynamic",
+      "values": [
+        "Cursor Router-selected underlying model"
+      ]
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Cursor-hosted model-routing service"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-22",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-09",
+    "recheckAfter": "2026-09-09",
+    "invalidatedBy": [
+      "router-change",
+      "model-pool-change",
+      "admin-policy-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The routing announcement is a rolling service statement and is not versioned with the 3.15 desktop binary.",
+    "Auto is configuration-dependent and does not identify a stable model checkpoint, provider endpoint or per-request routing result."
+  ],
+  "unknowns": [
+    "The selected model, provider, checkpoint, endpoint revision, reasoning mode and optimization mode are unknown.",
+    "Whether the routed model was visible and which organization restrictions applied are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
