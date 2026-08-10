@@ -5,8 +5,8 @@
   "classificationRule": "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
   "counts": {
     "accepted-evidence-provenance": 669,
-    "canonical-source": 73,
-    "generated-publication-output": 206,
+    "canonical-source": 77,
+    "generated-publication-output": 209,
     "release-control-artifact": 30,
     "retained-experiment": 87
   },
@@ -421,6 +421,24 @@
     },
     {
       "path": "dist/research-preview/catalog.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/compare.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/compare.js",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/comparison-core.js",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -6288,6 +6306,12 @@
       "rationale": "Canonical static site, schema, method or deterministic build source."
     },
     {
+      "path": "scripts/validate-comparison-mvp.mjs",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Canonical static site, schema, method or deterministic build source."
+    },
+    {
       "path": "site/agent-app.js",
       "classification": "canonical-source",
       "publicationBoundary": "git-research-or-source-only",
@@ -6373,6 +6397,24 @@
     },
     {
       "path": "site/research-preview/app.js",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Canonical static site, schema, method or deterministic build source."
+    },
+    {
+      "path": "site/research-preview/compare.html",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Canonical static site, schema, method or deterministic build source."
+    },
+    {
+      "path": "site/research-preview/compare.js",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Canonical static site, schema, method or deterministic build source."
+    },
+    {
+      "path": "site/research-preview/comparison-core.js",
       "classification": "canonical-source",
       "publicationBoundary": "git-research-or-source-only",
       "rationale": "Canonical static site, schema, method or deterministic build source."

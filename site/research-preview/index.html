@@ -16,15 +16,17 @@
     <meta name="twitter:title" content="Find Current Coding-Agent Evidence · Agent Evidence Catalog">
     <meta name="twitter:description" content="Browse 53 current and 20 retained history records across 55 coding-agent surfaces, with exact identities, attributed publisher claims, lifecycle history and open unknowns.">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Agent Evidence Catalog Research Preview","description":"Browse 53 current and 20 retained history records across 55 coding-agent surfaces, with exact identities, attributed publisher claims, lifecycle history and open unknowns.","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/","isPartOf":{"@type":"WebSite","name":"Agent Evidence Catalog","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/"}}</script>
-    <link rel="stylesheet" href="styles.css?v=2026-08-04-density-pass">
+    <link rel="stylesheet" href="styles.css?v=2026-08-10-compare-mvp-3">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to records</a>
     <header class="site-header">
       <a class="brand" href="../index.html">Agent Evidence Catalog</a>
       <nav aria-label="Research preview navigation">
-        <a aria-current="page" href="index.html">Research preview</a>
-        <a href="../catalog-classic.html">Synthetic reference</a>
+        <a href="compare.html">Compare claims</a>
+        <a aria-current="page" href="index.html">Catalog</a>
+        <a href="../RESEARCH_PREVIEW.md">Method</a>
+        <a href="../ROADMAP.md">Lifecycle</a>
       </nav>
     </header>
 
@@ -37,6 +39,10 @@
         <p class="eyebrow">For researchers, builders and maintainers · as of 10 August 2026</p>
         <h1 id="preview-title">What official sources say about current coding agents.</h1>
         <p class="lede">Find the exact current version or service surface, see which publisher claims apply to it and inspect what remains unknown. This is a research index, not an agent test or buying guide.</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="compare.html">Compare agent claims</a>
+          <a class="secondary-action" href="#catalog-controls">Browse current agents</a>
+        </div>
         <p class="quick-start"><strong>Fastest path:</strong> Search for a product, confirm its current identity and boundary note, then inspect the attributed sources.</p>
         <div id="catalog-controls" class="controls hero-controls" aria-label="Current record filters">
           <label>
@@ -53,6 +59,7 @@
             </select>
           </label>
         </div>
+        <div id="selectionStatus" class="comparison-status" role="status" aria-live="polite" hidden></div>
         <p class="filter-scope">Filters apply to current records. The separate history section stays collapsed until you open it.</p>
         <div class="boundary-row" aria-label="Research boundaries">
           <span>Publisher sources only</span>
@@ -114,7 +121,13 @@
     </footer>
 
     <noscript><p class="noscript">JavaScript is required for the current/history presentation. The machine-readable data remains available at <a href="catalog.json">catalog.json</a>.</p></noscript>
+    <div id="selectionTray" class="selection-tray" hidden>
+      <div id="trayChips" class="selection-tray-chips" aria-label="Selected records"></div>
+      <p id="trayCount" class="selection-tray-count"></p>
+      <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected claims</button>
+    </div>
     <script src="data.js?v=2026-08-04-v01"></script>
-    <script src="app.js?v=2026-08-04-density-pass"></script>
+    <script src="comparison-core.js?v=2026-08-10-compare-mvp"></script>
+    <script src="app.js?v=2026-08-10-compare-mvp"></script>
   </body>
 </html>

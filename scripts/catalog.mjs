@@ -278,14 +278,16 @@ function renderRecordDetail(record, preview, lifecycle) {
     <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
     <meta name="twitter:description" content="${escapeHtml(pageDescription)}">
     <script type="application/ld+json">${pageStructuredData}</script>
-    <link rel="stylesheet" href="../styles.css?v=2026-08-04-density-pass">
+    <link rel="stylesheet" href="../styles.css?v=2026-08-10-compare-mvp-3">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to record</a>
     <header class="site-header">
       <a class="brand" href="../../index.html">Agent Evidence Catalog</a>
       <nav aria-label="Record navigation">
-        <a data-catalog-return href="../index.html">Research preview</a>
+        <a data-compare-return href="../compare.html">Compare claims</a>
+        <a data-catalog-return href="../index.html">Catalog</a>
+        <a href="../../RESEARCH_PREVIEW.md">Method</a>
       </nav>
     </header>
 
@@ -304,6 +306,11 @@ function renderRecordDetail(record, preview, lifecycle) {
           <div><dt>Record coverage</dt><dd>${escapeHtml(record.claims.length)} publisher claims · ${escapeHtml(record.sources.length)} named sources · 0 independent tests</dd></div>
         </dl>
         <p class="detail-status"><strong>Lifecycle note:</strong> ${escapeHtml(selected.note)}</p>
+        <div class="detail-actions">
+          <button class="primary-action" type="button" data-add-record-to-compare data-record-id="${escapeHtml(recordId)}" data-record-name="${escapeHtml(summary.name)}">Add exact record to compare</button>
+          <a data-compare-return href="../compare.html">Open comparison picker</a>
+        </div>
+        <div id="selectionStatus" class="comparison-status" role="status" aria-live="polite" hidden></div>
       </section>
 
       <nav class="detail-section-nav" aria-label="Record sections">
@@ -399,7 +406,14 @@ function renderRecordDetail(record, preview, lifecycle) {
       <p>Static research artifact. Inclusion is not endorsement; absence is not an adverse finding.</p>
       <p><a data-catalog-return href="../index.html">Back to catalog</a> · <a href="${rawJson}">Raw JSON</a> · <a href="../../RESEARCH_PREVIEW.md">Method</a> · <a href="../../CORRECTIONS.md">Corrections</a></p>
     </footer>
-    <script src="../record-detail.js?v=2026-08-04-density-pass"></script>
+    <div id="selectionTray" class="selection-tray" hidden>
+      <div id="trayChips" class="selection-tray-chips" aria-label="Selected records"></div>
+      <p id="trayCount" class="selection-tray-count"></p>
+      <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected claims</button>
+    </div>
+    <script src="../data.js?v=2026-08-10-compare-mvp"></script>
+    <script src="../comparison-core.js?v=2026-08-10-compare-mvp"></script>
+    <script src="../record-detail.js?v=2026-08-10-compare-mvp"></script>
   </body>
 </html>
 `;
@@ -830,7 +844,7 @@ async function commandBuild() {
   const safeJson = JSON.stringify(profiles).replaceAll("<", "\\u003c");
   await writeFile(join(DIST, "catalog-data.js"), `window.CATALOG_PROFILES = ${safeJson};\n`, "utf8");
   for (const item of loaded) await copyFile(join(CATALOG, item.name), join(DIST, "records", item.name));
-  for (const source of ["index.html", "styles.css", "app.js", "record-detail.js"]) {
+  for (const source of ["index.html", "compare.html", "styles.css", "app.js", "comparison-core.js", "compare.js", "record-detail.js"]) {
     await copyFile(join(ROOT, "site", "research-preview", source), join(DIST, "research-preview", source));
   }
   const researchPreviewSource = join(ROOT, "drafts", "real-agent-catalog", "research-preview", "catalog.json");
@@ -864,6 +878,7 @@ async function commandBuild() {
   const humanReadableUrls = [
     CANONICAL_BASE_URL,
     `${CANONICAL_BASE_URL}research-preview/`,
+    `${CANONICAL_BASE_URL}research-preview/compare.html`,
     ...recordDetails.map((record) => `${CANONICAL_BASE_URL}${record.entryPoint}`)
   ].sort((left, right) => left.localeCompare(right));
   const robotsRaw = `User-agent: *\nAllow: /\n\nSitemap: ${CANONICAL_BASE_URL}sitemap.xml\n`;
@@ -902,6 +917,17 @@ async function commandBuild() {
       recordsPresentedIncludingHistory: researchPreview.counts.recordsPresentedIncludingHistory,
       independentTestsCredited: researchPreview.counts.independentTestsCredited,
       openIntake: researchPreview.boundaries.openIntake,
+      comparison: {
+        entryPoint: "research-preview/compare.html",
+        htmlSha256: createHash("sha256").update(await readFile(join(DIST, "research-preview", "compare.html"))).digest("hex"),
+        projector: "research-preview/comparison-core.js",
+        projectorSha256: createHash("sha256").update(await readFile(join(DIST, "research-preview", "comparison-core.js"))).digest("hex"),
+        app: "research-preview/compare.js",
+        appSha256: createHash("sha256").update(await readFile(join(DIST, "research-preview", "compare.js"))).digest("hex"),
+        stateStorage: "url-and-memory-only",
+        maximumRecords: 4,
+        claimAlignment: "exact-accepted-category-string"
+      },
       recordDetails: {
         count: recordDetails.length,
         records: recordDetails

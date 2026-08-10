@@ -130,6 +130,21 @@ h3 { font-size: 17px; line-height: 1.25; }
 .compare-intro > p { margin-bottom: 8px; color: var(--muted); font-size: 16px; }
 
 .text-link { font-weight: 650; text-underline-offset: 3px; }
+.primary-cta,
+.secondary-cta {
+  min-height: 44px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--blue);
+  border-radius: 6px;
+  font-weight: 750;
+  text-decoration: none;
+}
+.primary-cta { background: var(--blue); color: white; }
+.primary-cta:hover { background: var(--blue-dark); color: white; }
+.secondary-cta { background: white; color: var(--blue); }
 
 .catalog-controls {
   display: grid;

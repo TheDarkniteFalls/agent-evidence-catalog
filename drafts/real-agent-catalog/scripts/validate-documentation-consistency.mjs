@@ -37,7 +37,9 @@ for (const phrase of [
   "zero independent-test credit",
   "intake is not open",
   "researchers, builders and maintainers",
-  "not a buying guide"
+  "not a buying guide",
+  "research-preview/compare.html",
+  "accepted category strings are exactly equal"
 ]) assert(documents.root.includes(phrase), `Root README is missing ${phrase}`);
 
 for (const phrase of [
@@ -46,7 +48,10 @@ for (const phrase of [
   "zero independent tests",
   "Codex CLI 0.147.0",
   "primary readers are researchers, builders and maintainers",
-  "fastest path is to search for a product"
+  "evidence-exact comparison route",
+  "Comparison boundary",
+  "rawRecord.claim.category",
+  "Record unavailable"
 ]) assert(documents.method.includes(phrase), `Research-preview method is missing ${phrase}`);
 
 for (const phrase of ["55-surface currentness receipt", "Every accepted surface was rechecked", "Twelve newer exact identities"]) {
@@ -107,13 +112,20 @@ for (const name of ["RESEARCH_PREVIEW.md", "PUBLICATION_READINESS.md", "GOVERNAN
 const siteHtml = await read("site/research-preview/index.html");
 const distHtml = await read("dist/research-preview/index.html");
 assert.equal(distHtml, siteHtml, "Built research-preview HTML differs from source");
+for (const file of ["compare.html", "comparison-core.js", "compare.js"]) {
+  assert.equal(await read(`dist/research-preview/${file}`), await read(`site/research-preview/${file}`), `Built ${file} differs from its source`);
+}
 const landingHtml = await read("site/index.html");
 assert.equal(await read("dist/index.html"), landingHtml, "Built landing HTML differs from source");
 assert(landingHtml.includes("Research Preview v0.1."));
 assert(landingHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/"'));
 assert(siteHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/"'));
-assert(landingHtml.includes('href="research-preview/"'));
-assert(landingHtml.includes('href="catalog-classic.html">Synthetic reference'));
+assert((await read("site/research-preview/compare.html")).includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html"'));
+assert(landingHtml.includes('<base href="./research-preview/">'));
+assert(landingHtml.includes('<a aria-current="page" href="compare.html">Compare claims</a>'));
+assert(landingHtml.includes('data-catalog-return href="index.html"'));
+assert(landingHtml.includes('href="../catalog-classic.html"'));
+assert(landingHtml.includes("secondary synthetic reference"));
 for (const target of ["../RESEARCH_PREVIEW.md", "../PUBLICATION_READINESS.md", "../ROADMAP.md", "../CORRECTIONS.md"]) {
   assert(siteHtml.includes(`href="${target}"`), `Preview footer is missing ${target}`);
   await access(path.resolve(packageRoot, "dist/research-preview", target));

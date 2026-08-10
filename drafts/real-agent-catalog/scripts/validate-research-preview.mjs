@@ -161,6 +161,9 @@ visit(preview);
 
 const siteHtml = await readFile(path.join(packageRoot, "site", "research-preview", "index.html"), "utf8");
 const siteApp = await readFile(path.join(packageRoot, "site", "research-preview", "app.js"), "utf8");
+const comparisonHtml = await readFile(path.join(packageRoot, "site", "research-preview", "compare.html"), "utf8");
+const comparisonCore = await readFile(path.join(packageRoot, "site", "research-preview", "comparison-core.js"), "utf8");
+const comparisonApp = await readFile(path.join(packageRoot, "site", "research-preview", "compare.js"), "utf8");
 const recordDetailApp = await readFile(path.join(packageRoot, "site", "research-preview", "record-detail.js"), "utf8");
 assert(siteHtml.includes('id="currentRecords"'));
 assert(siteHtml.includes('id="historyRecords" class="record-grid history-grid" hidden'));
@@ -170,6 +173,8 @@ assert(siteHtml.includes("For researchers, builders and maintainers"));
 assert(siteHtml.includes("Selected, not comprehensive"));
 assert(siteHtml.includes("Fastest path:"));
 assert(siteHtml.includes("current as of the review date—not observed runtime behavior"));
+assert(siteHtml.includes('href="compare.html">Compare agent claims</a>'));
+assert(siteHtml.includes('id="selectionTray"'));
 assert(!siteHtml.includes('id="releaseGate"'));
 assert(!siteApp.includes("requiredConsecutiveDays"));
 assert(siteApp.includes("surface.currentRecord").valueOf());
@@ -182,7 +187,22 @@ assert(!siteApp.includes("detailPilot"));
 assert(siteApp.includes('new URLSearchParams(window.location.search)'));
 assert(siteApp.includes('detailLink.href = `records/${encodeURIComponent(record.recordId)}.html${catalogState()}`'));
 assert(siteApp.includes('window.history.replaceState'));
+assert(siteApp.includes('"Add to compare"'));
+assert(siteApp.includes('params.set("agents", selectedIds.join(","))'));
+assert(comparisonHtml.includes("Compare agent claims, source by source."));
+assert(comparisonHtml.includes("Publisher claims only.</strong> No ranking, recommendation or independent-test result."));
+assert(comparisonHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html"'));
+assert(comparisonHtml.includes('id="claimFilter"'));
+assert(comparisonHtml.includes('id="differencesOnly"'));
+assert(comparisonCore.includes("rawRecord.claim.category"));
+assert(comparisonCore.includes("__RECORD_UNAVAILABLE__"));
+assert(comparisonApp.includes("Record unavailable. The committed JSON could not be loaded; no evidence inference is made."));
+assert(comparisonApp.includes("No accepted claim under this exact category. This is not evidence that the capability is absent."));
+assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"), "utf8"), comparisonHtml);
+assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "comparison-core.js"), "utf8"), comparisonCore);
+assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.js"), "utf8"), comparisonApp);
 assert(recordDetailApp.includes('[data-catalog-return]'));
+assert(recordDetailApp.includes('[data-compare-return]'));
 assert(recordDetailApp.includes('[data-record-detail-link]'));
 assert(recordDetailApp.includes('["local", "hybrid", "hosted"].includes(delivery)'));
 assert.equal(
@@ -206,6 +226,17 @@ const expectedDetailHtmlFiles = preview.previewRecords.map((record) => `${record
 assert.deepEqual(detailHtmlFiles, expectedDetailHtmlFiles, "Every projected record must have exactly one human-readable detail page");
 assert.equal(buildManifest.researchPreview.recordDetails.count, 73);
 assert.equal(buildManifest.researchPreview.recordDetails.records.length, 73);
+assert.deepEqual(buildManifest.researchPreview.comparison, {
+  entryPoint: "research-preview/compare.html",
+  htmlSha256: sha256(comparisonHtml),
+  projector: "research-preview/comparison-core.js",
+  projectorSha256: sha256(comparisonCore),
+  app: "research-preview/compare.js",
+  appSha256: sha256(comparisonApp),
+  stateStorage: "url-and-memory-only",
+  maximumRecords: 4,
+  claimAlignment: "exact-accepted-category-string"
+});
 const manifestDetailsById = new Map(buildManifest.researchPreview.recordDetails.records.map((entry) => [entry.recordId, entry]));
 assert.equal(manifestDetailsById.size, 73, "Human-readable record-detail manifest IDs must be unique");
 
@@ -246,7 +277,9 @@ for (const summary of preview.previewRecords) {
   const rawAction = detailHtml.indexOf(`class="secondary-link" href="${summary.recordId}.json">Raw JSON</a>`, sectionIndex);
   assert(sectionIndex >= 0 && claimsJump > sectionIndex && rawAction > claimsJump, `${summary.recordId} must keep raw JSON secondary to human-readable section navigation`);
   assert(detailHtml.includes('data-catalog-return href="../index.html"'), `${summary.recordId} omitted catalog return-state hooks`);
-  assert(detailHtml.includes('../record-detail.js?v=2026-08-04-density-pass'), `${summary.recordId} omitted shared record navigation logic`);
+  assert(detailHtml.includes('data-compare-return href="../compare.html"'), `${summary.recordId} omitted comparison return-state hooks`);
+  assert(detailHtml.includes(`data-add-record-to-compare data-record-id="${escapeHtml(summary.recordId)}"`), `${summary.recordId} omitted its exact-record comparison control`);
+  assert(detailHtml.includes('../record-detail.js?v=2026-08-10-compare-mvp'), `${summary.recordId} omitted shared record navigation logic`);
   if (!summary.release.version) assert(!detailHtml.includes(`${displayRelease} · ${plainLabel(summary.release.scope)}`), `${summary.recordId} repeated its rolling-service scope`);
   assert.equal((detailHtml.match(/class="claim-item"/g) ?? []).length, record.claims.length, `${summary.recordId} claim count drift`);
   assert.equal((detailHtml.match(/data-source-id=/g) ?? []).length, record.sources.length, `${summary.recordId} source count drift`);
@@ -282,4 +315,5 @@ console.log("PASS current-default research preview presents all 53 current recor
 console.log("PASS Codex 0.147.0 is integrated as the current same-surface successor while 0.146.0 and 0.90.0 remain preserved in history");
 console.log("PASS static current-default presentation and collapsed explicit-history control match the source dataset");
 console.log("PASS one deterministic record-agnostic template presents all 73 records with every claim, official source link, unknown, limitation and reciprocal lifecycle link preserved");
-console.log("PASS compact record identity, section navigation and catalog search/delivery return state are shared across all 73 pages");
+console.log("PASS evidence-exact comparison route, URL-only state and current-record picker are copied through the deterministic build");
+console.log("PASS compact record identity, section navigation and catalog search/delivery/comparison return state are shared across all 73 pages");

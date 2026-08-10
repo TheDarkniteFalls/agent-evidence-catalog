@@ -12,11 +12,13 @@ apply, which identity is current, and what remains unknown?
 
 The primary readers are researchers, builders and maintainers who need to
 establish exact product identity and source boundaries before comparing claims
-or planning deeper evaluation. The fastest path is to search for a product,
+or planning deeper evaluation. The public root opens the
+evidence-exact comparison route directly. Select two current records or search for one product,
 confirm its current version or rolling-service identity and lifecycle note,
-then open the JSON record to inspect its attributed claims, sources,
-applicability boundaries and unknowns. History is available separately when an
-older version or identity conflict matters.
+then open its human-readable record to inspect attributed claims, sources,
+applicability boundaries and unknowns. The catalog remains one navigation step
+away; history is available separately when an older version or identity
+conflict matters, and raw JSON remains secondary.
 
 It is not an agent test, benchmark, certification, ranking, recommendation,
 procurement guide, or general safety assessment. No represented agent was
@@ -41,6 +43,31 @@ no credit.
 - A watcher change is a human-review signal, never new evidence or an automatic
   lifecycle transition.
 
+## Comparison boundary
+
+The comparison route accepts an ordered selection of two to four exact record
+IDs. Its normal picker exposes the 53 current records; retained historical and
+superseded records remain valid when supplied by a record page or shared URL.
+Selection, claim focus and the differences toggle stay in the URL and browser
+memory only. The route uses no cookies, local storage, analytics, tracking,
+server state or default selection.
+
+The matrix begins with universal record facts and then forms the union of the
+selected records' existing `rawRecord.claim.category` strings. Claims align
+only when those accepted strings are exactly equal. Every accepted statement,
+applicability boundary and official source relationship is projected from the
+selected committed record JSON; no synonym expansion, capability taxonomy,
+suitability logic or second comparison datastore is introduced. An empty cell
+means only that the record has no accepted claim under that exact category. It
+is not evidence that the capability is absent. A record-load failure is shown
+as `Record unavailable` and never converted into a negative finding.
+
+`Show only differences` is mechanical: a fixed fact disappears only when all
+displayed values are identical, and a claim row disappears only when every
+selected record has the same sorted statement, applicability and source-URL
+tuples. Coverage counts describe documentation, not product quality,
+capability, popularity or fit.
+
 ## Data flow
 
 The accepted dossiers, raw claims, generated records, discovery layers,
@@ -58,7 +85,8 @@ artifacts. The research preview adds a derived projection:
 The machine-readable source is
 `drafts/real-agent-catalog/research-preview/catalog.json`. The static build
 copies only that projection and its 73 presentable record files to
-`dist/research-preview/`.
+`dist/research-preview/`. The comparison projector loads only the selected
+committed record files at runtime and does not modify that projection.
 
 ## Published position
 

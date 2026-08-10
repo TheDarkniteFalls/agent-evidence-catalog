@@ -3,200 +3,122 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Research coding agents without starting from scratch: verify publisher claims, avoid stale assumptions and see what still needs testing.">
+    <base href="./research-preview/">
+    <meta name="description" content="Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.">
     <meta name="robots" content="index,follow">
-    <title>Research Coding Agents from Official Sources · Agent Evidence Catalog</title>
+    <title>Compare Coding-Agent Claims and Sources · Agent Evidence Catalog</title>
     <link rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Agent Evidence Catalog">
-    <meta property="og:title" content="Research Coding Agents from Official Sources · Agent Evidence Catalog">
-    <meta property="og:description" content="Research coding agents without starting from scratch: verify publisher claims, avoid stale assumptions and see what still needs testing.">
+    <meta property="og:title" content="Compare Coding-Agent Claims and Sources · Agent Evidence Catalog">
+    <meta property="og:description" content="Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.">
     <meta property="og:url" content="https://thedarknitefalls.github.io/agent-evidence-catalog/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Research Coding Agents from Official Sources · Agent Evidence Catalog">
-    <meta name="twitter:description" content="Research coding agents without starting from scratch: verify publisher claims, avoid stale assumptions and see what still needs testing.">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Agent Evidence Catalog","description":"Research coding agents without starting from scratch: verify publisher claims, avoid stale assumptions and see what still needs testing.","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/"}</script>
-    <link rel="stylesheet" href="styles.css?v=preview-v01">
-    <style>
-      .catalog-teaser { margin: -8px 0 46px; }
-      .catalog-teaser-heading { margin-bottom: 14px; display: flex; align-items: end; justify-content: space-between; gap: 28px; }
-      .catalog-teaser-heading h2 { margin-bottom: 4px; }
-      .catalog-teaser-heading p:not(.eyebrow) { max-width: 860px; margin-bottom: 0; color: var(--muted); }
-      .catalog-teaser-heading > a { flex: 0 0 auto; }
-      .catalog-teaser-shell { border: 1px solid var(--line-strong); }
-      .catalog-teaser-mobile-hint { display: none; }
-      .catalog-teaser-table { min-width: 930px; table-layout: fixed; }
-      .catalog-teaser-table th,
-      .catalog-teaser-table td { padding: 11px 14px; border-right: 1px solid var(--line); font-size: 12px; vertical-align: middle; }
-      .catalog-teaser-table tr > *:last-child { border-right: 0; }
-      .catalog-teaser-table thead th { background: var(--surface-subtle); color: var(--blue-dark); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; }
-      .catalog-teaser-table thead th:nth-child(1) { width: 28%; }
-      .catalog-teaser-table thead th:nth-child(2) { width: 11%; }
-      .catalog-teaser-table thead th:nth-child(3),
-      .catalog-teaser-table thead th:nth-child(4),
-      .catalog-teaser-table thead th:nth-child(5) { width: 13%; }
-      .catalog-teaser-table thead th:nth-child(6) { width: 22%; }
-      .catalog-teaser-table tbody th { background: white; }
-      .catalog-teaser-table tbody th strong,
-      .catalog-teaser-table tbody th span { display: block; }
-      .catalog-teaser-table tbody th strong { font-size: 13px; }
-      .catalog-teaser-table tbody th span { margin-top: 2px; color: var(--muted); font-size: 11px; font-weight: 400; }
-      .catalog-teaser-table .metric-column,
-      .catalog-teaser-table .metric-value { text-align: center; }
-      .catalog-teaser-table .metric-value { color: var(--ink); font-size: 16px; font-weight: 760; }
-      .catalog-teaser-table td a { font-weight: 650; text-underline-offset: 3px; }
-      .catalog-teaser-boundary { margin: 0; padding: 10px 14px; border-top: 1px solid var(--line); background: var(--surface-subtle); color: var(--muted); font-size: 11px; }
-      @media (max-width: 720px) {
-        .catalog-teaser { margin-top: -4px; }
-        .catalog-teaser-heading { align-items: start; flex-direction: column; gap: 10px; }
-        .catalog-teaser-mobile-hint { margin: 0; padding: 9px 14px; border-bottom: 1px solid var(--line); display: block; background: var(--surface-subtle); color: var(--blue-dark); font-size: 11px; font-weight: 700; }
-        .catalog-teaser-table { min-width: 790px; }
-        .catalog-teaser-table tbody th { position: sticky; left: 0; z-index: 2; }
-      }
-    </style>
+    <meta name="twitter:title" content="Compare Coding-Agent Claims and Sources · Agent Evidence Catalog">
+    <meta name="twitter:description" content="Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Compare Coding-Agent Claims and Sources","description":"Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/","isPartOf":{"@type":"WebSite","name":"Agent Evidence Catalog","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/"}}</script>
+    <link rel="stylesheet" href="styles.css?v=2026-08-10-compare-mvp-4">
   </head>
-  <body data-page="release">
-    <a class="skip-link" href="#main">Skip to overview</a>
+  <body class="comparison-page">
+    <a class="skip-link" href="#main">Skip to comparison</a>
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Agent Evidence Catalog home">Agent Evidence Catalog</a>
-      <nav aria-label="Primary navigation">
-        <a class="active" href="research-preview/" aria-current="page">Research preview</a>
-        <a href="RESEARCH_PREVIEW.md">Method</a>
-        <a href="PUBLICATION_READINESS.md">Release status</a>
-        <a href="catalog-classic.html">Synthetic reference</a>
+      <a class="brand" href="../index.html">Agent Evidence Catalog</a>
+      <nav aria-label="Research preview navigation">
+        <a aria-current="page" href="compare.html">Compare claims</a>
+        <a data-catalog-return href="index.html">Catalog</a>
+        <a href="../RESEARCH_PREVIEW.md">Method</a>
+        <a href="../ROADMAP.md">Lifecycle</a>
       </nav>
     </header>
 
-    <aside class="synthetic-banner" aria-label="Research preview status">
-      <strong>Research Preview v0.1.</strong> Publisher-source research only. No represented agent was installed or run, and no independent-test credit is assigned.
+    <aside class="preview-banner" aria-label="Research preview status">
+      <strong>Research Preview v0.1.</strong> Publisher-source research only. No agent was installed or run, and no independent-test credit is assigned.
     </aside>
 
-    <main id="main">
-      <section class="intro" aria-labelledby="catalog-heading">
-        <p class="eyebrow">For researchers, builders and maintainers · reviewed 10 August 2026</p>
-        <h1 id="catalog-heading">Research coding agents without starting from scratch.</h1>
-        <p>See what each publisher actually claims, the exact product identity it applies to and the questions their sources leave unanswered—so you can discard stale assumptions and focus your own testing where it matters.</p>
-        <div class="intro-links">
-          <a class="text-link" href="research-preview/#catalog-controls">Find an agent and inspect the evidence <span aria-hidden="true">→</span></a>
-          <a class="quiet-link" href="RESEARCH_PREVIEW.md">See how the research is bounded</a>
+    <main id="main" class="comparison-main">
+      <section class="comparison-hero" aria-labelledby="comparison-title">
+        <p class="eyebrow">Evidence-exact comparison</p>
+        <h1 id="comparison-title">Compare agent claims, source by source.</h1>
+        <p class="lede">Select 2–4 exact records. Universal facts appear together; publisher claims align only when their accepted category strings are exactly equal.</p>
+        <p class="comparison-boundary"><strong>Publisher claims only.</strong> No ranking, recommendation or independent-test result.</p>
+      </section>
+
+      <section class="comparison-picker-shell" aria-labelledby="picker-heading">
+        <div class="comparison-picker">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="eyebrow">Current discovery set</p>
+              <h2 id="picker-heading">Select 2–4 exact records</h2>
+              <p>All 53 current records are available here. Historical records remain valid through record pages and shared URLs.</p>
+            </div>
+          </div>
+          <label class="picker-search">
+            <span>Find a current agent</span>
+            <input id="pickerSearch" type="search" placeholder="Agent, publisher, surface…" autocomplete="off">
+          </label>
+          <div id="pickerRecords" class="picker-records" role="list" aria-label="Current agent records"></div>
+          <p id="pickerEmpty" class="empty-state compact-empty" hidden>No current records match that search.</p>
+        </div>
+
+        <div class="selected-panel" aria-labelledby="selected-heading">
+          <div class="selected-panel-heading">
+            <div>
+              <p class="eyebrow">Ordered comparison</p>
+              <h2 id="selected-heading">Selected records <span id="selectedCount">(0 of 4)</span></h2>
+            </div>
+            <button id="clearSelection" class="text-button" type="button" hidden>Clear all</button>
+          </div>
+          <div id="selectedRecords" class="selected-records"></div>
+          <p id="selectionEmpty" class="selected-empty">No records selected. Choose any two current agents to begin.</p>
         </div>
       </section>
 
-      <section class="catalog-teaser" aria-labelledby="catalog-teaser-heading">
-        <div class="catalog-teaser-heading">
+      <div id="comparisonStatus" class="comparison-status" role="status" aria-live="polite"></div>
+
+      <section id="comparisonResults" class="comparison-results" aria-labelledby="results-heading" hidden>
+        <div class="comparison-tools">
+          <label>
+            <span>Focus accepted claims</span>
+            <input id="claimFilter" type="search" placeholder="Exact category, statement, applicability or source title…" autocomplete="off">
+          </label>
+          <label class="differences-toggle">
+            <input id="differencesOnly" type="checkbox">
+            <span>Show only differences</span>
+          </label>
+        </div>
+        <div class="section-heading compact-heading">
           <div>
-            <p class="eyebrow">A glimpse of the catalog</p>
-            <h2 id="catalog-teaser-heading">See the research before you search.</h2>
-            <p>These four current records show the comparison context available across exact clients and rolling hosted agents. They are examples of the catalog's range—not a popularity list or product ranking.</p>
+            <p class="eyebrow">Side-by-side evidence</p>
+            <h2 id="results-heading">Selected exact records</h2>
+            <p>Coverage counts describe documentation, not product quality or capability.</p>
           </div>
-          <a class="text-link" href="research-preview/#catalog-controls">Browse all 53 current records <span aria-hidden="true">→</span></a>
         </div>
-        <div class="catalog-teaser-shell">
-          <p class="catalog-teaser-mobile-hint">Swipe to see evidence counts and record links <span aria-hidden="true">→</span></p>
-          <div class="table-scroll" tabindex="0" aria-label="Representative current records; horizontally scrollable on small screens">
-            <table class="catalog-teaser-table">
-              <caption class="sr-only">Representative current agent records and the evidence context available in each record</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Agent and current identity</th>
-                  <th scope="col">Delivery</th>
-                  <th class="metric-column" scope="col">Accepted claims</th>
-                  <th class="metric-column" scope="col">Named sources</th>
-                  <th class="metric-column" scope="col">Unresolved unknowns</th>
-                  <th scope="col">Human-readable record</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row"><strong>Qwen Code CLI</strong><span>Exact version 0.21.8</span></th>
-                  <td>Hybrid</td>
-                  <td class="metric-value">2</td>
-                  <td class="metric-value">2</td>
-                  <td class="metric-value">4</td>
-                  <td><a href="research-preview/records/com.alibaba.qwen-code.cli.0-21-8.html">Inspect record <span aria-hidden="true">→</span></a></td>
-                </tr>
-                <tr>
-                  <th scope="row"><strong>OpenAI Codex CLI</strong><span>Exact version 0.147.0</span></th>
-                  <td>Local</td>
-                  <td class="metric-value">12</td>
-                  <td class="metric-value">12</td>
-                  <td class="metric-value">15</td>
-                  <td><a href="research-preview/records/com.openai.codex.cli.0-147-0.html">Inspect record <span aria-hidden="true">→</span></a></td>
-                </tr>
-                <tr>
-                  <th scope="row"><strong>Claude Code CLI</strong><span>Exact version 2.1.226</span></th>
-                  <td>Hybrid</td>
-                  <td class="metric-value">8</td>
-                  <td class="metric-value">8</td>
-                  <td class="metric-value">9</td>
-                  <td><a href="research-preview/records/com.anthropic.claude-code.cli.2-1-226.html">Inspect record <span aria-hidden="true">→</span></a></td>
-                </tr>
-                <tr>
-                  <th scope="row"><strong>Cursor Cloud Agents</strong><span>Rolling service</span></th>
-                  <td>Hosted</td>
-                  <td class="metric-value">2</td>
-                  <td class="metric-value">2</td>
-                  <td class="metric-value">4</td>
-                  <td><a href="research-preview/records/com.cursor.cloud-agents.rolling.html">Inspect record <span aria-hidden="true">→</span></a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="catalog-teaser-boundary"><strong>How to read this:</strong> counts describe what each catalog record documents. More is not better, and these figures do not measure capability, quality, safety or popularity.</p>
-        </div>
+        <div id="comparisonMatrix" class="comparison-matrix-shell" tabindex="0" aria-label="Selected agent claims comparison; horizontally scrollable"></div>
+        <p id="noClaimMatches" class="empty-state" hidden>No accepted claim rows match that filter. This does not indicate capability absence.</p>
+        <div id="recordBoundaries" class="record-boundaries"></div>
       </section>
 
-      <section class="starting-points" aria-labelledby="starting-points-heading">
-        <div class="section-heading-row">
-          <div>
-            <h2 id="starting-points-heading">What this saves you</h2>
-            <p>A faster path from publisher language to a research starting point you can inspect for yourself.</p>
-          </div>
-        </div>
-        <div class="starting-point-list">
-          <article class="starting-point">
-            <div class="starting-point-top">
-              <p class="eyebrow">Avoid stale conclusions</p>
-              <h3><a href="research-preview/">Start with the current identity</a></h3>
-              <p>See which version or rolling service is current now, while replaced records remain available when history matters.</p>
-            </div>
-            <p class="starting-point-foot"><span>55 catalog surfaces</span><span>20 retained history records</span></p>
-          </article>
-          <article class="starting-point">
-            <div class="starting-point-top">
-              <p class="eyebrow">Verify claims faster</p>
-              <h3><a href="RESEARCH_PREVIEW.md">Go straight to the source</a></h3>
-              <p>Each admitted claim names its official source and keeps the version, configuration, platform, model and deployment boundary visible.</p>
-            </div>
-            <p class="starting-point-foot"><span>Named official sources</span><span>Applicability stays visible</span></p>
-          </article>
-          <article class="starting-point">
-            <div class="starting-point-top">
-              <p class="eyebrow">Focus your own testing</p>
-              <h3><a href="research-preview/">See what the sources do not establish</a></h3>
-              <p>Unknowns stay explicit, so you can test the gaps instead of rediscovering them—or mistaking silence for evidence.</p>
-            </div>
-            <p class="starting-point-foot"><span>Zero independent-test credit</span><span>No scores or rankings</span></p>
-          </article>
-        </div>
-      </section>
-
-      <section class="contribute-section" aria-labelledby="reading-heading">
-        <div>
-          <p class="eyebrow">Turn research into a next step</p>
-          <h2 id="reading-heading">Start with what is known. Test what is not.</h2>
-        </div>
-        <div class="contribute-copy">
-          <p>Search for a product and open its human-readable record. In a few minutes you can confirm the current identity, trace its publisher claims to named sources and see the unresolved boundaries that deserve deeper testing. Raw JSON remains available when you need it; history stays out of the way until an earlier release matters.</p>
-          <p><a class="text-link" href="PUBLICATION_READINESS.md">Review release status</a> · <a class="text-link" href="ROADMAP.md">Roadmap</a> · <a class="text-link" href="CORRECTIONS.md">Corrections</a></p>
-          <p>The earlier fictional catalog is retained as a <a class="text-link" href="catalog-classic.html">secondary synthetic reference</a>; it is not the v0.1 product.</p>
-        </div>
+      <section id="comparisonStart" class="comparison-start" aria-labelledby="start-heading">
+        <p class="eyebrow">Start comparing</p>
+        <h2 id="start-heading">Choose two records to build the matrix.</h2>
+        <p>Your ordered selection, claim focus and differences toggle stay in the URL. No cookies, local storage or tracking are used.</p>
       </section>
     </main>
 
     <footer>
       <p>Static research artifact. Inclusion is not endorsement; absence is not an adverse finding.</p>
-      <p><a href="LICENSE">Apache-2.0</a> · <a href="CONTRIBUTING.md">Closed-intake contribution boundary</a> · <a href="SECURITY.md">Security boundary</a></p>
+      <p><a data-catalog-return href="index.html">Browse the catalog</a> · <a href="../RESEARCH_PREVIEW.md">Method</a> · <a href="../CORRECTIONS.md">Corrections</a> · <a href="../catalog-classic.html">secondary synthetic reference</a></p>
     </footer>
+
+    <div id="selectionTray" class="selection-tray" hidden>
+      <div id="trayChips" class="selection-tray-chips" aria-label="Selected records"></div>
+      <p id="trayCount" class="selection-tray-count"></p>
+      <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected claims</button>
+    </div>
+
+    <noscript><p class="noscript">JavaScript is required for the comparison interface. Human-readable records remain available from the <a href="index.html">research catalog</a>.</p></noscript>
+    <script src="data.js?v=2026-08-10-compare-mvp"></script>
+    <script src="comparison-core.js?v=2026-08-10-compare-mvp"></script>
+    <script src="compare.js?v=2026-08-10-compare-mvp"></script>
   </body>
 </html>
