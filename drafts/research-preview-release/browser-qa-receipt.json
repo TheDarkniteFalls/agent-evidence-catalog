@@ -1,18 +1,18 @@
 {
   "schemaVersion": "research-preview-browser-qa/0.2",
-  "asOf": "2026-08-10",
-  "checkedAt": "2026-08-10T09:52:51.849Z",
+  "asOf": "2026-08-11",
+  "checkedAt": "2026-08-11T07:21:11.943Z",
   "sourceDigests": {
-    "landingHtmlSha256": "42ea6c38208913e74c48778e30edbcdaab1c367ce5d65176d0070a41e8876001",
-    "previewHtmlSha256": "660863acf5c0b3c62aa57d9d8676efcc970e685ddca8c93973d9b8f81bf0018b",
+    "landingHtmlSha256": "2fe96c2f1e8d83a1bf1c45e7a9073cf8bc937d430ad16d9f49299fe89375e55d",
+    "previewHtmlSha256": "64ae8c7eda611b709872f28d128f457f72ce8d07406bea97f51595240cd4eb7b",
     "previewDataSha256": "70b87c2eaa8ff7159f8903891c4f408014da76d1f9d9b8a3499eb55179042ea0",
     "previewAppSha256": "c9dac274b251e9c1f5d32b6d8fbec64f0a7819f3d020123dadd00d957a6c1379",
-    "comparisonHtmlSha256": "008704ee340ddb28dca4864516ae6906ed0909ee6621d3d57fa6da9a1e9014a2",
+    "comparisonHtmlSha256": "aa2e006b36ccb7ace834735c7c3804e92cb74b2b158fee34aa5b977158635cb9",
     "comparisonCoreSha256": "80607e3b19e64fd54f9649d32321553ba63472fe6e6626dd56f1a7c4908accb4",
-    "comparisonAppSha256": "503c2edf7b7e376dfd749316f58f1935e1d6c49338cb7a448b0b3167f1becaed",
+    "comparisonAppSha256": "6edc3785ced6736b40b6ecfd3512210fdff8d5430c381173a8fcf91f96eca54d",
     "recordDetailAppSha256": "1f884a3c18fa8bafeda1a24e80b574ce010d097bb7de3786b2ad7226d76f0611",
-    "previewStylesSha256": "a1450a2acf9589840101dc21b26d25ea6aace7b40736c82287bbd90faf8e0e22",
-    "recordDetailsManifestSha256": "c3c3feb16777568302795d3a74a3c5cfdcba4755b2df26262dcb1b77db1176f0"
+    "previewStylesSha256": "43d64248fb700f44b801269d259b0035558b438d6ee7c649e6cd8a5eee7a1f98",
+    "recordDetailsManifestSha256": "99761b9d5ba4b61f7c42ea15b247cb4f9e32afa8819063fe7d29c91a59567140"
   },
   "viewportEnvironment": {
     "desktopDevicePixelRatio": 0.75,
@@ -75,14 +75,14 @@
             "label": "desktop-compact",
             "requested": { "width": 960, "height": 540 },
             "observedCss": { "width": 1280, "height": 720 },
-            "comparisonCtaTopPx": 418,
-            "comparisonCtaBottomPx": 460,
+            "comparisonCtaTopPx": 396.97,
+            "comparisonCtaBottomPx": 438.97,
             "comparisonCtaWithinFirstViewport": true,
-            "searchTopPx": 541,
-            "searchBottomPx": 587,
+            "searchTopPx": 520.26,
+            "searchBottomPx": 566.26,
             "searchWithinFirstViewport": true,
-            "deliveryTopPx": 541,
-            "deliveryBottomPx": 587,
+            "deliveryTopPx": 520.26,
+            "deliveryBottomPx": 566.26,
             "deliveryWithinFirstViewport": true,
             "horizontalOverflow": false
           },
@@ -90,13 +90,13 @@
             "label": "mobile-compact",
             "requested": { "width": 293, "height": 633 },
             "observedCss": { "width": 391, "height": 844 },
-            "comparisonCtaTopPx": 544,
-            "comparisonCtaBottomPx": 592,
+            "comparisonCtaTopPx": 455.21,
+            "comparisonCtaBottomPx": 503.04,
             "comparisonCtaWithinFirstViewport": true,
-            "searchTopPx": 716,
-            "searchBottomPx": 762,
-            "deliveryTopPx": 798,
-            "deliveryBottomPx": 844,
+            "searchTopPx": 627.73,
+            "searchBottomPx": 673.73,
+            "deliveryTopPx": 709.32,
+            "deliveryBottomPx": 755.32,
             "searchWithinFirstViewport": true,
             "deliveryWithinFirstViewport": true,
             "horizontalOverflow": false
@@ -104,8 +104,8 @@
         ],
         "anchoredEntry": {
           "observedCss": { "width": 1920, "height": 1200 },
-          "searchTopPx": 81,
-          "searchBottomPx": 127,
+          "searchTopPx": 81.59,
+          "searchBottomPx": 127.59,
           "searchWithinFirstViewport": true
         }
       },
@@ -172,6 +172,26 @@
         "matrixScrollable": true,
         "stickyRowLabelAligned": true,
         "trayVisibleWithoutChipClipping": true
+      },
+      "approvedVisualFidelity": {
+        "desktop": {
+          "observedCss": { "width": 1092, "height": 1024 },
+          "headerHeightPx": 52,
+          "matrixTopPx": 540.2,
+          "bodyHorizontalOverflow": false,
+          "stickyTrayHeightPx": 66
+        },
+        "mobile": {
+          "observedCss": { "width": 424, "height": 1024 },
+          "headerHeightPx": 52,
+          "matrixTopPx": 720.3,
+          "bodyHorizontalOverflow": false,
+          "selectedCardsBottomPx": 592.4,
+          "stickyTrayHeightPx": 96,
+          "hamburgerVisible": true
+        },
+        "copyMatchesApprovedReference": true,
+        "realAcceptedProjectionPreserved": true
       },
       "invalidUrlState": {
         "unknownIdsReported": true,
@@ -309,8 +329,8 @@
         "namedSources": 2,
         "unresolvedUnknowns": 4,
         "sectionIndexLinks": 7,
-        "mobileCompactIdentityTopPx": 236.42,
-        "mobileCompactIdentityBottomPx": 360.34
+        "mobileCompactIdentityTopPx": 185.76,
+        "mobileCompactIdentityBottomPx": 325.89
       }
     },
     "discoveryMetadata": {
@@ -371,7 +391,7 @@
     "endpointHttpFailures": 0,
     "endpointSuccessStatus": 200,
     "currentLiveCheck": {
-      "checkedAt": "2026-08-10T09:52:51.849Z",
+      "checkedAt": "2026-08-11T07:21:11.943Z",
       "method": "Read-only GET with redirects",
       "recordsChecked": 73,
       "uniqueEndpointsChecked": 223,

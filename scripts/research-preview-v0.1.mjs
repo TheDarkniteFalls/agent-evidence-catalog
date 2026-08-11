@@ -276,7 +276,7 @@ async function validateBrowserReceipt() {
   const expectedRecordIds = buildManifest.researchPreview.recordDetails.records.map((record) => record.recordId);
 
   assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.2");
-  assert.equal(receipt.asOf, "2026-08-10");
+  assert.equal(receipt.asOf, "2026-08-11");
   assert.doesNotThrow(() => new Date(receipt.checkedAt).toISOString());
   assert.equal(receipt.sourceDigests.landingHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "index.html"))));
   assert.equal(receipt.sourceDigests.previewHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"))));
@@ -347,14 +347,14 @@ async function validateBrowserReceipt() {
         label: "desktop-compact",
         requested: { width: 960, height: 540 },
         observedCss: { width: 1280, height: 720 },
-        comparisonCtaTopPx: 418,
-        comparisonCtaBottomPx: 460,
+        comparisonCtaTopPx: 396.97,
+        comparisonCtaBottomPx: 438.97,
         comparisonCtaWithinFirstViewport: true,
-        searchTopPx: 541,
-        searchBottomPx: 587,
+        searchTopPx: 520.26,
+        searchBottomPx: 566.26,
         searchWithinFirstViewport: true,
-        deliveryTopPx: 541,
-        deliveryBottomPx: 587,
+        deliveryTopPx: 520.26,
+        deliveryBottomPx: 566.26,
         deliveryWithinFirstViewport: true,
         horizontalOverflow: false
       },
@@ -362,13 +362,13 @@ async function validateBrowserReceipt() {
         label: "mobile-compact",
         requested: { width: 293, height: 633 },
         observedCss: { width: 391, height: 844 },
-        comparisonCtaTopPx: 544,
-        comparisonCtaBottomPx: 592,
+        comparisonCtaTopPx: 455.21,
+        comparisonCtaBottomPx: 503.04,
         comparisonCtaWithinFirstViewport: true,
-        searchTopPx: 716,
-        searchBottomPx: 762,
-        deliveryTopPx: 798,
-        deliveryBottomPx: 844,
+        searchTopPx: 627.73,
+        searchBottomPx: 673.73,
+        deliveryTopPx: 709.32,
+        deliveryBottomPx: 755.32,
         searchWithinFirstViewport: true,
         deliveryWithinFirstViewport: true,
         horizontalOverflow: false
@@ -376,8 +376,8 @@ async function validateBrowserReceipt() {
     ],
     anchoredEntry: {
       observedCss: { width: 1920, height: 1200 },
-      searchTopPx: 81,
-      searchBottomPx: 127,
+      searchTopPx: 81.59,
+      searchBottomPx: 127.59,
       searchWithinFirstViewport: true
     }
   });
@@ -425,6 +425,26 @@ async function validateBrowserReceipt() {
     matrixScrollable: true,
     stickyRowLabelAligned: true,
     trayVisibleWithoutChipClipping: true
+  });
+  assert.deepEqual(receipt.journeys.comparison.approvedVisualFidelity, {
+    desktop: {
+      observedCss: { width: 1092, height: 1024 },
+      headerHeightPx: 52,
+      matrixTopPx: 540.2,
+      bodyHorizontalOverflow: false,
+      stickyTrayHeightPx: 66
+    },
+    mobile: {
+      observedCss: { width: 424, height: 1024 },
+      headerHeightPx: 52,
+      matrixTopPx: 720.3,
+      bodyHorizontalOverflow: false,
+      selectedCardsBottomPx: 592.4,
+      stickyTrayHeightPx: 96,
+      hamburgerVisible: true
+    },
+    copyMatchesApprovedReference: true,
+    realAcceptedProjectionPreserved: true
   });
   assert.deepEqual(receipt.journeys.comparison.invalidUrlState, {
     unknownIdsReported: true,
@@ -699,7 +719,8 @@ async function validateFirstScreenContract() {
   const catalog = await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8");
   const comparison = await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"), "utf8");
   assert(landing.includes('<base href="./research-preview/">'), "Root landing must resolve comparison assets through the research-preview base");
-  assert(landing.includes('<a aria-current="page" href="compare.html">Compare claims</a>'), "Root landing must make comparison the active first navigation item");
+  assert(landing.includes('<a aria-current="page" href="compare.html">Compare claims</a>'), "Root landing must make comparison the active navigation destination");
+  assert(landing.indexOf('<a data-catalog-return href="index.html">Catalog</a>') < landing.indexOf('<a aria-current="page" href="compare.html">Compare claims</a>'), "Root landing navigation must match the approved Catalog, Compare claims, Method, Lifecycle order");
   assert(landing.includes('id="pickerRecords"'), "Root landing must expose the current-record comparison picker directly");
   assert(landing.includes('id="comparisonMatrix"'), "Root landing must expose the evidence-exact comparison matrix directly");
   assert(catalog.includes('class="primary-action" href="compare.html">Compare agent claims</a>'), "Catalog first screen must expose the primary comparison CTA");
