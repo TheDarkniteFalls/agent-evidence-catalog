@@ -168,7 +168,7 @@
       const name = document.createElement("h3");
       name.textContent = record.name;
       const detail = document.createElement("p");
-      detail.textContent = `${versionLabel(record)} · ${record.recordId}`;
+      detail.textContent = versionLabel(record);
       copy.append(name, detail);
       const controls = document.createElement("div");
       controls.className = "selection-controls";
@@ -294,7 +294,9 @@
       position.textContent = String(index + 1);
       const link = document.createElement("a");
       link.href = recordHref(agent.recordId);
-      link.textContent = agent.summary.name;
+      link.textContent = agent.summary.release.version
+        ? `${agent.summary.name} v${agent.summary.release.version}`
+        : agent.summary.name;
       const identity = document.createElement("span");
       identity.textContent = `${versionLabel(agent.summary)} · ${agent.recordId}`;
       th.append(position, link, identity);

@@ -17,29 +17,38 @@
     <meta name="twitter:title" content="Compare Coding-Agent Claims and Sources · Agent Evidence Catalog">
     <meta name="twitter:description" content="Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Compare Coding-Agent Claims and Sources","description":"Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/","isPartOf":{"@type":"WebSite","name":"Agent Evidence Catalog","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/"}}</script>
-    <link rel="stylesheet" href="styles.css?v=2026-08-10-compare-mvp-4">
+    <link rel="stylesheet" href="styles.css?v=2026-08-11-compact-fidelity-1">
   </head>
   <body class="comparison-page">
     <a class="skip-link" href="#main">Skip to comparison</a>
     <header class="site-header">
       <a class="brand" href="../index.html">Agent Evidence Catalog</a>
       <nav aria-label="Research preview navigation">
-        <a aria-current="page" href="compare.html">Compare claims</a>
         <a data-catalog-return href="index.html">Catalog</a>
+        <a aria-current="page" href="compare.html">Compare claims</a>
         <a href="../RESEARCH_PREVIEW.md">Method</a>
         <a href="../ROADMAP.md">Lifecycle</a>
       </nav>
+      <details class="mobile-nav">
+        <summary class="mobile-nav-toggle" aria-label="Open navigation"><span class="mobile-nav-icon" aria-hidden="true"></span></summary>
+        <nav aria-label="Mobile research preview navigation">
+          <a data-catalog-return href="index.html">Catalog</a>
+          <a aria-current="page" href="compare.html">Compare claims</a>
+          <a href="../RESEARCH_PREVIEW.md">Method</a>
+          <a href="../ROADMAP.md">Lifecycle</a>
+        </nav>
+      </details>
     </header>
 
     <aside class="preview-banner" aria-label="Research preview status">
-      <strong>Research Preview v0.1.</strong> Publisher-source research only. No agent was installed or run, and no independent-test credit is assigned.
+      <strong>Research Preview v0.1.</strong> Publisher-source research only.
     </aside>
 
     <main id="main" class="comparison-main">
       <section class="comparison-hero" aria-labelledby="comparison-title">
         <p class="eyebrow">Evidence-exact comparison</p>
         <h1 id="comparison-title">Compare agent claims, source by source.</h1>
-        <p class="lede">Select 2–4 exact records. Universal facts appear together; publisher claims align only when their accepted category strings are exactly equal.</p>
+        <p class="lede">See the exact accepted publisher claims, the precise product identity they apply to and the official source.</p>
         <p class="comparison-boundary"><strong>Publisher claims only.</strong> No ranking, recommendation or independent-test result.</p>
       </section>
 
@@ -53,8 +62,8 @@
             </div>
           </div>
           <label class="picker-search">
-            <span>Find a current agent</span>
-            <input id="pickerSearch" type="search" placeholder="Agent, publisher, surface…" autocomplete="off">
+            <span class="sr-only">Find a current agent</span>
+            <input id="pickerSearch" type="search" placeholder="Search agents by name" autocomplete="off">
           </label>
           <div id="pickerRecords" class="picker-records" role="list" aria-label="Current agent records"></div>
           <p id="pickerEmpty" class="empty-state compact-empty" hidden>No current records match that search.</p>
@@ -79,14 +88,17 @@
         <div class="comparison-tools">
           <label>
             <span>Focus accepted claims</span>
-            <input id="claimFilter" type="search" placeholder="Exact category, statement, applicability or source title…" autocomplete="off">
+            <input id="claimFilter" type="search" placeholder="e.g., context window, model, environment, limits" autocomplete="off">
           </label>
-          <label class="differences-toggle">
-            <input id="differencesOnly" type="checkbox">
+          <div class="differences-field">
             <span>Show only differences</span>
-          </label>
+            <label class="differences-toggle">
+              <input id="differencesOnly" type="checkbox">
+              <span>Only show where claims differ</span>
+            </label>
+          </div>
         </div>
-        <div class="section-heading compact-heading">
+        <div class="sr-only">
           <div>
             <p class="eyebrow">Side-by-side evidence</p>
             <h2 id="results-heading">Selected exact records</h2>
@@ -119,6 +131,6 @@
     <noscript><p class="noscript">JavaScript is required for the comparison interface. Human-readable records remain available from the <a href="index.html">research catalog</a>.</p></noscript>
     <script src="data.js?v=2026-08-10-compare-mvp"></script>
     <script src="comparison-core.js?v=2026-08-10-compare-mvp"></script>
-    <script src="compare.js?v=2026-08-10-compare-mvp"></script>
+    <script src="compare.js?v=2026-08-11-compact-fidelity-1"></script>
   </body>
 </html>
