@@ -7,7 +7,7 @@
     "accepted-evidence-provenance": 669,
     "canonical-source": 77,
     "generated-publication-output": 209,
-    "release-control-artifact": 30,
+    "release-control-artifact": 31,
     "retained-experiment": 87
   },
   "entries": [
@@ -25,6 +25,12 @@
     },
     {
       "path": ".github/workflows/pages.yml",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Repository governance, release metadata, license or publication control."
+    },
+    {
+      "path": ".gitleaksignore",
       "classification": "release-control-artifact",
       "publicationBoundary": "git-research-or-source-only",
       "rationale": "Repository governance, release metadata, license or publication control."
