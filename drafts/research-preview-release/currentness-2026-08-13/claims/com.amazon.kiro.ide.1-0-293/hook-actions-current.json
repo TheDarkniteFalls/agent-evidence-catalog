@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.kiro.ide.hook-actions-current",
+  "slug": "hook-actions-current",
+  "subject": {
+    "id": "com.amazon.kiro.ide",
+    "name": "Kiro IDE",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Kiro IDE",
+      "slug": "aws-kiro-ide-1-0-293"
+    }
+  },
+  "claim": {
+    "category": "automation.event-trigger",
+    "statement": "Current Kiro hook documentation says configured events can trigger either an agent prompt or a local shell command, and that pre-tool or prompt-submit command failures can block the associated invocation."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://kiro.dev/docs/hooks/actions/",
+    "title": "Kiro hook actions",
+    "locator": "Agent Prompt action and Shell Command action",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "configured hook event",
+        "agent prompt action",
+        "shell command action",
+        "timeout",
+        "pre-tool blocking"
+      ]
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local IDE hook runtime"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "hook-action-change",
+      "trigger-schema-change"
+    ]
+  },
+  "limitations": [
+    "Hooks require explicit configuration and can invoke local commands outside any model call."
+  ],
+  "unknowns": [
+    "Hook trigger, action, prompt, command, file scope, timeout, exit status and enablement are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

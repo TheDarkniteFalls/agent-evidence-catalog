@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.no-sandbox-security-current",
+  "slug": "no-sandbox-security-current",
+  "subject": {
+    "id": "com.anomaly.opencode.cli",
+    "name": "OpenCode CLI",
+    "publisher": "Anomaly Innovations, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "OpenCode CLI/TUI",
+      "slug": "opencode-cli-1-18-18"
+    }
+  },
+  "claim": {
+    "category": "authority.security-limitation",
+    "statement": "OpenCode's current security policy explicitly says the local assistant is not sandboxed, that its permission system is a usability control rather than a security boundary, and that users needing isolation should run it inside an operating-system sandbox, container or virtual machine."
+  },
+  "provenance": {
+    "kind": "publisher-policy",
+    "claimant": "Anomaly Innovations, Inc."
+  },
+  "source": {
+    "uri": "https://github.com/anomalyco/opencode/security/policy",
+    "title": "OpenCode Security Policy",
+    "locator": "Security model; local execution; no sandbox; permissions; container or VM isolation guidance",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "unsandboxed local execution",
+        "external OS sandbox",
+        "container",
+        "virtual machine"
+      ]
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local CLI/TUI"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Current publisher security policy."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "security-policy-change",
+      "sandbox-architecture-change",
+      "permission-boundary-change"
+    ]
+  },
+  "limitations": [
+    "This is a publisher-declared limitation, not an independent security assessment; no isolation or permission enforcement was tested."
+  ],
+  "unknowns": [
+    "The host platform, user privileges, external sandbox or container configuration, filesystem mounts, network restrictions and effective isolation are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

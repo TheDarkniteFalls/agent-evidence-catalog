@@ -2,8 +2,9 @@
 
 Status: Research Preview v0.1, published at
 https://thedarknitefalls.github.io/agent-evidence-catalog/ and based on the
-2026-08-09 all-surface source-currentness and identity review, plus the
-2026-08-10 pre-publication OpenCode release-feed follow-up.
+2026-08-09 all-surface source-currentness and identity review, its 2026-08-10
+OpenCode release-feed follow-up, and the prepared 2026-08-13 official-source
+currentness candidate. The candidate does not update the live site by itself.
 
 This research preview is a static, maintainer-curated view of attributed
 publisher claims about 55 coding-agent surface keys. It asks a deliberately
@@ -84,7 +85,7 @@ artifacts. The research preview adds a derived projection:
 
 The machine-readable source is
 `drafts/real-agent-catalog/research-preview/catalog.json`. The static build
-copies only that projection and its 73 presentable record files to
+copies only that projection and its 88 presentable record files to
 `dist/research-preview/`. The comparison projector loads only the selected
 committed record files at runtime and does not modify that projection.
 
@@ -95,7 +96,7 @@ The public Research Preview v0.1 keeps the accepted release boundaries:
 - 53 current records are present across the 55-surface catalog, including
   Codex CLI 0.147.0 as the reciprocal same-surface successor to preserved
   0.146.0 and 0.90.0 history;
-- 17 superseded records, two historical records and one discontinued record
+- 32 superseded records, two historical records and one discontinued record
   remain available through explicit history;
 - the 39 breadth additions admit only official identity and delivery claims;
   their version, model, configuration, runtime and authority gaps remain

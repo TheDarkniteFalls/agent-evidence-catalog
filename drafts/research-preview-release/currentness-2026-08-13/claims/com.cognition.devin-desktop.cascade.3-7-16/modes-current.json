@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin-desktop.cascade.modes-current",
+  "slug": "modes-current",
+  "subject": {
+    "id": "com.cognition.devin-desktop.cascade",
+    "name": "Cascade in Devin Desktop",
+    "publisher": "Cognition AI, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cascade in Devin Desktop",
+      "slug": "cascade-devin-desktop-3-7-16"
+    }
+  },
+  "claim": {
+    "category": "authority.operating-mode",
+    "statement": "Current Cascade mode documentation defines Code, Plan and Ask modes: Code can use all tools and modify files, Plan explores and produces a plan before implementation, and Ask is read-only search and analysis."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Cognition AI, Inc."
+  },
+  "source": {
+    "uri": "https://docs.devin.ai/desktop/cascade/modes",
+    "title": "Cascade modes",
+    "locator": "Code mode; Plan mode; Ask mode",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "conditional",
+      "values": [
+        "Code mode",
+        "Plan mode",
+        "Ask mode"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "all",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Cascade in Devin Desktop"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher mode documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "mode-documentation-change",
+      "authority-change"
+    ]
+  },
+  "limitations": [
+    "Mode descriptions are publisher claims, not observations of effective tool or file-system enforcement."
+  ],
+  "unknowns": [
+    "The selected mode, effective tool set, file scope and any per-workspace overrides are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

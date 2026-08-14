@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.zed.agent.capabilities-current",
+  "slug": "capabilities-current",
+  "subject": {
+    "id": "dev.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "native Zed Agent in Zed",
+      "slug": "zed-agent-1-15-0"
+    }
+  },
+  "claim": {
+    "category": "surface.capability",
+    "statement": "Zed's current native-agent page says Zed Agent runs in the Agent Panel and Threads Sidebar and can use Zed-configured models, project context, editor and terminal tools, review UI, profiles, skills, instructions and MCP."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://zed.dev/docs/ai/zed-agent.html",
+    "title": "Zed Agent",
+    "locator": "Zed Agent and What Zed Agent Uses",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "native Zed Agent",
+        "configured model",
+        "Agent Profiles",
+        "Skills",
+        "Instructions",
+        "MCP"
+      ]
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "Zed desktop editor"
+      ]
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local Zed Agent with configured model route"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling native-agent documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "native-agent-capability-change"
+    ]
+  },
+  "limitations": [
+    "A documented capability does not establish that the corresponding tool or integration was enabled or invoked."
+  ],
+  "unknowns": [
+    "The enabled tools, profile, instructions, skills, MCP servers and model are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

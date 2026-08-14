@@ -20,6 +20,7 @@ const documents = {
   currentnessAudit: await read("drafts/real-agent-catalog/CURRENTNESS_LIFECYCLE_AUDIT.md"),
   priorCurrentnessReceipt: await read("drafts/research-preview-release/currentness-2026-08-02/CURRENTNESS_RECEIPT.md"),
   currentnessReceipt: await read("drafts/research-preview-release/currentness-2026-08-09/CURRENTNESS_RECEIPT.md"),
+  latestCurrentnessReceipt: await read("drafts/research-preview-release/currentness-2026-08-13/CURRENTNESS_RECEIPT.md"),
   schemaRetrospective: await read("drafts/real-agent-catalog/SCHEMA_RETROSPECTIVE.md"),
   claimsMethod: await read("docs/claims-first-mvp.md"),
   pilotMethod: await read("docs/real-agent-mvp-pilot.md"),
@@ -44,7 +45,7 @@ for (const phrase of [
 
 for (const phrase of [
   "55 coding-agent surface keys",
-  "73 presentable record files",
+  "88 presentable record files",
   "zero independent tests",
   "Codex CLI 0.147.0",
   "primary readers are researchers, builders and maintainers",
@@ -57,6 +58,9 @@ for (const phrase of [
 for (const phrase of ["55-surface currentness receipt", "Every accepted surface was rechecked", "Twelve newer exact identities"]) {
   assert(documents.currentnessReceipt.includes(phrase), `Currentness receipt is missing ${phrase}`);
 }
+for (const phrase of ["55-surface currentness receipt", "Every accepted surface was rechecked", "15 newer exact identities", "all 73 prior records remain inspectable"]) {
+  assert(documents.latestCurrentnessReceipt.includes(phrase), `Latest currentness receipt is missing ${phrase}`);
+}
 for (const phrase of ["All 16 reviewed surfaces", "Three material transitions", "Unresolved current identities: none"]) {
   assert(documents.priorCurrentnessReceipt.includes(phrase), `Preserved prior currentness receipt is missing ${phrase}`);
 }
@@ -65,11 +69,11 @@ assert(documents.currentnessAudit.includes("20 records across"), "Preserved pre-
 assert.equal(preview.counts.surfaces, 55);
 assert.equal(preview.counts.currentLifecycleRecords, 53);
 assert.equal(preview.counts.currentRecordsPresented, 53);
-assert.equal(preview.counts.recordsPresentedIncludingHistory, 73);
+assert.equal(preview.counts.recordsPresentedIncludingHistory, 88);
 assert.equal(preview.counts.independentTestsCredited, 0);
-assert.equal(lifecycle.entries.length, 73);
+assert.equal(lifecycle.entries.length, 88);
 assert.deepEqual(preview.gates, {});
-assert.equal(preview.surfaces.flatMap((surface) => surface.history).length, 20);
+assert.equal(preview.surfaces.flatMap((surface) => surface.history).length, 35);
 
 const recordIds = new Set();
 let checkedSources = 0;
@@ -133,6 +137,7 @@ for (const target of ["../RESEARCH_PREVIEW.md", "../PUBLICATION_READINESS.md", "
 
 assert(preview.previewRecords.some((record) => record.recordId === "com.openai.codex.cli.0-147-0"));
 assert(preview.previewRecords.some((record) => record.recordId === "com.anomaly.opencode.cli.1-18-16"));
+assert(preview.previewRecords.some((record) => record.recordId === "com.anomaly.opencode.cli.1-18-18"));
 assert(preview.previewRecords.some((record) => record.recordId === "com.cline.bot.vscode-extension.4-1-7"));
 assert(preview.previewRecords.some((record) => record.recordId === "com.gitlab.duo.developer-flow.19-2-1"));
 assert(preview.previewRecords.some((record) => record.recordId === "com.gitlab.duo.code-review-flow.19-2-1"));
@@ -142,6 +147,6 @@ for (const phrase of ["Refresh workflow", "Inventory expansion", "Concept and pr
   assert(documents.roadmap.includes(phrase), `Roadmap is missing ${phrase}`);
 }
 
-console.log("PASS documentation agrees on 55 surfaces, 73 lifecycle entries, 53 current cards and 20 explicit-history records");
+console.log("PASS documentation agrees on 55 surfaces, 88 lifecycle entries, 53 current cards and 35 explicit-history records");
 console.log(`PASS ${checkedSources} preview source links are HTTPS, publisher-attributed, non-search URLs and claim-linked`);
 console.log("PASS built governance documents and research-preview footer links match their source files");

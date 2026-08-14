@@ -1,0 +1,2759 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-13",
+  "sourceDossier": {
+    "path": "drafts/research-preview-release/currentness-2026-08-13/currentness-source.json",
+    "sha256": "d3e45f7ab6dd5e12e02cd8ab03b566ee123e24a4db8c4dc519702e85bab442f1",
+    "relationship": "currentness-successor-derived-from-preserved-predecessor-and-reviewed-official-sources"
+  },
+  "identity": {
+    "recordId": "com.cognition.devin-desktop.cascade.3-7-16",
+    "agent": {
+      "id": "com.cognition.devin-desktop.cascade",
+      "name": "Cascade in Devin Desktop"
+    },
+    "publisher": {
+      "id": "cognition-ai-inc",
+      "name": "Cognition AI, Inc."
+    },
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cascade in Devin Desktop",
+      "slug": "cascade-devin-desktop-3-7-16",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "3.7.16",
+      "releaseTag": "v3.7.16",
+      "sourceRevision": null,
+      "releasedAt": "2026-08-10T00:00:00Z",
+      "channel": "Devin Desktop stable release",
+      "additionalIdentities": [
+        {
+          "id": "devin-desktop-release-line-name",
+          "kind": "release-line",
+          "status": "known",
+          "value": "Windsurf renamed Devin Desktop from v3.0.12",
+          "scopeBindings": [
+            {
+              "axisId": "agent-surface",
+              "alternativeId": "cascade"
+            }
+          ],
+          "artifactRefs": [
+            "desktop-release-line"
+          ],
+          "sourceIds": [
+            "source-windsurf-devin-transition-3-0-12"
+          ],
+          "claimIds": [
+            "com.cognition.devin-desktop.cascade.windsurf-devin-transition-3-0-12"
+          ],
+          "note": "Publisher-sourced former product name and dated release-line transition; it does not identify or rename hosted Devin, Devin Local or ACP agents."
+        },
+        {
+          "id": "cascade-service-revision",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [
+            {
+              "axisId": "agent-surface",
+              "alternativeId": "cascade"
+            }
+          ],
+          "artifactRefs": [
+            "cascade-service"
+          ],
+          "sourceIds": [
+            "source-surface-current",
+            "source-transition-plan-current"
+          ],
+          "claimIds": [
+            "com.cognition.devin-desktop.cascade.surface-current",
+            "com.cognition.devin-desktop.cascade.transition-plan-current"
+          ],
+          "note": "No Cascade service revision or post-July transition resolution was published in the captured sources."
+        },
+        {
+          "id": "selected-model-revision",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [
+            {
+              "axisId": "model-route",
+              "alternativeId": "manual-selection"
+            }
+          ],
+          "artifactRefs": [
+            "cascade-model-backend"
+          ],
+          "sourceIds": [
+            "source-model-routing-current"
+          ],
+          "claimIds": [
+            "com.cognition.devin-desktop.cascade.model-routing-current"
+          ],
+          "note": "No exact model identifier, alias resolution, provider revision or inference configuration was fixed."
+        },
+        {
+          "id": "adaptive-underlying-model",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [
+            {
+              "axisId": "model-route",
+              "alternativeId": "adaptive"
+            }
+          ],
+          "artifactRefs": [
+            "adaptive-router",
+            "cascade-model-backend"
+          ],
+          "sourceIds": [
+            "source-model-routing-current"
+          ],
+          "claimIds": [
+            "com.cognition.devin-desktop.cascade.model-routing-current"
+          ],
+          "note": "Adaptive can route each request to a different underlying model; neither router revision nor per-request model identity is known."
+        },
+        {
+          "id": "cascade-transition-status",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [
+            {
+              "axisId": "agent-surface",
+              "alternativeId": "cascade"
+            }
+          ],
+          "artifactRefs": [
+            "cascade-service"
+          ],
+          "sourceIds": [
+            "source-transition-plan-current",
+            "source-surface-current"
+          ],
+          "claimIds": [
+            "com.cognition.devin-desktop.cascade.transition-plan-current",
+            "com.cognition.devin-desktop.cascade.surface-current"
+          ],
+          "note": "The FAQ planned existing Cascade availability through July, while current post-July docs still list Cascade; no correction or service milestone resolves the relationship."
+        }
+      ],
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "macOS arm64 artifact",
+          "macOS x64 artifact",
+          "Windows arm64 artifact",
+          "Windows x64 artifact",
+          "Linux x64 artifact"
+        ],
+        "alternativeDetails": [
+          {
+            "id": "macos-arm64",
+            "label": "macOS arm64 artifact",
+            "kind": "binary",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "desktop-platform-artifact-family-3-7-16"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "runtime-platform",
+                "alternativeId": "macos-arm64"
+              }
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-7-16"
+            ],
+            "note": "The exact release link is documented; no package, signature or digest was captured."
+          },
+          {
+            "id": "macos-x64",
+            "label": "macOS x64 artifact",
+            "kind": "binary",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "desktop-platform-artifact-family-3-7-16"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "runtime-platform",
+                "alternativeId": "macos-x64"
+              }
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-7-16"
+            ],
+            "note": "The exact release link is documented; no package, signature or digest was captured."
+          },
+          {
+            "id": "windows-arm64",
+            "label": "Windows arm64 artifact",
+            "kind": "binary",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "desktop-platform-artifact-family-3-7-16"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "runtime-platform",
+                "alternativeId": "windows-arm64"
+              }
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-7-16"
+            ],
+            "note": "The exact release link is documented; no package, signature or digest was captured."
+          },
+          {
+            "id": "windows-x64",
+            "label": "Windows x64 artifact",
+            "kind": "binary",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "desktop-platform-artifact-family-3-7-16"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "runtime-platform",
+                "alternativeId": "windows-x64"
+              }
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-7-16"
+            ],
+            "note": "The exact release link is documented; no package, signature or digest was captured."
+          },
+          {
+            "id": "linux-x64",
+            "label": "Linux x64 artifact",
+            "kind": "binary",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "desktop-platform-artifact-family-3-7-16"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "runtime-platform",
+                "alternativeId": "linux-x64"
+              }
+            ],
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-7-16"
+            ],
+            "note": "The exact release link is documented; no package, signature or digest was captured."
+          }
+        ],
+        "note": "The official source identifies 3.7.16, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-13 currentness review."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "desktop-release-3-7-16",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://docs.devin.ai/desktop/releases#v3-7-16",
+        "ecosystem": "Devin Desktop release index",
+        "version": "3.7.16",
+        "digest": null,
+        "note": "Exact version/date entry on a live official release index. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13."
+      },
+      {
+        "id": "desktop-platform-artifact-family-3-7-16",
+        "kind": "standalone-binary",
+        "identityStatus": "exact",
+        "uri": "https://docs.devin.ai/desktop/releases#v3-7-16",
+        "ecosystem": "Cognition Desktop CDN downloads",
+        "version": "3.7.16",
+        "digest": null,
+        "note": "The official release index links the supported platform families; no platform artifact, build token or digest was captured for this review. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13."
+      },
+      {
+        "id": "desktop-release-line",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://docs.devin.ai/desktop/changelog#v3-0-12",
+        "ecosystem": "Devin Desktop changelog",
+        "version": "3.0.12",
+        "digest": null,
+        "note": "Dated publisher naming-transition milestone. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13."
+      },
+      {
+        "id": "cascade-service",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+        "ecosystem": "rolling Cascade service",
+        "version": null,
+        "digest": null,
+        "note": "No service revision, account entitlement, region or transition status is fixed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13."
+      },
+      {
+        "id": "cascade-model-backend",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://docs.devin.ai/desktop/models",
+        "ecosystem": "Cascade model backend",
+        "version": null,
+        "digest": null,
+        "note": "Model provider, identifier, snapshot and inference configuration are unresolved. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13."
+      },
+      {
+        "id": "adaptive-router",
+        "kind": "hosted-release",
+        "identityStatus": "unresolved",
+        "uri": "https://docs.devin.ai/desktop/adaptive",
+        "ecosystem": "Adaptive model router",
+        "version": null,
+        "digest": null,
+        "note": "Router revision and per-request underlying model are unresolved. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "cognition-ai-inc",
+        "name": "Cognition AI, Inc.",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-release-identity-3-7-16",
+      "uri": "https://docs.devin.ai/desktop/releases#v3-7-16",
+      "title": "Devin Desktop releases",
+      "locator": "v3.7.16 — Aug 10, 2026; platform download links",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": "2026-08-10T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-windsurf-devin-transition-3-0-12",
+      "uri": "https://docs.devin.ai/desktop/changelog#v3-0-12",
+      "title": "Release notes for Devin Desktop (Windsurf)",
+      "locator": "v3.0.12 — June 2, 2026; Windsurf is now Devin Desktop",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": "2026-06-02",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-transition-plan-current",
+      "uri": "https://docs.devin.ai/desktop/devin-desktop-faq",
+      "title": "Devin Desktop FAQ",
+      "locator": "What is Devin Desktop?; what happens to Windsurf?; Cascade availability; Devin Cloud distinction",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-surface-current",
+      "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+      "title": "Cascade",
+      "locator": "Overview; Local agents; agent selection",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-modes-current",
+      "uri": "https://docs.devin.ai/desktop/cascade/modes",
+      "title": "Cascade modes",
+      "locator": "Code mode; Plan mode; Ask mode",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-plan-code-transition-current",
+      "uri": "https://docs.devin.ai/desktop/cascade/modes",
+      "title": "Cascade modes",
+      "locator": "Plan mode; moving from planning to implementation",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-terminal-permissions-current",
+      "uri": "https://docs.devin.ai/desktop/terminal",
+      "title": "Terminal",
+      "locator": "Cascade auto-execution levels; Disabled; Allowlist Only; Auto; Turbo",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-command-policy-current",
+      "uri": "https://docs.devin.ai/desktop/terminal",
+      "title": "Terminal",
+      "locator": "Team settings; allowlist and denylist merging; precedence",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-tools-current",
+      "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+      "title": "Cascade",
+      "locator": "Tools; terminal; package installation; tool-call limit; auto-continue",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-model-routing-current",
+      "uri": "https://docs.devin.ai/desktop/models",
+      "title": "Models",
+      "locator": "Model dropdown; Adaptive; model availability; Local-only models disabled in Cascade",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-planning-queue-current",
+      "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+      "title": "Cascade",
+      "locator": "Planning agent; queued messages",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-concurrency-workspace-current",
+      "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+      "title": "Cascade",
+      "locator": "Simultaneous Cascades; worktrees; .codeiumignore; enterprise global ignore",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-restricted-mode-current",
+      "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+      "title": "Cascade",
+      "locator": "Local agents; Restricted Mode availability note",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-security-limitations-current",
+      "uri": "https://docs.devin.ai/admin/security",
+      "title": "Security",
+      "locator": "Data encryption; training controls; user limitations and review guidance",
+      "sourceKind": "publisher-policy",
+      "claimantId": "cognition-ai-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Installed platform artifact, selected agent surface, operating mode, Plan-to-Code transition path, terminal authority, merged command policy, tools, model route, concurrency, workspace mode and data policy are separate applicability dimensions; none was observed.",
+    "axes": [
+      {
+        "id": "runtime-platform",
+        "label": "Installed Desktop platform artifact",
+        "scope": "mutually-exclusive",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "macos-arm64",
+            "label": "macOS arm64",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-7-16"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos-x64",
+              "windows-arm64",
+              "windows-x64",
+              "linux-x64"
+            ]
+          },
+          {
+            "id": "macos-x64",
+            "label": "macOS x64",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-7-16"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos-arm64",
+              "windows-arm64",
+              "windows-x64",
+              "linux-x64"
+            ]
+          },
+          {
+            "id": "windows-arm64",
+            "label": "Windows arm64",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-7-16"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos-arm64",
+              "macos-x64",
+              "windows-x64",
+              "linux-x64"
+            ]
+          },
+          {
+            "id": "windows-x64",
+            "label": "Windows x64",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-7-16"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos-arm64",
+              "macos-x64",
+              "windows-arm64",
+              "linux-x64"
+            ]
+          },
+          {
+            "id": "linux-x64",
+            "label": "Linux x64",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.release-identity-3-7-16"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos-arm64",
+              "macos-x64",
+              "windows-arm64",
+              "windows-x64"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Installed platform package, digest, signature, dependencies and runtime environment are unknown."
+        ]
+      },
+      {
+        "id": "agent-surface",
+        "label": "Selected Devin Desktop agent surface",
+        "scope": "mutually-exclusive",
+        "dimension": "identity",
+        "alternatives": [
+          {
+            "id": "cascade",
+            "label": "Cascade",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.surface-current",
+              "com.cognition.devin-desktop.cascade.transition-plan-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "devin-local",
+              "external-acp",
+              "hosted-devin"
+            ]
+          },
+          {
+            "id": "devin-local",
+            "label": "Devin Local (excluded surface)",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.surface-current",
+              "com.cognition.devin-desktop.cascade.terminal-permissions-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "cascade",
+              "external-acp",
+              "hosted-devin"
+            ]
+          },
+          {
+            "id": "external-acp",
+            "label": "External ACP agent (excluded surface)",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.surface-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "cascade",
+              "devin-local",
+              "hosted-devin"
+            ]
+          },
+          {
+            "id": "hosted-devin",
+            "label": "Hosted Devin or Devin Cloud (excluded surface)",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.transition-plan-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "cascade",
+              "devin-local",
+              "external-acp"
+            ]
+          }
+        ],
+        "unknowns": [
+          "This dossier admits claims only for Cascade; the other alternatives exist solely to prevent cross-surface transfer."
+        ]
+      },
+      {
+        "id": "interaction-mode",
+        "label": "Cascade operating mode",
+        "scope": "mutually-exclusive",
+        "dimension": "interaction-mode",
+        "alternatives": [
+          {
+            "id": "code",
+            "label": "Code mode",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.modes-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "plan",
+              "ask"
+            ],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "plan",
+            "label": "Plan mode",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.modes-current",
+              "com.cognition.devin-desktop.cascade.plan-code-transition-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "code",
+              "ask"
+            ],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "ask",
+            "label": "Ask mode",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.modes-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "code",
+              "plan"
+            ],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "The selected mode and whether a mode transition occurred are unknown."
+        ]
+      },
+      {
+        "id": "plan-code-transition",
+        "label": "Plan-to-Code authority path",
+        "scope": "composable",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "implement-button",
+            "label": "User selects Implement",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.plan-code-transition-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "approve-request",
+            "label": "User approves Cascade request",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.plan-code-transition-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "manual-switch",
+            "label": "User manually selects Code",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.plan-code-transition-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "automatic-ready-detection",
+            "label": "Cascade automatically detects readiness",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.plan-code-transition-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "classifier-mediated",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "The effective transition path, decision model and human approval state are unknown."
+        ]
+      },
+      {
+        "id": "terminal-autoexecution",
+        "label": "Cascade terminal auto-execution level",
+        "scope": "mutually-exclusive",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "disabled",
+            "label": "Disabled",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.terminal-permissions-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "allowlist-only",
+              "auto",
+              "turbo"
+            ],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "allowlist-only",
+            "label": "Allowlist Only",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.terminal-permissions-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "disabled",
+              "auto",
+              "turbo"
+            ],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "auto",
+            "label": "Auto",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.terminal-permissions-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "disabled",
+              "allowlist-only",
+              "turbo"
+            ],
+            "controlMode": "classifier-mediated",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "turbo",
+            "label": "Turbo",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.terminal-permissions-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "disabled",
+              "allowlist-only",
+              "auto"
+            ],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "The effective level, classifier revision, command and prompt decision are unknown."
+        ]
+      },
+      {
+        "id": "command-policy",
+        "label": "Effective command policy layers",
+        "scope": "composable",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "administrator-maximum",
+            "label": "Administrator maximum",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.command-policy-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "team-user-allowlists",
+            "label": "Merged team and user allowlists",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.command-policy-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "team-user-denylists",
+            "label": "Merged team and user denylists",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.command-policy-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "deny-match-approval",
+            "label": "Human approval after denylist match",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.command-policy-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          }
+        ],
+        "unknowns": [
+          "Account plan, administrator maximum, merged patterns, precedence outcome and human decisions are unknown."
+        ]
+      },
+      {
+        "id": "tool-surface",
+        "label": "Enabled Cascade tool surface",
+        "scope": "composable",
+        "dimension": "tool-surface",
+        "alternatives": [
+          {
+            "id": "search-analyze",
+            "label": "Search and Analyze",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.tools-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "web",
+            "label": "Web tool",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.tools-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "mcp",
+            "label": "Configured MCP tools",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.tools-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "terminal",
+            "label": "Terminal",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.tools-current",
+              "com.cognition.devin-desktop.cascade.terminal-permissions-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "package-install",
+            "label": "Package installation after acceptance",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.tools-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "auto-continue",
+            "label": "Configured auto-continue",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.tools-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "Enabled tools, MCP servers, credentials, network paths, terminal commands, package decisions and auto-continue state are unknown."
+        ]
+      },
+      {
+        "id": "model-route",
+        "label": "Cascade model route",
+        "scope": "mutually-exclusive",
+        "dimension": "model",
+        "alternatives": [
+          {
+            "id": "adaptive",
+            "label": "Adaptive per-request routing",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.model-routing-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "manual-selection"
+            ]
+          },
+          {
+            "id": "manual-selection",
+            "label": "Manually selected Cascade-available model",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.model-routing-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "adaptive"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Route, model provider, model identifier/revision, fallback, context and inference configuration are unknown; Local-only models are not credited to Cascade."
+        ]
+      },
+      {
+        "id": "session-concurrency",
+        "label": "Cascade session concurrency",
+        "scope": "mutually-exclusive",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "single",
+            "label": "Single Cascade",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.planning-queue-current",
+              "com.cognition.devin-desktop.cascade.concurrency-workspace-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "same-workspace-multiple",
+              "worktree-separated-multiple"
+            ]
+          },
+          {
+            "id": "same-workspace-multiple",
+            "label": "Multiple Cascades in one workspace",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.concurrency-workspace-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "single",
+              "worktree-separated-multiple"
+            ]
+          },
+          {
+            "id": "worktree-separated-multiple",
+            "label": "Worktree-separated Cascades",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.concurrency-workspace-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "single",
+              "same-workspace-multiple"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Session count, workspace topology, isolation and conflict handling are unknown."
+        ]
+      },
+      {
+        "id": "workspace-mode",
+        "label": "Desktop workspace security mode",
+        "scope": "mutually-exclusive",
+        "dimension": "sandbox",
+        "alternatives": [
+          {
+            "id": "normal",
+            "label": "Normal mode with Cascade available",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.restricted-mode-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "restricted"
+            ],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "restricted",
+            "label": "Restricted Mode with Cascade unavailable",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.restricted-mode-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "normal"
+            ],
+            "controlMode": "unavailable",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "The effective workspace mode and the controls underlying Restricted Mode are unknown."
+        ]
+      },
+      {
+        "id": "file-scope",
+        "label": "Workspace file-access scope",
+        "scope": "composable",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "workspace",
+            "label": "Open workspace",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.modes-current",
+              "com.cognition.devin-desktop.cascade.concurrency-workspace-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "codeiumignore",
+            "label": ".codeiumignore exclusions",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.concurrency-workspace-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "enterprise-global-ignore",
+            "label": "Enterprise global ignore",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.concurrency-workspace-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "Workspace roots, worktrees, ignore content, policy merge and enforcement are unknown."
+        ]
+      },
+      {
+        "id": "data-policy",
+        "label": "Publisher data and training policy",
+        "scope": "unresolved",
+        "dimension": "data-policy",
+        "alternatives": [
+          {
+            "id": "plan-dependent-controls",
+            "label": "Plan-dependent training controls",
+            "claimIds": [
+              "com.cognition.devin-desktop.cascade.security-limitations-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "Cascade data path, provider, plan, opt-out, retention, region and encryption enforcement are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "com.cognition.devin-desktop.cascade.release-identity-3-7-16",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/release-identity-3-7-16.json",
+      "rawRecordSha256": "1a97e8bfdadd30eb0f08f133e0017119f01c74f5264ab60153c2e0c41849f67b",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.release-identity-3-7-16",
+        "slug": "release-identity-3-7-16",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "Cognition's official Devin Desktop release index identifies v3.7.16 as an August 10, 2026 release; no platform installer, build token or artifact digest was independently captured."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/releases#v3-7-16",
+          "title": "Devin Desktop releases",
+          "locator": "v3.7.16 — Aug 10, 2026; platform download links",
+          "publishedAt": "2026-08-10T00:00:00Z",
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "3.7.16"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": [
+              "platform-specific artifact"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "macOS arm64",
+              "macOS x64",
+              "Windows arm64",
+              "Windows x64",
+              "Linux x64"
+            ]
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Devin Desktop client artifact family"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-13",
+          "reason": "Exact publisher release entry."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "publisher-release-entry-correction",
+            "artifact-url-change"
+          ]
+        },
+        "limitations": [
+          "The release page is a live index even though the artifact URLs are version/build-token specific.",
+          "No artifact was downloaded, hashed, installed or run, and the build token is not represented as a source revision or cryptographic digest."
+        ],
+        "unknowns": [
+          "The installed platform artifact, package digest, signing identity, dependency set and source-to-binary correspondence are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-release-identity-3-7-16",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.windsurf-devin-transition-3-0-12",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/windsurf-devin-transition-3-0-12.json",
+      "rawRecordSha256": "7353d2b5af66f6d24fd38e2d1b0fba75307db02623824121f1366e645c06116e",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.windsurf-devin-transition-3-0-12",
+        "slug": "windsurf-devin-transition-3-0-12",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "identity.naming-transition",
+          "statement": "Cognition's v3.0.12 changelog says Windsurf became Devin Desktop on June 2, 2026."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/changelog#v3-0-12",
+          "title": "Release notes for Devin Desktop (Windsurf)",
+          "locator": "v3.0.12 — June 2, 2026; Windsurf is now Devin Desktop",
+          "publishedAt": "2026-06-02",
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "Devin Desktop v3.x from v3.0.12"
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Windsurf-to-Devin Desktop brand transition"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Devin Desktop formerly Windsurf"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-06-02",
+          "reason": "Dated publisher naming transition; the FAQ transition schedule is not a service-revision receipt."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "publisher-transition-clarification",
+            "faq-change",
+            "cascade-service-retirement-notice"
+          ]
+        },
+        "limitations": [
+          "The naming evidence identifies the Desktop product transition; it does not merge Devin Cloud, hosted Devin, Devin Local or ACP-agent identities."
+        ],
+        "unknowns": [
+          "The client builds and service revisions covered beyond the named v3.0.12 transition milestone are not established by this claim."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-windsurf-devin-transition-3-0-12",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.transition-plan-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/transition-plan-current.json",
+      "rawRecordSha256": "0ae29f8efca26ab1d752a6d4d989fd7e0812d876e9f69b55c0f71d8a836f5060",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.transition-plan-current",
+        "slug": "transition-plan-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "identity.transition-plan",
+          "statement": "Cognition's Devin Desktop FAQ says the renamed Desktop product retains the IDE/editor and features, distinguishes Devin Cloud as a separate product, and states that existing Cascade would remain available through July."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/devin-desktop-faq",
+          "title": "Devin Desktop FAQ",
+          "locator": "What is Devin Desktop?; what happens to Windsurf?; Cascade availability; Devin Cloud distinction",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Windsurf-to-Devin Desktop transition",
+              "existing Cascade through July"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Devin Desktop",
+              "Devin Cloud excluded"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Current FAQ preserves a dated transition plan without a service-revision identifier."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "faq-change",
+            "cascade-service-retirement-notice",
+            "publisher-transition-clarification"
+          ]
+        },
+        "limitations": [
+          "The July statement is a planned availability boundary, not proof that Cascade ceased service.",
+          "The FAQ's Desktop and Cloud distinction prevents transferring this local-client evidence to hosted Devin."
+        ],
+        "unknowns": [
+          "Whether the planned Cascade transition schedule changed, and Cascade's post-July service status or revision, are unresolved."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "com.cognition.devin-desktop.cascade.surface-current",
+            "extent": "partial",
+            "status": "active",
+            "resolution": null,
+            "note": "The FAQ planned existing Cascade availability through July, while current post-July documentation still lists Cascade as a Devin Desktop local agent; no attributable correction or scope explanation resolves the timing."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-transition-plan-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.surface-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/surface-current.json",
+      "rawRecordSha256": "4b426280d4df639e5d0e1de9baa5c7af39667aea4fab808e5f4568c36841f7b3",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.surface-current",
+        "slug": "surface-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "identity.surface",
+          "statement": "Current Devin Desktop documentation identifies Cascade as the agentic assistant in Devin Desktop and as one of two local agents, separately naming Devin Local and external ACP agents."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+          "title": "Cascade",
+          "locator": "Overview; Local agents; agent selection",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Cascade selected"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": [
+              "user-selected Cascade model"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Devin Desktop Cascade",
+              "Devin Local excluded",
+              "external ACP agents excluded",
+              "hosted Devin excluded"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling current publisher documentation captured after the v3.7.16 release."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "cascade-documentation-removal",
+            "agent-selection-change",
+            "publisher-transition-clarification"
+          ]
+        },
+        "limitations": [
+          "This is a rolling publisher description, not an exact-version or observed service receipt.",
+          "No capability or authority claim is transferred to Devin Local, hosted Devin or an ACP agent."
+        ],
+        "unknowns": [
+          "The Cascade service revision, availability state for a particular account and relationship to the earlier July transition schedule are unresolved."
+        ],
+        "relationships": [
+          {
+            "type": "contradicts",
+            "targetClaimId": "com.cognition.devin-desktop.cascade.transition-plan-current",
+            "extent": "partial",
+            "status": "active",
+            "resolution": null,
+            "note": "Current post-July documentation still lists Cascade, while the FAQ planned existing Cascade availability through July; this does not resolve the service timeline."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-surface-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.modes-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/modes-current.json",
+      "rawRecordSha256": "0d3e896b26c587c772dcf51e77216e0ee088413183f1115986f68b4b869793bd",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.modes-current",
+        "slug": "modes-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "authority.operating-mode",
+          "statement": "Current Cascade mode documentation defines Code, Plan and Ask modes: Code can use all tools and modify files, Plan explores and produces a plan before implementation, and Ask is read-only search and analysis."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/cascade/modes",
+          "title": "Cascade modes",
+          "locator": "Code mode; Plan mode; Ask mode",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "conditional",
+            "values": [
+              "Code mode",
+              "Plan mode",
+              "Ask mode"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "all",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cascade in Devin Desktop"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher mode documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "mode-documentation-change",
+            "authority-change"
+          ]
+        },
+        "limitations": [
+          "Mode descriptions are publisher claims, not observations of effective tool or file-system enforcement."
+        ],
+        "unknowns": [
+          "The selected mode, effective tool set, file scope and any per-workspace overrides are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-modes-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.plan-code-transition-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/plan-code-transition-current.json",
+      "rawRecordSha256": "6d3474342326216e51a66e0655ae309430015973589717380ca4ba15335ac125",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.plan-code-transition-current",
+        "slug": "plan-code-transition-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "authority.plan-transition",
+          "statement": "Current documentation says Plan mode can move to Code mode when the user selects Implement, approves Cascade's implementation request, switches mode manually, or when Cascade automatically detects that the plan is ready."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/cascade/modes",
+          "title": "Cascade modes",
+          "locator": "Plan mode; moving from planning to implementation",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "conditional",
+            "values": [
+              "Implement button",
+              "approve implementation request",
+              "manual Code switch",
+              "automatic ready detection"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": [
+              "Cascade-selected or Adaptive model"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cascade Plan-to-Code transition"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher authority documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "plan-transition-change",
+            "approval-flow-change",
+            "automatic-detection-change"
+          ]
+        },
+        "limitations": [
+          "The documentation describes both human-gated and automatic transition paths; it does not establish which path applied in any session."
+        ],
+        "unknowns": [
+          "The selected transition path, prompt content, classifier or model decision, and whether human approval occurred are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-plan-code-transition-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.terminal-permissions-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/terminal-permissions-current.json",
+      "rawRecordSha256": "44a23de0363b563b87c30a65df80f82384d8445983f450014a57e93479fb807f",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.terminal-permissions-current",
+        "slug": "terminal-permissions-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "authority.command-execution",
+          "statement": "Current Devin Desktop terminal documentation defines four Cascade auto-execution levels: Disabled, Allowlist Only, Auto, and Turbo; Auto uses a classifier for command-safety judgment and Turbo automatically executes commands except those on the denylist."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/terminal",
+          "title": "Terminal",
+          "locator": "Cascade auto-execution levels; Disabled; Allowlist Only; Auto; Turbo",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "conditional",
+            "values": [
+              "Disabled",
+              "Allowlist Only",
+              "Auto",
+              "Turbo"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": [
+              "Auto safety classifier"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cascade terminal authority",
+              "Devin Local permission model excluded"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher terminal documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "auto-execution-level-change",
+            "classifier-change",
+            "denylist-change"
+          ]
+        },
+        "limitations": [
+          "The page expressly distinguishes Devin Local's different permission model; this claim applies only to Cascade.",
+          "No classifier result, prompt, command or enforcement behavior was observed."
+        ],
+        "unknowns": [
+          "The effective auto-execution level, classifier/model revision, commands, prompt decisions and enforcement result are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-terminal-permissions-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.command-policy-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/command-policy-current.json",
+      "rawRecordSha256": "6254efc570e3774861f0983cc678be0bf471fc87a5cff036c0ca66ec95cc2e47",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.command-policy-current",
+        "slug": "command-policy-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "authority.command-policy",
+          "statement": "Current terminal documentation says Teams and Enterprise administrators can set the maximum auto-execution level; team and user allowlists and denylists are combined, denylist entries take precedence, and a denied command requires approval rather than being represented as an unconditional block."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/terminal",
+          "title": "Terminal",
+          "locator": "Team settings; allowlist and denylist merging; precedence",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "conditional",
+            "values": [
+              "administrator maximum",
+              "team allowlist",
+              "user allowlist",
+              "team denylist",
+              "user denylist",
+              "human approval for denied command"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cascade Teams or Enterprise command policy"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher command-policy documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "team-setting-change",
+            "list-precedence-change",
+            "approval-semantics-change"
+          ]
+        },
+        "limitations": [
+          "A denylist match is documented as requiring approval, so the catalog does not treat it as a security sandbox or absolute execution prohibition."
+        ],
+        "unknowns": [
+          "The account plan, administrator maximum, merged list contents, matching behavior and any user approvals are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-command-policy-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.tools-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/tools-current.json",
+      "rawRecordSha256": "fefd209c7dea7b5a71955854dd94e263006a558c99a9dc25d69707bf8ff2fd46",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.tools-current",
+        "slug": "tools-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "capability.tools",
+          "statement": "Current Cascade documentation describes Search, Analyze, Web and configured MCP tools, terminal use, and package installation after the user presses Accept; it also documents a per-prompt tool-call limit and a configurable auto-continue path."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+          "title": "Cascade",
+          "locator": "Tools; terminal; package installation; tool-call limit; auto-continue",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "conditional",
+            "values": [
+              "Search",
+              "Analyze",
+              "Web",
+              "configured MCP tools",
+              "terminal",
+              "package-install acceptance",
+              "auto-continue"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "all",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cascade in Devin Desktop"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher tool documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "tool-surface-change",
+            "mcp-change",
+            "acceptance-flow-change",
+            "tool-call-limit-change"
+          ]
+        },
+        "limitations": [
+          "Documented tools are availability claims, not evidence that any tool, network route, package install or MCP server was enabled or used."
+        ],
+        "unknowns": [
+          "Enabled tools, MCP servers, credentials, terminal commands, network access, package-install decisions and auto-continue setting are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-tools-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.model-routing-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/model-routing-current.json",
+      "rawRecordSha256": "66cbe72a01d34bc8d6066d451951bf1118e9d27aff822cca975f9d386781616b",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.model-routing-current",
+        "slug": "model-routing-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "configuration.model",
+          "statement": "Current Devin Desktop model documentation allows a user to choose a listed model or Adaptive routing; Adaptive dynamically selects an underlying model for each request, while models marked Local-only are disabled in Cascade."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/models",
+          "title": "Models",
+          "locator": "Model dropdown; Adaptive; model availability; Local-only models disabled in Cascade",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "conditional",
+            "values": [
+              "Adaptive routing",
+              "manually selected Cascade-available model",
+              "Local-only model unavailable"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": [
+              "Adaptive underlying model",
+              "manually selected model",
+              "service model revision"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cascade model route",
+              "Local-only Devin Local route excluded"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling model catalog and routing documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "model-catalog-change",
+            "adaptive-routing-change",
+            "plan-entitlement-change"
+          ]
+        },
+        "limitations": [
+          "The current model list and Adaptive routing are separately changing service behavior and are not frozen by the Desktop client version."
+        ],
+        "unknowns": [
+          "The selected route, exact model identifier and revision, Adaptive per-request decisions, fallback behavior, inference configuration, plan and pricing state are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-model-routing-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.planning-queue-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/planning-queue-current.json",
+      "rawRecordSha256": "1d5ed2d2916d39d05f2538e000cce58f35c128b49d2fdfe5f756499bd619eca6",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.planning-queue-current",
+        "slug": "planning-queue-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "capability.planning-queue",
+          "statement": "Current Cascade documentation describes a specialized planning agent and lets users queue follow-up messages while the current Cascade action continues."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+          "title": "Cascade",
+          "locator": "Planning agent; queued messages",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "conditional",
+            "values": [
+              "planning agent",
+              "queued follow-up messages"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": [
+              "planning model or selected model"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "single Cascade session"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher interaction documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "planning-agent-change",
+            "queue-semantics-change"
+          ]
+        },
+        "limitations": [
+          "Queued messages do not establish background, parallel or child-agent execution; the documentation describes follow-ups within a Cascade session."
+        ],
+        "unknowns": [
+          "The planning-agent model, queue order, cancellation behavior and execution state are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-planning-queue-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.concurrency-workspace-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/concurrency-workspace-current.json",
+      "rawRecordSha256": "e2d4a43a9dd62b35f9b02c69919e73e9bbbb01caba38e11a84237bf6ca34a228",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.concurrency-workspace-current",
+        "slug": "concurrency-workspace-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "authority.workspace-concurrency",
+          "statement": "Current Cascade documentation permits multiple Cascade sessions at once, warns that concurrent edits in the same workspace can race, recommends separate worktrees, and documents .codeiumignore plus an enterprise global ignore control for file-access scope."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+          "title": "Cascade",
+          "locator": "Simultaneous Cascades; worktrees; .codeiumignore; enterprise global ignore",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "conditional",
+            "values": [
+              "single Cascade",
+              "multiple Cascades in one workspace",
+              "worktree-separated Cascades",
+              ".codeiumignore",
+              "enterprise global ignore"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "all",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local Devin Desktop workspace"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher workspace documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "concurrency-change",
+            "worktree-guidance-change",
+            "ignore-file-change"
+          ]
+        },
+        "limitations": [
+          "Simultaneous sessions are not treated as child agents or isolated execution; same-workspace edits are explicitly race-prone.",
+          "Ignore controls are publisher-documented scope controls, not independently validated security boundaries."
+        ],
+        "unknowns": [
+          "The number of sessions, workspace/worktree layout, ignore files, enterprise policy and enforcement are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-concurrency-workspace-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.restricted-mode-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/restricted-mode-current.json",
+      "rawRecordSha256": "21b03c4dc312b3518b76113ce5ea483d78509ddae0f789777ad6b9d3999c5679",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.restricted-mode-current",
+        "slug": "restricted-mode-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "limitation.deployment",
+          "statement": "Current Devin Desktop documentation says Cascade is unavailable when Restricted Mode is enabled."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+          "title": "Cascade",
+          "locator": "Local agents; Restricted Mode availability note",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "conditional",
+            "values": [
+              "normal workspace mode",
+              "Restricted Mode"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Devin Desktop Restricted Mode"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher deployment limitation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "restricted-mode-agent-availability-change"
+          ]
+        },
+        "limitations": [
+          "This is an explicit availability limitation; no inference is made about Restricted Mode's controls or other agents available within it."
+        ],
+        "unknowns": [
+          "Whether Restricted Mode is enabled for any account or workspace is unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-restricted-mode-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cognition.devin-desktop.cascade.security-limitations-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.cognition.devin-desktop.cascade.3-7-16/security-limitations-current.json",
+      "rawRecordSha256": "9da964cda47095c6330446ba44db21ca031d055ad3f71a60e4731612121d08c0",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cognition.devin-desktop.cascade.security-limitations-current",
+        "slug": "security-limitations-current",
+        "subject": {
+          "id": "com.cognition.devin-desktop.cascade",
+          "name": "Cascade in Devin Desktop",
+          "publisher": "Cognition AI, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cascade in Devin Desktop",
+            "slug": "cascade-devin-desktop-3-7-16"
+          }
+        },
+        "claim": {
+          "category": "limitation.security",
+          "statement": "Cognition's current security documentation says customer data is encrypted in transit and at rest, describes plan-dependent model-training opt-out controls, and warns that Devin can hallucinate or introduce bugs or insecure code and that users should review its work."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Cognition AI, Inc."
+        },
+        "source": {
+          "uri": "https://docs.devin.ai/admin/security",
+          "title": "Security",
+          "locator": "Data encryption; training controls; user limitations and review guidance",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "conditional",
+            "values": [
+              "plan-dependent training controls",
+              "publisher service data path"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": [
+              "selected model provider and route"
+            ]
+          },
+          "deployment": {
+            "scope": "unresolved",
+            "values": [
+              "Cognition service policy; exact Cascade enforcement unresolved"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher-wide security and limitation documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "security-policy-change",
+            "training-policy-change",
+            "product-scope-clarification"
+          ]
+        },
+        "limitations": [
+          "The page is publisher-wide Cognition documentation and does not pin exact v3.7.16 client enforcement, a Cascade service revision, model provider or account configuration.",
+          "Encryption and training statements are publisher claims, not independent security findings."
+        ],
+        "unknowns": [
+          "The exact Cascade data path, processor/model provider, plan, opt-out setting, retention, region, encryption implementation and enforcement are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "cognition-ai-inc",
+      "sourceId": "source-security-limitations-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "relationship-01",
+      "fromClaimId": "com.cognition.devin-desktop.cascade.transition-plan-current",
+      "toClaimId": "com.cognition.devin-desktop.cascade.surface-current",
+      "kind": "contradicts",
+      "extent": "partial",
+      "status": "active",
+      "resolution": null,
+      "note": "The FAQ planned existing Cascade availability through July, while current post-July documentation still lists Cascade as a Devin Desktop local agent; no attributable correction or scope explanation resolves the timing."
+    },
+    {
+      "id": "relationship-02",
+      "fromClaimId": "com.cognition.devin-desktop.cascade.surface-current",
+      "toClaimId": "com.cognition.devin-desktop.cascade.transition-plan-current",
+      "kind": "contradicts",
+      "extent": "partial",
+      "status": "active",
+      "resolution": null,
+      "note": "Current post-July documentation still lists Cascade, while the FAQ planned existing Cascade availability through July; this does not resolve the service timeline."
+    }
+  ],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-cascade-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-search",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No specific public evaluation entry was identified with defensible evaluator independence plus exact Devin Desktop v3.7.16, Cascade service revision, model, mode, permission configuration, disclosure and public artifacts."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted; publisher sources remain attribution only."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Cascade in Devin Desktop 3.7.16 is the current exact publisher identity reviewed on 2026-08-13. The retained claims remain attributed to their named official sources, and installed artifact, model, effective configuration, authority and runtime behaviour remain unresolved unless a claim expressly narrows them.",
+    "releaseContext": {
+      "statement": "Cognition's official Devin Desktop release index lists v3.7.16 first and dates it 2026-08-10.",
+      "sourceId": "source-release-identity-3-7-16",
+      "legacySource": null
+    },
+    "limitations": [
+      "All product claims are attributed to official Cognition or Devin sources; no product behavior was observed.",
+      "No Devin Desktop package, dependency set, service response or model request was downloaded, installed, hashed or run.",
+      "The record is limited to Cascade inside the exact v3.7.16 Desktop client; hosted Devin, Devin Local and external ACP agents are excluded.",
+      "The exact release page pins the client artifact family but not a source revision, signed package digest or installed platform variant.",
+      "Current Cascade, modes, terminal, models and security documentation are rolling-current and are not silently applied as exact-version receipts.",
+      "The FAQ's planned July Cascade availability and current post-July Cascade documentation remain an unresolved publisher-source disagreement.",
+      "Plan-to-Code and terminal authority include human-gated, classifier-mediated and automatic alternatives that must not be collapsed.",
+      "The publisher-wide security page does not establish exact Cascade service, model or client enforcement.",
+      "No independent evaluation was admitted.",
+      "No capability quality, safety, privacy, performance or suitability conclusion is supported.",
+      "The successor was created from reviewed official sources without installing or running the agent; release identity does not transfer unscoped behaviour claims.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion was added."
+    ],
+    "unknowns": [
+      "The installed platform artifact, package digest, signature, dependency graph and source-to-binary correspondence are unknown.",
+      "The exact runtime process, operating-system user, privileges, environment variables and workspace are unknown.",
+      "The Cascade service revision, account entitlement, region and post-July transition status are unresolved.",
+      "The selected agent surface is not observed; this dossier admits no claims from Devin Local, hosted Devin or external ACP agents.",
+      "The selected Code, Plan or Ask mode and Plan-to-Code transition path are unknown.",
+      "The effective terminal auto-execution level and safety-classifier revision are unknown.",
+      "The administrator maximum, merged team/user allowlists and denylists, matches and human approvals are unknown.",
+      "The enabled tools, MCP servers, credentials, terminal commands, package-install decisions, network paths and auto-continue state are unknown.",
+      "The selected model route, provider, exact model revision, Adaptive per-request decision, fallback and inference configuration are unknown.",
+      "The number of Cascade sessions, queue state, workspace/worktree layout and edit-conflict behavior are unknown.",
+      "The .codeiumignore and enterprise global-ignore contents and enforcement are unknown.",
+      "Whether Restricted Mode is enabled and what security controls it supplies are unknown.",
+      "The exact Cascade data path, processor, plan, training opt-out, retention, region and encryption enforcement are unknown.",
+      "No independently attributable evaluation with exact client, service, model, mode, configuration, disclosure and public-artifact applicability was identified."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the current identity, attributed publisher claims and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "publisher-claims",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Current identity",
+        "question": "Which exact surface is represented?",
+        "status": "3.7.16 current at review",
+        "answer": "Cognition's official Devin Desktop release index lists v3.7.16 first and dates it 2026-08-10.",
+        "whyItMatters": "A newer exact publisher identity does not identify a particular installed artifact or effective session.",
+        "claimIds": [
+          "com.cognition.devin-desktop.cascade.release-identity-3-7-16",
+          "com.cognition.devin-desktop.cascade.windsurf-devin-transition-3-0-12",
+          "com.cognition.devin-desktop.cascade.transition-plan-current",
+          "com.cognition.devin-desktop.cascade.surface-current"
+        ]
+      },
+      {
+        "id": "publisher-claims",
+        "eyebrow": "Attributed evidence",
+        "question": "What does the current record retain?",
+        "status": "14 publisher-attributed claims",
+        "answer": "The record retains only claims linked to the named official sources and keeps their applicability, limitations and unknowns explicit.",
+        "whyItMatters": "Publisher documentation is not observed product behaviour or independent verification.",
+        "claimIds": [
+          "com.cognition.devin-desktop.cascade.release-identity-3-7-16",
+          "com.cognition.devin-desktop.cascade.windsurf-devin-transition-3-0-12",
+          "com.cognition.devin-desktop.cascade.transition-plan-current",
+          "com.cognition.devin-desktop.cascade.surface-current",
+          "com.cognition.devin-desktop.cascade.modes-current",
+          "com.cognition.devin-desktop.cascade.plan-code-transition-current",
+          "com.cognition.devin-desktop.cascade.terminal-permissions-current",
+          "com.cognition.devin-desktop.cascade.command-policy-current",
+          "com.cognition.devin-desktop.cascade.tools-current",
+          "com.cognition.devin-desktop.cascade.model-routing-current",
+          "com.cognition.devin-desktop.cascade.planning-queue-current",
+          "com.cognition.devin-desktop.cascade.concurrency-workspace-current",
+          "com.cognition.devin-desktop.cascade.restricted-mode-current",
+          "com.cognition.devin-desktop.cascade.security-limitations-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this exact successor independently tested here?",
+        "status": "No",
+        "answer": "No agent was installed or run and no independent evidence was admitted during this currentness refresh.",
+        "whyItMatters": "Current identity and source attribution do not establish suitability, quality or safety.",
+        "claimIds": [
+          "com.cognition.devin-desktop.cascade.release-identity-3-7-16",
+          "com.cognition.devin-desktop.cascade.windsurf-devin-transition-3-0-12",
+          "com.cognition.devin-desktop.cascade.transition-plan-current",
+          "com.cognition.devin-desktop.cascade.surface-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source currentness successor only. No product run, independent test, suitability calculation, ranking or recommendation is included."
+  }
+}

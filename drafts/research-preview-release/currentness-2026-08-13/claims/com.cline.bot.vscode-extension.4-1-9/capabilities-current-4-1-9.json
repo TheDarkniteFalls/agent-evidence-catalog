@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.capabilities-current-4-1-9",
+  "slug": "capabilities-current-4-1-9",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension-4-1-9"
+    }
+  },
+  "claim": {
+    "category": "capability.tool-surface",
+    "statement": "Cline's current official repository describes the VS Code extension as able to create and edit files, run terminal commands, browse the web and use tools with human-in-the-loop approval."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://github.com/cline/cline",
+    "title": "cline/cline official repository",
+    "locator": "VS Code Extension",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "publisher-described default authority"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Cline VS Code extension"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "This is a current publisher description, not observed exact-version behavior or a complete tool inventory."
+  ],
+  "unknowns": [
+    "The effective tools, workspace scope, network destinations and task-specific behavior are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

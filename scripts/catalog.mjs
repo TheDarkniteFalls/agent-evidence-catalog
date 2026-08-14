@@ -419,9 +419,9 @@ function renderRecordDetail(record, preview, lifecycle) {
       <p id="trayCount" class="selection-tray-count"></p>
       <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected claims</button>
     </div>
-    <script src="../data.js?v=2026-08-10-compare-mvp"></script>
-    <script src="../comparison-core.js?v=2026-08-10-compare-mvp"></script>
-    <script src="../record-detail.js?v=2026-08-10-compare-mvp"></script>
+    <script src="../data.js?v=2026-08-13-currentness"></script>
+    <script src="../comparison-core.js?v=2026-08-13-currentness"></script>
+    <script src="../record-detail.js?v=2026-08-13-currentness"></script>
   </body>
 </html>
 `;

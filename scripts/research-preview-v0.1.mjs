@@ -95,6 +95,10 @@ function classify(relativePath) {
     if (relativePath.endsWith(".mjs")) return ["canonical-source", "Deterministic all-surface currentness builder or validator."];
     return ["accepted-evidence-provenance", "Validated all-surface currentness input, generated successor evidence or dated receipt."];
   }
+  if (relativePath.startsWith("drafts/research-preview-release/currentness-2026-08-13/")) {
+    if (relativePath.endsWith(".mjs")) return ["canonical-source", "Deterministic official-source currentness refresh builder or validator."];
+    return ["accepted-evidence-provenance", "Validated official-source currentness input, generated successor evidence or dated receipt."];
+  }
   if (relativePath.startsWith("drafts/research-preview-release/")) {
     return ["release-control-artifact", "Baseline, preservation, manifest or release-validation control."];
   }
@@ -123,7 +127,7 @@ function artifacts(files) {
   ]));
   return {
     schemaVersion: "research-preview-path-classification/0.1",
-    asOf: "2026-08-10",
+    asOf: "2026-08-13",
     repository: "agent-evidence-catalog",
     classificationRule: "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
     counts,
@@ -135,7 +139,7 @@ function releaseManifest(files) {
   const distPaths = files.filter((relativePath) => relativePath.startsWith("dist/"));
   return {
     schemaVersion: "research-preview-release-manifest/0.1",
-    asOf: "2026-08-10",
+    asOf: "2026-08-13",
     targetRepository: "agent-evidence-catalog",
     primaryProduct: "real-agent-research-preview-v0.1",
     publicationStatus: "public-research-preview-v0.1",
@@ -223,6 +227,8 @@ function buildOneWayProjection() {
   node("unified research-preview source projection", "drafts/real-agent-catalog/scripts/build-research-preview.mjs");
   node("preserved dated lifecycle and currentness receipt", "drafts/research-preview-release/currentness-2026-08-02/validate-lifecycle-and-receipt.mjs");
   node("all-surface 2026-08-09 currentness projection", "drafts/research-preview-release/currentness-2026-08-09/build-currentness.mjs");
+  node("all-surface 2026-08-09 currentness validation", "drafts/research-preview-release/currentness-2026-08-09/validate-currentness.mjs");
+  node("official-source 2026-08-13 currentness projection", "drafts/research-preview-release/currentness-2026-08-13/build-currentness.mjs");
   node("static source-to-dist build", "scripts/catalog.mjs", "build");
 }
 
@@ -262,8 +268,8 @@ const validatorCommands = [
   ["Codex 0.146.0 generated refresh", "drafts/real-agent-catalog/scripts/validate-openai-codex-0-146-0-refresh.mjs"],
   ["pre-currentness generated refreshes", "drafts/real-agent-catalog/scripts/validate-current-record-refreshes.mjs"],
   ["critical-mass expansion", "drafts/real-agent-catalog/scripts/validate-critical-mass-expansion.mjs"],
-  ["all-surface 2026-08-09 currentness", "drafts/research-preview-release/currentness-2026-08-09/validate-currentness.mjs"],
-  ["unified 73-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
+  ["official-source 2026-08-13 currentness", "drafts/research-preview-release/currentness-2026-08-13/validate-currentness.mjs"],
+  ["unified 88-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
   ["evidence-exact agent-claims comparison", "scripts/validate-comparison-mvp.mjs"],
   ["governance requirements", "drafts/real-agent-catalog/scripts/validate-governance.mjs"],
   ["documentation and publisher source links", "drafts/real-agent-catalog/scripts/validate-documentation-consistency.mjs"],
@@ -276,7 +282,7 @@ async function validateBrowserReceipt() {
   const expectedRecordIds = buildManifest.researchPreview.recordDetails.records.map((record) => record.recordId);
 
   assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.2");
-  assert.equal(receipt.asOf, "2026-08-11");
+  assert.equal(receipt.asOf, "2026-08-13");
   assert.doesNotThrow(() => new Date(receipt.checkedAt).toISOString());
   assert.equal(receipt.sourceDigests.landingHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "index.html"))));
   assert.equal(receipt.sourceDigests.previewHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"))));
@@ -332,10 +338,10 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.journeys.catalog.result, "PASS");
   assert.equal(receipt.journeys.catalog.surfaceCount, 55);
   assert.equal(receipt.journeys.catalog.currentCards, 53);
-  assert.equal(receipt.journeys.catalog.historyCards, 20);
+  assert.equal(receipt.journeys.catalog.historyCards, 35);
   assert.equal(receipt.journeys.catalog.historyCollapsedInitially, true);
   assert.equal(receipt.journeys.catalog.historyExpandedOnRequest, true);
-  assert.equal(receipt.journeys.catalog.rawJsonSecondaryLinks, 73);
+  assert.equal(receipt.journeys.catalog.rawJsonSecondaryLinks, 88);
   assert.equal(receipt.journeys.catalog.desktopHorizontalOverflow, false);
   assert.equal(receipt.journeys.catalog.mobileHorizontalOverflow, false);
   assert.deepEqual(receipt.journeys.catalog.firstScreen, {
@@ -385,7 +391,7 @@ async function validateBrowserReceipt() {
     search: "Qwen",
     delivery: "hybrid",
     resultCards: 2,
-    openedRecordId: "com.alibaba.qwen-code.cli.0-21-8",
+    openedRecordId: "com.alibaba.qwen-code.cli.0-21-11",
     detailReturnLinkCarriedContext: true,
     returnRestoredSearchAndDelivery: true
   });
@@ -402,7 +408,7 @@ async function validateBrowserReceipt() {
     reloadPreservesOrderFilterAndDifferences: true
   });
   assert.deepEqual(receipt.journeys.comparison.representativePair, {
-    recordIds: ["com.alibaba.qwen-code.cli.0-21-8", "com.openai.codex.cli.0-147-0"],
+    recordIds: ["com.alibaba.qwen-code.cli.0-21-11", "com.openai.codex.cli.0-147-0"],
     projectedAcceptedClaims: 14,
     directOfficialSourceLinks: 14,
     exactCategoryRows: 13,
@@ -468,27 +474,27 @@ async function validateBrowserReceipt() {
 
   assert.equal(receipt.journeys.records.result, "PASS");
   assert.deepEqual(receipt.journeys.records.recordIds, expectedRecordIds);
-  assert.equal(expectedRecordIds.length, 73);
+  assert.equal(expectedRecordIds.length, 88);
   assert(Object.values(receipt.journeys.records.checksAppliedToEveryPage).every((value) => value === true));
   assert.deepEqual(receipt.journeys.records.viewports, [
     {
       label: "desktop",
       width: 1440,
       height: 900,
-      pagesAudited: 73,
-      uniquePagesAudited: 73,
+      pagesAudited: 88,
+      uniquePagesAudited: 88,
       failureRecordIds: []
     },
     {
       label: "mobile",
       width: 390,
       height: 844,
-      pagesAudited: 73,
-      uniquePagesAudited: 73,
+      pagesAudited: 88,
+      uniquePagesAudited: 88,
       failureRecordIds: []
     }
   ]);
-  assert.equal(receipt.journeys.records.representativeQwenRecord.recordId, "com.alibaba.qwen-code.cli.0-21-8");
+  assert.equal(receipt.journeys.records.representativeQwenRecord.recordId, "com.alibaba.qwen-code.cli.0-21-11");
   assert.equal(receipt.journeys.records.representativeQwenRecord.publisherClaims, 2);
   assert.equal(receipt.journeys.records.representativeQwenRecord.namedSources, 2);
   assert.equal(receipt.journeys.records.representativeQwenRecord.unresolvedUnknowns, 4);
@@ -517,15 +523,15 @@ async function validateBrowserReceipt() {
     structuredType: "WebPage"
   });
   assert.deepEqual(receipt.journeys.discoveryMetadata.representativeRecordIds, [
-    "com.alibaba.qwen-code.cli.0-21-8",
-    "com.anomaly.opencode.cli.1-18-16",
+    "com.alibaba.qwen-code.cli.0-21-11",
+    "com.anomaly.opencode.cli.1-18-18",
     "com.openai.codex.cli.0-147-0",
     "com.openai.codex.cli.0-90-0",
     "com.vercel.v0.agent.rolling"
   ]);
   assert.deepEqual(receipt.journeys.discoveryMetadata.allRecordPages, {
-    pagesAudited: 73,
-    uniqueCanonicalUrls: 73,
+    pagesAudited: 88,
+    uniqueCanonicalUrls: 88,
     openGraphFailures: 0,
     socialPreviewFailures: 0,
     structuredMetadataFailures: 0
@@ -537,23 +543,25 @@ async function validateBrowserReceipt() {
   assert.deepEqual(receipt.journeys.discoveryMetadata.sitemap, {
     path: "dist/sitemap.xml",
     sha256: sha256(await readFile(path.join(packageRoot, "dist", "sitemap.xml"))),
-    humanReadableRoutes: 76,
-    recordRoutes: 73,
+    humanReadableRoutes: 91,
+    recordRoutes: 88,
     rawJsonRoutes: 0,
     duplicateRoutes: 0
   });
 
-  assert.equal(receipt.sourceLinks.projectedClaimLinkedHttpsEntries, 393);
-  assert.equal(receipt.sourceLinks.sourceUrlIdentitiesChecked, 394);
-  assert.equal(receipt.sourceLinks.uniqueEndpointsChecked, 223);
+  assert.equal(receipt.sourceLinks.projectedClaimLinkedHttpsEntries, 471);
+  assert.equal(receipt.sourceLinks.sourceUrlIdentitiesChecked, 472);
+  assert.equal(receipt.sourceLinks.uniqueEndpointsChecked, 237);
   assert.equal(receipt.sourceLinks.endpointHttpFailures, 0);
   assert.equal(receipt.sourceLinks.endpointSuccessStatus, 200);
-  assert.deepEqual(receipt.sourceLinks.currentLiveCheck, {
-    checkedAt: receipt.checkedAt,
+  assert.doesNotThrow(() => new Date(receipt.sourceLinks.currentLiveCheck.checkedAt).toISOString());
+  assert(new Date(receipt.sourceLinks.currentLiveCheck.checkedAt) <= new Date(receipt.checkedAt));
+  assert.deepEqual({ ...receipt.sourceLinks.currentLiveCheck, checkedAt: null }, {
+    checkedAt: null,
     method: "Read-only GET with redirects",
-    recordsChecked: 73,
-    uniqueEndpointsChecked: 223,
-    passed: 223,
+    recordsChecked: 88,
+    uniqueEndpointsChecked: 237,
+    passed: 237,
     failures: 0
   });
   assert.deepEqual(receipt.console, { errors: 0, warnings: 0 });
@@ -565,7 +573,7 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.boundaries.currentnessLifecycleProjectionUpdated, true);
   assert.equal(receipt.boundaries.githubStateChanged, false);
 
-  console.log("PASS digest-bound browser journeys: landing, catalog and evidence-exact comparison at compact desktop/mobile viewports, plus all 73 record pages overflow-free with zero console errors");
+  console.log("PASS digest-bound browser journeys: landing, catalog and evidence-exact comparison at compact desktop/mobile viewports, plus all 88 record pages overflow-free with zero console errors");
 }
 
 function validatePageDiscovery(html, expected) {

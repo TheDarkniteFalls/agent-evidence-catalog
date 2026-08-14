@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "id": "dev.zed.agent.agent-paths-current",
+  "slug": "agent-paths-current",
+  "subject": {
+    "id": "dev.zed.agent.native",
+    "name": "Zed Agent",
+    "publisher": "Zed Industries, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "native Zed Agent in Zed",
+      "slug": "zed-agent-1-15-0"
+    }
+  },
+  "claim": {
+    "category": "identity.surface",
+    "statement": "Zed's current documentation distinguishes three agent paths: native Zed Agent, External Agents connected through ACP, and Terminal Threads whose CLI or TUI owns its own authentication and configuration."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Zed Industries, Inc."
+  },
+  "source": {
+    "uri": "https://zed.dev/docs/ai/agents",
+    "title": "Agents | AI Agents in Zed",
+    "locator": "agent-path comparison table",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "Zed Agent",
+        "External Agents",
+        "Terminal Threads"
+      ]
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "Zed desktop editor"
+      ]
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "native local agent",
+        "external ACP process",
+        "terminal CLI/TUI"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "agent-path-change",
+      "ACP-integration-change"
+    ]
+  },
+  "limitations": [
+    "Only the native Zed Agent is the subject of this record; the comparison does not transfer external-agent behavior into it."
+  ],
+  "unknowns": [
+    "The active path of any thread, external process identity and terminal CLI identity are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

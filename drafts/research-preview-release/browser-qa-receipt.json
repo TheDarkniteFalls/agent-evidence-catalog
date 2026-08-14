@@ -1,18 +1,18 @@
 {
   "schemaVersion": "research-preview-browser-qa/0.2",
-  "asOf": "2026-08-11",
-  "checkedAt": "2026-08-11T07:21:11.943Z",
+  "asOf": "2026-08-13",
+  "checkedAt": "2026-08-13T10:36:44Z",
   "sourceDigests": {
-    "landingHtmlSha256": "2fe96c2f1e8d83a1bf1c45e7a9073cf8bc937d430ad16d9f49299fe89375e55d",
-    "previewHtmlSha256": "64ae8c7eda611b709872f28d128f457f72ce8d07406bea97f51595240cd4eb7b",
-    "previewDataSha256": "70b87c2eaa8ff7159f8903891c4f408014da76d1f9d9b8a3499eb55179042ea0",
+    "landingHtmlSha256": "2fd6e798b8e60d5149e59c846fb726ddf64937c74df30d283fa4af875d36c033",
+    "previewHtmlSha256": "0cfe87987319a0b324748c05d167c0ae14a4b796679188bf436e30a4ed9d1bde",
+    "previewDataSha256": "d057dc37158d22edb29424742ce84e7f97264b8b0a46889ad84d9f443b40b4de",
     "previewAppSha256": "c9dac274b251e9c1f5d32b6d8fbec64f0a7819f3d020123dadd00d957a6c1379",
-    "comparisonHtmlSha256": "aa2e006b36ccb7ace834735c7c3804e92cb74b2b158fee34aa5b977158635cb9",
+    "comparisonHtmlSha256": "b2b49557c742f782bbb0b8692d184da96fe0022fc7ce992fce3e45c1357893d8",
     "comparisonCoreSha256": "80607e3b19e64fd54f9649d32321553ba63472fe6e6626dd56f1a7c4908accb4",
     "comparisonAppSha256": "6edc3785ced6736b40b6ecfd3512210fdff8d5430c381173a8fcf91f96eca54d",
     "recordDetailAppSha256": "1f884a3c18fa8bafeda1a24e80b574ce010d097bb7de3786b2ad7226d76f0611",
     "previewStylesSha256": "43d64248fb700f44b801269d259b0035558b438d6ee7c649e6cd8a5eee7a1f98",
-    "recordDetailsManifestSha256": "99761b9d5ba4b61f7c42ea15b247cb4f9e32afa8819063fe7d29c91a59567140"
+    "recordDetailsManifestSha256": "79e3cfb8cb7f6311222d5569afc6e2017cd17244b07a6489974e52d7860b2308"
   },
   "viewportEnvironment": {
     "desktopDevicePixelRatio": 0.75,
@@ -60,10 +60,10 @@
       "result": "PASS",
       "surfaceCount": 55,
       "currentCards": 53,
-      "historyCards": 20,
+      "historyCards": 35,
       "historyCollapsedInitially": true,
       "historyExpandedOnRequest": true,
-      "rawJsonSecondaryLinks": 73,
+      "rawJsonSecondaryLinks": 88,
       "desktopHorizontalOverflow": false,
       "mobileHorizontalOverflow": false,
       "firstScreen": {
@@ -113,7 +113,7 @@
         "search": "Qwen",
         "delivery": "hybrid",
         "resultCards": 2,
-        "openedRecordId": "com.alibaba.qwen-code.cli.0-21-8",
+        "openedRecordId": "com.alibaba.qwen-code.cli.0-21-11",
         "detailReturnLinkCarriedContext": true,
         "returnRestoredSearchAndDelivery": true
       }
@@ -132,7 +132,7 @@
       },
       "representativePair": {
         "recordIds": [
-          "com.alibaba.qwen-code.cli.0-21-8",
+          "com.alibaba.qwen-code.cli.0-21-11",
           "com.openai.codex.cli.0-147-0"
         ],
         "projectedAcceptedClaims": 14,
@@ -288,7 +288,22 @@
         "com.gitlab.duo.code-review-flow.19-2-1",
         "com.jetbrains.junie.ide-plugin.262-132-35",
         "com.openai.codex.cli.0-147-0",
-        "dev.zed.agent.native.1-14-2"
+        "dev.zed.agent.native.1-14-2",
+        "com.alibaba.qwen-code.cli.0-21-11",
+        "com.amazon.kiro.ide.1-0-293",
+        "com.anomaly.opencode.cli.1-18-18",
+        "com.anthropic.claude-code.cli.2-1-231",
+        "com.cline.bot.cli.3-0-54",
+        "com.cline.bot.vscode-extension.4-1-9",
+        "com.cognition.devin-desktop.cascade.3-7-16",
+        "com.github.copilot.cli.1-0-79",
+        "com.gitlab.duo.developer-flow.19-2-2",
+        "com.gitlab.duo.code-review-flow.19-2-2",
+        "com.google.antigravity.cli.1-1-12",
+        "com.google.gemini.cli.0-55-1",
+        "com.jetbrains.junie.ide-plugin.262-579-3",
+        "dev.zed.agent.native.1-15-0",
+        "org.aaif.goose.cli.1-46-0"
       ],
       "checksAppliedToEveryPage": {
         "pageLoadedWithUniqueIdentity": true,
@@ -309,21 +324,21 @@
           "label": "desktop",
           "width": 1440,
           "height": 900,
-          "pagesAudited": 73,
-          "uniquePagesAudited": 73,
+          "pagesAudited": 88,
+          "uniquePagesAudited": 88,
           "failureRecordIds": []
         },
         {
           "label": "mobile",
           "width": 390,
           "height": 844,
-          "pagesAudited": 73,
-          "uniquePagesAudited": 73,
+          "pagesAudited": 88,
+          "uniquePagesAudited": 88,
           "failureRecordIds": []
         }
       ],
       "representativeQwenRecord": {
-        "recordId": "com.alibaba.qwen-code.cli.0-21-8",
+        "recordId": "com.alibaba.qwen-code.cli.0-21-11",
         "lifecycleStatus": "current",
         "publisherClaims": 2,
         "namedSources": 2,
@@ -357,15 +372,15 @@
         "structuredType": "WebPage"
       },
       "representativeRecordIds": [
-        "com.alibaba.qwen-code.cli.0-21-8",
-        "com.anomaly.opencode.cli.1-18-16",
+        "com.alibaba.qwen-code.cli.0-21-11",
+        "com.anomaly.opencode.cli.1-18-18",
         "com.openai.codex.cli.0-147-0",
         "com.openai.codex.cli.0-90-0",
         "com.vercel.v0.agent.rolling"
       ],
       "allRecordPages": {
-        "pagesAudited": 73,
-        "uniqueCanonicalUrls": 73,
+        "pagesAudited": 88,
+        "uniqueCanonicalUrls": 88,
         "openGraphFailures": 0,
         "socialPreviewFailures": 0,
         "structuredMetadataFailures": 0
@@ -376,26 +391,26 @@
       },
       "sitemap": {
         "path": "dist/sitemap.xml",
-        "sha256": "57033bc0421a7fcf1f08b5efe97736a1b8e3b56db40ea2e3a5459c4e3f0a0aa9",
-        "humanReadableRoutes": 76,
-        "recordRoutes": 73,
+        "sha256": "5ed08f22f621fcd7f253cbd93704da7dc633f20d3cd4c7db420583d0410e6384",
+        "humanReadableRoutes": 91,
+        "recordRoutes": 88,
         "rawJsonRoutes": 0,
         "duplicateRoutes": 0
       }
     }
   },
   "sourceLinks": {
-    "projectedClaimLinkedHttpsEntries": 393,
-    "sourceUrlIdentitiesChecked": 394,
-    "uniqueEndpointsChecked": 223,
+    "projectedClaimLinkedHttpsEntries": 471,
+    "sourceUrlIdentitiesChecked": 472,
+    "uniqueEndpointsChecked": 237,
     "endpointHttpFailures": 0,
     "endpointSuccessStatus": 200,
     "currentLiveCheck": {
-      "checkedAt": "2026-08-11T07:21:11.943Z",
+      "checkedAt": "2026-08-13T10:23:57.690Z",
       "method": "Read-only GET with redirects",
-      "recordsChecked": 73,
-      "uniqueEndpointsChecked": 223,
-      "passed": 223,
+      "recordsChecked": 88,
+      "uniqueEndpointsChecked": 237,
+      "passed": 237,
       "failures": 0
     }
   },
