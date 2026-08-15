@@ -17,7 +17,7 @@
     <meta name="twitter:title" content="Compare Coding-Agent Claims and Sources · Agent Evidence Catalog">
     <meta name="twitter:description" content="Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Compare Coding-Agent Claims and Sources","description":"Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/","isPartOf":{"@type":"WebSite","name":"Agent Evidence Catalog","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/"}}</script>
-    <link rel="stylesheet" href="styles.css?v=2026-08-11-compact-fidelity-1">
+    <link rel="stylesheet" href="styles.css?v=2026-08-16-wide-workspace-1">
   </head>
   <body class="comparison-page">
     <a class="skip-link" href="#main">Skip to comparison</a>
@@ -69,51 +69,54 @@
           <p id="pickerEmpty" class="empty-state compact-empty" hidden>No current records match that search.</p>
         </div>
 
-        <div class="selected-panel" aria-labelledby="selected-heading">
-          <div class="selected-panel-heading">
-            <div>
-              <p class="eyebrow">Ordered comparison</p>
-              <h2 id="selected-heading">Selected records <span id="selectedCount">(0 of 4)</span></h2>
+        <div class="comparison-workspace">
+          <div class="selected-panel" aria-labelledby="selected-heading">
+            <div class="selected-panel-heading">
+              <div>
+                <p class="eyebrow">Ordered comparison</p>
+                <h2 id="selected-heading">Selected records <span id="selectedCount">(0 of 4)</span></h2>
+              </div>
+              <button id="clearSelection" class="text-button" type="button" hidden>Clear all</button>
             </div>
-            <button id="clearSelection" class="text-button" type="button" hidden>Clear all</button>
+            <div id="selectedRecords" class="selected-records" aria-label="Ordered comparison slots"></div>
+            <p id="selectionEmpty" class="sr-only">No records selected. Choose any two current agents to begin.</p>
           </div>
-          <div id="selectedRecords" class="selected-records"></div>
-          <p id="selectionEmpty" class="selected-empty">No records selected. Choose any two current agents to begin.</p>
-        </div>
-      </section>
 
-      <div id="comparisonStatus" class="comparison-status" role="status" aria-live="polite"></div>
+          <div id="comparisonStatus" class="comparison-status" role="status" aria-live="polite"></div>
 
-      <section id="comparisonResults" class="comparison-results" aria-labelledby="results-heading" hidden>
-        <div class="comparison-tools">
-          <label>
-            <span>Focus accepted claims</span>
-            <input id="claimFilter" type="search" placeholder="e.g., context window, model, environment, limits" autocomplete="off">
-          </label>
-          <div class="differences-field">
-            <span>Show only differences</span>
-            <label class="differences-toggle">
-              <input id="differencesOnly" type="checkbox">
-              <span>Only show where claims differ</span>
-            </label>
-          </div>
-        </div>
-        <div class="sr-only">
-          <div>
-            <p class="eyebrow">Side-by-side evidence</p>
-            <h2 id="results-heading">Selected exact records</h2>
-            <p>Coverage counts describe documentation, not product quality or capability.</p>
-          </div>
-        </div>
-        <div id="comparisonMatrix" class="comparison-matrix-shell" tabindex="0" aria-label="Selected agent claims comparison; horizontally scrollable"></div>
-        <p id="noClaimMatches" class="empty-state" hidden>No accepted claim rows match that filter. This does not indicate capability absence.</p>
-        <div id="recordBoundaries" class="record-boundaries"></div>
-      </section>
+          <section id="comparisonResults" class="comparison-results" aria-labelledby="results-heading" hidden>
+            <div class="comparison-tools">
+              <label>
+                <span class="sr-only">Focus accepted claims</span>
+                <input id="claimFilter" type="search" placeholder="Focus accepted claims" autocomplete="off">
+              </label>
+              <div class="differences-field">
+                <span class="sr-only">Show only differences</span>
+                <label class="differences-toggle">
+                  <input id="differencesOnly" type="checkbox">
+                  <span>Only show where claims differ</span>
+                </label>
+              </div>
+            </div>
+            <div class="sr-only">
+              <div>
+                <p class="eyebrow">Side-by-side evidence</p>
+                <h2 id="results-heading">Selected exact records</h2>
+                <p>Coverage counts describe documentation, not product quality or capability.</p>
+              </div>
+            </div>
+            <div id="comparisonMatrix" class="comparison-matrix-shell" tabindex="0" aria-label="Selected agent claims comparison; horizontally scrollable"></div>
+            <p id="noClaimMatches" class="empty-state" hidden>No accepted claim rows match that filter. This does not indicate capability absence.</p>
+            <div id="recordBoundaries" class="record-boundaries"></div>
+          </section>
 
-      <section id="comparisonStart" class="comparison-start" aria-labelledby="start-heading">
-        <p class="eyebrow">Start comparing</p>
-        <h2 id="start-heading">Choose two records to build the matrix.</h2>
-        <p>Your ordered selection, claim focus and differences toggle stay in the URL. No cookies, local storage or tracking are used.</p>
+          <section id="comparisonStart" class="comparison-start" aria-labelledby="start-heading">
+            <p class="eyebrow">Start comparing</p>
+            <h2 id="start-heading">Choose two records to build the matrix.</h2>
+            <p>No records selected. Choose any two current agents to begin.</p>
+            <p class="comparison-start-note">Your ordered selection, claim focus and differences toggle stay in the URL. No cookies, local storage or tracking are used.</p>
+          </section>
+        </div>
       </section>
     </main>
 
@@ -131,6 +134,6 @@
     <noscript><p class="noscript">JavaScript is required for the comparison interface. Human-readable records remain available from the <a href="index.html">research catalog</a>.</p></noscript>
     <script src="data.js?v=2026-08-15-sealed-snapshot"></script>
     <script src="comparison-core.js?v=2026-08-15-sealed-snapshot"></script>
-    <script src="compare.js?v=2026-08-15-sealed-snapshot"></script>
+    <script src="compare.js?v=2026-08-16-wide-workspace-1"></script>
   </body>
 </html>

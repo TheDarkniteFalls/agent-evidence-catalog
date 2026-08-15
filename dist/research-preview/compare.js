@@ -5,9 +5,30 @@
   const core = window.AGENT_CLAIMS_COMPARISON;
   if (!data || !core) throw new Error("Comparison data or projector is unavailable.");
 
+  // Editorial starting points for first-visit recognition, not a ranking or endorsement.
+  // Every other current record retains its canonical catalog order.
+  const recognizableStartingRecordIds = Object.freeze([
+    "com.anthropic.claude-code.cli.2-1-233",
+    "com.openai.codex.cli.0-147-0",
+    "com.github.copilot.cli.1-0-80",
+    "com.cursor.ide.foreground-agent.3-15"
+  ]);
+  const recognizableStartingOrder = new Map(recognizableStartingRecordIds.map((recordId, index) => [recordId, index]));
   const summariesById = new Map(data.previewRecords.map((record) => [record.recordId, record]));
   const knownIds = new Set(summariesById.keys());
-  const currentRecords = data.surfaces.map((surface) => surface.currentRecord).filter(Boolean);
+  const currentRecords = data.surfaces
+    .map((surface) => surface.currentRecord)
+    .filter(Boolean)
+    .map((record, canonicalIndex) => ({ record, canonicalIndex }))
+    .sort((left, right) => {
+      const leftStart = recognizableStartingOrder.get(left.record.recordId);
+      const rightStart = recognizableStartingOrder.get(right.record.recordId);
+      if (leftStart !== undefined || rightStart !== undefined) {
+        return (leftStart ?? Number.MAX_SAFE_INTEGER) - (rightStart ?? Number.MAX_SAFE_INTEGER);
+      }
+      return left.canonicalIndex - right.canonicalIndex;
+    })
+    .map(({ record }) => record);
   const initialParams = new URLSearchParams(window.location.search);
   const initialSelection = core.parseRequestedIds(initialParams.get("agents"), knownIds);
   let selectedIds = [...initialSelection.ids];
@@ -157,7 +178,20 @@
     selectedCount.textContent = `(${selectedIds.length} of ${core.MAX_SELECTION})`;
     selectionEmpty.hidden = selectedIds.length !== 0;
     clearSelection.hidden = selectedIds.length === 0;
-    selectedRecords.replaceChildren(...selectedIds.map((recordId, index) => {
+    selectedRecords.replaceChildren(...Array.from({ length: core.MAX_SELECTION }, (_, index) => {
+      const recordId = selectedIds[index];
+      if (!recordId) {
+        const slot = document.createElement("div");
+        slot.className = "selected-record selected-placeholder";
+        slot.setAttribute("aria-label", `Comparison slot ${index + 1} is empty`);
+        const position = document.createElement("span");
+        position.className = "selection-position";
+        position.textContent = String(index + 1);
+        const prompt = document.createElement("p");
+        prompt.textContent = "Choose a record";
+        slot.append(position, prompt);
+        return slot;
+      }
       const record = summariesById.get(recordId);
       const card = document.createElement("article");
       card.className = "selected-record";
@@ -169,7 +203,7 @@
       const name = document.createElement("h3");
       name.textContent = record.name;
       const detail = document.createElement("p");
-      detail.textContent = versionLabel(record);
+      detail.textContent = `${versionLabel(record)} · ${core.readableLabel(record.surface.deliveryModel)}`;
       copy.append(name, detail);
       const controls = document.createElement("div");
       controls.className = "selection-controls";
@@ -179,7 +213,7 @@
       const later = makeButton("→", "icon-button", () => moveRecord(recordId, 1));
       later.disabled = index === selectedIds.length - 1;
       later.setAttribute("aria-label", `Move ${record.name} later`);
-      const remove = makeButton("Remove", "text-button", () => removeRecord(recordId));
+      const remove = makeButton("×", "icon-button selected-remove", () => removeRecord(recordId));
       remove.setAttribute("aria-label", `Remove ${record.name} from comparison`);
       controls.append(earlier, later, remove);
       card.append(position, copy, controls);
