@@ -39,7 +39,7 @@ assert(corrections.includes("not for the\nstatic closed-intake preview"));
 assert(method.includes("zero independent tests"));
 assert(method.includes("public Research Preview v0.1"));
 assert(method.includes("https://thedarknitefalls.github.io/agent-evidence-catalog/"));
-assert(readiness.includes("Current outcome: **55-SURFACE CURRENTNESS REFRESH CANDIDATE VALIDATED LOCALLY; PUBLICATION NOT AUTHORIZED HERE**"));
+assert(readiness.includes("Current outcome: **55-SURFACE SEALED SNAPSHOT CANDIDATE VALIDATED LOCALLY; PUBLICATION NOT AUTHORIZED HERE**"));
 assert(readiness.includes("Codex CLI 0.147.0 current record | PASS"));
 assert(readiness.includes("NO MUTATION AUTHORIZED"));
 assert(readiness.includes("require separate authorization"));

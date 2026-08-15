@@ -213,8 +213,8 @@ async function assertNoPublicIntegration() {
     if (relative === "dist/build-manifest.json") {
       const manifest = JSON.parse(content);
       const details = manifest.researchPreview.recordDetails;
-      assert.equal(details.count, 88);
-      assert.equal(details.records.length, 88);
+      assert.equal(details.count, 98);
+      assert.equal(details.records.length, 98);
       assertUnique(details.records.map((entry) => entry.recordId), "Human-readable record-detail IDs");
       for (const entry of details.records) {
         assert.equal(entry.entryPoint, `research-preview/records/${entry.recordId}.html`);
@@ -513,7 +513,7 @@ assert.equal(
 );
 assert.equal(
   await treeDigest([path.join(draftRoot, "candidate-registry")]),
-  "152d6ca82c3244a110c36fa09dce7c7fa3f2749a528a376f78b85f35d0abe6e4",
+  "8ee7b5110dddbb5ec3defec04e04d15e3b73867e610485b1d7e74de2cf14ee3e",
   "Completed 55-surface registry changed"
 );
 assert.equal(

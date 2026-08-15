@@ -16,6 +16,7 @@
   const trayChips = document.querySelector("#trayChips");
   const trayCount = document.querySelector("#trayCount");
   const compareSelection = document.querySelector("#compareSelection");
+  comparison.applySnapshotBanner(data);
 
   selectionStatus.textContent = parsedSelection.messages.join(" ");
   selectionStatus.hidden = parsedSelection.messages.length === 0;

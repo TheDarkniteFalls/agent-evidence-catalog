@@ -123,6 +123,9 @@ function renderRecordDetail(record, preview, lifecycle) {
   const summary = preview.previewRecords.find((candidate) => candidate.recordId === recordId);
   const selected = lifecycle.entries.find((entry) => entry.recordId === recordId);
   if (!summary || !selected) throw new Error(`Record detail ${recordId} is missing its public summary or lifecycle entry`);
+  const publicationFreshnessNotice = summary.publicationFreshness?.status === "known-newer"
+    ? `<p class="boundary-callout" data-known-newer-record="${escapeHtml(recordId)}"><strong>Freshness notice:</strong> The sealed record retains ${escapeHtml(summary.publicationFreshness.reviewedIdentity)}. The official source exposed ${escapeHtml(summary.publicationFreshness.knownNewerIdentity)} at ${escapeHtml(summary.publicationFreshness.checkedAt)}; this notice does not refresh the snapshot.</p>`
+    : "";
 
   const lifecycleById = new Map(lifecycle.entries.map((entry) => [entry.recordId, entry]));
   if (selected.supersedesRecordId) {
@@ -300,7 +303,7 @@ function renderRecordDetail(record, preview, lifecycle) {
     </header>
 
     <aside class="preview-banner" aria-label="Research preview status">
-      <strong>Human-readable record.</strong> Publisher-source research only. No agent was installed or run, and no independent-test credit is assigned.
+      <strong>Research Preview v0.1. Sealed 2026-08-15 source-review snapshot.</strong> <span data-snapshot-banner-copy></span>
     </aside>
 
     <main id="main" class="detail-main">
@@ -314,7 +317,7 @@ function renderRecordDetail(record, preview, lifecycle) {
           <div><dt>Record coverage</dt><dd>${escapeHtml(record.claims.length)} publisher claims · ${escapeHtml(record.sources.length)} named sources · 0 independent tests</dd></div>
         </dl>
         <p class="detail-status"><strong>Lifecycle note:</strong> ${escapeHtml(selected.note)}</p>
-        <div class="detail-actions">
+${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}        <div class="detail-actions">
           <button class="primary-action" type="button" data-add-record-to-compare data-record-id="${escapeHtml(recordId)}" data-record-name="${escapeHtml(summary.name)}">Add exact record to compare</button>
           <a data-compare-return href="../compare.html">Open comparison picker</a>
         </div>
@@ -419,9 +422,9 @@ function renderRecordDetail(record, preview, lifecycle) {
       <p id="trayCount" class="selection-tray-count"></p>
       <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected claims</button>
     </div>
-    <script src="../data.js?v=2026-08-13-currentness"></script>
-    <script src="../comparison-core.js?v=2026-08-13-currentness"></script>
-    <script src="../record-detail.js?v=2026-08-13-currentness"></script>
+    <script src="../data.js?v=2026-08-15-sealed-snapshot"></script>
+    <script src="../comparison-core.js?v=2026-08-15-sealed-snapshot"></script>
+    <script src="../record-detail.js?v=2026-08-15-sealed-snapshot"></script>
   </body>
 </html>
 `;
@@ -865,6 +868,20 @@ async function commandBuild() {
   const researchPreviewLifecycleSource = join(ROOT, "drafts", "real-agent-catalog", "research-preview", "lifecycle.json");
   const researchPreviewLifecycle = JSON.parse(await readFile(researchPreviewLifecycleSource, "utf8"));
   await copyFile(researchPreviewLifecycleSource, join(DIST, "research-preview", "lifecycle.json"));
+  const snapshotSealSource = join(ROOT, "drafts", "research-preview-release", "currentness-2026-08-15", "snapshot-seal.json");
+  const snapshotSealRaw = await readFile(snapshotSealSource, "utf8");
+  const snapshotSeal = JSON.parse(snapshotSealRaw);
+  const freshnessCensusSource = join(ROOT, "drafts", "research-preview-release", "currentness-2026-08-15", "publication-freshness-census.json");
+  const freshnessCensusRaw = await readFile(freshnessCensusSource, "utf8");
+  const freshnessCensus = JSON.parse(freshnessCensusRaw);
+  if (JSON.stringify(researchPreview.snapshotSeal) !== JSON.stringify(snapshotSeal)) {
+    throw new Error("research preview snapshot seal differs from its generated canonical artifact");
+  }
+  if (JSON.stringify(researchPreview.publicationFreshness) !== JSON.stringify(freshnessCensus)) {
+    throw new Error("research preview publication freshness census differs from its generated canonical artifact");
+  }
+  await copyFile(snapshotSealSource, join(DIST, "research-preview", "snapshot-seal.json"));
+  await copyFile(freshnessCensusSource, join(DIST, "research-preview", "publication-freshness-census.json"));
   const researchPreviewSafeJson = JSON.stringify(researchPreview).replaceAll("<", "\\u003c");
   await writeFile(join(DIST, "research-preview", "data.js"), `window.RESEARCH_PREVIEW = ${researchPreviewSafeJson};\n`, "utf8");
   const recordDetails = [];
@@ -925,6 +942,21 @@ async function commandBuild() {
       recordsPresentedIncludingHistory: researchPreview.counts.recordsPresentedIncludingHistory,
       independentTestsCredited: researchPreview.counts.independentTestsCredited,
       openIntake: researchPreview.boundaries.openIntake,
+      snapshotSeal: {
+        data: "research-preview/snapshot-seal.json",
+        dataSha256: createHash("sha256").update(snapshotSealRaw).digest("hex"),
+        sourceReviewWindow: snapshotSeal.sourceReviewWindow,
+        sealedAt: snapshotSeal.sealedAt,
+        catalogCounts: snapshotSeal.catalogCounts
+      },
+      publicationFreshness: {
+        data: "research-preview/publication-freshness-census.json",
+        dataSha256: createHash("sha256").update(freshnessCensusRaw).digest("hex"),
+        checkedAt: freshnessCensus.census.completedAt,
+        knownNewer: freshnessCensus.counts.knownNewer,
+        incompleteCoverage: freshnessCensus.counts.incompleteCoverage,
+        surfaces: freshnessCensus.counts.surfaces
+      },
       comparison: {
         entryPoint: "research-preview/compare.html",
         htmlSha256: createHash("sha256").update(await readFile(join(DIST, "research-preview", "compare.html"))).digest("hex"),

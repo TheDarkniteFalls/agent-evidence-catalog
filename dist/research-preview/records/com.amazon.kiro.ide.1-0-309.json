@@ -1,0 +1,1604 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-15",
+  "sourceDossier": {
+    "path": "drafts/research-preview-release/currentness-2026-08-15/currentness-source.json",
+    "sha256": "a91e60feba3fcf1bb3b273ae07e9e4a2852995f7376d5ba200d0471cbfb777cc",
+    "relationship": "currentness-successor-derived-from-preserved-predecessor-and-reviewed-official-sources"
+  },
+  "identity": {
+    "recordId": "com.amazon.kiro.ide.1-0-309",
+    "agent": {
+      "id": "com.amazon.kiro.ide",
+      "name": "Kiro IDE"
+    },
+    "publisher": {
+      "id": "amazon-web-services",
+      "name": "Amazon Web Services"
+    },
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Kiro IDE",
+      "slug": "aws-kiro-ide-1-0-309",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "1.0.309",
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": "2026-08-13T00:00:00Z",
+      "channel": "Kiro IDE desktop release",
+      "additionalIdentities": [
+        {
+          "id": "exact-desktop-release",
+          "kind": "artifact-version",
+          "status": "known",
+          "value": "Kiro IDE 1.0.309",
+          "scopeBindings": [],
+          "artifactRefs": [
+            "kiro-ide-release-1-0-309"
+          ],
+          "sourceIds": [
+            "source-release-identity-1-0-309"
+          ],
+          "claimIds": [
+            "com.amazon.kiro.ide.release-identity-1-0-309"
+          ],
+          "note": "The dated desktop release is known; no platform installer or digest was captured."
+        },
+        {
+          "id": "rolling-kiro-service",
+          "kind": "service-revision",
+          "status": "unresolved",
+          "value": null,
+          "scopeBindings": [
+            {
+              "axisId": "model-route",
+              "alternativeId": "auto-route"
+            }
+          ],
+          "artifactRefs": [
+            "kiro-hosted-service"
+          ],
+          "sourceIds": [
+            "source-model-selection-current"
+          ],
+          "claimIds": [
+            "com.amazon.kiro.ide.model-selection-current"
+          ],
+          "note": "Model inventory and automatic routing are rolling and are not frozen by desktop release 1.0.309."
+        }
+      ],
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "macOS Apple Silicon",
+          "macOS Intel",
+          "Windows x64",
+          "Linux Debian/Ubuntu",
+          "Linux Universal"
+        ],
+        "alternativeDetails": [
+          {
+            "id": "macos-apple-silicon",
+            "label": "macOS Apple Silicon",
+            "kind": "platform-build",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "kiro-platform-installers-1-0-309"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "platform-build",
+                "alternativeId": "macos-apple-silicon"
+              }
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-309"
+            ],
+            "note": "No installer or digest captured."
+          },
+          {
+            "id": "macos-intel",
+            "label": "macOS Intel",
+            "kind": "platform-build",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "kiro-platform-installers-1-0-309"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "platform-build",
+                "alternativeId": "macos-intel"
+              }
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-309"
+            ],
+            "note": "No installer or digest captured."
+          },
+          {
+            "id": "windows-x64",
+            "label": "Windows x64",
+            "kind": "platform-build",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "kiro-platform-installers-1-0-309"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "platform-build",
+                "alternativeId": "windows-x64"
+              }
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-309"
+            ],
+            "note": "No installer or digest captured."
+          },
+          {
+            "id": "linux-debian",
+            "label": "Linux Debian or Ubuntu",
+            "kind": "platform-build",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "kiro-platform-installers-1-0-309"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "platform-build",
+                "alternativeId": "linux-debian"
+              }
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-309"
+            ],
+            "note": "No installer or digest captured."
+          },
+          {
+            "id": "linux-universal",
+            "label": "Linux Universal",
+            "kind": "platform-build",
+            "identityStatus": "unresolved",
+            "artifactRefs": [
+              "kiro-platform-installers-1-0-309"
+            ],
+            "scopeBindings": [
+              {
+                "axisId": "platform-build",
+                "alternativeId": "linux-universal"
+              }
+            ],
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-309"
+            ],
+            "note": "No installer or digest captured."
+          }
+        ],
+        "note": "The official source identifies 1.0.309, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-15 currentness review."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "kiro-ide-release-1-0-309",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://kiro.dev/changelog/ide/1-0-309/",
+        "ecosystem": "Kiro desktop release",
+        "version": "1.0.309",
+        "digest": null,
+        "note": "Dated publisher release note. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15."
+      },
+      {
+        "id": "kiro-platform-installers-1-0-309",
+        "kind": "other",
+        "identityStatus": "unresolved",
+        "uri": "https://kiro.dev/downloads/",
+        "ecosystem": "Kiro downloads",
+        "version": "1.0.309",
+        "digest": null,
+        "note": "Publisher download channel lists platform families; no binary was downloaded or hashed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15."
+      },
+      {
+        "id": "kiro-hosted-service",
+        "kind": "other",
+        "identityStatus": "unresolved",
+        "uri": null,
+        "ecosystem": "AWS-hosted Kiro model service",
+        "version": null,
+        "digest": null,
+        "note": "Exact service, routing and model revisions are unresolved. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "amazon-web-services",
+        "name": "Amazon Web Services",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-release-identity-1-0-309",
+      "uri": "https://kiro.dev/changelog/ide/1-0-309/",
+      "title": "Editor Actions, Guided Hook Creation, and Code OSS Upgrade",
+      "locator": "Release date and 1.0.309 heading",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "amazon-web-services",
+      "publishedAt": "2026-08-13T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-14T22:20:44.000Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-15 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-file-command-authority-current",
+      "uri": "https://kiro.dev/docs/privacy-and-security/",
+      "title": "Kiro privacy and security",
+      "locator": "Autopilot versus supervised mode and Protected paths",
+      "sourceKind": "publisher-policy",
+      "claimantId": "amazon-web-services",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-14T22:20:44.000Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-15 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-autopilot-supervised-current",
+      "uri": "https://kiro.dev/docs/chat/autopilot/",
+      "title": "Kiro Autopilot",
+      "locator": "How it works and change management features",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "amazon-web-services",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-14T22:20:44.000Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-15 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-command-policy-current",
+      "uri": "https://kiro.dev/docs/chat/terminal/",
+      "title": "Kiro terminal integration",
+      "locator": "Command approval and security",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "amazon-web-services",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-14T22:20:44.000Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-15 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-mcp-tool-authority-current",
+      "uri": "https://kiro.dev/docs/mcp/usage/",
+      "title": "Kiro MCP tools",
+      "locator": "Managing individual tools and Tool approval process",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "amazon-web-services",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-14T22:20:44.000Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-15 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-model-selection-current",
+      "uri": "https://kiro.dev/docs/models/",
+      "title": "Kiro models",
+      "locator": "How to switch models, model availability and reasoning effort",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "amazon-web-services",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-14T22:20:44.000Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-15 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-spec-gates-current",
+      "uri": "https://kiro.dev/docs/specs/quick-spec/",
+      "title": "Kiro Quick Spec",
+      "locator": "Quick Spec definition, How it works and FAQ",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "amazon-web-services",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-14T22:20:44.000Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-15 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-hook-actions-current",
+      "uri": "https://kiro.dev/docs/hooks/actions/",
+      "title": "Kiro hook actions",
+      "locator": "Agent Prompt action and Shell Command action",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "amazon-web-services",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-14T22:20:44.000Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-15 currentness successor; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Desktop build, operation mode, command policy, protected-path review, MCP authority, model route, spec workflow and hook trigger are separate dimensions; none was observed.",
+    "axes": [
+      {
+        "id": "platform-build",
+        "label": "Desktop platform build",
+        "scope": "mutually-exclusive",
+        "dimension": "artifact",
+        "alternatives": [
+          {
+            "id": "macos-apple-silicon",
+            "label": "macOS Apple Silicon",
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-309"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos-intel",
+              "windows-x64",
+              "linux-debian",
+              "linux-universal"
+            ]
+          },
+          {
+            "id": "macos-intel",
+            "label": "macOS Intel",
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-309"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos-apple-silicon",
+              "windows-x64",
+              "linux-debian",
+              "linux-universal"
+            ]
+          },
+          {
+            "id": "windows-x64",
+            "label": "Windows x64",
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-309"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos-apple-silicon",
+              "macos-intel",
+              "linux-debian",
+              "linux-universal"
+            ]
+          },
+          {
+            "id": "linux-debian",
+            "label": "Linux Debian or Ubuntu",
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-309"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos-apple-silicon",
+              "macos-intel",
+              "windows-x64",
+              "linux-universal"
+            ]
+          },
+          {
+            "id": "linux-universal",
+            "label": "Linux Universal",
+            "claimIds": [
+              "com.amazon.kiro.ide.release-identity-1-0-309"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos-apple-silicon",
+              "macos-intel",
+              "windows-x64",
+              "linux-debian"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The installed platform build and digest are unknown."
+        ]
+      },
+      {
+        "id": "operation-mode",
+        "label": "Agent operation mode",
+        "scope": "mutually-exclusive",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "autopilot",
+            "label": "Autopilot",
+            "claimIds": [
+              "com.amazon.kiro.ide.autopilot-supervised-current",
+              "com.amazon.kiro.ide.file-command-authority-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "supervised"
+            ],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "supervised",
+            "label": "Supervised",
+            "claimIds": [
+              "com.amazon.kiro.ide.autopilot-supervised-current",
+              "com.amazon.kiro.ide.file-command-authority-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "autopilot"
+            ],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          }
+        ],
+        "unknowns": [
+          "The effective operation mode and pending-review state are unknown."
+        ]
+      },
+      {
+        "id": "command-policy",
+        "label": "Terminal command policy",
+        "scope": "composable",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "per-command-review",
+            "label": "Per-command review",
+            "claimIds": [
+              "com.amazon.kiro.ide.command-policy-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "trusted-prefix",
+            "label": "Trusted command prefix",
+            "claimIds": [
+              "com.amazon.kiro.ide.command-policy-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "denylist",
+            "label": "Command denylist",
+            "claimIds": [
+              "com.amazon.kiro.ide.command-policy-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "automatic-deny",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "Trusted prefixes, denylist values, command strings and workspace scope are unknown."
+        ]
+      },
+      {
+        "id": "protected-path-review",
+        "label": "Protected-path review",
+        "scope": "unresolved",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "explicit-protected-path-approval",
+            "label": "Explicit approval for protected paths",
+            "claimIds": [
+              "com.amazon.kiro.ide.file-command-authority-current"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          }
+        ],
+        "unknowns": [
+          "Protected patterns, target paths and approval results are unknown."
+        ]
+      },
+      {
+        "id": "mcp-tool-policy",
+        "label": "MCP tool policy",
+        "scope": "composable",
+        "dimension": "tool-surface",
+        "alternatives": [
+          {
+            "id": "tool-enabled",
+            "label": "Tool enabled with per-use approval",
+            "claimIds": [
+              "com.amazon.kiro.ide.mcp-tool-authority-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "tool-disabled"
+            ],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "tool-auto-approved",
+            "label": "Named tool auto-approved",
+            "claimIds": [
+              "com.amazon.kiro.ide.mcp-tool-authority-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "tool-disabled"
+            ],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "tool-disabled",
+            "label": "Tool or server disabled",
+            "claimIds": [
+              "com.amazon.kiro.ide.mcp-tool-authority-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "tool-enabled",
+              "tool-auto-approved"
+            ],
+            "controlMode": "disabled",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "Servers, tools, parameters, credentials, disabled lists and auto-approvals are unknown."
+        ]
+      },
+      {
+        "id": "model-route",
+        "label": "Model route",
+        "scope": "mutually-exclusive",
+        "dimension": "model",
+        "alternatives": [
+          {
+            "id": "auto-route",
+            "label": "Automatic model routing",
+            "claimIds": [
+              "com.amazon.kiro.ide.model-selection-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "explicit-model"
+            ]
+          },
+          {
+            "id": "explicit-model",
+            "label": "Explicit model and effort selection",
+            "claimIds": [
+              "com.amazon.kiro.ide.model-selection-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "auto-route"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Selected model, provider, region, endpoint, effort and service revision are unknown."
+        ]
+      },
+      {
+        "id": "spec-workflow",
+        "label": "Spec workflow",
+        "scope": "mutually-exclusive",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "standard-spec",
+            "label": "Standard Feature or Bugfix Spec",
+            "claimIds": [
+              "com.amazon.kiro.ide.spec-gates-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "quick-spec"
+            ],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          },
+          {
+            "id": "quick-spec",
+            "label": "Quick Spec without inter-phase gates",
+            "claimIds": [
+              "com.amazon.kiro.ide.spec-gates-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "standard-spec"
+            ],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "Selected spec type, artifacts, review decisions and implementation trigger are unknown."
+        ]
+      },
+      {
+        "id": "hook-action",
+        "label": "Hook action and trigger",
+        "scope": "composable",
+        "dimension": "trigger",
+        "alternatives": [
+          {
+            "id": "agent-prompt",
+            "label": "Triggered agent prompt",
+            "claimIds": [
+              "com.amazon.kiro.ide.hook-actions-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "shell-command",
+            "label": "Triggered shell command",
+            "claimIds": [
+              "com.amazon.kiro.ide.hook-actions-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Hook event, action, command, timeout, paths and enabled state are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "com.amazon.kiro.ide.release-identity-1-0-309",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-15/claims/com.amazon.kiro.ide.1-0-309/release-identity-1-0-309.json",
+      "rawRecordSha256": "a883a79260f08f9aa2830e1fc9971816345b95b7e731e961e444cf345a53cb36",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.amazon.kiro.ide.release-identity-1-0-309",
+        "slug": "release-identity-1-0-309",
+        "subject": {
+          "id": "com.amazon.kiro.ide",
+          "name": "Kiro IDE",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Kiro IDE",
+            "slug": "aws-kiro-ide-1-0-309"
+          }
+        },
+        "claim": {
+          "category": "release.identity",
+          "statement": "AWS's Kiro changelog identifies Kiro IDE 1.0.309 as a desktop release dated 2026-08-13; the installed platform artifact remains unresolved."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Amazon Web Services"
+        },
+        "source": {
+          "uri": "https://kiro.dev/changelog/ide/1-0-309/",
+          "title": "Editor Actions, Guided Hook Creation, and Code OSS Upgrade",
+          "locator": "Release date and 1.0.309 heading",
+          "publishedAt": "2026-08-13T00:00:00Z",
+          "capturedAt": "2026-08-14T22:20:44.000Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "1.0.309"
+          },
+          "configuration": {
+            "scope": "all",
+            "values": []
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Kiro IDE desktop release"
+            ]
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "desktop client"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-15",
+          "reason": "Exact dated release retained even when later builds appear."
+        },
+        "review": {
+          "reviewedAt": "2026-08-15",
+          "recheckAfter": "2026-09-15",
+          "invalidatedBy": [
+            "release-metadata-correction",
+            "version-withdrawal"
+          ]
+        },
+        "limitations": [
+          "No installer, platform package, signature or digest was captured."
+        ],
+        "unknowns": [
+          "The source revision, installed platform asset and binary digest are unavailable or unresolved."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "amazon-web-services",
+      "sourceId": "source-release-identity-1-0-309",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.amazon.kiro.ide.file-command-authority-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-15/claims/com.amazon.kiro.ide.1-0-309/file-command-authority-current.json",
+      "rawRecordSha256": "97240e017814b514d44f7bfd51ca763d135df726c1d74bf4369ebab84e03b106",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.amazon.kiro.ide.file-command-authority-current",
+        "slug": "file-command-authority-current",
+        "subject": {
+          "id": "com.amazon.kiro.ide",
+          "name": "Kiro IDE",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Kiro IDE",
+            "slug": "aws-kiro-ide-1-0-309"
+          }
+        },
+        "claim": {
+          "category": "workspace.file-command-authority",
+          "statement": "Current AWS security documentation says Kiro can read, create, modify, search and delete files and run filesystem-impacting commands in both Autopilot and Supervised modes, while protected paths require explicit approval."
+        },
+        "provenance": {
+          "kind": "publisher-policy",
+          "claimant": "Amazon Web Services"
+        },
+        "source": {
+          "uri": "https://kiro.dev/docs/privacy-and-security/",
+          "title": "Kiro privacy and security",
+          "locator": "Autopilot versus supervised mode and Protected paths",
+          "publishedAt": null,
+          "capturedAt": "2026-08-14T22:20:44.000Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Autopilot",
+              "Supervised",
+              "protected paths",
+              "trusted commands policy"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local IDE workspace"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher security documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-15",
+          "recheckAfter": "2026-09-15",
+          "invalidatedBy": [
+            "security-documentation-change",
+            "tool-authority-change"
+          ]
+        },
+        "limitations": [
+          "This is a publisher description, not an observed permission-enforcement receipt for 1.0.309."
+        ],
+        "unknowns": [
+          "Workspace, target paths, operation mode, command policy and approval results are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "amazon-web-services",
+      "sourceId": "source-file-command-authority-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.amazon.kiro.ide.autopilot-supervised-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-15/claims/com.amazon.kiro.ide.1-0-309/autopilot-supervised-current.json",
+      "rawRecordSha256": "a34517f2603eef2f3b70941d7f4e51f09fae80dd93f0ad3b82e47ad66cfd238a",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.amazon.kiro.ide.autopilot-supervised-current",
+        "slug": "autopilot-supervised-current",
+        "subject": {
+          "id": "com.amazon.kiro.ide",
+          "name": "Kiro IDE",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Kiro IDE",
+            "slug": "aws-kiro-ide-1-0-309"
+          }
+        },
+        "claim": {
+          "category": "approval.operation-mode",
+          "statement": "Current AWS documentation distinguishes Autopilot, where changes can be applied without per-step approval, from Supervised, where Kiro yields after a turn containing file edits for hunk or file review; both retain interrupt and revert paths."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Amazon Web Services"
+        },
+        "source": {
+          "uri": "https://kiro.dev/docs/chat/autopilot/",
+          "title": "Kiro Autopilot",
+          "locator": "How it works and change management features",
+          "publishedAt": null,
+          "capturedAt": "2026-08-14T22:20:44.000Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Autopilot",
+              "Supervised",
+              "turn-level file review",
+              "interrupt",
+              "revert"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local IDE workspace"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-15",
+          "recheckAfter": "2026-09-15",
+          "invalidatedBy": [
+            "autopilot-documentation-change",
+            "supervised-review-change"
+          ]
+        },
+        "limitations": [
+          "Supervised review follows tool writes to disk and is not evidence that no pre-review filesystem mutation occurs."
+        ],
+        "unknowns": [
+          "The effective mode, pending changes, checkpoints and review decisions are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "amazon-web-services",
+      "sourceId": "source-autopilot-supervised-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.amazon.kiro.ide.command-policy-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-15/claims/com.amazon.kiro.ide.1-0-309/command-policy-current.json",
+      "rawRecordSha256": "2a484e25a0d1d56a20f258becd6b3b8a83f33ba6be2fe511b097e06684ce0622",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.amazon.kiro.ide.command-policy-current",
+        "slug": "command-policy-current",
+        "subject": {
+          "id": "com.amazon.kiro.ide",
+          "name": "Kiro IDE",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Kiro IDE",
+            "slug": "aws-kiro-ide-1-0-309"
+          }
+        },
+        "claim": {
+          "category": "approval.command-policy",
+          "statement": "Current Kiro terminal documentation says commands require approval by default, can be run once or added to a prefix-based trusted list, and can be forced back to manual review by a substring-based command denylist."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Amazon Web Services"
+        },
+        "source": {
+          "uri": "https://kiro.dev/docs/chat/terminal/",
+          "title": "Kiro terminal integration",
+          "locator": "Command approval and security",
+          "publishedAt": null,
+          "capturedAt": "2026-08-14T22:20:44.000Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "per-command approval",
+              "trusted command prefixes",
+              "universal trust",
+              "command denylist"
+            ]
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "not-applicable",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local terminal integration"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-15",
+          "recheckAfter": "2026-09-15",
+          "invalidatedBy": [
+            "terminal-documentation-change",
+            "trust-matching-change"
+          ]
+        },
+        "limitations": [
+          "Prefix trust applies to an entire command string and does not establish semantic analysis of chains, pipes or redirects."
+        ],
+        "unknowns": [
+          "Trusted and denied patterns, proposed commands, modifications, approvals and outputs are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "amazon-web-services",
+      "sourceId": "source-command-policy-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.amazon.kiro.ide.mcp-tool-authority-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-15/claims/com.amazon.kiro.ide.1-0-309/mcp-tool-authority-current.json",
+      "rawRecordSha256": "11728b6cf1fb14a40920bf2830d303462d88723e9aee120c0981bd91f8231bdf",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.amazon.kiro.ide.mcp-tool-authority-current",
+        "slug": "mcp-tool-authority-current",
+        "subject": {
+          "id": "com.amazon.kiro.ide",
+          "name": "Kiro IDE",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Kiro IDE",
+            "slug": "aws-kiro-ide-1-0-309"
+          }
+        },
+        "claim": {
+          "category": "tool.mcp-authority",
+          "statement": "Current Kiro MCP documentation says configured servers can expose tools, Kiro can select them, tools request approval by default, named tools may be auto-approved, and servers or individual tools may be disabled."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Amazon Web Services"
+        },
+        "source": {
+          "uri": "https://kiro.dev/docs/mcp/usage/",
+          "title": "Kiro MCP tools",
+          "locator": "Managing individual tools and Tool approval process",
+          "publishedAt": null,
+          "capturedAt": "2026-08-14T22:20:44.000Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "configured MCP server",
+              "tool enabled or disabled",
+              "per-use approval",
+              "autoApprove"
+            ]
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local or remote MCP server"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-15",
+          "recheckAfter": "2026-09-15",
+          "invalidatedBy": [
+            "mcp-documentation-change",
+            "tool-policy-change"
+          ]
+        },
+        "limitations": [
+          "MCP servers are external components with their own authority and are not identified by the Kiro client version."
+        ],
+        "unknowns": [
+          "Servers, transport, tools, schemas, parameters, credentials, disabled lists and approvals are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "amazon-web-services",
+      "sourceId": "source-mcp-tool-authority-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.amazon.kiro.ide.model-selection-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-15/claims/com.amazon.kiro.ide.1-0-309/model-selection-current.json",
+      "rawRecordSha256": "8288ffefbfb08eeb9b30767253ee8480e8137a9f23bc51c5a689a8e937f4bed7",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.amazon.kiro.ide.model-selection-current",
+        "slug": "model-selection-current",
+        "subject": {
+          "id": "com.amazon.kiro.ide",
+          "name": "Kiro IDE",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Kiro IDE",
+            "slug": "aws-kiro-ide-1-0-309"
+          }
+        },
+        "claim": {
+          "category": "runtime.model-selection",
+          "statement": "Current Kiro model documentation says a user can select a named model and supported effort level or use Auto for publisher-controlled per-task routing, with availability varying by region."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Amazon Web Services"
+        },
+        "source": {
+          "uri": "https://kiro.dev/docs/models/",
+          "title": "Kiro models",
+          "locator": "How to switch models, model availability and reasoning effort",
+          "publishedAt": null,
+          "capturedAt": "2026-08-14T22:20:44.000Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Auto routing",
+              "explicit model",
+              "reasoning effort",
+              "country or region availability"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "AWS-hosted Kiro service"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling model inventory and service routing."
+        },
+        "review": {
+          "reviewedAt": "2026-08-15",
+          "recheckAfter": "2026-09-15",
+          "invalidatedBy": [
+            "model-inventory-change",
+            "routing-change",
+            "regional-availability-change"
+          ]
+        },
+        "limitations": [
+          "A model label or Auto choice does not identify provider endpoint, weights, service revision or fallback behavior."
+        ],
+        "unknowns": [
+          "Selected model, provider, endpoint, region, effort, routing and fallback are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "amazon-web-services",
+      "sourceId": "source-model-selection-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.amazon.kiro.ide.spec-gates-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-15/claims/com.amazon.kiro.ide.1-0-309/spec-gates-current.json",
+      "rawRecordSha256": "74f422b24eaf84e946cc60a9a524bec70f5eb38305299d8ab9d7e18c0b45fe71",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.amazon.kiro.ide.spec-gates-current",
+        "slug": "spec-gates-current",
+        "subject": {
+          "id": "com.amazon.kiro.ide",
+          "name": "Kiro IDE",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Kiro IDE",
+            "slug": "aws-kiro-ide-1-0-309"
+          }
+        },
+        "claim": {
+          "category": "workflow.spec-approval",
+          "statement": "Current Kiro documentation says Quick Spec generates requirements, design and task artifacts without approval gates between phases, while standard Feature Specs retain review gates before implementation."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Amazon Web Services"
+        },
+        "source": {
+          "uri": "https://kiro.dev/docs/specs/quick-spec/",
+          "title": "Kiro Quick Spec",
+          "locator": "Quick Spec definition, How it works and FAQ",
+          "publishedAt": null,
+          "capturedAt": "2026-08-14T22:20:44.000Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "Quick Spec",
+              "standard Feature Spec",
+              "requirements.md",
+              "design.md",
+              "tasks.md"
+            ]
+          },
+          "platform": {
+            "scope": "all",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Kiro IDE spec workflow"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-15",
+          "recheckAfter": "2026-09-15",
+          "invalidatedBy": [
+            "spec-workflow-change",
+            "approval-gate-change"
+          ]
+        },
+        "limitations": [
+          "This claim concerns planning artifacts and phase gates; it does not establish approval of later file changes or commands."
+        ],
+        "unknowns": [
+          "Spec type, artifact contents, review decisions, task selection and implementation state are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "amazon-web-services",
+      "sourceId": "source-spec-gates-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.amazon.kiro.ide.hook-actions-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-15/claims/com.amazon.kiro.ide.1-0-309/hook-actions-current.json",
+      "rawRecordSha256": "1b5c3372b1130f3bbbd44f363205da561d78b0c0b4ad0f66f9b3b9cfe9c56a93",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.amazon.kiro.ide.hook-actions-current",
+        "slug": "hook-actions-current",
+        "subject": {
+          "id": "com.amazon.kiro.ide",
+          "name": "Kiro IDE",
+          "publisher": "Amazon Web Services",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Kiro IDE",
+            "slug": "aws-kiro-ide-1-0-309"
+          }
+        },
+        "claim": {
+          "category": "automation.event-trigger",
+          "statement": "Current Kiro hook documentation says configured events can trigger either an agent prompt or a local shell command, and that pre-tool or prompt-submit command failures can block the associated invocation."
+        },
+        "provenance": {
+          "kind": "publisher-documentation",
+          "claimant": "Amazon Web Services"
+        },
+        "source": {
+          "uri": "https://kiro.dev/docs/hooks/actions/",
+          "title": "Kiro hook actions",
+          "locator": "Agent Prompt action and Shell Command action",
+          "publishedAt": null,
+          "capturedAt": "2026-08-14T22:20:44.000Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "configured hook event",
+              "agent prompt action",
+              "shell command action",
+              "timeout",
+              "pre-tool blocking"
+            ]
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local IDE hook runtime"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": null,
+          "reason": "Rolling publisher documentation."
+        },
+        "review": {
+          "reviewedAt": "2026-08-15",
+          "recheckAfter": "2026-09-15",
+          "invalidatedBy": [
+            "hook-action-change",
+            "trigger-schema-change"
+          ]
+        },
+        "limitations": [
+          "Hooks require explicit configuration and can invoke local commands outside any model call."
+        ],
+        "unknowns": [
+          "Hook trigger, action, prompt, command, file scope, timeout, exit status and enablement are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "amazon-web-services",
+      "sourceId": "source-hook-actions-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-kiro-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-search",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No potentially independent public evaluation with exact Kiro IDE 1.0.309, platform, mode, model and configuration applicability was identified."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No publisher benchmark or unrelated-surface result is treated as independent evidence."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Kiro IDE 1.0.309 is the current exact publisher identity reviewed on 2026-08-15. The retained claims remain attributed to their named official sources, and installed artifact, model, effective configuration, authority and runtime behaviour remain unresolved unless a claim expressly narrows them.",
+    "releaseContext": {
+      "statement": "Kiro's official IDE changelog lists 1.0.309 first and dates it 2026-08-13.",
+      "sourceId": "source-release-identity-1-0-309",
+      "legacySource": null
+    },
+    "limitations": [
+      "All product claims are attributed to AWS public sources; no product behavior was observed.",
+      "No Kiro installer, extension, workspace, command, model or MCP server was installed, hashed or run.",
+      "Current documentation may postdate desktop release 1.0.309 and is scoped as rolling-current.",
+      "The exact desktop build does not freeze hosted model inventory, automatic routing or service revision.",
+      "Autopilot, Supervised, command trust, protected paths, MCP approval, spec gates and hooks are separate configuration dimensions.",
+      "No independent evaluation was admitted.",
+      "No capability quality, safety, privacy, performance or suitability conclusion is supported.",
+      "The successor was created from reviewed official sources without installing or running the agent; release identity does not transfer unscoped behaviour claims.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion was added.",
+      "The successor was created from reviewed official sources without installing or running the agent; release identity does not transfer unscoped behaviour claims.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion was added.",
+      "The successor was created from reviewed official sources without installing or running the agent; release identity does not transfer unscoped behaviour claims.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion was added."
+    ],
+    "unknowns": [
+      "The installed platform installer, package format, architecture and binary digest are unknown.",
+      "The source revision and source-to-binary correspondence for 1.0.309 are unavailable.",
+      "The effective operation mode, pending diffs, protected paths and review decisions are unknown.",
+      "Trusted command prefixes, denylist entries, commands, working directory and environment are unknown.",
+      "MCP servers, tools, parameters, credentials, disabled tools and auto-approval settings are unknown.",
+      "The selected model, provider, region, endpoint, effort and routing revision are unknown.",
+      "The spec workflow, generated artifacts, phase approvals and implementation trigger are unknown.",
+      "Hook events, actions, commands, timeouts, file patterns and enablement are unknown.",
+      "Account tier, organization policy, content-sharing setting and telemetry configuration are unknown.",
+      "No independently attributable exact-build evaluation artifact was identified."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the current identity, attributed publisher claims and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "publisher-claims",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Current identity",
+        "question": "Which exact surface is represented?",
+        "status": "1.0.309 current at review",
+        "answer": "Kiro's official IDE changelog lists 1.0.309 first and dates it 2026-08-13.",
+        "whyItMatters": "A newer exact publisher identity does not identify a particular installed artifact or effective session.",
+        "claimIds": [
+          "com.amazon.kiro.ide.release-identity-1-0-309"
+        ]
+      },
+      {
+        "id": "publisher-claims",
+        "eyebrow": "Attributed evidence",
+        "question": "What does the current record retain?",
+        "status": "8 publisher-attributed claims",
+        "answer": "The record retains only claims linked to the named official sources and keeps their applicability, limitations and unknowns explicit.",
+        "whyItMatters": "Publisher documentation is not observed product behaviour or independent verification.",
+        "claimIds": [
+          "com.amazon.kiro.ide.release-identity-1-0-309",
+          "com.amazon.kiro.ide.file-command-authority-current",
+          "com.amazon.kiro.ide.autopilot-supervised-current",
+          "com.amazon.kiro.ide.command-policy-current",
+          "com.amazon.kiro.ide.mcp-tool-authority-current",
+          "com.amazon.kiro.ide.model-selection-current",
+          "com.amazon.kiro.ide.spec-gates-current",
+          "com.amazon.kiro.ide.hook-actions-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this exact successor independently tested here?",
+        "status": "No",
+        "answer": "No agent was installed or run and no independent evidence was admitted during this currentness refresh.",
+        "whyItMatters": "Current identity and source attribution do not establish suitability, quality or safety.",
+        "claimIds": [
+          "com.amazon.kiro.ide.release-identity-1-0-309"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source currentness successor only. No product run, independent test, suitability calculation, ranking or recommendation is included."
+  }
+}

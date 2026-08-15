@@ -34,6 +34,7 @@
   const trayChips = document.querySelector("#trayChips");
   const trayCount = document.querySelector("#trayCount");
   const compareSelection = document.querySelector("#compareSelection");
+  core.applySnapshotBanner(data);
 
   claimFilter.value = initialParams.get("claim") ?? "";
   differencesOnly.checked = initialParams.get("differences") === "1";

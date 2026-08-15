@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.kiro.ide.model-selection-current",
+  "slug": "model-selection-current",
+  "subject": {
+    "id": "com.amazon.kiro.ide",
+    "name": "Kiro IDE",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Kiro IDE",
+      "slug": "aws-kiro-ide-1-0-309"
+    }
+  },
+  "claim": {
+    "category": "runtime.model-selection",
+    "statement": "Current Kiro model documentation says a user can select a named model and supported effort level or use Auto for publisher-controlled per-task routing, with availability varying by region."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://kiro.dev/docs/models/",
+    "title": "Kiro models",
+    "locator": "How to switch models, model availability and reasoning effort",
+    "publishedAt": null,
+    "capturedAt": "2026-08-14T22:20:44.000Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "Auto routing",
+        "explicit model",
+        "reasoning effort",
+        "country or region availability"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "AWS-hosted Kiro service"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling model inventory and service routing."
+  },
+  "review": {
+    "reviewedAt": "2026-08-15",
+    "recheckAfter": "2026-09-15",
+    "invalidatedBy": [
+      "model-inventory-change",
+      "routing-change",
+      "regional-availability-change"
+    ]
+  },
+  "limitations": [
+    "A model label or Auto choice does not identify provider endpoint, weights, service revision or fallback behavior."
+  ],
+  "unknowns": [
+    "Selected model, provider, endpoint, region, effort, routing and fallback are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

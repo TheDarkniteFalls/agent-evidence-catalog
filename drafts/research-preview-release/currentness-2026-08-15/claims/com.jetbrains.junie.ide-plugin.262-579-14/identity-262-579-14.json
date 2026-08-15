@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.jetbrains.junie.ide-plugin.identity-262-579-14",
+  "slug": "identity-262-579-14",
+  "subject": {
+    "id": "com.jetbrains.junie.ide-plugin",
+    "name": "Junie IDE plugin",
+    "publisher": "JetBrains",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Junie IDE plugin",
+      "slug": "jetbrains-junie-ide-262-579-14"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "JetBrains Marketplace's publisher-controlled stable update page lists Junie IDE plugin 262.579.14 with update id 1138682 and date 2026-08-14; no plugin artifact was installed or independently verified."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "JetBrains"
+  },
+  "source": {
+    "uri": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1138682",
+    "title": "Update Details - Junie 262.579.14",
+    "locator": "Stable update 1138682, version 262.579.14, dated 2026-08-14",
+    "publishedAt": "2026-08-14T00:00:00Z",
+    "capturedAt": "2026-08-14T22:20:44.000Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "262.579.14"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-15",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-15",
+    "recheckAfter": "2026-09-15",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "IDE family, plugin version, AI subscription and model choice must be scoped",
+    "Junie plugin behavior must not be merged with Junie CLI beta"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

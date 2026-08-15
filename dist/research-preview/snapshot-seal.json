@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "agent-evidence-sealed-snapshot/0.1",
+  "artifactType": "sealed-official-source-review-snapshot",
+  "asOf": "2026-08-15",
+  "sourceReviewWindow": {
+    "startedAt": "2026-08-15T02:08:35.493Z",
+    "completedAt": "2026-08-15T02:14:02.006Z"
+  },
+  "sourceLinkAuditWindow": {
+    "startedAt": "2026-08-15T02:18:50.244Z",
+    "completedAt": "2026-08-15T02:19:02.402Z"
+  },
+  "sealedAt": "2026-08-15T02:19:02.402Z",
+  "catalogCounts": {
+    "surfaces": 55,
+    "current": 53,
+    "total": 98,
+    "nonCurrent": 45,
+    "superseded": 42,
+    "historical": 2,
+    "discontinued": 1
+  },
+  "sources": {
+    "currentnessReceipt": {
+      "path": "drafts/research-preview-release/currentness-2026-08-15/currentness-receipt.json",
+      "sha256": "1848d67a52dec492e4bb98cb8ee9a716c03774f61934c0faeb8f3286ab61dcbb"
+    },
+    "officialSourceAudit": {
+      "path": "drafts/research-preview-release/currentness-2026-08-15/official-source-audit.json",
+      "sha256": "f24e7bbe5edfb9a356dfb845528c2fc71921c79bca1d691c714dd7cb35150892"
+    },
+    "officialUrlAudit": {
+      "path": "drafts/research-preview-release/currentness-2026-08-15/official-url-audit.json",
+      "sha256": "7935f7ffcd05a1d3e512f6e09cdf3da94ab75a1af074e77118d4be1c3e16845e"
+    }
+  },
+  "boundary": "The identities and lifecycle states in this catalog are sealed to the recorded source-review window. Publication-time freshness notices do not modify the snapshot."
+}

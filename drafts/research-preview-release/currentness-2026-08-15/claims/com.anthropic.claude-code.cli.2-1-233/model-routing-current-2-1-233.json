@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.model-routing-current-2-1-233",
+  "slug": "model-routing-current-2-1-233",
+  "subject": {
+    "id": "com.anthropic.claude-code.cli",
+    "name": "Claude Code CLI",
+    "publisher": "Anthropic PBC",
+    "surface": {
+      "kind": "cli",
+      "name": "Claude Code CLI",
+      "slug": "anthropic-claude-code-cli-2-1-233"
+    }
+  },
+  "claim": {
+    "category": "identity.model",
+    "statement": "Current model configuration documentation separates model aliases and pinned IDs across Anthropic, Bedrock, Vertex AI, Foundry and gateway routes, and warns that unpinned aliases can change."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anthropic PBC"
+  },
+  "source": {
+    "uri": "https://code.claude.com/docs/en/model-config",
+    "title": "Model configuration - Claude Code Docs",
+    "locator": "Model aliases, provider mappings, pinning and fallback",
+    "publishedAt": null,
+    "capturedAt": "2026-08-15T02:14:01.994Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Anthropic",
+        "Bedrock",
+        "Vertex AI",
+        "Foundry",
+        "gateway"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "model service"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-15",
+    "recheckAfter": "2026-09-15",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "No model or provider claim is inferred from the CLI release version."
+  ],
+  "unknowns": [
+    "The effective model ID, backend revision, alias resolution, fallback and inference settings are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -181,10 +181,21 @@
     return rows.filter((row) => (!differencesOnly || !row.identical) && (!normalized || row.searchableText.includes(normalized)));
   };
 
+  function applySnapshotBanner(data, root = document) {
+    const seal = data?.snapshotSeal;
+    const freshness = data?.publicationFreshness;
+    if (!seal || !freshness) throw new Error("Sealed snapshot or publication freshness metadata is unavailable.");
+    const knownNewer = freshness.counts.knownNewer;
+    const knownLabel = `${knownNewer} known-newer ${knownNewer === 1 ? "identity" : "identities"}`;
+    const copy = `Source review ${seal.sourceReviewWindow.startedAt}–${seal.sourceReviewWindow.completedAt}; sealed ${seal.sealedAt}. Publication check ${freshness.census.completedAt}: ${knownLabel}. Coverage is incomplete for ${freshness.counts.incompleteCoverage} of ${freshness.counts.surfaces} surfaces; freshness notices do not update the sealed records.`;
+    root.querySelectorAll("[data-snapshot-banner-copy]").forEach((node) => { node.textContent = copy; });
+  }
+
   window.AGENT_CLAIMS_COMPARISON = Object.freeze({
     MAX_SELECTION,
     applicabilityText,
     filterClaimRows,
+    applySnapshotBanner,
     parseRequestedIds,
     projectComparison,
     readableLabel,
