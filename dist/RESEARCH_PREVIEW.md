@@ -2,13 +2,19 @@
 
 Status: Research Preview v0.1, published at
 https://thedarknitefalls.github.io/agent-evidence-catalog/ and based on the
-2026-08-09 all-surface source-currentness and identity review, plus the
-2026-08-10 pre-publication OpenCode release-feed follow-up.
+2026-08-09 all-surface source-currentness and identity review, its 2026-08-10
+OpenCode release-feed follow-up, the prepared 2026-08-13 official-source
+currentness candidate and the prepared 2026-08-15 same-surface correction. The
+2026-08-15 catalog is sealed to the exact source-review window and link-audit
+completion recorded in its receipts. A separate publication-time freshness
+census can add notices but cannot promote identities into the snapshot. The
+candidate does not update the live site by itself.
 
 This research preview is a static, maintainer-curated view of attributed
 publisher claims about 55 coding-agent surface keys. It asks a deliberately
-narrow question: what does a named official source say, where does that claim
-apply, which identity is current, and what remains unknown?
+narrow question: what did a named official source establish during the sealed
+review window, where does that claim apply, which identity was current in that
+snapshot, and what remains unknown?
 
 The primary readers are researchers, builders and maintainers who need to
 establish exact product identity and source boundaries before comparing claims
@@ -32,8 +38,9 @@ no credit.
   route, authentication path, configuration, permissions, sandbox, network,
   tools, extensions, runtime and delivery surface remain separate applicability
   boundaries.
-- `current` is a lifecycle conclusion from publisher-controlled release or
-  product sources. It is not an observation of an installed runtime.
+- `current` is a lifecycle conclusion within the sealed source-review snapshot.
+  It is not an observation of an installed runtime or a promise of
+  publication-time currency.
 - Current records are the default view. Superseded, historical and unresolved
   records appear only after a reader explicitly opens history.
 - Unknown means that the admitted sources do not establish the fact. It does
@@ -79,12 +86,15 @@ artifacts. The research preview adds a derived projection:
 3. a separate lifecycle view selects one current record per surface;
 4. a separate watcher view reuses reviewed publisher sources and unchanged
    content fingerprints; and
-5. `catalog.json` projects current records and explicit history into a static
-   browser experience.
+5. `catalog.json` projects 53 snapshot-current records and 45 non-current
+   records into a static browser experience; and
+6. a generated snapshot seal and one-shot publication freshness census carry
+   the exact review window, seal time, check time, known-newer notices and
+   incomplete-coverage boundary without changing record identities.
 
 The machine-readable source is
 `drafts/real-agent-catalog/research-preview/catalog.json`. The static build
-copies only that projection and its 73 presentable record files to
+copies only that projection and its 98 presentable record files to
 `dist/research-preview/`. The comparison projector loads only the selected
 committed record files at runtime and does not modify that projection.
 
@@ -95,8 +105,10 @@ The public Research Preview v0.1 keeps the accepted release boundaries:
 - 53 current records are present across the 55-surface catalog, including
   Codex CLI 0.147.0 as the reciprocal same-surface successor to preserved
   0.146.0 and 0.90.0 history;
-- 17 superseded records, two historical records and one discontinued record
+- 42 superseded records, two historical records and one discontinued record
   remain available through explicit history;
+- publication-time known-newer identities are notices on the affected snapshot
+  records, not automatic refreshes or lifecycle transitions;
 - the 39 breadth additions admit only official identity and delivery claims;
   their version, model, configuration, runtime and authority gaps remain
   visible rather than being inferred or compared;

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.release-identity-4-1-9",
+  "slug": "release-identity-4-1-9",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension-4-1-9"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "Cline's official release page identifies v4.1.9 as the exact Cline VS Code extension release, published 2026-08-13T07:40:26Z; no extension package was installed or independently verified."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://github.com/cline/cline/releases/tag/v4.1.9",
+    "title": "Cline v4.1.9 release",
+    "locator": "Immutable v4.1.9 release identity",
+    "publishedAt": "2026-08-13T07:40:26Z",
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "4.1.9"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Marketplace listing"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "VS Code extension"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-13",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The rolling Marketplace page establishes the exact listed version at capture time, not an immutable package digest."
+  ],
+  "unknowns": [
+    "The installed VSIX, executable dependencies, platform build and effective runtime variant are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

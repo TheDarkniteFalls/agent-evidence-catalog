@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.code-review-flow.identity-19-2-2-ee",
+  "slug": "identity-19-2-2-ee",
+  "subject": {
+    "id": "com.gitlab.duo.code-review-flow",
+    "name": "GitLab Code Review Flow",
+    "publisher": "GitLab",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Code Review Flow",
+      "slug": "gitlab-duo-code-review-flow-19-2"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "GitLab's protected v19.2.2-ee tag identifies the exact current patch boundary for the release line containing Code Review Flow; no product execution was independently verified."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "GitLab"
+  },
+  "source": {
+    "uri": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
+    "title": "GitLab protected tag v19.2.2-ee",
+    "locator": "Protected v19.2.2-ee tag and version identity",
+    "publishedAt": "2026-08-12T00:01:37Z",
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "19.2.2-ee"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-13",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+  ],
+  "unknowns": [
+    "GitLab release, GitLab.com versus Self-Managed versus Dedicated offering, selected or self-hosted model, runner and top-level group settings determine applicability",
+    "Agentic Code Review Flow must be separated from the non-agentic GitLab Duo Code Review feature",
+    "Manual reviewer assignment, Agentic Chat handoff and automatic review are distinct trigger and approval paths",
+    "Features documented for unreleased GitLab 19.3 are outside the selected 19.2 boundary"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

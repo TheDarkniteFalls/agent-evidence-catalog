@@ -1,20 +1,22 @@
 # Agent Evidence Catalog roadmap
 
-Updated: 2026-08-10. This roadmap records intended work; it does not authorize
+Updated: 2026-08-15. This roadmap records intended work; it does not authorize
 publication, GitHub changes, publisher contact, agent execution, open intake or
 a response-time commitment.
 
 ## Current position
 
 The public [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
-has a prepared 55-surface catalog build containing 53 current records and
-20 explicit-history records: 17 superseded identities, two historical
-records and one discontinued surface. It is static, maintainer-curated and based
+has a prepared sealed 55-surface snapshot containing 53 records current within
+the review window and 45 non-current records: 42 superseded identities, two
+historical records and one discontinued surface. It is static, maintainer-curated and based
 only on attributed publisher sources. It assigns zero independent-test credit
 and provides no rankings, recommendations or suitability calculation.
 
-The validated 2026-08-09 all-surface currentness refresh and its 2026-08-10
-pre-publication release-feed follow-up are prepared. A pinned,
+The sealed 2026-08-15 official-source review adds 10 exact-identity
+successors to the accepted 88-record projection while retaining every
+predecessor and 46 unchanged surface decisions. Publication-time drift is
+reported separately as a notice and does not reopen the snapshot. A pinned,
 least-privilege GitHub Pages workflow publishes only the committed `dist/`
 tree. Every later push still requires explicit authorization and the normal
 public-lane pre-push gate.
@@ -39,7 +41,7 @@ concept review in step 4.
 
 ### 2. Refresh workflow
 
-Status: deterministic manual refresh exercised across all 55 surfaces; operational dashboard and scheduling remain deferred.
+Status: deterministic manual review exercised across all 55 surfaces and sealed to the retained 2026-08-15 receipts; operational dashboard and scheduling remain deferred.
 
 - Define a maintainer command or dashboard workflow that identifies source
   changes without promoting them into evidence automatically.

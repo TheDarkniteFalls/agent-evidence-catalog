@@ -1,0 +1,352 @@
+{
+  "schemaVersion": "agent-evidence-currentness-source/0.1-draft",
+  "artifactType": "maintainer-reviewed-official-source-currentness-input",
+  "asOf": "2026-08-13",
+  "reviewedAt": "2026-08-13T10:02:56.587Z",
+  "sourceLinkAudit": {
+    "recordsChecked": 73,
+    "uniqueOfficialUrlsChecked": 223,
+    "reachable": 223,
+    "unreachable": 0,
+    "checkedAt": "2026-08-13T10:02:56.587Z",
+    "method": "HTTP GET with redirects against every named source URL in the accepted 73-record projection",
+    "boundary": "Reachability is not treated as product behaviour, independent verification or proof that rolling prose is unchanged."
+  },
+  "boundaries": {
+    "publisherSourcesOnly": true,
+    "agentsInstalledOrRun": false,
+    "independentEvidenceCredited": false,
+    "rankings": false,
+    "recommendations": false,
+    "suitabilityCalculations": false,
+    "note": "This refresh rechecked current identity and retention state for every accepted surface on 2026-08-13. It preserves all prior records and adds successors only where an official publisher source establishes a newer exact identity. Rolling runtime, model and effective-configuration applicability remain unresolved."
+  },
+  "unchangedSurfaceKeys": [
+    "ai.factory.droid-computers.service",
+    "ai.factory.droid.cli.release-stream",
+    "ai.mistral.vibe-code.vscode-extension.service",
+    "ai.mistral.vibe-code.web.service",
+    "ai.mistral.vibe.cli.release-stream",
+    "com.alibaba.qwen-code.vscode-extension.beta",
+    "com.amazon.kiro.cli.release-stream",
+    "com.amazon.kiro.web.preview",
+    "com.amazon.q-developer.github.preview",
+    "com.amazon.q-developer.ide-plugins.supported-sunset",
+    "com.augmentcode.agent.ide.plugins",
+    "com.augmentcode.auggie.cli.release-stream",
+    "com.cognition.devin.hosted.rolling-service",
+    "com.continue.dev.ide-agent.final",
+    "com.cursor.cloud-agents.service",
+    "com.cursor.ide.foreground-agent.desktop-stable",
+    "com.github.anthropic.claude-agent.preview",
+    "com.github.copilot.cloud-agent.rolling-service",
+    "com.github.copilot.vscode-agent.local-host",
+    "com.github.openai.codex-agent.preview",
+    "com.gitlab.duo.software-development-flow.service",
+    "com.google.gemini-code-assist.ide-agent.service",
+    "com.google.jules.hosted.rolling-service",
+    "com.jetbrains.junie.cli.beta",
+    "com.lovable.build-mode.hosted.rolling-service",
+    "com.openai.codex.cli.stable",
+    "com.openai.codex.cloud.service",
+    "com.openai.codex.ide-extension.service",
+    "com.replit.agent.hosted.agent-4-service",
+    "com.roocode.vscode-extension.final",
+    "com.sourcegraph.amp.cli.release-stream",
+    "com.stackblitz.bolt.claude-agent.service",
+    "com.tabnine.agent.ide.deployment-lines",
+    "com.vercel.agent.public-beta",
+    "com.vercel.v0.agent.service",
+    "dev.warp.oz.cloud-agents.service",
+    "dev.warp.oz.local-agent.desktop",
+    "org.aider-ai.aider.cli.stable",
+    "org.openhands.cloud.service",
+    "org.openhands.openhands.cli.stable"
+  ],
+  "transitions": [
+    {
+      "name": "Qwen Code CLI",
+      "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
+      "fromRecordId": "com.alibaba.qwen-code.cli.0-21-8",
+      "toRecordId": "com.alibaba.qwen-code.cli.0-21-11",
+      "fromVersion": "0.21.8",
+      "toVersion": "0.21.11",
+      "releaseTag": "v0.21.11",
+      "releasedAt": "2026-08-13T05:25:04Z",
+      "releaseSource": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11",
+      "basisSourceIds": ["currentness-qwen-code-cli-v0-21-11"],
+      "replacements": [["0-21-8", "0-21-11"], ["0.21.8", "0.21.11"], ["v0.21.8", "v0.21.11"], ["2026-08-08T17:07:22Z", "2026-08-13T05:25:04Z"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-0-21-11": "Alibaba Cloud Qwen team's official release page identifies Qwen Code CLI v0.21.11, published 2026-08-13T05:25:04Z; no client artifact was installed or independently verified."
+      },
+      "note": "The official release feed identifies v0.21.11 as the latest stable Qwen Code CLI release reviewed on 2026-08-13."
+    },
+    {
+      "name": "Kiro IDE",
+      "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
+      "fromRecordId": "com.amazon.kiro.ide.1-0-288",
+      "toRecordId": "com.amazon.kiro.ide.1-0-293",
+      "fromVersion": "1.0.288",
+      "toVersion": "1.0.293",
+      "releaseTag": null,
+      "releasedAt": "2026-08-11T00:00:00Z",
+      "releaseSource": "https://kiro.dev/changelog/ide/1-0-293/",
+      "basisSourceIds": ["currentness-kiro-ide-1-0-293"],
+      "replacements": [["1-0-288", "1-0-293"], ["1.0.288", "1.0.293"], ["2026-08-07T00:00:00Z", "2026-08-11T00:00:00Z"], ["2026-08-07", "2026-08-11"]],
+      "dropClaimSlugs": ["code-oss-base-1-0-293"],
+      "dropAdditionalIdentityIds": ["code-oss-base"],
+      "statementOverrides": {
+        "release-identity-1-0-293": "AWS's Kiro changelog identifies Kiro IDE 1.0.293 as a desktop release dated 2026-08-11; the installed platform artifact remains unresolved."
+      },
+      "note": "Kiro's official IDE changelog lists 1.0.293 first and dates it 2026-08-11."
+    },
+    {
+      "name": "OpenCode CLI",
+      "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
+      "fromRecordId": "com.anomaly.opencode.cli.1-18-16",
+      "toRecordId": "com.anomaly.opencode.cli.1-18-18",
+      "fromVersion": "1.18.16",
+      "toVersion": "1.18.18",
+      "releaseTag": "v1.18.18",
+      "releasedAt": "2026-08-13T01:15:04Z",
+      "releaseSource": "https://github.com/anomalyco/opencode/releases/tag/v1.18.18",
+      "basisSourceIds": ["currentness-opencode-v1-18-18"],
+      "replacements": [["1-18-16", "1-18-18"], ["1.18.16", "1.18.18"], ["v1.18.16", "v1.18.18"], ["2026-08-10T06:07:08Z", "2026-08-13T01:15:04Z"], ["2026-08-10", "2026-08-13"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "release-identity-1-18-18": "The official OpenCode repository release page identifies immutable release v1.18.18, published on 2026-08-13; the installed artifact, platform package and executable digest remain unresolved."
+      },
+      "note": "The official release feed identifies v1.18.18 as the latest stable OpenCode release reviewed on 2026-08-13."
+    },
+    {
+      "name": "Claude Code CLI",
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "fromRecordId": "com.anthropic.claude-code.cli.2-1-226",
+      "toRecordId": "com.anthropic.claude-code.cli.2-1-231",
+      "fromVersion": "2.1.226",
+      "toVersion": "2.1.231",
+      "releaseTag": "v2.1.231",
+      "releasedAt": "2026-08-13T08:38:50Z",
+      "releaseSource": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
+      "basisSourceIds": ["currentness-claude-code-v2-1-231"],
+      "replacements": [["2-1-226", "2-1-231"], ["2.1.226", "2.1.231"], ["v2.1.226", "v2.1.231"], ["2026-08-08T02:48:05Z", "2026-08-13T08:38:50Z"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "release-identity-2-1-231": "Anthropic's official release page identifies Claude Code CLI v2.1.231, published 2026-08-13T08:38:50Z; the installed platform archive and executable identity remain unresolved."
+      },
+      "note": "Anthropic's official release feed identifies v2.1.231 as the latest stable Claude Code CLI release reviewed on 2026-08-13."
+    },
+    {
+      "name": "Cline CLI",
+      "surfaceKey": "com.cline.bot.cli.release-stream",
+      "fromRecordId": "com.cline.bot.cli.3-0-52",
+      "toRecordId": "com.cline.bot.cli.3-0-54",
+      "fromVersion": "3.0.52",
+      "toVersion": "3.0.54",
+      "releaseTag": "cli-v3.0.54",
+      "releasedAt": "2026-08-13T06:19:04Z",
+      "releaseSource": "https://github.com/cline/cline/releases/tag/cli-v3.0.54",
+      "basisSourceIds": ["currentness-cline-cli-v3-0-54"],
+      "replacements": [["3-0-52", "3-0-54"], ["3.0.52", "3.0.54"], ["cli-v3.0.52", "cli-v3.0.54"], ["2026-08-09T02:40:02Z", "2026-08-13T06:19:04Z"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-3-0-54": "Cline Bot Inc.'s official release page identifies Cline CLI 3.0.54, published 2026-08-13T06:19:04Z; no client artifact was installed or independently verified."
+      },
+      "note": "Cline's official release feed identifies cli-v3.0.54 as the latest CLI release reviewed on 2026-08-13."
+    },
+    {
+      "name": "Cline VS Code extension",
+      "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
+      "fromRecordId": "com.cline.bot.vscode-extension.4-1-7",
+      "toRecordId": "com.cline.bot.vscode-extension.4-1-9",
+      "fromVersion": "4.1.7",
+      "toVersion": "4.1.9",
+      "releaseTag": "v4.1.9",
+      "releasedAt": "2026-08-13T07:40:26Z",
+      "releaseSource": "https://github.com/cline/cline/releases/tag/v4.1.9",
+      "releaseSourceTitle": "Cline v4.1.9 release",
+      "releaseSourceLocator": "Immutable v4.1.9 release identity",
+      "basisSourceIds": ["currentness-cline-vscode-v4-1-9"],
+      "replacements": [["4-1-7", "4-1-9"], ["4.1.7", "4.1.9"], ["2026-08-09T04:05:18Z", "2026-08-13T07:40:26Z"], ["2026-08-09", "2026-08-13"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "release-identity-4-1-9": "Cline's official release page identifies v4.1.9 as the exact Cline VS Code extension release, published 2026-08-13T07:40:26Z; no extension package was installed or independently verified."
+      },
+      "note": "Cline's official release feed identifies v4.1.9 as the latest VS Code extension release reviewed on 2026-08-13."
+    },
+    {
+      "name": "Cascade in Devin Desktop",
+      "surfaceKey": "com.cognition.devin-desktop.cascade.desktop-stable",
+      "fromRecordId": "com.cognition.devin-desktop.cascade.3-6-27",
+      "toRecordId": "com.cognition.devin-desktop.cascade.3-7-16",
+      "fromVersion": "3.6.27",
+      "toVersion": "3.7.16",
+      "releaseTag": "v3.7.16",
+      "releasedAt": "2026-08-10T00:00:00Z",
+      "releaseSource": "https://docs.devin.ai/desktop/releases#v3-7-16",
+      "basisSourceIds": ["currentness-devin-desktop-v3-7-16"],
+      "replacements": [["3-6-27", "3-7-16"], ["3.6.27", "3.7.16"], ["v3.6.27", "v3.7.16"], ["2026-08-01T22:13:40Z", "2026-08-13T10:02:56.587Z"], ["2026-08-01", "2026-08-10"], ["August 1, 2026", "August 10, 2026"], ["Aug 1, 2026", "Aug 10, 2026"]],
+      "forbiddenSuccessorStrings": ["3.6.27", "2026-08-01T22:13:40Z", "2026-08-01", "August 1, 2026", "Aug 1, 2026"],
+      "dropClaimSlugs": [],
+      "dropAdditionalIdentityIds": ["desktop-build-3-7-16"],
+      "artifactNoteOverrides": {
+        "desktop-platform-artifact-family-3-7-16": "The official release index links the supported platform families; no platform artifact, build token or digest was captured for this review."
+      },
+      "statementOverrides": {
+        "release-identity-3-7-16": "Cognition's official Devin Desktop release index identifies v3.7.16 as an August 10, 2026 release; no platform installer, build token or artifact digest was independently captured."
+      },
+      "note": "Cognition's official Devin Desktop release index lists v3.7.16 first and dates it 2026-08-10."
+    },
+    {
+      "name": "GitHub Copilot CLI",
+      "surfaceKey": "com.github.copilot.cli.release-stream",
+      "fromRecordId": "com.github.copilot.cli.1-0-78",
+      "toRecordId": "com.github.copilot.cli.1-0-79",
+      "fromVersion": "1.0.78",
+      "toVersion": "1.0.79",
+      "releaseTag": "v1.0.79",
+      "releasedAt": "2026-08-10T16:19:16Z",
+      "releaseSource": "https://github.com/github/copilot-cli/releases/tag/v1.0.79",
+      "basisSourceIds": ["currentness-github-copilot-cli-v1-0-79"],
+      "replacements": [["1-0-78", "1-0-79"], ["1.0.78", "1.0.79"], ["v1.0.78", "v1.0.79"], ["2026-08-03T23:30:25Z", "2026-08-10T16:19:16Z"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-1-0-79": "GitHub's official release page identifies GitHub Copilot CLI v1.0.79, published 2026-08-10T16:19:16Z; no client artifact was installed or independently verified."
+      },
+      "note": "GitHub's official release feed identifies v1.0.79 as the latest Copilot CLI release reviewed on 2026-08-13."
+    },
+    {
+      "name": "GitLab Duo Developer Flow",
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "fromRecordId": "com.gitlab.duo.developer-flow.19-2-1",
+      "toRecordId": "com.gitlab.duo.developer-flow.19-2-2",
+      "fromVersion": "19.2.1-ee",
+      "toVersion": "19.2.2-ee",
+      "releaseTag": "v19.2.2-ee",
+      "releasedAt": "2026-08-12T00:01:37Z",
+      "releaseSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
+      "releaseSourceTitle": "GitLab protected tag v19.2.2-ee",
+      "releaseSourceLocator": "Protected v19.2.2-ee tag and version identity",
+      "basisSourceIds": ["currentness-gitlab-developer-flow-v19-2-2-ee"],
+      "replacements": [["19-2-1", "19-2-2"], ["19.2.1-ee", "19.2.2-ee"], ["v19.2.1-ee", "v19.2.2-ee"], ["19.2.1", "19.2.2"], ["2026-07-29T00:00:00Z", "2026-08-12T00:01:37Z"], ["2026-07-29", "2026-08-12"]],
+      "forbiddenSuccessorStrings": ["19.2.1"],
+      "dropClaimSlugs": ["agentic-chat-handoff-19-2-2", "offerings-19-2-2"],
+      "statementOverrides": {
+        "release-identity-19-2-2": "GitLab's protected v19.2.2-ee tag identifies the exact current patch boundary reviewed for Developer Flow; no source-to-binary correspondence or product execution was independently verified."
+      },
+      "note": "GitLab's protected v19.2.2-ee tag advances the exact patch identity for the 19.2 release line containing Developer Flow."
+    },
+    {
+      "name": "GitLab Code Review Flow",
+      "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
+      "fromRecordId": "com.gitlab.duo.code-review-flow.19-2-1",
+      "toRecordId": "com.gitlab.duo.code-review-flow.19-2-2",
+      "fromVersion": "19.2.1-ee",
+      "toVersion": "19.2.2-ee",
+      "releaseTag": "v19.2.2-ee",
+      "releasedAt": "2026-08-12T00:01:37Z",
+      "releaseSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
+      "releaseSourceTitle": "GitLab protected tag v19.2.2-ee",
+      "releaseSourceLocator": "Protected v19.2.2-ee tag and version identity",
+      "basisSourceIds": ["currentness-gitlab-code-review-flow-v19-2-2-ee"],
+      "replacements": [["19-2-1", "19-2-2"], ["19.2.1-ee", "19.2.2-ee"], ["v19.2.1-ee", "v19.2.2-ee"], ["19.2.1", "19.2.2"], ["2026-07-29T00:00:00Z", "2026-08-12T00:01:37Z"], ["2026-07-29", "2026-08-12"]],
+      "forbiddenSuccessorStrings": ["19.2.1"],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-19-2-2-ee": "GitLab's protected v19.2.2-ee tag identifies the exact current patch boundary for the release line containing Code Review Flow; no product execution was independently verified."
+      },
+      "note": "GitLab's protected v19.2.2-ee tag advances the exact patch identity for the 19.2 release line containing Code Review Flow."
+    },
+    {
+      "name": "Antigravity CLI",
+      "surfaceKey": "com.google.antigravity.cli.release-stream",
+      "fromRecordId": "com.google.antigravity.cli.1-1-11",
+      "toRecordId": "com.google.antigravity.cli.1-1-12",
+      "fromVersion": "1.1.11",
+      "toVersion": "1.1.12",
+      "releaseTag": "1.1.12",
+      "releasedAt": "2026-08-11T01:26:58Z",
+      "releaseSource": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.12",
+      "basisSourceIds": ["currentness-antigravity-cli-1-1-12"],
+      "replacements": [["1-1-11", "1-1-12"], ["1.1.11", "1.1.12"], ["2026-08-07T02:35:23Z", "2026-08-11T01:26:58Z"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-1-1-12": "Google's official release page identifies Antigravity CLI 1.1.12, published 2026-08-11T01:26:58Z; no client artifact was installed or independently verified."
+      },
+      "note": "Google's official release feed identifies 1.1.12 as the latest Antigravity CLI release reviewed on 2026-08-13."
+    },
+    {
+      "name": "Gemini CLI",
+      "surfaceKey": "com.google.gemini.cli.release-stream",
+      "fromRecordId": "com.google.gemini.cli.0-54-4",
+      "toRecordId": "com.google.gemini.cli.0-55-1",
+      "fromVersion": "0.54.4",
+      "toVersion": "0.55.1",
+      "releaseTag": "v0.55.1",
+      "releasedAt": "2026-08-11T21:15:10Z",
+      "releaseSource": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.55.1",
+      "basisSourceIds": ["currentness-gemini-cli-v0-55-1"],
+      "replacements": [["0-54-4", "0-55-1"], ["0.54.4", "0.55.1"], ["v0.54.4", "v0.55.1"], ["2026-08-07T04:44:19Z", "2026-08-11T21:15:10Z"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-0-55-1": "Google's official release page identifies Gemini CLI v0.55.1, published 2026-08-11T21:15:10Z; no client artifact was installed or independently verified."
+      },
+      "note": "Google's official release feed identifies v0.55.1 as the latest Gemini CLI release reviewed on 2026-08-13."
+    },
+    {
+      "name": "Junie IDE plugin",
+      "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
+      "fromRecordId": "com.jetbrains.junie.ide-plugin.262-132-35",
+      "toRecordId": "com.jetbrains.junie.ide-plugin.262-579-3",
+      "fromVersion": "262.132.35",
+      "toVersion": "262.579.3",
+      "releaseTag": "262.579.3",
+      "releasedAt": "2026-08-12T19:40:34Z",
+      "releaseSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1136756",
+      "basisSourceIds": ["currentness-junie-plugin-262-579-3"],
+      "replacements": [["262-132-35", "262-579-3"], ["262.132.35", "262.579.3"], ["1130261", "1136756"], ["2026-08-07T18:09:29Z", "2026-08-12T19:40:34Z"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-262-579-3": "JetBrains Marketplace's publisher-controlled update API lists stable Junie IDE plugin 262.579.3 with update id 1136756 and creation time 2026-08-12T19:40:34Z; no plugin artifact was installed or independently verified."
+      },
+      "note": "JetBrains Marketplace's publisher-controlled update API lists stable Junie IDE plugin 262.579.3 as the newest reviewed update."
+    },
+    {
+      "name": "Zed Agent",
+      "surfaceKey": "dev.zed.agent.native.desktop-stable",
+      "fromRecordId": "dev.zed.agent.native.1-14-2",
+      "toRecordId": "dev.zed.agent.native.1-15-0",
+      "fromVersion": "1.14.2",
+      "toVersion": "1.15.0",
+      "releaseTag": "v1.15.0",
+      "releasedAt": "2026-08-12T00:00:00Z",
+      "releaseSource": "https://zed.dev/releases/stable",
+      "basisSourceIds": ["currentness-zed-stable-1-15-0"],
+      "replacements": [["1-14-2", "1-15-0"], ["1.14.2", "1.15.0"], ["v1.14.2", "v1.15.0"], ["2026-08-05T16:57:09Z", "2026-08-12T00:00:00Z"], ["August 5, 2026", "August 12, 2026"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "release-identity-1-15-0": "Zed Industries' stable release page identifies Zed 1.15.0, dated August 12, 2026, for macOS, Windows and Linux; no platform artifact was installed or independently verified."
+      },
+      "note": "Zed's official stable release page identifies 1.15.0 as the latest stable release reviewed on 2026-08-13."
+    },
+    {
+      "name": "Goose CLI",
+      "surfaceKey": "org.aaif.goose.cli.release-stream",
+      "fromRecordId": "org.aaif.goose.cli.1-45-0",
+      "toRecordId": "org.aaif.goose.cli.1-46-0",
+      "fromVersion": "1.45.0",
+      "toVersion": "1.46.0",
+      "releaseTag": "v1.46.0",
+      "releasedAt": "2026-08-12T16:05:13Z",
+      "releaseSource": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0",
+      "basisSourceIds": ["currentness-goose-cli-v1-46-0"],
+      "replacements": [["1-45-0", "1-46-0"], ["1.45.0", "1.46.0"], ["v1.45.0", "v1.46.0"], ["2026-07-29T20:11:39Z", "2026-08-12T16:05:13Z"]],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-1-46-0": "Agentic AI Foundation's official release page identifies Goose CLI v1.46.0, published 2026-08-12T16:05:13Z; no client artifact was installed or independently verified."
+      },
+      "note": "Agentic AI Foundation's official release feed identifies v1.46.0 as the latest Goose CLI release reviewed on 2026-08-13."
+    }
+  ]
+}

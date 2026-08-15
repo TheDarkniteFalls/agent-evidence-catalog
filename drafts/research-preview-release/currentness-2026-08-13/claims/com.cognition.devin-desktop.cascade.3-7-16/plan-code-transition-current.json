@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin-desktop.cascade.plan-code-transition-current",
+  "slug": "plan-code-transition-current",
+  "subject": {
+    "id": "com.cognition.devin-desktop.cascade",
+    "name": "Cascade in Devin Desktop",
+    "publisher": "Cognition AI, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cascade in Devin Desktop",
+      "slug": "cascade-devin-desktop-3-7-16"
+    }
+  },
+  "claim": {
+    "category": "authority.plan-transition",
+    "statement": "Current documentation says Plan mode can move to Code mode when the user selects Implement, approves Cascade's implementation request, switches mode manually, or when Cascade automatically detects that the plan is ready."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Cognition AI, Inc."
+  },
+  "source": {
+    "uri": "https://docs.devin.ai/desktop/cascade/modes",
+    "title": "Cascade modes",
+    "locator": "Plan mode; moving from planning to implementation",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "conditional",
+      "values": [
+        "Implement button",
+        "approve implementation request",
+        "manual Code switch",
+        "automatic ready detection"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": [
+        "Cascade-selected or Adaptive model"
+      ]
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Cascade Plan-to-Code transition"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher authority documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "plan-transition-change",
+      "approval-flow-change",
+      "automatic-detection-change"
+    ]
+  },
+  "limitations": [
+    "The documentation describes both human-gated and automatic transition paths; it does not establish which path applied in any session."
+  ],
+  "unknowns": [
+    "The selected transition path, prompt content, classifier or model decision, and whether human approval occurred are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

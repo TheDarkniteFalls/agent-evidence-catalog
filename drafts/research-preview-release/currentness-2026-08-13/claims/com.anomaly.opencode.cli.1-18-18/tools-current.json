@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.tools-current",
+  "slug": "tools-current",
+  "subject": {
+    "id": "com.anomaly.opencode.cli",
+    "name": "OpenCode CLI",
+    "publisher": "Anomaly Innovations, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "OpenCode CLI/TUI",
+      "slug": "opencode-cli-1-18-18"
+    }
+  },
+  "claim": {
+    "category": "capability.tools",
+    "statement": "Current OpenCode tool documentation lists built-in file, search, language-server, shell, web, question, skill and task-management tools, and documents custom tools and MCP servers as additional configurable tool paths whose availability can be controlled through permissions."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Anomaly Innovations, Inc."
+  },
+  "source": {
+    "uri": "https://opencode.ai/docs/tools/",
+    "title": "OpenCode Tools",
+    "locator": "Built-in tools; permissions; custom tools; MCP servers",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "conditional",
+      "values": [
+        "built-in tools",
+        "custom tools",
+        "MCP servers",
+        "tool permissions"
+      ]
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "current CLI/TUI tool surface"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher tool documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "tool-documentation-change",
+      "tool-set-change",
+      "permission-change"
+    ]
+  },
+  "limitations": [
+    "A documented tool does not prove that it was enabled, invoked successfully or constrained as intended in a particular session."
+  ],
+  "unknowns": [
+    "The effective built-in tools, custom tool code, MCP servers, credentials, command environment, network access and tool-specific permissions are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

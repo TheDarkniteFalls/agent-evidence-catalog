@@ -19,6 +19,7 @@
   const trayChips = document.querySelector("#trayChips");
   const trayCount = document.querySelector("#trayCount");
   const compareSelection = document.querySelector("#compareSelection");
+  comparison.applySnapshotBanner(data);
 
   const setText = (selector, value) => { document.querySelector(selector).textContent = String(value); };
   setText("#surfaceCount", data.counts.surfaces);
@@ -114,6 +115,14 @@
     const boundary = document.createElement("p");
     boundary.className = "boundary-note";
     boundary.textContent = record.lifecycleNote;
+    const freshnessNotice = record.publicationFreshness?.status === "known-newer"
+      ? document.createElement("p")
+      : null;
+    if (freshnessNotice) {
+      freshnessNotice.className = "boundary-callout";
+      freshnessNotice.dataset.knownNewerRecord = record.recordId;
+      freshnessNotice.textContent = `Freshness notice: the sealed record retains ${record.publicationFreshness.reviewedIdentity}. The official source exposed ${record.publicationFreshness.knownNewerIdentity} at ${record.publicationFreshness.checkedAt}; this notice does not refresh the snapshot.`;
+    }
     const links = document.createElement("div");
     links.className = "card-links";
     if (!history) {
@@ -136,7 +145,9 @@
     rawLink.href = `records/${encodeURIComponent(record.recordId)}.json`;
     rawLink.textContent = "Raw JSON";
     links.append(rawLink);
-    article.append(heading, identity, metrics, boundary, links);
+    article.append(heading, identity, metrics, boundary);
+    if (freshnessNotice) article.append(freshnessNotice);
+    article.append(links);
     return article;
   };
 

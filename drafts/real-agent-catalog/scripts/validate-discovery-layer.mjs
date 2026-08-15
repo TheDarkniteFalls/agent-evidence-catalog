@@ -256,7 +256,7 @@ for (const [name, expected] of recordDigests) {
   assert.equal(sha256(await readFile(path.join(draftRoot, "records", name))), expected, `Accepted generated record changed: ${name}`);
 }
 
-assert.equal(await treeDigest([path.join(draftRoot, "candidate-registry")]), "152d6ca82c3244a110c36fa09dce7c7fa3f2749a528a376f78b85f35d0abe6e4", "Completed 55-surface registry changed");
+assert.equal(await treeDigest([path.join(draftRoot, "candidate-registry")]), "8ee7b5110dddbb5ec3defec04e04d15e3b73867e610485b1d7e74de2cf14ee3e", "Completed 55-surface registry changed");
 assert.equal(sha256(await readFile(path.join(draftRoot, "schemas", "real-agent-dossier-v0.schema.json"))), "87fd6dc95c0d7e6acd09940e9f006169d2d7cd21f5c52659dab189d0bf6e805e", "Dossier schema changed");
 assert.equal(sha256(await readFile(path.join(draftRoot, "schemas", "fixtures", "seven-record-v0.2-extension.fixture.json"))), "8aeaf9f352aa4edc8e868ea1cd39a39fc8aaa35d16676023a903016dabb44574", "Schema fixture changed");
 assert.equal(sha256(await readFile(path.join(draftRoot, "scripts", "validate-schema-retrospective.mjs"))), "e829a52bc20a7899555cf3673be742c52eaff1a39b9497aa714ddb758401aec1", "Retrospective validator changed");

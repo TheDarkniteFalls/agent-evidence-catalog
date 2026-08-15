@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.kiro.ide.spec-gates-current",
+  "slug": "spec-gates-current",
+  "subject": {
+    "id": "com.amazon.kiro.ide",
+    "name": "Kiro IDE",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Kiro IDE",
+      "slug": "aws-kiro-ide-1-0-293"
+    }
+  },
+  "claim": {
+    "category": "workflow.spec-approval",
+    "statement": "Current Kiro documentation says Quick Spec generates requirements, design and task artifacts without approval gates between phases, while standard Feature Specs retain review gates before implementation."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://kiro.dev/docs/specs/quick-spec/",
+    "title": "Kiro Quick Spec",
+    "locator": "Quick Spec definition, How it works and FAQ",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "Quick Spec",
+        "standard Feature Spec",
+        "requirements.md",
+        "design.md",
+        "tasks.md"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Kiro IDE spec workflow"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "spec-workflow-change",
+      "approval-gate-change"
+    ]
+  },
+  "limitations": [
+    "This claim concerns planning artifacts and phase gates; it does not establish approval of later file changes or commands."
+  ],
+  "unknowns": [
+    "Spec type, artifact contents, review decisions, task selection and implementation state are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

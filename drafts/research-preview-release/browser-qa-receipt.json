@@ -1,26 +1,160 @@
 {
-  "schemaVersion": "research-preview-browser-qa/0.2",
-  "asOf": "2026-08-11",
-  "checkedAt": "2026-08-11T07:21:11.943Z",
+  "schemaVersion": "research-preview-browser-qa/0.5",
+  "asOf": "2026-08-15",
+  "checkedAt": "2026-08-15T09:01:48.870Z",
+  "loopback": {
+    "url": "http://localhost:8794/",
+    "listener": "localhost:8794",
+    "listenerVerified": true,
+    "browserNavigation": "PASS",
+    "managedShellCurl": "not required; in-app Browser navigation passed after listener verification"
+  },
   "sourceDigests": {
-    "landingHtmlSha256": "2fe96c2f1e8d83a1bf1c45e7a9073cf8bc937d430ad16d9f49299fe89375e55d",
-    "previewHtmlSha256": "64ae8c7eda611b709872f28d128f457f72ce8d07406bea97f51595240cd4eb7b",
-    "previewDataSha256": "70b87c2eaa8ff7159f8903891c4f408014da76d1f9d9b8a3499eb55179042ea0",
-    "previewAppSha256": "c9dac274b251e9c1f5d32b6d8fbec64f0a7819f3d020123dadd00d957a6c1379",
-    "comparisonHtmlSha256": "aa2e006b36ccb7ace834735c7c3804e92cb74b2b158fee34aa5b977158635cb9",
-    "comparisonCoreSha256": "80607e3b19e64fd54f9649d32321553ba63472fe6e6626dd56f1a7c4908accb4",
-    "comparisonAppSha256": "6edc3785ced6736b40b6ecfd3512210fdff8d5430c381173a8fcf91f96eca54d",
-    "recordDetailAppSha256": "1f884a3c18fa8bafeda1a24e80b574ce010d097bb7de3786b2ad7226d76f0611",
+    "landingHtmlSha256": "d6aa314a260b96cdb5dd007307528468147dd71c8d1d346abff0a320a6c09403",
+    "previewHtmlSha256": "9f45f8a72a0c21868a8ea4c6ba5e83ad222be9aa2b67c4b8700319a0be686a8a",
+    "previewDataSha256": "46d65bdbf88fe50beece57911ed61850f6911a1c17cd754dd2e6435c24125625",
+    "previewAppSha256": "10ba59fdfdfabc906a46202126508e5c88ba6a6fd50a27ef46e3d89173a05e03",
+    "comparisonHtmlSha256": "0e9ed3d8cb560cc78d627ce899e2dc4eab997069c9935bc2eea1046c5a8179b8",
+    "comparisonCoreSha256": "2072b63c69b93a0f3cb1212fe9849af979e6889e228a689492baa1ff69dfa811",
+    "comparisonAppSha256": "4ad7997c98a2e38f4d4797447df00286bf45de2bc4cc6e5e739646df8a632b8d",
+    "recordDetailAppSha256": "adc6da13fc9f3fc734d95ba55a21ffd6591da8bd843901ec9851a4467213a45d",
     "previewStylesSha256": "43d64248fb700f44b801269d259b0035558b438d6ee7c649e6cd8a5eee7a1f98",
-    "recordDetailsManifestSha256": "99761b9d5ba4b61f7c42ea15b247cb4f9e32afa8819063fe7d29c91a59567140"
+    "recordDetailsManifestSha256": "d402f2c0223f6a459c95d55dea91ea912b52e69a6f7f163c0fd94981d5619231"
   },
   "viewportEnvironment": {
-    "desktopDevicePixelRatio": 0.75,
-    "mobileDevicePixelRatio": 0.75,
-    "desktopRequested": { "width": 1440, "height": 900 },
-    "desktopObservedCss": { "width": 1920, "height": 1200 },
-    "mobileRequested": { "width": 390, "height": 844 },
-    "mobileObservedCss": { "width": 520, "height": 1125 }
+    "desktopDevicePixelRatio": 0.8999999761581421,
+    "mobileDevicePixelRatio": 0.8999999761581421,
+    "desktopRequested": {
+      "width": 1440,
+      "height": 900
+    },
+    "desktopObservedCss": {
+      "width": 1600,
+      "height": 1000
+    },
+    "mobileRequested": {
+      "width": 390,
+      "height": 844
+    },
+    "mobileObservedCss": {
+      "width": 433,
+      "height": 938
+    },
+    "compactDesktopRequested": {
+      "width": 960,
+      "height": 540
+    },
+    "compactDesktopObservedCss": {
+      "width": 1066,
+      "height": 600
+    },
+    "compactMobileRequested": {
+      "width": 352,
+      "height": 760
+    },
+    "compactMobileObservedCss": {
+      "width": 391,
+      "height": 844
+    }
+  },
+  "sealedSnapshotPublicationSemantics": {
+    "result": "PASS",
+    "snapshot": {
+      "sourceReviewStartedAt": "2026-08-15T02:08:35.493Z",
+      "sourceReviewCompletedAt": "2026-08-15T02:14:02.006Z",
+      "sealedAt": "2026-08-15T02:19:02.402Z"
+    },
+    "publicationCheck": {
+      "startedAt": "2026-08-15T06:29:16.919Z",
+      "completedAt": "2026-08-15T06:29:26.166Z",
+      "surfaces": 55,
+      "uniqueOfficialSources": 52,
+      "reachable": 55,
+      "unreachable": 0,
+      "knownNewer": 1,
+      "incompleteCoverage": 53
+    },
+    "banner": {
+      "rendered": true,
+      "exactSnapshotWindowRendered": true,
+      "publicationCheckTimeRendered": true,
+      "knownNewerCountRendered": true,
+      "incompleteCoverageRendered": true,
+      "nonPromotionBoundaryRendered": true
+    },
+    "knownNewerRecord": {
+      "recordId": "com.cursor.ide.foreground-agent.3-15",
+      "reviewedIdentity": "3.15",
+      "knownNewerIdentity": "3.16",
+      "officialSource": "https://cursor.com/download",
+      "checkedAt": "2026-08-15T06:29:20.082Z",
+      "catalogNoticeRendered": true,
+      "recordNoticeRendered": true,
+      "sealedIdentityUnchanged": true
+    },
+    "unaffectedRecord": {
+      "recordId": "com.alibaba.qwen-code.cli.0-21-12",
+      "heading": "Qwen Code CLI 0.21.12",
+      "perRecordKnownNewerNoticeCount": 0,
+      "snapshotBannerRendered": true
+    },
+    "interactions": {
+      "cursorSearchResultCount": "2 of 53 current records",
+      "qwenSearchResultCount": "1 of 53 current records",
+      "historyCollapsedInitially": true,
+      "historyExpandedOnRequest": true,
+      "knownNewerDetailNavigation": true,
+      "unaffectedDetailNavigation": true
+    },
+    "responsive": {
+      "desktopRequested": { "width": 1440, "height": 900 },
+      "desktopObservedCss": { "width": 1600, "height": 1000 },
+      "desktopHorizontalOverflow": false,
+      "mobileRequested": { "width": 390, "height": 844 },
+      "mobileObservedCss": { "width": 433, "height": 938 },
+      "mobileHorizontalOverflow": false,
+      "mobileNavigationCollapsed": true
+    },
+    "cacheBusting": {
+      "version": "2026-08-15-sealed-snapshot",
+      "catalogAssets": ["data.js", "comparison-core.js", "app.js"],
+      "recordAssets": ["data.js", "comparison-core.js", "record-detail.js"],
+      "verifiedInBrowser": true
+    },
+    "console": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
+  "remediationAuthorQa": {
+    "workstream": "AEC-SNAPSHOT-PUBLICATION-SEMANTICS-01-REMEDIATION-AUTHOR",
+    "result": "PASS",
+    "checkedAt": "2026-08-15T09:01:48.870Z",
+    "publicationBanner": {
+      "rendered": true,
+      "exactSnapshotWindowRendered": true,
+      "publicationCheckTimeRendered": true,
+      "knownNewerCountRendered": true,
+      "incompleteCoverageRendered": true
+    },
+    "boltRecord": {
+      "recordId": "com.stackblitz.bolt.claude-agent.rolling",
+      "heading": "Claude Agent in Bolt Rolling Service",
+      "catalogSearchResultCount": "1 of 53 current records",
+      "navigatedFromCatalog": true,
+      "exactDate": "2026-08-03",
+      "exactDateOccurrences": 2,
+      "exactStatementRendered": true,
+      "staleSnapshotRelativeWordingAbsent": true,
+      "desktopHorizontalOverflow": false,
+      "mobileHorizontalOverflow": false,
+      "mobileBannerVisible": true,
+      "cacheBustingVersion": "2026-08-15-sealed-snapshot"
+    },
+    "console": {
+      "errors": 0,
+      "warnings": 0
+    }
   },
   "journeys": {
     "landing": {
@@ -32,27 +166,38 @@
       "defaultSelectionCount": 0,
       "directEntryViewports": [
         {
-          "label": "desktop-compact",
-          "requested": { "width": 960, "height": 540 },
-          "observedCss": { "width": 1280, "height": 720 },
           "horizontalOverflow": false,
+          "observedCss": {
+            "height": 600,
+            "width": 1066
+          },
           "pickerRecords": 53,
+          "requested": {
+            "height": 540,
+            "width": 960
+          },
           "selectedRecords": 0
         },
         {
-          "label": "mobile-compact",
-          "requested": { "width": 293, "height": 633 },
-          "observedCss": { "width": 391, "height": 844 },
           "horizontalOverflow": false,
+          "navToggleVisible": true,
+          "observedCss": {
+            "height": 844,
+            "width": 391
+          },
           "pickerRecords": 53,
+          "requested": {
+            "height": 760,
+            "width": 352
+          },
           "selectedRecords": 0
         }
       ],
       "shareableComparison": {
         "selectedRecords": 2,
-        "exactCategoryRows": 13,
-        "acceptedClaims": 14,
-        "directOfficialSourceLinks": 14,
+        "exactCategoryRows": 17,
+        "acceptedClaims": 20,
+        "directOfficialSourceLinks": 20,
         "horizontalOverflow": false
       }
     },
@@ -60,10 +205,10 @@
       "result": "PASS",
       "surfaceCount": 55,
       "currentCards": 53,
-      "historyCards": 20,
+      "historyCards": 45,
       "historyCollapsedInitially": true,
       "historyExpandedOnRequest": true,
-      "rawJsonSecondaryLinks": 73,
+      "rawJsonTargetsChecked": 98,
       "desktopHorizontalOverflow": false,
       "mobileHorizontalOverflow": false,
       "firstScreen": {
@@ -72,40 +217,53 @@
         "coverageBoundary": "Coverage counts, not quality scores. These totals describe catalog documentation; they do not rank agents or establish quality, safety or suitability.",
         "directEntryViewports": [
           {
-            "label": "desktop-compact",
-            "requested": { "width": 960, "height": 540 },
-            "observedCss": { "width": 1280, "height": 720 },
-            "comparisonCtaTopPx": 396.97,
-            "comparisonCtaBottomPx": 438.97,
+            "comparisonCtaBottomPx": 422.51737213134766,
+            "comparisonCtaTopPx": 380.5208435058594,
             "comparisonCtaWithinFirstViewport": true,
-            "searchTopPx": 520.26,
-            "searchBottomPx": 566.26,
-            "searchWithinFirstViewport": true,
-            "deliveryTopPx": 520.26,
-            "deliveryBottomPx": 566.26,
+            "deliveryBottomPx": 549.8003578186035,
+            "deliveryTopPx": 503.8020935058594,
             "deliveryWithinFirstViewport": true,
-            "horizontalOverflow": false
+            "horizontalOverflow": false,
+            "observedCss": {
+              "height": 600,
+              "width": 1066
+            },
+            "requested": {
+              "height": 540,
+              "width": 960
+            },
+            "searchBottomPx": 549.8003578186035,
+            "searchTopPx": 503.8020935058594,
+            "searchWithinFirstViewport": true
           },
           {
-            "label": "mobile-compact",
-            "requested": { "width": 293, "height": 633 },
-            "observedCss": { "width": 391, "height": 844 },
-            "comparisonCtaTopPx": 455.21,
-            "comparisonCtaBottomPx": 503.04,
+            "comparisonCtaBottomPx": 502.7083549499512,
+            "comparisonCtaTopPx": 455.10418701171875,
             "comparisonCtaWithinFirstViewport": true,
-            "searchTopPx": 627.73,
-            "searchBottomPx": 673.73,
-            "deliveryTopPx": 709.32,
-            "deliveryBottomPx": 755.32,
-            "searchWithinFirstViewport": true,
+            "deliveryBottomPx": 754.9827003479004,
+            "deliveryTopPx": 708.9844360351562,
             "deliveryWithinFirstViewport": true,
-            "horizontalOverflow": false
+            "horizontalOverflow": false,
+            "observedCss": {
+              "height": 844,
+              "width": 391
+            },
+            "requested": {
+              "height": 760,
+              "width": 352
+            },
+            "searchBottomPx": 673.3941383361816,
+            "searchTopPx": 627.3958740234375,
+            "searchWithinFirstViewport": true
           }
         ],
         "anchoredEntry": {
-          "observedCss": { "width": 1920, "height": 1200 },
-          "searchTopPx": 81.59,
-          "searchBottomPx": 127.59,
+          "observedCss": {
+            "height": 600,
+            "width": 1066
+          },
+          "searchBottomPx": 127.57812881469727,
+          "searchTopPx": 81.57986450195312,
           "searchWithinFirstViewport": true
         }
       },
@@ -113,7 +271,7 @@
         "search": "Qwen",
         "delivery": "hybrid",
         "resultCards": 2,
-        "openedRecordId": "com.alibaba.qwen-code.cli.0-21-8",
+        "openedRecordId": "com.alibaba.qwen-code.cli.0-21-12",
         "detailReturnLinkCarriedContext": true,
         "returnRestoredSearchAndDelivery": true
       }
@@ -132,66 +290,28 @@
       },
       "representativePair": {
         "recordIds": [
-          "com.alibaba.qwen-code.cli.0-21-8",
+          "com.anthropic.claude-code.cli.2-1-233",
           "com.openai.codex.cli.0-147-0"
         ],
-        "projectedAcceptedClaims": 14,
-        "directOfficialSourceLinks": 14,
-        "exactCategoryRows": 13,
-        "missingExactCategoryCells": 12,
+        "projectedAcceptedClaims": 20,
+        "directOfficialSourceLinks": 20,
+        "exactCategoryRows": 17,
+        "missingExactCategoryCells": 14,
         "everyClaimPresentedExactlyOnce": true
       },
       "allCurrentUnorderedPairsValidated": 1378,
-      "journeysVerified": {
-        "landingToEmptyPicker": true,
-        "qwenAndCodexSelection": true,
-        "filteredCatalogSelection": true,
-        "recordPageSelection": true,
-        "removeReorderAndFourRecordLimit": true,
-        "reloadAndShareableUrl": true,
-        "claimFilterAndClear": true,
-        "differencesToggle": true,
-        "exactVersionVersusRollingService": true,
-        "historicalDeepLink": true,
-        "sameSurfaceVersionComparison": true,
-        "invalidDuplicateAndExcessIds": true,
-        "unavailableRecord": true,
-        "catalogRecordCatalogStateRoundTrip": true
-      },
-      "desktop": {
-        "requested": { "width": 960, "height": 540 },
-        "observedCss": { "width": 1280, "height": 720 },
-        "bodyHorizontalOverflow": false,
-        "fourRecordMatrixScrollable": true,
-        "stickyTrayVisible": true
-      },
-      "mobile": {
-        "requested": { "width": 293, "height": 633 },
-        "observedCss": { "width": 391, "height": 844 },
-        "bodyHorizontalOverflow": false,
-        "matrixScrollable": true,
-        "stickyRowLabelAligned": true,
-        "trayVisibleWithoutChipClipping": true
-      },
-      "approvedVisualFidelity": {
-        "desktop": {
-          "observedCss": { "width": 1092, "height": 1024 },
-          "headerHeightPx": 52,
-          "matrixTopPx": 540.2,
-          "bodyHorizontalOverflow": false,
-          "stickyTrayHeightPx": 66
-        },
-        "mobile": {
-          "observedCss": { "width": 424, "height": 1024 },
-          "headerHeightPx": 52,
-          "matrixTopPx": 720.3,
-          "bodyHorizontalOverflow": false,
-          "selectedCardsBottomPx": 592.4,
-          "stickyTrayHeightPx": 96,
-          "hamburgerVisible": true
-        },
-        "copyMatchesApprovedReference": true,
-        "realAcceptedProjectionPreserved": true
+      "allCurrentUnorderedPairFailures": 0,
+      "sameSurfaceHistoryComparison": {
+        "recordIds": [
+          "com.anthropic.claude-code.cli.2-1-232",
+          "com.anthropic.claude-code.cli.2-1-233"
+        ],
+        "lifecycle": [
+          "Superseded · reviewed 2026-08-15",
+          "Current · reviewed 2026-08-15"
+        ],
+        "exactCategoryRows": 8,
+        "horizontalOverflow": false
       },
       "invalidUrlState": {
         "unknownIdsReported": true,
@@ -199,10 +319,32 @@
         "excessIdsReported": true,
         "firstFourValidIdsRetained": true
       },
-      "unavailableRecordState": {
-        "simulatedRecordId": "com.openai.codex.cli.0-147-0",
-        "visibleStatus": "Record unavailable",
-        "renderedAsCapabilityAbsence": false
+      "desktop": {
+        "requested": {
+          "width": 960,
+          "height": 540
+        },
+        "observedCss": {
+          "width": 1066,
+          "height": 600
+        },
+        "bodyHorizontalOverflow": false,
+        "fourRecordMatrixScrollable": true,
+        "stickyTrayVisible": true
+      },
+      "mobile": {
+        "requested": {
+          "width": 352,
+          "height": 760
+        },
+        "observedCss": {
+          "width": 391,
+          "height": 844
+        },
+        "bodyHorizontalOverflow": false,
+        "matrixScrollable": true,
+        "stickyRowLabelAligned": true,
+        "trayVisibleWithoutChipClipping": true
       },
       "keyboardAndSemantics": {
         "nativeControlsAndLogicalDomOrder": true,
@@ -288,49 +430,85 @@
         "com.gitlab.duo.code-review-flow.19-2-1",
         "com.jetbrains.junie.ide-plugin.262-132-35",
         "com.openai.codex.cli.0-147-0",
-        "dev.zed.agent.native.1-14-2"
+        "dev.zed.agent.native.1-14-2",
+        "com.alibaba.qwen-code.cli.0-21-11",
+        "com.amazon.kiro.ide.1-0-293",
+        "com.anomaly.opencode.cli.1-18-18",
+        "com.anthropic.claude-code.cli.2-1-231",
+        "com.cline.bot.cli.3-0-54",
+        "com.cline.bot.vscode-extension.4-1-9",
+        "com.cognition.devin-desktop.cascade.3-7-16",
+        "com.github.copilot.cli.1-0-79",
+        "com.gitlab.duo.developer-flow.19-2-2",
+        "com.gitlab.duo.code-review-flow.19-2-2",
+        "com.google.antigravity.cli.1-1-12",
+        "com.google.gemini.cli.0-55-1",
+        "com.jetbrains.junie.ide-plugin.262-579-3",
+        "dev.zed.agent.native.1-15-0",
+        "org.aaif.goose.cli.1-46-0",
+        "com.alibaba.qwen-code.cli.0-21-12",
+        "com.amazon.kiro.ide.1-0-309",
+        "com.anthropic.claude-code.cli.2-1-232",
+        "com.anthropic.claude-code.cli.2-1-233",
+        "com.cline.bot.cli.3-0-55",
+        "com.cline.bot.vscode-extension.4-1-10",
+        "com.cognition.devin-desktop.cascade.3-7-25",
+        "com.github.copilot.cli.1-0-80",
+        "com.google.antigravity.cli.1-1-13",
+        "com.jetbrains.junie.ide-plugin.262-579-14"
       ],
       "checksAppliedToEveryPage": {
-        "pageLoadedWithUniqueIdentity": true,
-        "compactIdentityInFirstViewport": true,
-        "sevenLinkSectionIndexPresent": true,
-        "bodyHorizontalOverflowAbsent": true,
-        "claimGroupOverflowAbsent": true,
-        "rawJsonPresentedAsSecondary": true,
-        "readingBoundaryPresent": true,
-        "searchMetadataPresent": true,
-        "canonicalUrlMatchesRecordRoute": true,
-        "openGraphMatchesPageIdentity": true,
-        "socialPreviewMatchesPageIdentity": true,
-        "structuredMetadataMatchesAcceptedProjection": true
+        "humanReadableRouteRendered": true,
+        "canonicalMetadataExact": true,
+        "rawJsonTargetExact": true,
+        "publisherSourceLinksDirectAndHttps": true,
+        "claimsRendered": true,
+        "sevenSectionIndexLinks": true,
+        "noUndefinedOrNaNText": true,
+        "noBodySourceOrHeadingOverflow": true
       },
       "viewports": [
         {
           "label": "desktop",
           "width": 1440,
           "height": 900,
-          "pagesAudited": 73,
-          "uniquePagesAudited": 73,
+          "pagesAudited": 98,
+          "uniquePagesAudited": 98,
           "failureRecordIds": []
         },
         {
           "label": "mobile",
           "width": 390,
           "height": 844,
-          "pagesAudited": 73,
-          "uniquePagesAudited": 73,
+          "pagesAudited": 98,
+          "uniquePagesAudited": 98,
           "failureRecordIds": []
         }
       ],
-      "representativeQwenRecord": {
-        "recordId": "com.alibaba.qwen-code.cli.0-21-8",
-        "lifecycleStatus": "current",
+      "representativeCurrentRecord": {
+        "recordId": "com.alibaba.qwen-code.cli.0-21-12",
         "publisherClaims": 2,
         "namedSources": 2,
         "unresolvedUnknowns": 4,
         "sectionIndexLinks": 7,
-        "mobileCompactIdentityTopPx": 185.76,
-        "mobileCompactIdentityBottomPx": 325.89
+        "reciprocalLifecycleRecordIds": [
+          "com.alibaba.qwen-code.cli.0-21-7",
+          "com.alibaba.qwen-code.cli.0-21-8",
+          "com.alibaba.qwen-code.cli.0-21-11",
+          "com.alibaba.qwen-code.cli.0-21-12"
+        ]
+      },
+      "representativeRetainedRecord": {
+        "recordId": "com.alibaba.qwen-code.cli.0-21-11",
+        "successorRecordId": "com.alibaba.qwen-code.cli.0-21-12",
+        "rawJsonTarget": "com.alibaba.qwen-code.cli.0-21-11.json",
+        "horizontalOverflow": false
+      },
+      "representativeRawJson": {
+        "recordId": "com.alibaba.qwen-code.cli.0-21-12",
+        "target": "com.alibaba.qwen-code.cli.0-21-12.json",
+        "browserTopLevelNavigation": "blocked-by-browser-client",
+        "loopbackHttpGet": "PASS"
       }
     },
     "discoveryMetadata": {
@@ -357,15 +535,16 @@
         "structuredType": "WebPage"
       },
       "representativeRecordIds": [
-        "com.alibaba.qwen-code.cli.0-21-8",
-        "com.anomaly.opencode.cli.1-18-16",
+        "com.alibaba.qwen-code.cli.0-21-12",
+        "com.alibaba.qwen-code.cli.0-21-11",
+        "com.anomaly.opencode.cli.1-18-18",
+        "com.anthropic.claude-code.cli.2-1-233",
         "com.openai.codex.cli.0-147-0",
-        "com.openai.codex.cli.0-90-0",
         "com.vercel.v0.agent.rolling"
       ],
       "allRecordPages": {
-        "pagesAudited": 73,
-        "uniqueCanonicalUrls": 73,
+        "pagesAudited": 98,
+        "uniqueCanonicalUrls": 98,
         "openGraphFailures": 0,
         "socialPreviewFailures": 0,
         "structuredMetadataFailures": 0
@@ -376,33 +555,41 @@
       },
       "sitemap": {
         "path": "dist/sitemap.xml",
-        "sha256": "57033bc0421a7fcf1f08b5efe97736a1b8e3b56db40ea2e3a5459c4e3f0a0aa9",
-        "humanReadableRoutes": 76,
-        "recordRoutes": 73,
+        "sha256": "9dbc6c8172dd70d237290b91b161c5a756b39f2076cd5db57d756a774744de5f",
+        "humanReadableRoutes": 101,
+        "recordRoutes": 98,
         "rawJsonRoutes": 0,
         "duplicateRoutes": 0
       }
     }
   },
   "sourceLinks": {
-    "projectedClaimLinkedHttpsEntries": 393,
-    "sourceUrlIdentitiesChecked": 394,
-    "uniqueEndpointsChecked": 223,
+    "projectedClaimLinkedHttpsEntries": 524,
+    "sourceUrlIdentitiesChecked": 525,
+    "uniqueEndpointsChecked": 247,
     "endpointHttpFailures": 0,
     "endpointSuccessStatus": 200,
     "currentLiveCheck": {
-      "checkedAt": "2026-08-11T07:21:11.943Z",
+      "checkedAt": "2026-08-15T02:19:02.402Z",
       "method": "Read-only GET with redirects",
-      "recordsChecked": 73,
-      "uniqueEndpointsChecked": 223,
-      "passed": 223,
-      "failures": 0
+      "recordsChecked": 98,
+      "uniqueEndpointsChecked": 247,
+      "passed": 247,
+      "failures": 0,
+      "receiptPath": "drafts/research-preview-release/currentness-2026-08-15/official-url-audit.json",
+      "receiptSha256": "7935f7ffcd05a1d3e512f6e09cdf3da94ab75a1af074e77118d4be1c3e16845e"
     }
   },
   "console": {
     "errors": 0,
     "warnings": 0
   },
+  "limitations": [
+    "The in-app Browser blocks top-level navigation to local .json resources; all 98 raw link targets were checked in rendered pages, the representative target passed a loopback HTTP GET, and deterministic record validation covered every JSON file.",
+    "Rendered reachability and local UI behavior do not establish catalogued product behavior, independent verification, quality, safety, popularity, ranking or suitability.",
+    "The publication-time census proves one known-newer identity but cannot prove publication-time currency for 53 surfaces; reachable but rolling, unresolved or unparseable official sources remain incomplete coverage.",
+    "Browser QA confirms the notices and sealed-snapshot boundary render and behave locally; it does not authorize promotion, publication or any Git or GitHub action."
+  ],
   "boundaries": {
     "publisherSourcesOnly": true,
     "agentsInstalledOrRun": false,
@@ -410,6 +597,8 @@
     "rankingsOrSuitabilityCalculations": false,
     "priorAcceptedRecordsOrSourceArtifactsRewritten": false,
     "currentnessLifecycleProjectionUpdated": true,
-    "githubStateChanged": false
+    "githubStateChanged": false,
+    "sealedSnapshotPromoted": false,
+    "publicationAuthorized": false
   }
 }

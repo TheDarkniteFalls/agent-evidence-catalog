@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.code-review-flow.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.gitlab.duo.code-review-flow",
+    "name": "GitLab Code Review Flow",
+    "publisher": "GitLab",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Code Review Flow",
+      "slug": "gitlab-duo-code-review-flow-19-2"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "GitLab's official documentation describes Code Review Flow as a publisher-hosted service; the catalog keeps that delivery path separate from other GitLab Duo Agent Platform surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "GitLab"
+  },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/code_review/",
+    "title": "Code Review Flow",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "19.2.2-ee"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hosted"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-13",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "GitLab release, GitLab.com versus Self-Managed versus Dedicated offering, selected or self-hosted model, runner and top-level group settings determine applicability",
+    "Agentic Code Review Flow must be separated from the non-agentic GitLab Duo Code Review feature",
+    "Manual reviewer assignment, Agentic Chat handoff and automatic review are distinct trigger and approval paths",
+    "Features documented for unreleased GitLab 19.3 are outside the selected 19.2 boundary"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

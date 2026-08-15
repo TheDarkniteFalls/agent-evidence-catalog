@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cognition.devin-desktop.cascade.planning-queue-current",
+  "slug": "planning-queue-current",
+  "subject": {
+    "id": "com.cognition.devin-desktop.cascade",
+    "name": "Cascade in Devin Desktop",
+    "publisher": "Cognition AI, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cascade in Devin Desktop",
+      "slug": "cascade-devin-desktop-3-7-16"
+    }
+  },
+  "claim": {
+    "category": "capability.planning-queue",
+    "statement": "Current Cascade documentation describes a specialized planning agent and lets users queue follow-up messages while the current Cascade action continues."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Cognition AI, Inc."
+  },
+  "source": {
+    "uri": "https://docs.devin.ai/desktop/cascade/cascade",
+    "title": "Cascade",
+    "locator": "Planning agent; queued messages",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "conditional",
+      "values": [
+        "planning agent",
+        "queued follow-up messages"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": [
+        "planning model or selected model"
+      ]
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "single Cascade session"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher interaction documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "planning-agent-change",
+      "queue-semantics-change"
+    ]
+  },
+  "limitations": [
+    "Queued messages do not establish background, parallel or child-agent execution; the documentation describes follow-ups within a Cascade session."
+  ],
+  "unknowns": [
+    "The planning-agent model, queue order, cancellation behavior and execution state are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,0 +1,449 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-13",
+  "sourceDossier": {
+    "path": "drafts/research-preview-release/currentness-2026-08-13/currentness-source.json",
+    "sha256": "d3e45f7ab6dd5e12e02cd8ab03b566ee123e24a4db8c4dc519702e85bab442f1",
+    "relationship": "currentness-successor-derived-from-preserved-predecessor-and-reviewed-official-sources"
+  },
+  "identity": {
+    "recordId": "com.gitlab.duo.code-review-flow.19-2-2",
+    "agent": {
+      "id": "com.gitlab.duo.code-review-flow",
+      "name": "GitLab Code Review Flow"
+    },
+    "publisher": {
+      "id": "gitlab-inc",
+      "name": "GitLab"
+    },
+    "surface": {
+      "kind": "hosted-service",
+      "name": "Code Review Flow",
+      "slug": "gitlab-duo-code-review-flow-19-2",
+      "deliveryModel": "hosted"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "19.2.2-ee",
+      "releaseTag": "v19.2.2-ee",
+      "sourceRevision": null,
+      "releasedAt": "2026-08-12T00:01:37Z",
+      "channel": "GitLab 19.2 release line plus rolling Agent Platform service",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "The official source identifies 19.2.2-ee, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-13 currentness review."
+      },
+      "additionalIdentities": []
+    },
+    "artifacts": [
+      {
+        "id": "gitlab-duo-code-review-flow-reviewed-artifact",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://docs.gitlab.com/releases/19/patches/patch-release-gitlab-19-2-2-released/",
+        "ecosystem": "GitLab 19.2 release line plus rolling Agent Platform service",
+        "version": "19.2.2-ee",
+        "digest": null,
+        "note": "Official source reference only; no artifact or service runtime was downloaded, hashed, installed or run. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "gitlab-inc",
+        "name": "GitLab",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-identity-19-2-2-ee",
+      "uri": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
+      "title": "GitLab protected tag v19.2.2-ee",
+      "locator": "Protected v19.2.2-ee tag and version identity",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "gitlab-inc",
+      "publishedAt": "2026-08-12T00:01:37Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-delivery-boundary-current",
+      "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/code_review/",
+      "title": "Code Review Flow",
+      "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "gitlab-inc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-13T10:02:56.587Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-13 currentness successor; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Code Review Flow",
+            "claimIds": [
+              "com.gitlab.duo.code-review-flow.identity-19-2-2-ee",
+              "com.gitlab.duo.code-review-flow.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "GitLab release, GitLab.com versus Self-Managed versus Dedicated offering, selected or self-hosted model, runner and top-level group settings determine applicability",
+          "Agentic Code Review Flow must be separated from the non-agentic GitLab Duo Code Review feature",
+          "Manual reviewer assignment, Agentic Chat handoff and automatic review are distinct trigger and approval paths",
+          "Features documented for unreleased GitLab 19.3 are outside the selected 19.2 boundary"
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface and delivery route are admitted; version, runtime, model, permissions, tools and account-specific state remain unresolved unless expressly named."
+  },
+  "claims": [
+    {
+      "id": "com.gitlab.duo.code-review-flow.identity-19-2-2-ee",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.gitlab.duo.code-review-flow.19-2-2/identity-19-2-2-ee.json",
+      "rawRecordSha256": "25a60caba96fbeaccb829d1c08f0536b28b749c62bf7ca88d74009fb7f19c3d4",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo.code-review-flow.identity-19-2-2-ee",
+        "slug": "identity-19-2-2-ee",
+        "subject": {
+          "id": "com.gitlab.duo.code-review-flow",
+          "name": "GitLab Code Review Flow",
+          "publisher": "GitLab",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Code Review Flow",
+            "slug": "gitlab-duo-code-review-flow-19-2"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "GitLab's protected v19.2.2-ee tag identifies the exact current patch boundary for the release line containing Code Review Flow; no product execution was independently verified."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "GitLab"
+        },
+        "source": {
+          "uri": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
+          "title": "GitLab protected tag v19.2.2-ee",
+          "locator": "Protected v19.2.2-ee tag and version identity",
+          "publishedAt": "2026-08-12T00:01:37Z",
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "19.2.2-ee"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-13",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The named release or release line does not establish the installed artifact, backend service, model, configuration or observed behavior."
+        ],
+        "unknowns": [
+          "GitLab release, GitLab.com versus Self-Managed versus Dedicated offering, selected or self-hosted model, runner and top-level group settings determine applicability",
+          "Agentic Code Review Flow must be separated from the non-agentic GitLab Duo Code Review feature",
+          "Manual reviewer assignment, Agentic Chat handoff and automatic review are distinct trigger and approval paths",
+          "Features documented for unreleased GitLab 19.3 are outside the selected 19.2 boundary"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-identity-19-2-2-ee",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.gitlab.duo.code-review-flow.delivery-boundary-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-13/claims/com.gitlab.duo.code-review-flow.19-2-2/delivery-boundary-current.json",
+      "rawRecordSha256": "b52b127658e62bfcbeca10ce7e8f454e16c3d7981c09100aafa0f7f220901064",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.gitlab.duo.code-review-flow.delivery-boundary-current",
+        "slug": "delivery-boundary-current",
+        "subject": {
+          "id": "com.gitlab.duo.code-review-flow",
+          "name": "GitLab Code Review Flow",
+          "publisher": "GitLab",
+          "surface": {
+            "kind": "hosted-service",
+            "name": "Code Review Flow",
+            "slug": "gitlab-duo-code-review-flow-19-2"
+          }
+        },
+        "claim": {
+          "category": "identity.delivery-boundary",
+          "statement": "GitLab's official documentation describes Code Review Flow as a publisher-hosted service; the catalog keeps that delivery path separate from other GitLab Duo Agent Platform surfaces."
+        },
+        "provenance": {
+          "kind": "publisher-statement",
+          "claimant": "GitLab"
+        },
+        "source": {
+          "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/code_review/",
+          "title": "Code Review Flow",
+          "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+          "publishedAt": null,
+          "capturedAt": "2026-08-13T10:02:56.587Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "19.2.2-ee"
+          },
+          "configuration": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "platform": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "model": {
+            "scope": "unresolved",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "hosted"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "current",
+          "changedAt": "2026-08-13",
+          "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+        },
+        "review": {
+          "reviewedAt": "2026-08-13",
+          "recheckAfter": "2026-09-13",
+          "invalidatedBy": [
+            "publisher-source-change",
+            "surface-rename",
+            "release-or-service-boundary-change"
+          ]
+        },
+        "limitations": [
+          "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+        ],
+        "unknowns": [
+          "GitLab release, GitLab.com versus Self-Managed versus Dedicated offering, selected or self-hosted model, runner and top-level group settings determine applicability",
+          "Agentic Code Review Flow must be separated from the non-agentic GitLab Duo Code Review feature",
+          "Manual reviewer assignment, Agentic Chat handoff and automatic review are distinct trigger and approval paths",
+          "Features documented for unreleased GitLab 19.3 are outside the selected 19.2 boundary"
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "gitlab-inc",
+      "sourceId": "source-delivery-boundary-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-gitlab-duo-code-review-flow-candidate",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "bounded-public-source-admission",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This breadth pass admits publisher-source identity and delivery claims only; no independent result was assessed or transferred."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "GitLab Code Review Flow 19.2.2-ee is the current exact publisher identity reviewed on 2026-08-13. The retained claims remain attributed to their named official sources, and installed artifact, model, effective configuration, authority and runtime behaviour remain unresolved unless a claim expressly narrows them.",
+    "releaseContext": {
+      "statement": "GitLab's protected v19.2.2-ee tag advances the exact patch identity for the 19.2 release line containing Code Review Flow.",
+      "sourceId": "source-identity-19-2-2-ee",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted product statements are attributed to official publisher sources; no product behavior was observed.",
+      "No client, extension, desktop build, hosted environment, model service or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion is included.",
+      "The successor was created from reviewed official sources without installing or running the agent; release identity does not transfer unscoped behaviour claims.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion was added.",
+      "The successor was created from reviewed official sources without installing or running the agent; release identity does not transfer unscoped behaviour claims.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion was added."
+    ],
+    "unknowns": [
+      "GitLab release, GitLab.com versus Self-Managed versus Dedicated offering, selected or self-hosted model, runner and top-level group settings determine applicability",
+      "Agentic Code Review Flow must be separated from the non-agentic GitLab Duo Code Review feature",
+      "Manual reviewer assignment, Agentic Chat handoff and automatic review are distinct trigger and approval paths",
+      "Features documented for unreleased GitLab 19.3 are outside the selected 19.2 boundary",
+      "The exact effective model, provider-side revision, inference settings and fallback behavior are unknown.",
+      "The effective tools, permissions, credentials, network policy, repository scope and human approvals are unknown."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the current identity, attributed publisher claims and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "publisher-claims",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Current identity",
+        "question": "Which exact surface is represented?",
+        "status": "19.2.2-ee current at review",
+        "answer": "GitLab's protected v19.2.2-ee tag advances the exact patch identity for the 19.2 release line containing Code Review Flow.",
+        "whyItMatters": "A newer exact publisher identity does not identify a particular installed artifact or effective session.",
+        "claimIds": [
+          "com.gitlab.duo.code-review-flow.identity-19-2-2-ee",
+          "com.gitlab.duo.code-review-flow.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "publisher-claims",
+        "eyebrow": "Attributed evidence",
+        "question": "What does the current record retain?",
+        "status": "2 publisher-attributed claims",
+        "answer": "The record retains only claims linked to the named official sources and keeps their applicability, limitations and unknowns explicit.",
+        "whyItMatters": "Publisher documentation is not observed product behaviour or independent verification.",
+        "claimIds": [
+          "com.gitlab.duo.code-review-flow.identity-19-2-2-ee",
+          "com.gitlab.duo.code-review-flow.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this exact successor independently tested here?",
+        "status": "No",
+        "answer": "No agent was installed or run and no independent evidence was admitted during this currentness refresh.",
+        "whyItMatters": "Current identity and source attribution do not establish suitability, quality or safety.",
+        "claimIds": [
+          "com.gitlab.duo.code-review-flow.identity-19-2-2-ee",
+          "com.gitlab.duo.code-review-flow.delivery-boundary-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source currentness successor only. No product run, independent test, suitability calculation, ranking or recommendation is included."
+  }
+}

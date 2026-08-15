@@ -1,0 +1,583 @@
+{
+  "schemaVersion": "agent-evidence-official-source-audit/0.1-draft",
+  "artifactType": "rendered-official-surface-source-audit",
+  "asOf": "2026-08-15",
+  "startedAt": "2026-08-15T02:08:35.493Z",
+  "completedAt": "2026-08-15T02:14:02.006Z",
+  "method": {
+    "client": "Codex in-app Browser",
+    "action": "Navigate to one preferred publisher-controlled source for each accepted surface and inspect the rendered page title, final URL and visible body.",
+    "publisherSourcesOnly": true,
+    "authenticated": false,
+    "productInstalledDownloadedExecutedOrObserved": false
+  },
+  "counts": {
+    "surfaces": 55,
+    "rendered": 55,
+    "failed": 0,
+    "uniqueRequestedUrls": 52,
+    "uniqueFinalUrls": 52
+  },
+  "limitations": [
+    "Rendered reachability and page identity do not establish product behaviour, independent verification, quality, safety, popularity, ranking or suitability.",
+    "Rolling product, hosted-service, model, effective-configuration, installed-artifact and runtime applicability remain unresolved unless a dated exact-identity transition expressly narrows them.",
+    "Redirect destinations are recorded separately from requested publisher URLs; redirects are not treated as identity transitions by themselves."
+  ],
+  "nonClaims": [
+    "No catalogued product was installed, downloaded, authenticated to, bought, trialled, called, executed or observed.",
+    "No independent-test credit or retroactive claim upgrade is introduced.",
+    "No new surface is admitted."
+  ],
+  "observations": [
+    {
+      "index": 1,
+      "surfaceKey": "ai.factory.droid-computers.service",
+      "sourceUrl": "https://docs.factory.ai/cli/features/droid-computers",
+      "checkedAt": "2026-08-15T02:08:35.493Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.factory.ai/droid-computers/overview",
+      "title": "Droid Computers",
+      "bodyTextLength": 8325
+    },
+    {
+      "index": 2,
+      "surfaceKey": "ai.factory.droid.cli.release-stream",
+      "sourceUrl": "https://docs.factory.ai/cli/getting-started/overview",
+      "checkedAt": "2026-08-15T02:08:44.569Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.factory.ai/droid-cli/overview",
+      "title": "Droid CLI",
+      "bodyTextLength": 2575
+    },
+    {
+      "index": 3,
+      "surfaceKey": "ai.mistral.vibe-code.vscode-extension.service",
+      "sourceUrl": "https://docs.mistral.ai/vibe/choose-chat-work-code",
+      "checkedAt": "2026-08-15T02:08:45.507Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.mistral.ai/vibe/choose-chat-work-code",
+      "title": "Choose Chat, Work, or Code | Mistral Docs",
+      "bodyTextLength": 4353
+    },
+    {
+      "index": 4,
+      "surfaceKey": "ai.mistral.vibe-code.web.service",
+      "sourceUrl": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started",
+      "checkedAt": "2026-08-15T02:08:49.234Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started",
+      "title": "Get started | Mistral Docs",
+      "bodyTextLength": 3453
+    },
+    {
+      "index": 5,
+      "surfaceKey": "ai.mistral.vibe.cli.release-stream",
+      "sourceUrl": "https://docs.mistral.ai/vibe/overview",
+      "checkedAt": "2026-08-15T02:08:49.495Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.mistral.ai/vibe",
+      "title": "Vibe | Mistral Docs",
+      "bodyTextLength": 2504
+    },
+    {
+      "index": 6,
+      "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
+      "sourceUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.12",
+      "checkedAt": "2026-08-15T02:08:49.824Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.12",
+      "title": "Release Release v0.21.12 · QwenLM/qwen-code",
+      "bodyTextLength": 9997
+    },
+    {
+      "index": 7,
+      "surfaceKey": "com.alibaba.qwen-code.vscode-extension.beta",
+      "sourceUrl": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
+      "checkedAt": "2026-08-15T02:08:50.942Z",
+      "result": "rendered",
+      "finalUrl": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
+      "title": "Qwen Code Quick Start: From Installation to Your First AI Coding Task | Qwen Code Docs",
+      "bodyTextLength": 4967
+    },
+    {
+      "index": 8,
+      "surfaceKey": "com.amazon.kiro.cli.release-stream",
+      "sourceUrl": "https://kiro.dev/",
+      "checkedAt": "2026-08-15T02:08:54.580Z",
+      "result": "rendered",
+      "finalUrl": "https://kiro.dev/",
+      "title": "Kiro: Move beyond AI coding to agentic engineering",
+      "bodyTextLength": 105133
+    },
+    {
+      "index": 9,
+      "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
+      "sourceUrl": "https://kiro.dev/changelog/ide/1-0-309/",
+      "checkedAt": "2026-08-15T02:08:58.136Z",
+      "result": "rendered",
+      "finalUrl": "https://kiro.dev/changelog/ide/1-0-309/",
+      "title": "Nested AGENTS.md and Long-Session Efficiency - Kiro",
+      "bodyTextLength": 892
+    },
+    {
+      "index": 10,
+      "surfaceKey": "com.amazon.kiro.web.preview",
+      "sourceUrl": "https://kiro.dev/docs/web/using-the-agent/",
+      "checkedAt": "2026-08-15T02:08:58.614Z",
+      "result": "rendered",
+      "finalUrl": "https://kiro.dev/docs/web/using-the-agent/",
+      "title": "Working with the agent - Web - Docs - Kiro",
+      "bodyTextLength": 5447
+    },
+    {
+      "index": 11,
+      "surfaceKey": "com.amazon.q-developer.github.preview",
+      "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
+      "checkedAt": "2026-08-15T02:09:09.407Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
+      "title": "Amazon Q Developer for GitHub (Preview) - Amazon Q Developer",
+      "bodyTextLength": 8780
+    },
+    {
+      "index": 12,
+      "surfaceKey": "com.amazon.q-developer.ide-plugins.supported-sunset",
+      "sourceUrl": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
+      "checkedAt": "2026-08-15T02:09:13.128Z",
+      "result": "rendered",
+      "finalUrl": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
+      "title": "Amazon Q Developer end-of-support announcement | AWS DevOps & Developer Productivity Blog",
+      "bodyTextLength": 5726
+    },
+    {
+      "index": 13,
+      "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
+      "sourceUrl": "https://github.com/anomalyco/opencode/releases/tag/v1.18.18",
+      "checkedAt": "2026-08-15T02:09:15.909Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/anomalyco/opencode/releases/tag/v1.18.18",
+      "title": "Release v1.18.18 · anomalyco/opencode",
+      "bodyTextLength": 764
+    },
+    {
+      "index": 14,
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "sourceUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
+      "checkedAt": "2026-08-15T02:14:01.994Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
+      "title": "Release v2.1.233 · anthropics/claude-code",
+      "bodyTextLength": 3589
+    },
+    {
+      "index": 15,
+      "surfaceKey": "com.augmentcode.agent.ide.plugins",
+      "sourceUrl": "https://docs.augmentcode.com/using-augment/agent",
+      "checkedAt": "2026-08-15T02:09:17.776Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.augmentcode.com/using-augment/agent",
+      "title": "Using Agent - Augment",
+      "bodyTextLength": 7165
+    },
+    {
+      "index": 16,
+      "surfaceKey": "com.augmentcode.auggie.cli.release-stream",
+      "sourceUrl": "https://docs.augmentcode.com/cli/reference",
+      "checkedAt": "2026-08-15T02:09:22.285Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.augmentcode.com/cli/reference",
+      "title": "CLI Flags and Options - Augment",
+      "bodyTextLength": 14336
+    },
+    {
+      "index": 17,
+      "surfaceKey": "com.cline.bot.cli.release-stream",
+      "sourceUrl": "https://github.com/cline/cline/releases/tag/cli-v3.0.55",
+      "checkedAt": "2026-08-15T02:09:22.876Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/cline/cline/releases/tag/cli-v3.0.55",
+      "title": "Release CLI v3.0.55 · cline/cline",
+      "bodyTextLength": 2942
+    },
+    {
+      "index": 18,
+      "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
+      "sourceUrl": "https://github.com/cline/cline/releases/tag/v4.1.10",
+      "checkedAt": "2026-08-15T02:09:23.839Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/cline/cline/releases/tag/v4.1.10",
+      "title": "Release v4.1.10 · cline/cline",
+      "bodyTextLength": 1534
+    },
+    {
+      "index": 19,
+      "surfaceKey": "com.cognition.devin-desktop.cascade.desktop-stable",
+      "sourceUrl": "https://docs.devin.ai/desktop/releases#v3-7-25",
+      "checkedAt": "2026-08-15T02:09:24.717Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.devin.ai/desktop/releases#v3-7-25",
+      "title": "Releases - Devin Docs",
+      "bodyTextLength": 44177
+    },
+    {
+      "index": 20,
+      "surfaceKey": "com.cognition.devin.hosted.rolling-service",
+      "sourceUrl": "https://docs.devin.ai/release-notes/overview",
+      "checkedAt": "2026-08-15T02:09:25.863Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.devin.ai/release-notes/overview",
+      "title": "Recent Updates - Devin Docs",
+      "bodyTextLength": 98160
+    },
+    {
+      "index": 21,
+      "surfaceKey": "com.continue.dev.ide-agent.final",
+      "sourceUrl": "https://docs.continue.dev/",
+      "checkedAt": "2026-08-15T02:09:35.304Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.continue.dev/",
+      "title": "What is Continue? | Continue Docs",
+      "bodyTextLength": 1351
+    },
+    {
+      "index": 22,
+      "surfaceKey": "com.cursor.cloud-agents.service",
+      "sourceUrl": "https://cursor.com/cloud",
+      "checkedAt": "2026-08-15T02:09:38.495Z",
+      "result": "rendered",
+      "finalUrl": "https://cursor.com/cloud",
+      "title": "Cursor · Cloud Agents",
+      "bodyTextLength": 5636
+    },
+    {
+      "index": 23,
+      "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
+      "sourceUrl": "https://cursor.com/download",
+      "checkedAt": "2026-08-15T02:09:42.008Z",
+      "result": "rendered",
+      "finalUrl": "https://cursor.com/download",
+      "title": "Cursor · Download",
+      "bodyTextLength": 4615
+    },
+    {
+      "index": 24,
+      "surfaceKey": "com.github.anthropic.claude-agent.preview",
+      "sourceUrl": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "checkedAt": "2026-08-15T02:09:42.437Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "title": "About third-party coding agents - GitHub Docs",
+      "bodyTextLength": 5555
+    },
+    {
+      "index": 25,
+      "surfaceKey": "com.github.copilot.cli.release-stream",
+      "sourceUrl": "https://github.com/github/copilot-cli/releases/tag/v1.0.80",
+      "checkedAt": "2026-08-15T02:09:46.043Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/github/copilot-cli/releases/tag/v1.0.80",
+      "title": "Release 1.0.80 · github/copilot-cli",
+      "bodyTextLength": 576
+    },
+    {
+      "index": 26,
+      "surfaceKey": "com.github.copilot.cloud-agent.rolling-service",
+      "sourceUrl": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
+      "checkedAt": "2026-08-15T02:09:47.011Z",
+      "result": "rendered",
+      "finalUrl": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
+      "title": "Copilot coding agent is now generally available - GitHub Changelog",
+      "bodyTextLength": 2888
+    },
+    {
+      "index": 27,
+      "surfaceKey": "com.github.copilot.vscode-agent.local-host",
+      "sourceUrl": "https://code.visualstudio.com/docs/agents/concepts/agents",
+      "checkedAt": "2026-08-15T02:09:50.706Z",
+      "result": "rendered",
+      "finalUrl": "https://code.visualstudio.com/docs/agents/concepts/agents",
+      "title": "Agents",
+      "bodyTextLength": 9539
+    },
+    {
+      "index": 28,
+      "surfaceKey": "com.github.openai.codex-agent.preview",
+      "sourceUrl": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "checkedAt": "2026-08-15T02:09:54.933Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "title": "About third-party coding agents - GitHub Docs",
+      "bodyTextLength": 5555
+    },
+    {
+      "index": 29,
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "sourceUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
+      "checkedAt": "2026-08-15T02:09:57.716Z",
+      "result": "rendered",
+      "finalUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
+      "title": "v19.2.2-ee · Tags · GitLab.org / GitLab · GitLab",
+      "bodyTextLength": 559
+    },
+    {
+      "index": 30,
+      "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
+      "sourceUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
+      "checkedAt": "2026-08-15T02:10:01.566Z",
+      "result": "rendered",
+      "finalUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
+      "title": "v19.2.2-ee · Tags · GitLab.org / GitLab · GitLab",
+      "bodyTextLength": 559
+    },
+    {
+      "index": 31,
+      "surfaceKey": "com.gitlab.duo.software-development-flow.service",
+      "sourceUrl": "https://docs.gitlab.com/user/duo_agent_platform/",
+      "checkedAt": "2026-08-15T02:10:12.779Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/",
+      "title": "GitLab Duo Agent Platform | GitLab Docs",
+      "bodyTextLength": 5942
+    },
+    {
+      "index": 32,
+      "surfaceKey": "com.google.antigravity.cli.release-stream",
+      "sourceUrl": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13",
+      "checkedAt": "2026-08-15T02:10:16.646Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13",
+      "title": "Release 1.1.13 · google-antigravity/antigravity-cli",
+      "bodyTextLength": 5078
+    },
+    {
+      "index": 33,
+      "surfaceKey": "com.google.gemini-code-assist.ide-agent.service",
+      "sourceUrl": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer",
+      "checkedAt": "2026-08-15T02:10:17.878Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "title": "Use the Gemini Code Assist agent mode  |  Gemini for Google Cloud  |  Google Cloud Documentation",
+      "bodyTextLength": 15066
+    },
+    {
+      "index": 34,
+      "surfaceKey": "com.google.gemini.cli.release-stream",
+      "sourceUrl": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.55.1",
+      "checkedAt": "2026-08-15T02:10:26.309Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.55.1",
+      "title": "Release Release v0.55.1 · google-gemini/gemini-cli",
+      "bodyTextLength": 8952
+    },
+    {
+      "index": 35,
+      "surfaceKey": "com.google.jules.hosted.rolling-service",
+      "sourceUrl": "https://jules.google/docs/changelog/2025-08-06/",
+      "checkedAt": "2026-08-15T02:10:27.487Z",
+      "result": "rendered",
+      "finalUrl": "https://jules.google/docs/changelog/2025-08-06/",
+      "title": "Jules is out of beta! | Jules",
+      "bodyTextLength": 3089
+    },
+    {
+      "index": 36,
+      "surfaceKey": "com.jetbrains.junie.cli.beta",
+      "sourceUrl": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
+      "checkedAt": "2026-08-15T02:10:32.571Z",
+      "result": "rendered",
+      "finalUrl": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
+      "title": "Junie CLI, the LLM-agnostic coding agent, is now in Beta - The JetBrains Blog",
+      "bodyTextLength": 5310
+    },
+    {
+      "index": 37,
+      "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
+      "sourceUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1138682",
+      "checkedAt": "2026-08-15T02:10:35.712Z",
+      "result": "rendered",
+      "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1138682",
+      "title": "Junie - Fleet Plugin | Marketplace",
+      "bodyTextLength": 824
+    },
+    {
+      "index": 38,
+      "surfaceKey": "com.lovable.build-mode.hosted.rolling-service",
+      "sourceUrl": "https://docs.lovable.dev/changelog?page=1",
+      "checkedAt": "2026-08-15T02:10:39.655Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.lovable.dev/changelog?page=1",
+      "title": "Lovable changelog - Lovable Documentation",
+      "bodyTextLength": 198457
+    },
+    {
+      "index": 39,
+      "surfaceKey": "com.openai.codex.cli.stable",
+      "sourceUrl": "https://github.com/openai/codex/releases/tag/rust-v0.147.0",
+      "checkedAt": "2026-08-15T02:10:43.339Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/openai/codex/releases/tag/rust-v0.147.0",
+      "title": "Release 0.147.0 · openai/codex",
+      "bodyTextLength": 25259
+    },
+    {
+      "index": 40,
+      "surfaceKey": "com.openai.codex.cloud.service",
+      "sourceUrl": "https://developers.openai.com/codex/cloud/",
+      "checkedAt": "2026-08-15T02:10:44.900Z",
+      "result": "rendered",
+      "finalUrl": "https://learn.chatgpt.com/docs/cloud",
+      "title": "Codex cloud | ChatGPT Learn",
+      "bodyTextLength": 4902
+    },
+    {
+      "index": 41,
+      "surfaceKey": "com.openai.codex.ide-extension.service",
+      "sourceUrl": "https://developers.openai.com/codex/ide/",
+      "checkedAt": "2026-08-15T02:11:00.857Z",
+      "result": "rendered",
+      "finalUrl": "https://learn.chatgpt.com/docs/codex/ide",
+      "title": "Codex IDE extension | ChatGPT Learn",
+      "bodyTextLength": 5718
+    },
+    {
+      "index": 42,
+      "surfaceKey": "com.replit.agent.hosted.agent-4-service",
+      "sourceUrl": "https://docs.replit.com/updates/2026/03/13/changelog",
+      "checkedAt": "2026-08-15T02:11:07.305Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.replit.com/updates/2026/03/13/changelog",
+      "title": "March 13, 2026 - Replit",
+      "bodyTextLength": 3047
+    },
+    {
+      "index": 43,
+      "surfaceKey": "com.roocode.vscode-extension.final",
+      "sourceUrl": "https://github.com/RooCodeInc/Roo-Code",
+      "checkedAt": "2026-08-15T02:11:12.143Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/RooCodeInc/Roo-Code",
+      "title": "RooCodeInc/Roo-Code: Roo Code gives you a whole dev team of AI agents in your code editor.",
+      "bodyTextLength": 5408
+    },
+    {
+      "index": 44,
+      "surfaceKey": "com.sourcegraph.amp.cli.release-stream",
+      "sourceUrl": "https://ampcode.com/manual",
+      "checkedAt": "2026-08-15T02:11:13.649Z",
+      "result": "rendered",
+      "finalUrl": "https://ampcode.com/manual",
+      "title": "Owner’s Manual - Amp",
+      "bodyTextLength": 78246
+    },
+    {
+      "index": 45,
+      "surfaceKey": "com.stackblitz.bolt.claude-agent.service",
+      "sourceUrl": "https://support.bolt.new/release-notes",
+      "checkedAt": "2026-08-15T02:11:17.608Z",
+      "result": "rendered",
+      "finalUrl": "https://support.bolt.new/release-notes",
+      "title": "Release Notes - Bolt",
+      "bodyTextLength": 33112
+    },
+    {
+      "index": 46,
+      "surfaceKey": "com.tabnine.agent.ide.deployment-lines",
+      "sourceUrl": "https://docs.tabnine.com/main/getting-started/tabnine-agent",
+      "checkedAt": "2026-08-15T02:11:21.154Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.tabnine.com/main/getting-started/tabnine-agent",
+      "title": "Tabnine Agent | Tabnine Docs",
+      "bodyTextLength": 2189
+    },
+    {
+      "index": 47,
+      "surfaceKey": "com.vercel.agent.public-beta",
+      "sourceUrl": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta",
+      "checkedAt": "2026-08-15T02:11:24.485Z",
+      "result": "rendered",
+      "finalUrl": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta",
+      "title": "An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta - Vercel",
+      "bodyTextLength": 2605
+    },
+    {
+      "index": 48,
+      "surfaceKey": "com.vercel.v0.agent.service",
+      "sourceUrl": "https://api2.v0.dev/docs/faqs",
+      "checkedAt": "2026-08-15T02:11:28.233Z",
+      "result": "rendered",
+      "finalUrl": "https://api2.v0.dev/docs/faqs",
+      "title": "FAQs | v0 Docs",
+      "bodyTextLength": 19712
+    },
+    {
+      "index": 49,
+      "surfaceKey": "dev.warp.oz.cloud-agents.service",
+      "sourceUrl": "https://docs.warp.dev/?fallback=true",
+      "checkedAt": "2026-08-15T02:11:31.921Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.warp.dev/?fallback=true",
+      "title": "Getting started with Warp and Oz | Warp",
+      "bodyTextLength": 6531
+    },
+    {
+      "index": 50,
+      "surfaceKey": "dev.warp.oz.local-agent.desktop",
+      "sourceUrl": "https://docs.warp.dev/?fallback=true",
+      "checkedAt": "2026-08-15T02:11:35.065Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.warp.dev/?fallback=true",
+      "title": "Getting started with Warp and Oz | Warp",
+      "bodyTextLength": 6531
+    },
+    {
+      "index": 51,
+      "surfaceKey": "dev.zed.agent.native.desktop-stable",
+      "sourceUrl": "https://zed.dev/releases/stable",
+      "checkedAt": "2026-08-15T02:11:44.885Z",
+      "result": "rendered",
+      "finalUrl": "https://zed.dev/releases/stable",
+      "title": "Stable Releases — Zed",
+      "bodyTextLength": 8783
+    },
+    {
+      "index": 52,
+      "surfaceKey": "org.aaif.goose.cli.release-stream",
+      "sourceUrl": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0",
+      "checkedAt": "2026-08-15T02:11:51.973Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0",
+      "title": "Release v1.46.0 · aaif-goose/goose",
+      "bodyTextLength": 21847
+    },
+    {
+      "index": 53,
+      "surfaceKey": "org.aider-ai.aider.cli.stable",
+      "sourceUrl": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
+      "checkedAt": "2026-08-15T02:11:53.655Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
+      "title": "Release Aider v0.86.0 · Aider-AI/aider",
+      "bodyTextLength": 1312
+    },
+    {
+      "index": 54,
+      "surfaceKey": "org.openhands.cloud.service",
+      "sourceUrl": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud",
+      "checkedAt": "2026-08-15T02:11:54.659Z",
+      "result": "rendered",
+      "finalUrl": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud",
+      "title": "Getting Started - OpenHands Docs",
+      "bodyTextLength": 1839
+    },
+    {
+      "index": 55,
+      "surfaceKey": "org.openhands.openhands.cli.stable",
+      "sourceUrl": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
+      "checkedAt": "2026-08-15T02:11:58.217Z",
+      "result": "rendered",
+      "finalUrl": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
+      "title": "Release 1.16.0 · OpenHands/OpenHands-CLI",
+      "bodyTextLength": 23350
+    }
+  ]
+}

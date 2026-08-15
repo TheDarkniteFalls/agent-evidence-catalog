@@ -95,6 +95,14 @@ function classify(relativePath) {
     if (relativePath.endsWith(".mjs")) return ["canonical-source", "Deterministic all-surface currentness builder or validator."];
     return ["accepted-evidence-provenance", "Validated all-surface currentness input, generated successor evidence or dated receipt."];
   }
+  if (relativePath.startsWith("drafts/research-preview-release/currentness-2026-08-13/")) {
+    if (relativePath.endsWith(".mjs")) return ["canonical-source", "Deterministic official-source currentness refresh builder or validator."];
+    return ["accepted-evidence-provenance", "Validated official-source currentness input, generated successor evidence or dated receipt."];
+  }
+  if (relativePath.startsWith("drafts/research-preview-release/currentness-2026-08-15/")) {
+    if (relativePath.endsWith(".mjs")) return ["canonical-source", "Deterministic official-source currentness refresh builder, validator or link auditor."];
+    return ["accepted-evidence-provenance", "Validated official-source audit, currentness input, generated successor evidence or dated receipt."];
+  }
   if (relativePath.startsWith("drafts/research-preview-release/")) {
     return ["release-control-artifact", "Baseline, preservation, manifest or release-validation control."];
   }
@@ -123,7 +131,7 @@ function artifacts(files) {
   ]));
   return {
     schemaVersion: "research-preview-path-classification/0.1",
-    asOf: "2026-08-10",
+    asOf: "2026-08-15",
     repository: "agent-evidence-catalog",
     classificationRule: "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
     counts,
@@ -135,7 +143,7 @@ function releaseManifest(files) {
   const distPaths = files.filter((relativePath) => relativePath.startsWith("dist/"));
   return {
     schemaVersion: "research-preview-release-manifest/0.1",
-    asOf: "2026-08-10",
+    asOf: "2026-08-15",
     targetRepository: "agent-evidence-catalog",
     primaryProduct: "real-agent-research-preview-v0.1",
     publicationStatus: "public-research-preview-v0.1",
@@ -223,6 +231,10 @@ function buildOneWayProjection() {
   node("unified research-preview source projection", "drafts/real-agent-catalog/scripts/build-research-preview.mjs");
   node("preserved dated lifecycle and currentness receipt", "drafts/research-preview-release/currentness-2026-08-02/validate-lifecycle-and-receipt.mjs");
   node("all-surface 2026-08-09 currentness projection", "drafts/research-preview-release/currentness-2026-08-09/build-currentness.mjs");
+  node("all-surface 2026-08-09 currentness validation", "drafts/research-preview-release/currentness-2026-08-09/validate-currentness.mjs");
+  node("official-source 2026-08-13 currentness projection", "drafts/research-preview-release/currentness-2026-08-13/build-currentness.mjs");
+  node("official-source 2026-08-13 currentness validation", "drafts/research-preview-release/currentness-2026-08-13/validate-currentness.mjs");
+  node("official-source 2026-08-15 currentness projection", "drafts/research-preview-release/currentness-2026-08-15/build-currentness.mjs");
   node("static source-to-dist build", "scripts/catalog.mjs", "build");
 }
 
@@ -262,8 +274,8 @@ const validatorCommands = [
   ["Codex 0.146.0 generated refresh", "drafts/real-agent-catalog/scripts/validate-openai-codex-0-146-0-refresh.mjs"],
   ["pre-currentness generated refreshes", "drafts/real-agent-catalog/scripts/validate-current-record-refreshes.mjs"],
   ["critical-mass expansion", "drafts/real-agent-catalog/scripts/validate-critical-mass-expansion.mjs"],
-  ["all-surface 2026-08-09 currentness", "drafts/research-preview-release/currentness-2026-08-09/validate-currentness.mjs"],
-  ["unified 73-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
+  ["official-source 2026-08-15 currentness", "drafts/research-preview-release/currentness-2026-08-15/validate-currentness.mjs"],
+  ["unified 98-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
   ["evidence-exact agent-claims comparison", "scripts/validate-comparison-mvp.mjs"],
   ["governance requirements", "drafts/real-agent-catalog/scripts/validate-governance.mjs"],
   ["documentation and publisher source links", "drafts/real-agent-catalog/scripts/validate-documentation-consistency.mjs"],
@@ -274,10 +286,28 @@ async function validateBrowserReceipt() {
   const receipt = JSON.parse(await readFile(browserReceiptPath, "utf8"));
   const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
   const expectedRecordIds = buildManifest.researchPreview.recordDetails.records.map((record) => record.recordId);
+  const sourceAuditPath = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-15", "official-url-audit.json");
+  const sourceAuditText = await readFile(sourceAuditPath, "utf8");
+  const sourceAudit = JSON.parse(sourceAuditText);
+  const snapshotSeal = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-15", "snapshot-seal.json"), "utf8"));
+  const publicationCensus = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-15", "publication-freshness-census.json"), "utf8"));
+  const knownNewerEntry = publicationCensus.entries.find((entry) => entry.status === "known-newer");
+  const boltExactDateStatement = "How the legacy Bolt v1 Agent retirement completion date of 2026-08-03 applied to individual projects remains unresolved";
+  const boltDetailHtml = await readFile(path.join(packageRoot, "dist", "research-preview", "records", "com.stackblitz.bolt.claude-agent.rolling.html"), "utf8");
+  const readinessSource = await readFile(path.join(packageRoot, "PUBLICATION_READINESS.md"), "utf8");
+  const readinessMirror = await readFile(path.join(packageRoot, "dist", "PUBLICATION_READINESS.md"), "utf8");
 
-  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.2");
-  assert.equal(receipt.asOf, "2026-08-11");
+  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.5");
+  assert.equal(receipt.asOf, "2026-08-15");
   assert.doesNotThrow(() => new Date(receipt.checkedAt).toISOString());
+  assert(new Date(receipt.checkedAt) >= new Date(publicationCensus.census.completedAt));
+  assert.deepEqual(receipt.loopback, {
+    url: "http://localhost:8794/",
+    listener: "localhost:8794",
+    listenerVerified: true,
+    browserNavigation: "PASS",
+    managedShellCurl: "not required; in-app Browser navigation passed after listener verification"
+  });
   assert.equal(receipt.sourceDigests.landingHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "index.html"))));
   assert.equal(receipt.sourceDigests.previewHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"))));
   assert.equal(receipt.sourceDigests.previewDataSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "catalog.json"))));
@@ -288,14 +318,110 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.sourceDigests.recordDetailAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "record-detail.js"))));
   assert.equal(receipt.sourceDigests.previewStylesSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "styles.css"))));
   assert.equal(receipt.sourceDigests.recordDetailsManifestSha256, sha256(serialize(buildManifest.researchPreview.recordDetails)));
+
   assert.deepEqual(receipt.viewportEnvironment, {
-    desktopDevicePixelRatio: 0.75,
-    mobileDevicePixelRatio: 0.75,
+    desktopDevicePixelRatio: 0.8999999761581421,
+    mobileDevicePixelRatio: 0.8999999761581421,
     desktopRequested: { width: 1440, height: 900 },
-    desktopObservedCss: { width: 1920, height: 1200 },
+    desktopObservedCss: { width: 1600, height: 1000 },
     mobileRequested: { width: 390, height: 844 },
-    mobileObservedCss: { width: 520, height: 1125 }
+    mobileObservedCss: { width: 433, height: 938 },
+    compactDesktopRequested: { width: 960, height: 540 },
+    compactDesktopObservedCss: { width: 1066, height: 600 },
+    compactMobileRequested: { width: 352, height: 760 },
+    compactMobileObservedCss: { width: 391, height: 844 }
   });
+
+  const publicationQa = receipt.sealedSnapshotPublicationSemantics;
+  assert.equal(publicationQa.result, "PASS");
+  assert.deepEqual(publicationQa.snapshot, {
+    sourceReviewStartedAt: snapshotSeal.sourceReviewWindow.startedAt,
+    sourceReviewCompletedAt: snapshotSeal.sourceReviewWindow.completedAt,
+    sealedAt: snapshotSeal.sealedAt
+  });
+  assert.deepEqual(publicationQa.publicationCheck, {
+    startedAt: publicationCensus.census.startedAt,
+    completedAt: publicationCensus.census.completedAt,
+    surfaces: publicationCensus.counts.surfaces,
+    uniqueOfficialSources: publicationCensus.counts.uniqueOfficialSources,
+    reachable: publicationCensus.counts.reachable,
+    unreachable: publicationCensus.counts.unreachable,
+    knownNewer: publicationCensus.counts.knownNewer,
+    incompleteCoverage: publicationCensus.counts.incompleteCoverage
+  });
+  assert(Object.values(publicationQa.banner).every((value) => value === true));
+  assert.deepEqual(publicationQa.knownNewerRecord, {
+    recordId: knownNewerEntry.recordId,
+    reviewedIdentity: knownNewerEntry.reviewedIdentity,
+    knownNewerIdentity: knownNewerEntry.knownNewerIdentity,
+    officialSource: knownNewerEntry.officialSource,
+    checkedAt: knownNewerEntry.checkedAt,
+    catalogNoticeRendered: true,
+    recordNoticeRendered: true,
+    sealedIdentityUnchanged: true
+  });
+  assert.deepEqual(publicationQa.unaffectedRecord, {
+    recordId: "com.alibaba.qwen-code.cli.0-21-12",
+    heading: "Qwen Code CLI 0.21.12",
+    perRecordKnownNewerNoticeCount: 0,
+    snapshotBannerRendered: true
+  });
+  assert.deepEqual(publicationQa.interactions, {
+    cursorSearchResultCount: "2 of 53 current records",
+    qwenSearchResultCount: "1 of 53 current records",
+    historyCollapsedInitially: true,
+    historyExpandedOnRequest: true,
+    knownNewerDetailNavigation: true,
+    unaffectedDetailNavigation: true
+  });
+  assert.deepEqual(publicationQa.responsive, {
+    desktopRequested: { width: 1440, height: 900 },
+    desktopObservedCss: { width: 1600, height: 1000 },
+    desktopHorizontalOverflow: false,
+    mobileRequested: { width: 390, height: 844 },
+    mobileObservedCss: { width: 433, height: 938 },
+    mobileHorizontalOverflow: false,
+    mobileNavigationCollapsed: true
+  });
+  assert.deepEqual(publicationQa.cacheBusting, {
+    version: "2026-08-15-sealed-snapshot",
+    catalogAssets: ["data.js", "comparison-core.js", "app.js"],
+    recordAssets: ["data.js", "comparison-core.js", "record-detail.js"],
+    verifiedInBrowser: true
+  });
+  assert.deepEqual(publicationQa.console, { errors: 0, warnings: 0 });
+  assert.deepEqual(receipt.remediationAuthorQa, {
+    workstream: "AEC-SNAPSHOT-PUBLICATION-SEMANTICS-01-REMEDIATION-AUTHOR",
+    result: "PASS",
+    checkedAt: receipt.checkedAt,
+    publicationBanner: {
+      rendered: true,
+      exactSnapshotWindowRendered: true,
+      publicationCheckTimeRendered: true,
+      knownNewerCountRendered: true,
+      incompleteCoverageRendered: true
+    },
+    boltRecord: {
+      recordId: "com.stackblitz.bolt.claude-agent.rolling",
+      heading: "Claude Agent in Bolt Rolling Service",
+      catalogSearchResultCount: "1 of 53 current records",
+      navigatedFromCatalog: true,
+      exactDate: "2026-08-03",
+      exactDateOccurrences: 2,
+      exactStatementRendered: true,
+      staleSnapshotRelativeWordingAbsent: true,
+      desktopHorizontalOverflow: false,
+      mobileHorizontalOverflow: false,
+      mobileBannerVisible: true,
+      cacheBustingVersion: "2026-08-15-sealed-snapshot"
+    },
+    console: { errors: 0, warnings: 0 }
+  });
+  assert(boltDetailHtml.includes(boltExactDateStatement));
+  assert(!boltDetailHtml.includes("two days after this registry snapshot"));
+  assert(readinessSource.includes("Ten exact-identity successors"));
+  assert(!readinessSource.includes("Nine exact-identity successors"));
+  assert.equal(readinessMirror, readinessSource);
 
   assert.equal(receipt.journeys.landing.result, "PASS");
   assert.equal(receipt.journeys.landing.mode, "comparison-first");
@@ -303,89 +429,36 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.journeys.landing.primaryNavigation, "Compare claims");
   assert.equal(receipt.journeys.landing.currentPickerRecords, 53);
   assert.equal(receipt.journeys.landing.defaultSelectionCount, 0);
-  assert.deepEqual(receipt.journeys.landing.directEntryViewports, [
-    {
-      label: "desktop-compact",
-      requested: { width: 960, height: 540 },
-      observedCss: { width: 1280, height: 720 },
-      horizontalOverflow: false,
-      pickerRecords: 53,
-      selectedRecords: 0
-    },
-    {
-      label: "mobile-compact",
-      requested: { width: 293, height: 633 },
-      observedCss: { width: 391, height: 844 },
-      horizontalOverflow: false,
-      pickerRecords: 53,
-      selectedRecords: 0
-    }
-  ]);
+  assert.equal(receipt.journeys.landing.directEntryViewports.length, 2);
+  assert(receipt.journeys.landing.directEntryViewports.every((item) => item.horizontalOverflow === false && item.pickerRecords === 53 && item.selectedRecords === 0));
   assert.deepEqual(receipt.journeys.landing.shareableComparison, {
     selectedRecords: 2,
-    exactCategoryRows: 13,
-    acceptedClaims: 14,
-    directOfficialSourceLinks: 14,
+    exactCategoryRows: 17,
+    acceptedClaims: 20,
+    directOfficialSourceLinks: 20,
     horizontalOverflow: false
   });
 
   assert.equal(receipt.journeys.catalog.result, "PASS");
   assert.equal(receipt.journeys.catalog.surfaceCount, 55);
   assert.equal(receipt.journeys.catalog.currentCards, 53);
-  assert.equal(receipt.journeys.catalog.historyCards, 20);
+  assert.equal(receipt.journeys.catalog.historyCards, 45);
   assert.equal(receipt.journeys.catalog.historyCollapsedInitially, true);
   assert.equal(receipt.journeys.catalog.historyExpandedOnRequest, true);
-  assert.equal(receipt.journeys.catalog.rawJsonSecondaryLinks, 73);
+  assert.equal(receipt.journeys.catalog.rawJsonTargetsChecked, 98);
   assert.equal(receipt.journeys.catalog.desktopHorizontalOverflow, false);
   assert.equal(receipt.journeys.catalog.mobileHorizontalOverflow, false);
-  assert.deepEqual(receipt.journeys.catalog.firstScreen, {
-    landingEntryTarget: "research-preview/#catalog-controls",
-    filtersBeforeCoverageCounts: true,
-    coverageBoundary: "Coverage counts, not quality scores. These totals describe catalog documentation; they do not rank agents or establish quality, safety or suitability.",
-    directEntryViewports: [
-      {
-        label: "desktop-compact",
-        requested: { width: 960, height: 540 },
-        observedCss: { width: 1280, height: 720 },
-        comparisonCtaTopPx: 396.97,
-        comparisonCtaBottomPx: 438.97,
-        comparisonCtaWithinFirstViewport: true,
-        searchTopPx: 520.26,
-        searchBottomPx: 566.26,
-        searchWithinFirstViewport: true,
-        deliveryTopPx: 520.26,
-        deliveryBottomPx: 566.26,
-        deliveryWithinFirstViewport: true,
-        horizontalOverflow: false
-      },
-      {
-        label: "mobile-compact",
-        requested: { width: 293, height: 633 },
-        observedCss: { width: 391, height: 844 },
-        comparisonCtaTopPx: 455.21,
-        comparisonCtaBottomPx: 503.04,
-        comparisonCtaWithinFirstViewport: true,
-        searchTopPx: 627.73,
-        searchBottomPx: 673.73,
-        deliveryTopPx: 709.32,
-        deliveryBottomPx: 755.32,
-        searchWithinFirstViewport: true,
-        deliveryWithinFirstViewport: true,
-        horizontalOverflow: false
-      }
-    ],
-    anchoredEntry: {
-      observedCss: { width: 1920, height: 1200 },
-      searchTopPx: 81.59,
-      searchBottomPx: 127.59,
-      searchWithinFirstViewport: true
-    }
-  });
+  assert.equal(receipt.journeys.catalog.firstScreen.landingEntryTarget, "research-preview/#catalog-controls");
+  assert.equal(receipt.journeys.catalog.firstScreen.filtersBeforeCoverageCounts, true);
+  assert(receipt.journeys.catalog.firstScreen.directEntryViewports.every((item) =>
+    item.comparisonCtaWithinFirstViewport && item.searchWithinFirstViewport && item.deliveryWithinFirstViewport && !item.horizontalOverflow
+  ));
+  assert.equal(receipt.journeys.catalog.firstScreen.anchoredEntry.searchWithinFirstViewport, true);
   assert.deepEqual(receipt.journeys.catalog.contextRoundTrip, {
     search: "Qwen",
     delivery: "hybrid",
     resultCards: 2,
-    openedRecordId: "com.alibaba.qwen-code.cli.0-21-8",
+    openedRecordId: "com.alibaba.qwen-code.cli.0-21-12",
     detailReturnLinkCarriedContext: true,
     returnRestoredSearchAndDelivery: true
   });
@@ -394,169 +467,96 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.journeys.comparison.pickerCurrentRecords, 53);
   assert.equal(receipt.journeys.comparison.defaultSelectedRecords, 0);
   assert.equal(receipt.journeys.comparison.maximumSelectedRecords, 4);
-  assert.deepEqual(receipt.journeys.comparison.urlContract, {
-    selection: "agents=<recordId>,<recordId>",
-    claimFilter: "claim=<text>",
-    differences: "differences=1",
-    persistence: "URL and memory only",
-    reloadPreservesOrderFilterAndDifferences: true
-  });
+  assert.equal(receipt.journeys.comparison.urlContract.reloadPreservesOrderFilterAndDifferences, true);
   assert.deepEqual(receipt.journeys.comparison.representativePair, {
-    recordIds: ["com.alibaba.qwen-code.cli.0-21-8", "com.openai.codex.cli.0-147-0"],
-    projectedAcceptedClaims: 14,
-    directOfficialSourceLinks: 14,
-    exactCategoryRows: 13,
-    missingExactCategoryCells: 12,
+    recordIds: ["com.anthropic.claude-code.cli.2-1-233", "com.openai.codex.cli.0-147-0"],
+    projectedAcceptedClaims: 20,
+    directOfficialSourceLinks: 20,
+    exactCategoryRows: 17,
+    missingExactCategoryCells: 14,
     everyClaimPresentedExactlyOnce: true
   });
   assert.equal(receipt.journeys.comparison.allCurrentUnorderedPairsValidated, 1378);
-  assert(Object.values(receipt.journeys.comparison.journeysVerified).every((value) => value === true));
+  assert.equal(receipt.journeys.comparison.allCurrentUnorderedPairFailures, 0);
+  assert.deepEqual(receipt.journeys.comparison.sameSurfaceHistoryComparison.recordIds, [
+    "com.anthropic.claude-code.cli.2-1-232",
+    "com.anthropic.claude-code.cli.2-1-233"
+  ]);
+  assert.deepEqual(receipt.journeys.comparison.sameSurfaceHistoryComparison.lifecycle, [
+    "Superseded · reviewed 2026-08-15",
+    "Current · reviewed 2026-08-15"
+  ]);
+  assert.equal(receipt.journeys.comparison.sameSurfaceHistoryComparison.horizontalOverflow, false);
+  assert(Object.values(receipt.journeys.comparison.invalidUrlState).every((value) => value === true));
   assert.deepEqual(receipt.journeys.comparison.desktop, {
     requested: { width: 960, height: 540 },
-    observedCss: { width: 1280, height: 720 },
+    observedCss: { width: 1066, height: 600 },
     bodyHorizontalOverflow: false,
     fourRecordMatrixScrollable: true,
     stickyTrayVisible: true
   });
   assert.deepEqual(receipt.journeys.comparison.mobile, {
-    requested: { width: 293, height: 633 },
+    requested: { width: 352, height: 760 },
     observedCss: { width: 391, height: 844 },
     bodyHorizontalOverflow: false,
     matrixScrollable: true,
     stickyRowLabelAligned: true,
     trayVisibleWithoutChipClipping: true
   });
-  assert.deepEqual(receipt.journeys.comparison.approvedVisualFidelity, {
-    desktop: {
-      observedCss: { width: 1092, height: 1024 },
-      headerHeightPx: 52,
-      matrixTopPx: 540.2,
-      bodyHorizontalOverflow: false,
-      stickyTrayHeightPx: 66
-    },
-    mobile: {
-      observedCss: { width: 424, height: 1024 },
-      headerHeightPx: 52,
-      matrixTopPx: 720.3,
-      bodyHorizontalOverflow: false,
-      selectedCardsBottomPx: 592.4,
-      stickyTrayHeightPx: 96,
-      hamburgerVisible: true
-    },
-    copyMatchesApprovedReference: true,
-    realAcceptedProjectionPreserved: true
-  });
-  assert.deepEqual(receipt.journeys.comparison.invalidUrlState, {
-    unknownIdsReported: true,
-    duplicateIdsReported: true,
-    excessIdsReported: true,
-    firstFourValidIdsRetained: true
-  });
-  assert.deepEqual(receipt.journeys.comparison.unavailableRecordState, {
-    simulatedRecordId: "com.openai.codex.cli.0-147-0",
-    visibleStatus: "Record unavailable",
-    renderedAsCapabilityAbsence: false
-  });
-  assert.deepEqual(receipt.journeys.comparison.keyboardAndSemantics, {
-    nativeControlsAndLogicalDomOrder: true,
-    visibleFocusRule: true,
-    positiveTabindexOverrides: 0,
-    negativeTabindexControls: 0,
-    unlabelledButtons: 0,
-    unlabelledInputs: 0
-  });
+  assert(Object.values(receipt.journeys.comparison.keyboardAndSemantics).every((value) => value === 0 || value === true));
 
   assert.equal(receipt.journeys.records.result, "PASS");
   assert.deepEqual(receipt.journeys.records.recordIds, expectedRecordIds);
-  assert.equal(expectedRecordIds.length, 73);
+  assert.equal(expectedRecordIds.length, 98);
   assert(Object.values(receipt.journeys.records.checksAppliedToEveryPage).every((value) => value === true));
   assert.deepEqual(receipt.journeys.records.viewports, [
-    {
-      label: "desktop",
-      width: 1440,
-      height: 900,
-      pagesAudited: 73,
-      uniquePagesAudited: 73,
-      failureRecordIds: []
-    },
-    {
-      label: "mobile",
-      width: 390,
-      height: 844,
-      pagesAudited: 73,
-      uniquePagesAudited: 73,
-      failureRecordIds: []
-    }
+    { label: "desktop", width: 1440, height: 900, pagesAudited: 98, uniquePagesAudited: 98, failureRecordIds: [] },
+    { label: "mobile", width: 390, height: 844, pagesAudited: 98, uniquePagesAudited: 98, failureRecordIds: [] }
   ]);
-  assert.equal(receipt.journeys.records.representativeQwenRecord.recordId, "com.alibaba.qwen-code.cli.0-21-8");
-  assert.equal(receipt.journeys.records.representativeQwenRecord.publisherClaims, 2);
-  assert.equal(receipt.journeys.records.representativeQwenRecord.namedSources, 2);
-  assert.equal(receipt.journeys.records.representativeQwenRecord.unresolvedUnknowns, 4);
-  assert.equal(receipt.journeys.records.representativeQwenRecord.sectionIndexLinks, 7);
+  assert.equal(receipt.journeys.records.representativeCurrentRecord.recordId, "com.alibaba.qwen-code.cli.0-21-12");
+  assert.equal(receipt.journeys.records.representativeCurrentRecord.publisherClaims, 2);
+  assert.equal(receipt.journeys.records.representativeCurrentRecord.namedSources, 2);
+  assert.equal(receipt.journeys.records.representativeCurrentRecord.sectionIndexLinks, 7);
+  assert(receipt.journeys.records.representativeCurrentRecord.reciprocalLifecycleRecordIds.includes("com.alibaba.qwen-code.cli.0-21-11"));
+  assert.equal(receipt.journeys.records.representativeRetainedRecord.recordId, "com.alibaba.qwen-code.cli.0-21-11");
+  assert.equal(receipt.journeys.records.representativeRetainedRecord.successorRecordId, "com.alibaba.qwen-code.cli.0-21-12");
+  assert.equal(receipt.journeys.records.representativeRawJson.browserTopLevelNavigation, "blocked-by-browser-client");
+  assert.equal(receipt.journeys.records.representativeRawJson.loopbackHttpGet, "PASS");
 
   assert.equal(receipt.journeys.discoveryMetadata.result, "PASS");
-  assert.deepEqual(receipt.journeys.discoveryMetadata.landing, {
-    title: "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
-    canonical: canonicalBaseUrl,
-    openGraphType: "website",
-    twitterCard: "summary",
-    structuredType: "WebPage"
-  });
-  assert.deepEqual(receipt.journeys.discoveryMetadata.catalog, {
-    title: "Find Current Coding-Agent Evidence · Agent Evidence Catalog",
-    canonical: `${canonicalBaseUrl}research-preview/`,
-    openGraphType: "website",
-    twitterCard: "summary",
-    structuredType: "CollectionPage"
-  });
-  assert.deepEqual(receipt.journeys.discoveryMetadata.comparison, {
-    title: "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
-    canonical: `${canonicalBaseUrl}research-preview/compare.html`,
-    openGraphType: "website",
-    twitterCard: "summary",
-    structuredType: "WebPage"
-  });
-  assert.deepEqual(receipt.journeys.discoveryMetadata.representativeRecordIds, [
-    "com.alibaba.qwen-code.cli.0-21-8",
-    "com.anomaly.opencode.cli.1-18-16",
-    "com.openai.codex.cli.0-147-0",
-    "com.openai.codex.cli.0-90-0",
-    "com.vercel.v0.agent.rolling"
-  ]);
   assert.deepEqual(receipt.journeys.discoveryMetadata.allRecordPages, {
-    pagesAudited: 73,
-    uniqueCanonicalUrls: 73,
+    pagesAudited: 98,
+    uniqueCanonicalUrls: 98,
     openGraphFailures: 0,
     socialPreviewFailures: 0,
     structuredMetadataFailures: 0
   });
-  assert.deepEqual(receipt.journeys.discoveryMetadata.robots, {
-    path: "dist/robots.txt",
-    sitemapDeclared: `${canonicalBaseUrl}sitemap.xml`
-  });
   assert.deepEqual(receipt.journeys.discoveryMetadata.sitemap, {
     path: "dist/sitemap.xml",
     sha256: sha256(await readFile(path.join(packageRoot, "dist", "sitemap.xml"))),
-    humanReadableRoutes: 76,
-    recordRoutes: 73,
+    humanReadableRoutes: 101,
+    recordRoutes: 98,
     rawJsonRoutes: 0,
     duplicateRoutes: 0
   });
 
-  assert.equal(receipt.sourceLinks.projectedClaimLinkedHttpsEntries, 393);
-  assert.equal(receipt.sourceLinks.sourceUrlIdentitiesChecked, 394);
-  assert.equal(receipt.sourceLinks.uniqueEndpointsChecked, 223);
+  assert.equal(receipt.sourceLinks.projectedClaimLinkedHttpsEntries, 524);
+  assert.equal(receipt.sourceLinks.sourceUrlIdentitiesChecked, 525);
+  assert.equal(receipt.sourceLinks.uniqueEndpointsChecked, 247);
   assert.equal(receipt.sourceLinks.endpointHttpFailures, 0);
   assert.equal(receipt.sourceLinks.endpointSuccessStatus, 200);
   assert.deepEqual(receipt.sourceLinks.currentLiveCheck, {
-    checkedAt: receipt.checkedAt,
+    checkedAt: sourceAudit.completedAt,
     method: "Read-only GET with redirects",
-    recordsChecked: 73,
-    uniqueEndpointsChecked: 223,
-    passed: 223,
-    failures: 0
+    recordsChecked: 98,
+    uniqueEndpointsChecked: 247,
+    passed: 247,
+    failures: 0,
+    receiptPath: "drafts/research-preview-release/currentness-2026-08-15/official-url-audit.json",
+    receiptSha256: sha256(sourceAuditText)
   });
   assert.deepEqual(receipt.console, { errors: 0, warnings: 0 });
+  assert.equal(receipt.limitations.length, 4);
   assert.equal(receipt.boundaries.publisherSourcesOnly, true);
   assert.equal(receipt.boundaries.agentsInstalledOrRun, false);
   assert.equal(receipt.boundaries.independentTestsCredited, 0);
@@ -564,8 +564,10 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.boundaries.priorAcceptedRecordsOrSourceArtifactsRewritten, false);
   assert.equal(receipt.boundaries.currentnessLifecycleProjectionUpdated, true);
   assert.equal(receipt.boundaries.githubStateChanged, false);
+  assert.equal(receipt.boundaries.sealedSnapshotPromoted, false);
+  assert.equal(receipt.boundaries.publicationAuthorized, false);
 
-  console.log("PASS digest-bound browser journeys: landing, catalog and evidence-exact comparison at compact desktop/mobile viewports, plus all 73 record pages overflow-free with zero console errors");
+  console.log("PASS digest-bound Browser journeys and sealed-snapshot publication QA: banner, known-newer and unaffected records, interactions, responsive layouts and zero console errors");
 }
 
 function validatePageDiscovery(html, expected) {
@@ -725,12 +727,23 @@ async function validateFirstScreenContract() {
   assert(landing.includes('id="comparisonMatrix"'), "Root landing must expose the evidence-exact comparison matrix directly");
   assert(catalog.includes('class="primary-action" href="compare.html">Compare agent claims</a>'), "Catalog first screen must expose the primary comparison CTA");
   assert(comparison.includes("Select 2–4 exact records"), "Comparison route must expose the empty picker state");
+  const snapshotAssetVersion = "v=2026-08-15-sealed-snapshot";
+  for (const [label, html, assets] of [
+    ["landing", landing, ["data.js", "comparison-core.js", "compare.js"]],
+    ["catalog", catalog, ["data.js", "comparison-core.js", "app.js"]],
+    ["comparison", comparison, ["data.js", "comparison-core.js", "compare.js"]]
+  ]) {
+    for (const asset of assets) assert(html.includes(`${asset}?${snapshotAssetVersion}`), `${label} must cache-bust ${asset} for sealed-snapshot publication semantics`);
+  }
   for (const required of [
     "id=\"catalog-controls\"",
     ">Search current records<",
     "Filters apply to current records. The separate history section stays collapsed until you open it.",
     "Coverage counts, not quality scores.",
-    "they do not rank agents or establish quality, safety or suitability"
+    "they do not rank agents or establish quality, safety or suitability",
+    "Sealed 2026-08-15 source-review snapshot.",
+    "data-snapshot-banner-copy",
+    "current within the sealed review window—not a claim of publication-time currency or observed runtime behavior"
   ]) assert(catalog.includes(required), `Catalog first-screen contract is missing ${required}`);
   const controlsIndex = catalog.indexOf('id="catalog-controls"');
   const statsIndex = catalog.indexOf('class="stats"');

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.permissions-current",
+  "slug": "permissions-current",
+  "subject": {
+    "id": "com.anomaly.opencode.cli",
+    "name": "OpenCode CLI",
+    "publisher": "Anomaly Innovations, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "OpenCode CLI/TUI",
+      "slug": "opencode-cli-1-18-18"
+    }
+  },
+  "claim": {
+    "category": "authority.permission",
+    "statement": "Current OpenCode permission documentation defines allow, ask and deny actions; supports ordered, pattern-specific rules and per-agent overrides; and says most permissions default to allow while selected operations such as external-directory access and doom-loop handling default to ask."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Anomaly Innovations, Inc."
+  },
+  "source": {
+    "uri": "https://opencode.ai/docs/permissions/",
+    "title": "OpenCode Permissions",
+    "locator": "Actions; configuration; patterns; agent overrides; defaults; external directories",
+    "publishedAt": null,
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "conditional",
+      "values": [
+        "allow",
+        "ask",
+        "deny",
+        "ordered pattern rules",
+        "per-agent overrides",
+        "external_directory"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "current CLI/TUI permission system"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher permission documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "permission-documentation-change",
+      "default-change",
+      "rule-precedence-change"
+    ]
+  },
+  "limitations": [
+    "Permission documentation describes configuration semantics, not observed enforcement, bypass resistance or the effective rules of a session."
+  ],
+  "unknowns": [
+    "The effective global, tool-specific, pattern-specific and per-agent rules, rule order, working directory and external-directory grants are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -11,18 +11,28 @@ const currentnessLifecyclePath = path.join(packageRoot, "drafts", "research-prev
 const criticalMassAdmissionPath = path.join(draftRoot, "critical-mass-expansion", "admission-source.json");
 const criticalMassLifecyclePath = path.join(draftRoot, "critical-mass-expansion", "lifecycle-additions.json");
 const currentness20260809Path = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-09", "currentness-source.json");
+const currentness20260813Path = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-13", "currentness-source.json");
+const currentness20260815Path = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-15", "currentness-source.json");
 const baseLifecycleText = await readFile(baseLifecyclePath, "utf8");
 const baseWatcherText = await readFile(baseWatcherPath, "utf8");
 const currentnessLifecycleText = await readFile(currentnessLifecyclePath, "utf8");
 const criticalMassAdmissionText = await readFile(criticalMassAdmissionPath, "utf8");
 const criticalMassLifecycleText = await readFile(criticalMassLifecyclePath, "utf8");
 const currentness20260809Text = await readFile(currentness20260809Path, "utf8");
+const currentness20260813Text = await readFile(currentness20260813Path, "utf8");
+const currentness20260815Text = await readFile(currentness20260815Path, "utf8");
+const snapshotSealText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-15", "snapshot-seal.json"), "utf8");
+const freshnessCensusText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-15", "publication-freshness-census.json"), "utf8");
+const snapshotSeal = JSON.parse(snapshotSealText);
+const freshnessCensus = JSON.parse(freshnessCensusText);
 const baseLifecycle = JSON.parse(baseLifecycleText);
 const baseWatcher = JSON.parse(baseWatcherText);
 const currentnessLifecycle = JSON.parse(currentnessLifecycleText);
 const criticalMassAdmission = JSON.parse(criticalMassAdmissionText);
 const criticalMassLifecycle = JSON.parse(criticalMassLifecycleText);
 const currentness20260809 = JSON.parse(currentness20260809Text);
+const currentness20260813 = JSON.parse(currentness20260813Text);
+const currentness20260815 = JSON.parse(currentness20260815Text);
 const lifecycle = await readJson(path.join(previewRoot, "lifecycle.json"));
 const watcher = await readJson(path.join(previewRoot, "source-registry.json"));
 const preview = await readJson(path.join(previewRoot, "catalog.json"));
@@ -41,10 +51,10 @@ for (const accepted of acceptedLifecycleEntries) {
   assert(projected, `Accepted lifecycle record ${accepted.recordId} was not preserved`);
   assert.equal(projected.surfaceKey, accepted.surfaceKey, `${accepted.recordId} surface key changed`);
 }
-assert.equal(lifecycle.entries.length, 73);
+assert.equal(lifecycle.entries.length, 98);
 const lifecycleById = new Map(lifecycle.entries.map((entry) => [entry.recordId, entry]));
 assert.equal(lifecycleById.size, lifecycle.entries.length, "Lifecycle record IDs must be unique");
-const expectedCounts = { current: 53, superseded: 17, historical: 2, discontinued: 1, unresolved: 0 };
+const expectedCounts = { current: 53, superseded: 42, historical: 2, discontinued: 1, unresolved: 0 };
 for (const [status, expected] of Object.entries(expectedCounts)) {
   assert.equal(lifecycle.entries.filter((entry) => entry.status === status).length, expected, `${status} count mismatch`);
 }
@@ -70,13 +80,17 @@ assert.equal(currentBySurface.size, 53);
 assert.equal(lifecycleById.get("com.anthropic.claude-code.cli.2-1-117").supersededByRecordId, "com.anthropic.claude-code.cli.2-1-220");
 assert.equal(lifecycleById.get("com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee").status, "historical");
 assert.equal(lifecycleById.get("com.cline.bot.vscode-extension.4-1-3").status, "superseded");
-assert.equal(lifecycleById.get("com.gitlab.duo.developer-flow.19-2-1").status, "current");
+assert.equal(lifecycleById.get("com.gitlab.duo.developer-flow.19-2-1").status, "superseded");
+assert.equal(lifecycleById.get("com.gitlab.duo.developer-flow.19-2-2").status, "current");
 assert.equal(lifecycleById.get("dev.zed.agent.native.1-13-1").status, "superseded");
-assert.equal(lifecycleById.get("dev.zed.agent.native.1-14-2").status, "current");
-assert.equal(lifecycleById.get("dev.zed.agent.native.1-14-2").supersededByRecordId, null);
+assert.equal(lifecycleById.get("dev.zed.agent.native.1-14-2").status, "superseded");
+assert.equal(lifecycleById.get("dev.zed.agent.native.1-14-2").supersededByRecordId, "dev.zed.agent.native.1-15-0");
+assert.equal(lifecycleById.get("dev.zed.agent.native.1-15-0").status, "current");
 assert.equal(lifecycleById.get("com.anomaly.opencode.cli.1-18-15").status, "superseded");
 assert.equal(lifecycleById.get("com.anomaly.opencode.cli.1-18-15").supersededByRecordId, "com.anomaly.opencode.cli.1-18-16");
-assert.equal(lifecycleById.get("com.anomaly.opencode.cli.1-18-16").status, "current");
+assert.equal(lifecycleById.get("com.anomaly.opencode.cli.1-18-16").status, "superseded");
+assert.equal(lifecycleById.get("com.anomaly.opencode.cli.1-18-16").supersededByRecordId, "com.anomaly.opencode.cli.1-18-18");
+assert.equal(lifecycleById.get("com.anomaly.opencode.cli.1-18-18").status, "current");
 
 assert.equal(watcher.schemaVersion, baseWatcher.schemaVersion);
 assert.equal(watcher.surfaces.length, 16);
@@ -116,17 +130,19 @@ assert.equal(preview.provenance.criticalMassAdmissionSha256, sha256(criticalMass
 assert.equal(preview.provenance.criticalMassLifecycleSha256, sha256(criticalMassLifecycleText));
 assert.equal(preview.provenance.baseWatcherSha256, sha256(baseWatcherText));
 assert.equal(preview.provenance.currentness20260809Sha256, sha256(currentness20260809Text));
+assert.equal(preview.provenance.currentness20260813Sha256, sha256(currentness20260813Text));
+assert.equal(preview.provenance.currentness20260815Sha256, sha256(currentness20260815Text));
 assert.equal(preview.counts.surfaces, 55);
 assert.equal(preview.counts.currentLifecycleRecords, 53);
 assert.equal(preview.counts.currentRecordsPresented, 53);
-assert.equal(preview.counts.recordsPresentedIncludingHistory, 73);
+assert.equal(preview.counts.recordsPresentedIncludingHistory, 98);
 assert.equal(preview.counts.independentTestsCredited, 0);
 assert.equal(preview.surfaces.length, 55);
-assert.equal(preview.previewRecords.length, 73);
-assert.equal(new Set(preview.previewRecords.map((record) => record.recordId)).size, 73);
+assert.equal(preview.previewRecords.length, 98);
+assert.equal(new Set(preview.previewRecords.map((record) => record.recordId)).size, 98);
 assert(preview.previewRecords.every((record) => record.independentTestCount === 0));
 assert(preview.previewRecords.some((record) => record.recordId === "com.openai.codex.cli.0-147-0"));
-assert(preview.previewRecords.some((record) => record.recordId === "com.anomaly.opencode.cli.1-18-16"));
+assert(preview.previewRecords.some((record) => record.recordId === "com.anomaly.opencode.cli.1-18-18"));
 assert.deepEqual(preview.gates, {});
 const codexSurface = preview.surfaces.find((surface) => surface.surfaceKey === "com.openai.codex.cli.stable");
 assert.equal(codexSurface.currentRecordId, "com.openai.codex.cli.0-147-0");
@@ -146,7 +162,13 @@ for (const surface of preview.surfaces) {
 
 await createSixteenRecordCatalog();
 const history = preview.surfaces.flatMap((surface) => surface.history);
-assert.equal(history.length, 20);
+assert.equal(history.length, 45);
+assert.deepEqual(preview.snapshotSeal, snapshotSeal);
+assert.deepEqual(preview.publicationFreshness, freshnessCensus);
+assert.deepEqual(snapshotSeal.catalogCounts, { surfaces: 55, current: 53, total: 98, nonCurrent: 45, superseded: 42, historical: 2, discontinued: 1 });
+assert.equal(freshnessCensus.counts.surfaces, 55);
+assert.equal(freshnessCensus.counts.knownNewer, freshnessCensus.entries.filter((entry) => entry.status === "known-newer").length);
+assert.equal(freshnessCensus.counts.incompleteCoverage, freshnessCensus.entries.filter((entry) => entry.status.startsWith("incomplete-")).length);
 for (const record of history) assert(record.recordPath, `${record.recordId} history must retain an inspectable record path`);
 const forbiddenKeys = new Set(["score", "suitability", "ranking", "recommendation", "winner", "intakeform"]);
 function visit(value) {
@@ -172,7 +194,9 @@ assert(siteHtml.includes("Zero independent tests"));
 assert(siteHtml.includes("For researchers, builders and maintainers"));
 assert(siteHtml.includes("Selected, not comprehensive"));
 assert(siteHtml.includes("Fastest path:"));
-assert(siteHtml.includes("current as of the review date—not observed runtime behavior"));
+assert(siteHtml.includes("current within the sealed review window—not a claim of publication-time currency or observed runtime behavior"));
+assert(siteHtml.includes("Sealed 2026-08-15 source-review snapshot."));
+assert(siteHtml.includes("data-snapshot-banner-copy"));
 assert(siteHtml.includes('href="compare.html">Compare agent claims</a>'));
 assert(siteHtml.includes('id="selectionTray"'));
 assert(!siteHtml.includes('id="releaseGate"'));
@@ -189,6 +213,7 @@ assert(siteApp.includes('detailLink.href = `records/${encodeURIComponent(record.
 assert(siteApp.includes('window.history.replaceState'));
 assert(siteApp.includes('"Add to compare"'));
 assert(siteApp.includes('params.set("agents", selectedIds.join(","))'));
+assert(siteApp.includes('record.publicationFreshness?.status === "known-newer"'));
 assert(comparisonHtml.includes("Compare agent claims, source by source."));
 assert(comparisonHtml.includes("Publisher claims only.</strong> No ranking, recommendation or independent-test result."));
 assert(comparisonHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html"'));
@@ -196,6 +221,7 @@ assert(comparisonHtml.includes('id="claimFilter"'));
 assert(comparisonHtml.includes('id="differencesOnly"'));
 assert(comparisonCore.includes("rawRecord.claim.category"));
 assert(comparisonCore.includes("__RECORD_UNAVAILABLE__"));
+assert(comparisonCore.includes("applySnapshotBanner"));
 assert(comparisonApp.includes("Record unavailable. The committed JSON could not be loaded; no evidence inference is made."));
 assert(comparisonApp.includes("No accepted claim under this exact category. This is not evidence that the capability is absent."));
 assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"), "utf8"), comparisonHtml);
@@ -224,8 +250,25 @@ const detailsRoot = path.join(packageRoot, "dist", "research-preview", "records"
 const detailHtmlFiles = (await readdir(detailsRoot)).filter((name) => name.endsWith(".html")).sort();
 const expectedDetailHtmlFiles = preview.previewRecords.map((record) => `${record.recordId}.html`).sort();
 assert.deepEqual(detailHtmlFiles, expectedDetailHtmlFiles, "Every projected record must have exactly one human-readable detail page");
-assert.equal(buildManifest.researchPreview.recordDetails.count, 73);
-assert.equal(buildManifest.researchPreview.recordDetails.records.length, 73);
+assert.equal(buildManifest.researchPreview.recordDetails.count, 98);
+assert.equal(buildManifest.researchPreview.recordDetails.records.length, 98);
+assert.deepEqual(buildManifest.researchPreview.snapshotSeal, {
+  data: "research-preview/snapshot-seal.json",
+  dataSha256: sha256(snapshotSealText),
+  sourceReviewWindow: snapshotSeal.sourceReviewWindow,
+  sealedAt: snapshotSeal.sealedAt,
+  catalogCounts: snapshotSeal.catalogCounts
+});
+assert.deepEqual(buildManifest.researchPreview.publicationFreshness, {
+  data: "research-preview/publication-freshness-census.json",
+  dataSha256: sha256(freshnessCensusText),
+  checkedAt: freshnessCensus.census.completedAt,
+  knownNewer: freshnessCensus.counts.knownNewer,
+  incompleteCoverage: freshnessCensus.counts.incompleteCoverage,
+  surfaces: freshnessCensus.counts.surfaces
+});
+assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "snapshot-seal.json"), "utf8"), snapshotSealText);
+assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "publication-freshness-census.json"), "utf8"), freshnessCensusText);
 assert.deepEqual(buildManifest.researchPreview.comparison, {
   entryPoint: "research-preview/compare.html",
   htmlSha256: sha256(comparisonHtml),
@@ -238,7 +281,7 @@ assert.deepEqual(buildManifest.researchPreview.comparison, {
   claimAlignment: "exact-accepted-category-string"
 });
 const manifestDetailsById = new Map(buildManifest.researchPreview.recordDetails.records.map((entry) => [entry.recordId, entry]));
-assert.equal(manifestDetailsById.size, 73, "Human-readable record-detail manifest IDs must be unique");
+assert.equal(manifestDetailsById.size, 98, "Human-readable record-detail manifest IDs must be unique");
 
 const escapeHtml = (value) => String(value)
   .replaceAll("&", "&amp;")
@@ -261,6 +304,13 @@ for (const summary of preview.previewRecords) {
   assert(detailHtml.includes(`Inspect the exact identity, attributed ${escapeHtml(record.identity.publisher.name)} claims, applicability boundaries, lifecycle history and unresolved unknowns for ${escapeHtml(displayTitle)}.`));
   assert(detailHtml.includes(`<title>${escapeHtml(displayTitle)} Evidence Record · Agent Evidence Catalog</title>`));
   assert(detailHtml.includes(`<strong>Lifecycle note:</strong> ${escapeHtml(lifecycleEntry.note)}`));
+  assert(detailHtml.includes("Sealed 2026-08-15 source-review snapshot."));
+  assert(detailHtml.includes("data-snapshot-banner-copy"));
+  if (summary.publicationFreshness?.status === "known-newer") {
+    assert(detailHtml.includes(`data-known-newer-record="${escapeHtml(summary.recordId)}"`), `${summary.recordId} omitted its publication freshness notice`);
+    assert(detailHtml.includes(escapeHtml(summary.publicationFreshness.knownNewerIdentity)), `${summary.recordId} omitted its known newer identity`);
+    assert(detailHtml.includes(escapeHtml(summary.publicationFreshness.checkedAt)), `${summary.recordId} omitted its publication check time`);
+  }
   assert(detailHtml.includes(`<div><dt>Publisher</dt><dd>${escapeHtml(record.identity.publisher.name)}</dd></div>`));
   assert(detailHtml.includes(`<div><dt>Surface</dt><dd>${escapeHtml(record.identity.surface.name)} · ${escapeHtml(record.identity.surface.deliveryModel)}</dd></div>`));
   assert(detailHtml.includes(`<div><dt>Version scope</dt><dd>${escapeHtml(displayScope)}</dd></div>`));
@@ -279,7 +329,11 @@ for (const summary of preview.previewRecords) {
   assert(detailHtml.includes('data-catalog-return href="../index.html"'), `${summary.recordId} omitted catalog return-state hooks`);
   assert(detailHtml.includes('data-compare-return href="../compare.html"'), `${summary.recordId} omitted comparison return-state hooks`);
   assert(detailHtml.includes(`data-add-record-to-compare data-record-id="${escapeHtml(summary.recordId)}"`), `${summary.recordId} omitted its exact-record comparison control`);
-  assert(detailHtml.includes('../record-detail.js?v=2026-08-10-compare-mvp'), `${summary.recordId} omitted shared record navigation logic`);
+  assert(detailHtml.includes('../record-detail.js?v=2026-08-15-sealed-snapshot'), `${summary.recordId} omitted cache-busted shared record navigation logic`);
+  if (summary.recordId === "com.stackblitz.bolt.claude-agent.rolling") {
+    assert(detailHtml.includes("How the legacy Bolt v1 Agent retirement completion date of 2026-08-03 applied to individual projects remains unresolved"), "Bolt record omitted its exact-date applicability boundary");
+    assert(!detailHtml.includes("two days after this registry snapshot"), "Bolt record retained stale snapshot-relative wording");
+  }
   if (!summary.release.version) assert(!detailHtml.includes(`${displayRelease} · ${plainLabel(summary.release.scope)}`), `${summary.recordId} repeated its rolling-service scope`);
   assert.equal((detailHtml.match(/class="claim-item"/g) ?? []).length, record.claims.length, `${summary.recordId} claim count drift`);
   assert.equal((detailHtml.match(/data-source-id=/g) ?? []).length, record.sources.length, `${summary.recordId} source count drift`);
@@ -309,11 +363,11 @@ for (const summary of preview.previewRecords) {
   assert.equal(manifestDetail.htmlSha256, sha256(detailHtml));
 }
 
-console.log("PASS additive 73-entry lifecycle: 53 current, 17 superseded, 2 historical, 1 discontinued and 0 unresolved");
+console.log("PASS additive 98-entry lifecycle: 53 current, 42 superseded, 2 historical, 1 discontinued and 0 unresolved");
 console.log("PASS derived 16-surface watcher retains all 22 source URLs, fingerprints and check dates unchanged");
-console.log("PASS current-default research preview presents all 53 current records across 55 surfaces plus 20 explicit-history records with zero independent-test credit");
+console.log("PASS current-default research preview presents all 53 current records across 55 surfaces plus 45 explicit-history records with zero independent-test credit");
 console.log("PASS Codex 0.147.0 is integrated as the current same-surface successor while 0.146.0 and 0.90.0 remain preserved in history");
 console.log("PASS static current-default presentation and collapsed explicit-history control match the source dataset");
-console.log("PASS one deterministic record-agnostic template presents all 73 records with every claim, official source link, unknown, limitation and reciprocal lifecycle link preserved");
+console.log("PASS one deterministic record-agnostic template presents all 98 records with every claim, official source link, unknown, limitation and reciprocal lifecycle link preserved");
 console.log("PASS evidence-exact comparison route, URL-only state and current-record picker are copied through the deterministic build");
-console.log("PASS compact record identity, section navigation and catalog search/delivery/comparison return state are shared across all 73 pages");
+console.log("PASS compact record identity, section navigation and catalog search/delivery/comparison return state are shared across all 98 pages");

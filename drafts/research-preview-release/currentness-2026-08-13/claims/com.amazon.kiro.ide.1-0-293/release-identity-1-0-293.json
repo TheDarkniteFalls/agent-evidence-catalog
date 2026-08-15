@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.kiro.ide.release-identity-1-0-293",
+  "slug": "release-identity-1-0-293",
+  "subject": {
+    "id": "com.amazon.kiro.ide",
+    "name": "Kiro IDE",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Kiro IDE",
+      "slug": "aws-kiro-ide-1-0-293"
+    }
+  },
+  "claim": {
+    "category": "release.identity",
+    "statement": "AWS's Kiro changelog identifies Kiro IDE 1.0.293 as a desktop release dated 2026-08-11; the installed platform artifact remains unresolved."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://kiro.dev/changelog/ide/1-0-293/",
+    "title": "Editor Actions, Guided Hook Creation, and Code OSS Upgrade",
+    "locator": "Release date and 1.0.293 heading",
+    "publishedAt": "2026-08-11T00:00:00Z",
+    "capturedAt": "2026-08-13T10:02:56.587Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "1.0.293"
+    },
+    "configuration": {
+      "scope": "all",
+      "values": []
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "Kiro IDE desktop release"
+      ]
+    },
+    "model": {
+      "scope": "not-applicable",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "desktop client"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-13",
+    "reason": "Exact dated release retained even when later builds appear."
+  },
+  "review": {
+    "reviewedAt": "2026-08-13",
+    "recheckAfter": "2026-09-13",
+    "invalidatedBy": [
+      "release-metadata-correction",
+      "version-withdrawal"
+    ]
+  },
+  "limitations": [
+    "No installer, platform package, signature or digest was captured."
+  ],
+  "unknowns": [
+    "The source revision, installed platform asset and binary digest are unavailable or unresolved."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
