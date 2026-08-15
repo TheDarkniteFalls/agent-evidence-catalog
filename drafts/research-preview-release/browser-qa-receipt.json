@@ -1,7 +1,7 @@
 {
   "schemaVersion": "research-preview-browser-qa/0.5",
   "asOf": "2026-08-15",
-  "checkedAt": "2026-08-15T09:01:48.870Z",
+  "checkedAt": "2026-08-15T22:13:51.000Z",
   "loopback": {
     "url": "http://localhost:8794/",
     "listener": "localhost:8794",
@@ -10,15 +10,15 @@
     "managedShellCurl": "not required; in-app Browser navigation passed after listener verification"
   },
   "sourceDigests": {
-    "landingHtmlSha256": "d6aa314a260b96cdb5dd007307528468147dd71c8d1d346abff0a320a6c09403",
+    "landingHtmlSha256": "29f97330a507751d13f8ebe8761fc21941dba0ff28a96dc4a6921d623b11ce9d",
     "previewHtmlSha256": "9f45f8a72a0c21868a8ea4c6ba5e83ad222be9aa2b67c4b8700319a0be686a8a",
     "previewDataSha256": "46d65bdbf88fe50beece57911ed61850f6911a1c17cd754dd2e6435c24125625",
     "previewAppSha256": "10ba59fdfdfabc906a46202126508e5c88ba6a6fd50a27ef46e3d89173a05e03",
-    "comparisonHtmlSha256": "0e9ed3d8cb560cc78d627ce899e2dc4eab997069c9935bc2eea1046c5a8179b8",
+    "comparisonHtmlSha256": "1c21e1d6a9baf644148bdaa9c8c5786b8fa03987dd99335591665d4508c0f5be",
     "comparisonCoreSha256": "2072b63c69b93a0f3cb1212fe9849af979e6889e228a689492baa1ff69dfa811",
-    "comparisonAppSha256": "4ad7997c98a2e38f4d4797447df00286bf45de2bc4cc6e5e739646df8a632b8d",
+    "comparisonAppSha256": "04caab550fffd5652d5a283a3e5a9236fcf33c704105396deb9864920e93b974",
     "recordDetailAppSha256": "adc6da13fc9f3fc734d95ba55a21ffd6591da8bd843901ec9851a4467213a45d",
-    "previewStylesSha256": "43d64248fb700f44b801269d259b0035558b438d6ee7c649e6cd8a5eee7a1f98",
+    "previewStylesSha256": "f04db776f4af34631c20e1448dcecb6c085c0c05580dbf9648eaa9c11ca3e73c",
     "recordDetailsManifestSha256": "d402f2c0223f6a459c95d55dea91ea912b52e69a6f7f163c0fd94981d5619231"
   },
   "viewportEnvironment": {
@@ -151,6 +151,109 @@
       "mobileBannerVisible": true,
       "cacheBustingVersion": "2026-08-15-sealed-snapshot"
     },
+    "console": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
+  "wideWorkspaceAuthorQa": {
+    "workstream": "AEC-COMPARISON-WIDE-WORKSPACE-01-AUTHOR",
+    "result": "PASS",
+    "checkedAt": "2026-08-15T21:58:24.000Z",
+    "desktop": {
+      "observedCss": {
+        "width": 1707,
+        "height": 960
+      },
+      "mainWidthPx": 1504,
+      "finderWidthPx": 342,
+      "workspaceWidthPx": 1052,
+      "orderedSlots": 4,
+      "emptyStateIntegratedWithWorkspace": true,
+      "activeMatrixVisible": true,
+      "bodyHorizontalOverflow": false,
+      "redundantStickyTrayHidden": true
+    },
+    "mobile": {
+      "observedCss": {
+        "width": 391,
+        "height": 844
+      },
+      "orderedSlots": 4,
+      "slotLayout": "2x2",
+      "bodyHorizontalOverflow": false,
+      "matrixScrollable": true,
+      "stickyTrayVisible": true,
+      "stickyTrayClipping": false,
+      "navigationMenuOpened": true
+    },
+    "interactions": {
+      "selectedFactoryManagedDroidComputers": true,
+      "selectedQwenCodeCli": true,
+      "orderedSelectionPersistedInUrl": true,
+      "compareActionScrolledMatrixIntoView": true
+    },
+    "imagegenFidelity": {
+      "narrowFinderAndFlexibleWorkspace": true,
+      "persistentFourSlotRail": true,
+      "matrixDominatesActiveWorkspace": true,
+      "mobileStackAndFixedAction": true,
+      "existingEvidenceSemanticsPreserved": true
+    },
+    "console": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
+  "recognizableFirstVisitAuthorQa": {
+    "workstream": "AEC-COMPARISON-RECOGNIZABLE-START-01-AUTHOR",
+    "result": "PASS",
+    "checkedAt": "2026-08-15T22:13:51.000Z",
+    "orderingPolicy": "Recognizable editorial starting set; not a ranking, recommendation or endorsement.",
+    "recordIds": [
+      "com.anthropic.claude-code.cli.2-1-233",
+      "com.openai.codex.cli.0-147-0",
+      "com.github.copilot.cli.1-0-80",
+      "com.cursor.ide.foreground-agent.3-15"
+    ],
+    "recordNames": [
+      "Claude Code CLI",
+      "OpenAI Codex CLI",
+      "GitHub Copilot CLI",
+      "Cursor IDE foreground Agent"
+    ],
+    "desktop": {
+      "observedCss": {
+        "width": 2048,
+        "height": 1365
+      },
+      "currentPickerRecords": 53,
+      "defaultSelectedRecords": 0,
+      "orderedSlots": 4,
+      "bodyHorizontalOverflow": false,
+      "emptyStateVisible": true
+    },
+    "mobile": {
+      "observedCss": {
+        "width": 391,
+        "height": 844
+      },
+      "currentPickerRecords": 53,
+      "defaultSelectedRecords": 0,
+      "orderedSlots": 4,
+      "bodyHorizontalOverflow": false,
+      "navigationToggleVisible": true
+    },
+    "interaction": {
+      "landingRouteVerified": true,
+      "selectedRecordIds": [
+        "com.anthropic.claude-code.cli.2-1-233",
+        "com.openai.codex.cli.0-147-0"
+      ],
+      "matrixRendered": true,
+      "orderedSelectionPersistedInUrl": true
+    },
+    "allOtherCurrentRecordsRetainedInCanonicalOrder": true,
     "console": {
       "errors": 0,
       "warnings": 0
@@ -330,7 +433,7 @@
         },
         "bodyHorizontalOverflow": false,
         "fourRecordMatrixScrollable": true,
-        "stickyTrayVisible": true
+        "stickyTrayVisible": false
       },
       "mobile": {
         "requested": {

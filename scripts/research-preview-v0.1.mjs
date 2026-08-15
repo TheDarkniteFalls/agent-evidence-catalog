@@ -286,6 +286,8 @@ async function validateBrowserReceipt() {
   const receipt = JSON.parse(await readFile(browserReceiptPath, "utf8"));
   const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
   const expectedRecordIds = buildManifest.researchPreview.recordDetails.records.map((record) => record.recordId);
+  const previewCatalog = JSON.parse(await readFile(path.join(packageRoot, "dist", "research-preview", "catalog.json"), "utf8"));
+  const currentRecordIds = new Set(previewCatalog.surfaces.map((surface) => surface.currentRecord?.recordId).filter(Boolean));
   const sourceAuditPath = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-15", "official-url-audit.json");
   const sourceAuditText = await readFile(sourceAuditPath, "utf8");
   const sourceAudit = JSON.parse(sourceAuditText);
@@ -393,7 +395,7 @@ async function validateBrowserReceipt() {
   assert.deepEqual(receipt.remediationAuthorQa, {
     workstream: "AEC-SNAPSHOT-PUBLICATION-SEMANTICS-01-REMEDIATION-AUTHOR",
     result: "PASS",
-    checkedAt: receipt.checkedAt,
+    checkedAt: "2026-08-15T09:01:48.870Z",
     publicationBanner: {
       rendered: true,
       exactSnapshotWindowRendered: true,
@@ -417,6 +419,92 @@ async function validateBrowserReceipt() {
     },
     console: { errors: 0, warnings: 0 }
   });
+  assert.deepEqual(receipt.wideWorkspaceAuthorQa, {
+    workstream: "AEC-COMPARISON-WIDE-WORKSPACE-01-AUTHOR",
+    result: "PASS",
+    checkedAt: "2026-08-15T21:58:24.000Z",
+    desktop: {
+      observedCss: { width: 1707, height: 960 },
+      mainWidthPx: 1504,
+      finderWidthPx: 342,
+      workspaceWidthPx: 1052,
+      orderedSlots: 4,
+      emptyStateIntegratedWithWorkspace: true,
+      activeMatrixVisible: true,
+      bodyHorizontalOverflow: false,
+      redundantStickyTrayHidden: true
+    },
+    mobile: {
+      observedCss: { width: 391, height: 844 },
+      orderedSlots: 4,
+      slotLayout: "2x2",
+      bodyHorizontalOverflow: false,
+      matrixScrollable: true,
+      stickyTrayVisible: true,
+      stickyTrayClipping: false,
+      navigationMenuOpened: true
+    },
+    interactions: {
+      selectedFactoryManagedDroidComputers: true,
+      selectedQwenCodeCli: true,
+      orderedSelectionPersistedInUrl: true,
+      compareActionScrolledMatrixIntoView: true
+    },
+    imagegenFidelity: {
+      narrowFinderAndFlexibleWorkspace: true,
+      persistentFourSlotRail: true,
+      matrixDominatesActiveWorkspace: true,
+      mobileStackAndFixedAction: true,
+      existingEvidenceSemanticsPreserved: true
+    },
+    console: { errors: 0, warnings: 0 }
+  });
+  assert.deepEqual(receipt.recognizableFirstVisitAuthorQa, {
+    workstream: "AEC-COMPARISON-RECOGNIZABLE-START-01-AUTHOR",
+    result: "PASS",
+    checkedAt: receipt.checkedAt,
+    orderingPolicy: "Recognizable editorial starting set; not a ranking, recommendation or endorsement.",
+    recordIds: [
+      "com.anthropic.claude-code.cli.2-1-233",
+      "com.openai.codex.cli.0-147-0",
+      "com.github.copilot.cli.1-0-80",
+      "com.cursor.ide.foreground-agent.3-15"
+    ],
+    recordNames: [
+      "Claude Code CLI",
+      "OpenAI Codex CLI",
+      "GitHub Copilot CLI",
+      "Cursor IDE foreground Agent"
+    ],
+    desktop: {
+      observedCss: { width: 2048, height: 1365 },
+      currentPickerRecords: 53,
+      defaultSelectedRecords: 0,
+      orderedSlots: 4,
+      bodyHorizontalOverflow: false,
+      emptyStateVisible: true
+    },
+    mobile: {
+      observedCss: { width: 391, height: 844 },
+      currentPickerRecords: 53,
+      defaultSelectedRecords: 0,
+      orderedSlots: 4,
+      bodyHorizontalOverflow: false,
+      navigationToggleVisible: true
+    },
+    interaction: {
+      landingRouteVerified: true,
+      selectedRecordIds: [
+        "com.anthropic.claude-code.cli.2-1-233",
+        "com.openai.codex.cli.0-147-0"
+      ],
+      matrixRendered: true,
+      orderedSelectionPersistedInUrl: true
+    },
+    allOtherCurrentRecordsRetainedInCanonicalOrder: true,
+    console: { errors: 0, warnings: 0 }
+  });
+  assert(receipt.recognizableFirstVisitAuthorQa.recordIds.every((recordId) => currentRecordIds.has(recordId)));
   assert(boltDetailHtml.includes(boltExactDateStatement));
   assert(!boltDetailHtml.includes("two days after this registry snapshot"));
   assert(readinessSource.includes("Ten exact-identity successors"));
@@ -493,7 +581,7 @@ async function validateBrowserReceipt() {
     observedCss: { width: 1066, height: 600 },
     bodyHorizontalOverflow: false,
     fourRecordMatrixScrollable: true,
-    stickyTrayVisible: true
+    stickyTrayVisible: false
   });
   assert.deepEqual(receipt.journeys.comparison.mobile, {
     requested: { width: 352, height: 760 },
@@ -729,11 +817,16 @@ async function validateFirstScreenContract() {
   assert(comparison.includes("Select 2–4 exact records"), "Comparison route must expose the empty picker state");
   const snapshotAssetVersion = "v=2026-08-15-sealed-snapshot";
   for (const [label, html, assets] of [
-    ["landing", landing, ["data.js", "comparison-core.js", "compare.js"]],
+    ["landing", landing, ["data.js", "comparison-core.js"]],
     ["catalog", catalog, ["data.js", "comparison-core.js", "app.js"]],
-    ["comparison", comparison, ["data.js", "comparison-core.js", "compare.js"]]
+    ["comparison", comparison, ["data.js", "comparison-core.js"]]
   ]) {
     for (const asset of assets) assert(html.includes(`${asset}?${snapshotAssetVersion}`), `${label} must cache-bust ${asset} for sealed-snapshot publication semantics`);
+  }
+  const wideWorkspaceAssetVersion = "v=2026-08-16-wide-workspace-1";
+  for (const [label, html] of [["landing", landing], ["comparison", comparison]]) {
+    assert(html.includes(`styles.css?${wideWorkspaceAssetVersion}`), `${label} must cache-bust the wide-workspace stylesheet`);
+    assert(html.includes(`compare.js?${wideWorkspaceAssetVersion}`), `${label} must cache-bust the wide-workspace comparison script`);
   }
   for (const required of [
     "id=\"catalog-controls\"",
