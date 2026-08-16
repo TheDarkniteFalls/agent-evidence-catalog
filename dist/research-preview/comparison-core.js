@@ -17,6 +17,18 @@
     ? `${release.version} · ${readableLabel(release.scope)}`
     : readableLabel(release.scope ?? "unresolved");
 
+  function readableUtcMinute(value) {
+    const date = new Date(value);
+    if (Number.isNaN(date.valueOf())) throw new Error("Timestamp is invalid.");
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const day = date.getUTCDate();
+    const month = months[date.getUTCMonth()];
+    const year = date.getUTCFullYear();
+    const hour = String(date.getUTCHours()).padStart(2, "0");
+    const minute = String(date.getUTCMinutes()).padStart(2, "0");
+    return `${day} ${month} ${year}, ${hour}:${minute} UTC`;
+  }
+
   const dimensionText = (name, value = {}) => {
     const values = Array.isArray(value.values) && value.values.length ? ` — ${value.values.join(", ")}` : "";
     return `${name}: ${readableLabel(value.scope ?? "unspecified")}${values}`;
@@ -94,7 +106,7 @@
       ["record-id", "Record ID", (agent) => agent.recordId],
       ["publisher", "Publisher", (agent) => agent.summary.publisher],
       ["agent-surface", "Agent and surface", (agent) => `${agent.summary.name} · ${agent.summary.surface.name}`],
-      ["lifecycle-review", "Lifecycle / review date", (agent) => `${readableLabel(agent.summary.lifecycleStatus)} · reviewed ${agent.summary.reviewedAt}`],
+      ["lifecycle-review", "Status and review date", (agent) => `${readableLabel(agent.summary.lifecycleStatus)} · reviewed ${agent.summary.reviewedAt}`],
       ["release-scope", "Version or rolling scope", (agent) => releaseScopeLabel(agent.summary.release)],
       ["release-channel", "Release channel", (agent) => valueOrUnknown(agent.summary.release.channel)],
       ["delivery", "Delivery model", (agent) => readableLabel(agent.summary.surface.deliveryModel)],
@@ -184,10 +196,8 @@
   function applySnapshotBanner(data, root = document) {
     const seal = data?.snapshotSeal;
     const freshness = data?.publicationFreshness;
-    if (!seal || !freshness) throw new Error("Sealed snapshot or publication freshness metadata is unavailable.");
-    const knownNewer = freshness.counts.knownNewer;
-    const knownLabel = `${knownNewer} known-newer ${knownNewer === 1 ? "identity" : "identities"}`;
-    const copy = `Source review ${seal.sourceReviewWindow.startedAt}–${seal.sourceReviewWindow.completedAt}; sealed ${seal.sealedAt}. Publication check ${freshness.census.completedAt}: ${knownLabel}. Coverage is incomplete for ${freshness.counts.incompleteCoverage} of ${freshness.counts.surfaces} surfaces; freshness notices do not update the sealed records.`;
+    if (!seal || !freshness) throw new Error("Catalog snapshot or update metadata is unavailable.");
+    const copy = `Catalog snapshot: ${readableUtcMinute(seal.sealedAt)}. Agent releases change quickly; records with known updates are marked.`;
     root.querySelectorAll("[data-snapshot-banner-copy]").forEach((node) => { node.textContent = copy; });
   }
 
@@ -199,6 +209,7 @@
     parseRequestedIds,
     projectComparison,
     readableLabel,
+    readableUtcMinute,
     releaseScopeLabel
   });
 })();

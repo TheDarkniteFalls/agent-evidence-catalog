@@ -134,25 +134,32 @@ for (const name of ["RESEARCH_PREVIEW.md", "PUBLICATION_READINESS.md", "GOVERNAN
 const siteHtml = await read("site/research-preview/index.html");
 const distHtml = await read("dist/research-preview/index.html");
 assert.equal(distHtml, siteHtml, "Built research-preview HTML differs from source");
-for (const file of ["compare.html", "comparison-core.js", "compare.js"]) {
+for (const file of ["compare.html", "how-it-works.html", "styles.css", "app.js", "comparison-core.js", "compare.js", "record-detail.js"]) {
   assert.equal(await read(`dist/research-preview/${file}`), await read(`site/research-preview/${file}`), `Built ${file} differs from its source`);
 }
 const landingHtml = await read("site/index.html");
+const howItWorksHtml = await read("site/research-preview/how-it-works.html");
 assert.equal(await read("dist/index.html"), landingHtml, "Built landing HTML differs from source");
-assert(landingHtml.includes("Research Preview v0.1."));
 assert(landingHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/"'));
 assert(siteHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/"'));
-assert(siteHtml.includes("Sealed 2026-08-15 source-review snapshot."));
 assert(siteHtml.includes("data-snapshot-banner-copy"));
 assert((await read("site/research-preview/compare.html")).includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html"'));
+assert(howItWorksHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html"'));
 assert(landingHtml.includes('<base href="./research-preview/">'));
 assert(landingHtml.includes('<a aria-current="page" href="compare.html">Compare claims</a>'));
 assert(landingHtml.includes('data-catalog-return href="index.html"'));
-assert(landingHtml.includes('href="../catalog-classic.html"'));
-assert(landingHtml.includes("secondary synthetic reference"));
-for (const target of ["../RESEARCH_PREVIEW.md", "../PUBLICATION_READINESS.md", "../ROADMAP.md", "../CORRECTIONS.md"]) {
-  assert(siteHtml.includes(`href="${target}"`), `Preview footer is missing ${target}`);
+assert(!landingHtml.includes("secondary synthetic reference"));
+assert(!landingHtml.includes(">Method</a>"));
+assert(!landingHtml.includes(">Lifecycle</a>"));
+for (const target of ["../RESEARCH_PREVIEW.md", "../GOVERNANCE.md", "../PUBLICATION_READINESS.md", "../ROADMAP.md"]) {
+  assert(howItWorksHtml.includes(`href="${target}"`), `Technical documentation disclosure is missing ${target}`);
   await access(path.resolve(packageRoot, "dist/research-preview", target));
+}
+for (const html of [landingHtml, siteHtml, await read("site/research-preview/compare.html"), howItWorksHtml]) {
+  assert(html.includes(">Catalog</a>"));
+  assert(html.includes(">Compare claims</a>"));
+  assert(html.includes(">How it works</a>"));
+  assert(html.includes("Corrections</a>"));
 }
 
 assert(preview.previewRecords.some((record) => record.recordId === "com.openai.codex.cli.0-147-0"));
@@ -169,4 +176,4 @@ for (const phrase of ["Refresh workflow", "Inventory expansion", "Concept and pr
 
 console.log("PASS documentation agrees on 55 surfaces, 98 lifecycle entries, 53 current cards and 45 explicit-history records");
 console.log(`PASS ${checkedSources} preview source links are HTTPS, publisher-attributed, non-search URLs and claim-linked`);
-console.log("PASS built governance documents and research-preview footer links match their source files");
+console.log("PASS visitor-facing navigation, quiet global footers and demoted technical documentation links match their source files");

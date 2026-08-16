@@ -14,13 +14,21 @@ const stagePathsPath = path.join(releaseRoot, "v0.1-stage-paths.txt");
 const browserReceiptPath = path.join(releaseRoot, "browser-qa-receipt.json");
 const pagesWorkflowPath = path.join(packageRoot, ".github", "workflows", "pages.yml");
 const canonicalBaseUrl = "https://thedarknitefalls.github.io/agent-evidence-catalog/";
-const publicctlPath = [
-  path.resolve(packageRoot, "..", "scripts", "publicctl.py"),
-  path.resolve(packageRoot, "../../..", "scripts", "publicctl.py")
-].find((candidate) => existsSync(candidate));
-assert(publicctlPath, "Public-lane checker was not found beside the repository or its clean-worktree host");
 const serialize = (value) => `${JSON.stringify(value, null, 2)}\n`;
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
+
+function assertExactCssViewport(label, requested, observed) {
+  assert.deepEqual(observed, requested, `${label} observed CSS viewport must exactly match the requested viewport`);
+}
+
+function resolvePublicctlPath() {
+  const publicctlPath = [
+    path.resolve(packageRoot, "..", "scripts", "publicctl.py"),
+    path.resolve(packageRoot, "../../..", "scripts", "publicctl.py")
+  ].find((candidate) => existsSync(candidate));
+  assert(publicctlPath, "Public-lane checker was not found beside the repository or its clean-worktree host");
+  return publicctlPath;
+}
 
 function escapeHtml(value) {
   return String(value)
@@ -296,43 +304,51 @@ async function validateBrowserReceipt() {
   const knownNewerEntry = publicationCensus.entries.find((entry) => entry.status === "known-newer");
   const boltExactDateStatement = "How the legacy Bolt v1 Agent retirement completion date of 2026-08-03 applied to individual projects remains unresolved";
   const boltDetailHtml = await readFile(path.join(packageRoot, "dist", "research-preview", "records", "com.stackblitz.bolt.claude-agent.rolling.html"), "utf8");
+  const previewStyles = await readFile(path.join(packageRoot, "dist", "research-preview", "styles.css"), "utf8");
   const readinessSource = await readFile(path.join(packageRoot, "PUBLICATION_READINESS.md"), "utf8");
   const readinessMirror = await readFile(path.join(packageRoot, "dist", "PUBLICATION_READINESS.md"), "utf8");
 
-  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.5");
+  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.7");
   assert.equal(receipt.asOf, "2026-08-15");
   assert.doesNotThrow(() => new Date(receipt.checkedAt).toISOString());
   assert(new Date(receipt.checkedAt) >= new Date(publicationCensus.census.completedAt));
   assert.deepEqual(receipt.loopback, {
-    url: "http://localhost:8794/",
-    listener: "localhost:8794",
+    url: "http://localhost:4173/",
+    listener: "localhost:4173",
     listenerVerified: true,
     browserNavigation: "PASS",
-    managedShellCurl: "not required; in-app Browser navigation passed after listener verification"
+    managedShellCurl: "failed in the managed shell after listener verification; in-app Browser and local headless Chrome navigation passed"
   });
   assert.equal(receipt.sourceDigests.landingHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "index.html"))));
   assert.equal(receipt.sourceDigests.previewHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"))));
+  assert.equal(receipt.sourceDigests.howItWorksHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "how-it-works.html"))));
   assert.equal(receipt.sourceDigests.previewDataSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "catalog.json"))));
   assert.equal(receipt.sourceDigests.previewAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "app.js"))));
   assert.equal(receipt.sourceDigests.comparisonHtmlSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"))));
   assert.equal(receipt.sourceDigests.comparisonCoreSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "comparison-core.js"))));
   assert.equal(receipt.sourceDigests.comparisonAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.js"))));
   assert.equal(receipt.sourceDigests.recordDetailAppSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "record-detail.js"))));
-  assert.equal(receipt.sourceDigests.previewStylesSha256, sha256(await readFile(path.join(packageRoot, "dist", "research-preview", "styles.css"))));
+  assert.equal(receipt.sourceDigests.previewStylesSha256, sha256(previewStyles));
+  assert(!/body\s*\{[^}]*overflow-x\s*:\s*hidden/i.test(previewStyles), "The visitor stylesheet must not conceal page-level overflow on body");
   assert.equal(receipt.sourceDigests.recordDetailsManifestSha256, sha256(serialize(buildManifest.researchPreview.recordDetails)));
 
   assert.deepEqual(receipt.viewportEnvironment, {
-    desktopDevicePixelRatio: 0.8999999761581421,
-    mobileDevicePixelRatio: 0.8999999761581421,
-    desktopRequested: { width: 1440, height: 900 },
-    desktopObservedCss: { width: 1600, height: 1000 },
+    exactViewportRunner: "Google Chrome 151.0.7922.138 through bundled Playwright",
     mobileRequested: { width: 390, height: 844 },
-    mobileObservedCss: { width: 433, height: 938 },
-    compactDesktopRequested: { width: 960, height: 540 },
-    compactDesktopObservedCss: { width: 1066, height: 600 },
-    compactMobileRequested: { width: 352, height: 760 },
-    compactMobileObservedCss: { width: 391, height: 844 }
+    mobileObservedCss: { width: 390, height: 844 },
+    mobileDevicePixelRatio: 1,
+    narrowMobileRequested: { width: 320, height: 700 },
+    narrowMobileObservedCss: { width: 320, height: 700 },
+    narrowMobileDevicePixelRatio: 1,
+    inAppBrowserCrossCheck: {
+      adjacentMobileObservedCss: { width: 391, height: 844 },
+      narrowMobileObservedCss: { width: 320, height: 700 },
+      consoleErrors: 0,
+      consoleWarnings: 0
+    }
   });
+  assertExactCssViewport("390px mobile QA", receipt.viewportEnvironment.mobileRequested, receipt.viewportEnvironment.mobileObservedCss);
+  assertExactCssViewport("320px narrow-mobile QA", receipt.viewportEnvironment.narrowMobileRequested, receipt.viewportEnvironment.narrowMobileObservedCss);
 
   const publicationQa = receipt.sealedSnapshotPublicationSemantics;
   assert.equal(publicationQa.result, "PASS");
@@ -351,7 +367,14 @@ async function validateBrowserReceipt() {
     knownNewer: publicationCensus.counts.knownNewer,
     incompleteCoverage: publicationCensus.counts.incompleteCoverage
   });
-  assert(Object.values(publicationQa.banner).every((value) => value === true));
+  assert.deepEqual(publicationQa.banner, {
+    rendered: true,
+    readableSnapshotTimeRendered: true,
+    releaseVolatilityBoundaryRendered: true,
+    knownUpdateMarkerBoundaryRendered: true,
+    howUpdatesLinkRendered: true,
+    rawIsoAndPublicationCensusAbsent: true
+  });
   assert.deepEqual(publicationQa.knownNewerRecord, {
     recordId: knownNewerEntry.recordId,
     reviewedIdentity: knownNewerEntry.reviewedIdentity,
@@ -386,7 +409,9 @@ async function validateBrowserReceipt() {
     mobileNavigationCollapsed: true
   });
   assert.deepEqual(publicationQa.cacheBusting, {
-    version: "2026-08-15-sealed-snapshot",
+    snapshotDataVersion: "2026-08-15-sealed-snapshot",
+    visitorScriptVersion: "2026-08-16-visitor-ia-1",
+    visitorStyleVersion: "2026-08-16-visitor-ia-2",
     catalogAssets: ["data.js", "comparison-core.js", "app.js"],
     recordAssets: ["data.js", "comparison-core.js", "record-detail.js"],
     verifiedInBrowser: true
@@ -462,7 +487,7 @@ async function validateBrowserReceipt() {
   assert.deepEqual(receipt.recognizableFirstVisitAuthorQa, {
     workstream: "AEC-COMPARISON-RECOGNIZABLE-START-01-AUTHOR",
     result: "PASS",
-    checkedAt: receipt.checkedAt,
+    checkedAt: "2026-08-15T22:13:51.000Z",
     orderingPolicy: "Recognizable editorial starting set; not a ranking, recommendation or endorsement.",
     recordIds: [
       "com.anthropic.claude-code.cli.2-1-233",
@@ -505,6 +530,94 @@ async function validateBrowserReceipt() {
     console: { errors: 0, warnings: 0 }
   });
   assert(receipt.recognizableFirstVisitAuthorQa.recordIds.every((recordId) => currentRecordIds.has(recordId)));
+  const methodQa = receipt.visitorFacingMethodAuthorQa;
+  const methodArtifactRoot = path.join(releaseRoot, "user-facing-method-2026-08-16");
+  assert.equal(methodQa.workstream, "AEC-USER-FACING-METHOD-01-REMEDIATION-01-AUTHOR");
+  assert.equal(methodQa.result, "PASS");
+  assert.equal(methodQa.checkedAt, receipt.checkedAt);
+  assert.equal(methodQa.baseHead, "4b7d8d38d08f22336b1e38620e524fc9d22b71b5");
+  assert.deepEqual(methodQa.viewportEnvironment, {
+    exactViewportRunner: "Google Chrome 151.0.7922.138 through bundled Playwright",
+    mobileRequested: { width: 390, height: 844 },
+    mobileObservedCss: { width: 390, height: 844 },
+    mobileDevicePixelRatio: 1,
+    narrowMobileRequested: { width: 320, height: 700 },
+    narrowMobileObservedCss: { width: 320, height: 700 },
+    narrowMobileDevicePixelRatio: 1
+  });
+  assertExactCssViewport("method mobile QA", methodQa.viewportEnvironment.mobileRequested, methodQa.viewportEnvironment.mobileObservedCss);
+  assertExactCssViewport("method narrow-mobile QA", methodQa.viewportEnvironment.narrowMobileRequested, methodQa.viewportEnvironment.narrowMobileObservedCss);
+  assert.deepEqual(methodQa.navigation.labels, ["Catalog", "Compare claims", "How it works"]);
+  assert.deepEqual([
+    methodQa.navigation.rootActive,
+    methodQa.navigation.catalogActive,
+    methodQa.navigation.comparisonActive,
+    methodQa.navigation.howItWorksActive,
+    methodQa.navigation.recordActive
+  ], ["Compare claims", "Catalog", "Compare claims", "How it works", "Catalog"]);
+  assert(methodQa.navigation.desktopAndMobileConsistent && methodQa.navigation.mobileMenuOpened);
+  assert.equal(methodQa.snapshot.renderedCopy, "Catalog snapshot: 15 August 2026, 02:19 UTC. Agent releases change quickly; records with known updates are marked. How updates work →");
+  assert.equal(methodQa.snapshot.derivedFromRetainedSeal, snapshotSeal.sealedAt);
+  assert(methodQa.snapshot.rawIsoTimestampAbsent && methodQa.snapshot.publicationCensusCountsAbsent && methodQa.snapshot.technicalReceiptJargonAbsent);
+  assert.equal(methodQa.snapshot.knownUpdateRecordId, knownNewerEntry.recordId);
+  assert.equal(methodQa.snapshot.catalogAndRecordNoticeRendered, true);
+  assert.deepEqual(methodQa.howItWorks.sections, [
+    "Start with the exact identity",
+    "Follow each claim to its source",
+    "Unknown stays visible",
+    "Compare claims, not agents",
+    "Snapshots, known updates and version history",
+    "What AEC does not establish",
+    "Inspect the evidence or suggest a correction"
+  ]);
+  assert.equal(methodQa.howItWorks.observedBehaviourQualitySafetySuitabilityBoundaryRendered, true);
+  assert.equal(methodQa.howItWorks.technicalDocumentationClosedInitially, true);
+  assert.equal(methodQa.howItWorks.technicalDocumentationOpenedOnRequest, true);
+  assert.equal(methodQa.howItWorks.desktopHorizontalOverflow, false);
+  assert.equal(methodQa.howItWorks.mobileHorizontalOverflow, false);
+  assert.deepEqual(methodQa.records, {
+    desktopPagesAudited: 98,
+    desktopFailureRecordIds: [],
+    mobilePagesAudited: 98,
+    mobileFailureRecordIds: [],
+    narrowMobileRepresentativeRecordId: "com.cursor.ide.foreground-agent.3-15",
+    narrowMobileFailureRecordIds: [],
+    documentAndBodyWidthsContained: true,
+    globalOverflowConcealmentAbsent: true,
+    croppedContentFailures: 0,
+    versionStatusRendered: true,
+    versionHistoryRendered: true,
+    legacyLifecycleLabelsAbsent: true
+  });
+  assert.deepEqual(methodQa.comparisonPreservation.firstChoiceNames, [
+    "Claude Code CLI",
+    "OpenAI Codex CLI",
+    "GitHub Copilot CLI",
+    "Cursor IDE foreground Agent"
+  ]);
+  assert(methodQa.comparisonPreservation.statusAndReviewDateRowRendered && methodQa.comparisonPreservation.wideWorkspacePreserved);
+  assert.equal(methodQa.comparisonPreservation.pageHorizontalOverflow, false);
+  assert(Object.values(methodQa.focusAndSemantics).every((value) => value === true || value === 0));
+  assert.deepEqual(methodQa.concepts, {
+    headerSnapshotSha256: sha256(await readFile(path.join(methodArtifactRoot, "concepts", "header-snapshot-desktop-mobile.png"))),
+    howItWorksDesktopSha256: sha256(await readFile(path.join(methodArtifactRoot, "concepts", "how-it-works-desktop.png"))),
+    howItWorksMobileSha256: sha256(await readFile(path.join(methodArtifactRoot, "concepts", "how-it-works-mobile.png")))
+  });
+  const knownUpdateMobileScreenshot = await readFile(path.join(methodArtifactRoot, "screenshots", "known-update-record-mobile.png"));
+  assert.equal(knownUpdateMobileScreenshot.readUInt32BE(16), 390, "Known-update mobile screenshot must be captured at 390 CSS pixels with devicePixelRatio 1");
+  assert(knownUpdateMobileScreenshot.readUInt32BE(20) > 10_000, "Known-update mobile screenshot must capture the complete record page, not a partial viewport");
+  assert.deepEqual(methodQa.screenshots, {
+    headerSnapshotDesktopSha256: sha256(await readFile(path.join(methodArtifactRoot, "screenshots", "header-snapshot-desktop.png"))),
+    headerSnapshotMobileMenuOpenSha256: sha256(await readFile(path.join(methodArtifactRoot, "screenshots", "header-snapshot-mobile-menu-open.png"))),
+    howItWorksDesktopTopSha256: sha256(await readFile(path.join(methodArtifactRoot, "screenshots", "how-it-works-desktop.png"))),
+    howItWorksDesktopBottomSha256: sha256(await readFile(path.join(methodArtifactRoot, "screenshots", "how-it-works-desktop-bottom.png"))),
+    howItWorksMobileTopSha256: sha256(await readFile(path.join(methodArtifactRoot, "screenshots", "how-it-works-mobile.png"))),
+    howItWorksMobileBottomSha256: sha256(await readFile(path.join(methodArtifactRoot, "screenshots", "how-it-works-mobile-bottom.png"))),
+    knownUpdateRecordDesktopSha256: sha256(await readFile(path.join(methodArtifactRoot, "screenshots", "known-update-record-desktop.png"))),
+    knownUpdateRecordMobileSha256: sha256(knownUpdateMobileScreenshot),
+    comparisonWorkspaceDesktopSha256: sha256(await readFile(path.join(methodArtifactRoot, "screenshots", "comparison-workspace-desktop.png")))
+  });
+  assert.deepEqual(methodQa.console, { errors: 0, warnings: 0 });
   assert(boltDetailHtml.includes(boltExactDateStatement));
   assert(!boltDetailHtml.includes("two days after this registry snapshot"));
   assert(readinessSource.includes("Ten exact-identity successors"));
@@ -598,9 +711,24 @@ async function validateBrowserReceipt() {
   assert.equal(expectedRecordIds.length, 98);
   assert(Object.values(receipt.journeys.records.checksAppliedToEveryPage).every((value) => value === true));
   assert.deepEqual(receipt.journeys.records.viewports, [
-    { label: "desktop", width: 1440, height: 900, pagesAudited: 98, uniquePagesAudited: 98, failureRecordIds: [] },
-    { label: "mobile", width: 390, height: 844, pagesAudited: 98, uniquePagesAudited: 98, failureRecordIds: [] }
+    { label: "desktop", width: 1440, height: 1000, pagesAudited: 98, uniquePagesAudited: 98, failureRecordIds: [] },
+    { label: "mobile", requestedCss: { width: 390, height: 844 }, observedCss: { width: 390, height: 844 }, devicePixelRatio: 1, pagesAudited: 98, uniquePagesAudited: 98, failureRecordIds: [] }
   ]);
+  assertExactCssViewport("all-record mobile QA", receipt.journeys.records.viewports[1].requestedCss, receipt.journeys.records.viewports[1].observedCss);
+  assert.deepEqual(receipt.journeys.records.narrowMobileRepresentative, {
+    recordId: "com.cursor.ide.foreground-agent.3-15",
+    requestedCss: { width: 320, height: 700 },
+    observedCss: { width: 320, height: 700 },
+    devicePixelRatio: 1,
+    documentClientWidth: 320,
+    documentScrollWidth: 320,
+    bodyClientWidth: 320,
+    bodyScrollWidth: 320,
+    pageHorizontalOverflow: false,
+    croppedContent: false,
+    console: { errors: 0, warnings: 0 }
+  });
+  assertExactCssViewport("narrow representative QA", receipt.journeys.records.narrowMobileRepresentative.requestedCss, receipt.journeys.records.narrowMobileRepresentative.observedCss);
   assert.equal(receipt.journeys.records.representativeCurrentRecord.recordId, "com.alibaba.qwen-code.cli.0-21-12");
   assert.equal(receipt.journeys.records.representativeCurrentRecord.publisherClaims, 2);
   assert.equal(receipt.journeys.records.representativeCurrentRecord.namedSources, 2);
@@ -612,6 +740,13 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.journeys.records.representativeRawJson.loopbackHttpGet, "PASS");
 
   assert.equal(receipt.journeys.discoveryMetadata.result, "PASS");
+  assert.deepEqual(receipt.journeys.discoveryMetadata.howItWorks, {
+    title: "How Agent Evidence Catalog Works",
+    canonical: "https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html",
+    openGraphType: "website",
+    twitterCard: "summary",
+    structuredType: "WebPage"
+  });
   assert.deepEqual(receipt.journeys.discoveryMetadata.allRecordPages, {
     pagesAudited: 98,
     uniqueCanonicalUrls: 98,
@@ -622,7 +757,7 @@ async function validateBrowserReceipt() {
   assert.deepEqual(receipt.journeys.discoveryMetadata.sitemap, {
     path: "dist/sitemap.xml",
     sha256: sha256(await readFile(path.join(packageRoot, "dist", "sitemap.xml"))),
-    humanReadableRoutes: 101,
+    humanReadableRoutes: 102,
     recordRoutes: 98,
     rawJsonRoutes: 0,
     duplicateRoutes: 0
@@ -650,15 +785,18 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.boundaries.independentTestsCredited, 0);
   assert.equal(receipt.boundaries.rankingsOrSuitabilityCalculations, false);
   assert.equal(receipt.boundaries.priorAcceptedRecordsOrSourceArtifactsRewritten, false);
+  assert.equal(receipt.boundaries.currentWorkstreamChangedProtectedCorpus, false);
+  assert.equal(receipt.boundaries.visitorInformationArchitectureOnly, true);
   assert.equal(receipt.boundaries.currentnessLifecycleProjectionUpdated, true);
   assert.equal(receipt.boundaries.githubStateChanged, false);
   assert.equal(receipt.boundaries.sealedSnapshotPromoted, false);
   assert.equal(receipt.boundaries.publicationAuthorized, false);
 
-  console.log("PASS digest-bound Browser journeys and sealed-snapshot publication QA: banner, known-newer and unaffected records, interactions, responsive layouts and zero console errors");
+  console.log("PASS digest-bound Browser journeys and visitor-facing method QA: readable snapshot, known update, navigation, terminology, responsive layouts and zero console errors");
 }
 
 function validatePageDiscovery(html, expected) {
+  const socialDescription = expected.openGraphDescription ?? expected.description;
   const required = [
     `<meta name="description" content="${escapeHtml(expected.description)}">`,
     `<meta name="robots" content="index,follow">`,
@@ -667,11 +805,11 @@ function validatePageDiscovery(html, expected) {
     `<meta property="og:type" content="${expected.openGraphType}">`,
     `<meta property="og:site_name" content="Agent Evidence Catalog">`,
     `<meta property="og:title" content="${escapeHtml(expected.title)}">`,
-    `<meta property="og:description" content="${escapeHtml(expected.description)}">`,
+    `<meta property="og:description" content="${escapeHtml(socialDescription)}">`,
     `<meta property="og:url" content="${escapeHtml(expected.url)}">`,
     `<meta name="twitter:card" content="summary">`,
     `<meta name="twitter:title" content="${escapeHtml(expected.title)}">`,
-    `<meta name="twitter:description" content="${escapeHtml(expected.description)}">`
+    `<meta name="twitter:description" content="${escapeHtml(socialDescription)}">`
   ];
   for (const fragment of required) assert(html.includes(fragment), `${expected.url} is missing ${fragment}`);
   assert.equal([...html.matchAll(/<title>/g)].length, 1, `${expected.url} must have one title`);
@@ -706,7 +844,7 @@ async function validateDiscoveryMetadata() {
   });
 
   const historyCount = preview.counts.recordsPresentedIncludingHistory - preview.counts.currentRecordsPresented;
-  const catalogDescription = `Browse ${preview.counts.currentRecordsPresented} current and ${historyCount} retained history records across ${preview.counts.surfaces} coding-agent surfaces, with exact identities, attributed publisher claims, lifecycle history and open unknowns.`;
+  const catalogDescription = `Browse ${preview.counts.currentRecordsPresented} current and ${historyCount} retained history records across ${preview.counts.surfaces} coding-agent surfaces, with exact identities, attributed publisher claims, version history and open unknowns.`;
   const catalogTitle = "Find Current Coding-Agent Evidence · Agent Evidence Catalog";
   const catalogUrl = `${canonicalBaseUrl}research-preview/`;
   validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8"), {
@@ -717,7 +855,7 @@ async function validateDiscoveryMetadata() {
     structuredData: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: "Agent Evidence Catalog Research Preview",
+      name: "Agent Evidence Catalog",
       description: catalogDescription,
       url: catalogUrl,
       isPartOf: {
@@ -750,6 +888,30 @@ async function validateDiscoveryMetadata() {
     }
   });
 
+  const howDescription = "Learn how Agent Evidence Catalog identifies exact coding-agent versions and service surfaces, preserves unknowns and version history, and compares attributed publisher claims without ranking agents.";
+  const howSocialDescription = "Understand exact record identities, attributed publisher claims, official sources, visible unknowns, non-ranking comparison, snapshots and version history.";
+  const howTitle = "How Agent Evidence Catalog Works";
+  const howUrl = `${canonicalBaseUrl}research-preview/how-it-works.html`;
+  validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "research-preview", "how-it-works.html"), "utf8"), {
+    title: howTitle,
+    description: howDescription,
+    openGraphDescription: howSocialDescription,
+    url: howUrl,
+    openGraphType: "website",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: howTitle,
+      description: howSocialDescription,
+      url: howUrl,
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Agent Evidence Catalog",
+        url: canonicalBaseUrl
+      }
+    }
+  });
+
   for (const detail of buildManifest.researchPreview.recordDetails.records) {
     const summary = preview.previewRecords.find((record) => record.recordId === detail.recordId);
     assert(summary, `Sitemap record ${detail.recordId} is missing from the accepted public projection`);
@@ -757,7 +919,7 @@ async function validateDiscoveryMetadata() {
     const release = record.identity.release.version ?? label(record.identity.release.scope);
     const displayTitle = `${summary.name} ${release}`;
     const title = `${displayTitle} Evidence Record · Agent Evidence Catalog`;
-    const description = `Inspect the exact identity, attributed ${record.identity.publisher.name} claims, applicability boundaries, lifecycle history and unresolved unknowns for ${displayTitle}.`;
+    const description = `Inspect the exact identity, attributed ${record.identity.publisher.name} claims, applicability boundaries, version history and unresolved unknowns for ${displayTitle}.`;
     const url = `${canonicalBaseUrl}${detail.entryPoint}`;
     validatePageDiscovery(await readFile(path.join(packageRoot, "dist", detail.entryPoint), "utf8"), {
       title,
@@ -783,6 +945,7 @@ async function validateDiscoveryMetadata() {
     canonicalBaseUrl,
     catalogUrl,
     comparisonUrl,
+    howUrl,
     ...buildManifest.researchPreview.recordDetails.records.map((record) => `${canonicalBaseUrl}${record.entryPoint}`)
   ].sort((left, right) => left.localeCompare(right));
   const robots = await readFile(path.join(packageRoot, "dist", "robots.txt"), "utf8");
@@ -801,50 +964,84 @@ async function validateDiscoveryMetadata() {
     humanReadableRecordRouteCount: buildManifest.researchPreview.recordDetails.count,
     rawJsonRoutesListed: 0
   });
-  console.log(`PASS discovery metadata on landing, catalog, comparison and all ${buildManifest.researchPreview.recordDetails.count} record pages; deterministic ${expectedUrls.length}-route sitemap excludes raw JSON`);
+  console.log(`PASS discovery metadata on landing, catalog, comparison, How it works and all ${buildManifest.researchPreview.recordDetails.count} record pages; deterministic ${expectedUrls.length}-route sitemap excludes raw JSON`);
 }
 
 async function validateFirstScreenContract() {
   const landing = await readFile(path.join(packageRoot, "dist", "index.html"), "utf8");
   const catalog = await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8");
   const comparison = await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"), "utf8");
+  const howItWorks = await readFile(path.join(packageRoot, "dist", "research-preview", "how-it-works.html"), "utf8");
   assert(landing.includes('<base href="./research-preview/">'), "Root landing must resolve comparison assets through the research-preview base");
   assert(landing.includes('<a aria-current="page" href="compare.html">Compare claims</a>'), "Root landing must make comparison the active navigation destination");
-  assert(landing.indexOf('<a data-catalog-return href="index.html">Catalog</a>') < landing.indexOf('<a aria-current="page" href="compare.html">Compare claims</a>'), "Root landing navigation must match the approved Catalog, Compare claims, Method, Lifecycle order");
+  for (const [label, html] of [["landing", landing], ["catalog", catalog], ["comparison", comparison], ["How it works", howItWorks]]) {
+    const navStart = html.indexOf('<nav aria-label="Primary navigation">');
+    const navEnd = html.indexOf("</nav>", navStart);
+    const nav = html.slice(navStart, navEnd);
+    assert(navStart >= 0 && navEnd > navStart, `${label} must expose primary navigation`);
+    assert(nav.indexOf(">Catalog</a>") < nav.indexOf(">Compare claims</a>"), `${label} must keep Catalog before Compare claims`);
+    assert(nav.indexOf(">Compare claims</a>") < nav.indexOf(">How it works</a>"), `${label} must keep Compare claims before How it works`);
+    assert(!nav.includes(">Method</a>") && !nav.includes(">Lifecycle</a>"), `${label} must not expose maintainer-facing navigation`);
+    assert(html.includes("data-snapshot-banner-copy"), `${label} must use the shared data-derived snapshot copy`);
+    assert(!html.includes("Research Preview v0.1. Sealed"), `${label} must not expose the technical release receipt`);
+  }
   assert(landing.includes('id="pickerRecords"'), "Root landing must expose the current-record comparison picker directly");
   assert(landing.includes('id="comparisonMatrix"'), "Root landing must expose the evidence-exact comparison matrix directly");
   assert(catalog.includes('class="primary-action" href="compare.html">Compare agent claims</a>'), "Catalog first screen must expose the primary comparison CTA");
   assert(comparison.includes("Select 2–4 exact records"), "Comparison route must expose the empty picker state");
   const snapshotAssetVersion = "v=2026-08-15-sealed-snapshot";
   for (const [label, html, assets] of [
-    ["landing", landing, ["data.js", "comparison-core.js"]],
-    ["catalog", catalog, ["data.js", "comparison-core.js", "app.js"]],
-    ["comparison", comparison, ["data.js", "comparison-core.js"]]
+    ["landing", landing, ["data.js"]],
+    ["catalog", catalog, ["data.js"]],
+    ["comparison", comparison, ["data.js"]],
+    ["How it works", howItWorks, ["data.js"]]
   ]) {
-    for (const asset of assets) assert(html.includes(`${asset}?${snapshotAssetVersion}`), `${label} must cache-bust ${asset} for sealed-snapshot publication semantics`);
+    for (const asset of assets) assert(html.includes(`${asset}?${snapshotAssetVersion}`), `${label} must cache-bust ${asset} for the retained snapshot data`);
   }
-  const wideWorkspaceAssetVersion = "v=2026-08-16-wide-workspace-1";
-  for (const [label, html] of [["landing", landing], ["comparison", comparison]]) {
-    assert(html.includes(`styles.css?${wideWorkspaceAssetVersion}`), `${label} must cache-bust the wide-workspace stylesheet`);
-    assert(html.includes(`compare.js?${wideWorkspaceAssetVersion}`), `${label} must cache-bust the wide-workspace comparison script`);
+  const visitorStyleVersion = "v=2026-08-16-visitor-ia-2";
+  const visitorAssetVersion = "v=2026-08-16-visitor-ia-1";
+  for (const [label, html] of [["landing", landing], ["catalog", catalog], ["comparison", comparison], ["How it works", howItWorks]]) {
+    assert(html.includes(`styles.css?${visitorStyleVersion}`), `${label} must cache-bust the remediated visitor-facing stylesheet`);
+    assert(html.includes(`comparison-core.js?${visitorAssetVersion}`), `${label} must cache-bust the shared snapshot and comparison logic`);
   }
+  assert(catalog.includes(`app.js?${visitorAssetVersion}`), "Catalog must cache-bust its readable update-marker logic");
+  for (const [label, html] of [["landing", landing], ["comparison", comparison]]) assert(html.includes("compare.js?v=2026-08-16-wide-workspace-1"), `${label} must preserve the accepted wide-workspace script`);
   for (const required of [
     "id=\"catalog-controls\"",
     ">Search current records<",
     "Filters apply to current records. The separate history section stays collapsed until you open it.",
     "Coverage counts, not quality scores.",
     "they do not rank agents or establish quality, safety or suitability",
-    "Sealed 2026-08-15 source-review snapshot.",
     "data-snapshot-banner-copy",
-    "current within the sealed review window—not a claim of publication-time currency or observed runtime behavior"
+    "How updates work →",
+    "current within this dated review snapshot—not a claim of publication-time currency or observed runtime behavior"
   ]) assert(catalog.includes(required), `Catalog first-screen contract is missing ${required}`);
+  for (const required of [
+    "Start with the exact identity",
+    "Follow each claim to its source",
+    "Unknown stays visible",
+    "Compare claims, not agents",
+    "Snapshots, known updates and version history",
+    "What AEC does not establish",
+    "Observed behaviour",
+    "Quality",
+    "Safety",
+    "Suitability",
+    "Inspect the evidence or suggest a correction",
+    "Technical documentation"
+  ]) assert(howItWorks.includes(required), `How it works copy inventory is missing ${required}`);
+  for (const html of [landing, catalog, comparison]) {
+    assert(!html.includes(">Release status</a>"));
+    assert(!html.includes(">Roadmap</a>"));
+    assert(!html.includes("secondary synthetic reference"));
+  }
   const controlsIndex = catalog.indexOf('id="catalog-controls"');
   const statsIndex = catalog.indexOf('class="stats"');
   const recordsIndex = catalog.indexOf('id="currentRecords"');
   assert(controlsIndex > catalog.indexOf("<h1"), "Catalog filters must follow the page identity");
   assert(controlsIndex < statsIndex, "Catalog filters must precede coverage counts");
   assert(statsIndex < recordsIndex, "Coverage counts must precede the current record grid");
-  console.log("PASS comparison-first landing and catalog first-screen contract: direct picker, filters before counts and explicit non-scoring boundary");
+  console.log("PASS comparison-first landing, catalog first-screen contract and complete visitor-facing How it works copy inventory");
 }
 async function validatePagesWorkflow() {
   const workflow = await readFile(pagesWorkflowPath, "utf8");
@@ -877,7 +1074,7 @@ async function validateRelease({ browser }) {
   await validateFirstScreenContract();
   await validateManifest();
   run("unstaged and staged whitespace/error diff check", "git", ["diff", "--check"]);
-  run("public-lane safety scan", "python3", ["-B", publicctlPath, "check", "."]);
+  run("public-lane safety scan", "python3", ["-B", resolvePublicctlPath(), "check", "."]);
   if (browser) await validateBrowserReceipt();
   console.log(`PASS complete Research Preview v0.1 ${browser ? "release" : "core"} validation`);
 }
