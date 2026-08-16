@@ -1,60 +1,52 @@
 {
-  "schemaVersion": "research-preview-browser-qa/0.5",
+  "schemaVersion": "research-preview-browser-qa/0.7",
   "asOf": "2026-08-15",
-  "checkedAt": "2026-08-15T22:13:51.000Z",
+  "checkedAt": "2026-08-16T01:28:16.926Z",
   "loopback": {
-    "url": "http://localhost:8794/",
-    "listener": "localhost:8794",
+    "url": "http://localhost:4173/",
+    "listener": "localhost:4173",
     "listenerVerified": true,
     "browserNavigation": "PASS",
-    "managedShellCurl": "not required; in-app Browser navigation passed after listener verification"
+    "managedShellCurl": "failed in the managed shell after listener verification; in-app Browser and local headless Chrome navigation passed"
   },
   "sourceDigests": {
-    "landingHtmlSha256": "29f97330a507751d13f8ebe8761fc21941dba0ff28a96dc4a6921d623b11ce9d",
-    "previewHtmlSha256": "9f45f8a72a0c21868a8ea4c6ba5e83ad222be9aa2b67c4b8700319a0be686a8a",
+    "landingHtmlSha256": "2b5284558ccba322b9f5865157079504a8413198f9668b36b3807dd21a4bb7fb",
+    "previewHtmlSha256": "dc956dbec31dc0f4d21cc6a64819b4f5dc8d074d7d24afd8d77cfd11fdbb7b1b",
+    "howItWorksHtmlSha256": "11fde459b0f2a5fd893edcb54d4595ffba7f34a3d2ea565e5c0d9e1eb297a3e3",
     "previewDataSha256": "46d65bdbf88fe50beece57911ed61850f6911a1c17cd754dd2e6435c24125625",
-    "previewAppSha256": "10ba59fdfdfabc906a46202126508e5c88ba6a6fd50a27ef46e3d89173a05e03",
-    "comparisonHtmlSha256": "1c21e1d6a9baf644148bdaa9c8c5786b8fa03987dd99335591665d4508c0f5be",
-    "comparisonCoreSha256": "2072b63c69b93a0f3cb1212fe9849af979e6889e228a689492baa1ff69dfa811",
+    "previewAppSha256": "ebb47482f7d2a12a1c60d1666acc479976bb6a2c34979b0d130b2e661435d21f",
+    "comparisonHtmlSha256": "55ddde664da30d3671423f7f24e26b3a6a43a671b959d4c38a3020817dc32d1f",
+    "comparisonCoreSha256": "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e",
     "comparisonAppSha256": "04caab550fffd5652d5a283a3e5a9236fcf33c704105396deb9864920e93b974",
     "recordDetailAppSha256": "adc6da13fc9f3fc734d95ba55a21ffd6591da8bd843901ec9851a4467213a45d",
-    "previewStylesSha256": "f04db776f4af34631c20e1448dcecb6c085c0c05580dbf9648eaa9c11ca3e73c",
-    "recordDetailsManifestSha256": "d402f2c0223f6a459c95d55dea91ea912b52e69a6f7f163c0fd94981d5619231"
+    "previewStylesSha256": "4920f88607a74785db174f69cf2071b05869971f858227ce45012c7cdc834285",
+    "recordDetailsManifestSha256": "4539658b4fbe62e38789e4b44e1e2f62ccc5d60c3304de277e0f37d9a2fc9ab2"
   },
   "viewportEnvironment": {
-    "desktopDevicePixelRatio": 0.8999999761581421,
-    "mobileDevicePixelRatio": 0.8999999761581421,
-    "desktopRequested": {
-      "width": 1440,
-      "height": 900
-    },
-    "desktopObservedCss": {
-      "width": 1600,
-      "height": 1000
-    },
+    "exactViewportRunner": "Google Chrome 151.0.7922.138 through bundled Playwright",
     "mobileRequested": {
       "width": 390,
       "height": 844
     },
     "mobileObservedCss": {
-      "width": 433,
-      "height": 938
-    },
-    "compactDesktopRequested": {
-      "width": 960,
-      "height": 540
-    },
-    "compactDesktopObservedCss": {
-      "width": 1066,
-      "height": 600
-    },
-    "compactMobileRequested": {
-      "width": 352,
-      "height": 760
-    },
-    "compactMobileObservedCss": {
-      "width": 391,
+      "width": 390,
       "height": 844
+    },
+    "mobileDevicePixelRatio": 1,
+    "narrowMobileRequested": {
+      "width": 320,
+      "height": 700
+    },
+    "narrowMobileObservedCss": {
+      "width": 320,
+      "height": 700
+    },
+    "narrowMobileDevicePixelRatio": 1,
+    "inAppBrowserCrossCheck": {
+      "adjacentMobileObservedCss": { "width": 391, "height": 844 },
+      "narrowMobileObservedCss": { "width": 320, "height": 700 },
+      "consoleErrors": 0,
+      "consoleWarnings": 0
     }
   },
   "sealedSnapshotPublicationSemantics": {
@@ -76,11 +68,11 @@
     },
     "banner": {
       "rendered": true,
-      "exactSnapshotWindowRendered": true,
-      "publicationCheckTimeRendered": true,
-      "knownNewerCountRendered": true,
-      "incompleteCoverageRendered": true,
-      "nonPromotionBoundaryRendered": true
+      "readableSnapshotTimeRendered": true,
+      "releaseVolatilityBoundaryRendered": true,
+      "knownUpdateMarkerBoundaryRendered": true,
+      "howUpdatesLinkRendered": true,
+      "rawIsoAndPublicationCensusAbsent": true
     },
     "knownNewerRecord": {
       "recordId": "com.cursor.ide.foreground-agent.3-15",
@@ -116,7 +108,9 @@
       "mobileNavigationCollapsed": true
     },
     "cacheBusting": {
-      "version": "2026-08-15-sealed-snapshot",
+      "snapshotDataVersion": "2026-08-15-sealed-snapshot",
+      "visitorScriptVersion": "2026-08-16-visitor-ia-1",
+      "visitorStyleVersion": "2026-08-16-visitor-ia-2",
       "catalogAssets": ["data.js", "comparison-core.js", "app.js"],
       "recordAssets": ["data.js", "comparison-core.js", "record-detail.js"],
       "verifiedInBrowser": true
@@ -254,6 +248,109 @@
       "orderedSelectionPersistedInUrl": true
     },
     "allOtherCurrentRecordsRetainedInCanonicalOrder": true,
+    "console": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
+  "visitorFacingMethodAuthorQa": {
+    "workstream": "AEC-USER-FACING-METHOD-01-REMEDIATION-01-AUTHOR",
+    "result": "PASS",
+    "checkedAt": "2026-08-16T01:28:16.926Z",
+    "baseHead": "4b7d8d38d08f22336b1e38620e524fc9d22b71b5",
+    "viewportEnvironment": {
+      "exactViewportRunner": "Google Chrome 151.0.7922.138 through bundled Playwright",
+      "mobileRequested": { "width": 390, "height": 844 },
+      "mobileObservedCss": { "width": 390, "height": 844 },
+      "mobileDevicePixelRatio": 1,
+      "narrowMobileRequested": { "width": 320, "height": 700 },
+      "narrowMobileObservedCss": { "width": 320, "height": 700 },
+      "narrowMobileDevicePixelRatio": 1
+    },
+    "navigation": {
+      "labels": ["Catalog", "Compare claims", "How it works"],
+      "rootActive": "Compare claims",
+      "catalogActive": "Catalog",
+      "comparisonActive": "Compare claims",
+      "howItWorksActive": "How it works",
+      "recordActive": "Catalog",
+      "desktopAndMobileConsistent": true,
+      "mobileMenuOpened": true
+    },
+    "snapshot": {
+      "renderedCopy": "Catalog snapshot: 15 August 2026, 02:19 UTC. Agent releases change quickly; records with known updates are marked. How updates work →",
+      "derivedFromRetainedSeal": "2026-08-15T02:19:02.402Z",
+      "rawIsoTimestampAbsent": true,
+      "publicationCensusCountsAbsent": true,
+      "technicalReceiptJargonAbsent": true,
+      "knownUpdateRecordId": "com.cursor.ide.foreground-agent.3-15",
+      "catalogAndRecordNoticeRendered": true
+    },
+    "howItWorks": {
+      "sections": [
+        "Start with the exact identity",
+        "Follow each claim to its source",
+        "Unknown stays visible",
+        "Compare claims, not agents",
+        "Snapshots, known updates and version history",
+        "What AEC does not establish",
+        "Inspect the evidence or suggest a correction"
+      ],
+      "observedBehaviourQualitySafetySuitabilityBoundaryRendered": true,
+      "technicalDocumentationClosedInitially": true,
+      "technicalDocumentationOpenedOnRequest": true,
+      "desktopHorizontalOverflow": false,
+      "mobileHorizontalOverflow": false
+    },
+    "records": {
+      "desktopPagesAudited": 98,
+      "desktopFailureRecordIds": [],
+      "mobilePagesAudited": 98,
+      "mobileFailureRecordIds": [],
+      "narrowMobileRepresentativeRecordId": "com.cursor.ide.foreground-agent.3-15",
+      "narrowMobileFailureRecordIds": [],
+      "documentAndBodyWidthsContained": true,
+      "globalOverflowConcealmentAbsent": true,
+      "croppedContentFailures": 0,
+      "versionStatusRendered": true,
+      "versionHistoryRendered": true,
+      "legacyLifecycleLabelsAbsent": true
+    },
+    "comparisonPreservation": {
+      "firstChoiceNames": [
+        "Claude Code CLI",
+        "OpenAI Codex CLI",
+        "GitHub Copilot CLI",
+        "Cursor IDE foreground Agent"
+      ],
+      "statusAndReviewDateRowRendered": true,
+      "wideWorkspacePreserved": true,
+      "pageHorizontalOverflow": false
+    },
+    "focusAndSemantics": {
+      "nativeSummaryAndLinkControls": true,
+      "mobileMenuSummaryFocusVisible": true,
+      "mobileNavigationLinkFocusVisible": true,
+      "positiveTabindexOverrides": 0,
+      "unlabelledButtons": 0,
+      "unlabelledInputs": 0
+    },
+    "concepts": {
+      "headerSnapshotSha256": "db586e65ee443936c8babc1e0bb200335e6534d9218d00118ed52d8d4a4bbe30",
+      "howItWorksDesktopSha256": "5efe39e565ffd59bae5099f5826b1bf43fccb088b67e36a04071fec2181db301",
+      "howItWorksMobileSha256": "48e8e1b26e76c2033d2ede4daff5a087eeb93e8514a6895835d009b88fcf1f4f"
+    },
+    "screenshots": {
+      "headerSnapshotDesktopSha256": "160ac68e35974a5ae38aa3c6af0a1b0163a1a99154df9b6103dce8053b00c191",
+      "headerSnapshotMobileMenuOpenSha256": "6c184a2eaaa5370f5116314fb2f26e9bd882a529bdeace32b59f9a71478207d6",
+      "howItWorksDesktopTopSha256": "187c45dbb45d1fbad9a12ebe8838e42418d8d4a987dc271d4380c7a477c29d48",
+      "howItWorksDesktopBottomSha256": "329abc0baa101330c4ef0c1d2fea199c9ebc4b4ac824b6419e1fc0cd624952d5",
+      "howItWorksMobileTopSha256": "9aeb6c52dfaccc4c89a78f7268e1f41343e1bebd27df3059e697b3d2fe0576d9",
+      "howItWorksMobileBottomSha256": "02fa79410496f504582fb3ecaf2f58472b0fc58839b7eceeff738f50caf2690b",
+      "knownUpdateRecordDesktopSha256": "f8903a8ef868500d7b77b9f62623feedcd21d9d19cd15b5cb2547ef0e844684e",
+      "knownUpdateRecordMobileSha256": "3c604751c1120fdd6bee7ebc1810a3ebc69575fcb0e2aea0b8f07d7fd3941ef0",
+      "comparisonWorkspaceDesktopSha256": "4d97c61ea7132c13c2fc311d3986e209b19b66b46fd9d2b04652a22314fe0bb1"
+    },
     "console": {
       "errors": 0,
       "warnings": 0
@@ -568,26 +665,45 @@
         "claimsRendered": true,
         "sevenSectionIndexLinks": true,
         "noUndefinedOrNaNText": true,
-        "noBodySourceOrHeadingOverflow": true
+        "noBodySourceOrHeadingOverflow": true,
+        "exactCssViewportObserved": true,
+        "documentAndBodyScrollWidthsContained": true,
+        "globalOverflowConcealmentAbsent": true,
+        "requiredMobileRegionsContained": true,
+        "zeroConsoleWarningsOrErrors": true
       },
       "viewports": [
         {
           "label": "desktop",
           "width": 1440,
-          "height": 900,
+          "height": 1000,
           "pagesAudited": 98,
           "uniquePagesAudited": 98,
           "failureRecordIds": []
         },
         {
           "label": "mobile",
-          "width": 390,
-          "height": 844,
+          "requestedCss": { "width": 390, "height": 844 },
+          "observedCss": { "width": 390, "height": 844 },
+          "devicePixelRatio": 1,
           "pagesAudited": 98,
           "uniquePagesAudited": 98,
           "failureRecordIds": []
         }
       ],
+      "narrowMobileRepresentative": {
+        "recordId": "com.cursor.ide.foreground-agent.3-15",
+        "requestedCss": { "width": 320, "height": 700 },
+        "observedCss": { "width": 320, "height": 700 },
+        "devicePixelRatio": 1,
+        "documentClientWidth": 320,
+        "documentScrollWidth": 320,
+        "bodyClientWidth": 320,
+        "bodyScrollWidth": 320,
+        "pageHorizontalOverflow": false,
+        "croppedContent": false,
+        "console": { "errors": 0, "warnings": 0 }
+      },
       "representativeCurrentRecord": {
         "recordId": "com.alibaba.qwen-code.cli.0-21-12",
         "publisherClaims": 2,
@@ -637,6 +753,13 @@
         "twitterCard": "summary",
         "structuredType": "WebPage"
       },
+      "howItWorks": {
+        "title": "How Agent Evidence Catalog Works",
+        "canonical": "https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html",
+        "openGraphType": "website",
+        "twitterCard": "summary",
+        "structuredType": "WebPage"
+      },
       "representativeRecordIds": [
         "com.alibaba.qwen-code.cli.0-21-12",
         "com.alibaba.qwen-code.cli.0-21-11",
@@ -658,8 +781,8 @@
       },
       "sitemap": {
         "path": "dist/sitemap.xml",
-        "sha256": "9dbc6c8172dd70d237290b91b161c5a756b39f2076cd5db57d756a774744de5f",
-        "humanReadableRoutes": 101,
+        "sha256": "c1f11a8cc3c7e7acedaf85effcfeaf0b7e9ec91442a2d619b3631734e7c515ab",
+        "humanReadableRoutes": 102,
         "recordRoutes": 98,
         "rawJsonRoutes": 0,
         "duplicateRoutes": 0
@@ -691,7 +814,7 @@
     "The in-app Browser blocks top-level navigation to local .json resources; all 98 raw link targets were checked in rendered pages, the representative target passed a loopback HTTP GET, and deterministic record validation covered every JSON file.",
     "Rendered reachability and local UI behavior do not establish catalogued product behavior, independent verification, quality, safety, popularity, ranking or suitability.",
     "The publication-time census proves one known-newer identity but cannot prove publication-time currency for 53 surfaces; reachable but rolling, unresolved or unparseable official sources remain incomplete coverage.",
-    "Browser QA confirms the notices and sealed-snapshot boundary render and behave locally; it does not authorize promotion, publication or any Git or GitHub action."
+    "Browser QA confirms the visitor snapshot, update marker, How it works page and translated terminology render and behave locally; it does not authorize promotion, publication or any Git or GitHub action."
   ],
   "boundaries": {
     "publisherSourcesOnly": true,
@@ -699,6 +822,8 @@
     "independentTestsCredited": 0,
     "rankingsOrSuitabilityCalculations": false,
     "priorAcceptedRecordsOrSourceArtifactsRewritten": false,
+    "currentWorkstreamChangedProtectedCorpus": false,
+    "visitorInformationArchitectureOnly": true,
     "currentnessLifecycleProjectionUpdated": true,
     "githubStateChanged": false,
     "sealedSnapshotPromoted": false,

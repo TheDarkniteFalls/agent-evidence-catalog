@@ -104,6 +104,13 @@ function releaseScopeLabel(release) {
   return release.version ? `${release.version} · ${label(release.scope)}` : label(release.scope);
 }
 
+function readableUtcMinute(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.valueOf())) throw new Error("Timestamp is invalid");
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  return `${date.getUTCDate()} ${months[date.getUTCMonth()]} ${date.getUTCFullYear()}, ${String(date.getUTCHours()).padStart(2, "0")}:${String(date.getUTCMinutes()).padStart(2, "0")} UTC`;
+}
+
 function applicabilityText(applicability) {
   const dimension = (name, value) => {
     const values = value.values.length ? ` — ${value.values.join(", ")}` : "";
@@ -124,7 +131,7 @@ function renderRecordDetail(record, preview, lifecycle) {
   const selected = lifecycle.entries.find((entry) => entry.recordId === recordId);
   if (!summary || !selected) throw new Error(`Record detail ${recordId} is missing its public summary or lifecycle entry`);
   const publicationFreshnessNotice = summary.publicationFreshness?.status === "known-newer"
-    ? `<p class="boundary-callout" data-known-newer-record="${escapeHtml(recordId)}"><strong>Freshness notice:</strong> The sealed record retains ${escapeHtml(summary.publicationFreshness.reviewedIdentity)}. The official source exposed ${escapeHtml(summary.publicationFreshness.knownNewerIdentity)} at ${escapeHtml(summary.publicationFreshness.checkedAt)}; this notice does not refresh the snapshot.</p>`
+    ? `<p class="boundary-callout" data-known-newer-record="${escapeHtml(recordId)}"><strong>Version update known:</strong> This snapshot identifies ${escapeHtml(summary.publicationFreshness.reviewedIdentity)}. The official source showed ${escapeHtml(summary.publicationFreshness.knownNewerIdentity)} on ${escapeHtml(readableUtcMinute(summary.publicationFreshness.checkedAt))}. The catalog record has not been changed without review.</p>`
     : "";
 
   const lifecycleById = new Map(lifecycle.entries.map((entry) => [entry.recordId, entry]));
@@ -216,7 +223,7 @@ function renderRecordDetail(record, preview, lifecycle) {
   const displayRelease = releaseLabel(release);
   const displayTitle = `${summary.name} ${displayRelease}`;
   const pageTitle = `${displayTitle} Evidence Record · Agent Evidence Catalog`;
-  const pageDescription = `Inspect the exact identity, attributed ${identity.publisher.name} claims, applicability boundaries, lifecycle history and unresolved unknowns for ${displayTitle}.`;
+  const pageDescription = `Inspect the exact identity, attributed ${identity.publisher.name} claims, applicability boundaries, version history and unresolved unknowns for ${displayTitle}.`;
   const pageUrl = `${CANONICAL_BASE_URL}research-preview/records/${recordId}.html`;
   const pageStructuredData = serializeJsonLd({
     "@context": "https://schema.org",
@@ -268,6 +275,7 @@ function renderRecordDetail(record, preview, lifecycle) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
     <meta name="description" content="${escapeHtml(pageDescription)}">
     <meta name="robots" content="index,follow">
     <title>${escapeHtml(pageTitle)}</title>
@@ -281,29 +289,29 @@ function renderRecordDetail(record, preview, lifecycle) {
     <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
     <meta name="twitter:description" content="${escapeHtml(pageDescription)}">
     <script type="application/ld+json">${pageStructuredData}</script>
-    <link rel="stylesheet" href="../styles.css?v=2026-08-11-compact-fidelity-1">
+    <link rel="stylesheet" href="../styles.css?v=2026-08-16-visitor-ia-2">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to record</a>
     <header class="site-header">
       <a class="brand" href="../../index.html">Agent Evidence Catalog</a>
-      <nav aria-label="Record navigation">
-        <a data-catalog-return href="../index.html">Catalog</a>
+      <nav aria-label="Primary navigation">
+        <a aria-current="page" data-catalog-return href="../index.html">Catalog</a>
         <a data-compare-return href="../compare.html">Compare claims</a>
-        <a href="../../RESEARCH_PREVIEW.md">Method</a>
+        <a href="../how-it-works.html">How it works</a>
       </nav>
       <details class="mobile-nav">
         <summary class="mobile-nav-toggle" aria-label="Open navigation"><span class="mobile-nav-icon" aria-hidden="true"></span></summary>
-        <nav aria-label="Mobile record navigation">
-          <a data-catalog-return href="../index.html">Catalog</a>
+        <nav aria-label="Mobile primary navigation">
+          <a aria-current="page" data-catalog-return href="../index.html">Catalog</a>
           <a data-compare-return href="../compare.html">Compare claims</a>
-          <a href="../../RESEARCH_PREVIEW.md">Method</a>
+          <a href="../how-it-works.html">How it works</a>
         </nav>
       </details>
     </header>
 
-    <aside class="preview-banner" aria-label="Research preview status">
-      <strong>Research Preview v0.1. Sealed 2026-08-15 source-review snapshot.</strong> <span data-snapshot-banner-copy></span>
+    <aside class="preview-banner" aria-label="Catalog snapshot">
+      <span data-snapshot-banner-copy></span> <a href="../how-it-works.html#snapshots">How updates work →</a>
     </aside>
 
     <main id="main" class="detail-main">
@@ -316,7 +324,7 @@ function renderRecordDetail(record, preview, lifecycle) {
           <div><dt>Version scope</dt><dd>${escapeHtml(releaseScopeLabel(release))}</dd></div>
           <div><dt>Record coverage</dt><dd>${escapeHtml(record.claims.length)} publisher claims · ${escapeHtml(record.sources.length)} named sources · 0 independent tests</dd></div>
         </dl>
-        <p class="detail-status"><strong>Lifecycle note:</strong> ${escapeHtml(selected.note)}</p>
+        <p class="detail-status"><strong>Version status:</strong> ${escapeHtml(selected.note)}</p>
 ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}        <div class="detail-actions">
           <button class="primary-action" type="button" data-add-record-to-compare data-record-id="${escapeHtml(recordId)}" data-record-name="${escapeHtml(summary.name)}">Add exact record to compare</button>
           <a data-compare-return href="../compare.html">Open comparison picker</a>
@@ -399,9 +407,9 @@ ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}  
 
       <section id="lifecycle" class="detail-section" aria-labelledby="lifecycle-heading">
         <header>
-          <p class="eyebrow">Reciprocal lifecycle history</p>
+          <p class="eyebrow">Version history</p>
           <h2 id="lifecycle-heading">${escapeHtml(lifecycleHeading)}</h2>
-          <p>The lifecycle overlay preserves the selected status and every same-surface predecessor or successor link. Where links exist, each direction is reciprocal.</p>
+          <p>The catalog preserves the selected status and every same-surface predecessor or successor link. Where links exist, each direction is reciprocal.</p>
         </header>
         <div class="lifecycle-flow">${lifecycleStepsHtml}
         </div>
@@ -409,13 +417,13 @@ ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}  
 
       <section class="detail-section boundary-callout" aria-labelledby="reading-boundary-heading">
         <h2 id="reading-boundary-heading">Reading boundary</h2>
-        <p>This page changes presentation only. It does not change the accepted dossier, claims, record, sources, mappings or lifecycle data; admit independent evidence; calculate suitability; or rank or recommend agents.</p>
+        <p>This page changes presentation only. It does not change the accepted dossier, claims, record, sources, mappings or version-history data; admit independent evidence; calculate suitability; or rank or recommend agents.</p>
       </section>
     </main>
 
     <footer>
       <p>Static research artifact. Inclusion is not endorsement; absence is not an adverse finding.</p>
-      <p><a data-catalog-return href="../index.html">Back to catalog</a> · <a href="${rawJson}">Raw JSON</a> · <a href="../../RESEARCH_PREVIEW.md">Method</a> · <a href="../../CORRECTIONS.md">Corrections</a></p>
+      <p><a href="../how-it-works.html">How it works</a> · <a href="../../CORRECTIONS.md">Corrections</a></p>
     </footer>
     <div id="selectionTray" class="selection-tray" hidden>
       <div id="trayChips" class="selection-tray-chips" aria-label="Selected records"></div>
@@ -423,7 +431,7 @@ ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}  
       <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected claims</button>
     </div>
     <script src="../data.js?v=2026-08-15-sealed-snapshot"></script>
-    <script src="../comparison-core.js?v=2026-08-15-sealed-snapshot"></script>
+    <script src="../comparison-core.js?v=2026-08-16-visitor-ia-1"></script>
     <script src="../record-detail.js?v=2026-08-15-sealed-snapshot"></script>
   </body>
 </html>
@@ -855,7 +863,7 @@ async function commandBuild() {
   const safeJson = JSON.stringify(profiles).replaceAll("<", "\\u003c");
   await writeFile(join(DIST, "catalog-data.js"), `window.CATALOG_PROFILES = ${safeJson};\n`, "utf8");
   for (const item of loaded) await copyFile(join(CATALOG, item.name), join(DIST, "records", item.name));
-  for (const source of ["index.html", "compare.html", "styles.css", "app.js", "comparison-core.js", "compare.js", "record-detail.js"]) {
+  for (const source of ["index.html", "compare.html", "how-it-works.html", "styles.css", "app.js", "comparison-core.js", "compare.js", "record-detail.js"]) {
     await copyFile(join(ROOT, "site", "research-preview", source), join(DIST, "research-preview", source));
   }
   const researchPreviewSource = join(ROOT, "drafts", "real-agent-catalog", "research-preview", "catalog.json");
@@ -904,6 +912,7 @@ async function commandBuild() {
     CANONICAL_BASE_URL,
     `${CANONICAL_BASE_URL}research-preview/`,
     `${CANONICAL_BASE_URL}research-preview/compare.html`,
+    `${CANONICAL_BASE_URL}research-preview/how-it-works.html`,
     ...recordDetails.map((record) => `${CANONICAL_BASE_URL}${record.entryPoint}`)
   ].sort((left, right) => left.localeCompare(right));
   const robotsRaw = `User-agent: *\nAllow: /\n\nSitemap: ${CANONICAL_BASE_URL}sitemap.xml\n`;
@@ -967,6 +976,10 @@ async function commandBuild() {
         stateStorage: "url-and-memory-only",
         maximumRecords: 4,
         claimAlignment: "exact-accepted-category-string"
+      },
+      howItWorks: {
+        entryPoint: "research-preview/how-it-works.html",
+        htmlSha256: createHash("sha256").update(await readFile(join(DIST, "research-preview", "how-it-works.html"))).digest("hex")
       },
       recordDetails: {
         count: recordDetails.length,

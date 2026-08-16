@@ -14,6 +14,8 @@ const context = { window: {} };
 vm.runInNewContext(coreSource, context, { filename: "comparison-core.js" });
 const core = context.window.AGENT_CLAIMS_COMPARISON;
 assert(core, "Comparison projector did not expose its browser API");
+assert.equal(core.readableUtcMinute("2026-08-15T02:19:02.402Z"), "15 August 2026, 02:19 UTC");
+assert.throws(() => core.readableUtcMinute("not-a-time"), /Timestamp is invalid/);
 
 const summariesById = new Map(preview.previewRecords.map((record) => [record.recordId, record]));
 const currentSummaries = preview.surfaces.map((surface) => surface.currentRecord).filter(Boolean);

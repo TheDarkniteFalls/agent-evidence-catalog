@@ -121,7 +121,7 @@
     if (freshnessNotice) {
       freshnessNotice.className = "boundary-callout";
       freshnessNotice.dataset.knownNewerRecord = record.recordId;
-      freshnessNotice.textContent = `Freshness notice: the sealed record retains ${record.publicationFreshness.reviewedIdentity}. The official source exposed ${record.publicationFreshness.knownNewerIdentity} at ${record.publicationFreshness.checkedAt}; this notice does not refresh the snapshot.`;
+      freshnessNotice.textContent = `Version update known: this snapshot identifies ${record.publicationFreshness.reviewedIdentity}. The official source showed ${record.publicationFreshness.knownNewerIdentity} on ${comparison.readableUtcMinute(record.publicationFreshness.checkedAt)}. The catalog record has not been changed without review.`;
     }
     const links = document.createElement("div");
     links.className = "card-links";

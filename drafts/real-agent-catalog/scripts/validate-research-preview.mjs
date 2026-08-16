@@ -187,6 +187,7 @@ const comparisonHtml = await readFile(path.join(packageRoot, "site", "research-p
 const comparisonCore = await readFile(path.join(packageRoot, "site", "research-preview", "comparison-core.js"), "utf8");
 const comparisonApp = await readFile(path.join(packageRoot, "site", "research-preview", "compare.js"), "utf8");
 const recordDetailApp = await readFile(path.join(packageRoot, "site", "research-preview", "record-detail.js"), "utf8");
+const howItWorksHtml = await readFile(path.join(packageRoot, "site", "research-preview", "how-it-works.html"), "utf8");
 assert(siteHtml.includes('id="currentRecords"'));
 assert(siteHtml.includes('id="historyRecords" class="record-grid history-grid" hidden'));
 assert(siteHtml.includes('aria-expanded="false"'));
@@ -194,9 +195,10 @@ assert(siteHtml.includes("Zero independent tests"));
 assert(siteHtml.includes("For researchers, builders and maintainers"));
 assert(siteHtml.includes("Selected, not comprehensive"));
 assert(siteHtml.includes("Fastest path:"));
-assert(siteHtml.includes("current within the sealed review window—not a claim of publication-time currency or observed runtime behavior"));
-assert(siteHtml.includes("Sealed 2026-08-15 source-review snapshot."));
+assert(siteHtml.includes("current within this dated review snapshot—not a claim of publication-time currency or observed runtime behavior"));
 assert(siteHtml.includes("data-snapshot-banner-copy"));
+assert(siteHtml.includes('href="how-it-works.html#snapshots">How updates work →</a>'));
+assert(!siteHtml.includes("Research Preview v0.1. Sealed"));
 assert(siteHtml.includes('href="compare.html">Compare agent claims</a>'));
 assert(siteHtml.includes('id="selectionTray"'));
 assert(!siteHtml.includes('id="releaseGate"'));
@@ -214,6 +216,8 @@ assert(siteApp.includes('window.history.replaceState'));
 assert(siteApp.includes('"Add to compare"'));
 assert(siteApp.includes('params.set("agents", selectedIds.join(","))'));
 assert(siteApp.includes('record.publicationFreshness?.status === "known-newer"'));
+assert(siteApp.includes("Version update known:"));
+assert(siteApp.includes("readableUtcMinute"));
 assert(comparisonHtml.includes("Compare agent claims, source by source."));
 assert(comparisonHtml.includes("Publisher claims only.</strong> No ranking, recommendation or independent-test result."));
 assert(comparisonHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html"'));
@@ -222,11 +226,37 @@ assert(comparisonHtml.includes('id="differencesOnly"'));
 assert(comparisonCore.includes("rawRecord.claim.category"));
 assert(comparisonCore.includes("__RECORD_UNAVAILABLE__"));
 assert(comparisonCore.includes("applySnapshotBanner"));
+assert(comparisonCore.includes("Catalog snapshot:"));
+assert(comparisonCore.includes("Status and review date"));
+assert(!comparisonCore.includes("Lifecycle / review date"));
 assert(comparisonApp.includes("Record unavailable. The committed JSON could not be loaded; no evidence inference is made."));
 assert(comparisonApp.includes("No accepted claim under this exact category. This is not evidence that the capability is absent."));
 assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"), "utf8"), comparisonHtml);
 assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "comparison-core.js"), "utf8"), comparisonCore);
 assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.js"), "utf8"), comparisonApp);
+assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "how-it-works.html"), "utf8"), howItWorksHtml);
+for (const required of [
+  "How it works",
+  "Start with the exact identity",
+  "Follow each claim to its source",
+  "Unknown stays visible",
+  "Compare claims, not agents",
+  "Snapshots, known updates and version history",
+  "What AEC does not establish",
+  "Observed behaviour",
+  "Quality",
+  "Safety",
+  "Suitability",
+  "Inspect the evidence or suggest a correction",
+  "Technical documentation"
+]) assert(howItWorksHtml.includes(required), `How it works page omitted ${required}`);
+for (const sourceHtml of [siteHtml, comparisonHtml, howItWorksHtml]) {
+  const desktopNav = sourceHtml.slice(sourceHtml.indexOf('<nav aria-label="Primary navigation">'), sourceHtml.indexOf("</nav>", sourceHtml.indexOf('<nav aria-label="Primary navigation">')));
+  assert(desktopNav.indexOf(">Catalog</a>") < desktopNav.indexOf(">Compare claims</a>"));
+  assert(desktopNav.indexOf(">Compare claims</a>") < desktopNav.indexOf(">How it works</a>"));
+  assert(!desktopNav.includes(">Method</a>"));
+  assert(!desktopNav.includes(">Lifecycle</a>"));
+}
 assert(recordDetailApp.includes('[data-catalog-return]'));
 assert(recordDetailApp.includes('[data-compare-return]'));
 assert(recordDetailApp.includes('[data-record-detail-link]'));
@@ -280,6 +310,10 @@ assert.deepEqual(buildManifest.researchPreview.comparison, {
   maximumRecords: 4,
   claimAlignment: "exact-accepted-category-string"
 });
+assert.deepEqual(buildManifest.researchPreview.howItWorks, {
+  entryPoint: "research-preview/how-it-works.html",
+  htmlSha256: sha256(howItWorksHtml)
+});
 const manifestDetailsById = new Map(buildManifest.researchPreview.recordDetails.records.map((entry) => [entry.recordId, entry]));
 assert.equal(manifestDetailsById.size, 98, "Human-readable record-detail manifest IDs must be unique");
 
@@ -301,21 +335,22 @@ for (const summary of preview.previewRecords) {
   const displayScope = summary.release.version ? `${summary.release.version} · ${plainLabel(summary.release.scope)}` : plainLabel(summary.release.scope);
   const expectedLifecycle = lifecycle.entries.filter((entry) => entry.surfaceKey === lifecycleEntry.surfaceKey);
 
-  assert(detailHtml.includes(`Inspect the exact identity, attributed ${escapeHtml(record.identity.publisher.name)} claims, applicability boundaries, lifecycle history and unresolved unknowns for ${escapeHtml(displayTitle)}.`));
+  assert(detailHtml.includes(`Inspect the exact identity, attributed ${escapeHtml(record.identity.publisher.name)} claims, applicability boundaries, version history and unresolved unknowns for ${escapeHtml(displayTitle)}.`));
   assert(detailHtml.includes(`<title>${escapeHtml(displayTitle)} Evidence Record · Agent Evidence Catalog</title>`));
-  assert(detailHtml.includes(`<strong>Lifecycle note:</strong> ${escapeHtml(lifecycleEntry.note)}`));
-  assert(detailHtml.includes("Sealed 2026-08-15 source-review snapshot."));
+  assert(detailHtml.includes(`<strong>Version status:</strong> ${escapeHtml(lifecycleEntry.note)}`));
+  assert(!detailHtml.includes("Lifecycle note:"));
   assert(detailHtml.includes("data-snapshot-banner-copy"));
   if (summary.publicationFreshness?.status === "known-newer") {
     assert(detailHtml.includes(`data-known-newer-record="${escapeHtml(summary.recordId)}"`), `${summary.recordId} omitted its publication freshness notice`);
     assert(detailHtml.includes(escapeHtml(summary.publicationFreshness.knownNewerIdentity)), `${summary.recordId} omitted its known newer identity`);
-    assert(detailHtml.includes(escapeHtml(summary.publicationFreshness.checkedAt)), `${summary.recordId} omitted its publication check time`);
+    assert(detailHtml.includes("Version update known:"), `${summary.recordId} omitted its readable update marker`);
+    assert(!detailHtml.includes(escapeHtml(summary.publicationFreshness.checkedAt)), `${summary.recordId} exposed a raw update timestamp`);
   }
   assert(detailHtml.includes(`<div><dt>Publisher</dt><dd>${escapeHtml(record.identity.publisher.name)}</dd></div>`));
   assert(detailHtml.includes(`<div><dt>Surface</dt><dd>${escapeHtml(record.identity.surface.name)} · ${escapeHtml(record.identity.surface.deliveryModel)}</dd></div>`));
   assert(detailHtml.includes(`<div><dt>Version scope</dt><dd>${escapeHtml(displayScope)}</dd></div>`));
   assert(detailHtml.includes(`${record.claims.length} publisher claims · ${record.sources.length} named sources · 0 independent tests`));
-  for (const heading of ["Record identity", "Publisher claims", "Applicability boundaries", "Unresolved unknowns", "Named official sources", "Reciprocal lifecycle history", "Reading boundary"]) {
+  for (const heading of ["Record identity", "Publisher claims", "Applicability boundaries", "Unresolved unknowns", "Named official sources", "Version history", "Reading boundary"]) {
     assert(detailHtml.includes(heading), `${summary.recordId} omitted ${heading}`);
   }
   for (const section of ["identity", "publisher-claims", "boundaries", "unknowns", "sources", "lifecycle"]) {
@@ -328,8 +363,10 @@ for (const summary of preview.previewRecords) {
   assert(sectionIndex >= 0 && claimsJump > sectionIndex && rawAction > claimsJump, `${summary.recordId} must keep raw JSON secondary to human-readable section navigation`);
   assert(detailHtml.includes('data-catalog-return href="../index.html"'), `${summary.recordId} omitted catalog return-state hooks`);
   assert(detailHtml.includes('data-compare-return href="../compare.html"'), `${summary.recordId} omitted comparison return-state hooks`);
+  assert(detailHtml.includes('href="../how-it-works.html">How it works</a>'), `${summary.recordId} omitted the visitor-facing method destination`);
+  assert.equal((detailHtml.match(/aria-current="page" data-catalog-return/g) || []).length, 2, `${summary.recordId} must mark Catalog active in desktop and mobile navigation`);
   assert(detailHtml.includes(`data-add-record-to-compare data-record-id="${escapeHtml(summary.recordId)}"`), `${summary.recordId} omitted its exact-record comparison control`);
-  assert(detailHtml.includes('../record-detail.js?v=2026-08-15-sealed-snapshot'), `${summary.recordId} omitted cache-busted shared record navigation logic`);
+  assert(detailHtml.includes('../comparison-core.js?v=2026-08-16-visitor-ia-1'), `${summary.recordId} omitted cache-busted visitor-facing shell logic`);
   if (summary.recordId === "com.stackblitz.bolt.claude-agent.rolling") {
     assert(detailHtml.includes("How the legacy Bolt v1 Agent retirement completion date of 2026-08-03 applied to individual projects remains unresolved"), "Bolt record omitted its exact-date applicability boundary");
     assert(!detailHtml.includes("two days after this registry snapshot"), "Bolt record retained stale snapshot-relative wording");
@@ -370,4 +407,5 @@ console.log("PASS Codex 0.147.0 is integrated as the current same-surface succes
 console.log("PASS static current-default presentation and collapsed explicit-history control match the source dataset");
 console.log("PASS one deterministic record-agnostic template presents all 98 records with every claim, official source link, unknown, limitation and reciprocal lifecycle link preserved");
 console.log("PASS evidence-exact comparison route, URL-only state and current-record picker are copied through the deterministic build");
+console.log("PASS visitor-facing How it works route, three-link global navigation, readable snapshot copy and translated version terminology are deterministic");
 console.log("PASS compact record identity, section navigation and catalog search/delivery/comparison return state are shared across all 98 pages");

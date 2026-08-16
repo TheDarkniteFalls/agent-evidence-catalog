@@ -226,11 +226,16 @@ async function assertNoPublicIntegration() {
     if (relative === "dist/sitemap.xml") {
       const manifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
       const details = manifest.researchPreview.recordDetails;
-      assert.equal([...content.matchAll(/<loc>/g)].length, details.count + 3, "Sitemap route count drift");
+      assert.equal([...content.matchAll(/<loc>/g)].length, details.count + 4, "Sitemap route count drift");
       assert.equal(
         content.split("https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html").length - 1,
         1,
         "Comparison sitemap route count drift"
+      );
+      assert.equal(
+        content.split("https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html").length - 1,
+        1,
+        "How it works sitemap route count drift"
       );
       for (const entry of details.records) {
         const expectedUrl = `https://thedarknitefalls.github.io/agent-evidence-catalog/${entry.entryPoint}`;

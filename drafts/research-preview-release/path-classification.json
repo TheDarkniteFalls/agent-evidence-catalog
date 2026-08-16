@@ -5,9 +5,9 @@
   "classificationRule": "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
   "counts": {
     "accepted-evidence-provenance": 835,
-    "canonical-source": 83,
-    "generated-publication-output": 261,
-    "release-control-artifact": 31,
+    "canonical-source": 84,
+    "generated-publication-output": 262,
+    "release-control-artifact": 44,
     "retained-experiment": 87
   },
   "entries": [
@@ -451,6 +451,12 @@
     },
     {
       "path": "dist/research-preview/data.js",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/how-it-works.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -7482,6 +7488,84 @@
       "rationale": "Baseline, preservation, manifest or release-validation control."
     },
     {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/concepts/header-snapshot-desktop-mobile.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/concepts/how-it-works-desktop.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/concepts/how-it-works-mobile.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/screenshots/comparison-workspace-desktop.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/screenshots/header-snapshot-desktop.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/screenshots/header-snapshot-mobile-menu-open.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/screenshots/header-snapshot-mobile.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/screenshots/how-it-works-desktop-bottom.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/screenshots/how-it-works-desktop.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/screenshots/how-it-works-mobile-bottom.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/screenshots/how-it-works-mobile.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/screenshots/known-update-record-desktop.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
+      "path": "drafts/research-preview-release/user-facing-method-2026-08-16/screenshots/known-update-record-mobile.png",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Baseline, preservation, manifest or release-validation control."
+    },
+    {
       "path": "drafts/research-preview-release/v0.1-pages-stage-paths.txt",
       "classification": "release-control-artifact",
       "publicationBoundary": "git-research-or-source-only",
@@ -7765,6 +7849,12 @@
     },
     {
       "path": "site/research-preview/comparison-core.js",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Canonical static site, schema, method or deterministic build source."
+    },
+    {
+      "path": "site/research-preview/how-it-works.html",
       "classification": "canonical-source",
       "publicationBoundary": "git-research-or-source-only",
       "rationale": "Canonical static site, schema, method or deterministic build source."
