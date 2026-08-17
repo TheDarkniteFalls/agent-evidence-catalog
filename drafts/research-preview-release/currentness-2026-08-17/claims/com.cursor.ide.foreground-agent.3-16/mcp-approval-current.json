@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.mcp-approval-current",
+  "slug": "mcp-approval-current",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cursor IDE foreground Agent",
+      "slug": "cursor-ide-foreground-agent-3-16"
+    }
+  },
+  "claim": {
+    "category": "authority.mcp",
+    "statement": "Cursor's rolling MCP documentation says configured MCP servers can expose external tools and data; tools may be disabled, Agent asks for approval before use by default, and Auto-run can allow MCP use without asking."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anysphere, Inc."
+  },
+  "source": {
+    "uri": "https://docs.cursor.com/context/model-context-protocol",
+    "title": "Cursor Model Context Protocol documentation",
+    "locator": "Using MCP in chat, Toggling tools, Tool approval and Auto-run",
+    "publishedAt": null,
+    "capturedAt": "2026-08-17T08:56:07.261Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "MCP disabled",
+        "MCP enabled with per-use approval",
+        "MCP enabled with Auto-run"
+      ]
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "Cursor desktop"
+      ]
+    },
+    "model": {
+      "scope": "configuration-dependent",
+      "values": []
+    },
+    "deployment": {
+      "scope": "configuration-dependent",
+      "values": [
+        "local stdio MCP",
+        "local or remote SSE MCP",
+        "local or remote Streamable HTTP MCP"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": null,
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-17",
+    "recheckAfter": "2026-09-17",
+    "invalidatedBy": [
+      "documentation-change",
+      "approval-change",
+      "transport-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The documentation describes configuration alternatives; it does not establish any installed MCP server, tool, credential or approval decision.",
+    "Auto-run and manual approval must remain separate applicability scopes."
+  ],
+  "unknowns": [
+    "Configured MCP servers, exposed tools, arguments, credentials and data destinations are unknown.",
+    "Whether approval or Auto-run covered every MCP call and indirect side effect was not tested."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

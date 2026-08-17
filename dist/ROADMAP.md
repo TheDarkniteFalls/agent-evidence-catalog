@@ -1,21 +1,21 @@
 # Agent Evidence Catalog roadmap
 
-Updated: 2026-08-15. This roadmap records intended work; it does not authorize
+Updated: 2026-08-17. This roadmap records intended work; it does not authorize
 publication, GitHub changes, publisher contact, agent execution, open intake or
 a response-time commitment.
 
 ## Current position
 
 The public [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
-has a prepared sealed 55-surface snapshot containing 53 records current within
-the review window and 45 non-current records: 42 superseded identities, two
+has a prepared sealed 55-surface refresh snapshot containing 53 records current within
+the review window and 48 non-current records: 45 superseded identities, two
 historical records and one discontinued surface. It is static, maintainer-curated and based
 only on attributed publisher sources. It assigns zero independent-test credit
 and provides no rankings, recommendations or suitability calculation.
 
-The sealed 2026-08-15 official-source review adds 10 exact-identity
-successors to the accepted 88-record projection while retaining every
-predecessor and 46 unchanged surface decisions. Publication-time drift is
+The sealed 2026-08-17 official-source review adds three exact-identity
+successors to the accepted 98-record projection while retaining every
+predecessor and 52 unchanged surface decisions. Publication-time drift is
 reported separately as a notice and does not reopen the snapshot. A pinned,
 least-privilege GitHub Pages workflow publishes only the committed `dist/`
 tree. Every later push still requires explicit authorization and the normal
@@ -41,10 +41,10 @@ concept review in step 4.
 
 ### 2. Refresh workflow
 
-Status: deterministic manual review exercised across all 55 surfaces and sealed to the retained 2026-08-15 receipts; operational dashboard and scheduling remain deferred.
+Status: repeatable capture, projection, full-corpus link audit and publication-census commands exercised across all 55 surfaces and sealed to the retained 2026-08-17 receipts; operational dashboard and scheduling remain deferred.
 
-- Define a maintainer command or dashboard workflow that identifies source
-  changes without promoting them into evidence automatically.
+- Maintain the bounded refresh commands that identify source changes without
+  promoting them into evidence automatically.
 - Show reviewed dates, overdue checks and possible upstream changes clearly.
 - Support the human sequence: inspect change, update source-only dossier,
   validate, generate record and mapping, update lifecycle, rebuild, review and

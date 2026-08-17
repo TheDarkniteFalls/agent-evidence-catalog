@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.tool-inventory-current",
+  "slug": "tool-inventory-current",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cursor IDE foreground Agent",
+      "slug": "cursor-ide-foreground-agent-3-16"
+    }
+  },
+  "claim": {
+    "category": "authority.tools",
+    "statement": "Cursor's rolling Agent tools documentation lists codebase and web search, file reading and directory listing, edit and delete operations, terminal execution and configured MCP tools, with tool selection varying by mode and settings."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anysphere, Inc."
+  },
+  "source": {
+    "uri": "https://docs.cursor.com/en/agent/tools",
+    "title": "Cursor Agent tools",
+    "locator": "Search, Edit, Run, MCP and Advanced options sections",
+    "publishedAt": null,
+    "capturedAt": "2026-08-17T08:56:07.261Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "composable",
+      "values": [
+        "codebase search",
+        "web search",
+        "read file",
+        "list directory",
+        "edit",
+        "delete file",
+        "terminal",
+        "MCP",
+        "auto-apply edits",
+        "auto-run",
+        "guardrails",
+        "auto-fix errors"
+      ]
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "Cursor desktop"
+      ]
+    },
+    "model": {
+      "scope": "configuration-dependent",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "foreground Agent tools"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": null,
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-17",
+    "recheckAfter": "2026-09-17",
+    "invalidatedBy": [
+      "documentation-change",
+      "tool-change",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The documentation names available tool categories; it does not establish which tools were enabled for a particular 3.16 session.",
+    "Listing a tool does not demonstrate enforcement of approvals, workspace limits, network limits or rollback."
+  ],
+  "unknowns": [
+    "The exact tool inventory, extensions, plugins, MCP servers and credentials visible to any session are unknown.",
+    "Tool-call limits, indirect side effects and destination coverage were not tested."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

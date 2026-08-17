@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "agent-evidence-currentness-source/0.1-draft",
+  "artifactType": "maintainer-reviewed-official-source-currentness-input",
+  "asOf": "2026-08-17",
+  "reviewedAt": "2026-08-17T08:56:11.212Z",
+  "sourceLinkAudit": {
+    "recordsChecked": 101,
+    "uniqueOfficialUrlsChecked": 249,
+    "reachable": 248,
+    "unreachable": 1,
+    "checkedAt": "2026-08-17T08:57:52.938Z",
+    "state": "complete",
+    "receiptPath": "drafts/research-preview-release/currentness-2026-08-17/official-url-audit.json",
+    "receiptSha256": "b8159079ab9ed3f55b7a666d5d36f36d1efc108c032581ea7f16d8ebf255cc08",
+    "method": "HTTP GET with redirects against every unique named official source URL in the projected 101-record corpus",
+    "boundary": "Reachability is not treated as product behaviour, independent verification or proof that rolling prose is unchanged."
+  },
+  "boundaries": {
+    "publisherSourcesOnly": true,
+    "agentsInstalledOrRun": false,
+    "independentEvidenceCredited": false,
+    "rankings": false,
+    "recommendations": false,
+    "suitabilityCalculations": false,
+    "note": "This refresh rechecked current identity and retention state for every accepted surface on 2026-08-17. It preserves all 98 prior records and adds successors only where an official publisher source establishes a newer exact identity. Rolling runtime, model and effective-configuration applicability remain unresolved."
+  },
+  "unchangedSurfaceKeys": [
+    "ai.factory.droid-computers.service",
+    "ai.factory.droid.cli.release-stream",
+    "ai.mistral.vibe-code.vscode-extension.service",
+    "ai.mistral.vibe-code.web.service",
+    "ai.mistral.vibe.cli.release-stream",
+    "com.alibaba.qwen-code.vscode-extension.beta",
+    "com.amazon.kiro.cli.release-stream",
+    "com.amazon.kiro.ide.desktop-stable",
+    "com.amazon.kiro.web.preview",
+    "com.amazon.q-developer.github.preview",
+    "com.amazon.q-developer.ide-plugins.supported-sunset",
+    "com.anomaly.opencode.cli-tui.stable",
+    "com.anthropic.claude-code.cli.stable",
+    "com.augmentcode.agent.ide.plugins",
+    "com.augmentcode.auggie.cli.release-stream",
+    "com.cline.bot.cli.release-stream",
+    "com.cline.bot.cline.vscode-extension.marketplace",
+    "com.cognition.devin-desktop.cascade.desktop-stable",
+    "com.cognition.devin.hosted.rolling-service",
+    "com.continue.dev.ide-agent.final",
+    "com.cursor.cloud-agents.service",
+    "com.github.anthropic.claude-agent.preview",
+    "com.github.copilot.cli.release-stream",
+    "com.github.copilot.cloud-agent.rolling-service",
+    "com.github.copilot.vscode-agent.local-host",
+    "com.github.openai.codex-agent.preview",
+    "com.gitlab.duo-agent-platform.developer-flow.release-line",
+    "com.gitlab.duo.code-review-flow.release-line",
+    "com.gitlab.duo.software-development-flow.service",
+    "com.google.antigravity.cli.release-stream",
+    "com.google.gemini-code-assist.ide-agent.service",
+    "com.google.gemini.cli.release-stream",
+    "com.google.jules.hosted.rolling-service",
+    "com.jetbrains.junie.cli.beta",
+    "com.lovable.build-mode.hosted.rolling-service",
+    "com.openai.codex.cli.stable",
+    "com.openai.codex.cloud.service",
+    "com.openai.codex.ide-extension.service",
+    "com.replit.agent.hosted.agent-4-service",
+    "com.roocode.vscode-extension.final",
+    "com.sourcegraph.amp.cli.release-stream",
+    "com.stackblitz.bolt.claude-agent.service",
+    "com.tabnine.agent.ide.deployment-lines",
+    "com.vercel.agent.public-beta",
+    "com.vercel.v0.agent.service",
+    "dev.warp.oz.cloud-agents.service",
+    "dev.warp.oz.local-agent.desktop",
+    "dev.zed.agent.native.desktop-stable",
+    "org.aaif.goose.cli.release-stream",
+    "org.aider-ai.aider.cli.stable",
+    "org.openhands.cloud.service",
+    "org.openhands.openhands.cli.stable"
+  ],
+  "transitions": [
+    {
+      "name": "Qwen Code CLI",
+      "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
+      "fromRecordId": "com.alibaba.qwen-code.cli.0-21-12",
+      "toRecordId": "com.alibaba.qwen-code.cli.0-21-13",
+      "fromVersion": "0.21.12",
+      "toVersion": "0.21.13",
+      "releaseTag": "v0.21.13",
+      "releasedAt": "2026-08-17T02:11:15Z",
+      "releaseSource": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.13",
+      "releaseSourceTitle": "Qwen Code v0.21.13 release",
+      "basisSourceIds": [
+        "currentness-qwen-code-cli-v0-21-13"
+      ],
+      "replacements": [
+        [
+          "0-21-12",
+          "0-21-13"
+        ],
+        [
+          "0.21.12",
+          "0.21.13"
+        ],
+        [
+          "v0.21.12",
+          "v0.21.13"
+        ],
+        [
+          "2026-08-14T16:39:48Z",
+          "2026-08-17T02:11:15Z"
+        ]
+      ],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-0-21-13": "Alibaba Cloud Qwen team's official release page identifies Qwen Code CLI v0.21.13, published 2026-08-17T02:11:15Z; no client artifact was installed or independently verified."
+      },
+      "note": "The official release feed identifies v0.21.13 as the latest stable Qwen Code CLI release reviewed on 2026-08-17.",
+      "checkedAt": "2026-08-17T08:56:05.940Z",
+      "reviewedAt": "2026-08-17",
+      "recheckAfter": "2026-09-17"
+    },
+    {
+      "name": "Cursor IDE foreground Agent",
+      "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
+      "fromRecordId": "com.cursor.ide.foreground-agent.3-15",
+      "toRecordId": "com.cursor.ide.foreground-agent.3-16",
+      "fromVersion": "3.15",
+      "toVersion": "3.16",
+      "releaseTag": null,
+      "releasedAt": null,
+      "releaseSource": "https://cursor.com/download",
+      "releaseSourceTitle": "Cursor download archive",
+      "releaseSourceLocator": "Desktop download archive: 3.16 Latest",
+      "basisSourceIds": [
+        "currentness-cursor-ide-3-16"
+      ],
+      "replacements": [
+        [
+          "3-15",
+          "3-16"
+        ],
+        [
+          "3.15",
+          "3.16"
+        ]
+      ],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "release-identity-3-16": "Cursor's official download archive identifies Cursor 3.16 as Latest; no platform package was downloaded, installed or independently verified."
+      },
+      "note": "Cursor's official download archive marks 3.16 as Latest; the platform-specific installed artifact remains unresolved.",
+      "checkedAt": "2026-08-17T08:56:07.261Z",
+      "reviewedAt": "2026-08-17",
+      "recheckAfter": "2026-09-17"
+    },
+    {
+      "name": "Junie IDE plugin",
+      "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
+      "fromRecordId": "com.jetbrains.junie.ide-plugin.262-579-14",
+      "toRecordId": "com.jetbrains.junie.ide-plugin.262-579-20",
+      "fromVersion": "262.579.14",
+      "toVersion": "262.579.20",
+      "releaseTag": "262.579.20",
+      "releasedAt": "2026-08-17T05:38:00Z",
+      "releaseSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1141035",
+      "releaseSourceTitle": "Update Details - Junie 262.579.20",
+      "releaseSourceLocator": "Stable update 1141035, version 262.579.20, dated 2026-08-17",
+      "basisSourceIds": [
+        "currentness-junie-plugin-262-579-20"
+      ],
+      "replacements": [
+        [
+          "262-579-14",
+          "262-579-20"
+        ],
+        [
+          "262.579.14",
+          "262.579.20"
+        ],
+        [
+          "1138682",
+          "1141035"
+        ],
+        [
+          "2026-08-14T00:00:00Z",
+          "2026-08-17T05:38:00Z"
+        ]
+      ],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-262-579-20": "JetBrains Marketplace's official stable update page identifies Junie IDE plugin 262.579.20, published 2026-08-17T05:38:00Z; no plugin artifact was installed or independently verified."
+      },
+      "note": "JetBrains Marketplace identifies stable Junie IDE plugin update 1141035 as version 262.579.20, published 2026-08-17.",
+      "checkedAt": "2026-08-17T08:56:08.089Z",
+      "reviewedAt": "2026-08-17",
+      "recheckAfter": "2026-09-17"
+    }
+  ]
+}

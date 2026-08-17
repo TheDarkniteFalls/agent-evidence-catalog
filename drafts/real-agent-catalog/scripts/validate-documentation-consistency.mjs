@@ -7,8 +7,8 @@ const read = (relativePath) => readFile(path.join(packageRoot, relativePath), "u
 const readJson = async (relativePath) => JSON.parse(await read(relativePath));
 const preview = await readJson("drafts/real-agent-catalog/research-preview/catalog.json");
 const lifecycle = await readJson("drafts/real-agent-catalog/research-preview/lifecycle.json");
-const snapshotSeal = await readJson("drafts/research-preview-release/currentness-2026-08-15/snapshot-seal.json");
-const freshnessCensus = await readJson("drafts/research-preview-release/currentness-2026-08-15/publication-freshness-census.json");
+const snapshotSeal = await readJson("drafts/research-preview-release/currentness-2026-08-17/snapshot-seal.json");
+const freshnessCensus = await readJson("drafts/research-preview-release/currentness-2026-08-17/publication-freshness-census.json");
 
 const documents = {
   root: await read("README.md"),
@@ -22,8 +22,9 @@ const documents = {
   currentnessAudit: await read("drafts/real-agent-catalog/CURRENTNESS_LIFECYCLE_AUDIT.md"),
   priorCurrentnessReceipt: await read("drafts/research-preview-release/currentness-2026-08-02/CURRENTNESS_RECEIPT.md"),
   currentnessReceipt: await read("drafts/research-preview-release/currentness-2026-08-09/CURRENTNESS_RECEIPT.md"),
-  priorLatestCurrentnessReceipt: await read("drafts/research-preview-release/currentness-2026-08-13/CURRENTNESS_RECEIPT.md"),
-  latestCurrentnessReceipt: await read("drafts/research-preview-release/currentness-2026-08-15/CURRENTNESS_RECEIPT.md"),
+  earlierCurrentnessReceipt: await read("drafts/research-preview-release/currentness-2026-08-13/CURRENTNESS_RECEIPT.md"),
+  priorLatestCurrentnessReceipt: await read("drafts/research-preview-release/currentness-2026-08-15/CURRENTNESS_RECEIPT.md"),
+  latestCurrentnessReceipt: await read("drafts/research-preview-release/currentness-2026-08-17/CURRENTNESS_RECEIPT.md"),
   schemaRetrospective: await read("drafts/real-agent-catalog/SCHEMA_RETROSPECTIVE.md"),
   claimsMethod: await read("docs/claims-first-mvp.md"),
   pilotMethod: await read("docs/real-agent-mvp-pilot.md"),
@@ -45,13 +46,13 @@ for (const phrase of [
   "research-preview/compare.html",
   "accepted category strings are exactly equal"
 ]) assert(documents.root.includes(phrase), `Root README is missing ${phrase}`);
-for (const phrase of ["sealed official-source review snapshot", "53 records current within the snapshot", "45 non-current records", "42 superseded identities", "98 records total", "publication freshness census"]) {
+for (const phrase of ["sealed official-source review snapshot", "53 records current within the snapshot", "48 non-current records", "45 superseded identities", "101 records total", "publication freshness census"]) {
   assert(documents.root.includes(phrase), `Root README is missing sealed-snapshot truth: ${phrase}`);
 }
 
 for (const phrase of [
   "55 coding-agent surface keys",
-  "98 presentable record files",
+  "101 presentable record files",
   "zero independent tests",
   "Codex CLI 0.147.0",
   "primary readers are researchers, builders and maintainers",
@@ -60,19 +61,21 @@ for (const phrase of [
   "rawRecord.claim.category",
   "Record unavailable"
 ]) assert(documents.method.includes(phrase), `Research-preview method is missing ${phrase}`);
-for (const phrase of ["sealed source-review snapshot", "publication-time currency", "42 superseded records", "publication freshness census"]) {
+for (const phrase of ["sealed source-review snapshot", "publication-time currency", "45 superseded records", "publication freshness census"]) {
   assert(documents.method.includes(phrase), `Research-preview method is missing sealed-snapshot truth: ${phrase}`);
 }
-assert(documents.readiness.includes("Ten exact-identity successors"), "Publication readiness must report all ten exact-identity successors");
-assert(!documents.readiness.includes("Nine exact-identity successors"), "Publication readiness retains the superseded nine-successor count");
+assert(documents.readiness.includes("Three exact-identity successors"), "Publication readiness must report all three 2026-08-17 exact-identity successors");
 
 for (const phrase of ["55-surface currentness receipt", "Every accepted surface was rechecked", "Twelve newer exact identities"]) {
   assert(documents.currentnessReceipt.includes(phrase), `Currentness receipt is missing ${phrase}`);
 }
 for (const phrase of ["55-surface currentness receipt", "Every accepted surface was rechecked", "15 newer exact identities", "all 73 prior records remain inspectable"]) {
-  assert(documents.priorLatestCurrentnessReceipt.includes(phrase), `Preserved 2026-08-13 currentness receipt is missing ${phrase}`);
+  assert(documents.earlierCurrentnessReceipt.includes(phrase), `Preserved 2026-08-13 currentness receipt is missing ${phrase}`);
 }
 for (const phrase of ["55-surface currentness receipt", "Every accepted surface was rechecked", "10 newer exact identities", "all 88 prior records remain inspectable"]) {
+  assert(documents.priorLatestCurrentnessReceipt.includes(phrase), `Preserved 2026-08-15 currentness receipt is missing ${phrase}`);
+}
+for (const phrase of ["55-surface currentness receipt", "Every accepted surface was rechecked", "3 newer exact identities", "all 98 prior records remain inspectable"]) {
   assert(documents.latestCurrentnessReceipt.includes(phrase), `Latest currentness receipt is missing ${phrase}`);
 }
 for (const phrase of ["All 16 reviewed surfaces", "Three material transitions", "Unresolved current identities: none"]) {
@@ -83,12 +86,12 @@ assert(documents.currentnessAudit.includes("20 records across"), "Preserved pre-
 assert.equal(preview.counts.surfaces, 55);
 assert.equal(preview.counts.currentLifecycleRecords, 53);
 assert.equal(preview.counts.currentRecordsPresented, 53);
-assert.equal(preview.counts.recordsPresentedIncludingHistory, 98);
+assert.equal(preview.counts.recordsPresentedIncludingHistory, 101);
 assert.equal(preview.counts.independentTestsCredited, 0);
-assert.equal(lifecycle.entries.length, 98);
+assert.equal(lifecycle.entries.length, 101);
 assert.deepEqual(preview.gates, {});
-assert.equal(preview.surfaces.flatMap((surface) => surface.history).length, 45);
-assert.deepEqual(snapshotSeal.catalogCounts, { surfaces: 55, current: 53, total: 98, nonCurrent: 45, superseded: 42, historical: 2, discontinued: 1 });
+assert.equal(preview.surfaces.flatMap((surface) => surface.history).length, 48);
+assert.deepEqual(snapshotSeal.catalogCounts, { surfaces: 55, current: 53, total: 101, nonCurrent: 48, superseded: 45, historical: 2, discontinued: 1 });
 assert.equal(freshnessCensus.counts.surfaces, 55);
 assert.equal(freshnessCensus.counts.knownNewer, freshnessCensus.entries.filter((entry) => entry.status === "known-newer").length);
 assert.equal(freshnessCensus.counts.incompleteCoverage, freshnessCensus.entries.filter((entry) => entry.status.startsWith("incomplete-")).length);
@@ -174,6 +177,6 @@ for (const phrase of ["Refresh workflow", "Inventory expansion", "Concept and pr
   assert(documents.roadmap.includes(phrase), `Roadmap is missing ${phrase}`);
 }
 
-console.log("PASS documentation agrees on 55 surfaces, 98 lifecycle entries, 53 current cards and 45 explicit-history records");
+console.log("PASS documentation agrees on 55 surfaces, 101 lifecycle entries, 53 current cards and 48 explicit-history records");
 console.log(`PASS ${checkedSources} preview source links are HTTPS, publisher-attributed, non-search URLs and claim-linked`);
 console.log("PASS visitor-facing navigation, quiet global footers and demoted technical documentation links match their source files");
