@@ -11,7 +11,7 @@
     "com.anthropic.claude-code.cli.2-1-233",
     "com.openai.codex.cli.0-147-0",
     "com.github.copilot.cli.1-0-80",
-    "com.cursor.ide.foreground-agent.3-15"
+    "com.cursor.ide.foreground-agent.3-16"
   ]);
   const recognizableStartingOrder = new Map(recognizableStartingRecordIds.map((recordId, index) => [recordId, index]));
   const summariesById = new Map(data.previewRecords.map((record) => [record.recordId, record]));

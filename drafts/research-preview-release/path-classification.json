@@ -1,12 +1,12 @@
 {
   "schemaVersion": "research-preview-path-classification/0.1",
-  "asOf": "2026-08-15",
+  "asOf": "2026-08-17",
   "repository": "agent-evidence-catalog",
   "classificationRule": "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
   "counts": {
-    "accepted-evidence-provenance": 835,
-    "canonical-source": 84,
-    "generated-publication-output": 262,
+    "accepted-evidence-provenance": 861,
+    "canonical-source": 91,
+    "generated-publication-output": 268,
     "release-control-artifact": 44,
     "retained-experiment": 87
   },
@@ -570,6 +570,18 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.alibaba.qwen-code.cli.0-21-13.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.alibaba.qwen-code.cli.0-21-13.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.alibaba.qwen-code.cli.0-21-7.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
@@ -1050,6 +1062,18 @@
       "rationale": "Generated static publication output."
     },
     {
+      "path": "dist/research-preview/records/com.cursor.ide.foreground-agent.3-16.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.cursor.ide.foreground-agent.3-16.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
       "path": "dist/research-preview/records/com.github.anthropic.claude-agent.preview-rolling.html",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
@@ -1357,6 +1381,18 @@
     },
     {
       "path": "dist/research-preview/records/com.jetbrains.junie.ide-plugin.262-579-14.json",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.jetbrains.junie.ide-plugin.262-579-20.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/research-preview/records/com.jetbrains.junie.ide-plugin.262-579-20.json",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -7474,6 +7510,204 @@
       "classification": "canonical-source",
       "publicationBoundary": "git-research-or-source-only",
       "rationale": "Deterministic official-source currentness refresh builder, validator or link auditor."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/CURRENTNESS_RECEIPT.md",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/audit-official-source-links.mjs",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Repeatable official-source currentness capture, builder, validator, census or link auditor."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/build-currentness.mjs",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Repeatable official-source currentness capture, builder, validator, census or link auditor."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/capture-currentness.mjs",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Repeatable official-source currentness capture, builder, validator, census or link auditor."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.alibaba.qwen-code.cli.0-21-13/delivery-boundary-current.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.alibaba.qwen-code.cli.0-21-13/identity-0-21-13.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/agent-modes-current.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/agents-window-targets-3-0.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/auto-review-3-6.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/auto-review-current.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/backend-request-path-current.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/cursor-router-current.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/mcp-approval-current.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/native-terminal-current.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/platform-downloads-3-16.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/privacy-mode-current.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/release-identity-3-16.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.cursor.ide.foreground-agent.3-16/tool-inventory-current.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.jetbrains.junie.ide-plugin.262-579-20/delivery-boundary-current.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/claims/com.jetbrains.junie.ide-plugin.262-579-20/identity-262-579-20.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/currentness-receipt.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/currentness-source.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/finalize-source-link-audit.mjs",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Repeatable official-source currentness capture, builder, validator, census or link auditor."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/official-source-audit.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/official-url-audit.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/publication-freshness-census.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/records/com.alibaba.qwen-code.cli.0-21-13.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/records/com.cursor.ide.foreground-agent.3-16.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/records/com.jetbrains.junie.ide-plugin.262-579-20.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/run-publication-freshness-census.mjs",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Repeatable official-source currentness capture, builder, validator, census or link auditor."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/snapshot-seal.json",
+      "classification": "accepted-evidence-provenance",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/validate-currentness.mjs",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Repeatable official-source currentness capture, builder, validator, census or link auditor."
+    },
+    {
+      "path": "drafts/research-preview-release/currentness-2026-08-17/write-browser-qa-receipt.mjs",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Repeatable official-source currentness capture, builder, validator, census or link auditor."
     },
     {
       "path": "drafts/research-preview-release/path-classification.json",

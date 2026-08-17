@@ -1,292 +1,119 @@
 {
-  "schemaVersion": "research-preview-browser-qa/0.7",
-  "asOf": "2026-08-15",
-  "checkedAt": "2026-08-16T01:28:16.926Z",
+  "schemaVersion": "research-preview-browser-qa/0.8",
+  "asOf": "2026-08-17",
+  "checkedAt": "2026-08-17T09:18:53.209Z",
   "loopback": {
     "url": "http://localhost:4173/",
     "listener": "localhost:4173",
     "listenerVerified": true,
-    "browserNavigation": "PASS",
-    "managedShellCurl": "failed in the managed shell after listener verification; in-app Browser and local headless Chrome navigation passed"
+    "browser": "Codex in-app Browser",
+    "browserNavigation": "PASS"
   },
   "sourceDigests": {
-    "landingHtmlSha256": "2b5284558ccba322b9f5865157079504a8413198f9668b36b3807dd21a4bb7fb",
-    "previewHtmlSha256": "dc956dbec31dc0f4d21cc6a64819b4f5dc8d074d7d24afd8d77cfd11fdbb7b1b",
-    "howItWorksHtmlSha256": "11fde459b0f2a5fd893edcb54d4595ffba7f34a3d2ea565e5c0d9e1eb297a3e3",
-    "previewDataSha256": "46d65bdbf88fe50beece57911ed61850f6911a1c17cd754dd2e6435c24125625",
+    "landingHtmlSha256": "b935b1ef0d2dd64d53a65b78ec7225eb283614147fd11aba77bfed15ce9fc641",
+    "previewHtmlSha256": "88744ba9cf923ba02bf160960210028b9324b217d026c3900d0737645d70cb9e",
+    "howItWorksHtmlSha256": "3475acd861a7ecae8219d0c7bf54e63a6cfba753455f8e4622817a18aff610d7",
+    "previewDataSha256": "d92ac878882c3170a67ccb5108eea7a75bb35b2f52cae6ec0d756c0fe61e1eb7",
     "previewAppSha256": "ebb47482f7d2a12a1c60d1666acc479976bb6a2c34979b0d130b2e661435d21f",
-    "comparisonHtmlSha256": "55ddde664da30d3671423f7f24e26b3a6a43a671b959d4c38a3020817dc32d1f",
+    "comparisonHtmlSha256": "c25cc8ca174f0a42d438a7e5fb791947b00b607172725753cb4e00617201259b",
     "comparisonCoreSha256": "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e",
-    "comparisonAppSha256": "04caab550fffd5652d5a283a3e5a9236fcf33c704105396deb9864920e93b974",
+    "comparisonAppSha256": "60922091477020eab24527ae406b3f8b290fc7e9f80d649fcb1916981793afc0",
     "recordDetailAppSha256": "adc6da13fc9f3fc734d95ba55a21ffd6591da8bd843901ec9851a4467213a45d",
     "previewStylesSha256": "4920f88607a74785db174f69cf2071b05869971f858227ce45012c7cdc834285",
-    "recordDetailsManifestSha256": "4539658b4fbe62e38789e4b44e1e2f62ccc5d60c3304de277e0f37d9a2fc9ab2"
+    "recordDetailsManifestSha256": "d9c273bb705607762c1d7dc487f46876b0284bfd66f12c5b4fea6f55b79718fa",
+    "sitemapSha256": "2b2f23a589d8459bb3aa26ec6684220d35271b9019e30d84be363953d2b5c183"
   },
-  "viewportEnvironment": {
-    "exactViewportRunner": "Google Chrome 151.0.7922.138 through bundled Playwright",
-    "mobileRequested": {
-      "width": 390,
-      "height": 844
+  "snapshot": {
+    "sourceReviewWindow": {
+      "startedAt": "2026-08-17T08:56:05.909Z",
+      "completedAt": "2026-08-17T08:56:11.212Z"
     },
-    "mobileObservedCss": {
-      "width": 390,
-      "height": 844
+    "sourceLinkAuditWindow": {
+      "startedAt": "2026-08-17T08:57:16.896Z",
+      "completedAt": "2026-08-17T08:57:52.938Z"
     },
-    "mobileDevicePixelRatio": 1,
-    "narrowMobileRequested": {
-      "width": 320,
-      "height": 700
-    },
-    "narrowMobileObservedCss": {
-      "width": 320,
-      "height": 700
-    },
-    "narrowMobileDevicePixelRatio": 1,
-    "inAppBrowserCrossCheck": {
-      "adjacentMobileObservedCss": { "width": 391, "height": 844 },
-      "narrowMobileObservedCss": { "width": 320, "height": 700 },
-      "consoleErrors": 0,
-      "consoleWarnings": 0
-    }
-  },
-  "sealedSnapshotPublicationSemantics": {
-    "result": "PASS",
-    "snapshot": {
-      "sourceReviewStartedAt": "2026-08-15T02:08:35.493Z",
-      "sourceReviewCompletedAt": "2026-08-15T02:14:02.006Z",
-      "sealedAt": "2026-08-15T02:19:02.402Z"
+    "sealedAt": "2026-08-17T08:57:52.938Z",
+    "catalogCounts": {
+      "surfaces": 55,
+      "current": 53,
+      "total": 101,
+      "nonCurrent": 48,
+      "superseded": 45,
+      "historical": 2,
+      "discontinued": 1
     },
     "publicationCheck": {
-      "startedAt": "2026-08-15T06:29:16.919Z",
-      "completedAt": "2026-08-15T06:29:26.166Z",
+      "startedAt": "2026-08-17T08:59:30.592Z",
+      "completedAt": "2026-08-17T08:59:37.955Z",
       "surfaces": 55,
       "uniqueOfficialSources": 52,
       "reachable": 55,
       "unreachable": 0,
-      "knownNewer": 1,
+      "currentnessComparable": 2,
+      "knownNewer": 0,
+      "noNewerIdentityProven": 2,
       "incompleteCoverage": 53
     },
-    "banner": {
-      "rendered": true,
-      "readableSnapshotTimeRendered": true,
-      "releaseVolatilityBoundaryRendered": true,
-      "knownUpdateMarkerBoundaryRendered": true,
-      "howUpdatesLinkRendered": true,
-      "rawIsoAndPublicationCensusAbsent": true
+    "bannerCopy": "Catalog snapshot: 17 August 2026, 08:57 UTC. Agent releases change quickly; records with known updates are marked.",
+    "cacheBustingVersion": "2026-08-17-sealed-snapshot"
+  },
+  "journeys": {
+    "landing": {
+      "result": "PASS",
+      "headline": "Compare agent claims, source by source.",
+      "currentPickerRecords": 53,
+      "defaultSelectionCount": 0,
+      "firstChoiceNames": [
+        "Claude Code CLI",
+        "OpenAI Codex CLI",
+        "GitHub Copilot CLI",
+        "Cursor IDE foreground Agent"
+      ],
+      "firstChoiceIdentities": [
+        "2.1.233",
+        "0.147.0",
+        "1.0.80",
+        "3.16"
+      ],
+      "navigation": [
+        "Catalog",
+        "Compare claims",
+        "How it works"
+      ],
+      "desktopHorizontalOverflow": false,
+      "mobileHorizontalOverflow": false,
+      "mobileOrderedSlots": 4,
+      "mobileSlotRows": 2,
+      "mobileActionVisible": true
     },
-    "knownNewerRecord": {
-      "recordId": "com.cursor.ide.foreground-agent.3-15",
-      "reviewedIdentity": "3.15",
-      "knownNewerIdentity": "3.16",
-      "officialSource": "https://cursor.com/download",
-      "checkedAt": "2026-08-15T06:29:20.082Z",
-      "catalogNoticeRendered": true,
-      "recordNoticeRendered": true,
-      "sealedIdentityUnchanged": true
-    },
-    "unaffectedRecord": {
-      "recordId": "com.alibaba.qwen-code.cli.0-21-12",
-      "heading": "Qwen Code CLI 0.21.12",
-      "perRecordKnownNewerNoticeCount": 0,
-      "snapshotBannerRendered": true
-    },
-    "interactions": {
-      "cursorSearchResultCount": "2 of 53 current records",
-      "qwenSearchResultCount": "1 of 53 current records",
+    "catalog": {
+      "result": "PASS",
+      "surfaces": 55,
+      "currentCards": 53,
+      "historyCards": 48,
       "historyCollapsedInitially": true,
       "historyExpandedOnRequest": true,
-      "knownNewerDetailNavigation": true,
-      "unaffectedDetailNavigation": true
-    },
-    "responsive": {
-      "desktopRequested": { "width": 1440, "height": 900 },
-      "desktopObservedCss": { "width": 1600, "height": 1000 },
+      "qwenSearchResultCount": "2 of 53 current records",
+      "qwenCurrentIdentity": "0.21.13",
+      "knownUpdateNotices": 0,
       "desktopHorizontalOverflow": false,
-      "mobileRequested": { "width": 390, "height": 844 },
-      "mobileObservedCss": { "width": 433, "height": 938 },
-      "mobileHorizontalOverflow": false,
-      "mobileNavigationCollapsed": true
+      "mobileHorizontalOverflow": false
     },
-    "cacheBusting": {
-      "snapshotDataVersion": "2026-08-15-sealed-snapshot",
-      "visitorScriptVersion": "2026-08-16-visitor-ia-1",
-      "visitorStyleVersion": "2026-08-16-visitor-ia-2",
-      "catalogAssets": ["data.js", "comparison-core.js", "app.js"],
-      "recordAssets": ["data.js", "comparison-core.js", "record-detail.js"],
-      "verifiedInBrowser": true
-    },
-    "console": {
-      "errors": 0,
-      "warnings": 0
-    }
-  },
-  "remediationAuthorQa": {
-    "workstream": "AEC-SNAPSHOT-PUBLICATION-SEMANTICS-01-REMEDIATION-AUTHOR",
-    "result": "PASS",
-    "checkedAt": "2026-08-15T09:01:48.870Z",
-    "publicationBanner": {
-      "rendered": true,
-      "exactSnapshotWindowRendered": true,
-      "publicationCheckTimeRendered": true,
-      "knownNewerCountRendered": true,
-      "incompleteCoverageRendered": true
-    },
-    "boltRecord": {
-      "recordId": "com.stackblitz.bolt.claude-agent.rolling",
-      "heading": "Claude Agent in Bolt Rolling Service",
-      "catalogSearchResultCount": "1 of 53 current records",
-      "navigatedFromCatalog": true,
-      "exactDate": "2026-08-03",
-      "exactDateOccurrences": 2,
-      "exactStatementRendered": true,
-      "staleSnapshotRelativeWordingAbsent": true,
-      "desktopHorizontalOverflow": false,
-      "mobileHorizontalOverflow": false,
-      "mobileBannerVisible": true,
-      "cacheBustingVersion": "2026-08-15-sealed-snapshot"
-    },
-    "console": {
-      "errors": 0,
-      "warnings": 0
-    }
-  },
-  "wideWorkspaceAuthorQa": {
-    "workstream": "AEC-COMPARISON-WIDE-WORKSPACE-01-AUTHOR",
-    "result": "PASS",
-    "checkedAt": "2026-08-15T21:58:24.000Z",
-    "desktop": {
-      "observedCss": {
-        "width": 1707,
-        "height": 960
-      },
-      "mainWidthPx": 1504,
-      "finderWidthPx": 342,
-      "workspaceWidthPx": 1052,
-      "orderedSlots": 4,
-      "emptyStateIntegratedWithWorkspace": true,
-      "activeMatrixVisible": true,
-      "bodyHorizontalOverflow": false,
-      "redundantStickyTrayHidden": true
-    },
-    "mobile": {
-      "observedCss": {
-        "width": 391,
-        "height": 844
-      },
-      "orderedSlots": 4,
-      "slotLayout": "2x2",
-      "bodyHorizontalOverflow": false,
-      "matrixScrollable": true,
-      "stickyTrayVisible": true,
-      "stickyTrayClipping": false,
-      "navigationMenuOpened": true
-    },
-    "interactions": {
-      "selectedFactoryManagedDroidComputers": true,
-      "selectedQwenCodeCli": true,
-      "orderedSelectionPersistedInUrl": true,
-      "compareActionScrolledMatrixIntoView": true
-    },
-    "imagegenFidelity": {
-      "narrowFinderAndFlexibleWorkspace": true,
-      "persistentFourSlotRail": true,
-      "matrixDominatesActiveWorkspace": true,
-      "mobileStackAndFixedAction": true,
-      "existingEvidenceSemanticsPreserved": true
-    },
-    "console": {
-      "errors": 0,
-      "warnings": 0
-    }
-  },
-  "recognizableFirstVisitAuthorQa": {
-    "workstream": "AEC-COMPARISON-RECOGNIZABLE-START-01-AUTHOR",
-    "result": "PASS",
-    "checkedAt": "2026-08-15T22:13:51.000Z",
-    "orderingPolicy": "Recognizable editorial starting set; not a ranking, recommendation or endorsement.",
-    "recordIds": [
-      "com.anthropic.claude-code.cli.2-1-233",
-      "com.openai.codex.cli.0-147-0",
-      "com.github.copilot.cli.1-0-80",
-      "com.cursor.ide.foreground-agent.3-15"
-    ],
-    "recordNames": [
-      "Claude Code CLI",
-      "OpenAI Codex CLI",
-      "GitHub Copilot CLI",
-      "Cursor IDE foreground Agent"
-    ],
-    "desktop": {
-      "observedCss": {
-        "width": 2048,
-        "height": 1365
-      },
-      "currentPickerRecords": 53,
-      "defaultSelectedRecords": 0,
-      "orderedSlots": 4,
-      "bodyHorizontalOverflow": false,
-      "emptyStateVisible": true
-    },
-    "mobile": {
-      "observedCss": {
-        "width": 391,
-        "height": 844
-      },
-      "currentPickerRecords": 53,
-      "defaultSelectedRecords": 0,
-      "orderedSlots": 4,
-      "bodyHorizontalOverflow": false,
-      "navigationToggleVisible": true
-    },
-    "interaction": {
-      "landingRouteVerified": true,
-      "selectedRecordIds": [
+    "comparison": {
+      "result": "PASS",
+      "representativePair": [
         "com.anthropic.claude-code.cli.2-1-233",
         "com.openai.codex.cli.0-147-0"
       ],
-      "matrixRendered": true,
-      "orderedSelectionPersistedInUrl": true
-    },
-    "allOtherCurrentRecordsRetainedInCanonicalOrder": true,
-    "console": {
-      "errors": 0,
-      "warnings": 0
-    }
-  },
-  "visitorFacingMethodAuthorQa": {
-    "workstream": "AEC-USER-FACING-METHOD-01-REMEDIATION-01-AUTHOR",
-    "result": "PASS",
-    "checkedAt": "2026-08-16T01:28:16.926Z",
-    "baseHead": "4b7d8d38d08f22336b1e38620e524fc9d22b71b5",
-    "viewportEnvironment": {
-      "exactViewportRunner": "Google Chrome 151.0.7922.138 through bundled Playwright",
-      "mobileRequested": { "width": 390, "height": 844 },
-      "mobileObservedCss": { "width": 390, "height": 844 },
-      "mobileDevicePixelRatio": 1,
-      "narrowMobileRequested": { "width": 320, "height": 700 },
-      "narrowMobileObservedCss": { "width": 320, "height": 700 },
-      "narrowMobileDevicePixelRatio": 1
-    },
-    "navigation": {
-      "labels": ["Catalog", "Compare claims", "How it works"],
-      "rootActive": "Compare claims",
-      "catalogActive": "Catalog",
-      "comparisonActive": "Compare claims",
-      "howItWorksActive": "How it works",
-      "recordActive": "Catalog",
-      "desktopAndMobileConsistent": true,
-      "mobileMenuOpened": true
-    },
-    "snapshot": {
-      "renderedCopy": "Catalog snapshot: 15 August 2026, 02:19 UTC. Agent releases change quickly; records with known updates are marked. How updates work →",
-      "derivedFromRetainedSeal": "2026-08-15T02:19:02.402Z",
-      "rawIsoTimestampAbsent": true,
-      "publicationCensusCountsAbsent": true,
-      "technicalReceiptJargonAbsent": true,
-      "knownUpdateRecordId": "com.cursor.ide.foreground-agent.3-15",
-      "catalogAndRecordNoticeRendered": true
+      "representativePairOfficialSourceLinks": 20,
+      "urlPersistsAcrossReload": true,
+      "maximumSelectedRecords": 4,
+      "activeFourRecordMatrixRows": 41,
+      "mobileMatrixInternalOverflow": true,
+      "mobileBodyHorizontalOverflow": false
     },
     "howItWorks": {
+      "result": "PASS",
       "sections": [
         "Start with the exact identity",
         "Follow each claim to its source",
@@ -296,264 +123,9 @@
         "What AEC does not establish",
         "Inspect the evidence or suggest a correction"
       ],
-      "observedBehaviourQualitySafetySuitabilityBoundaryRendered": true,
       "technicalDocumentationClosedInitially": true,
-      "technicalDocumentationOpenedOnRequest": true,
       "desktopHorizontalOverflow": false,
       "mobileHorizontalOverflow": false
-    },
-    "records": {
-      "desktopPagesAudited": 98,
-      "desktopFailureRecordIds": [],
-      "mobilePagesAudited": 98,
-      "mobileFailureRecordIds": [],
-      "narrowMobileRepresentativeRecordId": "com.cursor.ide.foreground-agent.3-15",
-      "narrowMobileFailureRecordIds": [],
-      "documentAndBodyWidthsContained": true,
-      "globalOverflowConcealmentAbsent": true,
-      "croppedContentFailures": 0,
-      "versionStatusRendered": true,
-      "versionHistoryRendered": true,
-      "legacyLifecycleLabelsAbsent": true
-    },
-    "comparisonPreservation": {
-      "firstChoiceNames": [
-        "Claude Code CLI",
-        "OpenAI Codex CLI",
-        "GitHub Copilot CLI",
-        "Cursor IDE foreground Agent"
-      ],
-      "statusAndReviewDateRowRendered": true,
-      "wideWorkspacePreserved": true,
-      "pageHorizontalOverflow": false
-    },
-    "focusAndSemantics": {
-      "nativeSummaryAndLinkControls": true,
-      "mobileMenuSummaryFocusVisible": true,
-      "mobileNavigationLinkFocusVisible": true,
-      "positiveTabindexOverrides": 0,
-      "unlabelledButtons": 0,
-      "unlabelledInputs": 0
-    },
-    "concepts": {
-      "headerSnapshotSha256": "db586e65ee443936c8babc1e0bb200335e6534d9218d00118ed52d8d4a4bbe30",
-      "howItWorksDesktopSha256": "5efe39e565ffd59bae5099f5826b1bf43fccb088b67e36a04071fec2181db301",
-      "howItWorksMobileSha256": "48e8e1b26e76c2033d2ede4daff5a087eeb93e8514a6895835d009b88fcf1f4f"
-    },
-    "screenshots": {
-      "headerSnapshotDesktopSha256": "160ac68e35974a5ae38aa3c6af0a1b0163a1a99154df9b6103dce8053b00c191",
-      "headerSnapshotMobileMenuOpenSha256": "6c184a2eaaa5370f5116314fb2f26e9bd882a529bdeace32b59f9a71478207d6",
-      "howItWorksDesktopTopSha256": "187c45dbb45d1fbad9a12ebe8838e42418d8d4a987dc271d4380c7a477c29d48",
-      "howItWorksDesktopBottomSha256": "329abc0baa101330c4ef0c1d2fea199c9ebc4b4ac824b6419e1fc0cd624952d5",
-      "howItWorksMobileTopSha256": "9aeb6c52dfaccc4c89a78f7268e1f41343e1bebd27df3059e697b3d2fe0576d9",
-      "howItWorksMobileBottomSha256": "02fa79410496f504582fb3ecaf2f58472b0fc58839b7eceeff738f50caf2690b",
-      "knownUpdateRecordDesktopSha256": "f8903a8ef868500d7b77b9f62623feedcd21d9d19cd15b5cb2547ef0e844684e",
-      "knownUpdateRecordMobileSha256": "3c604751c1120fdd6bee7ebc1810a3ebc69575fcb0e2aea0b8f07d7fd3941ef0",
-      "comparisonWorkspaceDesktopSha256": "4d97c61ea7132c13c2fc311d3986e209b19b66b46fd9d2b04652a22314fe0bb1"
-    },
-    "console": {
-      "errors": 0,
-      "warnings": 0
-    }
-  },
-  "journeys": {
-    "landing": {
-      "result": "PASS",
-      "mode": "comparison-first",
-      "headline": "Compare agent claims, source by source.",
-      "primaryNavigation": "Compare claims",
-      "currentPickerRecords": 53,
-      "defaultSelectionCount": 0,
-      "directEntryViewports": [
-        {
-          "horizontalOverflow": false,
-          "observedCss": {
-            "height": 600,
-            "width": 1066
-          },
-          "pickerRecords": 53,
-          "requested": {
-            "height": 540,
-            "width": 960
-          },
-          "selectedRecords": 0
-        },
-        {
-          "horizontalOverflow": false,
-          "navToggleVisible": true,
-          "observedCss": {
-            "height": 844,
-            "width": 391
-          },
-          "pickerRecords": 53,
-          "requested": {
-            "height": 760,
-            "width": 352
-          },
-          "selectedRecords": 0
-        }
-      ],
-      "shareableComparison": {
-        "selectedRecords": 2,
-        "exactCategoryRows": 17,
-        "acceptedClaims": 20,
-        "directOfficialSourceLinks": 20,
-        "horizontalOverflow": false
-      }
-    },
-    "catalog": {
-      "result": "PASS",
-      "surfaceCount": 55,
-      "currentCards": 53,
-      "historyCards": 45,
-      "historyCollapsedInitially": true,
-      "historyExpandedOnRequest": true,
-      "rawJsonTargetsChecked": 98,
-      "desktopHorizontalOverflow": false,
-      "mobileHorizontalOverflow": false,
-      "firstScreen": {
-        "landingEntryTarget": "research-preview/#catalog-controls",
-        "filtersBeforeCoverageCounts": true,
-        "coverageBoundary": "Coverage counts, not quality scores. These totals describe catalog documentation; they do not rank agents or establish quality, safety or suitability.",
-        "directEntryViewports": [
-          {
-            "comparisonCtaBottomPx": 422.51737213134766,
-            "comparisonCtaTopPx": 380.5208435058594,
-            "comparisonCtaWithinFirstViewport": true,
-            "deliveryBottomPx": 549.8003578186035,
-            "deliveryTopPx": 503.8020935058594,
-            "deliveryWithinFirstViewport": true,
-            "horizontalOverflow": false,
-            "observedCss": {
-              "height": 600,
-              "width": 1066
-            },
-            "requested": {
-              "height": 540,
-              "width": 960
-            },
-            "searchBottomPx": 549.8003578186035,
-            "searchTopPx": 503.8020935058594,
-            "searchWithinFirstViewport": true
-          },
-          {
-            "comparisonCtaBottomPx": 502.7083549499512,
-            "comparisonCtaTopPx": 455.10418701171875,
-            "comparisonCtaWithinFirstViewport": true,
-            "deliveryBottomPx": 754.9827003479004,
-            "deliveryTopPx": 708.9844360351562,
-            "deliveryWithinFirstViewport": true,
-            "horizontalOverflow": false,
-            "observedCss": {
-              "height": 844,
-              "width": 391
-            },
-            "requested": {
-              "height": 760,
-              "width": 352
-            },
-            "searchBottomPx": 673.3941383361816,
-            "searchTopPx": 627.3958740234375,
-            "searchWithinFirstViewport": true
-          }
-        ],
-        "anchoredEntry": {
-          "observedCss": {
-            "height": 600,
-            "width": 1066
-          },
-          "searchBottomPx": 127.57812881469727,
-          "searchTopPx": 81.57986450195312,
-          "searchWithinFirstViewport": true
-        }
-      },
-      "contextRoundTrip": {
-        "search": "Qwen",
-        "delivery": "hybrid",
-        "resultCards": 2,
-        "openedRecordId": "com.alibaba.qwen-code.cli.0-21-12",
-        "detailReturnLinkCarriedContext": true,
-        "returnRestoredSearchAndDelivery": true
-      }
-    },
-    "comparison": {
-      "result": "PASS",
-      "pickerCurrentRecords": 53,
-      "defaultSelectedRecords": 0,
-      "maximumSelectedRecords": 4,
-      "urlContract": {
-        "selection": "agents=<recordId>,<recordId>",
-        "claimFilter": "claim=<text>",
-        "differences": "differences=1",
-        "persistence": "URL and memory only",
-        "reloadPreservesOrderFilterAndDifferences": true
-      },
-      "representativePair": {
-        "recordIds": [
-          "com.anthropic.claude-code.cli.2-1-233",
-          "com.openai.codex.cli.0-147-0"
-        ],
-        "projectedAcceptedClaims": 20,
-        "directOfficialSourceLinks": 20,
-        "exactCategoryRows": 17,
-        "missingExactCategoryCells": 14,
-        "everyClaimPresentedExactlyOnce": true
-      },
-      "allCurrentUnorderedPairsValidated": 1378,
-      "allCurrentUnorderedPairFailures": 0,
-      "sameSurfaceHistoryComparison": {
-        "recordIds": [
-          "com.anthropic.claude-code.cli.2-1-232",
-          "com.anthropic.claude-code.cli.2-1-233"
-        ],
-        "lifecycle": [
-          "Superseded · reviewed 2026-08-15",
-          "Current · reviewed 2026-08-15"
-        ],
-        "exactCategoryRows": 8,
-        "horizontalOverflow": false
-      },
-      "invalidUrlState": {
-        "unknownIdsReported": true,
-        "duplicateIdsReported": true,
-        "excessIdsReported": true,
-        "firstFourValidIdsRetained": true
-      },
-      "desktop": {
-        "requested": {
-          "width": 960,
-          "height": 540
-        },
-        "observedCss": {
-          "width": 1066,
-          "height": 600
-        },
-        "bodyHorizontalOverflow": false,
-        "fourRecordMatrixScrollable": true,
-        "stickyTrayVisible": false
-      },
-      "mobile": {
-        "requested": {
-          "width": 352,
-          "height": 760
-        },
-        "observedCss": {
-          "width": 391,
-          "height": 844
-        },
-        "bodyHorizontalOverflow": false,
-        "matrixScrollable": true,
-        "stickyRowLabelAligned": true,
-        "trayVisibleWithoutChipClipping": true
-      },
-      "keyboardAndSemantics": {
-        "nativeControlsAndLogicalDomOrder": true,
-        "visibleFocusRule": true,
-        "positiveTabindexOverrides": 0,
-        "negativeTabindexControls": 0,
-        "unlabelledButtons": 0,
-        "unlabelledInputs": 0
-      }
     },
     "records": {
       "result": "PASS",
@@ -655,166 +227,91 @@
         "com.cognition.devin-desktop.cascade.3-7-25",
         "com.github.copilot.cli.1-0-80",
         "com.google.antigravity.cli.1-1-13",
-        "com.jetbrains.junie.ide-plugin.262-579-14"
+        "com.jetbrains.junie.ide-plugin.262-579-14",
+        "com.alibaba.qwen-code.cli.0-21-13",
+        "com.cursor.ide.foreground-agent.3-16",
+        "com.jetbrains.junie.ide-plugin.262-579-20"
       ],
-      "checksAppliedToEveryPage": {
-        "humanReadableRouteRendered": true,
-        "canonicalMetadataExact": true,
-        "rawJsonTargetExact": true,
-        "publisherSourceLinksDirectAndHttps": true,
-        "claimsRendered": true,
-        "sevenSectionIndexLinks": true,
-        "noUndefinedOrNaNText": true,
-        "noBodySourceOrHeadingOverflow": true,
-        "exactCssViewportObserved": true,
-        "documentAndBodyScrollWidthsContained": true,
-        "globalOverflowConcealmentAbsent": true,
-        "requiredMobileRegionsContained": true,
-        "zeroConsoleWarningsOrErrors": true
-      },
-      "viewports": [
-        {
-          "label": "desktop",
+      "desktop": {
+        "controlViewport": {
           "width": 1440,
-          "height": 1000,
-          "pagesAudited": 98,
-          "uniquePagesAudited": 98,
-          "failureRecordIds": []
+          "height": 1000
         },
-        {
-          "label": "mobile",
-          "requestedCss": { "width": 390, "height": 844 },
-          "observedCss": { "width": 390, "height": 844 },
-          "devicePixelRatio": 1,
-          "pagesAudited": 98,
-          "uniquePagesAudited": 98,
-          "failureRecordIds": []
-        }
-      ],
-      "narrowMobileRepresentative": {
-        "recordId": "com.cursor.ide.foreground-agent.3-15",
-        "requestedCss": { "width": 320, "height": 700 },
-        "observedCss": { "width": 320, "height": 700 },
-        "devicePixelRatio": 1,
-        "documentClientWidth": 320,
-        "documentScrollWidth": 320,
-        "bodyClientWidth": 320,
-        "bodyScrollWidth": 320,
-        "pageHorizontalOverflow": false,
-        "croppedContent": false,
-        "console": { "errors": 0, "warnings": 0 }
+        "observedCss": {
+          "width": 1707,
+          "height": 960
+        },
+        "pagesAudited": 101,
+        "failureRecordIds": []
       },
-      "representativeCurrentRecord": {
-        "recordId": "com.alibaba.qwen-code.cli.0-21-12",
-        "publisherClaims": 2,
-        "namedSources": 2,
-        "unresolvedUnknowns": 4,
-        "sectionIndexLinks": 7,
-        "reciprocalLifecycleRecordIds": [
-          "com.alibaba.qwen-code.cli.0-21-7",
-          "com.alibaba.qwen-code.cli.0-21-8",
-          "com.alibaba.qwen-code.cli.0-21-11",
-          "com.alibaba.qwen-code.cli.0-21-12"
-        ]
+      "mobile": {
+        "controlViewport": {
+          "width": 292,
+          "height": 633
+        },
+        "observedCss": {
+          "width": 389,
+          "height": 844
+        },
+        "devicePixelRatio": 0.75,
+        "pagesAudited": 101,
+        "failureRecordIds": []
       },
-      "representativeRetainedRecord": {
-        "recordId": "com.alibaba.qwen-code.cli.0-21-11",
-        "successorRecordId": "com.alibaba.qwen-code.cli.0-21-12",
-        "rawJsonTarget": "com.alibaba.qwen-code.cli.0-21-11.json",
-        "horizontalOverflow": false
-      },
-      "representativeRawJson": {
-        "recordId": "com.alibaba.qwen-code.cli.0-21-12",
-        "target": "com.alibaba.qwen-code.cli.0-21-12.json",
-        "browserTopLevelNavigation": "blocked-by-browser-client",
-        "loopbackHttpGet": "PASS"
+      "checksAppliedToEveryPage": {
+        "humanReadableHeading": true,
+        "claimCountMatchesProjection": true,
+        "sourceCountAndHttpsTargetsMatchProjection": true,
+        "rawJsonTargetExact": true,
+        "datedSnapshotRendered": true,
+        "noUndefinedOrNaNText": true,
+        "desktopDocumentAndBodyContained": true,
+        "mobileDocumentBodyAndRequiredRegionsContained": true,
+        "mobileNavigationPresent": true
       }
     },
     "discoveryMetadata": {
       "result": "PASS",
-      "landing": {
-        "title": "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
-        "canonical": "https://thedarknitefalls.github.io/agent-evidence-catalog/",
-        "openGraphType": "website",
-        "twitterCard": "summary",
-        "structuredType": "WebPage"
-      },
-      "catalog": {
-        "title": "Find Current Coding-Agent Evidence · Agent Evidence Catalog",
-        "canonical": "https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/",
-        "openGraphType": "website",
-        "twitterCard": "summary",
-        "structuredType": "CollectionPage"
-      },
-      "comparison": {
-        "title": "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
-        "canonical": "https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html",
-        "openGraphType": "website",
-        "twitterCard": "summary",
-        "structuredType": "WebPage"
-      },
-      "howItWorks": {
-        "title": "How Agent Evidence Catalog Works",
-        "canonical": "https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html",
-        "openGraphType": "website",
-        "twitterCard": "summary",
-        "structuredType": "WebPage"
-      },
-      "representativeRecordIds": [
-        "com.alibaba.qwen-code.cli.0-21-12",
-        "com.alibaba.qwen-code.cli.0-21-11",
-        "com.anomaly.opencode.cli.1-18-18",
-        "com.anthropic.claude-code.cli.2-1-233",
-        "com.openai.codex.cli.0-147-0",
-        "com.vercel.v0.agent.rolling"
-      ],
-      "allRecordPages": {
-        "pagesAudited": 98,
-        "uniqueCanonicalUrls": 98,
-        "openGraphFailures": 0,
-        "socialPreviewFailures": 0,
-        "structuredMetadataFailures": 0
-      },
-      "robots": {
-        "path": "dist/robots.txt",
-        "sitemapDeclared": "https://thedarknitefalls.github.io/agent-evidence-catalog/sitemap.xml"
-      },
-      "sitemap": {
-        "path": "dist/sitemap.xml",
-        "sha256": "c1f11a8cc3c7e7acedaf85effcfeaf0b7e9ec91442a2d619b3631734e7c515ab",
-        "humanReadableRoutes": 102,
-        "recordRoutes": 98,
-        "rawJsonRoutes": 0,
-        "duplicateRoutes": 0
-      }
+      "recordPagesAudited": 101,
+      "sitemapHumanReadableRoutes": 105,
+      "sitemapRecordRoutes": 101,
+      "canonicalAndStructuredMetadataFailures": 0
     }
   },
   "sourceLinks": {
-    "projectedClaimLinkedHttpsEntries": 524,
-    "sourceUrlIdentitiesChecked": 525,
-    "uniqueEndpointsChecked": 247,
-    "endpointHttpFailures": 0,
-    "endpointSuccessStatus": 200,
-    "currentLiveCheck": {
-      "checkedAt": "2026-08-15T02:19:02.402Z",
-      "method": "Read-only GET with redirects",
-      "recordsChecked": 98,
-      "uniqueEndpointsChecked": 247,
-      "passed": 247,
-      "failures": 0,
-      "receiptPath": "drafts/research-preview-release/currentness-2026-08-15/official-url-audit.json",
-      "receiptSha256": "7935f7ffcd05a1d3e512f6e09cdf3da94ab75a1af074e77118d4be1c3e16845e"
-    }
+    "projectedClaimLinkedHttpsEntries": 540,
+    "sourceUrlIdentitiesChecked": 541,
+    "preferredSurfaceSources": {
+      "checked": 55,
+      "reachable": 55,
+      "failed": 0,
+      "receiptSha256": "8f3224519c0e0d56ba9129dca9d3c89274092c06cc086642d99823f21aa05b53"
+    },
+    "fullCorpus": {
+      "recordsChecked": 101,
+      "uniqueEndpointsChecked": 249,
+      "passed": 248,
+      "unresolved": 1,
+      "receiptPath": "drafts/research-preview-release/currentness-2026-08-17/official-url-audit.json",
+      "receiptSha256": "b8159079ab9ed3f55b7a666d5d36f36d1efc108c032581ea7f16d8ebf255cc08"
+    },
+    "unresolved": [
+      {
+        "url": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+        "status": null,
+        "result": "request-error",
+        "renderedBrowserResult": "HTTP 503 publisher service-unavailable page"
+      }
+    ]
   },
   "console": {
     "errors": 0,
     "warnings": 0
   },
   "limitations": [
-    "The in-app Browser blocks top-level navigation to local .json resources; all 98 raw link targets were checked in rendered pages, the representative target passed a loopback HTTP GET, and deterministic record validation covered every JSON file.",
-    "Rendered reachability and local UI behavior do not establish catalogued product behavior, independent verification, quality, safety, popularity, ranking or suitability.",
-    "The publication-time census proves one known-newer identity but cannot prove publication-time currency for 53 surfaces; reachable but rolling, unresolved or unparseable official sources remain incomplete coverage.",
-    "Browser QA confirms the visitor snapshot, update marker, How it works page and translated terminology render and behave locally; it does not authorize promotion, publication or any Git or GitHub action."
+    "The in-app Browser viewport control is recorded separately from the observed CSS viewport; no requested CSS dimensions are claimed where the Browser applied a 0.75 device scale.",
+    "One retained Cline Visual Studio Marketplace source returned HTTP 503 in both the full-corpus GET audit and the rendered Browser check. It remains explicit as an unresolved publisher-service response; no substitute source or hidden pass was invented.",
+    "The publication-time census proves no known-newer identity for the two comparable live indexes but cannot prove publication-time currency for 53 surfaces; exact release pages, rolling identities and unparseable indexes remain incomplete coverage.",
+    "Rendered local behavior, source reachability and deterministic validation do not establish catalogued product behavior, independent verification, quality, safety, popularity, ranking or suitability."
   ],
   "boundaries": {
     "publisherSourcesOnly": true,
@@ -822,11 +319,9 @@
     "independentTestsCredited": 0,
     "rankingsOrSuitabilityCalculations": false,
     "priorAcceptedRecordsOrSourceArtifactsRewritten": false,
-    "currentWorkstreamChangedProtectedCorpus": false,
-    "visitorInformationArchitectureOnly": true,
     "currentnessLifecycleProjectionUpdated": true,
+    "visitorInformationArchitectureChanged": false,
     "githubStateChanged": false,
-    "sealedSnapshotPromoted": false,
-    "publicationAuthorized": false
+    "publicationAuthorizedByReceipt": false
   }
 }

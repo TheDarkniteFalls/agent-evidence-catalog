@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.privacy-mode-current",
+  "slug": "privacy-mode-current",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cursor IDE foreground Agent",
+      "slug": "cursor-ide-foreground-agent-3-16"
+    }
+  },
+  "claim": {
+    "category": "data.retention",
+    "statement": "Anysphere's current data-use page says Privacy Mode prevents Cursor training on Customer Data and uses zero-data-retention provider agreements, subject to stated abuse-classifier exceptions; with Privacy Mode off, Cursor may store and use codebase data, prompts, editor actions and code snippets to improve and train AI features."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anysphere, Inc."
+  },
+  "source": {
+    "uri": "https://cursor.com/data-use",
+    "title": "Cursor Data Use and Privacy Overview",
+    "locator": "Privacy Mode enabled and disabled alternatives; last updated 15 July 2026",
+    "publishedAt": "2026-07-15T00:00:00Z",
+    "capturedAt": "2026-08-17T08:56:07.261Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Privacy Mode enabled",
+        "Privacy Mode disabled",
+        "non-ZDR model administrator opt-in",
+        "abuse-classifier retention exception"
+      ]
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "Cursor service account and AI requests"
+      ]
+    },
+    "model": {
+      "scope": "configuration-dependent",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Cursor-hosted service and model-provider request path"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-15",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-17",
+    "recheckAfter": "2026-09-17",
+    "invalidatedBy": [
+      "privacy-policy-change",
+      "data-use-change",
+      "provider-term-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Privacy Mode alternatives and stated exceptions must remain visible; the claim is not a guarantee of zero processing or zero transient handling.",
+    "The current policy is not proof of the effective setting, team enforcement or provider terms for a particular 3.16 session."
+  ],
+  "unknowns": [
+    "The effective Privacy Mode, team policy, model ZDR status and abuse-classifier outcome are unknown.",
+    "The data actually transmitted, stored, used for training or retained for any session are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

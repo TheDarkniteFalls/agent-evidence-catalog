@@ -4,8 +4,8 @@ Status: Research Preview v0.1, published at
 https://thedarknitefalls.github.io/agent-evidence-catalog/ and based on the
 2026-08-09 all-surface source-currentness and identity review, its 2026-08-10
 OpenCode release-feed follow-up, the prepared 2026-08-13 official-source
-currentness candidate and the prepared 2026-08-15 same-surface correction. The
-2026-08-15 catalog is sealed to the exact source-review window and link-audit
+currentness candidate, the 2026-08-15 same-surface correction and the prepared
+2026-08-17 refresh. The 2026-08-17 catalog is sealed to the exact source-review window and link-audit
 completion recorded in its receipts. A separate publication-time freshness
 census can add notices but cannot promote identities into the snapshot. The
 candidate does not update the live site by itself.
@@ -86,7 +86,7 @@ artifacts. The research preview adds a derived projection:
 3. a separate lifecycle view selects one current record per surface;
 4. a separate watcher view reuses reviewed publisher sources and unchanged
    content fingerprints; and
-5. `catalog.json` projects 53 snapshot-current records and 45 non-current
+5. `catalog.json` projects 53 snapshot-current records and 48 non-current
    records into a static browser experience; and
 6. a generated snapshot seal and one-shot publication freshness census carry
    the exact review window, seal time, check time, known-newer notices and
@@ -94,7 +94,7 @@ artifacts. The research preview adds a derived projection:
 
 The machine-readable source is
 `drafts/real-agent-catalog/research-preview/catalog.json`. The static build
-copies only that projection and its 98 presentable record files to
+copies only that projection and its 101 presentable record files to
 `dist/research-preview/`. The comparison projector loads only the selected
 committed record files at runtime and does not modify that projection.
 
@@ -105,7 +105,7 @@ The public Research Preview v0.1 keeps the accepted release boundaries:
 - 53 current records are present across the 55-surface catalog, including
   Codex CLI 0.147.0 as the reciprocal same-surface successor to preserved
   0.146.0 and 0.90.0 history;
-- 42 superseded records, two historical records and one discontinued record
+- 45 superseded records, two historical records and one discontinued record
   remain available through explicit history;
 - publication-time known-newer identities are notices on the affected snapshot
   records, not automatic refreshes or lifecycle transitions;

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "agent-evidence-research-preview/0.1-draft",
   "artifactType": "unpublished-maintainer-curated-research-preview",
-  "asOf": "2026-08-15",
+  "asOf": "2026-08-17",
   "releaseCandidateStatus": "ready-for-release-review",
   "boundaries": {
     "static": true,
@@ -42,15 +42,22 @@
     "currentness20260815OfficialSourceAuditSha256": "f24e7bbe5edfb9a356dfb845528c2fc71921c79bca1d691c714dd7cb35150892",
     "currentness20260815OfficialUrlAuditPath": "drafts/research-preview-release/currentness-2026-08-15/official-url-audit.json",
     "currentness20260815OfficialUrlAuditSha256": "7935f7ffcd05a1d3e512f6e09cdf3da94ab75a1af074e77118d4be1c3e16845e",
-    "publicationFreshnessCensusPath": "drafts/research-preview-release/currentness-2026-08-15/publication-freshness-census.json",
-    "publicationFreshnessCensusSha256": "e6d123af09d86d4c5fb9e94ea43e7a96c877b840ba4088b1022ba07db4e3a416"
+    "publicationFreshnessCensusPath": "drafts/research-preview-release/currentness-2026-08-17/publication-freshness-census.json",
+    "publicationFreshnessCensusSha256": "e03ee60d9926730e54049d6e484b86ff44b99b020f668627f157bc8297366853",
+    "currentness20260817Path": "drafts/research-preview-release/currentness-2026-08-17/currentness-source.json",
+    "currentness20260817Sha256": "d23294989fdfe7340c5055a566505ce10c2c2de716f61290bec313709bfaa2bc",
+    "currentness20260817ReceiptPath": "drafts/research-preview-release/currentness-2026-08-17/currentness-receipt.json",
+    "currentness20260817OfficialSourceAuditPath": "drafts/research-preview-release/currentness-2026-08-17/official-source-audit.json",
+    "currentness20260817OfficialSourceAuditSha256": "8f3224519c0e0d56ba9129dca9d3c89274092c06cc086642d99823f21aa05b53",
+    "currentness20260817OfficialUrlAuditPath": "drafts/research-preview-release/currentness-2026-08-17/official-url-audit.json",
+    "currentness20260817OfficialUrlAuditSha256": "b8159079ab9ed3f55b7a666d5d36f36d1efc108c032581ea7f16d8ebf255cc08"
   },
   "gates": {},
   "counts": {
     "surfaces": 55,
     "currentLifecycleRecords": 53,
     "currentRecordsPresented": 53,
-    "recordsPresentedIncludingHistory": 98,
+    "recordsPresentedIncludingHistory": 101,
     "independentTestsCredited": 0
   },
   "surfaces": [
@@ -83,7 +90,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -96,7 +103,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.factory.ai/cli/features/droid-computers",
-          "checkedAt": "2026-08-15T06:29:16.919Z",
+          "checkedAt": "2026-08-17T08:59:30.592Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -132,7 +139,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -145,7 +152,7 @@
           "reviewedIdentity": "unresolved",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.factory.ai/cli/getting-started/overview",
-          "checkedAt": "2026-08-15T06:29:16.946Z",
+          "checkedAt": "2026-08-17T08:59:30.623Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -181,7 +188,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -194,7 +201,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.mistral.ai/vibe/choose-chat-work-code",
-          "checkedAt": "2026-08-15T06:29:16.947Z",
+          "checkedAt": "2026-08-17T08:59:30.624Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -230,7 +237,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -243,7 +250,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started",
-          "checkedAt": "2026-08-15T06:29:16.947Z",
+          "checkedAt": "2026-08-17T08:59:30.624Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -279,7 +286,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -292,7 +299,7 @@
           "reviewedIdentity": "unresolved",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.mistral.ai/vibe/overview",
-          "checkedAt": "2026-08-15T06:29:17.465Z",
+          "checkedAt": "2026-08-17T08:59:30.812Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -301,48 +308,48 @@
     },
     {
       "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
-      "currentRecordId": "com.alibaba.qwen-code.cli.0-21-12",
+      "currentRecordId": "com.alibaba.qwen-code.cli.0-21-13",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.alibaba.qwen-code.cli.0-21-12",
+        "recordId": "com.alibaba.qwen-code.cli.0-21-13",
         "name": "Qwen Code CLI",
         "publisher": "Alibaba Cloud Qwen team",
         "surface": {
           "kind": "cli",
           "name": "Qwen Code CLI",
-          "slug": "alibaba-qwen-code-cli-0-21-12",
+          "slug": "alibaba-qwen-code-cli-0-21-13",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "0.21.12",
-          "releaseTag": "v0.21.12",
+          "version": "0.21.13",
+          "releaseTag": "v0.21.13",
           "sourceRevision": null,
-          "releasedAt": "2026-08-14T16:39:48Z",
+          "releasedAt": "2026-08-17T02:11:15Z",
           "channel": "Qwen Code CLI release stream",
           "installedRuntimeVariant": {
             "status": "unresolved",
             "value": null,
             "alternatives": [],
-            "note": "The official source identifies 0.21.12, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-15 currentness review."
+            "note": "The official source identifies 0.21.13, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-17 currentness review."
           },
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
         "independentTestCount": 0,
-        "recordPath": "drafts/research-preview-release/currentness-2026-08-15/records/com.alibaba.qwen-code.cli.0-21-12.json",
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-17/records/com.alibaba.qwen-code.cli.0-21-13.json",
         "mappingPath": null,
-        "lifecycleNote": "The official release feed identifies v0.21.12 as the latest stable Qwen Code CLI release reviewed on 2026-08-15.",
+        "lifecycleNote": "The official release feed identifies v0.21.13 as the latest stable Qwen Code CLI release reviewed on 2026-08-17.",
         "publicationFreshness": {
           "status": "incomplete-uncheckable",
-          "reviewedIdentity": "0.21.12",
+          "reviewedIdentity": "0.21.13",
           "knownNewerIdentity": null,
-          "officialSource": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.12",
-          "checkedAt": "2026-08-15T06:29:17.722Z",
+          "officialSource": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.13",
+          "checkedAt": "2026-08-17T08:59:30.815Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -373,7 +380,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -408,7 +415,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -444,7 +451,7 @@
             "additionalIdentities": []
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -452,6 +459,42 @@
           "recordPath": "drafts/research-preview-release/currentness-2026-08-13/records/com.alibaba.qwen-code.cli.0-21-11.json",
           "mappingPath": null,
           "lifecycleNote": "The official release feed identifies v0.21.12 as the latest stable Qwen Code CLI release reviewed on 2026-08-15. The preserved 0.21.11 record remains inspectable as the direct predecessor.",
+          "publicationFreshness": null
+        },
+        {
+          "recordId": "com.alibaba.qwen-code.cli.0-21-12",
+          "name": "Qwen Code CLI",
+          "publisher": "Alibaba Cloud Qwen team",
+          "surface": {
+            "kind": "cli",
+            "name": "Qwen Code CLI",
+            "slug": "alibaba-qwen-code-cli-0-21-12",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "0.21.12",
+            "releaseTag": "v0.21.12",
+            "sourceRevision": null,
+            "releasedAt": "2026-08-14T16:39:48Z",
+            "channel": "Qwen Code CLI release stream",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [],
+              "note": "The official source identifies 0.21.12, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-15 currentness review."
+            },
+            "additionalIdentities": []
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-17",
+          "claimCount": 2,
+          "sourceCount": 2,
+          "unknownCount": 4,
+          "independentTestCount": 0,
+          "recordPath": "drafts/research-preview-release/currentness-2026-08-15/records/com.alibaba.qwen-code.cli.0-21-12.json",
+          "mappingPath": null,
+          "lifecycleNote": "The official release feed identifies v0.21.13 as the latest stable Qwen Code CLI release reviewed on 2026-08-17. The preserved 0.21.12 record remains inspectable as the direct predecessor.",
           "publicationFreshness": null
         }
       ]
@@ -485,7 +528,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -498,7 +541,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
-          "checkedAt": "2026-08-15T06:29:17.740Z",
+          "checkedAt": "2026-08-17T08:59:30.838Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -534,7 +577,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -547,7 +590,7 @@
           "reviewedIdentity": "unresolved",
           "knownNewerIdentity": null,
           "officialSource": "https://kiro.dev/",
-          "checkedAt": "2026-08-15T06:29:17.746Z",
+          "checkedAt": "2026-08-17T08:59:30.881Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -727,7 +770,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 8,
         "sourceCount": 8,
         "unknownCount": 10,
@@ -740,7 +783,7 @@
           "reviewedIdentity": "1.0.309",
           "knownNewerIdentity": null,
           "officialSource": "https://kiro.dev/changelog/ide/1-0-309/",
-          "checkedAt": "2026-08-15T06:29:17.895Z",
+          "checkedAt": "2026-08-17T08:59:30.903Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -932,7 +975,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 9,
           "sourceCount": 9,
           "unknownCount": 10,
@@ -1128,7 +1171,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 9,
           "sourceCount": 9,
           "unknownCount": 10,
@@ -1307,7 +1350,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 8,
           "sourceCount": 8,
           "unknownCount": 10,
@@ -1348,7 +1391,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -1361,7 +1404,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://kiro.dev/docs/web/using-the-agent/",
-          "checkedAt": "2026-08-15T06:29:18.067Z",
+          "checkedAt": "2026-08-17T08:59:30.935Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -1397,7 +1440,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -1410,7 +1453,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
-          "checkedAt": "2026-08-15T06:29:18.170Z",
+          "checkedAt": "2026-08-17T08:59:31.326Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -1446,7 +1489,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -1459,7 +1502,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
-          "checkedAt": "2026-08-15T06:29:18.196Z",
+          "checkedAt": "2026-08-17T08:59:31.359Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -1687,7 +1730,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 12,
         "sourceCount": 12,
         "unknownCount": 13,
@@ -1700,7 +1743,7 @@
           "reviewedIdentity": "1.18.18",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/anomalyco/opencode/releases/tag/v1.18.18",
-          "checkedAt": "2026-08-15T06:29:18.303Z",
+          "checkedAt": "2026-08-17T08:59:31.392Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -1923,7 +1966,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 12,
           "sourceCount": 12,
           "unknownCount": 13,
@@ -2150,7 +2193,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 12,
           "sourceCount": 12,
           "unknownCount": 13,
@@ -2377,7 +2420,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 12,
           "sourceCount": 12,
           "unknownCount": 13,
@@ -2428,7 +2471,7 @@
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 8,
         "sourceCount": 8,
         "unknownCount": 9,
@@ -2441,7 +2484,7 @@
           "reviewedIdentity": "2.1.233",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
-          "checkedAt": "2026-08-15T06:29:18.405Z",
+          "checkedAt": "2026-08-17T08:59:31.691Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -2578,7 +2621,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 8,
           "sourceCount": 8,
           "unknownCount": 8,
@@ -2622,7 +2665,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 9,
           "sourceCount": 9,
           "unknownCount": 9,
@@ -2666,7 +2709,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 8,
           "sourceCount": 8,
           "unknownCount": 9,
@@ -2711,7 +2754,7 @@
             "additionalIdentities": []
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 8,
           "sourceCount": 8,
           "unknownCount": 9,
@@ -2756,7 +2799,7 @@
             "additionalIdentities": []
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 8,
           "sourceCount": 8,
           "unknownCount": 9,
@@ -2797,7 +2840,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2810,7 +2853,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.augmentcode.com/using-augment/agent",
-          "checkedAt": "2026-08-15T06:29:18.664Z",
+          "checkedAt": "2026-08-17T08:59:31.843Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -2846,7 +2889,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2859,7 +2902,7 @@
           "reviewedIdentity": "unresolved",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.augmentcode.com/cli/reference",
-          "checkedAt": "2026-08-15T06:29:18.905Z",
+          "checkedAt": "2026-08-17T08:59:32.315Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -2896,7 +2939,7 @@
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -2909,7 +2952,7 @@
           "reviewedIdentity": "3.0.55",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/cline/cline/releases/tag/cli-v3.0.55",
-          "checkedAt": "2026-08-15T06:29:19.001Z",
+          "checkedAt": "2026-08-17T08:59:32.342Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -2940,7 +2983,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -2975,7 +3018,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -3011,7 +3054,7 @@
             "additionalIdentities": []
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -3055,7 +3098,7 @@
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 5,
         "sourceCount": 5,
         "unknownCount": 8,
@@ -3068,7 +3111,7 @@
           "reviewedIdentity": "4.1.10",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/cline/cline/releases/tag/v4.1.10",
-          "checkedAt": "2026-08-15T06:29:19.385Z",
+          "checkedAt": "2026-08-17T08:59:32.365Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -3102,7 +3145,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 8,
           "sourceCount": 9,
           "unknownCount": 8,
@@ -3139,7 +3182,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 5,
           "sourceCount": 5,
           "unknownCount": 8,
@@ -3176,7 +3219,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 5,
           "sourceCount": 5,
           "unknownCount": 8,
@@ -3214,7 +3257,7 @@
             "additionalIdentities": []
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 5,
           "sourceCount": 5,
           "unknownCount": 8,
@@ -3475,7 +3518,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 14,
         "sourceCount": 14,
         "unknownCount": 14,
@@ -3488,7 +3531,7 @@
           "reviewedIdentity": "3.7.25",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.devin.ai/desktop/releases#v3-7-25",
-          "checkedAt": "2026-08-15T06:29:19.422Z",
+          "checkedAt": "2026-08-17T08:59:32.492Z",
           "note": "The live release index exposed the sealed identity 3.7.25 and no higher comparable identity during this bounded check."
         }
       },
@@ -3757,7 +3800,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 14,
           "sourceCount": 14,
           "unknownCount": 14,
@@ -4012,7 +4055,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 14,
           "sourceCount": 14,
           "unknownCount": 14,
@@ -4275,7 +4318,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 13,
         "sourceCount": 13,
         "unknownCount": 14,
@@ -4288,7 +4331,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.devin.ai/release-notes/overview",
-          "checkedAt": "2026-08-15T06:29:19.432Z",
+          "checkedAt": "2026-08-17T08:59:32.501Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -4327,7 +4370,7 @@
             }
           },
           "lifecycleStatus": "historical",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -4368,7 +4411,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -4381,7 +4424,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://cursor.com/cloud",
-          "checkedAt": "2026-08-15T06:29:19.916Z",
+          "checkedAt": "2026-08-17T08:59:32.925Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -4390,21 +4433,21 @@
     },
     {
       "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
-      "currentRecordId": "com.cursor.ide.foreground-agent.3-15",
+      "currentRecordId": "com.cursor.ide.foreground-agent.3-16",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.cursor.ide.foreground-agent.3-15",
+        "recordId": "com.cursor.ide.foreground-agent.3-16",
         "name": "Cursor IDE foreground Agent",
         "publisher": "Anysphere, Inc.",
         "surface": {
           "kind": "desktop-app",
           "name": "Cursor IDE foreground Agent",
-          "slug": "cursor-ide-foreground-agent-3-15",
+          "slug": "cursor-ide-foreground-agent-3-16",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "3.15",
+          "version": "3.16",
           "releaseTag": null,
           "sourceRevision": null,
           "releasedAt": null,
@@ -4427,25 +4470,26 @@
               "Linux AppImage ARM64",
               "Linux AppImage x64"
             ],
-            "note": "The official source identifies 3.15, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
-          }
+            "note": "The official source identifies 3.16, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-17 currentness review."
+          },
+          "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 12,
         "sourceCount": 12,
         "unknownCount": 12,
         "independentTestCount": 0,
-        "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.cursor.ide.foreground-agent.3-15.json",
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-17/records/com.cursor.ide.foreground-agent.3-16.json",
         "mappingPath": null,
-        "lifecycleNote": "Anysphere's official download archive labels Cursor desktop 3.15 as Latest.",
+        "lifecycleNote": "Cursor's official download archive marks 3.16 as Latest; the platform-specific installed artifact remains unresolved.",
         "publicationFreshness": {
-          "status": "known-newer",
-          "reviewedIdentity": "3.15",
-          "knownNewerIdentity": "3.16",
+          "status": "no-newer-identity-proven",
+          "reviewedIdentity": "3.16",
+          "knownNewerIdentity": null,
           "officialSource": "https://cursor.com/download",
-          "checkedAt": "2026-08-15T06:29:20.082Z",
-          "note": "The captured existing official source response contains the approved Cursor 3.16 identity, newer than the sealed reviewed identity 3.15. The sealed snapshot is not promoted."
+          "checkedAt": "2026-08-17T08:59:33.036Z",
+          "note": "The live release index exposed the sealed identity 3.16 and no higher comparable identity during this bounded check."
         }
       },
       "gate": null,
@@ -4489,7 +4533,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 12,
           "sourceCount": 12,
           "unknownCount": 12,
@@ -4497,6 +4541,55 @@
           "recordPath": "drafts/real-agent-catalog/records/com.cursor.ide.foreground-agent.3-14.json",
           "mappingPath": null,
           "lifecycleNote": "Anysphere's official download archive labels Cursor desktop 3.15 as Latest. The preserved 3.14 record remains inspectable as the direct predecessor.",
+          "publicationFreshness": null
+        },
+        {
+          "recordId": "com.cursor.ide.foreground-agent.3-15",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-15",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "3.15",
+            "releaseTag": null,
+            "sourceRevision": null,
+            "releasedAt": null,
+            "channel": "Cursor stable desktop download archive",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [
+                "macOS ARM64 DMG",
+                "macOS x64 DMG",
+                "macOS Universal DMG",
+                "Windows x64 system installer",
+                "Windows x64 user installer",
+                "Windows ARM64 system installer",
+                "Windows ARM64 user installer",
+                "Linux DEB ARM64",
+                "Linux DEB x64",
+                "Linux RPM ARM64",
+                "Linux RPM x64",
+                "Linux AppImage ARM64",
+                "Linux AppImage x64"
+              ],
+              "note": "The official source identifies 3.15, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
+            }
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-17",
+          "claimCount": 12,
+          "sourceCount": 12,
+          "unknownCount": 12,
+          "independentTestCount": 0,
+          "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.cursor.ide.foreground-agent.3-15.json",
+          "mappingPath": null,
+          "lifecycleNote": "Cursor's official download archive marks 3.16 as Latest; the platform-specific installed artifact remains unresolved. The preserved 3.15 record remains inspectable as the direct predecessor.",
           "publicationFreshness": null
         }
       ]
@@ -4530,7 +4623,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -4543,7 +4636,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
-          "checkedAt": "2026-08-15T06:29:20.192Z",
+          "checkedAt": "2026-08-17T08:59:33.050Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -4580,7 +4673,7 @@
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -4593,7 +4686,7 @@
           "reviewedIdentity": "1.0.80",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/github/copilot-cli/releases/tag/v1.0.80",
-          "checkedAt": "2026-08-15T06:29:20.224Z",
+          "checkedAt": "2026-08-17T08:59:33.100Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -4624,7 +4717,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -4660,7 +4753,7 @@
             "additionalIdentities": []
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -4704,7 +4797,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 11,
         "sourceCount": 11,
         "unknownCount": 11,
@@ -4717,7 +4810,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
-          "checkedAt": "2026-08-15T06:29:20.239Z",
+          "checkedAt": "2026-08-17T08:59:33.103Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -4753,7 +4846,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -4766,7 +4859,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://code.visualstudio.com/docs/agents/concepts/agents",
-          "checkedAt": "2026-08-15T06:29:20.256Z",
+          "checkedAt": "2026-08-17T08:59:33.200Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -4802,7 +4895,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -4815,7 +4908,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
-          "checkedAt": "2026-08-15T06:29:20.192Z",
+          "checkedAt": "2026-08-17T08:59:33.050Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -4858,7 +4951,7 @@
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 8,
         "sourceCount": 8,
         "unknownCount": 9,
@@ -4871,7 +4964,7 @@
           "reviewedIdentity": "19.2.2-ee",
           "knownNewerIdentity": null,
           "officialSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
-          "checkedAt": "2026-08-15T06:29:20.384Z",
+          "checkedAt": "2026-08-17T08:59:33.266Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -4908,7 +5001,7 @@
             }
           },
           "lifecycleStatus": "historical",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 16,
           "sourceCount": 16,
           "unknownCount": 16,
@@ -4949,7 +5042,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 10,
           "sourceCount": 10,
           "unknownCount": 9,
@@ -4990,7 +5083,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 10,
           "sourceCount": 10,
           "unknownCount": 9,
@@ -5032,7 +5125,7 @@
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 6,
@@ -5045,7 +5138,7 @@
           "reviewedIdentity": "19.2.2-ee",
           "knownNewerIdentity": null,
           "officialSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
-          "checkedAt": "2026-08-15T06:29:20.384Z",
+          "checkedAt": "2026-08-17T08:59:33.266Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -5076,7 +5169,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 6,
@@ -5111,7 +5204,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 6,
@@ -5152,7 +5245,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -5165,7 +5258,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.gitlab.com/user/duo_agent_platform/",
-          "checkedAt": "2026-08-15T06:29:20.560Z",
+          "checkedAt": "2026-08-17T08:59:33.559Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -5202,7 +5295,7 @@
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -5215,7 +5308,7 @@
           "reviewedIdentity": "1.1.13",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13",
-          "checkedAt": "2026-08-15T06:29:20.787Z",
+          "checkedAt": "2026-08-17T08:59:33.600Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -5246,7 +5339,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -5282,7 +5375,7 @@
             "additionalIdentities": []
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -5323,7 +5416,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -5336,7 +5429,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer",
-          "checkedAt": "2026-08-15T06:29:20.829Z",
+          "checkedAt": "2026-08-17T08:59:33.604Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -5373,7 +5466,7 @@
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -5386,7 +5479,7 @@
           "reviewedIdentity": "0.55.1",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.55.1",
-          "checkedAt": "2026-08-15T06:29:20.928Z",
+          "checkedAt": "2026-08-17T08:59:33.877Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -5417,7 +5510,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -5461,7 +5554,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 10,
         "sourceCount": 10,
         "unknownCount": 10,
@@ -5474,7 +5567,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://jules.google/docs/changelog/2025-08-06/",
-          "checkedAt": "2026-08-15T06:29:21.001Z",
+          "checkedAt": "2026-08-17T08:59:33.999Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -5510,7 +5603,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -5523,7 +5616,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
-          "checkedAt": "2026-08-15T06:29:21.399Z",
+          "checkedAt": "2026-08-17T08:59:34.123Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -5532,48 +5625,48 @@
     },
     {
       "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
-      "currentRecordId": "com.jetbrains.junie.ide-plugin.262-579-14",
+      "currentRecordId": "com.jetbrains.junie.ide-plugin.262-579-20",
       "currentRecordAvailable": true,
       "currentRecord": {
-        "recordId": "com.jetbrains.junie.ide-plugin.262-579-14",
+        "recordId": "com.jetbrains.junie.ide-plugin.262-579-20",
         "name": "Junie IDE plugin",
         "publisher": "JetBrains",
         "surface": {
           "kind": "ide-extension",
           "name": "Junie IDE plugin",
-          "slug": "jetbrains-junie-ide-262-579-14",
+          "slug": "jetbrains-junie-ide-262-579-20",
           "deliveryModel": "hybrid"
         },
         "release": {
           "scope": "exact-version",
-          "version": "262.579.14",
-          "releaseTag": "262.579.14",
+          "version": "262.579.20",
+          "releaseTag": "262.579.20",
           "sourceRevision": null,
-          "releasedAt": "2026-08-14T00:00:00Z",
+          "releasedAt": "2026-08-17T05:38:00Z",
           "channel": "JetBrains Marketplace stable plugin",
           "installedRuntimeVariant": {
             "status": "unresolved",
             "value": null,
             "alternatives": [],
-            "note": "The official source identifies 262.579.14, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-15 currentness review."
+            "note": "The official source identifies 262.579.20, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-17 currentness review."
           },
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
         "independentTestCount": 0,
-        "recordPath": "drafts/research-preview-release/currentness-2026-08-15/records/com.jetbrains.junie.ide-plugin.262-579-14.json",
+        "recordPath": "drafts/research-preview-release/currentness-2026-08-17/records/com.jetbrains.junie.ide-plugin.262-579-20.json",
         "mappingPath": null,
-        "lifecycleNote": "JetBrains Marketplace's publisher-controlled stable update page lists Junie IDE plugin 262.579.14 as the newest reviewed update.",
+        "lifecycleNote": "JetBrains Marketplace identifies stable Junie IDE plugin update 1141035 as version 262.579.20, published 2026-08-17.",
         "publicationFreshness": {
           "status": "incomplete-uncheckable",
-          "reviewedIdentity": "262.579.14",
+          "reviewedIdentity": "262.579.20",
           "knownNewerIdentity": null,
-          "officialSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1138682",
-          "checkedAt": "2026-08-15T06:29:21.461Z",
+          "officialSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1141035",
+          "checkedAt": "2026-08-17T08:59:34.201Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -5604,7 +5697,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -5639,7 +5732,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -5675,7 +5768,7 @@
             "additionalIdentities": []
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -5683,6 +5776,42 @@
           "recordPath": "drafts/research-preview-release/currentness-2026-08-13/records/com.jetbrains.junie.ide-plugin.262-579-3.json",
           "mappingPath": null,
           "lifecycleNote": "JetBrains Marketplace's publisher-controlled stable update page lists Junie IDE plugin 262.579.14 as the newest reviewed update. The preserved 262.579.3 record remains inspectable as the direct predecessor.",
+          "publicationFreshness": null
+        },
+        {
+          "recordId": "com.jetbrains.junie.ide-plugin.262-579-14",
+          "name": "Junie IDE plugin",
+          "publisher": "JetBrains",
+          "surface": {
+            "kind": "ide-extension",
+            "name": "Junie IDE plugin",
+            "slug": "jetbrains-junie-ide-262-579-14",
+            "deliveryModel": "hybrid"
+          },
+          "release": {
+            "scope": "exact-version",
+            "version": "262.579.14",
+            "releaseTag": "262.579.14",
+            "sourceRevision": null,
+            "releasedAt": "2026-08-14T00:00:00Z",
+            "channel": "JetBrains Marketplace stable plugin",
+            "installedRuntimeVariant": {
+              "status": "unresolved",
+              "value": null,
+              "alternatives": [],
+              "note": "The official source identifies 262.579.14, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-15 currentness review."
+            },
+            "additionalIdentities": []
+          },
+          "lifecycleStatus": "superseded",
+          "reviewedAt": "2026-08-17",
+          "claimCount": 2,
+          "sourceCount": 2,
+          "unknownCount": 4,
+          "independentTestCount": 0,
+          "recordPath": "drafts/research-preview-release/currentness-2026-08-15/records/com.jetbrains.junie.ide-plugin.262-579-14.json",
+          "mappingPath": null,
+          "lifecycleNote": "JetBrains Marketplace identifies stable Junie IDE plugin update 1141035 as version 262.579.20, published 2026-08-17. The preserved 262.579.14 record remains inspectable as the direct predecessor.",
           "publicationFreshness": null
         }
       ]
@@ -5846,7 +5975,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 11,
         "sourceCount": 11,
         "unknownCount": 12,
@@ -5859,7 +5988,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.lovable.dev/changelog?page=1",
-          "checkedAt": "2026-08-15T06:29:21.564Z",
+          "checkedAt": "2026-08-17T08:59:34.427Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -5899,7 +6028,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 12,
         "sourceCount": 12,
         "unknownCount": 15,
@@ -5912,7 +6041,7 @@
           "reviewedIdentity": "0.147.0",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/openai/codex/releases/tag/rust-v0.147.0",
-          "checkedAt": "2026-08-15T06:29:21.816Z",
+          "checkedAt": "2026-08-17T08:59:34.515Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -5947,7 +6076,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 12,
           "sourceCount": 12,
           "unknownCount": 12,
@@ -5986,7 +6115,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 15,
           "sourceCount": 15,
           "unknownCount": 15,
@@ -6027,7 +6156,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -6040,7 +6169,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://developers.openai.com/codex/cloud/",
-          "checkedAt": "2026-08-15T06:29:21.847Z",
+          "checkedAt": "2026-08-17T08:59:35.153Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -6076,7 +6205,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -6089,7 +6218,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://developers.openai.com/codex/ide/",
-          "checkedAt": "2026-08-15T06:29:21.915Z",
+          "checkedAt": "2026-08-17T08:59:35.462Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -6244,7 +6373,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 8,
         "sourceCount": 8,
         "unknownCount": 8,
@@ -6257,7 +6386,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.replit.com/updates/2026/03/13/changelog",
-          "checkedAt": "2026-08-15T06:29:22.214Z",
+          "checkedAt": "2026-08-17T08:59:35.543Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -6296,7 +6425,7 @@
             }
           },
           "lifecycleStatus": "discontinued",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -6337,7 +6466,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -6350,7 +6479,7 @@
           "reviewedIdentity": "unresolved",
           "knownNewerIdentity": null,
           "officialSource": "https://ampcode.com/manual",
-          "checkedAt": "2026-08-15T06:29:22.957Z",
+          "checkedAt": "2026-08-17T08:59:35.627Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -6386,7 +6515,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -6399,7 +6528,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://support.bolt.new/release-notes",
-          "checkedAt": "2026-08-15T06:29:23.142Z",
+          "checkedAt": "2026-08-17T08:59:35.695Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -6435,7 +6564,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -6448,7 +6577,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.tabnine.com/main/getting-started/tabnine-agent",
-          "checkedAt": "2026-08-15T06:29:23.253Z",
+          "checkedAt": "2026-08-17T08:59:35.998Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -6484,7 +6613,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -6497,7 +6626,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta",
-          "checkedAt": "2026-08-15T06:29:23.390Z",
+          "checkedAt": "2026-08-17T08:59:36.013Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -6533,7 +6662,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -6546,7 +6675,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://api2.v0.dev/docs/faqs",
-          "checkedAt": "2026-08-15T06:29:23.670Z",
+          "checkedAt": "2026-08-17T08:59:36.101Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -6582,7 +6711,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -6595,7 +6724,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.warp.dev/?fallback=true",
-          "checkedAt": "2026-08-15T06:29:23.724Z",
+          "checkedAt": "2026-08-17T08:59:36.182Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -6631,7 +6760,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -6644,7 +6773,7 @@
           "reviewedIdentity": "unresolved",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.warp.dev/?fallback=true",
-          "checkedAt": "2026-08-15T06:29:23.724Z",
+          "checkedAt": "2026-08-17T08:59:36.182Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -6784,7 +6913,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 7,
         "sourceCount": 7,
         "unknownCount": 8,
@@ -6797,8 +6926,8 @@
           "reviewedIdentity": "1.15.0",
           "knownNewerIdentity": null,
           "officialSource": "https://zed.dev/releases/stable",
-          "checkedAt": "2026-08-15T06:29:23.859Z",
-          "note": "The official source was reachable, but generic numeric tokens in the response could not prove a newer Zed identity. Coverage remains incomplete and the snapshot is unchanged."
+          "checkedAt": "2026-08-17T08:59:36.286Z",
+          "note": "The official source was reachable, but its response did not expose a comparable identity that this bounded detector could verify."
         }
       },
       "gate": null,
@@ -6932,7 +7061,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 8,
           "sourceCount": 8,
           "unknownCount": 8,
@@ -6974,7 +7103,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 11,
           "sourceCount": 11,
           "unknownCount": 10,
@@ -7113,7 +7242,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 7,
           "sourceCount": 7,
           "unknownCount": 8,
@@ -7155,7 +7284,7 @@
           "additionalIdentities": []
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -7168,7 +7297,7 @@
           "reviewedIdentity": "1.46.0",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0",
-          "checkedAt": "2026-08-15T06:29:23.930Z",
+          "checkedAt": "2026-08-17T08:59:36.343Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -7199,7 +7328,7 @@
             }
           },
           "lifecycleStatus": "superseded",
-          "reviewedAt": "2026-08-15",
+          "reviewedAt": "2026-08-17",
           "claimCount": 2,
           "sourceCount": 2,
           "unknownCount": 4,
@@ -7325,7 +7454,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 9,
         "sourceCount": 9,
         "unknownCount": 8,
@@ -7338,7 +7467,7 @@
           "reviewedIdentity": "0.86.0",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
-          "checkedAt": "2026-08-15T06:29:24.171Z",
+          "checkedAt": "2026-08-17T08:59:36.438Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -7374,7 +7503,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 2,
         "sourceCount": 2,
         "unknownCount": 4,
@@ -7387,7 +7516,7 @@
           "reviewedIdentity": "rolling-service",
           "knownNewerIdentity": null,
           "officialSource": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud",
-          "checkedAt": "2026-08-15T06:29:24.679Z",
+          "checkedAt": "2026-08-17T08:59:36.443Z",
           "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
         }
       },
@@ -7426,7 +7555,7 @@
           }
         },
         "lifecycleStatus": "current",
-        "reviewedAt": "2026-08-15",
+        "reviewedAt": "2026-08-17",
         "claimCount": 9,
         "sourceCount": 9,
         "unknownCount": 9,
@@ -7439,7 +7568,7 @@
           "reviewedIdentity": "1.16.0",
           "knownNewerIdentity": null,
           "officialSource": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
-          "checkedAt": "2026-08-15T06:29:24.716Z",
+          "checkedAt": "2026-08-17T08:59:36.941Z",
           "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
         }
       },
@@ -7476,7 +7605,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 9,
       "unknownCount": 8,
@@ -7514,7 +7643,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 9,
       "sourceCount": 9,
       "unknownCount": 9,
@@ -7527,7 +7656,7 @@
         "reviewedIdentity": "1.16.0",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
-        "checkedAt": "2026-08-15T06:29:24.716Z",
+        "checkedAt": "2026-08-17T08:59:36.941Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -7559,7 +7688,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 11,
       "sourceCount": 11,
       "unknownCount": 11,
@@ -7572,7 +7701,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
-        "checkedAt": "2026-08-15T06:29:20.239Z",
+        "checkedAt": "2026-08-17T08:59:33.103Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -7604,7 +7733,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 10,
       "sourceCount": 10,
       "unknownCount": 10,
@@ -7617,7 +7746,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://jules.google/docs/changelog/2025-08-06/",
-        "checkedAt": "2026-08-15T06:29:21.001Z",
+        "checkedAt": "2026-08-17T08:59:33.999Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -7650,7 +7779,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 12,
@@ -7699,7 +7828,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 12,
@@ -7740,7 +7869,7 @@
         }
       },
       "lifecycleStatus": "historical",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 16,
       "sourceCount": 16,
       "unknownCount": 16,
@@ -7997,7 +8126,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 13,
       "sourceCount": 13,
       "unknownCount": 14,
@@ -8010,7 +8139,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.devin.ai/release-notes/overview",
-        "checkedAt": "2026-08-15T06:29:19.432Z",
+        "checkedAt": "2026-08-17T08:59:32.501Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -8145,7 +8274,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 8,
@@ -8284,7 +8413,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 8,
@@ -8438,7 +8567,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 8,
@@ -8451,7 +8580,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.replit.com/updates/2026/03/13/changelog",
-        "checkedAt": "2026-08-15T06:29:22.214Z",
+        "checkedAt": "2026-08-17T08:59:35.543Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -8565,7 +8694,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 9,
       "sourceCount": 9,
       "unknownCount": 8,
@@ -8578,7 +8707,7 @@
         "reviewedIdentity": "0.86.0",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
-        "checkedAt": "2026-08-15T06:29:24.171Z",
+        "checkedAt": "2026-08-17T08:59:36.438Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -8768,7 +8897,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 9,
       "sourceCount": 9,
       "unknownCount": 10,
@@ -8933,7 +9062,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 11,
       "sourceCount": 11,
       "unknownCount": 12,
@@ -8946,7 +9075,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.lovable.dev/changelog?page=1",
-        "checkedAt": "2026-08-15T06:29:21.564Z",
+        "checkedAt": "2026-08-17T08:59:34.427Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -9167,7 +9296,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 13,
@@ -9440,7 +9569,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 14,
       "sourceCount": 14,
       "unknownCount": 14,
@@ -9479,7 +9608,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 15,
       "sourceCount": 15,
       "unknownCount": 15,
@@ -9523,7 +9652,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 9,
       "sourceCount": 9,
       "unknownCount": 9,
@@ -9564,7 +9693,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 10,
       "sourceCount": 10,
       "unknownCount": 9,
@@ -9606,7 +9735,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 11,
       "sourceCount": 11,
       "unknownCount": 10,
@@ -9643,7 +9772,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 5,
       "sourceCount": 5,
       "unknownCount": 8,
@@ -9684,7 +9813,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 10,
       "sourceCount": 10,
       "unknownCount": 9,
@@ -9719,7 +9848,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -9754,7 +9883,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -9789,7 +9918,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -9824,7 +9953,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -9859,7 +9988,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -9872,7 +10001,7 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.mistral.ai/vibe/overview",
-        "checkedAt": "2026-08-15T06:29:17.465Z",
+        "checkedAt": "2026-08-17T08:59:30.812Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -9901,7 +10030,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -9914,7 +10043,7 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://ampcode.com/manual",
-        "checkedAt": "2026-08-15T06:29:22.957Z",
+        "checkedAt": "2026-08-17T08:59:35.627Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -9943,7 +10072,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -9978,7 +10107,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -9991,7 +10120,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
-        "checkedAt": "2026-08-15T06:29:21.399Z",
+        "checkedAt": "2026-08-17T08:59:34.123Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10020,7 +10149,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10033,7 +10162,7 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://kiro.dev/",
-        "checkedAt": "2026-08-15T06:29:17.746Z",
+        "checkedAt": "2026-08-17T08:59:30.881Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10062,7 +10191,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10097,7 +10226,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10110,7 +10239,7 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.augmentcode.com/cli/reference",
-        "checkedAt": "2026-08-15T06:29:18.905Z",
+        "checkedAt": "2026-08-17T08:59:32.315Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10139,7 +10268,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10152,7 +10281,7 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.factory.ai/cli/getting-started/overview",
-        "checkedAt": "2026-08-15T06:29:16.946Z",
+        "checkedAt": "2026-08-17T08:59:30.623Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10181,7 +10310,7 @@
         }
       },
       "lifecycleStatus": "discontinued",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10216,7 +10345,7 @@
         }
       },
       "lifecycleStatus": "historical",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10251,7 +10380,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10286,7 +10415,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10299,7 +10428,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
-        "checkedAt": "2026-08-15T06:29:18.196Z",
+        "checkedAt": "2026-08-17T08:59:31.359Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10328,7 +10457,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10341,7 +10470,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer",
-        "checkedAt": "2026-08-15T06:29:20.829Z",
+        "checkedAt": "2026-08-17T08:59:33.604Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10370,7 +10499,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10383,7 +10512,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://code.visualstudio.com/docs/agents/concepts/agents",
-        "checkedAt": "2026-08-15T06:29:20.256Z",
+        "checkedAt": "2026-08-17T08:59:33.200Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10412,7 +10541,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10425,7 +10554,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://developers.openai.com/codex/ide/",
-        "checkedAt": "2026-08-15T06:29:21.915Z",
+        "checkedAt": "2026-08-17T08:59:35.462Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10454,7 +10583,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10467,7 +10596,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
-        "checkedAt": "2026-08-15T06:29:17.740Z",
+        "checkedAt": "2026-08-17T08:59:30.838Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10496,7 +10625,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10509,7 +10638,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.mistral.ai/vibe/choose-chat-work-code",
-        "checkedAt": "2026-08-15T06:29:16.947Z",
+        "checkedAt": "2026-08-17T08:59:30.624Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10538,7 +10667,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10551,7 +10680,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.tabnine.com/main/getting-started/tabnine-agent",
-        "checkedAt": "2026-08-15T06:29:23.253Z",
+        "checkedAt": "2026-08-17T08:59:35.998Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10580,7 +10709,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10593,7 +10722,7 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.warp.dev/?fallback=true",
-        "checkedAt": "2026-08-15T06:29:23.724Z",
+        "checkedAt": "2026-08-17T08:59:36.182Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10622,7 +10751,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10635,7 +10764,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.augmentcode.com/using-augment/agent",
-        "checkedAt": "2026-08-15T06:29:18.664Z",
+        "checkedAt": "2026-08-17T08:59:31.843Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10664,7 +10793,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10677,7 +10806,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://developers.openai.com/codex/cloud/",
-        "checkedAt": "2026-08-15T06:29:21.847Z",
+        "checkedAt": "2026-08-17T08:59:35.153Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10706,7 +10835,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10719,7 +10848,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://cursor.com/cloud",
-        "checkedAt": "2026-08-15T06:29:19.916Z",
+        "checkedAt": "2026-08-17T08:59:32.925Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10748,7 +10877,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10761,7 +10890,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.gitlab.com/user/duo_agent_platform/",
-        "checkedAt": "2026-08-15T06:29:20.560Z",
+        "checkedAt": "2026-08-17T08:59:33.559Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10790,7 +10919,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 6,
@@ -10825,7 +10954,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10838,7 +10967,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started",
-        "checkedAt": "2026-08-15T06:29:16.947Z",
+        "checkedAt": "2026-08-17T08:59:30.624Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10867,7 +10996,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10880,7 +11009,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://kiro.dev/docs/web/using-the-agent/",
-        "checkedAt": "2026-08-15T06:29:18.067Z",
+        "checkedAt": "2026-08-17T08:59:30.935Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10909,7 +11038,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10922,7 +11051,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud",
-        "checkedAt": "2026-08-15T06:29:24.679Z",
+        "checkedAt": "2026-08-17T08:59:36.443Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10951,7 +11080,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -10964,7 +11093,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
-        "checkedAt": "2026-08-15T06:29:20.192Z",
+        "checkedAt": "2026-08-17T08:59:33.050Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -10993,7 +11122,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -11006,7 +11135,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
-        "checkedAt": "2026-08-15T06:29:20.192Z",
+        "checkedAt": "2026-08-17T08:59:33.050Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -11035,7 +11164,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -11048,7 +11177,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.factory.ai/cli/features/droid-computers",
-        "checkedAt": "2026-08-15T06:29:16.919Z",
+        "checkedAt": "2026-08-17T08:59:30.592Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -11077,7 +11206,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -11090,7 +11219,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.warp.dev/?fallback=true",
-        "checkedAt": "2026-08-15T06:29:23.724Z",
+        "checkedAt": "2026-08-17T08:59:36.182Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -11119,7 +11248,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -11132,7 +11261,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
-        "checkedAt": "2026-08-15T06:29:18.170Z",
+        "checkedAt": "2026-08-17T08:59:31.326Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -11161,7 +11290,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -11174,7 +11303,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://support.bolt.new/release-notes",
-        "checkedAt": "2026-08-15T06:29:23.142Z",
+        "checkedAt": "2026-08-17T08:59:35.695Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -11203,7 +11332,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -11216,7 +11345,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://api2.v0.dev/docs/faqs",
-        "checkedAt": "2026-08-15T06:29:23.670Z",
+        "checkedAt": "2026-08-17T08:59:36.101Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -11245,7 +11374,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -11258,7 +11387,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta",
-        "checkedAt": "2026-08-15T06:29:23.390Z",
+        "checkedAt": "2026-08-17T08:59:36.013Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -11287,7 +11416,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -11483,7 +11612,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 9,
       "sourceCount": 9,
       "unknownCount": 10,
@@ -11710,7 +11839,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 13,
@@ -11937,7 +12066,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 13,
@@ -11981,7 +12110,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 9,
@@ -12016,7 +12145,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -12053,7 +12182,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 5,
       "sourceCount": 5,
       "unknownCount": 8,
@@ -12101,23 +12230,16 @@
           "note": "The official source identifies 3.15, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-09 currentness review."
         }
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-17",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 12,
       "independentTestCount": 0,
       "recordPath": "drafts/research-preview-release/currentness-2026-08-09/records/com.cursor.ide.foreground-agent.3-15.json",
       "mappingPath": null,
-      "lifecycleNote": "Anysphere's official download archive labels Cursor desktop 3.15 as Latest.",
-      "publicationFreshness": {
-        "status": "known-newer",
-        "reviewedIdentity": "3.15",
-        "knownNewerIdentity": "3.16",
-        "officialSource": "https://cursor.com/download",
-        "checkedAt": "2026-08-15T06:29:20.082Z",
-        "note": "The captured existing official source response contains the approved Cursor 3.16 identity, newer than the sealed reviewed identity 3.15. The sealed snapshot is not promoted."
-      }
+      "lifecycleNote": "Cursor's official download archive marks 3.16 as Latest; the platform-specific installed artifact remains unresolved. The preserved 3.15 record remains inspectable as the direct predecessor.",
+      "publicationFreshness": null
     },
     {
       "recordId": "com.gitlab.duo.code-review-flow.19-2-1",
@@ -12144,7 +12266,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 6,
@@ -12179,7 +12301,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -12218,7 +12340,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 15,
@@ -12231,7 +12353,7 @@
         "reviewedIdentity": "0.147.0",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/openai/codex/releases/tag/rust-v0.147.0",
-        "checkedAt": "2026-08-15T06:29:21.816Z",
+        "checkedAt": "2026-08-17T08:59:34.515Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -12364,7 +12486,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 7,
       "sourceCount": 7,
       "unknownCount": 8,
@@ -12400,7 +12522,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -12579,7 +12701,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 10,
@@ -12806,7 +12928,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 12,
       "sourceCount": 12,
       "unknownCount": 13,
@@ -12819,7 +12941,7 @@
         "reviewedIdentity": "1.18.18",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/anomalyco/opencode/releases/tag/v1.18.18",
-        "checkedAt": "2026-08-15T06:29:18.303Z",
+        "checkedAt": "2026-08-17T08:59:31.392Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -12858,7 +12980,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 9,
@@ -12894,7 +13016,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -12932,7 +13054,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 5,
       "sourceCount": 5,
       "unknownCount": 8,
@@ -13187,7 +13309,7 @@
         }
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 14,
       "sourceCount": 14,
       "unknownCount": 14,
@@ -13223,7 +13345,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -13265,7 +13387,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 9,
@@ -13278,7 +13400,7 @@
         "reviewedIdentity": "19.2.2-ee",
         "knownNewerIdentity": null,
         "officialSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
-        "checkedAt": "2026-08-15T06:29:20.384Z",
+        "checkedAt": "2026-08-17T08:59:33.266Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -13308,7 +13430,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 6,
@@ -13321,7 +13443,7 @@
         "reviewedIdentity": "19.2.2-ee",
         "knownNewerIdentity": null,
         "officialSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
-        "checkedAt": "2026-08-15T06:29:20.384Z",
+        "checkedAt": "2026-08-17T08:59:33.266Z",
         "note": "The sealed identity is rolling or unresolved, so this source cannot be compared as a newer exact version."
       }
     },
@@ -13351,7 +13473,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -13387,7 +13509,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -13400,7 +13522,7 @@
         "reviewedIdentity": "0.55.1",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.55.1",
-        "checkedAt": "2026-08-15T06:29:20.928Z",
+        "checkedAt": "2026-08-17T08:59:33.877Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -13430,7 +13552,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -13569,7 +13691,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 7,
       "sourceCount": 7,
       "unknownCount": 8,
@@ -13582,8 +13704,8 @@
         "reviewedIdentity": "1.15.0",
         "knownNewerIdentity": null,
         "officialSource": "https://zed.dev/releases/stable",
-        "checkedAt": "2026-08-15T06:29:23.859Z",
-        "note": "The official source was reachable, but generic numeric tokens in the response could not prove a newer Zed identity. Coverage remains incomplete and the snapshot is unchanged."
+        "checkedAt": "2026-08-17T08:59:36.286Z",
+        "note": "The official source was reachable, but its response did not expose a comparable identity that this bounded detector could verify."
       }
     },
     {
@@ -13612,7 +13734,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -13625,7 +13747,7 @@
         "reviewedIdentity": "1.46.0",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0",
-        "checkedAt": "2026-08-15T06:29:23.930Z",
+        "checkedAt": "2026-08-17T08:59:36.343Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -13654,23 +13776,16 @@
         },
         "additionalIdentities": []
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
       "independentTestCount": 0,
       "recordPath": "drafts/research-preview-release/currentness-2026-08-15/records/com.alibaba.qwen-code.cli.0-21-12.json",
       "mappingPath": null,
-      "lifecycleNote": "The official release feed identifies v0.21.12 as the latest stable Qwen Code CLI release reviewed on 2026-08-15.",
-      "publicationFreshness": {
-        "status": "incomplete-uncheckable",
-        "reviewedIdentity": "0.21.12",
-        "knownNewerIdentity": null,
-        "officialSource": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.12",
-        "checkedAt": "2026-08-15T06:29:17.722Z",
-        "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
-      }
+      "lifecycleNote": "The official release feed identifies v0.21.13 as the latest stable Qwen Code CLI release reviewed on 2026-08-17. The preserved 0.21.12 record remains inspectable as the direct predecessor.",
+      "publicationFreshness": null
     },
     {
       "recordId": "com.amazon.kiro.ide.1-0-309",
@@ -13841,7 +13956,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 10,
@@ -13854,7 +13969,7 @@
         "reviewedIdentity": "1.0.309",
         "knownNewerIdentity": null,
         "officialSource": "https://kiro.dev/changelog/ide/1-0-309/",
-        "checkedAt": "2026-08-15T06:29:17.895Z",
+        "checkedAt": "2026-08-17T08:59:30.903Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -13893,7 +14008,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "superseded",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 9,
@@ -13938,7 +14053,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 8,
       "sourceCount": 8,
       "unknownCount": 9,
@@ -13951,7 +14066,7 @@
         "reviewedIdentity": "2.1.233",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
-        "checkedAt": "2026-08-15T06:29:18.405Z",
+        "checkedAt": "2026-08-17T08:59:31.691Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -13981,7 +14096,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -13994,7 +14109,7 @@
         "reviewedIdentity": "3.0.55",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/cline/cline/releases/tag/cli-v3.0.55",
-        "checkedAt": "2026-08-15T06:29:19.001Z",
+        "checkedAt": "2026-08-17T08:59:32.342Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -14026,7 +14141,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 5,
       "sourceCount": 5,
       "unknownCount": 8,
@@ -14039,7 +14154,7 @@
         "reviewedIdentity": "4.1.10",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/cline/cline/releases/tag/v4.1.10",
-        "checkedAt": "2026-08-15T06:29:19.385Z",
+        "checkedAt": "2026-08-17T08:59:32.365Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -14288,7 +14403,7 @@
         }
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 14,
       "sourceCount": 14,
       "unknownCount": 14,
@@ -14301,7 +14416,7 @@
         "reviewedIdentity": "3.7.25",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.devin.ai/desktop/releases#v3-7-25",
-        "checkedAt": "2026-08-15T06:29:19.422Z",
+        "checkedAt": "2026-08-17T08:59:32.492Z",
         "note": "The live release index exposed the sealed identity 3.7.25 and no higher comparable identity during this bounded check."
       }
     },
@@ -14331,7 +14446,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -14344,7 +14459,7 @@
         "reviewedIdentity": "1.0.80",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/github/copilot-cli/releases/tag/v1.0.80",
-        "checkedAt": "2026-08-15T06:29:20.224Z",
+        "checkedAt": "2026-08-17T08:59:33.100Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -14374,7 +14489,7 @@
         "additionalIdentities": []
       },
       "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
@@ -14387,7 +14502,7 @@
         "reviewedIdentity": "1.1.13",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13",
-        "checkedAt": "2026-08-15T06:29:20.787Z",
+        "checkedAt": "2026-08-17T08:59:33.600Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     },
@@ -14416,21 +14531,157 @@
         },
         "additionalIdentities": []
       },
-      "lifecycleStatus": "current",
-      "reviewedAt": "2026-08-15",
+      "lifecycleStatus": "superseded",
+      "reviewedAt": "2026-08-17",
       "claimCount": 2,
       "sourceCount": 2,
       "unknownCount": 4,
       "independentTestCount": 0,
       "recordPath": "drafts/research-preview-release/currentness-2026-08-15/records/com.jetbrains.junie.ide-plugin.262-579-14.json",
       "mappingPath": null,
-      "lifecycleNote": "JetBrains Marketplace's publisher-controlled stable update page lists Junie IDE plugin 262.579.14 as the newest reviewed update.",
+      "lifecycleNote": "JetBrains Marketplace identifies stable Junie IDE plugin update 1141035 as version 262.579.20, published 2026-08-17. The preserved 262.579.14 record remains inspectable as the direct predecessor.",
+      "publicationFreshness": null
+    },
+    {
+      "recordId": "com.alibaba.qwen-code.cli.0-21-13",
+      "name": "Qwen Code CLI",
+      "publisher": "Alibaba Cloud Qwen team",
+      "surface": {
+        "kind": "cli",
+        "name": "Qwen Code CLI",
+        "slug": "alibaba-qwen-code-cli-0-21-13",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "0.21.13",
+        "releaseTag": "v0.21.13",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-17T02:11:15Z",
+        "channel": "Qwen Code CLI release stream",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "The official source identifies 0.21.13, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-17 currentness review."
+        },
+        "additionalIdentities": []
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-17",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-17/records/com.alibaba.qwen-code.cli.0-21-13.json",
+      "mappingPath": null,
+      "lifecycleNote": "The official release feed identifies v0.21.13 as the latest stable Qwen Code CLI release reviewed on 2026-08-17.",
       "publicationFreshness": {
         "status": "incomplete-uncheckable",
-        "reviewedIdentity": "262.579.14",
+        "reviewedIdentity": "0.21.13",
         "knownNewerIdentity": null,
-        "officialSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1138682",
-        "checkedAt": "2026-08-15T06:29:21.461Z",
+        "officialSource": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.13",
+        "checkedAt": "2026-08-17T08:59:30.815Z",
+        "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
+      }
+    },
+    {
+      "recordId": "com.cursor.ide.foreground-agent.3-16",
+      "name": "Cursor IDE foreground Agent",
+      "publisher": "Anysphere, Inc.",
+      "surface": {
+        "kind": "desktop-app",
+        "name": "Cursor IDE foreground Agent",
+        "slug": "cursor-ide-foreground-agent-3-16",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "3.16",
+        "releaseTag": null,
+        "sourceRevision": null,
+        "releasedAt": null,
+        "channel": "Cursor stable desktop download archive",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [
+            "macOS ARM64 DMG",
+            "macOS x64 DMG",
+            "macOS Universal DMG",
+            "Windows x64 system installer",
+            "Windows x64 user installer",
+            "Windows ARM64 system installer",
+            "Windows ARM64 user installer",
+            "Linux DEB ARM64",
+            "Linux DEB x64",
+            "Linux RPM ARM64",
+            "Linux RPM x64",
+            "Linux AppImage ARM64",
+            "Linux AppImage x64"
+          ],
+          "note": "The official source identifies 3.16, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-17 currentness review."
+        },
+        "additionalIdentities": []
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-17",
+      "claimCount": 12,
+      "sourceCount": 12,
+      "unknownCount": 12,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-17/records/com.cursor.ide.foreground-agent.3-16.json",
+      "mappingPath": null,
+      "lifecycleNote": "Cursor's official download archive marks 3.16 as Latest; the platform-specific installed artifact remains unresolved.",
+      "publicationFreshness": {
+        "status": "no-newer-identity-proven",
+        "reviewedIdentity": "3.16",
+        "knownNewerIdentity": null,
+        "officialSource": "https://cursor.com/download",
+        "checkedAt": "2026-08-17T08:59:33.036Z",
+        "note": "The live release index exposed the sealed identity 3.16 and no higher comparable identity during this bounded check."
+      }
+    },
+    {
+      "recordId": "com.jetbrains.junie.ide-plugin.262-579-20",
+      "name": "Junie IDE plugin",
+      "publisher": "JetBrains",
+      "surface": {
+        "kind": "ide-extension",
+        "name": "Junie IDE plugin",
+        "slug": "jetbrains-junie-ide-262-579-20",
+        "deliveryModel": "hybrid"
+      },
+      "release": {
+        "scope": "exact-version",
+        "version": "262.579.20",
+        "releaseTag": "262.579.20",
+        "sourceRevision": null,
+        "releasedAt": "2026-08-17T05:38:00Z",
+        "channel": "JetBrains Marketplace stable plugin",
+        "installedRuntimeVariant": {
+          "status": "unresolved",
+          "value": null,
+          "alternatives": [],
+          "note": "The official source identifies 262.579.20, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-17 currentness review."
+        },
+        "additionalIdentities": []
+      },
+      "lifecycleStatus": "current",
+      "reviewedAt": "2026-08-17",
+      "claimCount": 2,
+      "sourceCount": 2,
+      "unknownCount": 4,
+      "independentTestCount": 0,
+      "recordPath": "drafts/research-preview-release/currentness-2026-08-17/records/com.jetbrains.junie.ide-plugin.262-579-20.json",
+      "mappingPath": null,
+      "lifecycleNote": "JetBrains Marketplace identifies stable Junie IDE plugin update 1141035 as version 262.579.20, published 2026-08-17.",
+      "publicationFreshness": {
+        "status": "incomplete-uncheckable",
+        "reviewedIdentity": "262.579.20",
+        "knownNewerIdentity": null,
+        "officialSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1141035",
+        "checkedAt": "2026-08-17T08:59:34.201Z",
         "note": "The existing official source is an exact-identity page, not a live release index that can prove no newer identity exists."
       }
     }
@@ -14438,37 +14689,37 @@
   "snapshotSeal": {
     "schemaVersion": "agent-evidence-sealed-snapshot/0.1",
     "artifactType": "sealed-official-source-review-snapshot",
-    "asOf": "2026-08-15",
+    "asOf": "2026-08-17",
     "sourceReviewWindow": {
-      "startedAt": "2026-08-15T02:08:35.493Z",
-      "completedAt": "2026-08-15T02:14:02.006Z"
+      "startedAt": "2026-08-17T08:56:05.909Z",
+      "completedAt": "2026-08-17T08:56:11.212Z"
     },
     "sourceLinkAuditWindow": {
-      "startedAt": "2026-08-15T02:18:50.244Z",
-      "completedAt": "2026-08-15T02:19:02.402Z"
+      "startedAt": "2026-08-17T08:57:16.896Z",
+      "completedAt": "2026-08-17T08:57:52.938Z"
     },
-    "sealedAt": "2026-08-15T02:19:02.402Z",
+    "sealedAt": "2026-08-17T08:57:52.938Z",
     "catalogCounts": {
       "surfaces": 55,
       "current": 53,
-      "total": 98,
-      "nonCurrent": 45,
-      "superseded": 42,
+      "total": 101,
+      "nonCurrent": 48,
+      "superseded": 45,
       "historical": 2,
       "discontinued": 1
     },
     "sources": {
       "currentnessReceipt": {
-        "path": "drafts/research-preview-release/currentness-2026-08-15/currentness-receipt.json",
-        "sha256": "1848d67a52dec492e4bb98cb8ee9a716c03774f61934c0faeb8f3286ab61dcbb"
+        "path": "drafts/research-preview-release/currentness-2026-08-17/currentness-receipt.json",
+        "sha256": "485e0c68f171bc86a97caaaf3ddfe60778ecc3a7298698c5bbc5ae440cc6c069"
       },
       "officialSourceAudit": {
-        "path": "drafts/research-preview-release/currentness-2026-08-15/official-source-audit.json",
-        "sha256": "f24e7bbe5edfb9a356dfb845528c2fc71921c79bca1d691c714dd7cb35150892"
+        "path": "drafts/research-preview-release/currentness-2026-08-17/official-source-audit.json",
+        "sha256": "8f3224519c0e0d56ba9129dca9d3c89274092c06cc086642d99823f21aa05b53"
       },
       "officialUrlAudit": {
-        "path": "drafts/research-preview-release/currentness-2026-08-15/official-url-audit.json",
-        "sha256": "7935f7ffcd05a1d3e512f6e09cdf3da94ab75a1af074e77118d4be1c3e16845e"
+        "path": "drafts/research-preview-release/currentness-2026-08-17/official-url-audit.json",
+        "sha256": "b8159079ab9ed3f55b7a666d5d36f36d1efc108c032581ea7f16d8ebf255cc08"
       }
     },
     "boundary": "The identities and lifecycle states in this catalog are sealed to the recorded source-review window. Publication-time freshness notices do not modify the snapshot."
@@ -14477,37 +14728,36 @@
     "schemaVersion": "agent-evidence-publication-freshness-census/0.1",
     "artifactType": "sealed-snapshot-publication-freshness-census",
     "snapshot": {
-      "asOf": "2026-08-15",
+      "asOf": "2026-08-17",
       "sourceReviewWindow": {
-        "startedAt": "2026-08-15T02:08:35.493Z",
-        "completedAt": "2026-08-15T02:14:02.006Z"
+        "startedAt": "2026-08-17T08:56:05.909Z",
+        "completedAt": "2026-08-17T08:56:11.212Z"
       },
       "sourceLinkAuditWindow": {
-        "startedAt": "2026-08-15T02:18:50.244Z",
-        "completedAt": "2026-08-15T02:19:02.402Z"
+        "startedAt": "2026-08-17T08:57:16.896Z",
+        "completedAt": "2026-08-17T08:57:52.938Z"
       },
-      "sealedAt": "2026-08-15T02:19:02.402Z",
+      "sealedAt": "2026-08-17T08:57:52.938Z",
       "currentnessReceipt": {
-        "path": "drafts/research-preview-release/currentness-2026-08-15/currentness-receipt.json",
-        "sha256": "1848d67a52dec492e4bb98cb8ee9a716c03774f61934c0faeb8f3286ab61dcbb"
+        "path": "drafts/research-preview-release/currentness-2026-08-17/currentness-receipt.json",
+        "sha256": "485e0c68f171bc86a97caaaf3ddfe60778ecc3a7298698c5bbc5ae440cc6c069"
       },
       "officialSourceAudit": {
-        "path": "drafts/research-preview-release/currentness-2026-08-15/official-source-audit.json",
-        "sha256": "f24e7bbe5edfb9a356dfb845528c2fc71921c79bca1d691c714dd7cb35150892"
+        "path": "drafts/research-preview-release/currentness-2026-08-17/official-source-audit.json",
+        "sha256": "8f3224519c0e0d56ba9129dca9d3c89274092c06cc086642d99823f21aa05b53"
       },
       "officialUrlAudit": {
-        "path": "drafts/research-preview-release/currentness-2026-08-15/official-url-audit.json",
-        "sha256": "7935f7ffcd05a1d3e512f6e09cdf3da94ab75a1af074e77118d4be1c3e16845e"
+        "path": "drafts/research-preview-release/currentness-2026-08-17/official-url-audit.json",
+        "sha256": "b8159079ab9ed3f55b7a666d5d36f36d1efc108c032581ea7f16d8ebf255cc08"
       }
     },
     "census": {
-      "startedAt": "2026-08-15T06:29:16.919Z",
-      "completedAt": "2026-08-15T06:29:26.166Z",
+      "startedAt": "2026-08-17T08:59:30.592Z",
+      "completedAt": "2026-08-17T08:59:37.955Z",
       "method": "One bounded read-only HTTP GET with redirects per unique existing preferred official-source URL; no search results, third-party sources or substitute endpoints.",
       "publisherSourcesOnly": true,
       "uniqueNetworkRequests": 52,
-      "snapshotPromotionAllowed": false,
-      "interpretation": "Offline fail-closed correction of ambiguous generic numeric matches from the single captured network pass; no additional network request was made."
+      "snapshotPromotionAllowed": false
     },
     "counts": {
       "surfaces": 55,
@@ -14515,8 +14765,8 @@
       "reachable": 55,
       "unreachable": 0,
       "currentnessComparable": 2,
-      "knownNewer": 1,
-      "noNewerIdentityProven": 1,
+      "knownNewer": 0,
+      "noNewerIdentityProven": 2,
       "incompleteCoverage": 53
     },
     "entries": [
@@ -14526,10 +14776,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.factory.ai/cli/features/droid-computers",
-        "checkedAt": "2026-08-15T06:29:16.919Z",
+        "checkedAt": "2026-08-17T08:59:30.592Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.factory.ai/droid-computers/overview",
-        "responseBodySha256": "e4ee59ccf55d98574ed4c20fc3af8d4117034fcef4349e17d882a8feecd16c70",
+        "responseBodySha256": "64af00a600d918f4ca5666adb23e58427e2bd8e515b90aebb81eaf8a605c0491",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14541,10 +14791,10 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.factory.ai/cli/getting-started/overview",
-        "checkedAt": "2026-08-15T06:29:16.946Z",
+        "checkedAt": "2026-08-17T08:59:30.623Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.factory.ai/droid-cli/overview",
-        "responseBodySha256": "53e639efdbdc033007c123ebabd7b20ea2850ed5b13c6f901ad3c2ac58bae368",
+        "responseBodySha256": "314d2cd8fe8b45c42392b2f534dec71f9304bc2627e37723ca8034a1c2adf925",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14556,7 +14806,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.mistral.ai/vibe/choose-chat-work-code",
-        "checkedAt": "2026-08-15T06:29:16.947Z",
+        "checkedAt": "2026-08-17T08:59:30.624Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.mistral.ai/vibe/choose-chat-work-code",
         "responseBodySha256": "1c0f17645e80aca45fc11e71ca20020d7db89780c81124d51d491694c71dbf2f",
@@ -14571,7 +14821,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started",
-        "checkedAt": "2026-08-15T06:29:16.947Z",
+        "checkedAt": "2026-08-17T08:59:30.624Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started",
         "responseBodySha256": "f6a94d3eb1fd51b5e177ac838c162f24d9660ca9a7c6b1834dd1e88aea1f0ebc",
@@ -14586,7 +14836,7 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.mistral.ai/vibe/overview",
-        "checkedAt": "2026-08-15T06:29:17.465Z",
+        "checkedAt": "2026-08-17T08:59:30.812Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.mistral.ai/vibe",
         "responseBodySha256": "018986eabb0bdf4f100c318a3dc0e112189b0dddad9cda59d0ec585e2936ca68",
@@ -14597,14 +14847,14 @@
       },
       {
         "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
-        "recordId": "com.alibaba.qwen-code.cli.0-21-12",
-        "reviewedIdentity": "0.21.12",
+        "recordId": "com.alibaba.qwen-code.cli.0-21-13",
+        "reviewedIdentity": "0.21.13",
         "knownNewerIdentity": null,
-        "officialSource": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.12",
-        "checkedAt": "2026-08-15T06:29:17.722Z",
+        "officialSource": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.13",
+        "checkedAt": "2026-08-17T08:59:30.815Z",
         "httpStatus": 200,
-        "finalUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.12",
-        "responseBodySha256": "cd5757423ba8b607f14b26d375060cc3db1b1a6a0420a2b7eb5437d9995acd4b",
+        "finalUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.13",
+        "responseBodySha256": "f853749836a662023fbc2d0babee7e1d9a891740d19b65bd00c8d098cb40430f",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14616,10 +14866,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
-        "checkedAt": "2026-08-15T06:29:17.740Z",
+        "checkedAt": "2026-08-17T08:59:30.838Z",
         "httpStatus": 200,
         "finalUrl": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
-        "responseBodySha256": "bed7d8e67d9aac106309aa1575a46585d0b4115fe89ee9ca83edb418d55ec498",
+        "responseBodySha256": "47ba15aa4cb770300c890e87cc5a27e041fa1e4dfc6c366c41d87494a04dbb72",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14631,10 +14881,10 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://kiro.dev/",
-        "checkedAt": "2026-08-15T06:29:17.746Z",
+        "checkedAt": "2026-08-17T08:59:30.881Z",
         "httpStatus": 200,
         "finalUrl": "https://kiro.dev/",
-        "responseBodySha256": "1fcfa79e250255415d3789b82376f6848148efd312424f9925ad397b64ec3590",
+        "responseBodySha256": "b28c7840daa8471ebe272ce19038073f1cb36e51e071690f8a405b6f5f864169",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14646,10 +14896,10 @@
         "reviewedIdentity": "1.0.309",
         "knownNewerIdentity": null,
         "officialSource": "https://kiro.dev/changelog/ide/1-0-309/",
-        "checkedAt": "2026-08-15T06:29:17.895Z",
+        "checkedAt": "2026-08-17T08:59:30.903Z",
         "httpStatus": 200,
         "finalUrl": "https://kiro.dev/changelog/ide/1-0-309/",
-        "responseBodySha256": "92ca34ebb78559f0a099aba84fae13bb1e714dddbb62ce82cfd202705e331ea7",
+        "responseBodySha256": "140758ded907518262f5e21ecb07eb45dbd50b27713a5477993e07b12710fe8a",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14661,10 +14911,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://kiro.dev/docs/web/using-the-agent/",
-        "checkedAt": "2026-08-15T06:29:18.067Z",
+        "checkedAt": "2026-08-17T08:59:30.935Z",
         "httpStatus": 200,
         "finalUrl": "https://kiro.dev/docs/web/using-the-agent/",
-        "responseBodySha256": "401f02aa9635490e43158cff4c376444a0e903bd8098aa8ebb68080ffad0951b",
+        "responseBodySha256": "141fc40f5532fb2e88e0766758a3bd011459e26fccc978044cb11c71d7274bcb",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14676,7 +14926,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
-        "checkedAt": "2026-08-15T06:29:18.170Z",
+        "checkedAt": "2026-08-17T08:59:31.326Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
         "responseBodySha256": "6604341482211c5df1ce88d957907a067c501ca77f820c93f582e32295ceed07",
@@ -14691,10 +14941,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
-        "checkedAt": "2026-08-15T06:29:18.196Z",
+        "checkedAt": "2026-08-17T08:59:31.359Z",
         "httpStatus": 200,
         "finalUrl": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
-        "responseBodySha256": "8616fd74be86c122f64acfa40b27fef5a014c18094b6d709cc01a4c6574923de",
+        "responseBodySha256": "f78c8d3338578ea017041ac6d55810322497fb181f638a8032106e32c3e0457a",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14706,10 +14956,10 @@
         "reviewedIdentity": "1.18.18",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/anomalyco/opencode/releases/tag/v1.18.18",
-        "checkedAt": "2026-08-15T06:29:18.303Z",
+        "checkedAt": "2026-08-17T08:59:31.392Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/anomalyco/opencode/releases/tag/v1.18.18",
-        "responseBodySha256": "4f7db7ba45617f0b6485d43aeea62049f3be9e016aa872fd6e06c0eb6111b995",
+        "responseBodySha256": "5347c4fd95d13f1150bafb68b047542915da3af41c1991428f31d8a88493026e",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14721,10 +14971,10 @@
         "reviewedIdentity": "2.1.233",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
-        "checkedAt": "2026-08-15T06:29:18.405Z",
+        "checkedAt": "2026-08-17T08:59:31.691Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
-        "responseBodySha256": "01cd9acbc57928f8f2269c1818b7e1a23acf795d94c3725a19541c94b5dba795",
+        "responseBodySha256": "0825bc808350323fd8c7ebca8f1b003a72eaa95d75e36e258095780b400f9177",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14736,10 +14986,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.augmentcode.com/using-augment/agent",
-        "checkedAt": "2026-08-15T06:29:18.664Z",
+        "checkedAt": "2026-08-17T08:59:31.843Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.augmentcode.com/using-augment/agent",
-        "responseBodySha256": "32358d3d9014a503c993760b6f4bed552f156b80210f4a5cd1e127d7e085fb98",
+        "responseBodySha256": "5385e19d3bd27a2dc1c0452f88de7bc27679d229f552f3ba01a7a51df47b2729",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14751,10 +15001,10 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.augmentcode.com/cli/reference",
-        "checkedAt": "2026-08-15T06:29:18.905Z",
+        "checkedAt": "2026-08-17T08:59:32.315Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.augmentcode.com/cli/reference",
-        "responseBodySha256": "7389080a2cb942ed90e15812f18ded2392c840d2f9ee6a8921fad8ac5157c475",
+        "responseBodySha256": "dab974ce5c64cae11127eb974c034d940c1af019aa52b25c541970b603f6aa97",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14766,10 +15016,10 @@
         "reviewedIdentity": "3.0.55",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/cline/cline/releases/tag/cli-v3.0.55",
-        "checkedAt": "2026-08-15T06:29:19.001Z",
+        "checkedAt": "2026-08-17T08:59:32.342Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/cline/cline/releases/tag/cli-v3.0.55",
-        "responseBodySha256": "dfa60fb38312bf09c4e7d6f447c835e6680dc2491d9cd8d65f85b9b3f99789ad",
+        "responseBodySha256": "348903d6bfccc4919e7aaa4f97b73528ad91e4dfce4b872bf34236609c0f30c8",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14781,10 +15031,10 @@
         "reviewedIdentity": "4.1.10",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/cline/cline/releases/tag/v4.1.10",
-        "checkedAt": "2026-08-15T06:29:19.385Z",
+        "checkedAt": "2026-08-17T08:59:32.365Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/cline/cline/releases/tag/v4.1.10",
-        "responseBodySha256": "9fdcf0c7c2086b0896890312abe30d4a2a45465e778db917b2aada1cf590c4ec",
+        "responseBodySha256": "226f47114ce03c582b0ce2722586eac3e3cd501020266a8d1a243d01fba638cb",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14796,10 +15046,10 @@
         "reviewedIdentity": "3.7.25",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.devin.ai/desktop/releases#v3-7-25",
-        "checkedAt": "2026-08-15T06:29:19.422Z",
+        "checkedAt": "2026-08-17T08:59:32.492Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.devin.ai/desktop/releases",
-        "responseBodySha256": "f3e417886ef8efb9a2f56c1b59d8da0c813a4b9d106aba0eb5f01904ff389773",
+        "responseBodySha256": "93087997af998f363da6ef66635d288af2ab724d2fb3cda617c517f6e9abd202",
         "detector": "devin-desktop-release-index",
         "evidence": {
           "detectedVersions": [
@@ -14817,10 +15067,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.devin.ai/release-notes/overview",
-        "checkedAt": "2026-08-15T06:29:19.432Z",
+        "checkedAt": "2026-08-17T08:59:32.501Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.devin.ai/release-notes/overview",
-        "responseBodySha256": "30c1c01f3ce00d3e5e198c233bc6ce24e7f95a811c107a0e1d1bcde4a460401b",
+        "responseBodySha256": "4f3739a38d9a623e77e0da884d1a041fcd4fa5d812a31b3608d94a80b082820f",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14832,7 +15082,7 @@
         "reviewedIdentity": null,
         "knownNewerIdentity": null,
         "officialSource": "https://docs.continue.dev/",
-        "checkedAt": "2026-08-15T06:29:19.652Z",
+        "checkedAt": "2026-08-17T08:59:32.881Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.continue.dev/",
         "responseBodySha256": "611cfd9ba56b85e18c1e44657d46e319fb716864ef0bdb93fe1e462cb8025a31",
@@ -14847,10 +15097,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://cursor.com/cloud",
-        "checkedAt": "2026-08-15T06:29:19.916Z",
+        "checkedAt": "2026-08-17T08:59:32.925Z",
         "httpStatus": 200,
         "finalUrl": "https://cursor.com/cloud",
-        "responseBodySha256": "cb1d8347b0de5718c20f40c8a5c55a96aad8561dcb78a9fae0e156185afcfb25",
+        "responseBodySha256": "271c5da1f6392a5e5caaa431c4951584ac48f6961aa095d7be7042e17bb4bcbb",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14858,89 +15108,23 @@
       },
       {
         "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
-        "recordId": "com.cursor.ide.foreground-agent.3-15",
-        "reviewedIdentity": "3.15",
-        "knownNewerIdentity": "3.16",
+        "recordId": "com.cursor.ide.foreground-agent.3-16",
+        "reviewedIdentity": "3.16",
+        "knownNewerIdentity": null,
         "officialSource": "https://cursor.com/download",
-        "checkedAt": "2026-08-15T06:29:20.082Z",
+        "checkedAt": "2026-08-17T08:59:33.036Z",
         "httpStatus": 200,
         "finalUrl": "https://cursor.com/download",
-        "responseBodySha256": "c8465407c915f875615c46a7bb13edf14491dd60486bd45374029aa2fad585ba",
+        "responseBodySha256": "a3f698c05a8249d27dc7fb55c790bfb05f3ecd6185d73da66ced6720840cb247",
         "detector": "cursor-download-version",
         "evidence": {
           "detectedVersions": [
-            "3.0",
-            "3.1",
-            "3.02",
-            "3.2",
-            "3.3",
-            "3.04",
-            "3.4",
-            "3.5",
-            "3.6",
-            "3.7",
-            "3.8",
-            "3.09",
-            "3.9",
-            "3.10",
-            "3.11",
-            "3.12",
-            "3.13",
-            "3.014",
-            "3.14",
-            "3.15",
-            "3.16",
-            "3.17",
-            "3.22",
-            "3.024.156",
-            "3.039",
-            "3.58",
-            "3.83",
-            "3.91",
-            "3.96",
-            "3.96.948",
-            "3.105",
-            "3.182",
-            "3.218",
-            "3.325",
-            "3.354",
-            "3.368.026",
-            "3.415",
-            "3.441",
-            "3.467",
-            "3.475",
-            "3.483",
-            "3.504",
-            "3.532",
-            "3.544",
-            "3.559",
-            "3.566",
-            "3.623",
-            "3.675",
-            "3.676",
-            "3.694",
-            "3.714",
-            "3.792",
-            "3.829",
-            "3.935",
-            "3.966",
-            "3.06782",
-            "3.06818",
-            "3.07319",
-            "3.8287",
-            "3.08789",
-            "3.17383",
-            "3.28125",
-            "3.36328",
-            "3.37934",
-            "3.37971",
-            "3.56232"
+            "3.16"
           ],
-          "selectedIdentity": "3.16",
-          "selectionRule": "Retain the explicitly approved Cursor 3.16 identity present in the captured official response; reject generic numeric tokens from SVG and asset data."
+          "excerpt": "-trigger\" data-radix-collection-item=\"\"><div class=\"gap-g1 flex items-center\"><span class=\"type-md\">3.16</span><span class=\"label border-theme-text-sec text-theme-text\">Latest</span></div><span class=\"ml-"
         },
-        "status": "known-newer",
-        "note": "The captured existing official source response contains the approved Cursor 3.16 identity, newer than the sealed reviewed identity 3.15. The sealed snapshot is not promoted."
+        "status": "no-newer-identity-proven",
+        "note": "The live release index exposed the sealed identity 3.16 and no higher comparable identity during this bounded check."
       },
       {
         "surfaceKey": "com.github.anthropic.claude-agent.preview",
@@ -14948,10 +15132,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
-        "checkedAt": "2026-08-15T06:29:20.192Z",
+        "checkedAt": "2026-08-17T08:59:33.050Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
-        "responseBodySha256": "ffb7cf04a23622201ae355474e60319148d2e749880093a8344247df1b753c8b",
+        "responseBodySha256": "2eede8e15876c6f75a8773433be4108d3448d6b0693cee7e8e5c98e45ecab07c",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14963,10 +15147,10 @@
         "reviewedIdentity": "1.0.80",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/github/copilot-cli/releases/tag/v1.0.80",
-        "checkedAt": "2026-08-15T06:29:20.224Z",
+        "checkedAt": "2026-08-17T08:59:33.100Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/github/copilot-cli/releases/tag/v1.0.80",
-        "responseBodySha256": "0577c69de9480aed7daebd5f3f0dd4c9e84f2c0a73e5232d8f8b1f4612f6519e",
+        "responseBodySha256": "53a590a1dd96f11cdb25dca1d893fb1e21e95d99819664368472335b3449afbe",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14978,10 +15162,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
-        "checkedAt": "2026-08-15T06:29:20.239Z",
+        "checkedAt": "2026-08-17T08:59:33.103Z",
         "httpStatus": 200,
         "finalUrl": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
-        "responseBodySha256": "baba06b4da71208432ae05f509fbcec29e0ebc030a067448ecf9d1702276b100",
+        "responseBodySha256": "97597f868b8731d4300648ce8c7a0248c5c33253d0e1ab7b3bc776fa594d73ec",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -14993,7 +15177,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://code.visualstudio.com/docs/agents/concepts/agents",
-        "checkedAt": "2026-08-15T06:29:20.256Z",
+        "checkedAt": "2026-08-17T08:59:33.200Z",
         "httpStatus": 200,
         "finalUrl": "https://code.visualstudio.com/docs/agents/concepts/agents",
         "responseBodySha256": "e0a2489fbbf6fd4b9443c5019d37e980a04b36c84aaf1ab185c353371fb3f716",
@@ -15008,10 +15192,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
-        "checkedAt": "2026-08-15T06:29:20.192Z",
+        "checkedAt": "2026-08-17T08:59:33.050Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
-        "responseBodySha256": "ffb7cf04a23622201ae355474e60319148d2e749880093a8344247df1b753c8b",
+        "responseBodySha256": "2eede8e15876c6f75a8773433be4108d3448d6b0693cee7e8e5c98e45ecab07c",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15023,10 +15207,10 @@
         "reviewedIdentity": "19.2.2-ee",
         "knownNewerIdentity": null,
         "officialSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
-        "checkedAt": "2026-08-15T06:29:20.384Z",
+        "checkedAt": "2026-08-17T08:59:33.266Z",
         "httpStatus": 200,
         "finalUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
-        "responseBodySha256": "e12fe9d97f43b8706e8b0e01f9a4c2e8af555c18ad49793f8c0d6f32290d2360",
+        "responseBodySha256": "4c8544bfa55c4b50aa43e4edf9ddf25c35c3de19995e4abe4711d82e1e598cc1",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15038,10 +15222,10 @@
         "reviewedIdentity": "19.2.2-ee",
         "knownNewerIdentity": null,
         "officialSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
-        "checkedAt": "2026-08-15T06:29:20.384Z",
+        "checkedAt": "2026-08-17T08:59:33.266Z",
         "httpStatus": 200,
         "finalUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
-        "responseBodySha256": "e12fe9d97f43b8706e8b0e01f9a4c2e8af555c18ad49793f8c0d6f32290d2360",
+        "responseBodySha256": "4c8544bfa55c4b50aa43e4edf9ddf25c35c3de19995e4abe4711d82e1e598cc1",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15053,7 +15237,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.gitlab.com/user/duo_agent_platform/",
-        "checkedAt": "2026-08-15T06:29:20.560Z",
+        "checkedAt": "2026-08-17T08:59:33.559Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/",
         "responseBodySha256": "590eccc4758f714d070a97b25e31e3492ffe0f7ae778a563ff9c73c7e71a52a4",
@@ -15068,10 +15252,10 @@
         "reviewedIdentity": "1.1.13",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13",
-        "checkedAt": "2026-08-15T06:29:20.787Z",
+        "checkedAt": "2026-08-17T08:59:33.600Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13",
-        "responseBodySha256": "078e8e87f6245f7119f57e0aac80372c509136735ea3dffee19df88fadf3d366",
+        "responseBodySha256": "88fae0680dcc39ea20fc95172592a3d37db2239b33740cc699a473603b0f0ffa",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15083,10 +15267,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer",
-        "checkedAt": "2026-08-15T06:29:20.829Z",
+        "checkedAt": "2026-08-17T08:59:33.604Z",
         "httpStatus": 200,
-        "finalUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
-        "responseBodySha256": "3e6b3f6b1f2b8d2449767f8205b2fd79c997f207d3eb98768ea3176b8589ed28",
+        "finalUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer?hl=pt-br",
+        "responseBodySha256": "5bc26bcfecd0e1067e545ce9a96be78b8968aceb61b826f360a72a9532999272",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15098,10 +15282,10 @@
         "reviewedIdentity": "0.55.1",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.55.1",
-        "checkedAt": "2026-08-15T06:29:20.928Z",
+        "checkedAt": "2026-08-17T08:59:33.877Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.55.1",
-        "responseBodySha256": "1d26ff96a156b641faf45f99df31e11ed1e6151c93590f97044cabade9b9c6b9",
+        "responseBodySha256": "1ce216a868c0930d5061da96ed84bcf504d441f22c820ad67eb5d645967761cc",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15113,7 +15297,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://jules.google/docs/changelog/2025-08-06/",
-        "checkedAt": "2026-08-15T06:29:21.001Z",
+        "checkedAt": "2026-08-17T08:59:33.999Z",
         "httpStatus": 200,
         "finalUrl": "https://jules.google/docs/changelog/2025-08-06/",
         "responseBodySha256": "005037bfa9f9919d9c4ca7cf5fb37d6b674014cbaa887090fdd17cad8ae52a97",
@@ -15128,10 +15312,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
-        "checkedAt": "2026-08-15T06:29:21.399Z",
+        "checkedAt": "2026-08-17T08:59:34.123Z",
         "httpStatus": 200,
         "finalUrl": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
-        "responseBodySha256": "84496439bd469773dc1840cb3c83136844463b87c80cc8638095f7c0c99191aa",
+        "responseBodySha256": "0035ae9aad96a55129124962a5bbb348c9f706b11035d39b197e98c2d74b4b23",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15139,14 +15323,14 @@
       },
       {
         "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
-        "recordId": "com.jetbrains.junie.ide-plugin.262-579-14",
-        "reviewedIdentity": "262.579.14",
+        "recordId": "com.jetbrains.junie.ide-plugin.262-579-20",
+        "reviewedIdentity": "262.579.20",
         "knownNewerIdentity": null,
-        "officialSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1138682",
-        "checkedAt": "2026-08-15T06:29:21.461Z",
+        "officialSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1141035",
+        "checkedAt": "2026-08-17T08:59:34.201Z",
         "httpStatus": 200,
-        "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1138682",
-        "responseBodySha256": "541ab92c6180fa4319255928c2e38ab8598ab902be78c78a91d91ef2829b7e30",
+        "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1141035",
+        "responseBodySha256": "6c5d50a9305654bb8ef2703a0c936a8500e546804a0938e8652d5c10ccf3d8fb",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15158,10 +15342,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.lovable.dev/changelog?page=1",
-        "checkedAt": "2026-08-15T06:29:21.564Z",
+        "checkedAt": "2026-08-17T08:59:34.427Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.lovable.dev/changelog?page=1",
-        "responseBodySha256": "0206ba5cfc5a27c8da406914bdaa2e8c5e8ea3e08d4f94a825b6a48d6d31f2bd",
+        "responseBodySha256": "059d4b85a7783adc2d95375f25ae5837a0a41783e60949a9f393a1c25b7865d7",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15173,10 +15357,10 @@
         "reviewedIdentity": "0.147.0",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/openai/codex/releases/tag/rust-v0.147.0",
-        "checkedAt": "2026-08-15T06:29:21.816Z",
+        "checkedAt": "2026-08-17T08:59:34.515Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/openai/codex/releases/tag/rust-v0.147.0",
-        "responseBodySha256": "0214717124e048129d50ddf077f18ca852b8ce09f523aea42960648d6f901fef",
+        "responseBodySha256": "959f89453e09a4069a4b74ceda50e0d70216e459f1498f41ea407c7a18b7174b",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15188,10 +15372,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://developers.openai.com/codex/cloud/",
-        "checkedAt": "2026-08-15T06:29:21.847Z",
+        "checkedAt": "2026-08-17T08:59:35.153Z",
         "httpStatus": 200,
         "finalUrl": "https://learn.chatgpt.com/docs/cloud",
-        "responseBodySha256": "675040b9abdda210139139d95fa7e83b260257f362dc228dfa5635c8e613cee9",
+        "responseBodySha256": "9ef864a8fd2cbec5d06ecdeff47d549731fb11bf48563751ef74cd7d02482e4b",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15203,10 +15387,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://developers.openai.com/codex/ide/",
-        "checkedAt": "2026-08-15T06:29:21.915Z",
+        "checkedAt": "2026-08-17T08:59:35.462Z",
         "httpStatus": 200,
         "finalUrl": "https://learn.chatgpt.com/docs/codex/ide",
-        "responseBodySha256": "986aa0184fddd6950b08d370d858ce14bec031d25794e7209a5fd431911d74af",
+        "responseBodySha256": "e01f6cded1df413288a630c5ebbefde88bcd3897cec01c8627e99b09206f8cc4",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15218,10 +15402,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.replit.com/updates/2026/03/13/changelog",
-        "checkedAt": "2026-08-15T06:29:22.214Z",
+        "checkedAt": "2026-08-17T08:59:35.543Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.replit.com/updates/2026/03/13/changelog",
-        "responseBodySha256": "2fe9c56245ee9407400f8396d430a015e3286738a59b20ece27a5f6bc997ca58",
+        "responseBodySha256": "6fecd3047882b5b06ac6d17224c46bf66ce9a0a35ed9d5a51c9d7c2294106af8",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15233,10 +15417,10 @@
         "reviewedIdentity": null,
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/RooCodeInc/Roo-Code",
-        "checkedAt": "2026-08-15T06:29:22.225Z",
+        "checkedAt": "2026-08-17T08:59:35.583Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/RooCodeInc/Roo-Code",
-        "responseBodySha256": "4f35d0b12d5bee4591bfedb48ab8f9672701b6cad810750e669dd5e79193490e",
+        "responseBodySha256": "b7b69c3ad8ec97fc34535d4a4447fd8c15a667c00828b887f936b130f1476d1c",
         "detector": null,
         "evidence": null,
         "status": "incomplete-no-current-identity",
@@ -15248,10 +15432,10 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://ampcode.com/manual",
-        "checkedAt": "2026-08-15T06:29:22.957Z",
+        "checkedAt": "2026-08-17T08:59:35.627Z",
         "httpStatus": 200,
         "finalUrl": "https://ampcode.com/manual",
-        "responseBodySha256": "be398a928701e84ffe5a74cf6232d747ae3026a9fabeb5f8feae236d511ff69b",
+        "responseBodySha256": "92365b1fa7187323e0d170850cb56df0ce344e68aa6c99d73b87a2b928607696",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15263,10 +15447,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://support.bolt.new/release-notes",
-        "checkedAt": "2026-08-15T06:29:23.142Z",
+        "checkedAt": "2026-08-17T08:59:35.695Z",
         "httpStatus": 200,
         "finalUrl": "https://support.bolt.new/release-notes",
-        "responseBodySha256": "0e66b0f73fe5f1bac248a172cd90442b7abb29339f6c9d6591f630b4f8d40f99",
+        "responseBodySha256": "eb80fd35b82355be9051ff51ab135e738c413c79aeda02a9a2d543630f73d450",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15278,10 +15462,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.tabnine.com/main/getting-started/tabnine-agent",
-        "checkedAt": "2026-08-15T06:29:23.253Z",
+        "checkedAt": "2026-08-17T08:59:35.998Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.tabnine.com/main/getting-started/tabnine-agent",
-        "responseBodySha256": "2c4a3a80433dc2638cd1a61896b259a988a59309cce2062ca75b38a2773be083",
+        "responseBodySha256": "8fb6db3d3ddce78bce14ad158b5077ca5db2ff0a5f48753bef50f8f9ca89b5ac",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15293,10 +15477,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta",
-        "checkedAt": "2026-08-15T06:29:23.390Z",
+        "checkedAt": "2026-08-17T08:59:36.013Z",
         "httpStatus": 200,
         "finalUrl": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta",
-        "responseBodySha256": "1b29cba45e89e717949bcfab2572cb58112b318aae496de479022fcac17b5b3d",
+        "responseBodySha256": "6190548c14e903686e0462d9eee4ca6abedbd97dc99e28d7975c785f9a0d8198",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15308,7 +15492,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://api2.v0.dev/docs/faqs",
-        "checkedAt": "2026-08-15T06:29:23.670Z",
+        "checkedAt": "2026-08-17T08:59:36.101Z",
         "httpStatus": 200,
         "finalUrl": "https://api2.v0.dev/docs/faqs",
         "responseBodySha256": "2a94dcf9f394b30ab23cd02e8b93e10ffc1940184fdcf905b2e4fa30cd5fe6e8",
@@ -15323,7 +15507,7 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.warp.dev/?fallback=true",
-        "checkedAt": "2026-08-15T06:29:23.724Z",
+        "checkedAt": "2026-08-17T08:59:36.182Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.warp.dev/?fallback=true",
         "responseBodySha256": "0bda56d052a7bc2dd8a794d8a48b15cf2ea581890a3a2909c0f4eff70ce9ce2e",
@@ -15338,7 +15522,7 @@
         "reviewedIdentity": "unresolved",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.warp.dev/?fallback=true",
-        "checkedAt": "2026-08-15T06:29:23.724Z",
+        "checkedAt": "2026-08-17T08:59:36.182Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.warp.dev/?fallback=true",
         "responseBodySha256": "0bda56d052a7bc2dd8a794d8a48b15cf2ea581890a3a2909c0f4eff70ce9ce2e",
@@ -15353,90 +15537,17 @@
         "reviewedIdentity": "1.15.0",
         "knownNewerIdentity": null,
         "officialSource": "https://zed.dev/releases/stable",
-        "checkedAt": "2026-08-15T06:29:23.859Z",
+        "checkedAt": "2026-08-17T08:59:36.286Z",
         "httpStatus": 200,
         "finalUrl": "https://zed.dev/releases/stable",
-        "responseBodySha256": "4567c07705ba99e86a4222b307b1ec5c4ba0a6f57d5aebdbc661b8af046a9b60",
+        "responseBodySha256": "3daae091fdd370d11022ff47032a1d6e47d0ca5fcd1af3239748aca367fc19aa",
         "detector": "zed-stable-release-index",
         "evidence": {
-          "rejectedDetectedVersions": [
-            "1.0.0",
-            "1.0.1",
-            "1.1.2",
-            "1.1.3",
-            "1.1.5",
-            "1.1.6",
-            "1.1.7",
-            "1.1.8",
-            "1.2.0",
-            "1.2.1",
-            "1.2.2",
-            "1.2.3",
-            "1.2.4",
-            "1.2.5",
-            "1.2.6",
-            "1.2.7",
-            "1.3.0",
-            "1.3.1",
-            "1.3.2",
-            "1.3.3",
-            "1.3.4",
-            "1.3.5",
-            "1.3.6",
-            "1.3.7",
-            "1.4.0",
-            "1.4.1",
-            "1.4.2",
-            "1.4.3",
-            "1.4.4",
-            "1.04.95",
-            "1.5.0",
-            "1.5.1",
-            "1.5.2",
-            "1.5.3",
-            "1.5.4",
-            "1.5.5",
-            "1.6.0",
-            "1.6.1",
-            "1.6.2",
-            "1.6.3",
-            "1.7.1",
-            "1.7.2",
-            "1.8.0",
-            "1.8.2",
-            "1.9.0",
-            "1.10.0",
-            "1.10.1",
-            "1.10.2",
-            "1.10.3",
-            "1.11.0",
-            "1.11.1",
-            "1.11.2",
-            "1.11.3",
-            "1.12.0",
-            "1.12.1",
-            "1.13.0",
-            "1.13.1",
-            "1.13.2",
-            "1.14.1",
-            "1.14.2",
-            "1.15.0",
-            "1.16.0",
-            "1.18.104",
-            "1.77.288",
-            "1.207.052",
-            "1.212.123",
-            "1.224.161",
-            "1.275.551",
-            "1.275.887",
-            "1.338.104",
-            "1.403.316",
-            "1.816.388"
-          ],
-          "rejectionReason": "The captured matches mixed plausible versions with SVG and asset decimals, so none is admitted as a proven newer identity."
+          "detectedVersions": [],
+          "excerpt": null
         },
         "status": "incomplete-uncheckable",
-        "note": "The official source was reachable, but generic numeric tokens in the response could not prove a newer Zed identity. Coverage remains incomplete and the snapshot is unchanged."
+        "note": "The official source was reachable, but its response did not expose a comparable identity that this bounded detector could verify."
       },
       {
         "surfaceKey": "org.aaif.goose.cli.release-stream",
@@ -15444,10 +15555,10 @@
         "reviewedIdentity": "1.46.0",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0",
-        "checkedAt": "2026-08-15T06:29:23.930Z",
+        "checkedAt": "2026-08-17T08:59:36.343Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0",
-        "responseBodySha256": "6bd7b2c1fa48554bd2e07dc10fdd262fe675edc015d8eab9b0a4b198c93c2bfa",
+        "responseBodySha256": "c56c3b0af82f8901f17b22f9987b06816c9d45c020178fcc79211d40e8b9bd0a",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15459,10 +15570,10 @@
         "reviewedIdentity": "0.86.0",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
-        "checkedAt": "2026-08-15T06:29:24.171Z",
+        "checkedAt": "2026-08-17T08:59:36.438Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
-        "responseBodySha256": "cb52c4b1666226a174e89e307e291c14e301ba33da617d173b1d6b8de6482594",
+        "responseBodySha256": "ed370edcffc47789b0c90153fbfd68b2f894d7abfcdc131b8d1af85650cff01a",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15474,10 +15585,10 @@
         "reviewedIdentity": "rolling-service",
         "knownNewerIdentity": null,
         "officialSource": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud",
-        "checkedAt": "2026-08-15T06:29:24.679Z",
+        "checkedAt": "2026-08-17T08:59:36.443Z",
         "httpStatus": 200,
         "finalUrl": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud",
-        "responseBodySha256": "4a7cf144587bd3cba5a14105b1ecc1372a88632071a824ac69f28c004f3bff9c",
+        "responseBodySha256": "119be04b1824a1e8a1fd66ac5907fc722f4da16209cf2f8c950ba0a241607d9a",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
@@ -15489,10 +15600,10 @@
         "reviewedIdentity": "1.16.0",
         "knownNewerIdentity": null,
         "officialSource": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
-        "checkedAt": "2026-08-15T06:29:24.716Z",
+        "checkedAt": "2026-08-17T08:59:36.941Z",
         "httpStatus": 200,
         "finalUrl": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
-        "responseBodySha256": "9f524bc51a5f709683e83ddebefc7a96661dd718b623cda5c02428e86113e1ef",
+        "responseBodySha256": "473248ed339b0554f330a256c4187588dfd1d7d0146e58942ea01c2a1616913f",
         "detector": null,
         "evidence": null,
         "status": "incomplete-uncheckable",
