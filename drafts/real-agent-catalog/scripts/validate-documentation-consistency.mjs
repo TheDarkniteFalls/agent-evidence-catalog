@@ -141,16 +141,25 @@ for (const file of ["compare.html", "how-it-works.html", "styles.css", "app.js",
   assert.equal(await read(`dist/research-preview/${file}`), await read(`site/research-preview/${file}`), `Built ${file} differs from its source`);
 }
 const landingHtml = await read("site/index.html");
+const comparisonHtml = await read("site/research-preview/compare.html");
 const howItWorksHtml = await read("site/research-preview/how-it-works.html");
 assert.equal(await read("dist/index.html"), landingHtml, "Built landing HTML differs from source");
 assert(landingHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/"'));
 assert(siteHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/"'));
 assert(siteHtml.includes("data-snapshot-banner-copy"));
-assert((await read("site/research-preview/compare.html")).includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html"'));
+assert(comparisonHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html"'));
 assert(howItWorksHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html"'));
 assert(landingHtml.includes('<base href="./research-preview/">'));
-assert(landingHtml.includes('<a aria-current="page" href="compare.html">Compare claims</a>'));
-assert(landingHtml.includes('data-catalog-return href="index.html"'));
+assert(landingHtml.includes('<h1 id="home-title">Agent Evidence Catalog</h1>'));
+assert(landingHtml.includes('<a class="brand" aria-current="page" href="../index.html">Agent Evidence Catalog</a>'));
+assert(landingHtml.includes('href="index.html">Browse current records</a>'));
+assert(landingHtml.includes('href="compare.html">Compare agent claims</a>'));
+assert(!landingHtml.includes('id="pickerRecords"'));
+assert(!landingHtml.includes('id="comparisonMatrix"'));
+assert(!landingHtml.includes("compare.js"));
+assert(comparisonHtml.includes('id="pickerRecords"'));
+assert(comparisonHtml.includes('id="comparisonMatrix"'));
+assert(comparisonHtml.includes("compare.js?v=2026-08-16-wide-workspace-1"));
 assert(!landingHtml.includes("secondary synthetic reference"));
 assert(!landingHtml.includes(">Method</a>"));
 assert(!landingHtml.includes(">Lifecycle</a>"));
@@ -158,7 +167,7 @@ for (const target of ["../RESEARCH_PREVIEW.md", "../GOVERNANCE.md", "../PUBLICAT
   assert(howItWorksHtml.includes(`href="${target}"`), `Technical documentation disclosure is missing ${target}`);
   await access(path.resolve(packageRoot, "dist/research-preview", target));
 }
-for (const html of [landingHtml, siteHtml, await read("site/research-preview/compare.html"), howItWorksHtml]) {
+for (const html of [landingHtml, siteHtml, comparisonHtml, howItWorksHtml]) {
   assert(html.includes(">Catalog</a>"));
   assert(html.includes(">Compare claims</a>"));
   assert(html.includes(">How it works</a>"));

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "research-preview-browser-qa/0.8",
   "asOf": "2026-08-17",
-  "checkedAt": "2026-08-17T09:18:53.209Z",
+  "checkedAt": "2026-08-18T08:31:20.000Z",
   "loopback": {
     "url": "http://localhost:4173/",
     "listener": "localhost:4173",
@@ -10,8 +10,8 @@
     "browserNavigation": "PASS"
   },
   "sourceDigests": {
-    "landingHtmlSha256": "b935b1ef0d2dd64d53a65b78ec7225eb283614147fd11aba77bfed15ce9fc641",
-    "previewHtmlSha256": "88744ba9cf923ba02bf160960210028b9324b217d026c3900d0737645d70cb9e",
+    "landingHtmlSha256": "7653fa0557ef8eb2c487361fe9cf99bedca27329daebad3588301ab9042dfe53",
+    "previewHtmlSha256": "08182b13a91143cb230d8cd6689042a9c67c3f22fa656d0bde39e910024cb28e",
     "howItWorksHtmlSha256": "3475acd861a7ecae8219d0c7bf54e63a6cfba753455f8e4622817a18aff610d7",
     "previewDataSha256": "d92ac878882c3170a67ccb5108eea7a75bb35b2f52cae6ec0d756c0fe61e1eb7",
     "previewAppSha256": "ebb47482f7d2a12a1c60d1666acc479976bb6a2c34979b0d130b2e661435d21f",
@@ -21,7 +21,7 @@
     "recordDetailAppSha256": "adc6da13fc9f3fc734d95ba55a21ffd6591da8bd843901ec9851a4467213a45d",
     "previewStylesSha256": "4920f88607a74785db174f69cf2071b05869971f858227ce45012c7cdc834285",
     "recordDetailsManifestSha256": "d9c273bb705607762c1d7dc487f46876b0284bfd66f12c5b4fea6f55b79718fa",
-    "sitemapSha256": "2b2f23a589d8459bb3aa26ec6684220d35271b9019e30d84be363953d2b5c183"
+    "sitemapSha256": "a51955b4758186208cc8314ae00e23782f8dd115ed7ae8704525b992c5e24833"
   },
   "snapshot": {
     "sourceReviewWindow": {
@@ -57,34 +57,121 @@
     "bannerCopy": "Catalog snapshot: 17 August 2026, 08:57 UTC. Agent releases change quickly; records with known updates are marked.",
     "cacheBustingVersion": "2026-08-17-sealed-snapshot"
   },
+  "searchFoundationAuthorQa": {
+    "workstream": "AEC-SEARCH-FOUNDATION-02-AUTHOR",
+    "result": "PASS",
+    "checkedAt": "2026-08-18T08:31:20.000Z",
+    "baseHead": "fb84cb01c3eeaab30fd8ee033754cacdb07599fe",
+    "browser": "Codex in-app Browser",
+    "root": {
+      "title": "Agent Evidence Catalog · Coding-Agent Claims and Sources",
+      "headline": "Agent Evidence Catalog",
+      "purpose": "branded research homepage",
+      "comparisonPickerPresent": false,
+      "comparisonMatrixPresent": false,
+      "comparisonScriptPresent": false,
+      "catalogNavigationPassed": true,
+      "comparisonNavigationPassed": true,
+      "desktopHorizontalOverflow": false
+    },
+    "catalog": {
+      "currentRecords": 53,
+      "initialHtmlCurrentRecordLinks": 53,
+      "renderedCurrentRecordLinks": 53,
+      "search": "Claude Code CLI",
+      "searchResultCount": "1 of 53 current records",
+      "recordId": "com.anthropic.claude-code.cli.2-1-233",
+      "recordDetailNavigationPassed": true,
+      "mobileHorizontalOverflow": false
+    },
+    "comparison": {
+      "canonicalPath": "/research-preview/compare.html",
+      "rootComparisonApplicationAbsent": true,
+      "selectedRecordIds": [
+        "com.anthropic.claude-code.cli.2-1-233",
+        "com.openai.codex.cli.0-147-0"
+      ],
+      "matrixRendered": true,
+      "matrixRows": 31,
+      "officialSourceLinks": 20,
+      "orderedSelectionPersistedInUrl": true,
+      "desktopHorizontalOverflow": false,
+      "mobileMatrixInternalOverflow": true,
+      "mobileBodyHorizontalOverflow": false
+    },
+    "responsive": {
+      "desktopObservedCss": {
+        "width": 1422,
+        "height": 800
+      },
+      "mobileRequestedCss": {
+        "width": 390,
+        "height": 844
+      },
+      "mobileObservedCss": {
+        "width": 433,
+        "height": 938
+      },
+      "mobileBreakpointApplied": true,
+      "mobileNavigationOpened": true,
+      "mobileCatalogNavigationPassed": true
+    },
+    "sitemap": {
+      "routes": 105,
+      "uniqueRoutes": 105,
+      "lastmodEntries": 105,
+      "sharedLastmod": "2026-08-17",
+      "source": "accepted snapshot seal and accepted record review dates",
+      "sha256": "a51955b4758186208cc8314ae00e23782f8dd115ed7ae8704525b992c5e24833"
+    },
+    "screenshots": {
+      "rootDesktopSha256": "2393e3fefee12916cbfa28d34db85237a45bd13cdfb7ab86650b3a227fb72b79",
+      "catalogSearchDesktopSha256": "51857924e5ce280cd7a8514ef6ca8634937c863960db8735e3fc39ad07467d9d",
+      "comparisonDesktopSha256": "0485df0297884b56c1da7089f03b71a09caad30f2d84017927c024e62c42a38c",
+      "rootMobileMenuSha256": "4760d39f64c02a99d09526ae319994f39771d261e349dfe6807c62f53af7ea74",
+      "comparisonMobileSha256": "e1d67757f2ddcce2a91ae5cc13d7effc38d0c9c79e3f08e56654ed50e1fc7e29"
+    },
+    "console": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
   "journeys": {
     "landing": {
       "result": "PASS",
-      "headline": "Compare agent claims, source by source.",
-      "currentPickerRecords": 53,
-      "defaultSelectionCount": 0,
-      "firstChoiceNames": [
-        "Claude Code CLI",
-        "OpenAI Codex CLI",
-        "GitHub Copilot CLI",
-        "Cursor IDE foreground Agent"
-      ],
-      "firstChoiceIdentities": [
-        "2.1.233",
-        "0.147.0",
-        "1.0.80",
-        "3.16"
-      ],
+      "mode": "branded-homepage",
+      "headline": "Agent Evidence Catalog",
+      "comparisonApplicationPresent": false,
       "navigation": [
         "Catalog",
         "Compare claims",
         "How it works"
       ],
-      "desktopHorizontalOverflow": false,
-      "mobileHorizontalOverflow": false,
-      "mobileOrderedSlots": 4,
-      "mobileSlotRows": 2,
-      "mobileActionVisible": true
+      "destinations": {
+        "catalog": "research-preview/index.html",
+        "comparison": "research-preview/compare.html",
+        "howItWorks": "research-preview/how-it-works.html"
+      },
+      "desktop": {
+        "observedCss": {
+          "width": 1422,
+          "height": 800
+        },
+        "horizontalOverflow": false
+      },
+      "mobile": {
+        "requestedCss": {
+          "width": 390,
+          "height": 844
+        },
+        "observedCss": {
+          "width": 433,
+          "height": 938
+        },
+        "horizontalOverflow": false,
+        "navigationOpened": true,
+        "catalogNavigationPassed": true
+      }
     },
     "catalog": {
       "result": "PASS",
@@ -308,9 +395,10 @@
     "warnings": 0
   },
   "limitations": [
-    "The in-app Browser viewport control is recorded separately from the observed CSS viewport; no requested CSS dimensions are claimed where the Browser applied a 0.75 device scale.",
+    "The scoped 2026-08-18 search-foundation Browser rerun requested 390 by 844 CSS pixels and observed 433 by 938; the requested and observed mobile viewports are recorded separately and the responsive breakpoint was verified from rendered state.",
     "One retained Cline Visual Studio Marketplace source returned HTTP 503 in both the full-corpus GET audit and the rendered Browser check. It remains explicit as an unresolved publisher-service response; no substitute source or hidden pass was invented.",
     "The publication-time census proves no known-newer identity for the two comparable live indexes but cannot prove publication-time currency for 53 surfaces; exact release pages, rolling identities and unparseable indexes remain incomplete coverage.",
+    "The 101-page desktop and mobile record sweep, How it works journey and source-link audit remain the accepted 2026-08-17 digest-bound evidence; the scoped 2026-08-18 rerun covered the changed root, catalog discovery, a current record and the canonical comparison flow.",
     "Rendered local behavior, source reachability and deterministic validation do not establish catalogued product behavior, independent verification, quality, safety, popularity, ranking or suitability."
   ],
   "boundaries": {
@@ -319,8 +407,8 @@
     "independentTestsCredited": 0,
     "rankingsOrSuitabilityCalculations": false,
     "priorAcceptedRecordsOrSourceArtifactsRewritten": false,
-    "currentnessLifecycleProjectionUpdated": true,
-    "visitorInformationArchitectureChanged": false,
+    "currentnessLifecycleProjectionUpdated": false,
+    "visitorInformationArchitectureChanged": true,
     "githubStateChanged": false,
     "publicationAuthorizedByReceipt": false
   }

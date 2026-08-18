@@ -40,10 +40,117 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
+function escapeXml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&apos;");
+}
+
 function label(value) {
   return String(value)
     .replaceAll("-", " ")
     .replace(/(^|\s)\S/g, (match) => match.toUpperCase());
+}
+
+function acceptedDate(value, label) {
+  assert.equal(typeof value, "string", `${label} must be a string timestamp or date`);
+  const date = value.slice(0, 10);
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(date) && !Number.isNaN(Date.parse(`${date}T00:00:00Z`)), `${label} must contain a valid UTC date`);
+  return date;
+}
+
+function currentPreviewRecords(preview) {
+  const records = preview.surfaces.map((surface) => surface.currentRecord).filter(Boolean);
+  assert.equal(records.length, preview.counts.currentRecordsPresented, "Current surface projection differs from the accepted current-record count");
+  assert.equal(new Set(records.map((record) => record.recordId)).size, records.length, "Current surface projection contains duplicate record identities");
+  return records;
+}
+
+function staticVersionLabel(record) {
+  if (record.release.version) return `v${record.release.version}`;
+  return record.release.releaseTag ?? label(record.release.scope);
+}
+
+function renderStaticCurrentRecordCard(record) {
+  const recordHref = `records/${encodeURIComponent(record.recordId)}.html`;
+  return `          <article class="record-card" data-static-current-record="${escapeHtml(record.recordId)}">
+            <div class="card-heading">
+              <div><h3>${escapeHtml(record.name)}</h3><p>${escapeHtml(record.publisher)} · ${escapeHtml(record.surface.name)}</p></div>
+              <span class="lifecycle lifecycle-current">current</span>
+            </div>
+            <p class="identity">${escapeHtml(staticVersionLabel(record))} · ${escapeHtml(record.release.channel ?? record.release.scope)} · ${escapeHtml(record.surface.deliveryModel)}</p>
+            <dl class="record-metrics">
+              <div><dt>Publisher claims</dt><dd>${escapeHtml(record.claimCount)}</dd></div>
+              <div><dt>Publisher sources</dt><dd>${escapeHtml(record.sourceCount)}</dd></div>
+              <div><dt>Independent tests</dt><dd>${escapeHtml(record.independentTestCount)}</dd></div>
+            </dl>
+            <div class="card-links"><a class="primary-record-link" href="${recordHref}">Read the evidence record</a></div>
+          </article>`;
+}
+
+function renderDatedSitemap(entries) {
+  const urls = [...entries]
+    .sort((left, right) => left.url.localeCompare(right.url))
+    .map(({ url, lastmod }) => `  <url>\n    <loc>${escapeXml(url)}</loc>\n    <lastmod>${escapeXml(lastmod)}</lastmod>\n  </url>`)
+    .join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+}
+
+const staticRecordStartMarker = "        <!-- current-record-links:start -->";
+const staticRecordEndMarker = "        <!-- current-record-links:end -->";
+
+function projectStaticCurrentRecordLinks(html, currentRecords) {
+  const startIndex = html.indexOf(staticRecordStartMarker);
+  const endIndex = html.indexOf(staticRecordEndMarker);
+  assert(startIndex >= 0 && endIndex > startIndex, "Catalog source must contain one ordered static current-record marker pair");
+  assert.equal(html.indexOf(staticRecordStartMarker, startIndex + 1), -1, "Catalog source must contain one static current-record start marker");
+  assert.equal(html.indexOf(staticRecordEndMarker, endIndex + 1), -1, "Catalog source must contain one static current-record end marker");
+  const cards = currentRecords.map(renderStaticCurrentRecordCard).join("\n");
+  return `${html.slice(0, startIndex + staticRecordStartMarker.length)}\n${cards}\n${html.slice(endIndex)}`;
+}
+
+async function materializeStaticCatalogSource(preview) {
+  const currentRecords = currentPreviewRecords(preview);
+  const catalogSourcePath = path.join(packageRoot, "site", "research-preview", "index.html");
+  const catalogSource = await readFile(catalogSourcePath, "utf8");
+  await writeFile(catalogSourcePath, projectStaticCurrentRecordLinks(catalogSource, currentRecords), "utf8");
+  return currentRecords;
+}
+
+async function materializeSearchFoundation() {
+  const previewPath = path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json");
+  const preview = JSON.parse(await readFile(previewPath, "utf8"));
+  const currentRecords = currentPreviewRecords(preview);
+  const catalogPath = path.join(packageRoot, "dist", "research-preview", "index.html");
+  const catalogSource = await readFile(path.join(packageRoot, "site", "research-preview", "index.html"), "utf8");
+  const catalogHtml = await readFile(catalogPath, "utf8");
+  assert.equal(catalogHtml, catalogSource, "Built research-preview HTML must retain the deterministic static source projection");
+
+  const sharedLastmod = acceptedDate(preview.snapshotSeal.sealedAt, "Accepted snapshot seal");
+  const routeEntries = [
+    { url: canonicalBaseUrl, lastmod: sharedLastmod },
+    { url: `${canonicalBaseUrl}research-preview/`, lastmod: sharedLastmod },
+    { url: `${canonicalBaseUrl}research-preview/compare.html`, lastmod: sharedLastmod },
+    { url: `${canonicalBaseUrl}research-preview/how-it-works.html`, lastmod: sharedLastmod },
+    ...preview.previewRecords.map((record) => ({
+      url: `${canonicalBaseUrl}research-preview/records/${record.recordId}.html`,
+      lastmod: acceptedDate(record.reviewedAt, `Accepted review date for ${record.recordId}`)
+    }))
+  ];
+  assert.equal(routeEntries.length, preview.counts.recordsPresentedIncludingHistory + 4, "Sitemap route count differs from the accepted public projection");
+  assert.equal(new Set(routeEntries.map((entry) => entry.url)).size, routeEntries.length, "Sitemap route projection contains duplicate URLs");
+  const sitemap = renderDatedSitemap(routeEntries);
+  await writeFile(path.join(packageRoot, "dist", "sitemap.xml"), sitemap, "utf8");
+
+  const manifestPath = path.join(packageRoot, "dist", "build-manifest.json");
+  const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+  assert.equal(manifest.researchPreview.discovery.humanReadableRouteCount, routeEntries.length, "Build manifest route count differs before search-foundation materialization");
+  manifest.researchPreview.discovery.sitemapSha256 = sha256(sitemap);
+  await writeFile(manifestPath, serialize(manifest), "utf8");
+  console.log(`PASS search-foundation materialization: branded root source, ${currentRecords.length} static current-record links and ${routeEntries.length} snapshot-dated sitemap routes`);
 }
 
 function run(label, command, args) {
@@ -234,7 +341,7 @@ function validateSourceOnlyRepairs() {
   node("Cline, GitLab and reused Zed source-only gates", "drafts/research-preview-release/currentness-2026-08-02/validate-source-dossiers.mjs", "all");
 }
 
-function buildOneWayProjection() {
+async function buildOneWayProjection() {
   validateSourceOnlyRepairs();
   node("validated Cline and GitLab successor generation", "drafts/research-preview-release/currentness-2026-08-02/build-generated-successors.mjs", "all");
   node("generated-successor validation", "drafts/research-preview-release/currentness-2026-08-02/validate-generated-successors.mjs", "all");
@@ -250,7 +357,10 @@ function buildOneWayProjection() {
   node("official-source 2026-08-15 currentness projection", "drafts/research-preview-release/currentness-2026-08-15/build-currentness.mjs");
   node("official-source 2026-08-15 currentness validation", "drafts/research-preview-release/currentness-2026-08-15/validate-currentness.mjs");
   node("official-source 2026-08-17 currentness projection", "drafts/research-preview-release/currentness-2026-08-17/build-currentness.mjs");
+  const preview = JSON.parse(await readFile(path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json"), "utf8"));
+  await materializeStaticCatalogSource(preview);
   node("static source-to-dist build", "scripts/catalog.mjs", "build");
+  await materializeSearchFoundation();
 }
 
 const validatorCommands = [
@@ -859,18 +969,90 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.snapshot.bannerCopy, "Catalog snapshot: 17 August 2026, 08:57 UTC. Agent releases change quickly; records with known updates are marked.");
   assert.equal(receipt.snapshot.cacheBustingVersion, "2026-08-17-sealed-snapshot");
 
+  const searchQa = receipt.searchFoundationAuthorQa;
+  assert.equal(searchQa.workstream, "AEC-SEARCH-FOUNDATION-02-AUTHOR");
+  assert.equal(searchQa.result, "PASS");
+  assert.equal(searchQa.checkedAt, receipt.checkedAt);
+  assert.equal(searchQa.baseHead, "fb84cb01c3eeaab30fd8ee033754cacdb07599fe");
+  assert.equal(searchQa.browser, "Codex in-app Browser");
+  assert.deepEqual(searchQa.root, {
+    title: "Agent Evidence Catalog · Coding-Agent Claims and Sources",
+    headline: "Agent Evidence Catalog",
+    purpose: "branded research homepage",
+    comparisonPickerPresent: false,
+    comparisonMatrixPresent: false,
+    comparisonScriptPresent: false,
+    catalogNavigationPassed: true,
+    comparisonNavigationPassed: true,
+    desktopHorizontalOverflow: false
+  });
+  assert.deepEqual(searchQa.catalog, {
+    currentRecords: 53,
+    initialHtmlCurrentRecordLinks: 53,
+    renderedCurrentRecordLinks: 53,
+    search: "Claude Code CLI",
+    searchResultCount: "1 of 53 current records",
+    recordId: "com.anthropic.claude-code.cli.2-1-233",
+    recordDetailNavigationPassed: true,
+    mobileHorizontalOverflow: false
+  });
+  assert.deepEqual(searchQa.comparison, {
+    canonicalPath: "/research-preview/compare.html",
+    rootComparisonApplicationAbsent: true,
+    selectedRecordIds: [
+      "com.anthropic.claude-code.cli.2-1-233",
+      "com.openai.codex.cli.0-147-0"
+    ],
+    matrixRendered: true,
+    matrixRows: 31,
+    officialSourceLinks: 20,
+    orderedSelectionPersistedInUrl: true,
+    desktopHorizontalOverflow: false,
+    mobileMatrixInternalOverflow: true,
+    mobileBodyHorizontalOverflow: false
+  });
+  assert.deepEqual(searchQa.responsive, {
+    desktopObservedCss: { width: 1422, height: 800 },
+    mobileRequestedCss: { width: 390, height: 844 },
+    mobileObservedCss: { width: 433, height: 938 },
+    mobileBreakpointApplied: true,
+    mobileNavigationOpened: true,
+    mobileCatalogNavigationPassed: true
+  });
+  const acceptedLastmod = acceptedDate(seal.sealedAt, "Accepted snapshot seal");
+  assert.deepEqual(searchQa.sitemap, {
+    routes: 105,
+    uniqueRoutes: 105,
+    lastmodEntries: 105,
+    sharedLastmod: acceptedLastmod,
+    source: "accepted snapshot seal and accepted record review dates",
+    sha256: sha256(await readFile(path.join(packageRoot, "dist", "sitemap.xml")))
+  });
+  assert.equal(Object.keys(searchQa.screenshots).length, 5);
+  assert(Object.values(searchQa.screenshots).every((digest) => /^[a-f0-9]{64}$/.test(digest)));
+  assert.deepEqual(searchQa.console, { errors: 0, warnings: 0 });
+
   assert.equal(receipt.journeys.landing.result, "PASS");
-  assert.equal(receipt.journeys.landing.headline, "Compare agent claims, source by source.");
-  assert.equal(receipt.journeys.landing.currentPickerRecords, 53);
-  assert.equal(receipt.journeys.landing.defaultSelectionCount, 0);
-  assert.deepEqual(receipt.journeys.landing.firstChoiceNames, ["Claude Code CLI", "OpenAI Codex CLI", "GitHub Copilot CLI", "Cursor IDE foreground Agent"]);
-  assert.deepEqual(receipt.journeys.landing.firstChoiceIdentities, ["2.1.233", "0.147.0", "1.0.80", "3.16"]);
+  assert.equal(receipt.journeys.landing.mode, "branded-homepage");
+  assert.equal(receipt.journeys.landing.headline, "Agent Evidence Catalog");
+  assert.equal(receipt.journeys.landing.comparisonApplicationPresent, false);
   assert.deepEqual(receipt.journeys.landing.navigation, ["Catalog", "Compare claims", "How it works"]);
-  assert.equal(receipt.journeys.landing.desktopHorizontalOverflow, false);
-  assert.equal(receipt.journeys.landing.mobileHorizontalOverflow, false);
-  assert.equal(receipt.journeys.landing.mobileOrderedSlots, 4);
-  assert.equal(receipt.journeys.landing.mobileSlotRows, 2);
-  assert.equal(receipt.journeys.landing.mobileActionVisible, true);
+  assert.deepEqual(receipt.journeys.landing.destinations, {
+    catalog: "research-preview/index.html",
+    comparison: "research-preview/compare.html",
+    howItWorks: "research-preview/how-it-works.html"
+  });
+  assert.deepEqual(receipt.journeys.landing.desktop, {
+    observedCss: { width: 1422, height: 800 },
+    horizontalOverflow: false
+  });
+  assert.deepEqual(receipt.journeys.landing.mobile, {
+    requestedCss: { width: 390, height: 844 },
+    observedCss: { width: 433, height: 938 },
+    horizontalOverflow: false,
+    navigationOpened: true,
+    catalogNavigationPassed: true
+  });
 
   assert.deepEqual(receipt.journeys.catalog, {
     result: "PASS",
@@ -958,15 +1140,15 @@ async function validateBrowserReceipt() {
     renderedBrowserResult: "HTTP 503 publisher service-unavailable page"
   }]);
   assert.deepEqual(receipt.console, { errors: 0, warnings: 0 });
-  assert.equal(receipt.limitations.length, 4);
+  assert.equal(receipt.limitations.length, 5);
   assert.deepEqual(receipt.boundaries, {
     publisherSourcesOnly: true,
     agentsInstalledOrRun: false,
     independentTestsCredited: 0,
     rankingsOrSuitabilityCalculations: false,
     priorAcceptedRecordsOrSourceArtifactsRewritten: false,
-    currentnessLifecycleProjectionUpdated: true,
-    visitorInformationArchitectureChanged: false,
+    currentnessLifecycleProjectionUpdated: false,
+    visitorInformationArchitectureChanged: true,
     githubStateChanged: false,
     publicationAuthorizedByReceipt: false
   });
@@ -1000,8 +1182,8 @@ function validatePageDiscovery(html, expected) {
 async function validateDiscoveryMetadata() {
   const preview = JSON.parse(await readFile(path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json"), "utf8"));
   const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
-  const landingDescription = "Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.";
-  const landingTitle = "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog";
+  const landingDescription = "Research exact coding-agent identities, attributed publisher claims, official sources, version history and unresolved unknowns without rankings or behavior claims.";
+  const landingTitle = "Agent Evidence Catalog · Coding-Agent Claims and Sources";
   validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "index.html"), "utf8"), {
     title: landingTitle,
     description: landingDescription,
@@ -1009,15 +1191,10 @@ async function validateDiscoveryMetadata() {
     openGraphType: "website",
     structuredData: {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Compare Coding-Agent Claims and Sources",
+      "@type": "WebSite",
+      name: "Agent Evidence Catalog",
       description: landingDescription,
-      url: canonicalBaseUrl,
-      isPartOf: {
-        "@type": "WebSite",
-        name: "Agent Evidence Catalog",
-        url: canonicalBaseUrl
-      }
+      url: canonicalBaseUrl
     }
   });
 
@@ -1025,7 +1202,8 @@ async function validateDiscoveryMetadata() {
   const catalogDescription = `Browse ${preview.counts.currentRecordsPresented} current and ${historyCount} retained history records across ${preview.counts.surfaces} coding-agent surfaces, with exact identities, attributed publisher claims, version history and open unknowns.`;
   const catalogTitle = "Find Current Coding-Agent Evidence · Agent Evidence Catalog";
   const catalogUrl = `${canonicalBaseUrl}research-preview/`;
-  validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8"), {
+  const catalogHtml = await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8");
+  validatePageDiscovery(catalogHtml, {
     title: catalogTitle,
     description: catalogDescription,
     url: catalogUrl,
@@ -1043,6 +1221,13 @@ async function validateDiscoveryMetadata() {
       }
     }
   });
+  const expectedCurrentRecordIds = currentPreviewRecords(preview).map((record) => record.recordId);
+  const staticCurrentRecordIds = [...catalogHtml.matchAll(/data-static-current-record="([^"]+)"/g)].map((match) => match[1]);
+  const staticCurrentRecordHrefs = [...catalogHtml.matchAll(/<a class="primary-record-link" href="records\/([^"]+)\.html">Read the evidence record<\/a>/g)].map((match) => decodeURIComponent(match[1]));
+  assert.deepEqual(staticCurrentRecordIds, expectedCurrentRecordIds, "Initial catalog HTML must identify every current record exactly once in accepted surface order");
+  assert.deepEqual(staticCurrentRecordHrefs, expectedCurrentRecordIds, "Initial catalog HTML must expose one crawlable human-readable link for every current record");
+  assert.equal(catalogHtml.split(staticRecordStartMarker).length, 2, "Generated catalog HTML must retain one static-link start marker");
+  assert.equal(catalogHtml.split(staticRecordEndMarker).length, 2, "Generated catalog HTML must retain one static-link end marker");
 
   const comparisonDescription = "Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.";
   const comparisonTitle = "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog";
@@ -1119,17 +1304,26 @@ async function validateDiscoveryMetadata() {
     });
   }
 
-  const expectedUrls = [
-    canonicalBaseUrl,
-    catalogUrl,
-    comparisonUrl,
-    howUrl,
-    ...buildManifest.researchPreview.recordDetails.records.map((record) => `${canonicalBaseUrl}${record.entryPoint}`)
-  ].sort((left, right) => left.localeCompare(right));
+  const sharedLastmod = acceptedDate(preview.snapshotSeal.sealedAt, "Accepted snapshot seal");
+  const reviewedAtByRecordId = new Map(preview.previewRecords.map((record) => [record.recordId, acceptedDate(record.reviewedAt, `Accepted review date for ${record.recordId}`)]));
+  const expectedSitemapEntries = [
+    { url: canonicalBaseUrl, lastmod: sharedLastmod },
+    { url: catalogUrl, lastmod: sharedLastmod },
+    { url: comparisonUrl, lastmod: sharedLastmod },
+    { url: howUrl, lastmod: sharedLastmod },
+    ...buildManifest.researchPreview.recordDetails.records.map((record) => ({
+      url: `${canonicalBaseUrl}${record.entryPoint}`,
+      lastmod: reviewedAtByRecordId.get(record.recordId)
+    }))
+  ].sort((left, right) => left.url.localeCompare(right.url));
+  assert(expectedSitemapEntries.every((entry) => entry.lastmod), "Every sitemap record route must resolve to an accepted review date");
+  const expectedUrls = expectedSitemapEntries.map((entry) => entry.url);
   const robots = await readFile(path.join(packageRoot, "dist", "robots.txt"), "utf8");
   assert.equal(robots, `User-agent: *\nAllow: /\n\nSitemap: ${canonicalBaseUrl}sitemap.xml\n`);
   const sitemap = await readFile(path.join(packageRoot, "dist", "sitemap.xml"), "utf8");
-  const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+  const sitemapEntries = [...sitemap.matchAll(/<url>\s*<loc>([^<]+)<\/loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>\s*<\/url>/g)].map((match) => ({ url: match[1], lastmod: match[2] }));
+  const sitemapUrls = sitemapEntries.map((entry) => entry.url);
+  assert.deepEqual(sitemapEntries, expectedSitemapEntries, "Sitemap lastmod values must come from the accepted snapshot seal and per-record review dates");
   assert.deepEqual(sitemapUrls, expectedUrls, "Sitemap must list every primary human-readable route exactly once in deterministic order");
   assert.equal(new Set(sitemapUrls).size, expectedUrls.length, "Sitemap contains duplicate routes");
   assert(sitemapUrls.every((url) => url.startsWith(canonicalBaseUrl) && !url.endsWith(".json")), "Sitemap must contain only canonical human-readable routes");
@@ -1142,7 +1336,7 @@ async function validateDiscoveryMetadata() {
     humanReadableRecordRouteCount: buildManifest.researchPreview.recordDetails.count,
     rawJsonRoutesListed: 0
   });
-  console.log(`PASS discovery metadata on landing, catalog, comparison, How it works and all ${buildManifest.researchPreview.recordDetails.count} record pages; deterministic ${expectedUrls.length}-route sitemap excludes raw JSON`);
+  console.log(`PASS discovery metadata on branded landing, catalog, comparison, How it works and all ${buildManifest.researchPreview.recordDetails.count} record pages; ${expectedCurrentRecordIds.length} static current links and deterministic ${expectedUrls.length}-route dated sitemap exclude raw JSON`);
 }
 
 async function validateFirstScreenContract() {
@@ -1150,8 +1344,11 @@ async function validateFirstScreenContract() {
   const catalog = await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8");
   const comparison = await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"), "utf8");
   const howItWorks = await readFile(path.join(packageRoot, "dist", "research-preview", "how-it-works.html"), "utf8");
-  assert(landing.includes('<base href="./research-preview/">'), "Root landing must resolve comparison assets through the research-preview base");
-  assert(landing.includes('<a aria-current="page" href="compare.html">Compare claims</a>'), "Root landing must make comparison the active navigation destination");
+  assert(landing.includes('<base href="./research-preview/">'), "Root landing must resolve catalog assets through the research-preview base");
+  assert(landing.includes('<h1 id="home-title">Agent Evidence Catalog</h1>'), "Root landing must expose the unique branded page identity");
+  assert(landing.includes('<a class="brand" aria-current="page" href="../index.html">Agent Evidence Catalog</a>'), "Root landing must identify the brand link as the current page");
+  assert(!landing.includes('id="pickerRecords"') && !landing.includes('id="comparisonMatrix"'), "Root landing must not duplicate the comparison application");
+  assert(comparison.includes('id="pickerRecords"') && comparison.includes('id="comparisonMatrix"'), "Canonical comparison route must retain the complete comparison application");
   for (const [label, html] of [["landing", landing], ["catalog", catalog], ["comparison", comparison], ["How it works", howItWorks]]) {
     const navStart = html.indexOf('<nav aria-label="Primary navigation">');
     const navEnd = html.indexOf("</nav>", navStart);
@@ -1163,8 +1360,8 @@ async function validateFirstScreenContract() {
     assert(html.includes("data-snapshot-banner-copy"), `${label} must use the shared data-derived snapshot copy`);
     assert(!html.includes("Research Preview v0.1. Sealed"), `${label} must not expose the technical release receipt`);
   }
-  assert(landing.includes('id="pickerRecords"'), "Root landing must expose the current-record comparison picker directly");
-  assert(landing.includes('id="comparisonMatrix"'), "Root landing must expose the evidence-exact comparison matrix directly");
+  assert(landing.includes('href="index.html">Browse current records</a>'), "Root landing must expose the catalog as its primary reading path");
+  assert(landing.includes('href="compare.html">Compare agent claims</a>'), "Root landing must expose the canonical comparison route");
   assert(catalog.includes('class="primary-action" href="compare.html">Compare agent claims</a>'), "Catalog first screen must expose the primary comparison CTA");
   assert(comparison.includes("Select 2–4 exact records"), "Comparison route must expose the empty picker state");
   const snapshotAssetVersion = "v=2026-08-17-sealed-snapshot";
@@ -1183,7 +1380,8 @@ async function validateFirstScreenContract() {
     assert(html.includes(`comparison-core.js?${visitorAssetVersion}`), `${label} must cache-bust the shared snapshot and comparison logic`);
   }
   assert(catalog.includes(`app.js?${visitorAssetVersion}`), "Catalog must cache-bust its readable update-marker logic");
-  for (const [label, html] of [["landing", landing], ["comparison", comparison]]) assert(html.includes("compare.js?v=2026-08-16-wide-workspace-1"), `${label} must preserve the accepted wide-workspace script`);
+  assert(!landing.includes("compare.js"), "Root landing must not load the comparison application");
+  assert(comparison.includes("compare.js?v=2026-08-16-wide-workspace-1"), "Comparison route must preserve the accepted wide-workspace script");
   for (const required of [
     "id=\"catalog-controls\"",
     ">Search current records<",
@@ -1219,7 +1417,7 @@ async function validateFirstScreenContract() {
   assert(controlsIndex > catalog.indexOf("<h1"), "Catalog filters must follow the page identity");
   assert(controlsIndex < statsIndex, "Catalog filters must precede coverage counts");
   assert(statsIndex < recordsIndex, "Coverage counts must precede the current record grid");
-  console.log("PASS comparison-first landing, catalog first-screen contract and complete visitor-facing How it works copy inventory");
+  console.log("PASS unique branded landing, canonical comparison application, static-link catalog first-screen contract and complete visitor-facing How it works copy inventory");
 }
 async function validatePagesWorkflow() {
   const workflow = await readFile(pagesWorkflowPath, "utf8");
@@ -1240,9 +1438,9 @@ async function validatePagesWorkflow() {
 }
 
 async function validateRelease({ browser }) {
-  buildOneWayProjection();
+  await buildOneWayProjection();
   const firstDigest = await treeDigest(path.join(packageRoot, "dist"));
-  buildOneWayProjection();
+  await buildOneWayProjection();
   const secondDigest = await treeDigest(path.join(packageRoot, "dist"));
   assert.equal(secondDigest, firstDigest, "Deterministic double build produced different dist trees");
   console.log(`PASS deterministic double source-to-dist build ${firstDigest}`);
@@ -1257,9 +1455,25 @@ async function validateRelease({ browser }) {
   console.log(`PASS complete Research Preview v0.1 ${browser ? "release" : "core"} validation`);
 }
 
+async function validateSearchFoundation() {
+  await buildOneWayProjection();
+  const firstDigest = await treeDigest(path.join(packageRoot, "dist"));
+  await buildOneWayProjection();
+  const secondDigest = await treeDigest(path.join(packageRoot, "dist"));
+  assert.equal(secondDigest, firstDigest, "Deterministic search-foundation build produced different dist trees");
+  console.log(`PASS deterministic search-foundation build ${firstDigest}`);
+  await validateDiscoveryMetadata();
+  await validateFirstScreenContract();
+  await validateManifest();
+  await validateBrowserReceipt();
+  run("unstaged and staged whitespace/error diff check", "git", ["diff", "--check"]);
+  console.log("PASS search-foundation candidate validation");
+}
+
 const command = process.argv[2] ?? "validate";
 if (command === "manifest") await writeManifest();
 else if (command === "validate-manifest") await validateManifest();
+else if (command === "validate-search-foundation") await validateSearchFoundation();
 else if (command === "validate-core") await validateRelease({ browser: false });
 else if (command === "validate") await validateRelease({ browser: true });
 else {
