@@ -5,35 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="data:,">
     <base href="./research-preview/">
-    <meta name="description" content="Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.">
+    <meta name="description" content="Research exact coding-agent identities, attributed publisher claims, official sources, version history and unresolved unknowns without rankings or behavior claims.">
     <meta name="robots" content="index,follow">
-    <title>Compare Coding-Agent Claims and Sources · Agent Evidence Catalog</title>
+    <title>Agent Evidence Catalog · Coding-Agent Claims and Sources</title>
     <link rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Agent Evidence Catalog">
-    <meta property="og:title" content="Compare Coding-Agent Claims and Sources · Agent Evidence Catalog">
-    <meta property="og:description" content="Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.">
+    <meta property="og:title" content="Agent Evidence Catalog · Coding-Agent Claims and Sources">
+    <meta property="og:description" content="Research exact coding-agent identities, attributed publisher claims, official sources, version history and unresolved unknowns without rankings or behavior claims.">
     <meta property="og:url" content="https://thedarknitefalls.github.io/agent-evidence-catalog/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Compare Coding-Agent Claims and Sources · Agent Evidence Catalog">
-    <meta name="twitter:description" content="Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Compare Coding-Agent Claims and Sources","description":"Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/","isPartOf":{"@type":"WebSite","name":"Agent Evidence Catalog","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/"}}</script>
+    <meta name="twitter:title" content="Agent Evidence Catalog · Coding-Agent Claims and Sources">
+    <meta name="twitter:description" content="Research exact coding-agent identities, attributed publisher claims, official sources, version history and unresolved unknowns without rankings or behavior claims.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Agent Evidence Catalog","description":"Research exact coding-agent identities, attributed publisher claims, official sources, version history and unresolved unknowns without rankings or behavior claims.","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/"}</script>
     <link rel="stylesheet" href="styles.css?v=2026-08-16-visitor-ia-2">
   </head>
-  <body class="comparison-page">
-    <a class="skip-link" href="#main">Skip to comparison</a>
+  <body>
+    <a class="skip-link" href="#main">Skip to overview</a>
     <header class="site-header">
-      <a class="brand" href="../index.html">Agent Evidence Catalog</a>
+      <a class="brand" aria-current="page" href="../index.html">Agent Evidence Catalog</a>
       <nav aria-label="Primary navigation">
-        <a data-catalog-return href="index.html">Catalog</a>
-        <a aria-current="page" href="compare.html">Compare claims</a>
+        <a href="index.html">Catalog</a>
+        <a href="compare.html">Compare claims</a>
         <a href="how-it-works.html">How it works</a>
       </nav>
       <details class="mobile-nav">
         <summary class="mobile-nav-toggle" aria-label="Open navigation"><span class="mobile-nav-icon" aria-hidden="true"></span></summary>
         <nav aria-label="Mobile primary navigation">
-          <a data-catalog-return href="index.html">Catalog</a>
-          <a aria-current="page" href="compare.html">Compare claims</a>
+          <a href="index.html">Catalog</a>
+          <a href="compare.html">Compare claims</a>
           <a href="how-it-works.html">How it works</a>
         </nav>
       </details>
@@ -43,78 +43,42 @@
       <span data-snapshot-banner-copy></span> <a href="how-it-works.html#snapshots">How updates work →</a>
     </aside>
 
-    <main id="main" class="comparison-main">
-      <section class="comparison-hero" aria-labelledby="comparison-title">
-        <p class="eyebrow">Evidence-exact comparison</p>
-        <h1 id="comparison-title">Compare agent claims, source by source.</h1>
-        <p class="lede">See the exact accepted publisher claims, the precise product identity they apply to and the official source.</p>
-        <p class="comparison-boundary"><strong>Publisher claims only.</strong> No ranking, recommendation or independent-test result.</p>
+    <main id="main">
+      <section class="hero" aria-labelledby="home-title">
+        <p class="eyebrow">Publisher-source research · dated catalog snapshot</p>
+        <h1 id="home-title">Agent Evidence Catalog</h1>
+        <p class="lede">Inspect exact coding-agent identities, the publisher claims attached to them, the official sources behind those claims and the boundaries that remain unresolved.</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="index.html">Browse current records</a>
+          <a class="secondary-action" href="compare.html">Compare agent claims</a>
+        </div>
+        <p class="quick-start"><strong>Start with identity:</strong> Find the current version or service surface, then inspect its accepted claims, applicability boundaries, sources and preserved history.</p>
+        <div class="boundary-row" aria-label="Research boundaries">
+          <span>Publisher sources only</span>
+          <span>Zero independent tests</span>
+          <span>No rankings or recommendations</span>
+          <span>Selected, not comprehensive</span>
+          <span>Intake closed</span>
+        </div>
       </section>
 
-      <section class="comparison-picker-shell" aria-labelledby="picker-heading">
-        <div class="comparison-picker">
-          <div class="section-heading compact-heading">
-            <div>
-              <p class="eyebrow">Current discovery set</p>
-              <h2 id="picker-heading">Select 2–4 exact records</h2>
-              <p>All 53 current records are available here. Historical records remain valid through record pages and shared URLs.</p>
-            </div>
-          </div>
-          <label class="picker-search">
-            <span class="sr-only">Find a current agent</span>
-            <input id="pickerSearch" type="search" placeholder="Search agents by name" autocomplete="off">
-          </label>
-          <div id="pickerRecords" class="picker-records" role="list" aria-label="Current agent records"></div>
-          <p id="pickerEmpty" class="empty-state compact-empty" hidden>No current records match that search.</p>
+      <section class="method" aria-labelledby="paths-heading">
+        <p class="eyebrow">Three reading paths</p>
+        <h2 id="paths-heading">Use the catalog for the question in front of you.</h2>
+        <div class="method-grid">
+          <p><strong><a href="index.html">Find a current record.</a></strong> Search the dated catalog for an exact version or rolling-service identity, then follow its claims to official sources.</p>
+          <p><strong><a href="compare.html">Compare accepted claims.</a></strong> Place two to four exact records side by side without turning documentation coverage into a product score.</p>
+          <p><strong><a href="how-it-works.html">Understand the method.</a></strong> See how identities, source attribution, unknowns, snapshots and version history stay separate.</p>
         </div>
+      </section>
 
-        <div class="comparison-workspace">
-          <div class="selected-panel" aria-labelledby="selected-heading">
-            <div class="selected-panel-heading">
-              <div>
-                <p class="eyebrow">Ordered comparison</p>
-                <h2 id="selected-heading">Selected records <span id="selectedCount">(0 of 4)</span></h2>
-              </div>
-              <button id="clearSelection" class="text-button" type="button" hidden>Clear all</button>
-            </div>
-            <div id="selectedRecords" class="selected-records" aria-label="Ordered comparison slots"></div>
-            <p id="selectionEmpty" class="sr-only">No records selected. Choose any two current agents to begin.</p>
-          </div>
-
-          <div id="comparisonStatus" class="comparison-status" role="status" aria-live="polite"></div>
-
-          <section id="comparisonResults" class="comparison-results" aria-labelledby="results-heading" hidden>
-            <div class="comparison-tools">
-              <label>
-                <span class="sr-only">Focus accepted claims</span>
-                <input id="claimFilter" type="search" placeholder="Focus accepted claims" autocomplete="off">
-              </label>
-              <div class="differences-field">
-                <span class="sr-only">Show only differences</span>
-                <label class="differences-toggle">
-                  <input id="differencesOnly" type="checkbox">
-                  <span>Only show where claims differ</span>
-                </label>
-              </div>
-            </div>
-            <div class="sr-only">
-              <div>
-                <p class="eyebrow">Side-by-side evidence</p>
-                <h2 id="results-heading">Selected exact records</h2>
-                <p>Coverage counts describe documentation, not product quality or capability.</p>
-              </div>
-            </div>
-            <div id="comparisonMatrix" class="comparison-matrix-shell" tabindex="0" aria-label="Selected agent claims comparison; horizontally scrollable"></div>
-            <p id="noClaimMatches" class="empty-state" hidden>No accepted claim rows match that filter. This does not indicate capability absence.</p>
-            <div id="recordBoundaries" class="record-boundaries"></div>
-          </section>
-
-          <section id="comparisonStart" class="comparison-start" aria-labelledby="start-heading">
-            <p class="eyebrow">Start comparing</p>
-            <h2 id="start-heading">Choose two records to build the matrix.</h2>
-            <p>No records selected. Choose any two current agents to begin.</p>
-            <p class="comparison-start-note">Your ordered selection, claim focus and differences toggle stay in the URL. No cookies, local storage or tracking are used.</p>
-          </section>
+      <section class="method" aria-labelledby="boundary-heading">
+        <p class="eyebrow">Evidence boundary</p>
+        <h2 id="boundary-heading">What this catalog establishes—and what it does not.</h2>
+        <div class="method-grid">
+          <p><strong>It establishes attribution.</strong> Each accepted claim names a publisher source and the product, version, configuration or delivery boundary where it applies.</p>
+          <p><strong>It does not establish behavior.</strong> No represented agent was installed, run or independently tested for this snapshot.</p>
+          <p><strong>It keeps uncertainty visible.</strong> Missing runtime, model, credential or configuration evidence stays unresolved instead of becoming a recommendation or safety conclusion.</p>
         </div>
       </section>
     </main>
@@ -124,15 +88,16 @@
       <p><a href="how-it-works.html">How it works</a> · <a href="../CORRECTIONS.md">Corrections</a></p>
     </footer>
 
-    <div id="selectionTray" class="selection-tray" hidden>
-      <div id="trayChips" class="selection-tray-chips" aria-label="Selected records"></div>
-      <p id="trayCount" class="selection-tray-count"></p>
-      <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected claims</button>
-    </div>
-
-    <noscript><p class="noscript">JavaScript is required for the comparison interface. Human-readable records remain available from the <a href="index.html">research catalog</a>.</p></noscript>
     <script src="data.js?v=2026-08-17-sealed-snapshot"></script>
     <script src="comparison-core.js?v=2026-08-16-visitor-ia-1"></script>
-    <script src="compare.js?v=2026-08-16-wide-workspace-1"></script>
+    <script>
+      (() => {
+        "use strict";
+        const data = window.RESEARCH_PREVIEW;
+        const comparison = window.AGENT_CLAIMS_COMPARISON;
+        if (!data || !comparison) throw new Error("Research-preview snapshot data is unavailable.");
+        comparison.applySnapshotBanner(data);
+      })();
+    </script>
   </body>
 </html>

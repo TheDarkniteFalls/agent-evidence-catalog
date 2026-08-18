@@ -197,6 +197,11 @@ async function assertClineLossless(record) {
 }
 
 async function assertNoPublicIntegration() {
+  const comparisonHtml = await readFile(path.join(packageRoot, "site", "research-preview", "compare.html"), "utf8");
+  assert(comparisonHtml.includes('id="pickerRecords"'), "Canonical comparison route must expose the comparison picker");
+  assert(comparisonHtml.includes('id="comparisonMatrix"'), "Canonical comparison route must expose the comparison matrix");
+  assert(comparisonHtml.includes("No ranking, recommendation or independent-test result."), "Canonical comparison boundary is missing");
+  assert(comparisonHtml.includes("compare.js?v=2026-08-16-wide-workspace-1"), "Canonical comparison route must load the comparison application");
   const roots = ["catalog", "site", "dist"].map((name) => path.join(packageRoot, name));
   const files = (await Promise.all(roots.map(walk))).flat();
   for (const file of files) {
@@ -205,10 +210,13 @@ async function assertNoPublicIntegration() {
     const content = await readFile(file, "utf8");
     let integrationScanContent = content;
     if (relative === "site/index.html" || relative === "dist/index.html") {
-      assert(content.includes('<base href="./research-preview/">'), "Root landing must use the comparison asset base");
-      assert(content.includes('id="pickerRecords"'), "Root landing must expose the comparison picker");
-      assert(content.includes('id="comparisonMatrix"'), "Root landing must expose the comparison matrix");
-      assert(content.includes("No ranking, recommendation or independent-test result."), "Root landing comparison boundary is missing");
+      assert(content.includes('<base href="./research-preview/">'), "Root landing must use the catalog asset base");
+      assert(content.includes('<h1 id="home-title">Agent Evidence Catalog</h1>'), "Root landing must expose the branded catalog identity");
+      assert(content.includes('<a class="brand" aria-current="page" href="../index.html">Agent Evidence Catalog</a>'), "Root landing must mark the catalog brand as the current page");
+      assert(content.includes('href="compare.html">Compare agent claims</a>'), "Root landing must link to the canonical comparison route");
+      assert(!content.includes('id="pickerRecords"') && !content.includes('id="comparisonMatrix"'), "Root landing must not duplicate the comparison application");
+      assert(!content.includes("compare.js"), "Root landing must not load the comparison application");
+      assert(content.includes("No rankings or recommendations"), "Root landing research boundary is missing");
     }
     if (relative === "dist/build-manifest.json") {
       const manifest = JSON.parse(content);
