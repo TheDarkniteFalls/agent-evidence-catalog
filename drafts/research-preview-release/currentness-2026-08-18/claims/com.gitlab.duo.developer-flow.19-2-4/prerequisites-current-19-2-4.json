@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.developer-flow.prerequisites-current-19-2-4",
+  "slug": "prerequisites-current-19-2-4",
+  "subject": {
+    "id": "com.gitlab.duo.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitLab Duo Developer Flow",
+      "slug": "gitlab-duo-developer-flow-19-2-4"
+    }
+  },
+  "claim": {
+    "category": "authority.prerequisites",
+    "statement": "Current documentation requires Agent Platform prerequisites, enabled foundational and Developer flows, a Developer-or-higher project role, service-account-compatible push rules and an available runner."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "GitLab, Inc."
+  },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+    "title": "Developer Flow - GitLab Docs",
+    "locator": "Prerequisites",
+    "publishedAt": null,
+    "capturedAt": "2026-08-18T10:30:13.424Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "group enablement",
+        "project role",
+        "service account",
+        "runner"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "GitLab project"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-18",
+    "recheckAfter": "2026-09-18",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Documented prerequisites do not establish that a particular project satisfies them."
+  ],
+  "unknowns": [
+    "Effective roles, settings, service account and runner eligibility are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

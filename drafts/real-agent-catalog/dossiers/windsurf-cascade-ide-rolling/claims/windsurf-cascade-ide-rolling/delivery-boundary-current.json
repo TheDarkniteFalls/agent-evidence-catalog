@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.windsurf.cascade.ide.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.windsurf.cascade.ide",
+    "name": "Windsurf Cascade",
+    "publisher": "Cognition AI, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cascade in Windsurf IDE",
+      "slug": "windsurf-cascade-ide-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Official Windsurf documentation describes Cascade in the Windsurf IDE as able to create and modify code, call tools including the terminal, maintain plans and checkpoints, and run multiple Cascade instances. This is a different desktop host boundary from the accepted Cascade in Devin Desktop surface."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Cognition AI, Inc."
+  },
+  "source": {
+    "uri": "https://docs.windsurf.com/llms.txt",
+    "title": "Windsurf documentation index",
+    "locator": "Cascade overview, modes, tools, worktrees and related official documentation entries",
+    "publishedAt": null,
+    "capturedAt": "2026-08-18T06:30:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-18",
+    "reason": "Source-only candidate claim; no catalog admission or lifecycle transition is implied."
+  },
+  "review": {
+    "reviewedAt": "2026-08-18",
+    "recheckAfter": "2026-09-18",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Publisher documentation establishes attribution and scope only; no product behavior, quality, safety or suitability was observed."
+  ],
+  "unknowns": [
+    "The exact Windsurf desktop build and executable digest are unknown.",
+    "The backend Cascade service revision and effective model route are unknown.",
+    "The effective terminal approval, allowlist, Turbo mode and network controls are unknown.",
+    "The active rules, memories, skills, hooks, MCP servers and worktree settings are unknown.",
+    "Catalog admission and the boundary from Cascade in Devin Desktop remain undecided."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

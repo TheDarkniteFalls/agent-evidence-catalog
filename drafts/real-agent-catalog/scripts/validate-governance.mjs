@@ -39,10 +39,11 @@ assert(corrections.includes("not for the\nstatic closed-intake preview"));
 assert(method.includes("zero independent tests"));
 assert(method.includes("public Research Preview v0.1"));
 assert(method.includes("https://thedarknitefalls.github.io/agent-evidence-catalog/"));
-assert(readiness.includes("Current outcome: **VALIDATED 55-SURFACE REFRESH CANDIDATE; FRESH INDEPENDENT ACCEPTANCE IS REQUIRED BEFORE COMMIT AND PUBLICATION**"));
+assert(readiness.includes("Release status: **55-SURFACE, 106-RECORD REFRESH PREPARED; PUBLICATION IS AUTHORIZED ONLY FOR THE EXACT CANDIDATE AFTER FRESH INDEPENDENT ACCEPTANCE AND ALL RELEASE GATES PASS**"));
 assert(readiness.includes("Codex CLI 0.147.0 current record | PASS"));
-assert(readiness.includes("CONDITIONAL PUBLICATION MANDATE RECORDED"));
-assert(readiness.includes("conditional on the exact candidate receiving fresh independent acceptance"));
+assert(readiness.includes("CONDITIONAL PUBLICATION AUTHORITY RECORDED"));
+assert(readiness.includes("only for the exact candidate after fresh independent acceptance"));
+assert(readiness.includes("This authority does not waive or retroactively satisfy any gate"));
 assert(roadmap.includes("Private reporting route"));
 assert(roadmap.includes("not a blocker for the static closed-intake research preview"));
 

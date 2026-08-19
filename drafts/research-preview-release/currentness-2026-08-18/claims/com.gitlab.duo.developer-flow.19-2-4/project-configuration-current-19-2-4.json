@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.developer-flow.project-configuration-current-19-2-4",
+  "slug": "project-configuration-current-19-2-4",
+  "subject": {
+    "id": "com.gitlab.duo.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitLab Duo Developer Flow",
+      "slug": "gitlab-duo-developer-flow-19-2-4"
+    }
+  },
+  "claim": {
+    "category": "authority.instructions",
+    "statement": "Current documentation keeps AGENTS.md project instructions and .gitlab/duo/agent-config.yml environment setup as separate optional project inputs to Developer Flow execution."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "GitLab, Inc."
+  },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+    "title": "Developer Flow - GitLab Docs",
+    "locator": "Set up your project",
+    "publishedAt": null,
+    "capturedAt": "2026-08-18T10:30:13.424Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "AGENTS.md",
+        "agent-config.yml"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "GitLab project repository"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-18",
+    "recheckAfter": "2026-09-18",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The presence of these files and their effects are project-specific."
+  ],
+  "unknowns": [
+    "Instruction contents, setup commands, generated environment and resulting tools are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

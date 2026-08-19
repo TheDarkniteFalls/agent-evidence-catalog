@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.windsurf.cascade.ide.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.windsurf.cascade.ide",
+    "name": "Windsurf Cascade",
+    "publisher": "Cognition AI, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cascade in Windsurf IDE",
+      "slug": "windsurf-cascade-ide-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "Cognition's official Windsurf page identifies Windsurf as an agentic IDE with local and cloud agents and presents Cascade as its local coding-agent experience."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Cognition AI, Inc."
+  },
+  "source": {
+    "uri": "https://windsurf.com/switch/cursor",
+    "title": "Windsurf 2.0 product surface",
+    "locator": "Windsurf IDE, local agents and Cascade product description",
+    "publishedAt": null,
+    "capturedAt": "2026-08-18T06:30:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-18",
+    "reason": "Source-only candidate claim; no catalog admission or lifecycle transition is implied."
+  },
+  "review": {
+    "reviewedAt": "2026-08-18",
+    "recheckAfter": "2026-09-18",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Publisher documentation establishes attribution and scope only; no product behavior, quality, safety or suitability was observed."
+  ],
+  "unknowns": [
+    "The exact Windsurf desktop build and executable digest are unknown.",
+    "The backend Cascade service revision and effective model route are unknown.",
+    "The effective terminal approval, allowlist, Turbo mode and network controls are unknown.",
+    "The active rules, memories, skills, hooks, MCP servers and worktree settings are unknown.",
+    "Catalog admission and the boundary from Cascade in Devin Desktop remain undecided."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

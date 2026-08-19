@@ -1,0 +1,307 @@
+{
+  "schemaVersion": "agent-evidence-currentness-source/0.1-draft",
+  "artifactType": "maintainer-reviewed-official-source-currentness-input",
+  "asOf": "2026-08-18",
+  "reviewedAt": "2026-08-18T10:30:21.622Z",
+  "sourceLinkAudit": {
+    "recordsChecked": 106,
+    "uniqueOfficialUrlsChecked": 253,
+    "reachable": 253,
+    "unreachable": 0,
+    "checkedAt": "2026-08-18T10:34:49.543Z",
+    "state": "complete",
+    "receiptPath": "drafts/research-preview-release/currentness-2026-08-18/official-url-audit.json",
+    "receiptSha256": "833cd7cf3f94251c586b26c0507059a4669e3ffefc09400dcc7fd34f875c9c64",
+    "method": "HTTP GET with redirects against every unique named official source URL in the projected 106-record corpus",
+    "boundary": "Reachability is not treated as product behaviour, independent verification or proof that rolling prose is unchanged."
+  },
+  "boundaries": {
+    "publisherSourcesOnly": true,
+    "agentsInstalledOrRun": false,
+    "independentEvidenceCredited": false,
+    "rankings": false,
+    "recommendations": false,
+    "suitabilityCalculations": false,
+    "note": "This refresh rechecked current identity and retention state for every accepted surface on 2026-08-18. It preserves all 101 prior records and adds successors only where an official publisher source establishes a newer exact identity. Rolling runtime, model and effective-configuration applicability remain unresolved."
+  },
+  "unchangedSurfaceKeys": [
+    "ai.factory.droid-computers.service",
+    "ai.factory.droid.cli.release-stream",
+    "ai.mistral.vibe-code.vscode-extension.service",
+    "ai.mistral.vibe-code.web.service",
+    "ai.mistral.vibe.cli.release-stream",
+    "com.alibaba.qwen-code.cli.release-stream",
+    "com.alibaba.qwen-code.vscode-extension.beta",
+    "com.amazon.kiro.cli.release-stream",
+    "com.amazon.kiro.ide.desktop-stable",
+    "com.amazon.kiro.web.preview",
+    "com.amazon.q-developer.github.preview",
+    "com.amazon.q-developer.ide-plugins.supported-sunset",
+    "com.anomaly.opencode.cli-tui.stable",
+    "com.augmentcode.agent.ide.plugins",
+    "com.augmentcode.auggie.cli.release-stream",
+    "com.cline.bot.cli.release-stream",
+    "com.cline.bot.cline.vscode-extension.marketplace",
+    "com.cognition.devin-desktop.cascade.desktop-stable",
+    "com.cognition.devin.hosted.rolling-service",
+    "com.continue.dev.ide-agent.final",
+    "com.cursor.cloud-agents.service",
+    "com.cursor.ide.foreground-agent.desktop-stable",
+    "com.github.anthropic.claude-agent.preview",
+    "com.github.copilot.cli.release-stream",
+    "com.github.copilot.cloud-agent.rolling-service",
+    "com.github.copilot.vscode-agent.local-host",
+    "com.github.openai.codex-agent.preview",
+    "com.gitlab.duo.software-development-flow.service",
+    "com.google.gemini-code-assist.ide-agent.service",
+    "com.google.gemini.cli.release-stream",
+    "com.google.jules.hosted.rolling-service",
+    "com.jetbrains.junie.cli.beta",
+    "com.lovable.build-mode.hosted.rolling-service",
+    "com.openai.codex.cli.stable",
+    "com.openai.codex.cloud.service",
+    "com.openai.codex.ide-extension.service",
+    "com.replit.agent.hosted.agent-4-service",
+    "com.roocode.vscode-extension.final",
+    "com.sourcegraph.amp.cli.release-stream",
+    "com.stackblitz.bolt.claude-agent.service",
+    "com.tabnine.agent.ide.deployment-lines",
+    "com.vercel.agent.public-beta",
+    "com.vercel.v0.agent.service",
+    "dev.warp.oz.cloud-agents.service",
+    "dev.warp.oz.local-agent.desktop",
+    "dev.zed.agent.native.desktop-stable",
+    "org.aaif.goose.cli.release-stream",
+    "org.aider-ai.aider.cli.stable",
+    "org.openhands.cloud.service",
+    "org.openhands.openhands.cli.stable"
+  ],
+  "transitions": [
+    {
+      "name": "Claude Code CLI",
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "fromRecordId": "com.anthropic.claude-code.cli.2-1-233",
+      "toRecordId": "com.anthropic.claude-code.cli.2-1-234",
+      "fromVersion": "2.1.233",
+      "toVersion": "2.1.234",
+      "releaseTag": "v2.1.234",
+      "releasedAt": "2026-08-17T20:20:58Z",
+      "releaseSource": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
+      "releaseSourceTitle": "Claude Code v2.1.234 release",
+      "basisSourceIds": [
+        "currentness-claude-code-v2-1-234"
+      ],
+      "replacements": [
+        [
+          "2-1-233",
+          "2-1-234"
+        ],
+        [
+          "2.1.233",
+          "2.1.234"
+        ],
+        [
+          "v2.1.233",
+          "v2.1.234"
+        ],
+        [
+          "2026-08-14T22:20:57Z",
+          "2026-08-17T20:20:58Z"
+        ]
+      ],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "release-identity-2-1-234": "Anthropic's official release page identifies Claude Code CLI v2.1.234, published 2026-08-17T20:20:58Z; the installed platform archive and executable identity remain unresolved."
+      },
+      "note": "Anthropic's official release feed identifies v2.1.234 as the latest stable Claude Code CLI release reviewed on 2026-08-18.",
+      "checkedAt": "2026-08-18T10:30:12.504Z",
+      "reviewedAt": "2026-08-18",
+      "recheckAfter": "2026-09-18"
+    },
+    {
+      "name": "Antigravity CLI",
+      "surfaceKey": "com.google.antigravity.cli.release-stream",
+      "fromRecordId": "com.google.antigravity.cli.1-1-13",
+      "toRecordId": "com.google.antigravity.cli.1-1-14",
+      "fromVersion": "1.1.13",
+      "toVersion": "1.1.14",
+      "releaseTag": "1.1.14",
+      "releasedAt": "2026-08-18T04:10:43Z",
+      "releaseSource": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.14",
+      "releaseSourceTitle": "Antigravity CLI 1.1.14 release",
+      "basisSourceIds": [
+        "currentness-antigravity-cli-1-1-14"
+      ],
+      "replacements": [
+        [
+          "1-1-13",
+          "1-1-14"
+        ],
+        [
+          "1.1.13",
+          "1.1.14"
+        ],
+        [
+          "2026-08-14T02:26:19Z",
+          "2026-08-18T04:10:43Z"
+        ]
+      ],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-1-1-14": "Google's official release page identifies Antigravity CLI 1.1.14, published 2026-08-18T04:10:43Z; no client artifact was installed or independently verified."
+      },
+      "note": "Google's official release feed identifies 1.1.14 as the latest Antigravity CLI release reviewed on 2026-08-18.",
+      "checkedAt": "2026-08-18T10:30:13.520Z",
+      "reviewedAt": "2026-08-18",
+      "recheckAfter": "2026-09-18"
+    },
+    {
+      "name": "Junie IDE plugin",
+      "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
+      "fromRecordId": "com.jetbrains.junie.ide-plugin.262-579-20",
+      "toRecordId": "com.jetbrains.junie.ide-plugin.262-579-25",
+      "fromVersion": "262.579.20",
+      "toVersion": "262.579.25",
+      "releaseTag": "262.579.25",
+      "releasedAt": "2026-08-17T23:56:25Z",
+      "releaseSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1142176",
+      "releaseSourceTitle": "Update Details - Junie 262.579.25",
+      "releaseSourceLocator": "Stable update 1142176, version 262.579.25, published 2026-08-17T23:56:25Z",
+      "basisSourceIds": [
+        "currentness-junie-plugin-262-579-25"
+      ],
+      "replacements": [
+        [
+          "262-579-20",
+          "262-579-25"
+        ],
+        [
+          "262.579.20",
+          "262.579.25"
+        ],
+        [
+          "1141035",
+          "1142176"
+        ],
+        [
+          "2026-08-17T05:38:00Z",
+          "2026-08-17T23:56:25Z"
+        ]
+      ],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-262-579-25": "JetBrains Marketplace's official stable update page identifies Junie IDE plugin 262.579.25, published 2026-08-17T23:56:25Z; no plugin artifact was installed or independently verified."
+      },
+      "note": "JetBrains Marketplace identifies stable Junie IDE plugin update 1142176 as version 262.579.25, published 2026-08-17T23:56:25Z.",
+      "checkedAt": "2026-08-18T10:30:13.974Z",
+      "reviewedAt": "2026-08-18",
+      "recheckAfter": "2026-09-18"
+    },
+    {
+      "name": "GitLab Duo Developer Flow",
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "fromRecordId": "com.gitlab.duo.developer-flow.19-2-2",
+      "toRecordId": "com.gitlab.duo.developer-flow.19-2-4",
+      "fromVersion": "19.2.2-ee",
+      "toVersion": "19.2.4-ee",
+      "releaseTag": "v19.2.4-ee",
+      "releasedAt": "2026-08-14T18:07:42Z",
+      "releaseSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.4-ee",
+      "releaseSourceTitle": "GitLab protected tag v19.2.4-ee",
+      "releaseSourceLocator": "Protected v19.2.4-ee tag and exact patch identity",
+      "basisSourceIds": [
+        "currentness-gitlab-developer-flow-v19-2-4-ee"
+      ],
+      "replacements": [
+        [
+          "19-2-2",
+          "19-2-4"
+        ],
+        [
+          "19.2.2-ee",
+          "19.2.4-ee"
+        ],
+        [
+          "v19.2.2-ee",
+          "v19.2.4-ee"
+        ],
+        [
+          "19.2.2",
+          "19.2.4"
+        ],
+        [
+          "2026-08-12T00:01:37Z",
+          "2026-08-14T18:07:42Z"
+        ],
+        [
+          "2026-08-12",
+          "2026-08-14"
+        ]
+      ],
+      "forbiddenSuccessorStrings": [
+        "19.2.2"
+      ],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "release-identity-19-2-4": "GitLab's protected v19.2.4-ee tag identifies the exact current patch boundary reviewed for Developer Flow; no source-to-binary correspondence or product execution was independently verified."
+      },
+      "note": "GitLab's protected v19.2.4-ee tag advances the exact patch identity for the 19.2 release line containing Developer Flow.",
+      "checkedAt": "2026-08-18T10:30:13.424Z",
+      "reviewedAt": "2026-08-18",
+      "recheckAfter": "2026-09-18"
+    },
+    {
+      "name": "GitLab Code Review Flow",
+      "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
+      "fromRecordId": "com.gitlab.duo.code-review-flow.19-2-2",
+      "toRecordId": "com.gitlab.duo.code-review-flow.19-2-4",
+      "fromVersion": "19.2.2-ee",
+      "toVersion": "19.2.4-ee",
+      "releaseTag": "v19.2.4-ee",
+      "releasedAt": "2026-08-14T18:07:42Z",
+      "releaseSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.4-ee",
+      "releaseSourceTitle": "GitLab protected tag v19.2.4-ee",
+      "releaseSourceLocator": "Protected v19.2.4-ee tag and exact patch identity",
+      "basisSourceIds": [
+        "currentness-gitlab-code-review-flow-v19-2-4-ee"
+      ],
+      "replacements": [
+        [
+          "19-2-2",
+          "19-2-4"
+        ],
+        [
+          "19.2.2-ee",
+          "19.2.4-ee"
+        ],
+        [
+          "v19.2.2-ee",
+          "v19.2.4-ee"
+        ],
+        [
+          "19.2.2",
+          "19.2.4"
+        ],
+        [
+          "2026-08-12T00:01:37Z",
+          "2026-08-14T18:07:42Z"
+        ],
+        [
+          "2026-08-12",
+          "2026-08-14"
+        ]
+      ],
+      "forbiddenSuccessorStrings": [
+        "19.2.2"
+      ],
+      "dropClaimSlugs": [],
+      "statementOverrides": {
+        "identity-19-2-4-ee": "GitLab's protected v19.2.4-ee tag identifies the exact current patch boundary for the release line containing Code Review Flow; no product execution was independently verified."
+      },
+      "note": "GitLab's protected v19.2.4-ee tag advances the exact patch identity for the 19.2 release line containing Code Review Flow.",
+      "checkedAt": "2026-08-18T10:30:13.502Z",
+      "reviewedAt": "2026-08-18",
+      "recheckAfter": "2026-09-18"
+    }
+  ]
+}

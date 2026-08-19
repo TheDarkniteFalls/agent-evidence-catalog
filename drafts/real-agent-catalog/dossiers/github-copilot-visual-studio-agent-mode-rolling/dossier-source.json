@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier-source",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-18",
+  "identity": {
+    "recordId": "com.github.copilot.visual-studio.agent-mode.rolling",
+    "agent": {
+      "id": "com.github.copilot.visual-studio.agent-mode",
+      "name": "GitHub Copilot Agent Mode for Visual Studio"
+    },
+    "publisher": {
+      "id": "github-publisher",
+      "name": "GitHub"
+    },
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Copilot Agent Mode in Visual Studio",
+      "slug": "github-copilot-visual-studio-agent-mode-rolling",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Visual Studio 2022 17.14+ rolling Copilot channel",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, package, executable, hosted runtime or model service was downloaded, installed, hashed or run."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "copilot-visual-studio-agent-mode-docs",
+        "kind": "other",
+        "uri": "https://learn.microsoft.com/en-us/visualstudio/ide/copilot-agent-mode?view=visualstudio",
+        "ecosystem": "Visual Studio 2022 17.14+",
+        "version": null,
+        "identityStatus": "unresolved",
+        "digest": null,
+        "note": "Official publisher source reference only; no artifact or runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "github-publisher",
+        "name": "GitHub",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://learn.microsoft.com/en-us/visualstudio/ide/copilot-agent-mode?view=visualstudio": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Official publisher source reviewed for identity and delivery scope only; no product was installed, run or independently evaluated."
+    }
+  },
+  "rawClaimPaths": [
+    "claims/github-copilot-visual-studio-agent-mode-rolling/identity-current.json",
+    "claims/github-copilot-visual-studio-agent-mode-rolling/delivery-boundary-current.json"
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Copilot Agent Mode in Visual Studio",
+            "claimIds": [
+              "com.github.copilot.visual-studio.agent-mode.identity-current",
+              "com.github.copilot.visual-studio.agent-mode.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The installed artifact, hosted service revision and effective session configuration remain unresolved."
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface, release scope and delivery boundary are represented; effective runtime, model, tools, permissions, credentials and network state remain unresolved."
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-github-copilot-visual-studio-agent-mode-rolling",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "source-only-boundary",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This dossier contains publisher-source identity and delivery claims only."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Copilot Agent Mode for Visual Studio is preserved as a source-only IDE-host candidate. Official documentation establishes the Visual Studio 2022 17.14+ host and agent workflow, but not an immutable extension or backend build.",
+    "releaseContext": {
+      "statement": "Rolling Visual Studio host surface; exact Copilot extension and service builds unresolved",
+      "sourceUri": "https://learn.microsoft.com/en-us/visualstudio/ide/copilot-agent-mode?view=visualstudio",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted statements are attributed to named official publisher sources; no product behavior was observed.",
+      "No artifact, service, model or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "The exact Visual Studio build, Copilot component version and installed artifact digest are unknown.",
+      "The effective model, provider revision, routing and fallback behavior are unknown.",
+      "The effective tool approvals, terminal policy, MCP configuration and credentials are unknown.",
+      "Organization policy, repository state and user-selected Agent or Plan mode are unknown.",
+      "Catalog admission and cross-host lifecycle relationships remain undecided."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm candidate identity, delivery distinction and unresolved applicability gaps before any admission decision.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Candidate identity",
+        "question": "Which exact or rolling product surface is represented?",
+        "status": "Rolling Visual Studio host surface; exact Copilot extension and service builds unresolved",
+        "tone": "qualified",
+        "answer": "Microsoft's official Visual Studio documentation identifies GitHub Copilot Agent Mode as a Visual Studio 2022 17.14+ surface that can plan, edit code, use tools, run terminal commands and iterate on errors.",
+        "whyItMatters": "Related IDE, CLI, hosted and predecessor surfaces cannot silently inherit this candidate's claims.",
+        "claimIds": [
+          "com.github.copilot.visual-studio.agent-mode.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Distinct delivery boundary",
+        "question": "Why is this not a duplicate of an accepted surface?",
+        "status": "Copilot Agent Mode in Visual Studio",
+        "tone": "attention",
+        "answer": "The documented Visual Studio host and release prerequisite make this a distinct adjacent surface from the accepted Copilot agent harness in Visual Studio Code, Copilot CLI and Copilot cloud agent records.",
+        "whyItMatters": "Host, execution location and publisher identity can change applicability and authority boundaries.",
+        "claimIds": [
+          "com.github.copilot.visual-studio.agent-mode.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this candidate independently tested or admitted?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "This is source-only research; no generated catalog record, lifecycle entry or independent result is admitted.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.github.copilot.visual-studio.agent-mode.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished source-only candidate. No catalog admission, lifecycle transition, public page or external action is authorized."
+  }
+}

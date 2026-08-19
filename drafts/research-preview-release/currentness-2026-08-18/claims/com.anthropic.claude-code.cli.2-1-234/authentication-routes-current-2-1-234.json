@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.authentication-routes-current-2-1-234",
+  "slug": "authentication-routes-current-2-1-234",
+  "subject": {
+    "id": "com.anthropic.claude-code.cli",
+    "name": "Claude Code CLI",
+    "publisher": "Anthropic PBC",
+    "surface": {
+      "kind": "cli",
+      "name": "Claude Code CLI",
+      "slug": "anthropic-claude-code-cli-2-1-234"
+    }
+  },
+  "claim": {
+    "category": "identity.authentication",
+    "statement": "Current official CLI and installation documentation separates Claude subscription sign-in, Anthropic Console API billing and third-party provider routes including Bedrock, Vertex AI and Foundry."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anthropic PBC"
+  },
+  "source": {
+    "uri": "https://code.claude.com/docs/en/cli-usage",
+    "title": "Claude Code CLI reference",
+    "locator": "claude auth login options and authentication commands",
+    "publishedAt": null,
+    "capturedAt": "2026-08-18T10:30:12.504Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "subscription",
+        "console API",
+        "third-party provider"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Claude Code CLI"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-18",
+    "recheckAfter": "2026-09-18",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Current documentation is not treated as frozen 2.1.234 runtime behavior."
+  ],
+  "unknowns": [
+    "The effective account, credential storage, token lifetime and provider route are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

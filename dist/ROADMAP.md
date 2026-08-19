@@ -1,25 +1,32 @@
 # Agent Evidence Catalog roadmap
 
-Updated: 2026-08-17. This roadmap records intended work; it does not authorize
+Updated: 2026-08-18. This roadmap records intended work; it does not authorize
 publication, GitHub changes, publisher contact, agent execution, open intake or
 a response-time commitment.
 
 ## Current position
 
 The public [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
-has a prepared sealed 55-surface refresh snapshot containing 53 records current within
-the review window and 48 non-current records: 45 superseded identities, two
-historical records and one discontinued surface. It is static, maintainer-curated and based
-only on attributed publisher sources. It assigns zero independent-test credit
-and provides no rankings, recommendations or suitability calculation.
+contains the sealed 2026-08-18 55-surface snapshot: 53 current records and 53
+non-current records, comprising 50 superseded identities, two historical
+records and one discontinued surface. All 106 records are static,
+maintainer-curated and based only on attributed publisher sources. The
+published snapshot assigns zero independent-test credit and provides no
+rankings, recommendations or suitability calculation.
 
-The sealed 2026-08-17 official-source review adds three exact-identity
-successors to the accepted 98-record projection while retaining every
-predecessor and 52 unchanged surface decisions. Publication-time drift is
-reported separately as a notice and does not reopen the snapshot. A pinned,
-least-privilege GitHub Pages workflow publishes only the committed `dist/`
-tree. Every later push still requires explicit authorization and the normal
-public-lane pre-push gate.
+The 2026-08-18 refresh preserves all 101 records from the prior snapshot and
+adds five same-surface successors for Claude Code CLI, Antigravity CLI, Junie
+IDE plugin, GitLab Duo Developer Flow and GitLab Code Review Flow. Four
+additional products are represented only by source dossiers and are not
+catalog surfaces: Cursor CLI, Cascade in Windsurf IDE, Copilot Agent Mode for
+Visual Studio and Zoo Code v3.78.0. CodeRabbit, Greptile and a generic
+JetBrains agent-host surface remain outside the authoring scope pending Mike's
+scope decision.
+
+Publication-time drift is reported separately and does not reopen a sealed
+snapshot. A pinned, least-privilege GitHub Pages workflow publishes only the
+committed `dist/` tree. Every later commit, push, pull request and publication
+still requires its own authorization and the applicable public-lane gates.
 
 ## Near-term roadmap
 
@@ -31,7 +38,8 @@ Status: complete for Research Preview v0.1.
   limitations quickly enough.
 - Test a few representative reading journeys: finding the current record,
   understanding an applicability boundary and opening history.
-- Decide whether to publish the current candidate as a dated research preview.
+- Record the owner's publication decision for each dated refresh and retain the
+  independent-review, release-gate and external-action boundaries.
 - Do not expand scope merely to make the first release appear comprehensive.
 
 The bounded stranger-first pass identifies the audience, useful question,
@@ -41,7 +49,10 @@ concept review in step 4.
 
 ### 2. Refresh workflow
 
-Status: repeatable capture, projection, full-corpus link audit and publication-census commands exercised across all 55 surfaces and sealed to the retained 2026-08-17 receipts; operational dashboard and scheduling remain deferred.
+Status: repeatable capture, projection, full-corpus link audit and
+publication-census commands are exercised across all 55 surfaces. The
+2026-08-18 receipts are the published refresh baseline. Operational dashboard
+and scheduling remain deferred.
 
 - Maintain the bounded refresh commands that identify source changes without
   promoting them into evidence automatically.
@@ -57,7 +68,9 @@ the public view exposes freshness without implying unattended verification.
 
 ### 3. Inventory expansion
 
-Status: 55-surface critical-mass expansion complete locally; future additions remain selective.
+Status: the 55-surface critical-mass expansion is published. Four selective
+source-only candidate dossiers are prepared for a later admission decision;
+none changes the published or local surface count.
 
 - Identify meaningful missing surfaces rather than chasing a raw record count.
 - Prefer agents that improve coverage across delivery models, authority models,
@@ -68,14 +81,18 @@ Status: 55-surface critical-mass expansion complete locally; future additions re
   is approved.
 
 The 2026-08-07 batch adds 39 bounded identity-and-delivery dossiers without
-admitting independent evidence or comparison results. It brings the prepared
-catalog to 55 surfaces while keeping every applicability gap visible. Future
-batches remain done only when every added surface passes source, mapping,
-lifecycle, preservation and presentation validation.
+admitting independent evidence or comparison results. It brought the
+published catalog to 55 surfaces while keeping every applicability gap
+visible. The 2026-08-18 Cursor CLI, Windsurf Cascade, Copilot Agent Mode for
+Visual Studio and Zoo Code dossiers stop before record generation, mapping,
+lifecycle or presentation admission. Future additions remain done only when
+every added surface passes source, mapping, lifecycle, preservation and
+presentation validation and receives a separate scope decision.
 
 ### 4. Concept and presentation review
 
-Status: v0.1 local pass complete; continue with real-world feedback.
+Status: the branded homepage and search/discovery foundation are published;
+continue with real-world comprehension and navigation feedback.
 
 - Define the primary reader and the decision the catalog helps them make.
 - Check terminology, navigation, record density and the balance between current
@@ -103,6 +120,11 @@ people not to submit sensitive information.
 
 ## Later, separate decisions
 
+- Whether to admit any of the four 2026-08-18 source-only candidates as new
+  catalog surfaces.
+- Whether code-review agents such as CodeRabbit and Greptile, or a generic
+  JetBrains agent-host surface, belong inside the catalog's product-surface
+  scope.
 - Whether to open third-party record intake.
 - Whether to admit independent evaluations or run agents.
 - Whether to add signed receipts, analytics or scheduled currentness

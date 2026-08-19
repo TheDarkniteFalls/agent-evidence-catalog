@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.cli.agent.identity-current",
+  "slug": "identity-current",
+  "subject": {
+    "id": "com.cursor.cli.agent",
+    "name": "Cursor CLI",
+    "publisher": "Anysphere, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "Cursor CLI",
+      "slug": "cursor-cli-beta-rolling"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "Anysphere's official documentation identifies Cursor CLI as a beta terminal coding-agent surface that can inspect and modify code in interactive and non-interactive workflows."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Anysphere, Inc."
+  },
+  "source": {
+    "uri": "https://cursor.com/docs/cli/overview",
+    "title": "Cursor CLI overview",
+    "locator": "CLI overview, interactive agent and non-interactive use",
+    "publishedAt": null,
+    "capturedAt": "2026-08-18T06:30:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-18",
+    "reason": "Source-only candidate claim; no catalog admission or lifecycle transition is implied."
+  },
+  "review": {
+    "reviewedAt": "2026-08-18",
+    "recheckAfter": "2026-09-18",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Publisher documentation establishes attribution and scope only; no product behavior, quality, safety or suitability was observed."
+  ],
+  "unknowns": [
+    "The exact installed Cursor CLI version, package and executable digest are unknown.",
+    "The effective model, provider revision, routing and fallback behavior are unknown.",
+    "The effective approval, shell, filesystem, network and credential controls are unknown.",
+    "The enabled rules, skills, MCP servers, hooks and headless environment are unknown.",
+    "Catalog admission and lifecycle relationships remain undecided."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
