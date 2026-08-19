@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "org.zoo-code.vscode-extension.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "org.zoo-code.vscode-extension",
+    "name": "Zoo Code VS Code extension",
+    "publisher": "Zoo Code Org",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Zoo Code VS Code extension",
+      "slug": "zoo-code-vscode-3-78-0"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Zoo Code Org's version-bound README identifies Zoo Code as a VS Code extension with Code, Architect, Ask, Debug and custom modes, file operations and MCP, and states that Zoo Code continues development after the Roo team wound down active Roo Code work. The catalog does not infer admission or automatic same-surface succession from that lineage statement."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Zoo Code Org"
+  },
+  "source": {
+    "uri": "https://github.com/Zoo-Code-Org/Zoo-Code/blob/b3ad248475d7eafa8f55c671759c6662008b2984/README.md",
+    "title": "Zoo Code README at v3.78.0 source revision",
+    "locator": "Product identity, Roo-to-Zoo lineage, modes, file operations and MCP",
+    "publishedAt": null,
+    "capturedAt": "2026-08-18T06:30:00Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "3.78.0"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-18",
+    "reason": "Source-only candidate claim; no catalog admission or lifecycle transition is implied."
+  },
+  "review": {
+    "reviewedAt": "2026-08-18",
+    "recheckAfter": "2026-09-18",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Publisher documentation establishes attribution and scope only; no product behavior, quality, safety or suitability was observed."
+  ],
+  "unknowns": [
+    "The installed VSIX, marketplace package digest and executable runtime are unknown.",
+    "The effective model, provider, routing, reasoning and fallback configuration are unknown.",
+    "The effective mode, approval, destructive-command guard, terminal and network controls are unknown.",
+    "The enabled MCP servers, rules, providers, credentials and workspace scope are unknown.",
+    "Catalog admission and any lifecycle relationship to Roo Code remain undecided."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

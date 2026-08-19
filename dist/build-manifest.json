@@ -12,44 +12,44 @@
   "researchPreview": {
     "entryPoint": "research-preview/index.html",
     "data": "research-preview/catalog.json",
-    "dataSha256": "d92ac878882c3170a67ccb5108eea7a75bb35b2f52cae6ec0d756c0fe61e1eb7",
-    "asOf": "2026-08-17",
+    "dataSha256": "0cf31c75cb8b09ad604192fe0289f42fac60fed9898df77951140909cd2a5f48",
+    "asOf": "2026-08-18",
     "releaseCandidateStatus": "ready-for-release-review",
     "surfaces": 55,
     "currentRecordsPresented": 53,
-    "historyRecordsPresented": 48,
-    "recordsPresentedIncludingHistory": 101,
+    "historyRecordsPresented": 53,
+    "recordsPresentedIncludingHistory": 106,
     "independentTestsCredited": 0,
     "openIntake": false,
     "snapshotSeal": {
       "data": "research-preview/snapshot-seal.json",
-      "dataSha256": "0df00085fd51501baa592145ca18214ca55b50ef6d35ce7f8272b7c80b0e3aaa",
+      "dataSha256": "67f3a09fec23a6fc21da474ae028d1688606b79a109bc55421773e4daa6aeae0",
       "sourceReviewWindow": {
-        "startedAt": "2026-08-17T08:56:05.909Z",
-        "completedAt": "2026-08-17T08:56:11.212Z"
+        "startedAt": "2026-08-18T10:30:11.620Z",
+        "completedAt": "2026-08-18T10:30:21.622Z"
       },
-      "sealedAt": "2026-08-17T08:57:52.938Z",
+      "sealedAt": "2026-08-18T10:34:49.543Z",
       "catalogCounts": {
         "surfaces": 55,
         "current": 53,
-        "total": 101,
-        "nonCurrent": 48,
-        "superseded": 45,
+        "total": 106,
+        "nonCurrent": 53,
+        "superseded": 50,
         "historical": 2,
         "discontinued": 1
       }
     },
     "publicationFreshness": {
       "data": "research-preview/publication-freshness-census.json",
-      "dataSha256": "e03ee60d9926730e54049d6e484b86ff44b99b020f668627f157bc8297366853",
-      "checkedAt": "2026-08-17T08:59:37.955Z",
+      "dataSha256": "527f7a09dc909260023760ac07389edd9b175bfcdd3f46fa450a49aada9b6995",
+      "checkedAt": "2026-08-18T10:36:39.473Z",
       "knownNewer": 0,
       "incompleteCoverage": 53,
       "surfaces": 55
     },
     "comparison": {
       "entryPoint": "research-preview/compare.html",
-      "htmlSha256": "c25cc8ca174f0a42d438a7e5fb791947b00b607172725753cb4e00617201259b",
+      "htmlSha256": "206dc60cdb95ab657d77382f9f02063f05337c6d4b59def2af7860538cc6884a",
       "projector": "research-preview/comparison-core.js",
       "projectorSha256": "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e",
       "app": "research-preview/compare.js",
@@ -60,515 +60,540 @@
     },
     "howItWorks": {
       "entryPoint": "research-preview/how-it-works.html",
-      "htmlSha256": "3475acd861a7ecae8219d0c7bf54e63a6cfba753455f8e4622817a18aff610d7"
+      "htmlSha256": "faf160fda9cb53bb327bdf1ac20f14ff6d3d7ad190d82856b57a4560842d3832"
     },
     "recordDetails": {
-      "count": 101,
+      "count": 106,
       "records": [
         {
           "recordId": "com.cline.bot.vscode-extension.4-1-2",
           "entryPoint": "research-preview/records/com.cline.bot.vscode-extension.4-1-2.html",
-          "htmlSha256": "56ffb3e9173750a33b9f75f11f781e29f84b3fb38e88b48127621d256dbedb51"
+          "htmlSha256": "9cd765a046ae55c8ce2fcff841cd8f10177334baf57e5d3038606d555e17dd42"
         },
         {
           "recordId": "org.openhands.cli.1-16-0",
           "entryPoint": "research-preview/records/org.openhands.cli.1-16-0.html",
-          "htmlSha256": "209706f8a92f036c8513a4cfd668ce1a00df6dc63236d6c0057742d188446619"
+          "htmlSha256": "5fd79a656345ca783ef1f6e36e704b09f87f4039e49ae6f796046565bc68f753"
         },
         {
           "recordId": "com.github.copilot.cloud-agent.rolling",
           "entryPoint": "research-preview/records/com.github.copilot.cloud-agent.rolling.html",
-          "htmlSha256": "35e9e9fb59c6ca34ae5d5f8ef6969893ceb107f78171665d1d9471bb52945bdb"
+          "htmlSha256": "8efeff88518fc824fda10b091bc9b7f711fc8e01d052cc4a813b40fbcbc9c8e6"
         },
         {
           "recordId": "com.google.jules.hosted.rolling",
           "entryPoint": "research-preview/records/com.google.jules.hosted.rolling.html",
-          "htmlSha256": "51440d7e961f7f4fd8ea51549dcf7485a2b29a527f01529019950b09202d0666"
+          "htmlSha256": "637ed8e7359fba3e4ff3f20ffebe399c7bb95e69e2b7dd466f6e123548abcc4a"
         },
         {
           "recordId": "com.openai.codex.cli.0-90-0",
           "entryPoint": "research-preview/records/com.openai.codex.cli.0-90-0.html",
-          "htmlSha256": "eba07f22337ed3365e0cb4bc51a65307abf34000c98a996386dfea43274fb3bc"
+          "htmlSha256": "38b66325586fa947819e55a32b4dcb80768ab83c5e2964083b3e81610df075c0"
         },
         {
           "recordId": "com.cursor.ide.foreground-agent.3-14",
           "entryPoint": "research-preview/records/com.cursor.ide.foreground-agent.3-14.html",
-          "htmlSha256": "3ac7134170ef487ec11923f63b66309d4d6681a730cb1caf9e80932280e4b6b1"
+          "htmlSha256": "36080f0a24374653a2c52dd8e654d9e0d27c9b647f697731b6f937747a499d65"
         },
         {
           "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
           "entryPoint": "research-preview/records/com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee.html",
-          "htmlSha256": "c9972fef1d8a357c745e825a4967ab5c0f993b3f990c36b582c1f7f91c6347c9"
+          "htmlSha256": "f05b4457a9b1256f053788dd6b7182bc64122732c00cab7a9a67e47bd7735988"
         },
         {
           "recordId": "com.cognition.devin.hosted.rolling",
           "entryPoint": "research-preview/records/com.cognition.devin.hosted.rolling.html",
-          "htmlSha256": "8d960ac46694d9df01eacdbc8d6568e8b8cffc439de2475fce44d0ca8a1b5c3b"
+          "htmlSha256": "8cc3c6f413b09ca8677b215e1395c07fb03d1fd9f338763643548dccd62fe8a7"
         },
         {
           "recordId": "com.anthropic.claude-code.cli.2-1-117",
           "entryPoint": "research-preview/records/com.anthropic.claude-code.cli.2-1-117.html",
-          "htmlSha256": "07c2254b6eb84674dc142cc8cdbf46db7d9f1cdc666150fa1972a01c6be29c76"
+          "htmlSha256": "666e491d2d4f486afba4c2584dc414d6317fe2b0487b766d3c6098aa16f5f672"
         },
         {
           "recordId": "dev.zed.agent.native.1-13-1",
           "entryPoint": "research-preview/records/dev.zed.agent.native.1-13-1.html",
-          "htmlSha256": "dce01d19582fc859ccea33cfdf46c0abdade3115f383f6efdc57d4916607a054"
+          "htmlSha256": "5929c2d064a504e91907f3dc706591a393d48f4bc71fe3238402f334571e5cb4"
         },
         {
           "recordId": "com.replit.agent.hosted.agent-4",
           "entryPoint": "research-preview/records/com.replit.agent.hosted.agent-4.html",
-          "htmlSha256": "2eb5102ca100fcd7a621e34491fa0236565c397036cfacbb1b3f3fbf0cf77cff"
+          "htmlSha256": "48f4895d30ea159c84b023d3cc72c28e4cc7e6012919b889686839714cc1a9e0"
         },
         {
           "recordId": "org.aider-ai.aider.cli.0-86-0",
           "entryPoint": "research-preview/records/org.aider-ai.aider.cli.0-86-0.html",
-          "htmlSha256": "3c62b00dab878ba1e4e3c22995e56891feff8fba76d90d698ca8e4a8ee88dae7"
+          "htmlSha256": "8c8128a6a0b72c1857df537feb25d6a37fa78924f1fee396b287b68926331225"
         },
         {
           "recordId": "com.amazon.kiro.ide.1-0-242",
           "entryPoint": "research-preview/records/com.amazon.kiro.ide.1-0-242.html",
-          "htmlSha256": "9cdf7871a7a7175b0ca3c25b533a1bc1acde4f7b0afea698134563af3b2a7a6d"
+          "htmlSha256": "82f86ee2f15c49fc1c1d8cb8854f89e21c2ab326e2174d0ca5a37d752bf00c3c"
         },
         {
           "recordId": "com.lovable.agent.hosted.rolling",
           "entryPoint": "research-preview/records/com.lovable.agent.hosted.rolling.html",
-          "htmlSha256": "abe2e82edab00b9261539d807089b681f711ba98609e38e58fbe4d49382e9097"
+          "htmlSha256": "c00be7b55adb03ee7730f282e9659e559a3c7c975c82c11a2ec7b66eea0ef46e"
         },
         {
           "recordId": "com.anomaly.opencode.cli.1-18-11",
           "entryPoint": "research-preview/records/com.anomaly.opencode.cli.1-18-11.html",
-          "htmlSha256": "10b82cf4a0a48af5afe86f961c844f12d817ea77036644c533b80480c62df69e"
+          "htmlSha256": "edd25790168348299f8a1d089c279d927b63825efd1a7f870b4a9a3e97ee406c"
         },
         {
           "recordId": "com.cognition.devin-desktop.cascade.3-6-27",
           "entryPoint": "research-preview/records/com.cognition.devin-desktop.cascade.3-6-27.html",
-          "htmlSha256": "914b5c486114094ec9171dd6d33d343b760c8af6ec73184dc4ca7a0bb7379f47"
+          "htmlSha256": "7a0c3387b587c3cbe8c889b40de88c6076c2e5c7a184a61c608720a0d7d9f93c"
         },
         {
           "recordId": "com.openai.codex.cli.0-146-0",
           "entryPoint": "research-preview/records/com.openai.codex.cli.0-146-0.html",
-          "htmlSha256": "278630faedfe76b029490dcb6fa0636290fb9e9bbeef99c41fc5af0daf9acfa1"
+          "htmlSha256": "b85ee7631f7aa1cefeb8527b12fce8ea93a02ccc057ce4144455eda94a1049f0"
         },
         {
           "recordId": "com.anthropic.claude-code.cli.2-1-220",
           "entryPoint": "research-preview/records/com.anthropic.claude-code.cli.2-1-220.html",
-          "htmlSha256": "71a1878a37cccac1760307810455bb35fde7673cbed9869c315f3cc2b34ebbc5"
+          "htmlSha256": "be4a2f0b30aa10f4fee46124914009ebb41039548ef062160fd628a88d316704"
         },
         {
           "recordId": "com.gitlab.duo.developer-flow.19-2",
           "entryPoint": "research-preview/records/com.gitlab.duo.developer-flow.19-2.html",
-          "htmlSha256": "f5d91224bd8386f9e03a26b268ba9be3602562fb5497ed1ba2e91d2937e7cf72"
+          "htmlSha256": "6ff4f117bc83bcda70d85f9c019252e13bfcaaafde50ac9e359154080749e9a9"
         },
         {
           "recordId": "com.zed.agent.native.stable.1-12-1",
           "entryPoint": "research-preview/records/com.zed.agent.native.stable.1-12-1.html",
-          "htmlSha256": "1a8319bd4457d4f3b1aded8bdc433e40e7d18607aa0b1bc76969df2090a91f2d"
+          "htmlSha256": "259ebe71644dadc8a7993b3f587278797521613d9c2cfedc21a0607b3b2ca16a"
         },
         {
           "recordId": "com.cline.bot.vscode-extension.4-1-3",
           "entryPoint": "research-preview/records/com.cline.bot.vscode-extension.4-1-3.html",
-          "htmlSha256": "190875676e17da4651e82d1b3fa169d0229b91badea1619c23b73c3ad6be135c"
+          "htmlSha256": "f2947e04f998a2e4058537f5410d1bef49d212b4d94b306c64bfcbfa64fe47de"
         },
         {
           "recordId": "com.gitlab.duo.developer-flow.19-2-1",
           "entryPoint": "research-preview/records/com.gitlab.duo.developer-flow.19-2-1.html",
-          "htmlSha256": "279fbb4425e39f1688c966b46781a3b0c107e30dfe22f2d5584e84492daa04ee"
+          "htmlSha256": "a988ede3020adea4326a680566643d0968b3f3ed3d020da498fdbaf9cc8b93e0"
         },
         {
           "recordId": "com.google.gemini.cli.0-54-4",
           "entryPoint": "research-preview/records/com.google.gemini.cli.0-54-4.html",
-          "htmlSha256": "3494174dbd3dcaeae4caa5363866ca36a99cf11b717e4e159659d168f85cd47f"
+          "htmlSha256": "8e93350b2c7c12cdf5d55cf20cdf3d01f92c8d0dd6641d7b5f63a23cd3ee22ff"
         },
         {
           "recordId": "com.google.antigravity.cli.1-1-11",
           "entryPoint": "research-preview/records/com.google.antigravity.cli.1-1-11.html",
-          "htmlSha256": "a103fce892ddbf17f92d036b4bb454ed3b16ba39026a43de8ad331b75181ceaf"
+          "htmlSha256": "bf01577647248a4ee16b5b57cc4ae47955cd2063a4b46c27fe335f3272f4e983"
         },
         {
           "recordId": "org.aaif.goose.cli.1-45-0",
           "entryPoint": "research-preview/records/org.aaif.goose.cli.1-45-0.html",
-          "htmlSha256": "78fc33d85a9b1c28868d96f0617b016bcf12d7b502912857dead5aeb2f7919ea"
+          "htmlSha256": "b08b7a59af59862c38e2d55c0a14423fe2aa8d3bb8716c29311fccd22e490fab"
         },
         {
           "recordId": "com.alibaba.qwen-code.cli.0-21-7",
           "entryPoint": "research-preview/records/com.alibaba.qwen-code.cli.0-21-7.html",
-          "htmlSha256": "9d897eeb09000dd3f85335804cbab4dfa99afe0cb8f64a37afa9e4c206011b75"
+          "htmlSha256": "69612fc3f88d1df0654f0477c17a526d0ad8ac131f3545a32c386126b46214fb"
         },
         {
           "recordId": "ai.mistral.vibe.cli.rolling",
           "entryPoint": "research-preview/records/ai.mistral.vibe.cli.rolling.html",
-          "htmlSha256": "30c75228ae2bacedcf7fbb7f5ce27dece90ddc474dc20cc164e8afc85dd4508c"
+          "htmlSha256": "696575047db74489af28f1f7841af9fadbb93bff82bed2279c9d8394a293d68b"
         },
         {
           "recordId": "com.sourcegraph.amp.cli.rolling",
           "entryPoint": "research-preview/records/com.sourcegraph.amp.cli.rolling.html",
-          "htmlSha256": "b68969c956e3809b1b5c75ad5ad29c566a04da33845bdde537921d42f6d79c5a"
+          "htmlSha256": "af4f2325d39e19a34673d8dab1aa832a7e3e802db8ebab641fe7ad73eebeb437"
         },
         {
           "recordId": "com.github.copilot.cli.1-0-78",
           "entryPoint": "research-preview/records/com.github.copilot.cli.1-0-78.html",
-          "htmlSha256": "a2c806cb0916023a84c925ad19fae8dab4b10a8720ccc91366552ef3107577dd"
+          "htmlSha256": "7a23692a204ba39c740a278e5436d94c8c15944704e717b0f9f83fe5fc11ac49"
         },
         {
           "recordId": "com.jetbrains.junie.cli.beta-rolling",
           "entryPoint": "research-preview/records/com.jetbrains.junie.cli.beta-rolling.html",
-          "htmlSha256": "7ce6819df32853cb5d9840d10db87611836f1a820705554d97b221e1b6555b4f"
+          "htmlSha256": "de9a3df6f87a76885824bf329bb4d3991f57c6514c9bf38a9c4fa2bf2fd67b4f"
         },
         {
           "recordId": "com.amazon.kiro.cli.rolling",
           "entryPoint": "research-preview/records/com.amazon.kiro.cli.rolling.html",
-          "htmlSha256": "943c1f9868ed23f4656078669255d02ecc3ddd9130880bb343a0b6032019b9aa"
+          "htmlSha256": "4076d77b41c73fee2d2deec5ea6ba2713c2e855567e69216846e061cfebb8080"
         },
         {
           "recordId": "com.cline.bot.cli.3-0-51",
           "entryPoint": "research-preview/records/com.cline.bot.cli.3-0-51.html",
-          "htmlSha256": "ef9436550828da251441adf3b04d92709c97982c2ee33edac7e7fdf0a8fb4d46"
+          "htmlSha256": "27fdbee87e30234e1e6418d0aab9fa3ff278d5459db2cf2588927c389f94fe1f"
         },
         {
           "recordId": "com.augmentcode.auggie.cli.rolling",
           "entryPoint": "research-preview/records/com.augmentcode.auggie.cli.rolling.html",
-          "htmlSha256": "6e5ec93d943e16e9aa058ea67011f96b58505d04d205824860dcfd83176ad55f"
+          "htmlSha256": "356a135145f676f99e12548f422bb8969afcb6b48c0ce6b7aae64414b0f7e6c6"
         },
         {
           "recordId": "ai.factory.droid.cli.rolling",
           "entryPoint": "research-preview/records/ai.factory.droid.cli.rolling.html",
-          "htmlSha256": "048edd2511c2d9613e92a600576868ed8c6e41e3eefae25201a91f623e4ddfad"
+          "htmlSha256": "e74ba4d16c737710fc8034b890dd92fbc348d135320579e082e01829de0f5c54"
         },
         {
           "recordId": "com.roocode.vscode-extension.3-54-0",
           "entryPoint": "research-preview/records/com.roocode.vscode-extension.3-54-0.html",
-          "htmlSha256": "0a4c935d9d8d5033621190f9e039399f2f96596136e75d430dae76d554024433"
+          "htmlSha256": "00817fbe2aec064d3c04057dec38a2d0aea3660e668a4037397960772fb379ab"
         },
         {
           "recordId": "com.continue.dev.ide-agent.2-0-0",
           "entryPoint": "research-preview/records/com.continue.dev.ide-agent.2-0-0.html",
-          "htmlSha256": "9c05efa18cdd3ce8f480b241f62a68fe00ca848a6a3d1e4c36a6c3986fe4fc03"
+          "htmlSha256": "adf617b0a72f58e0ae7f83b7df909babebf598c8189ea65812ea41a7baaabf02"
         },
         {
           "recordId": "com.jetbrains.junie.ide-plugin.262-132-31",
           "entryPoint": "research-preview/records/com.jetbrains.junie.ide-plugin.262-132-31.html",
-          "htmlSha256": "80ea7001ecc481c8d0004eb2a07fcbf8514ab7a7e845b97d457b0b6fe8f7fc38"
+          "htmlSha256": "4531aee69a5954c548d188bbecafd67f8b6284f9855aa82eb71e14e80184b81b"
         },
         {
           "recordId": "com.amazon.q-developer.ide-plugins.sunset",
           "entryPoint": "research-preview/records/com.amazon.q-developer.ide-plugins.sunset.html",
-          "htmlSha256": "c8a552e7aaa8983e123ec1f6e8a3c60525d3e4e8d8be14eb7a72f0951d6c8fef"
+          "htmlSha256": "bc1a71c8bdf0627cfd7b3f3ada110555dee3dca36fe640311a285934455295c7"
         },
         {
           "recordId": "com.google.gemini-code-assist.ide-agent.rolling",
           "entryPoint": "research-preview/records/com.google.gemini-code-assist.ide-agent.rolling.html",
-          "htmlSha256": "7729d69d16cd24d1b6408265a595bbcb950444a014fdae9ec14ac07fe28b6b7e"
+          "htmlSha256": "44bbc7a9088ef838aa8ab0463923b6b59aa103f778792377205930b2d281d0fd"
         },
         {
           "recordId": "com.github.copilot.vscode-agent.rolling",
           "entryPoint": "research-preview/records/com.github.copilot.vscode-agent.rolling.html",
-          "htmlSha256": "b404418b6048e5d6d16c9528d3374e0414062b859914994bb772238556b125ac"
+          "htmlSha256": "62e1ff71f160980123053e5c5fe63ea8650fa5ccadebd5a1d07c0cd5e6ffaf41"
         },
         {
           "recordId": "com.openai.codex.ide-extension.rolling",
           "entryPoint": "research-preview/records/com.openai.codex.ide-extension.rolling.html",
-          "htmlSha256": "b7d93b43725898ce8077118ad57ac6616c395d7a100efaea22c8075491a5d336"
+          "htmlSha256": "4b02b4b8dbf38a9b0931a52c2e6bad6a6a7027d334dcc2718baae7a83661afe9"
         },
         {
           "recordId": "com.alibaba.qwen-code.vscode-extension.beta-rolling",
           "entryPoint": "research-preview/records/com.alibaba.qwen-code.vscode-extension.beta-rolling.html",
-          "htmlSha256": "9ef63625fc38bf690551c4da268c5fe6411190877c3a242c812b7ebc11978c4c"
+          "htmlSha256": "afbd8fc039fa1cec670b25c97e5478dc35659daf12830ffaacbbd2be037d0411"
         },
         {
           "recordId": "ai.mistral.vibe-code.vscode-extension.rolling",
           "entryPoint": "research-preview/records/ai.mistral.vibe-code.vscode-extension.rolling.html",
-          "htmlSha256": "8634d1f65e200ef50b635fc71567557161bddd0001371994c5a9d04b31c9814b"
+          "htmlSha256": "8254fbba0c3288ba9349ba44ab038ca3c232688250a06a534d73f4405a9a0722"
         },
         {
           "recordId": "com.tabnine.agent.ide.rolling",
           "entryPoint": "research-preview/records/com.tabnine.agent.ide.rolling.html",
-          "htmlSha256": "589946e47c87bb77cc35d3183497fadba28a69a09a1c89d71610f82647970b9b"
+          "htmlSha256": "a45ca6ea754b0953b5ef37060304ba02bdf88b38039e8ae8c39a3609a7b4ea41"
         },
         {
           "recordId": "dev.warp.oz.local-agent.desktop.rolling",
           "entryPoint": "research-preview/records/dev.warp.oz.local-agent.desktop.rolling.html",
-          "htmlSha256": "6801b290a91457763b1bf762a2a24294e5153d96ed8f0563fcb0036f29436e98"
+          "htmlSha256": "88cabbcbf2b16aeb57f8a5ae327d6c4127f4530a971bb72c440cad54adb38da7"
         },
         {
           "recordId": "com.augmentcode.agent.ide.rolling",
           "entryPoint": "research-preview/records/com.augmentcode.agent.ide.rolling.html",
-          "htmlSha256": "287f7b289bd3a5c9264dfd21bbfecaa1a9574297b9fed13a1aa536ba5743d54b"
+          "htmlSha256": "c941687e46b6355334abafbb82ad2330f8d144541bcbd11247fbc9d9997d991f"
         },
         {
           "recordId": "com.openai.codex.cloud.rolling",
           "entryPoint": "research-preview/records/com.openai.codex.cloud.rolling.html",
-          "htmlSha256": "1948301dcc984125a54c2754f99f81e0bc62b772ce273bb002dda462ad867689"
+          "htmlSha256": "90fba131c7dd1ba40edc22dcc51347bbdd0811e7fd5226ab3d4db08bf171e251"
         },
         {
           "recordId": "com.cursor.cloud-agents.rolling",
           "entryPoint": "research-preview/records/com.cursor.cloud-agents.rolling.html",
-          "htmlSha256": "f881d5bb469b1e1dc62a3fcca03d5ca9bb8955c96504b30bcdbe73550aebdd84"
+          "htmlSha256": "b92ef291e6fb857d41fdafb66430f4af40089a6b014ffd6cc15ec07460a0c16d"
         },
         {
           "recordId": "com.gitlab.duo.software-development-flow.rolling",
           "entryPoint": "research-preview/records/com.gitlab.duo.software-development-flow.rolling.html",
-          "htmlSha256": "4a3fb35088e3db76ba651a10167579ea557bd9f4dbbff68885a7e593972cef27"
+          "htmlSha256": "dd7a14ae58f433d865bc23bd3d8ad84c924abc7b58d5e23227a2d693fd28631c"
         },
         {
           "recordId": "com.gitlab.duo.code-review-flow.19-2",
           "entryPoint": "research-preview/records/com.gitlab.duo.code-review-flow.19-2.html",
-          "htmlSha256": "6cd531d07aa47aea74a5e2828f61f210d1f2788d27b9ba9d1723f62c92edd054"
+          "htmlSha256": "ab47e3dd7766b681f12d8b1576b5d823290d468206a20107eb5a3d4ee82e9394"
         },
         {
           "recordId": "ai.mistral.vibe-code.web.rolling",
           "entryPoint": "research-preview/records/ai.mistral.vibe-code.web.rolling.html",
-          "htmlSha256": "91c4fdc9cb97d8da8a89cdbb53c9260146a61e60fc0ad70db982d18025a50b35"
+          "htmlSha256": "e0c872c31507ea97f73e4bfc980cbc33334fe70256fa9adbbbcac70a7cec1c55"
         },
         {
           "recordId": "com.amazon.kiro.web.preview-rolling",
           "entryPoint": "research-preview/records/com.amazon.kiro.web.preview-rolling.html",
-          "htmlSha256": "0b23846337037edb4e8460ce2217e8c9fa8121b0dc761f454729ca840a63d85a"
+          "htmlSha256": "bd8b4047cb5d4eff5e826f85ee7eda681ed66ad065d83ee162e139f8d210890a"
         },
         {
           "recordId": "org.openhands.cloud.rolling",
           "entryPoint": "research-preview/records/org.openhands.cloud.rolling.html",
-          "htmlSha256": "21195b98223977f28330ffcbaf992090543797e69bf35e192666dbf18612a496"
+          "htmlSha256": "b7811456e6fe417242b92588571fe35b2b59de9454aacfd321f7543cc310d7d7"
         },
         {
           "recordId": "com.github.anthropic.claude-agent.preview-rolling",
           "entryPoint": "research-preview/records/com.github.anthropic.claude-agent.preview-rolling.html",
-          "htmlSha256": "2588ccc04cd4ca764c98a0a81026e6009df9863359da58e83ffdb00fa1202ceb"
+          "htmlSha256": "4e0083c7c7db97db7562c6862d91d253c98c142f1d91decfc223e2ba53d7ec91"
         },
         {
           "recordId": "com.github.openai.codex-agent.preview-rolling",
           "entryPoint": "research-preview/records/com.github.openai.codex-agent.preview-rolling.html",
-          "htmlSha256": "030a1a626b4ce9256466ae6f15050d5290777ef8240be7de4bd8266f6b03988b"
+          "htmlSha256": "0551fdc664e30e30f1f84c82859a5d3ccd073463413cccc3dd32d2e213183bb5"
         },
         {
           "recordId": "ai.factory.droid-computers.rolling",
           "entryPoint": "research-preview/records/ai.factory.droid-computers.rolling.html",
-          "htmlSha256": "40bbdbdba6f9d03f21d2b87e3a55121667313a0cb65a34dbd0cfea8ca47b71b9"
+          "htmlSha256": "e3511acb0348d0ac5de85e345fcd437cc878577a768c6a83ff8ccb8f315d380b"
         },
         {
           "recordId": "dev.warp.oz.cloud-agents.rolling",
           "entryPoint": "research-preview/records/dev.warp.oz.cloud-agents.rolling.html",
-          "htmlSha256": "9db7fcbcac90db614d14893b530789da1d0d385093dcead283fea73da843b874"
+          "htmlSha256": "6c868b02b0874e666a79c2bb9e2613ebf263233525f84cc4bf910b7fdbf471cb"
         },
         {
           "recordId": "com.amazon.q-developer.github.preview-rolling",
           "entryPoint": "research-preview/records/com.amazon.q-developer.github.preview-rolling.html",
-          "htmlSha256": "2690e8cad29bc15cc7791b9beca746b51cb6de02bf17326db94ad93f19b5aa6b"
+          "htmlSha256": "b6fb40c6d203f50dce652c800b036efcc1298f0d1e9047322c5182012462b7e4"
         },
         {
           "recordId": "com.stackblitz.bolt.claude-agent.rolling",
           "entryPoint": "research-preview/records/com.stackblitz.bolt.claude-agent.rolling.html",
-          "htmlSha256": "c2b9ec3e069a2e1683d663a9ed0219ac9a29007e2e004f1e0de9dd70f9771a35"
+          "htmlSha256": "dad2060305d53aeca665a476daf155ed522dbfd2feae320aa390b427cbe00dad"
         },
         {
           "recordId": "com.vercel.v0.agent.rolling",
           "entryPoint": "research-preview/records/com.vercel.v0.agent.rolling.html",
-          "htmlSha256": "b78c398278dd0c098ff49a6c246c8e3cad3e0ff7e7095385be99bec56553c596"
+          "htmlSha256": "8cd0fc028cfe1695877297d6b0cf38f0c282e274d73680bb6226ddacfa650677"
         },
         {
           "recordId": "com.vercel.agent.public-beta",
           "entryPoint": "research-preview/records/com.vercel.agent.public-beta.html",
-          "htmlSha256": "405fb92b88886bc8b0cf0ba3a5e4e91259b348611c1d2f571124b9f9853d2153"
+          "htmlSha256": "829bc94ccd1afd087bd73815fc9792fa39d2d509f3187ece92fc48ea32810aa1"
         },
         {
           "recordId": "com.alibaba.qwen-code.cli.0-21-8",
           "entryPoint": "research-preview/records/com.alibaba.qwen-code.cli.0-21-8.html",
-          "htmlSha256": "b0f84bb3b9976c878fab914046b24a48110d8eeaf04ce9351a09f8b977bf0f3b"
+          "htmlSha256": "d8ede3e36fcfa2a8aa9177b567450265d25410fb784ae3473bccbdeae698b3a3"
         },
         {
           "recordId": "com.amazon.kiro.ide.1-0-288",
           "entryPoint": "research-preview/records/com.amazon.kiro.ide.1-0-288.html",
-          "htmlSha256": "51ff24be7a347b0c19d82ffbc04edbfb5ed9763b8e5f0f52976a5129e6ece93a"
+          "htmlSha256": "54edf1a87275e70dad16dbbbe7d4113c4d2b48ca7ee0714abeb66a5377f72240"
         },
         {
           "recordId": "com.anomaly.opencode.cli.1-18-15",
           "entryPoint": "research-preview/records/com.anomaly.opencode.cli.1-18-15.html",
-          "htmlSha256": "71f7a78c3ea2f5ec80aa2c26a79ad95fc8339ef5ff45724889d1031846b06c8e"
+          "htmlSha256": "fd1188f455dcfab14103fbcc77756793eaae35ece72eadbadc26f16789b435a2"
         },
         {
           "recordId": "com.anomaly.opencode.cli.1-18-16",
           "entryPoint": "research-preview/records/com.anomaly.opencode.cli.1-18-16.html",
-          "htmlSha256": "4e5d1c798764eb34d854d18e9a909de490603a40eabab6d3dc46eea63cf2184d"
+          "htmlSha256": "c0e63b96a38b991b13006407af271943d521fb41306cb551b20d35eb2e4d7db1"
         },
         {
           "recordId": "com.anthropic.claude-code.cli.2-1-226",
           "entryPoint": "research-preview/records/com.anthropic.claude-code.cli.2-1-226.html",
-          "htmlSha256": "0496b72e5c60fbc0f4125d1153fa8872c7bf07e0f8f15181c4b95ddfc37ae79f"
+          "htmlSha256": "f0e6486fe6f7592f59bb604eafaed6dfd56b1b798e8cc2930b4e67c4327c291b"
         },
         {
           "recordId": "com.cline.bot.cli.3-0-52",
           "entryPoint": "research-preview/records/com.cline.bot.cli.3-0-52.html",
-          "htmlSha256": "a6ca4a5918a65f39b05309b591064f7e0cd05e151d4dfe98f98f9c9d4b3dd1b7"
+          "htmlSha256": "d8400c9d95c2fa23013be6bf4ec008fe8c956a5c627c51a2afd0945820def717"
         },
         {
           "recordId": "com.cline.bot.vscode-extension.4-1-7",
           "entryPoint": "research-preview/records/com.cline.bot.vscode-extension.4-1-7.html",
-          "htmlSha256": "97ce66c4a2d2a3be0e0a31374fde2ed15cbe86cec64d1553da2948bc3ca5b0b0"
+          "htmlSha256": "8be55b78691e77c921cb7dbd27174b40ec12aea0d7df7de6d27c1bed2c25e330"
         },
         {
           "recordId": "com.cursor.ide.foreground-agent.3-15",
           "entryPoint": "research-preview/records/com.cursor.ide.foreground-agent.3-15.html",
-          "htmlSha256": "6e1c5d3f73e7899506c6f3b9feee997b896274b76bd168d93a28b4689f4ea175"
+          "htmlSha256": "21d154fbf04b6812c747a66f0bd88cb3b77f93c37c0d0bd9324504e28b22387f"
         },
         {
           "recordId": "com.gitlab.duo.code-review-flow.19-2-1",
           "entryPoint": "research-preview/records/com.gitlab.duo.code-review-flow.19-2-1.html",
-          "htmlSha256": "23b8f509c75bbe2973fcb1c8f7d2d35753a2742577d5942840b0a5a2553d413e"
+          "htmlSha256": "641faef3436b799eed65c04ca1ac88eefdc9895c49ddc92b284f1d4e0cba2f62"
         },
         {
           "recordId": "com.jetbrains.junie.ide-plugin.262-132-35",
           "entryPoint": "research-preview/records/com.jetbrains.junie.ide-plugin.262-132-35.html",
-          "htmlSha256": "d7c1c3feb7d45f8b22f4ed33ca95758dd720e571f0395e956716fb13073e867d"
+          "htmlSha256": "99eb590f37259e0e8a6d29d2927af3655c42659b9a31250741cc4df01e26c247"
         },
         {
           "recordId": "com.openai.codex.cli.0-147-0",
           "entryPoint": "research-preview/records/com.openai.codex.cli.0-147-0.html",
-          "htmlSha256": "92e4a21f4607f8ac44cedfecdaf7f696cbea2f6b903dc234c75c269b260ca9d3"
+          "htmlSha256": "372cb1924c144277fe81f153fb55940aee92eb9be59b954fd8ef23e6fc337f31"
         },
         {
           "recordId": "dev.zed.agent.native.1-14-2",
           "entryPoint": "research-preview/records/dev.zed.agent.native.1-14-2.html",
-          "htmlSha256": "f2b04533d496d23d56b6a1b58ccd32c7a111c68947de2a5bd876274b6c3d5562"
+          "htmlSha256": "dbdcf91c85acb1e7389a5b740e8e982a0b3a90070dab2f1a4d20196732b1ff31"
         },
         {
           "recordId": "com.alibaba.qwen-code.cli.0-21-11",
           "entryPoint": "research-preview/records/com.alibaba.qwen-code.cli.0-21-11.html",
-          "htmlSha256": "e237182e890c4155825a6330d300969b4efc571ea245c501069657ada5bae88a"
+          "htmlSha256": "4f99d04e147279551c952d4ffb3589a5d8e1e791c7f8cc476a02fd0c146e3ba1"
         },
         {
           "recordId": "com.amazon.kiro.ide.1-0-293",
           "entryPoint": "research-preview/records/com.amazon.kiro.ide.1-0-293.html",
-          "htmlSha256": "ed53dedf768dd9a1c24ae3d1e98c1519d62e33a34b86e19029397e5a6992d56c"
+          "htmlSha256": "e80a4bbae75784b12d7ca6360fe0b34b891c7a314cf472d402e692c6012fb5a5"
         },
         {
           "recordId": "com.anomaly.opencode.cli.1-18-18",
           "entryPoint": "research-preview/records/com.anomaly.opencode.cli.1-18-18.html",
-          "htmlSha256": "6f1fe19353d0b298fc8470d5b261b1ef8721cf080cac2ce5b349e78b81f08aa6"
+          "htmlSha256": "5b259edfa78d617f71865e29f5a8b9197716d75c6e7d456686c283104b8315f1"
         },
         {
           "recordId": "com.anthropic.claude-code.cli.2-1-231",
           "entryPoint": "research-preview/records/com.anthropic.claude-code.cli.2-1-231.html",
-          "htmlSha256": "d6aa06afe8c66b80fff28098fcac29f7b81c4234a59ef7d7f46ebc335582d949"
+          "htmlSha256": "5ab81611b8fabeadfa465958909ca9a606846359c9bc3c9ec8861e9dc45f20e6"
         },
         {
           "recordId": "com.cline.bot.cli.3-0-54",
           "entryPoint": "research-preview/records/com.cline.bot.cli.3-0-54.html",
-          "htmlSha256": "7b316bbe99b1ef806444213bd25c49b18cf8b31ceb3cfbd1295ec3549e5b1c97"
+          "htmlSha256": "36cd435769206b22bda879e99e5d31d920b1aaa244e0d73064ccf9a028cca342"
         },
         {
           "recordId": "com.cline.bot.vscode-extension.4-1-9",
           "entryPoint": "research-preview/records/com.cline.bot.vscode-extension.4-1-9.html",
-          "htmlSha256": "3dbf511884191dfaf2e6770e7970f6ee856c748e15e49551902f593fd238fceb"
+          "htmlSha256": "cbbbce247573a1e09b1bb84697a432ee29d84ab6b91150f0270a322e5de72ba4"
         },
         {
           "recordId": "com.cognition.devin-desktop.cascade.3-7-16",
           "entryPoint": "research-preview/records/com.cognition.devin-desktop.cascade.3-7-16.html",
-          "htmlSha256": "91c46f1e9637a33770901789eab2b4318745a74d3d4c69f7eeaa8c21945037e5"
+          "htmlSha256": "608eca90e271662dd050aacd1dd51310b7e5f480258cf08518a7b84295913e98"
         },
         {
           "recordId": "com.github.copilot.cli.1-0-79",
           "entryPoint": "research-preview/records/com.github.copilot.cli.1-0-79.html",
-          "htmlSha256": "4c87aa2dab1a1bc5a4417d8bea5cc15578499a176c2ae3497cef725459097555"
+          "htmlSha256": "35a2a97d4f1da7314df6501ede74941502923143583f319b4299a0dd7e12b6c9"
         },
         {
           "recordId": "com.gitlab.duo.developer-flow.19-2-2",
           "entryPoint": "research-preview/records/com.gitlab.duo.developer-flow.19-2-2.html",
-          "htmlSha256": "5d7b5e5e8fe00e1d61453e4acf19f0ec5621dc9163725af492e305728ea20bde"
+          "htmlSha256": "e3a12caf6cdb08fcd9acf3474d8b581f6d05c983fcb387954aba2a0b2955b6d3"
         },
         {
           "recordId": "com.gitlab.duo.code-review-flow.19-2-2",
           "entryPoint": "research-preview/records/com.gitlab.duo.code-review-flow.19-2-2.html",
-          "htmlSha256": "efaaea569f2a17970d57479563ed8a065622da439da7434f82324cf598ae2fc9"
+          "htmlSha256": "dcc1c6304b3e8ce6c357620d7921d0cc3be518f323fe107de200457ea3a0b4de"
         },
         {
           "recordId": "com.google.antigravity.cli.1-1-12",
           "entryPoint": "research-preview/records/com.google.antigravity.cli.1-1-12.html",
-          "htmlSha256": "ad399b63da3dbc7d16bc13e4d71cd9bba71f437aaab68de54ecee1a27db45514"
+          "htmlSha256": "d5d474beb875622ebae02f4d1d6187b0898b84226f87bec97e7ba14dd5009ac2"
         },
         {
           "recordId": "com.google.gemini.cli.0-55-1",
           "entryPoint": "research-preview/records/com.google.gemini.cli.0-55-1.html",
-          "htmlSha256": "def163be3159aab60f335ea4be5010600c0ca7a32c2f4a8e138a6077397f6027"
+          "htmlSha256": "78723dfbbf9579ccce6c546b4a295488c3098128502ecfafb50fed4d9760d24b"
         },
         {
           "recordId": "com.jetbrains.junie.ide-plugin.262-579-3",
           "entryPoint": "research-preview/records/com.jetbrains.junie.ide-plugin.262-579-3.html",
-          "htmlSha256": "2456280e56bb9af0f68ad9a1b9210fb8ebf99323285dae8e4874674f4d230e29"
+          "htmlSha256": "ebf620cb44298d1c08d550a00d728666acc2d156d7ad76947a6e64e913ddb3d7"
         },
         {
           "recordId": "dev.zed.agent.native.1-15-0",
           "entryPoint": "research-preview/records/dev.zed.agent.native.1-15-0.html",
-          "htmlSha256": "89ee5514b11aaabad4ec1056256e1e0b0873fc610425cca0a85d904611bdd4ee"
+          "htmlSha256": "da079f5d74bda11dad1f403ccc1dec91ac88872b36c87228798d5393593c1570"
         },
         {
           "recordId": "org.aaif.goose.cli.1-46-0",
           "entryPoint": "research-preview/records/org.aaif.goose.cli.1-46-0.html",
-          "htmlSha256": "a4e8d88754c80396cc584b0731e6dd15b3694103d68baf3fe8620d3d78caa96a"
+          "htmlSha256": "cbe1b3be363901d88f48aef948866d51fd89ad1f5841077080c3834d3f94194e"
         },
         {
           "recordId": "com.alibaba.qwen-code.cli.0-21-12",
           "entryPoint": "research-preview/records/com.alibaba.qwen-code.cli.0-21-12.html",
-          "htmlSha256": "e9433e4aa4f439416159a535620e1913332820eef93bf56d103bbe4a10f612cb"
+          "htmlSha256": "3832a0cc239734cdf4e91d56f5b0862397d771c1729dbe1734c63ec6bb6ff9e9"
         },
         {
           "recordId": "com.amazon.kiro.ide.1-0-309",
           "entryPoint": "research-preview/records/com.amazon.kiro.ide.1-0-309.html",
-          "htmlSha256": "11d25988ffbd30a3aa394fc3becbd9c578edc2bb1e50081a32a943b570f8a592"
+          "htmlSha256": "4214f0ff036fa74bccb6b6948187838fd21ac3493640d29d28e76a5138cc8488"
         },
         {
           "recordId": "com.anthropic.claude-code.cli.2-1-232",
           "entryPoint": "research-preview/records/com.anthropic.claude-code.cli.2-1-232.html",
-          "htmlSha256": "c6f7fb020596b14ce5c88ab84271999b99e681669b566e9c613e2101d0376f6a"
+          "htmlSha256": "00ec74af5e2fabaa04ca15f5dab5826fa0d2701fdf3bf71cfd378e1da70601f0"
         },
         {
           "recordId": "com.anthropic.claude-code.cli.2-1-233",
           "entryPoint": "research-preview/records/com.anthropic.claude-code.cli.2-1-233.html",
-          "htmlSha256": "601dd4132f84bd956f1117f7a5bec8fa483c078447b1c53dfa28305a7464106c"
+          "htmlSha256": "272616589004f782918d7622178746efa8e058def1f4989140748a9c834471d6"
         },
         {
           "recordId": "com.cline.bot.cli.3-0-55",
           "entryPoint": "research-preview/records/com.cline.bot.cli.3-0-55.html",
-          "htmlSha256": "72f4adf0d66885113c134c2fc9da8e9487ea31f0342e4942d329bbbf4752a666"
+          "htmlSha256": "c38ab67f49012c78886e03e13cde3d83a1e955dcbfdeac448267b526b4b5a9f7"
         },
         {
           "recordId": "com.cline.bot.vscode-extension.4-1-10",
           "entryPoint": "research-preview/records/com.cline.bot.vscode-extension.4-1-10.html",
-          "htmlSha256": "a179e8b5e68ba579f294209208886465435a1eab2cf44439976ec86bb8fd2955"
+          "htmlSha256": "fdab6315d3aa5dbeff22f0fd86e02391a851f6e2dd2f05f28374ebb94f976bd0"
         },
         {
           "recordId": "com.cognition.devin-desktop.cascade.3-7-25",
           "entryPoint": "research-preview/records/com.cognition.devin-desktop.cascade.3-7-25.html",
-          "htmlSha256": "3679bae8c814b48581126fa3e91506f8b4265c5bd1c28f3a1d8cbaadeb859f05"
+          "htmlSha256": "47a3d0b4cca28e6940b1428cf6dcd9716870a78a0d4ea4fbf696f4dfc373fcd4"
         },
         {
           "recordId": "com.github.copilot.cli.1-0-80",
           "entryPoint": "research-preview/records/com.github.copilot.cli.1-0-80.html",
-          "htmlSha256": "14cfa919759ed4d8b4c567e4f1c804cc6e9116d6995ff290e66705383bf223da"
+          "htmlSha256": "93141a79d14091ec7b9512f7c7c34baaee13c012e0b3fba54cb10f9d65b52137"
         },
         {
           "recordId": "com.google.antigravity.cli.1-1-13",
           "entryPoint": "research-preview/records/com.google.antigravity.cli.1-1-13.html",
-          "htmlSha256": "98b752df54e54e111e5868f6b14e913616b58c9f9ab34b3e33ea04e8ef5883bc"
+          "htmlSha256": "393ff5770898cf585e2b5e561896682184bdb890a4b130bf406509edb69985ae"
         },
         {
           "recordId": "com.jetbrains.junie.ide-plugin.262-579-14",
           "entryPoint": "research-preview/records/com.jetbrains.junie.ide-plugin.262-579-14.html",
-          "htmlSha256": "01aa5e84e4e62cc0c4c44e1d902ac3d01c7e44d5b361361bbdd340f7d09db8ab"
+          "htmlSha256": "81ed0a5c40126656c88c214846e1212aa8ea746e3f9dded729b42a7b719ae1a4"
         },
         {
           "recordId": "com.alibaba.qwen-code.cli.0-21-13",
           "entryPoint": "research-preview/records/com.alibaba.qwen-code.cli.0-21-13.html",
-          "htmlSha256": "2bc2ef8cebccdb743976a4bcfe396c675e2fc3c2707468525d8ee39f8d9132af"
+          "htmlSha256": "4a7bcc5f6c246c169a9ad0949fbadac37f7dea38a3e6e2df494a3d6a4940e2b1"
         },
         {
           "recordId": "com.cursor.ide.foreground-agent.3-16",
           "entryPoint": "research-preview/records/com.cursor.ide.foreground-agent.3-16.html",
-          "htmlSha256": "01d273cd71cb60941554df49b548ca51f4199c252d88cc30373f3ba4c2556f80"
+          "htmlSha256": "c8cee365be24dcf7dc7a2f5d804bc229b8acc62745ab8ed8bda8d3c9cbba8c51"
         },
         {
           "recordId": "com.jetbrains.junie.ide-plugin.262-579-20",
           "entryPoint": "research-preview/records/com.jetbrains.junie.ide-plugin.262-579-20.html",
-          "htmlSha256": "79ad98616c7f9043867217e29d10807eac613f76a005c90d16a8664319d1a8ea"
+          "htmlSha256": "199e202cfbf841c113e9a2e235fb0c728bad38a287cf2c876ebeeb824dff6927"
+        },
+        {
+          "recordId": "com.anthropic.claude-code.cli.2-1-234",
+          "entryPoint": "research-preview/records/com.anthropic.claude-code.cli.2-1-234.html",
+          "htmlSha256": "04a82c3c34da21afe7f67392d1a7f270addc369cba3e85cd05f3ba27a2a474cc"
+        },
+        {
+          "recordId": "com.google.antigravity.cli.1-1-14",
+          "entryPoint": "research-preview/records/com.google.antigravity.cli.1-1-14.html",
+          "htmlSha256": "80711ca502c22daeba82a0c522bf8b0906d640ea240b78d0a91b0312630a354f"
+        },
+        {
+          "recordId": "com.jetbrains.junie.ide-plugin.262-579-25",
+          "entryPoint": "research-preview/records/com.jetbrains.junie.ide-plugin.262-579-25.html",
+          "htmlSha256": "21126cf52cb1401e31f80be6990ac1b3a1835fe05d62b99174f13a3a660400cb"
+        },
+        {
+          "recordId": "com.gitlab.duo.developer-flow.19-2-4",
+          "entryPoint": "research-preview/records/com.gitlab.duo.developer-flow.19-2-4.html",
+          "htmlSha256": "0de79ceb3570e0df2e77acd5f81e964bf24286afcc234bfca06ff01168597fba"
+        },
+        {
+          "recordId": "com.gitlab.duo.code-review-flow.19-2-4",
+          "entryPoint": "research-preview/records/com.gitlab.duo.code-review-flow.19-2-4.html",
+          "htmlSha256": "1cbf57f6dbefc6330f0f859421e31def2de5d1c0ca2a79a967a9e03eca14cd00"
         }
       ]
     },
@@ -576,9 +601,9 @@
       "canonicalBaseUrl": "https://thedarknitefalls.github.io/agent-evidence-catalog/",
       "robots": "robots.txt",
       "sitemap": "sitemap.xml",
-      "sitemapSha256": "a51955b4758186208cc8314ae00e23782f8dd115ed7ae8704525b992c5e24833",
-      "humanReadableRouteCount": 105,
-      "humanReadableRecordRouteCount": 101,
+      "sitemapSha256": "4860726f3cd6658d26523c3ac5501db23ecafde7fc017440381337d8ba38eb87",
+      "humanReadableRouteCount": 110,
+      "humanReadableRecordRouteCount": 106,
       "rawJsonRoutesListed": 0
     }
   },

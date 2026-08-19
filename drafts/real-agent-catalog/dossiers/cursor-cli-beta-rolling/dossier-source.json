@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier-source",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-18",
+  "identity": {
+    "recordId": "com.cursor.cli.agent.beta",
+    "agent": {
+      "id": "com.cursor.cli.agent",
+      "name": "Cursor CLI"
+    },
+    "publisher": {
+      "id": "anysphere",
+      "name": "Anysphere, Inc."
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "Cursor CLI",
+      "slug": "cursor-cli-beta-rolling",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "unresolved",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Cursor CLI beta auto-updating release stream",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, package, executable, hosted runtime or model service was downloaded, installed, hashed or run."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "cursor-cli-beta-docs",
+        "kind": "other",
+        "uri": "https://cursor.com/docs/cli/overview",
+        "ecosystem": "Cursor CLI beta",
+        "version": null,
+        "identityStatus": "unresolved",
+        "digest": null,
+        "note": "Official publisher source reference only; no artifact or runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "anysphere",
+        "name": "Anysphere, Inc.",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://cursor.com/docs/cli/overview": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Official publisher source reviewed for identity and delivery scope only; no product was installed, run or independently evaluated."
+    },
+    "https://cursor.com/docs/cli/headless": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Official publisher source reviewed for identity and delivery scope only; no product was installed, run or independently evaluated."
+    }
+  },
+  "rawClaimPaths": [
+    "claims/cursor-cli-beta-rolling/identity-current.json",
+    "claims/cursor-cli-beta-rolling/delivery-boundary-current.json"
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Cursor CLI",
+            "claimIds": [
+              "com.cursor.cli.agent.identity-current",
+              "com.cursor.cli.agent.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The installed artifact, hosted service revision and effective session configuration remain unresolved."
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface, release scope and delivery boundary are represented; effective runtime, model, tools, permissions, credentials and network state remain unresolved."
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-cursor-cli-beta-rolling",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "source-only-boundary",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This dossier contains publisher-source identity and delivery claims only."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Cursor CLI is preserved as a source-only beta terminal agent candidate. Its delivery channel is materially distinct from the accepted Cursor desktop IDE and cloud-agent surfaces, but no exact installed CLI artifact or catalog admission is asserted.",
+    "releaseContext": {
+      "statement": "Beta rolling CLI; exact installed client unresolved",
+      "sourceUri": "https://cursor.com/docs/cli/overview",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted statements are attributed to named official publisher sources; no product behavior was observed.",
+      "No artifact, service, model or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "The exact installed Cursor CLI version, package and executable digest are unknown.",
+      "The effective model, provider revision, routing and fallback behavior are unknown.",
+      "The effective approval, shell, filesystem, network and credential controls are unknown.",
+      "The enabled rules, skills, MCP servers, hooks and headless environment are unknown.",
+      "Catalog admission and lifecycle relationships remain undecided."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm candidate identity, delivery distinction and unresolved applicability gaps before any admission decision.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Candidate identity",
+        "question": "Which exact or rolling product surface is represented?",
+        "status": "Beta rolling CLI; exact installed client unresolved",
+        "tone": "qualified",
+        "answer": "Anysphere's official documentation identifies Cursor CLI as a beta terminal coding-agent surface that can inspect and modify code in interactive and non-interactive workflows.",
+        "whyItMatters": "Related IDE, CLI, hosted and predecessor surfaces cannot silently inherit this candidate's claims.",
+        "claimIds": [
+          "com.cursor.cli.agent.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Distinct delivery boundary",
+        "question": "Why is this not a duplicate of an accepted surface?",
+        "status": "Cursor CLI",
+        "tone": "attention",
+        "answer": "Cursor's official CLI documentation describes a terminal and headless delivery route, which is distinct from the accepted Cursor desktop IDE foreground Agent and hosted Cursor Cloud Agents surfaces.",
+        "whyItMatters": "Host, execution location and publisher identity can change applicability and authority boundaries.",
+        "claimIds": [
+          "com.cursor.cli.agent.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this candidate independently tested or admitted?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "This is source-only research; no generated catalog record, lifecycle entry or independent result is admitted.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.cursor.cli.agent.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished source-only candidate. No catalog admission, lifecycle transition, public page or external action is authorized."
+  }
+}

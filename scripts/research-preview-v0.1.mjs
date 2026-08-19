@@ -223,6 +223,10 @@ function classify(relativePath) {
     if (relativePath.endsWith(".mjs")) return ["canonical-source", "Repeatable official-source currentness capture, builder, validator, census or link auditor."];
     return ["accepted-evidence-provenance", "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."];
   }
+  if (relativePath.startsWith("drafts/research-preview-release/currentness-2026-08-18/")) {
+    if (relativePath.endsWith(".mjs")) return ["canonical-source", "Repeatable official-source currentness capture, builder, validator, census, link auditor or Browser receipt writer."];
+    return ["accepted-evidence-provenance", "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."];
+  }
   if (relativePath.startsWith("drafts/research-preview-release/")) {
     return ["release-control-artifact", "Baseline, preservation, manifest or release-validation control."];
   }
@@ -251,7 +255,7 @@ function artifacts(files) {
   ]));
   return {
     schemaVersion: "research-preview-path-classification/0.1",
-    asOf: "2026-08-17",
+    asOf: "2026-08-18",
     repository: "agent-evidence-catalog",
     classificationRule: "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
     counts,
@@ -263,7 +267,7 @@ function releaseManifest(files) {
   const distPaths = files.filter((relativePath) => relativePath.startsWith("dist/"));
   return {
     schemaVersion: "research-preview-release-manifest/0.1",
-    asOf: "2026-08-17",
+    asOf: "2026-08-18",
     targetRepository: "agent-evidence-catalog",
     primaryProduct: "real-agent-research-preview-v0.1",
     publicationStatus: "public-research-preview-v0.1",
@@ -357,6 +361,10 @@ async function buildOneWayProjection() {
   node("official-source 2026-08-15 currentness projection", "drafts/research-preview-release/currentness-2026-08-15/build-currentness.mjs");
   node("official-source 2026-08-15 currentness validation", "drafts/research-preview-release/currentness-2026-08-15/validate-currentness.mjs");
   node("official-source 2026-08-17 currentness projection", "drafts/research-preview-release/currentness-2026-08-17/build-currentness.mjs");
+  node("official-source 2026-08-17 currentness validation", "drafts/research-preview-release/currentness-2026-08-17/validate-currentness.mjs");
+  node("2026-08-18 source-only candidate dossiers", "drafts/real-agent-catalog/scripts/build-source-only-candidates-2026-08-18.mjs");
+  node("2026-08-18 source-only candidate validation", "drafts/real-agent-catalog/scripts/validate-source-only-candidates-2026-08-18.mjs");
+  node("official-source 2026-08-18 currentness projection", "drafts/research-preview-release/currentness-2026-08-18/build-currentness.mjs");
   const preview = JSON.parse(await readFile(path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json"), "utf8"));
   await materializeStaticCatalogSource(preview);
   node("static source-to-dist build", "scripts/catalog.mjs", "build");
@@ -399,8 +407,9 @@ const validatorCommands = [
   ["Codex 0.146.0 generated refresh", "drafts/real-agent-catalog/scripts/validate-openai-codex-0-146-0-refresh.mjs"],
   ["pre-currentness generated refreshes", "drafts/real-agent-catalog/scripts/validate-current-record-refreshes.mjs"],
   ["critical-mass expansion", "drafts/real-agent-catalog/scripts/validate-critical-mass-expansion.mjs"],
-  ["official-source 2026-08-17 currentness", "drafts/research-preview-release/currentness-2026-08-17/validate-currentness.mjs"],
-  ["unified 101-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
+  ["source-only 2026-08-18 candidates", "drafts/real-agent-catalog/scripts/validate-source-only-candidates-2026-08-18.mjs"],
+  ["official-source 2026-08-18 currentness", "drafts/research-preview-release/currentness-2026-08-18/validate-currentness.mjs"],
+  ["unified 106-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
   ["evidence-exact agent-claims comparison", "scripts/validate-comparison-mvp.mjs"],
   ["governance requirements", "drafts/real-agent-catalog/scripts/validate-governance.mjs"],
   ["documentation and publisher source links", "drafts/real-agent-catalog/scripts/validate-documentation-consistency.mjs"],
@@ -917,16 +926,16 @@ async function validateBrowserReceipt() {
   const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
   const preview = JSON.parse(await readFile(path.join(packageRoot, "dist", "research-preview", "catalog.json"), "utf8"));
   const lifecycle = JSON.parse(await readFile(path.join(packageRoot, "dist", "research-preview", "lifecycle.json"), "utf8"));
-  const seal = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-17", "snapshot-seal.json"), "utf8"));
-  const census = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-17", "publication-freshness-census.json"), "utf8"));
-  const surfaceAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-17", "official-source-audit.json"), "utf8");
+  const seal = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-18", "snapshot-seal.json"), "utf8"));
+  const census = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-18", "publication-freshness-census.json"), "utf8"));
+  const surfaceAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-18", "official-source-audit.json"), "utf8");
   const surfaceAudit = JSON.parse(surfaceAuditText);
-  const urlAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-17", "official-url-audit.json"), "utf8");
+  const urlAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-18", "official-url-audit.json"), "utf8");
   const urlAudit = JSON.parse(urlAuditText);
   const recordIds = buildManifest.researchPreview.recordDetails.records.map((item) => item.recordId);
 
-  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.8");
-  assert.equal(receipt.asOf, "2026-08-17");
+  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.9");
+  assert.equal(receipt.asOf, "2026-08-18");
   assert.equal(new Date(receipt.checkedAt).toISOString(), receipt.checkedAt);
   assert(new Date(receipt.checkedAt) >= new Date(census.census.completedAt));
   assert.deepEqual(receipt.loopback, {
@@ -966,71 +975,52 @@ async function validateBrowserReceipt() {
     completedAt: census.census.completedAt,
     ...census.counts
   });
-  assert.equal(receipt.snapshot.bannerCopy, "Catalog snapshot: 17 August 2026, 08:57 UTC. Agent releases change quickly; records with known updates are marked.");
-  assert.equal(receipt.snapshot.cacheBustingVersion, "2026-08-17-sealed-snapshot");
+  assert.equal(receipt.snapshot.bannerCopy, "Catalog snapshot: 18 August 2026, 10:34 UTC. Agent releases change quickly; records with known updates are marked.");
+  assert.equal(receipt.snapshot.cacheBustingVersion, "2026-08-18-sealed-snapshot");
 
-  const searchQa = receipt.searchFoundationAuthorQa;
-  assert.equal(searchQa.workstream, "AEC-SEARCH-FOUNDATION-02-AUTHOR");
-  assert.equal(searchQa.result, "PASS");
-  assert.equal(searchQa.checkedAt, receipt.checkedAt);
-  assert.equal(searchQa.baseHead, "fb84cb01c3eeaab30fd8ee033754cacdb07599fe");
-  assert.equal(searchQa.browser, "Codex in-app Browser");
-  assert.deepEqual(searchQa.root, {
-    title: "Agent Evidence Catalog · Coding-Agent Claims and Sources",
-    headline: "Agent Evidence Catalog",
-    purpose: "branded research homepage",
-    comparisonPickerPresent: false,
-    comparisonMatrixPresent: false,
-    comparisonScriptPresent: false,
-    catalogNavigationPassed: true,
-    comparisonNavigationPassed: true,
-    desktopHorizontalOverflow: false
-  });
-  assert.deepEqual(searchQa.catalog, {
+  const publicationQa = receipt.publicationAuthorQa;
+  assert.equal(publicationQa.workstream, "AEC-AGENT-LANDSCAPE-AND-ROADMAP-01-AUTHOR");
+  assert.equal(publicationQa.result, "PASS");
+  assert.equal(publicationQa.checkedAt, receipt.checkedAt);
+  assert.equal(publicationQa.baseHead, "f7cdb0dbbc85a3760a944d91d5cc3dce6e3c0bb6");
+  assert.equal(publicationQa.browser, "Codex in-app Browser");
+  assert.deepEqual(publicationQa.currentness, {
+    records: 106,
     currentRecords: 53,
-    initialHtmlCurrentRecordLinks: 53,
-    renderedCurrentRecordLinks: 53,
-    search: "Claude Code CLI",
-    searchResultCount: "1 of 53 current records",
-    recordId: "com.anthropic.claude-code.cli.2-1-233",
-    recordDetailNavigationPassed: true,
-    mobileHorizontalOverflow: false
-  });
-  assert.deepEqual(searchQa.comparison, {
-    canonicalPath: "/research-preview/compare.html",
-    rootComparisonApplicationAbsent: true,
-    selectedRecordIds: [
-      "com.anthropic.claude-code.cli.2-1-233",
-      "com.openai.codex.cli.0-147-0"
+    historyRecords: 53,
+    refreshedRecordIds: [
+      "com.anthropic.claude-code.cli.2-1-234",
+      "com.google.antigravity.cli.1-1-14",
+      "com.jetbrains.junie.ide-plugin.262-579-25",
+      "com.gitlab.duo.developer-flow.19-2-4",
+      "com.gitlab.duo.code-review-flow.19-2-4"
     ],
-    matrixRendered: true,
-    matrixRows: 31,
-    officialSourceLinks: 20,
-    orderedSelectionPersistedInUrl: true,
-    desktopHorizontalOverflow: false,
-    mobileMatrixInternalOverflow: true,
-    mobileBodyHorizontalOverflow: false
+    sourceOnlyDossierRecordIds: [
+      "com.cursor.cli.agent.beta",
+      "com.windsurf.cascade.ide.rolling",
+      "com.github.copilot.visual-studio.agent-mode.rolling",
+      "org.zoo-code.vscode-extension.3-78-0"
+    ],
+    sourceOnlyDossiersAdmitted: 0
   });
-  assert.deepEqual(searchQa.responsive, {
-    desktopObservedCss: { width: 1422, height: 800 },
-    mobileRequestedCss: { width: 390, height: 844 },
-    mobileObservedCss: { width: 433, height: 938 },
-    mobileBreakpointApplied: true,
+  assert.deepEqual(publicationQa.responsive, {
+    desktopHorizontalOverflow: false,
+    mobileHorizontalOverflow: false,
+    narrowMobileHorizontalOverflow: false,
     mobileNavigationOpened: true,
     mobileCatalogNavigationPassed: true
   });
+  assert.equal(publicationQa.screenshotsCaptured, 5);
+  assert.deepEqual(publicationQa.console, { errors: 0, warnings: 0 });
   const acceptedLastmod = acceptedDate(seal.sealedAt, "Accepted snapshot seal");
-  assert.deepEqual(searchQa.sitemap, {
-    routes: 105,
-    uniqueRoutes: 105,
-    lastmodEntries: 105,
+  assert.deepEqual(publicationQa.sitemap, {
+    routes: 110,
+    uniqueRoutes: 110,
+    lastmodEntries: 110,
     sharedLastmod: acceptedLastmod,
     source: "accepted snapshot seal and accepted record review dates",
     sha256: sha256(await readFile(path.join(packageRoot, "dist", "sitemap.xml")))
   });
-  assert.equal(Object.keys(searchQa.screenshots).length, 5);
-  assert(Object.values(searchQa.screenshots).every((digest) => /^[a-f0-9]{64}$/.test(digest)));
-  assert.deepEqual(searchQa.console, { errors: 0, warnings: 0 });
 
   assert.equal(receipt.journeys.landing.result, "PASS");
   assert.equal(receipt.journeys.landing.mode, "branded-homepage");
@@ -1047,8 +1037,10 @@ async function validateBrowserReceipt() {
     horizontalOverflow: false
   });
   assert.deepEqual(receipt.journeys.landing.mobile, {
-    requestedCss: { width: 390, height: 844 },
-    observedCss: { width: 433, height: 938 },
+    targetCss: { width: 390, height: 844 },
+    controlViewport: { width: 351, height: 760 },
+    observedCss: { width: 390, height: 844 },
+    devicePixelRatio: 0.9,
     horizontalOverflow: false,
     navigationOpened: true,
     catalogNavigationPassed: true
@@ -1058,7 +1050,7 @@ async function validateBrowserReceipt() {
     result: "PASS",
     surfaces: 55,
     currentCards: 53,
-    historyCards: 48,
+    historyCards: 53,
     historyCollapsedInitially: true,
     historyExpandedOnRequest: true,
     qwenSearchResultCount: "2 of 53 current records",
@@ -1067,11 +1059,11 @@ async function validateBrowserReceipt() {
     desktopHorizontalOverflow: false,
     mobileHorizontalOverflow: false
   });
-  assert.deepEqual(receipt.journeys.comparison.representativePair, ["com.anthropic.claude-code.cli.2-1-233", "com.openai.codex.cli.0-147-0"]);
+  assert.deepEqual(receipt.journeys.comparison.representativePair, ["com.anthropic.claude-code.cli.2-1-234", "com.openai.codex.cli.0-147-0"]);
   assert.equal(receipt.journeys.comparison.representativePairOfficialSourceLinks, 20);
   assert.equal(receipt.journeys.comparison.urlPersistsAcrossReload, true);
   assert.equal(receipt.journeys.comparison.maximumSelectedRecords, 4);
-  assert.equal(receipt.journeys.comparison.activeFourRecordMatrixRows, 41);
+  assert.equal(receipt.journeys.comparison.activeFourRecordMatrixRows, 40);
   assert.equal(receipt.journeys.comparison.mobileMatrixInternalOverflow, true);
   assert.equal(receipt.journeys.comparison.mobileBodyHorizontalOverflow, false);
   assert.deepEqual(receipt.journeys.howItWorks.sections, [
@@ -1087,21 +1079,34 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.journeys.howItWorks.desktopHorizontalOverflow, false);
   assert.equal(receipt.journeys.howItWorks.mobileHorizontalOverflow, false);
 
-  assert.equal(preview.previewRecords.length, 101);
-  assert.equal(lifecycle.entries.length, 101);
+  assert.equal(preview.previewRecords.length, 106);
+  assert.equal(lifecycle.entries.length, 106);
   assert.deepEqual(receipt.journeys.records.recordIds, recordIds);
-  assert.equal(receipt.journeys.records.desktop.pagesAudited, 101);
+  assert.equal(receipt.journeys.records.desktop.pagesAudited, 106);
   assert.deepEqual(receipt.journeys.records.desktop.failureRecordIds, []);
-  assert.equal(receipt.journeys.records.mobile.pagesAudited, 101);
+  assert.equal(receipt.journeys.records.desktop.controlViewport, "browser-default");
+  assert.deepEqual(receipt.journeys.records.desktop.observedCss, { width: 1422, height: 800 });
+  assert.equal(receipt.journeys.records.desktop.devicePixelRatio, 1.8);
+  assert.equal(receipt.journeys.records.mobile.pagesAudited, 106);
   assert.deepEqual(receipt.journeys.records.mobile.failureRecordIds, []);
-  assert.deepEqual(receipt.journeys.records.mobile.observedCss, { width: 389, height: 844 });
-  assert.equal(receipt.journeys.records.mobile.devicePixelRatio, 0.75);
+  assert.deepEqual(receipt.journeys.records.mobile.targetCss, { width: 390, height: 844 });
+  assert.deepEqual(receipt.journeys.records.mobile.controlViewport, { width: 351, height: 760 });
+  assert.deepEqual(receipt.journeys.records.mobile.observedCss, { width: 390, height: 844 });
+  assert.equal(receipt.journeys.records.mobile.devicePixelRatio, 0.9);
+  assert.deepEqual(receipt.journeys.records.narrowMobileRepresentative, {
+    targetCss: { width: 320, height: 700 },
+    controlViewport: { width: 288, height: 630 },
+    observedCss: { width: 320, height: 700 },
+    devicePixelRatio: 0.9,
+    routesAudited: 5,
+    failureRoutes: []
+  });
   assert(Object.values(receipt.journeys.records.checksAppliedToEveryPage).every(Boolean));
   assert.deepEqual(receipt.journeys.discoveryMetadata, {
     result: "PASS",
-    recordPagesAudited: 101,
-    sitemapHumanReadableRoutes: 105,
-    sitemapRecordRoutes: 101,
+    recordPagesAudited: 106,
+    sitemapHumanReadableRoutes: 110,
+    sitemapRecordRoutes: 106,
     canonicalAndStructuredMetadataFailures: 0
   });
 
@@ -1129,30 +1134,25 @@ async function validateBrowserReceipt() {
     uniqueEndpointsChecked: urlAudit.counts.uniqueOfficialUrlsChecked,
     passed: urlAudit.counts.reachable,
     unresolved: urlAudit.counts.unreachable,
-    receiptPath: "drafts/research-preview-release/currentness-2026-08-17/official-url-audit.json",
+    receiptPath: "drafts/research-preview-release/currentness-2026-08-18/official-url-audit.json",
     receiptSha256: sha256(urlAuditText)
   });
   assert.equal(receipt.sourceLinks.unresolved.length, urlAudit.counts.unreachable);
-  assert.deepEqual(receipt.sourceLinks.unresolved, [{
-    url: "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
-    status: null,
-    result: "request-error",
-    renderedBrowserResult: "HTTP 503 publisher service-unavailable page"
-  }]);
+  assert.deepEqual(receipt.sourceLinks.unresolved, []);
   assert.deepEqual(receipt.console, { errors: 0, warnings: 0 });
-  assert.equal(receipt.limitations.length, 5);
+  assert.equal(receipt.limitations.length, 4);
   assert.deepEqual(receipt.boundaries, {
     publisherSourcesOnly: true,
     agentsInstalledOrRun: false,
     independentTestsCredited: 0,
     rankingsOrSuitabilityCalculations: false,
     priorAcceptedRecordsOrSourceArtifactsRewritten: false,
-    currentnessLifecycleProjectionUpdated: false,
-    visitorInformationArchitectureChanged: true,
+    currentnessLifecycleProjectionUpdated: true,
+    visitorInformationArchitectureChanged: false,
     githubStateChanged: false,
     publicationAuthorizedByReceipt: false
   });
-  console.log("PASS digest-bound Browser QA: 101 desktop and mobile record pages, refreshed catalog identities, responsive comparison and zero console errors");
+  console.log("PASS digest-bound Browser QA: 106 desktop and mobile record pages, refreshed catalog identities, responsive comparison and zero console errors");
 }
 
 function validatePageDiscovery(html, expected) {
@@ -1364,7 +1364,7 @@ async function validateFirstScreenContract() {
   assert(landing.includes('href="compare.html">Compare agent claims</a>'), "Root landing must expose the canonical comparison route");
   assert(catalog.includes('class="primary-action" href="compare.html">Compare agent claims</a>'), "Catalog first screen must expose the primary comparison CTA");
   assert(comparison.includes("Select 2–4 exact records"), "Comparison route must expose the empty picker state");
-  const snapshotAssetVersion = "v=2026-08-17-sealed-snapshot";
+  const snapshotAssetVersion = "v=2026-08-18-sealed-snapshot";
   for (const [label, html, assets] of [
     ["landing", landing, ["data.js"]],
     ["catalog", catalog, ["data.js"]],
@@ -1472,6 +1472,7 @@ async function validateSearchFoundation() {
 
 const command = process.argv[2] ?? "validate";
 if (command === "manifest") await writeManifest();
+else if (command === "build") await buildOneWayProjection();
 else if (command === "validate-manifest") await validateManifest();
 else if (command === "validate-search-foundation") await validateSearchFoundation();
 else if (command === "validate-core") await validateRelease({ browser: false });

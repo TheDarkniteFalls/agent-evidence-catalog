@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.developer-flow.execution-current-19-2-4",
+  "slug": "execution-current-19-2-4",
+  "subject": {
+    "id": "com.gitlab.duo.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitLab Duo Developer Flow",
+      "slug": "gitlab-duo-developer-flow-19-2-4"
+    }
+  },
+  "claim": {
+    "category": "authority.runtime",
+    "statement": "Current flow documentation says UI flows execute through GitLab CI/CD and require GitLab-hosted or configured runners; runtime commands can access flow environment variables and identity tokens according to the execution configuration."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "GitLab, Inc."
+  },
+  "source": {
+    "uri": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+    "title": "Configure flow execution - GitLab Docs",
+    "locator": "Execution model, runners and environment",
+    "publishedAt": null,
+    "capturedAt": "2026-08-18T10:30:13.424Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "GitLab-hosted runner",
+        "configured runner"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "GitLab CI/CD flow execution"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-18",
+    "recheckAfter": "2026-09-18",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The runner, image, network, token scopes and commands of a particular flow were not inspected."
+  ],
+  "unknowns": [
+    "Runtime image, executor, credentials, outbound access and service revision are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

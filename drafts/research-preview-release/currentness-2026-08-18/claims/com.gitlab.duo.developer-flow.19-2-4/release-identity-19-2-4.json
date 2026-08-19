@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.gitlab.duo.developer-flow.release-identity-19-2-4",
+  "slug": "release-identity-19-2-4",
+  "subject": {
+    "id": "com.gitlab.duo.developer-flow",
+    "name": "GitLab Duo Developer Flow",
+    "publisher": "GitLab, Inc.",
+    "surface": {
+      "kind": "hosted-service",
+      "name": "GitLab Duo Developer Flow",
+      "slug": "gitlab-duo-developer-flow-19-2-4"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "GitLab's protected v19.2.4-ee tag identifies the exact current patch boundary reviewed for Developer Flow; no source-to-binary correspondence or product execution was independently verified."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "GitLab, Inc."
+  },
+  "source": {
+    "uri": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.4-ee",
+    "title": "GitLab protected tag v19.2.4-ee",
+    "locator": "Protected v19.2.4-ee tag and exact patch identity",
+    "publishedAt": "2026-08-14T18:07:42Z",
+    "capturedAt": "2026-08-18T10:30:13.424Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "19.2.4-ee"
+    },
+    "configuration": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "GitLab 19.2 release line"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-18",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-18",
+    "recheckAfter": "2026-09-18",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The exact source tag does not freeze the Agent Platform service, runner or model backend."
+  ],
+  "unknowns": [
+    "The exact rolling service and execution revision remain unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

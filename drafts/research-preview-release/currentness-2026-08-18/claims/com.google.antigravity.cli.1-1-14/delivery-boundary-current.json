@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.google.antigravity.cli.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.google.antigravity.cli",
+    "name": "Antigravity CLI",
+    "publisher": "Google",
+    "surface": {
+      "kind": "cli",
+      "name": "Antigravity CLI",
+      "slug": "google-antigravity-cli-1-1-14"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Google's official documentation describes Antigravity CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Antigravity surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Google"
+  },
+  "source": {
+    "uri": "https://antigravity.google/docs/cli-overview",
+    "title": "Antigravity CLI overview",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-18T10:30:13.520Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "1.1.14"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-18",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-18",
+    "recheckAfter": "2026-09-18",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "Shared lineage with Gemini CLI must not erase the new product and service boundary",
+    "Authentication tier, model and sandbox configuration remain claim-specific"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

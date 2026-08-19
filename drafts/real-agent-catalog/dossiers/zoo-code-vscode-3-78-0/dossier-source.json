@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier-source",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-18",
+  "identity": {
+    "recordId": "org.zoo-code.vscode-extension.3-78-0",
+    "agent": {
+      "id": "org.zoo-code.vscode-extension",
+      "name": "Zoo Code VS Code extension"
+    },
+    "publisher": {
+      "id": "zoo-code-org",
+      "name": "Zoo Code Org"
+    },
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Zoo Code VS Code extension",
+      "slug": "zoo-code-vscode-3-78-0",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "3.78.0",
+      "releaseTag": "v3.78.0",
+      "sourceRevision": "b3ad248475d7eafa8f55c671759c6662008b2984",
+      "releasedAt": "2026-08-15T02:07:51Z",
+      "channel": "Zoo Code VS Code extension stable release",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, package, executable, hosted runtime or model service was downloaded, installed, hashed or run."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "zoo-code-source-3-78-0",
+        "kind": "source-revision",
+        "uri": "https://github.com/Zoo-Code-Org/Zoo-Code/commit/b3ad248475d7eafa8f55c671759c6662008b2984",
+        "ecosystem": "git",
+        "version": "3.78.0",
+        "identityStatus": "exact",
+        "digest": null,
+        "note": "Official publisher source reference only; no artifact or runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "zoo-code-org",
+        "name": "Zoo Code Org",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://github.com/Zoo-Code-Org/Zoo-Code/releases/tag/v3.78.0": {
+      "sourceKind": "publisher-release-metadata",
+      "snapshotStatus": "immutable-reference",
+      "note": "Official publisher source reviewed for identity and delivery scope only; no product was installed, run or independently evaluated."
+    },
+    "https://github.com/Zoo-Code-Org/Zoo-Code/blob/b3ad248475d7eafa8f55c671759c6662008b2984/README.md": {
+      "sourceKind": "publisher-versioned-source",
+      "snapshotStatus": "immutable-reference",
+      "note": "Official publisher source reviewed for identity and delivery scope only; no product was installed, run or independently evaluated."
+    }
+  },
+  "rawClaimPaths": [
+    "claims/zoo-code-vscode-3-78-0/identity-3-78-0.json",
+    "claims/zoo-code-vscode-3-78-0/delivery-boundary-current.json"
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Zoo Code VS Code extension",
+            "claimIds": [
+              "org.zoo-code.vscode-extension.identity-3-78-0",
+              "org.zoo-code.vscode-extension.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The installed artifact, hosted service revision and effective session configuration remain unresolved."
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface, release scope and delivery boundary are represented; effective runtime, model, tools, permissions, credentials and network state remain unresolved."
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-zoo-code-vscode-3-78-0",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "source-only-boundary",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This dossier contains publisher-source identity and delivery claims only."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Zoo Code v3.78.0 is preserved as an exact source-only VS Code extension candidate under a new publisher and product identity. Its documented Roo lineage is recorded without admitting Zoo Code or rewriting Roo Code's discontinued lifecycle state.",
+    "releaseContext": {
+      "statement": "Exact v3.78.0 source release; installed VSIX and runtime unresolved",
+      "sourceUri": "https://github.com/Zoo-Code-Org/Zoo-Code/releases/tag/v3.78.0",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted statements are attributed to named official publisher sources; no product behavior was observed.",
+      "No artifact, service, model or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "The installed VSIX, marketplace package digest and executable runtime are unknown.",
+      "The effective model, provider, routing, reasoning and fallback configuration are unknown.",
+      "The effective mode, approval, destructive-command guard, terminal and network controls are unknown.",
+      "The enabled MCP servers, rules, providers, credentials and workspace scope are unknown.",
+      "Catalog admission and any lifecycle relationship to Roo Code remain undecided."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm candidate identity, delivery distinction and unresolved applicability gaps before any admission decision.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Candidate identity",
+        "question": "Which exact or rolling product surface is represented?",
+        "status": "Exact v3.78.0 source release; installed VSIX and runtime unresolved",
+        "tone": "qualified",
+        "answer": "Zoo Code Org's official release page identifies Zoo Code v3.78.0 as an exact published VS Code extension release at source revision b3ad248475d7eafa8f55c671759c6662008b2984.",
+        "whyItMatters": "Related IDE, CLI, hosted and predecessor surfaces cannot silently inherit this candidate's claims.",
+        "claimIds": [
+          "org.zoo-code.vscode-extension.identity-3-78-0"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Distinct delivery boundary",
+        "question": "Why is this not a duplicate of an accepted surface?",
+        "status": "Zoo Code VS Code extension",
+        "tone": "attention",
+        "answer": "Zoo Code Org's version-bound README identifies Zoo Code as a VS Code extension with Code, Architect, Ask, Debug and custom modes, file operations and MCP, and states that Zoo Code continues development after the Roo team wound down active Roo Code work. The catalog does not infer admission or automatic same-surface succession from that lineage statement.",
+        "whyItMatters": "Host, execution location and publisher identity can change applicability and authority boundaries.",
+        "claimIds": [
+          "org.zoo-code.vscode-extension.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this candidate independently tested or admitted?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "This is source-only research; no generated catalog record, lifecycle entry or independent result is admitted.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "org.zoo-code.vscode-extension.identity-3-78-0"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished source-only candidate. No catalog admission, lifecycle transition, public page or external action is authorized."
+  }
+}

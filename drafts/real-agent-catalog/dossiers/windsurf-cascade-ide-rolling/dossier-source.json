@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "real-agent-dossier-source/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier-source",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-18",
+  "identity": {
+    "recordId": "com.windsurf.cascade.ide.rolling",
+    "agent": {
+      "id": "com.windsurf.cascade.ide",
+      "name": "Windsurf Cascade"
+    },
+    "publisher": {
+      "id": "cognition-ai-inc",
+      "name": "Cognition AI, Inc."
+    },
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cascade in Windsurf IDE",
+      "slug": "windsurf-cascade-ide-rolling",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "rolling-service",
+      "version": null,
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Windsurf IDE rolling desktop channel",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [],
+        "note": "No client, extension, package, executable, hosted runtime or model service was downloaded, installed, hashed or run."
+      }
+    },
+    "artifacts": [
+      {
+        "id": "windsurf-cascade-rolling-docs",
+        "kind": "other",
+        "uri": "https://docs.windsurf.com/llms.txt",
+        "ecosystem": "Windsurf IDE",
+        "version": null,
+        "identityStatus": "unresolved",
+        "digest": null,
+        "note": "Official publisher source reference only; no artifact or runtime was downloaded, hashed, installed or run."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "cognition-ai-inc",
+        "name": "Cognition AI, Inc.",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sourceMetadata": {
+    "https://windsurf.com/switch/cursor": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Official publisher source reviewed for identity and delivery scope only; no product was installed, run or independently evaluated."
+    },
+    "https://docs.windsurf.com/llms.txt": {
+      "sourceKind": "publisher-rolling-documentation",
+      "snapshotStatus": "live-page",
+      "note": "Official publisher source reviewed for identity and delivery scope only; no product was installed, run or independently evaluated."
+    }
+  },
+  "rawClaimPaths": [
+    "claims/windsurf-cascade-ide-rolling/identity-current.json",
+    "claims/windsurf-cascade-ide-rolling/delivery-boundary-current.json"
+  ],
+  "configurationModel": {
+    "axes": [
+      {
+        "id": "delivery-route",
+        "label": "Documented delivery route",
+        "scope": "unresolved",
+        "dimension": "runtime",
+        "alternatives": [
+          {
+            "id": "reviewed-surface",
+            "label": "Cascade in Windsurf IDE",
+            "claimIds": [
+              "com.windsurf.cascade.ide.identity-current",
+              "com.windsurf.cascade.ide.delivery-boundary-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The installed artifact, hosted service revision and effective session configuration remain unresolved."
+        ]
+      }
+    ],
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Only the named surface, release scope and delivery boundary are represented; effective runtime, model, tools, permissions, credentials and network state remain unresolved."
+  },
+  "independentEvidenceAdmissions": [
+    {
+      "id": "no-independent-windsurf-cascade-ide-rolling",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "source-only-boundary",
+          "dimension": "other",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "This dossier contains publisher-source identity and delivery claims only."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent evaluator, test, finding, score or result is admitted."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Windsurf Cascade is preserved as a source-only rolling desktop-IDE candidate, separate from the catalog's Cascade in Devin Desktop surface. The exact client build, service revision and effective configuration are unresolved.",
+    "releaseContext": {
+      "statement": "Rolling Windsurf IDE surface; exact desktop build unresolved",
+      "sourceUri": "https://windsurf.com/switch/cursor",
+      "legacySource": null
+    },
+    "limitations": [
+      "All admitted statements are attributed to named official publisher sources; no product behavior was observed.",
+      "No artifact, service, model or repository integration was installed or run.",
+      "No independent evidence, score, ranking, recommendation, certification or suitability conclusion is included."
+    ],
+    "unknowns": [
+      "The exact Windsurf desktop build and executable digest are unknown.",
+      "The backend Cascade service revision and effective model route are unknown.",
+      "The effective terminal approval, allowlist, Turbo mode and network controls are unknown.",
+      "The active rules, memories, skills, hooks, MCP servers and worktree settings are unknown.",
+      "Catalog admission and the boundary from Cascade in Devin Desktop remain undecided."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm candidate identity, delivery distinction and unresolved applicability gaps before any admission decision.",
+        "propositionIds": [
+          "identity",
+          "delivery",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Candidate identity",
+        "question": "Which exact or rolling product surface is represented?",
+        "status": "Rolling Windsurf IDE surface; exact desktop build unresolved",
+        "tone": "qualified",
+        "answer": "Cognition's official Windsurf page identifies Windsurf as an agentic IDE with local and cloud agents and presents Cascade as its local coding-agent experience.",
+        "whyItMatters": "Related IDE, CLI, hosted and predecessor surfaces cannot silently inherit this candidate's claims.",
+        "claimIds": [
+          "com.windsurf.cascade.ide.identity-current"
+        ]
+      },
+      {
+        "id": "delivery",
+        "eyebrow": "Distinct delivery boundary",
+        "question": "Why is this not a duplicate of an accepted surface?",
+        "status": "Cascade in Windsurf IDE",
+        "tone": "attention",
+        "answer": "Official Windsurf documentation describes Cascade in the Windsurf IDE as able to create and modify code, call tools including the terminal, maintain plans and checkpoints, and run multiple Cascade instances. This is a different desktop host boundary from the accepted Cascade in Devin Desktop surface.",
+        "whyItMatters": "Host, execution location and publisher identity can change applicability and authority boundaries.",
+        "claimIds": [
+          "com.windsurf.cascade.ide.delivery-boundary-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this candidate independently tested or admitted?",
+        "status": "No",
+        "tone": "neutral",
+        "answer": "This is source-only research; no generated catalog record, lifecycle entry or independent result is admitted.",
+        "whyItMatters": "Publisher documentation is attribution, not observed suitability evidence.",
+        "claimIds": [
+          "com.windsurf.cascade.ide.identity-current"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Unpublished source-only candidate. No catalog admission, lifecycle transition, public page or external action is authorized."
+  }
+}
