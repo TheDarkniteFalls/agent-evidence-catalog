@@ -1,22 +1,23 @@
 # Agent Evidence Catalog roadmap
 
-Updated: 2026-08-18. This roadmap records intended work; it does not authorize
+Updated: 2026-08-20. This roadmap records intended work; it does not authorize
 publication, GitHub changes, publisher contact, agent execution, open intake or
 a response-time commitment.
 
 ## Current position
 
-The public [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
-contains the sealed 2026-08-18 55-surface snapshot: 53 current records and 53
-non-current records, comprising 50 superseded identities, two historical
-records and one discontinued surface. All 106 records are static,
+The repository's latest prepared [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
+projection contains the sealed 2026-08-20 55-surface snapshot: 53 current records and 62
+non-current records, comprising 59 superseded identities, two historical
+records and one discontinued surface. All 115 records are static,
 maintainer-curated and based only on attributed publisher sources. The
 published snapshot assigns zero independent-test credit and provides no
 rankings, recommendations or suitability calculation.
 
-The 2026-08-18 refresh preserves all 101 records from the prior snapshot and
-adds five same-surface successors for Claude Code CLI, Antigravity CLI, Junie
-IDE plugin, GitLab Duo Developer Flow and GitLab Code Review Flow. Four
+The 2026-08-20 refresh preserves all 106 records from the prior snapshot and
+adds nine same-surface successors for Qwen Code CLI, Kiro IDE, OpenCode CLI,
+Claude Code CLI, Antigravity CLI, Gemini CLI, Junie IDE plugin, OpenAI Codex CLI
+and Zed Agent. Four
 additional products are represented only by source dossiers and are not
 catalog surfaces: Cursor CLI, Cascade in Windsurf IDE, Copilot Agent Mode for
 Visual Studio and Zoo Code v3.78.0. CodeRabbit, Greptile and a generic
@@ -51,8 +52,9 @@ concept review in step 4.
 
 Status: repeatable capture, projection, full-corpus link audit and
 publication-census commands are exercised across all 55 surfaces. The
-2026-08-18 receipts are the published refresh baseline. Operational dashboard
-and scheduling remain deferred.
+2026-08-20 receipts are the latest prepared refresh baseline. Publishing that
+exact candidate remains trigger-dependent on fresh independent acceptance and
+all release gates. Operational dashboard and scheduling remain deferred.
 
 - Maintain the bounded refresh commands that identify source changes without
   promoting them into evidence automatically.

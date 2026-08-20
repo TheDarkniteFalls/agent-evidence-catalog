@@ -1,0 +1,2139 @@
+{
+  "schemaVersion": "agent-evidence-official-url-audit/0.1-draft",
+  "artifactType": "projected-official-source-url-reachability-audit",
+  "asOf": "2026-08-20",
+  "startedAt": "2026-08-20T07:59:38.964Z",
+  "completedAt": "2026-08-20T07:59:52.428Z",
+  "method": {
+    "action": "Unauthenticated HTTP GET with redirects against every unique HTTPS source URL projected by all 115 record dossiers.",
+    "concurrency": 12,
+    "timeoutMilliseconds": 30000,
+    "publisherSourcesOnly": true,
+    "agentsInstalledDownloadedExecutedOrObserved": false
+  },
+  "counts": {
+    "recordsChecked": 115,
+    "uniqueOfficialUrlsChecked": 264,
+    "reachable": 264,
+    "unreachable": 0
+  },
+  "limitations": [
+    "Reachability is not product observation, independent verification, or proof that rolling source prose is unchanged.",
+    "HTTP errors can reflect publisher anti-automation controls, rate limits, authentication boundaries or transient transport rather than source removal.",
+    "URL fragments are retained as distinct projected locators even though HTTP transport does not send fragments to the server."
+  ],
+  "observations": [
+    {
+      "index": 1,
+      "url": "https://about.gitlab.com/press/releases/2026-01-15-gitlab-announces-duo-agent-platform-general-availability/",
+      "checkedAt": "2026-08-20T07:59:38.965Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://about.gitlab.com/press/releases/2026-01-15-gitlab-announces-duo-agent-platform-general-availability/"
+    },
+    {
+      "index": 2,
+      "url": "https://about.gitlab.com/whats-new/18-8/",
+      "checkedAt": "2026-08-20T07:59:38.995Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://about.gitlab.com/whats-new/18-8/"
+    },
+    {
+      "index": 3,
+      "url": "https://aider.chat/docs/config.html",
+      "checkedAt": "2026-08-20T07:59:38.995Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://aider.chat/docs/config.html"
+    },
+    {
+      "index": 4,
+      "url": "https://aider.chat/docs/faq.html",
+      "checkedAt": "2026-08-20T07:59:38.996Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://aider.chat/docs/faq.html"
+    },
+    {
+      "index": 5,
+      "url": "https://aider.chat/docs/more/edit-formats.html",
+      "checkedAt": "2026-08-20T07:59:38.996Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://aider.chat/docs/more/edit-formats.html"
+    },
+    {
+      "index": 6,
+      "url": "https://aider.chat/docs/usage.html",
+      "checkedAt": "2026-08-20T07:59:38.996Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://aider.chat/docs/usage.html"
+    },
+    {
+      "index": 7,
+      "url": "https://aider.chat/docs/usage/commands.html",
+      "checkedAt": "2026-08-20T07:59:38.996Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://aider.chat/docs/usage/commands.html"
+    },
+    {
+      "index": 8,
+      "url": "https://aider.chat/docs/usage/lint-test.html",
+      "checkedAt": "2026-08-20T07:59:38.997Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://aider.chat/docs/usage/lint-test.html"
+    },
+    {
+      "index": 9,
+      "url": "https://aider.chat/docs/usage/modes.html",
+      "checkedAt": "2026-08-20T07:59:38.997Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://aider.chat/docs/usage/modes.html"
+    },
+    {
+      "index": 10,
+      "url": "https://ampcode.com/manual",
+      "checkedAt": "2026-08-20T07:59:38.997Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://ampcode.com/manual"
+    },
+    {
+      "index": 11,
+      "url": "https://ampcode.com/news/neo",
+      "checkedAt": "2026-08-20T07:59:38.997Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://ampcode.com/news/neo"
+    },
+    {
+      "index": 12,
+      "url": "https://antigravity.google/docs/cli-overview",
+      "checkedAt": "2026-08-20T07:59:38.998Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://antigravity.google/docs/cli-overview"
+    },
+    {
+      "index": 13,
+      "url": "https://api.github.com/repos/openai/codex/releases/tags/rust-v0.146.0",
+      "checkedAt": "2026-08-20T07:59:39.510Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://api.github.com/repos/openai/codex/releases/tags/rust-v0.146.0"
+    },
+    {
+      "index": 14,
+      "url": "https://api.github.com/repos/openai/codex/releases/tags/rust-v0.90.0",
+      "checkedAt": "2026-08-20T07:59:39.514Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://api.github.com/repos/openai/codex/releases/tags/rust-v0.90.0"
+    },
+    {
+      "index": 15,
+      "url": "https://api2.v0.dev/docs/faqs",
+      "checkedAt": "2026-08-20T07:59:39.592Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://api2.v0.dev/docs/faqs"
+    },
+    {
+      "index": 16,
+      "url": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
+      "checkedAt": "2026-08-20T07:59:39.595Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/"
+    },
+    {
+      "index": 17,
+      "url": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
+      "checkedAt": "2026-08-20T07:59:39.597Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/"
+    },
+    {
+      "index": 18,
+      "url": "https://cline.bot/privacy",
+      "checkedAt": "2026-08-20T07:59:39.616Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cline.bot/privacy"
+    },
+    {
+      "index": 19,
+      "url": "https://code.claude.com/docs/en/cli-usage",
+      "checkedAt": "2026-08-20T07:59:39.627Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/cli-usage"
+    },
+    {
+      "index": 20,
+      "url": "https://code.claude.com/docs/en/features-overview",
+      "checkedAt": "2026-08-20T07:59:39.640Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/features-overview"
+    },
+    {
+      "index": 21,
+      "url": "https://code.claude.com/docs/en/mcp",
+      "checkedAt": "2026-08-20T07:59:39.660Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/mcp"
+    },
+    {
+      "index": 22,
+      "url": "https://code.claude.com/docs/en/model-config",
+      "checkedAt": "2026-08-20T07:59:39.806Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/model-config"
+    },
+    {
+      "index": 23,
+      "url": "https://code.claude.com/docs/en/overview",
+      "checkedAt": "2026-08-20T07:59:39.809Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/overview"
+    },
+    {
+      "index": 24,
+      "url": "https://code.claude.com/docs/en/permissions",
+      "checkedAt": "2026-08-20T07:59:39.852Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/permissions"
+    },
+    {
+      "index": 25,
+      "url": "https://code.claude.com/docs/en/sandboxing",
+      "checkedAt": "2026-08-20T07:59:39.904Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/sandboxing"
+    },
+    {
+      "index": 26,
+      "url": "https://code.claude.com/docs/en/tools-reference",
+      "checkedAt": "2026-08-20T07:59:39.921Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/tools-reference"
+    },
+    {
+      "index": 27,
+      "url": "https://code.visualstudio.com/docs/agents/concepts/agents",
+      "checkedAt": "2026-08-20T07:59:40.056Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.visualstudio.com/docs/agents/concepts/agents"
+    },
+    {
+      "index": 28,
+      "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+      "checkedAt": "2026-08-20T07:59:40.177Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.visualstudio.com/docs/agents/run/agent-harnesses"
+    },
+    {
+      "index": 29,
+      "url": "https://cursor.com/blog/agent-autonomy-auto-review",
+      "checkedAt": "2026-08-20T07:59:40.336Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/blog/agent-autonomy-auto-review"
+    },
+    {
+      "index": 30,
+      "url": "https://cursor.com/changelog/2-0",
+      "checkedAt": "2026-08-20T07:59:40.339Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/changelog/2-0"
+    },
+    {
+      "index": 31,
+      "url": "https://cursor.com/changelog/3-0",
+      "checkedAt": "2026-08-20T07:59:40.341Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/changelog/3-0"
+    },
+    {
+      "index": 32,
+      "url": "https://cursor.com/changelog/auto-review",
+      "checkedAt": "2026-08-20T07:59:40.342Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/changelog/auto-review"
+    },
+    {
+      "index": 33,
+      "url": "https://cursor.com/changelog/router",
+      "checkedAt": "2026-08-20T07:59:40.343Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/changelog/router"
+    },
+    {
+      "index": 34,
+      "url": "https://cursor.com/cloud",
+      "checkedAt": "2026-08-20T07:59:40.344Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/cloud"
+    },
+    {
+      "index": 35,
+      "url": "https://cursor.com/data-use",
+      "checkedAt": "2026-08-20T07:59:40.346Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/data-use"
+    },
+    {
+      "index": 36,
+      "url": "https://cursor.com/download",
+      "checkedAt": "2026-08-20T07:59:40.520Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/download"
+    },
+    {
+      "index": 37,
+      "url": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer",
+      "checkedAt": "2026-08-20T07:59:40.536Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer?hl=de"
+    },
+    {
+      "index": 38,
+      "url": "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+      "checkedAt": "2026-08-20T07:59:40.539Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"
+    },
+    {
+      "index": 39,
+      "url": "https://developers.openai.com/codex/",
+      "checkedAt": "2026-08-20T07:59:40.542Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://learn.chatgpt.com/docs"
+    },
+    {
+      "index": 40,
+      "url": "https://developers.openai.com/codex/cloud/",
+      "checkedAt": "2026-08-20T07:59:40.554Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://learn.chatgpt.com/docs/cloud"
+    },
+    {
+      "index": 41,
+      "url": "https://developers.openai.com/codex/cloud/environments",
+      "checkedAt": "2026-08-20T07:59:40.658Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://learn.chatgpt.com/docs/environments/cloud-environment"
+    },
+    {
+      "index": 42,
+      "url": "https://developers.openai.com/codex/ide/",
+      "checkedAt": "2026-08-20T07:59:40.752Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://learn.chatgpt.com/docs/codex/ide"
+    },
+    {
+      "index": 43,
+      "url": "https://docs.anthropic.com/en/docs/claude-code/github-actions",
+      "checkedAt": "2026-08-20T07:59:40.774Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/github-actions"
+    },
+    {
+      "index": 44,
+      "url": "https://docs.augmentcode.com/cli/reference",
+      "checkedAt": "2026-08-20T07:59:40.841Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.augmentcode.com/cli/reference"
+    },
+    {
+      "index": 45,
+      "url": "https://docs.augmentcode.com/quickstart",
+      "checkedAt": "2026-08-20T07:59:40.883Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.augmentcode.com/quickstart"
+    },
+    {
+      "index": 46,
+      "url": "https://docs.augmentcode.com/using-augment/agent",
+      "checkedAt": "2026-08-20T07:59:40.890Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.augmentcode.com/using-augment/agent"
+    },
+    {
+      "index": 47,
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
+      "checkedAt": "2026-08-20T07:59:40.921Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html"
+    },
+    {
+      "index": 48,
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html",
+      "checkedAt": "2026-08-20T07:59:40.947Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html"
+    },
+    {
+      "index": 49,
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html",
+      "checkedAt": "2026-08-20T07:59:40.952Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html"
+    },
+    {
+      "index": 50,
+      "url": "https://docs.cline.bot/core-workflows/checkpoints",
+      "checkedAt": "2026-08-20T07:59:41.308Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.cline.bot/core-workflows/checkpoints"
+    },
+    {
+      "index": 51,
+      "url": "https://docs.cline.bot/features/auto-approve",
+      "checkedAt": "2026-08-20T07:59:41.311Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.cline.bot/features/auto-approve"
+    },
+    {
+      "index": 52,
+      "url": "https://docs.cline.bot/usage/cli-overview",
+      "checkedAt": "2026-08-20T07:59:41.351Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.cline.bot/usage/cli-overview"
+    },
+    {
+      "index": 53,
+      "url": "https://docs.cline.bot/usage/ide",
+      "checkedAt": "2026-08-20T07:59:41.494Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.cline.bot/usage/ide"
+    },
+    {
+      "index": 54,
+      "url": "https://docs.continue.dev/",
+      "checkedAt": "2026-08-20T07:59:41.519Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.continue.dev/"
+    },
+    {
+      "index": 55,
+      "url": "https://docs.continue.dev/ide-extensions/agent/quick-start",
+      "checkedAt": "2026-08-20T07:59:41.551Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.continue.dev/ide-extensions/agent/quick-start"
+    },
+    {
+      "index": 56,
+      "url": "https://docs.cursor.com/agent",
+      "checkedAt": "2026-08-20T07:59:41.754Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/docs"
+    },
+    {
+      "index": 57,
+      "url": "https://docs.cursor.com/context/model-context-protocol",
+      "checkedAt": "2026-08-20T07:59:41.821Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/docs"
+    },
+    {
+      "index": 58,
+      "url": "https://docs.cursor.com/en/agent/terminal",
+      "checkedAt": "2026-08-20T07:59:41.824Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/docs"
+    },
+    {
+      "index": 59,
+      "url": "https://docs.cursor.com/en/agent/tools",
+      "checkedAt": "2026-08-20T07:59:41.873Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://cursor.com/docs"
+    },
+    {
+      "index": 60,
+      "url": "https://docs.devin.ai/admin/security",
+      "checkedAt": "2026-08-20T07:59:41.875Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/admin/security"
+    },
+    {
+      "index": 61,
+      "url": "https://docs.devin.ai/api-reference/authentication",
+      "checkedAt": "2026-08-20T07:59:41.883Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/api-reference/authentication"
+    },
+    {
+      "index": 62,
+      "url": "https://docs.devin.ai/api-reference/v3/sessions/post-organizations-sessions",
+      "checkedAt": "2026-08-20T07:59:41.893Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/api-reference/v3/sessions/post-organizations-sessions"
+    },
+    {
+      "index": 63,
+      "url": "https://docs.devin.ai/desktop/cascade/cascade",
+      "checkedAt": "2026-08-20T07:59:42.036Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/desktop/cascade/cascade"
+    },
+    {
+      "index": 64,
+      "url": "https://docs.devin.ai/desktop/cascade/modes",
+      "checkedAt": "2026-08-20T07:59:42.039Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/desktop/cascade/modes"
+    },
+    {
+      "index": 65,
+      "url": "https://docs.devin.ai/desktop/changelog#v3-0-12",
+      "checkedAt": "2026-08-20T07:59:42.049Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/desktop/changelog"
+    },
+    {
+      "index": 66,
+      "url": "https://docs.devin.ai/desktop/devin-desktop-faq",
+      "checkedAt": "2026-08-20T07:59:42.120Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/desktop/devin-desktop-faq"
+    },
+    {
+      "index": 67,
+      "url": "https://docs.devin.ai/desktop/models",
+      "checkedAt": "2026-08-20T07:59:42.568Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/desktop/models"
+    },
+    {
+      "index": 68,
+      "url": "https://docs.devin.ai/desktop/releases#v3-6-27",
+      "checkedAt": "2026-08-20T07:59:42.577Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/desktop/releases"
+    },
+    {
+      "index": 69,
+      "url": "https://docs.devin.ai/desktop/releases#v3-7-16",
+      "checkedAt": "2026-08-20T07:59:42.586Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/desktop/releases"
+    },
+    {
+      "index": 70,
+      "url": "https://docs.devin.ai/desktop/releases#v3-7-25",
+      "checkedAt": "2026-08-20T07:59:42.594Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/desktop/releases"
+    },
+    {
+      "index": 71,
+      "url": "https://docs.devin.ai/desktop/terminal",
+      "checkedAt": "2026-08-20T07:59:42.612Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/desktop/terminal"
+    },
+    {
+      "index": 72,
+      "url": "https://docs.devin.ai/enterprise/deployment/overview",
+      "checkedAt": "2026-08-20T07:59:42.614Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/enterprise/deployment/overview"
+    },
+    {
+      "index": 73,
+      "url": "https://docs.devin.ai/integrations/gh",
+      "checkedAt": "2026-08-20T07:59:42.694Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/integrations/gh"
+    },
+    {
+      "index": 74,
+      "url": "https://docs.devin.ai/release-notes/overview",
+      "checkedAt": "2026-08-20T07:59:42.696Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/release-notes/overview"
+    },
+    {
+      "index": 75,
+      "url": "https://docs.devin.ai/use-cases/gallery/granola-post-call-processing",
+      "checkedAt": "2026-08-20T07:59:42.734Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/use-cases/gallery/granola-post-call-processing"
+    },
+    {
+      "index": 76,
+      "url": "https://docs.devin.ai/work-with-devin/interactive-planning",
+      "checkedAt": "2026-08-20T07:59:42.770Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.devin.ai/work-with-devin/interactive-planning"
+    },
+    {
+      "index": 77,
+      "url": "https://docs.factory.ai/changelog/release-notes",
+      "checkedAt": "2026-08-20T07:59:42.772Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.factory.ai/changelog/release-notes"
+    },
+    {
+      "index": 78,
+      "url": "https://docs.factory.ai/cli/features/droid-computers",
+      "checkedAt": "2026-08-20T07:59:42.791Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.factory.ai/droid-computers/overview"
+    },
+    {
+      "index": 79,
+      "url": "https://docs.factory.ai/cli/getting-started/overview",
+      "checkedAt": "2026-08-20T07:59:42.811Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.factory.ai/droid-cli/overview"
+    },
+    {
+      "index": 80,
+      "url": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "checkedAt": "2026-08-20T07:59:42.813Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents"
+    },
+    {
+      "index": 81,
+      "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent",
+      "checkedAt": "2026-08-20T07:59:42.884Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent"
+    },
+    {
+      "index": 82,
+      "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent",
+      "checkedAt": "2026-08-20T07:59:42.930Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent"
+    },
+    {
+      "index": 83,
+      "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli",
+      "checkedAt": "2026-08-20T07:59:42.937Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli"
+    },
+    {
+      "index": 84,
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment?tool=webui",
+      "checkedAt": "2026-08-20T07:59:43.034Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment?tool=webui"
+    },
+    {
+      "index": 85,
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+      "checkedAt": "2026-08-20T07:59:43.067Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall"
+    },
+    {
+      "index": 86,
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/changing-the-ai-model",
+      "checkedAt": "2026-08-20T07:59:43.092Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/changing-the-ai-model"
+    },
+    {
+      "index": 87,
+      "url": "https://docs.github.com/en/copilot/tutorials/cloud-agent/give-access-to-resources",
+      "checkedAt": "2026-08-20T07:59:43.095Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.github.com/en/copilot/tutorials/cloud-agent/give-access-to-resources"
+    },
+    {
+      "index": 88,
+      "url": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/",
+      "checkedAt": "2026-08-20T07:59:43.112Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/"
+    },
+    {
+      "index": 89,
+      "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-1-released/",
+      "checkedAt": "2026-08-20T07:59:43.172Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-1-released/"
+    },
+    {
+      "index": 90,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/",
+      "checkedAt": "2026-08-20T07:59:43.200Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/"
+    },
+    {
+      "index": 91,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/agents/tool-governance/",
+      "checkedAt": "2026-08-20T07:59:43.272Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/agents/tool-governance/"
+    },
+    {
+      "index": 92,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/composite_identity/",
+      "checkedAt": "2026-08-20T07:59:43.320Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/composite_identity/"
+    },
+    {
+      "index": 93,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/",
+      "checkedAt": "2026-08-20T07:59:43.426Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/flows/"
+    },
+    {
+      "index": 94,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+      "checkedAt": "2026-08-20T07:59:43.429Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/"
+    },
+    {
+      "index": 95,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/code_review/",
+      "checkedAt": "2026-08-20T07:59:43.512Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/code_review/"
+    },
+    {
+      "index": 96,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+      "checkedAt": "2026-08-20T07:59:43.517Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/"
+    },
+    {
+      "index": 97,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/software_development/",
+      "checkedAt": "2026-08-20T07:59:43.565Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/software_development/"
+    },
+    {
+      "index": 98,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/model_selection/",
+      "checkedAt": "2026-08-20T07:59:43.609Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/model_selection/"
+    },
+    {
+      "index": 99,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/security_threats/",
+      "checkedAt": "2026-08-20T07:59:43.631Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/security_threats/"
+    },
+    {
+      "index": 100,
+      "url": "https://docs.gitlab.com/user/duo_agent_platform/triggers/",
+      "checkedAt": "2026-08-20T07:59:43.639Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/triggers/"
+    },
+    {
+      "index": 101,
+      "url": "https://docs.lovable.dev/changelog?page=1",
+      "checkedAt": "2026-08-20T07:59:43.695Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.lovable.dev/changelog?page=1"
+    },
+    {
+      "index": 102,
+      "url": "https://docs.lovable.dev/features/agent-mode",
+      "checkedAt": "2026-08-20T07:59:43.702Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.lovable.dev/features/agent-mode"
+    },
+    {
+      "index": 103,
+      "url": "https://docs.lovable.dev/features/browser-testing",
+      "checkedAt": "2026-08-20T07:59:43.745Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.lovable.dev/features/browser-testing"
+    },
+    {
+      "index": 104,
+      "url": "https://docs.lovable.dev/features/publish",
+      "checkedAt": "2026-08-20T07:59:43.753Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.lovable.dev/features/publish"
+    },
+    {
+      "index": 105,
+      "url": "https://docs.lovable.dev/features/subagents",
+      "checkedAt": "2026-08-20T07:59:43.783Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.lovable.dev/features/subagents"
+    },
+    {
+      "index": 106,
+      "url": "https://docs.lovable.dev/features/testing",
+      "checkedAt": "2026-08-20T07:59:43.790Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.lovable.dev/features/testing"
+    },
+    {
+      "index": 107,
+      "url": "https://docs.lovable.dev/integrations/cloud",
+      "checkedAt": "2026-08-20T07:59:43.883Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.lovable.dev/features/cloud"
+    },
+    {
+      "index": 108,
+      "url": "https://docs.lovable.dev/integrations/github",
+      "checkedAt": "2026-08-20T07:59:43.888Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.lovable.dev/integrations/github"
+    },
+    {
+      "index": 109,
+      "url": "https://docs.mistral.ai/getting-started/quickstarts/vibe-code/install-cli",
+      "checkedAt": "2026-08-20T07:59:43.894Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.mistral.ai/getting-started/quickstarts/vibe-code/install-cli"
+    },
+    {
+      "index": 110,
+      "url": "https://docs.mistral.ai/resources/changelogs",
+      "checkedAt": "2026-08-20T07:59:43.897Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.mistral.ai/resources/changelogs"
+    },
+    {
+      "index": 111,
+      "url": "https://docs.mistral.ai/vibe/choose-chat-work-code",
+      "checkedAt": "2026-08-20T07:59:43.898Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.mistral.ai/vibe/choose-chat-work-code"
+    },
+    {
+      "index": 112,
+      "url": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started",
+      "checkedAt": "2026-08-20T07:59:43.942Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started"
+    },
+    {
+      "index": 113,
+      "url": "https://docs.mistral.ai/vibe/overview",
+      "checkedAt": "2026-08-20T07:59:43.957Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.mistral.ai/vibe"
+    },
+    {
+      "index": 114,
+      "url": "https://docs.openhands.dev/",
+      "checkedAt": "2026-08-20T07:59:43.992Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.openhands.dev/overview/introduction"
+    },
+    {
+      "index": 115,
+      "url": "https://docs.openhands.dev/openhands/usage/cli/cloud",
+      "checkedAt": "2026-08-20T07:59:43.995Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.openhands.dev/openhands/usage/cli/cloud"
+    },
+    {
+      "index": 116,
+      "url": "https://docs.openhands.dev/openhands/usage/cli/command-reference",
+      "checkedAt": "2026-08-20T07:59:44.054Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.openhands.dev/openhands/usage/cli/command-reference"
+    },
+    {
+      "index": 117,
+      "url": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud",
+      "checkedAt": "2026-08-20T07:59:44.056Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud"
+    },
+    {
+      "index": 118,
+      "url": "https://docs.replit.com/core-concepts/agent/task-system",
+      "checkedAt": "2026-08-20T07:59:44.074Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.replit.com/core-concepts/agent/task-system"
+    },
+    {
+      "index": 119,
+      "url": "https://docs.replit.com/core-concepts/project-editor/app-setup/secrets",
+      "checkedAt": "2026-08-20T07:59:44.077Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.replit.com/core-concepts/project-editor/app-setup/secrets"
+    },
+    {
+      "index": 120,
+      "url": "https://docs.replit.com/features/agent/agent-modes",
+      "checkedAt": "2026-08-20T07:59:44.090Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.replit.com/features/agent/agent-modes"
+    },
+    {
+      "index": 121,
+      "url": "https://docs.replit.com/features/agent/app-testing",
+      "checkedAt": "2026-08-20T07:59:44.129Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.replit.com/features/agent/app-testing"
+    },
+    {
+      "index": 122,
+      "url": "https://docs.replit.com/features/agent/model-selector",
+      "checkedAt": "2026-08-20T07:59:44.135Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.replit.com/features/agent/model-selector"
+    },
+    {
+      "index": 123,
+      "url": "https://docs.replit.com/features/agent/plan-mode",
+      "checkedAt": "2026-08-20T07:59:44.154Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.replit.com/features/agent/plan-mode"
+    },
+    {
+      "index": 124,
+      "url": "https://docs.replit.com/updates/2026/03/13/changelog",
+      "checkedAt": "2026-08-20T07:59:44.196Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.replit.com/updates/2026/03/13/changelog"
+    },
+    {
+      "index": 125,
+      "url": "https://docs.tabnine.com/main/administering-tabnine/release-notes",
+      "checkedAt": "2026-08-20T07:59:44.287Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.tabnine.com/main/administering-tabnine/release-notes"
+    },
+    {
+      "index": 126,
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent",
+      "checkedAt": "2026-08-20T07:59:44.292Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.tabnine.com/main/getting-started/tabnine-agent"
+    },
+    {
+      "index": 127,
+      "url": "https://docs.warp.dev/?fallback=true",
+      "checkedAt": "2026-08-20T07:59:44.301Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.warp.dev/?fallback=true"
+    },
+    {
+      "index": 128,
+      "url": "https://docs.warp.dev/changelog",
+      "checkedAt": "2026-08-20T07:59:44.311Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://docs.warp.dev/changelog"
+    },
+    {
+      "index": 129,
+      "url": "https://factory.ai/product/droid-computers",
+      "checkedAt": "2026-08-20T07:59:44.314Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://factory.ai/product/droid-computers"
+    },
+    {
+      "index": 130,
+      "url": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
+      "checkedAt": "2026-08-20T07:59:44.322Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/"
+    },
+    {
+      "index": 131,
+      "url": "https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/",
+      "checkedAt": "2026-08-20T07:59:44.441Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent/"
+    },
+    {
+      "index": 132,
+      "url": "https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent/",
+      "checkedAt": "2026-08-20T07:59:44.460Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent/"
+    },
+    {
+      "index": 133,
+      "url": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
+      "checkedAt": "2026-08-20T07:59:44.492Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0"
+    },
+    {
+      "index": 134,
+      "url": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md",
+      "checkedAt": "2026-08-20T07:59:44.500Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/OpenHands/OpenHands-CLI/blob/1.16.0/README.md"
+    },
+    {
+      "index": 135,
+      "url": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
+      "checkedAt": "2026-08-20T07:59:44.548Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0"
+    },
+    {
+      "index": 136,
+      "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11",
+      "checkedAt": "2026-08-20T07:59:44.552Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11"
+    },
+    {
+      "index": 137,
+      "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.12",
+      "checkedAt": "2026-08-20T07:59:44.584Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.12"
+    },
+    {
+      "index": 138,
+      "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.13",
+      "checkedAt": "2026-08-20T07:59:44.621Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.13"
+    },
+    {
+      "index": 139,
+      "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.14",
+      "checkedAt": "2026-08-20T07:59:44.628Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.14"
+    },
+    {
+      "index": 140,
+      "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.7",
+      "checkedAt": "2026-08-20T07:59:44.721Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.7"
+    },
+    {
+      "index": 141,
+      "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.8",
+      "checkedAt": "2026-08-20T07:59:44.797Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.8"
+    },
+    {
+      "index": 142,
+      "url": "https://github.com/RooCodeInc/Roo-Code",
+      "checkedAt": "2026-08-20T07:59:44.807Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/RooCodeInc/Roo-Code"
+    },
+    {
+      "index": 143,
+      "url": "https://github.com/aaif-goose/goose",
+      "checkedAt": "2026-08-20T07:59:44.817Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/aaif-goose/goose"
+    },
+    {
+      "index": 144,
+      "url": "https://github.com/aaif-goose/goose/releases/tag/v1.45.0",
+      "checkedAt": "2026-08-20T07:59:45.090Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/aaif-goose/goose/releases/tag/v1.45.0"
+    },
+    {
+      "index": 145,
+      "url": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0",
+      "checkedAt": "2026-08-20T07:59:45.129Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0"
+    },
+    {
+      "index": 146,
+      "url": "https://github.com/anomalyco/opencode/blob/v1.18.11/packages/opencode/src/agent/agent.ts",
+      "checkedAt": "2026-08-20T07:59:45.222Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/blob/v1.18.11/packages/opencode/src/agent/agent.ts"
+    },
+    {
+      "index": 147,
+      "url": "https://github.com/anomalyco/opencode/blob/v1.18.15/packages/opencode/src/agent/agent.ts",
+      "checkedAt": "2026-08-20T07:59:45.249Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/blob/v1.18.15/packages/opencode/src/agent/agent.ts"
+    },
+    {
+      "index": 148,
+      "url": "https://github.com/anomalyco/opencode/blob/v1.18.16/packages/opencode/src/agent/agent.ts",
+      "checkedAt": "2026-08-20T07:59:45.291Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/blob/v1.18.16/packages/opencode/src/agent/agent.ts"
+    },
+    {
+      "index": 149,
+      "url": "https://github.com/anomalyco/opencode/blob/v1.18.18/packages/opencode/src/agent/agent.ts",
+      "checkedAt": "2026-08-20T07:59:45.337Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/blob/v1.18.18/packages/opencode/src/agent/agent.ts"
+    },
+    {
+      "index": 150,
+      "url": "https://github.com/anomalyco/opencode/blob/v1.18.19/packages/opencode/src/agent/agent.ts",
+      "checkedAt": "2026-08-20T07:59:45.463Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/blob/v1.18.19/packages/opencode/src/agent/agent.ts"
+    },
+    {
+      "index": 151,
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.11",
+      "checkedAt": "2026-08-20T07:59:45.465Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/releases/tag/v1.18.11"
+    },
+    {
+      "index": 152,
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.15",
+      "checkedAt": "2026-08-20T07:59:45.520Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/releases/tag/v1.18.15"
+    },
+    {
+      "index": 153,
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.16",
+      "checkedAt": "2026-08-20T07:59:45.604Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/releases/tag/v1.18.16"
+    },
+    {
+      "index": 154,
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.18",
+      "checkedAt": "2026-08-20T07:59:45.620Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/releases/tag/v1.18.18"
+    },
+    {
+      "index": 155,
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.19",
+      "checkedAt": "2026-08-20T07:59:45.623Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/releases/tag/v1.18.19"
+    },
+    {
+      "index": 156,
+      "url": "https://github.com/anomalyco/opencode/security/policy",
+      "checkedAt": "2026-08-20T07:59:45.936Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anomalyco/opencode/security/policy"
+    },
+    {
+      "index": 157,
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.117",
+      "checkedAt": "2026-08-20T07:59:45.992Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.117"
+    },
+    {
+      "index": 158,
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.220",
+      "checkedAt": "2026-08-20T07:59:46.023Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.220"
+    },
+    {
+      "index": 159,
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226",
+      "checkedAt": "2026-08-20T07:59:46.036Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226"
+    },
+    {
+      "index": 160,
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
+      "checkedAt": "2026-08-20T07:59:46.053Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231"
+    },
+    {
+      "index": 161,
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
+      "checkedAt": "2026-08-20T07:59:46.072Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232"
+    },
+    {
+      "index": 162,
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
+      "checkedAt": "2026-08-20T07:59:46.110Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233"
+    },
+    {
+      "index": 163,
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
+      "checkedAt": "2026-08-20T07:59:46.112Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234"
+    },
+    {
+      "index": 164,
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
+      "checkedAt": "2026-08-20T07:59:46.116Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237"
+    },
+    {
+      "index": 165,
+      "url": "https://github.com/cline/cline",
+      "checkedAt": "2026-08-20T07:59:46.158Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/cline/cline"
+    },
+    {
+      "index": 166,
+      "url": "https://github.com/cline/cline/blob/644e84173724b50d6a248f813d01c7f1dad9ecf2/CHANGELOG.md",
+      "checkedAt": "2026-08-20T07:59:46.161Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/cline/cline/blob/644e84173724b50d6a248f813d01c7f1dad9ecf2/CHANGELOG.md"
+    },
+    {
+      "index": 167,
+      "url": "https://github.com/cline/cline/blob/644e84173724b50d6a248f813d01c7f1dad9ecf2/README.md",
+      "checkedAt": "2026-08-20T07:59:46.214Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/cline/cline/blob/644e84173724b50d6a248f813d01c7f1dad9ecf2/README.md"
+    },
+    {
+      "index": 168,
+      "url": "https://github.com/cline/cline/blob/644e84173724b50d6a248f813d01c7f1dad9ecf2/apps/vscode/package.json",
+      "checkedAt": "2026-08-20T07:59:46.364Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/cline/cline/blob/644e84173724b50d6a248f813d01c7f1dad9ecf2/apps/vscode/package.json"
+    },
+    {
+      "index": 169,
+      "url": "https://github.com/cline/cline/releases/tag/cli-v3.0.51",
+      "checkedAt": "2026-08-20T07:59:46.544Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/cline/cline/releases/tag/cli-v3.0.51"
+    },
+    {
+      "index": 170,
+      "url": "https://github.com/cline/cline/releases/tag/cli-v3.0.52",
+      "checkedAt": "2026-08-20T07:59:46.546Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/cline/cline/releases/tag/cli-v3.0.52"
+    },
+    {
+      "index": 171,
+      "url": "https://github.com/cline/cline/releases/tag/cli-v3.0.54",
+      "checkedAt": "2026-08-20T07:59:46.560Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/cline/cline/releases/tag/cli-v3.0.54"
+    },
+    {
+      "index": 172,
+      "url": "https://github.com/cline/cline/releases/tag/cli-v3.0.55",
+      "checkedAt": "2026-08-20T07:59:46.562Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/cline/cline/releases/tag/cli-v3.0.55"
+    },
+    {
+      "index": 173,
+      "url": "https://github.com/cline/cline/releases/tag/v4.1.10",
+      "checkedAt": "2026-08-20T07:59:46.594Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/cline/cline/releases/tag/v4.1.10"
+    },
+    {
+      "index": 174,
+      "url": "https://github.com/cline/cline/releases/tag/v4.1.9",
+      "checkedAt": "2026-08-20T07:59:46.595Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/cline/cline/releases/tag/v4.1.9"
+    },
+    {
+      "index": 175,
+      "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.78",
+      "checkedAt": "2026-08-20T07:59:46.607Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/github/copilot-cli/releases/tag/v1.0.78"
+    },
+    {
+      "index": 176,
+      "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.79",
+      "checkedAt": "2026-08-20T07:59:46.688Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/github/copilot-cli/releases/tag/v1.0.79"
+    },
+    {
+      "index": 177,
+      "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.80",
+      "checkedAt": "2026-08-20T07:59:46.824Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/github/copilot-cli/releases/tag/v1.0.80"
+    },
+    {
+      "index": 178,
+      "url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.11",
+      "checkedAt": "2026-08-20T07:59:46.876Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.11"
+    },
+    {
+      "index": 179,
+      "url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.12",
+      "checkedAt": "2026-08-20T07:59:47.003Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.12"
+    },
+    {
+      "index": 180,
+      "url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13",
+      "checkedAt": "2026-08-20T07:59:47.026Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13"
+    },
+    {
+      "index": 181,
+      "url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.14",
+      "checkedAt": "2026-08-20T07:59:47.074Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.14"
+    },
+    {
+      "index": 182,
+      "url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.16",
+      "checkedAt": "2026-08-20T07:59:47.109Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.16"
+    },
+    {
+      "index": 183,
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.54.4",
+      "checkedAt": "2026-08-20T07:59:47.127Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.54.4"
+    },
+    {
+      "index": 184,
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.55.1",
+      "checkedAt": "2026-08-20T07:59:47.134Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.55.1"
+    },
+    {
+      "index": 185,
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.56.0",
+      "checkedAt": "2026-08-20T07:59:47.161Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.56.0"
+    },
+    {
+      "index": 186,
+      "url": "https://github.com/openai/codex/blob/rust-v0.146.0/README.md",
+      "checkedAt": "2026-08-20T07:59:47.169Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/blob/rust-v0.146.0/README.md"
+    },
+    {
+      "index": 187,
+      "url": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json",
+      "checkedAt": "2026-08-20T07:59:47.231Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/blob/rust-v0.146.0/codex-rs/core/config.schema.json"
+    },
+    {
+      "index": 188,
+      "url": "https://github.com/openai/codex/blob/rust-v0.147.0/README.md",
+      "checkedAt": "2026-08-20T07:59:47.257Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/blob/rust-v0.147.0/README.md"
+    },
+    {
+      "index": 189,
+      "url": "https://github.com/openai/codex/blob/rust-v0.147.0/codex-rs/core/config.schema.json",
+      "checkedAt": "2026-08-20T07:59:47.304Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/blob/rust-v0.147.0/codex-rs/core/config.schema.json"
+    },
+    {
+      "index": 190,
+      "url": "https://github.com/openai/codex/blob/rust-v0.148.0/README.md",
+      "checkedAt": "2026-08-20T07:59:47.448Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/blob/rust-v0.148.0/README.md"
+    },
+    {
+      "index": 191,
+      "url": "https://github.com/openai/codex/blob/rust-v0.148.0/codex-rs/core/config.schema.json",
+      "checkedAt": "2026-08-20T07:59:47.590Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/blob/rust-v0.148.0/codex-rs/core/config.schema.json"
+    },
+    {
+      "index": 192,
+      "url": "https://github.com/openai/codex/blob/rust-v0.90.0/README.md",
+      "checkedAt": "2026-08-20T07:59:47.592Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/blob/rust-v0.90.0/README.md"
+    },
+    {
+      "index": 193,
+      "url": "https://github.com/openai/codex/blob/rust-v0.90.0/codex-rs/core/config.schema.json",
+      "checkedAt": "2026-08-20T07:59:47.619Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/blob/rust-v0.90.0/codex-rs/core/config.schema.json"
+    },
+    {
+      "index": 194,
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.146.0",
+      "checkedAt": "2026-08-20T07:59:47.685Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/releases/tag/rust-v0.146.0"
+    },
+    {
+      "index": 195,
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.147.0",
+      "checkedAt": "2026-08-20T07:59:47.700Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/releases/tag/rust-v0.147.0"
+    },
+    {
+      "index": 196,
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.148.0",
+      "checkedAt": "2026-08-20T07:59:47.704Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/releases/tag/rust-v0.148.0"
+    },
+    {
+      "index": 197,
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.90.0",
+      "checkedAt": "2026-08-20T07:59:47.746Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/openai/codex/releases/tag/rust-v0.90.0"
+    },
+    {
+      "index": 198,
+      "url": "https://github.com/zed-industries/zed/releases/tag/v1.12.1",
+      "checkedAt": "2026-08-20T07:59:47.759Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://github.com/zed-industries/zed/releases/tag/v1.12.1"
+    },
+    {
+      "index": 199,
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/tags/v18.8.0-ee",
+      "checkedAt": "2026-08-20T07:59:47.920Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v18.8.0-ee"
+    },
+    {
+      "index": 200,
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee",
+      "checkedAt": "2026-08-20T07:59:47.971Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.2-ee"
+    },
+    {
+      "index": 201,
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.4-ee",
+      "checkedAt": "2026-08-20T07:59:48.118Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.4-ee"
+    },
+    {
+      "index": 202,
+      "url": "https://jules.google/docs",
+      "checkedAt": "2026-08-20T07:59:48.168Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://jules.google/docs"
+    },
+    {
+      "index": 203,
+      "url": "https://jules.google/docs/changelog/2025-08-06/",
+      "checkedAt": "2026-08-20T07:59:48.223Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://jules.google/docs/changelog/2025-08-06/"
+    },
+    {
+      "index": 204,
+      "url": "https://jules.google/docs/changelog/2025-09-23/",
+      "checkedAt": "2026-08-20T07:59:48.382Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://jules.google/docs/changelog/2025-09-23/"
+    },
+    {
+      "index": 205,
+      "url": "https://jules.google/docs/changelog/2026-02-02/",
+      "checkedAt": "2026-08-20T07:59:48.423Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://jules.google/docs/changelog/2026-02-02/"
+    },
+    {
+      "index": 206,
+      "url": "https://jules.google/docs/code/",
+      "checkedAt": "2026-08-20T07:59:48.453Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://jules.google/docs/code/"
+    },
+    {
+      "index": 207,
+      "url": "https://jules.google/docs/environment/",
+      "checkedAt": "2026-08-20T07:59:48.461Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://jules.google/docs/environment/"
+    },
+    {
+      "index": 208,
+      "url": "https://jules.google/docs/faq/",
+      "checkedAt": "2026-08-20T07:59:48.463Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://jules.google/docs/faq/"
+    },
+    {
+      "index": 209,
+      "url": "https://jules.google/docs/tasks-repos/",
+      "checkedAt": "2026-08-20T07:59:48.488Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://jules.google/docs/tasks-repos/"
+    },
+    {
+      "index": 210,
+      "url": "https://junie.jetbrains.com/docs/",
+      "checkedAt": "2026-08-20T07:59:48.514Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://junie.jetbrains.com/docs/"
+    },
+    {
+      "index": 211,
+      "url": "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+      "checkedAt": "2026-08-20T07:59:48.602Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://junie.jetbrains.com/docs/junie-ide-plugin.html"
+    },
+    {
+      "index": 212,
+      "url": "https://kiro.dev/",
+      "checkedAt": "2026-08-20T07:59:48.644Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/"
+    },
+    {
+      "index": 213,
+      "url": "https://kiro.dev/changelog/ide/1-0-242/",
+      "checkedAt": "2026-08-20T07:59:48.651Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/changelog/ide/1-0-242/"
+    },
+    {
+      "index": 214,
+      "url": "https://kiro.dev/changelog/ide/1-0-288/",
+      "checkedAt": "2026-08-20T07:59:48.771Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/changelog/ide/1-0-288/"
+    },
+    {
+      "index": 215,
+      "url": "https://kiro.dev/changelog/ide/1-0-293/",
+      "checkedAt": "2026-08-20T07:59:48.788Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/changelog/ide/1-0-293/"
+    },
+    {
+      "index": 216,
+      "url": "https://kiro.dev/changelog/ide/1-0-309/",
+      "checkedAt": "2026-08-20T07:59:48.886Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/changelog/ide/1-0-309/"
+    },
+    {
+      "index": 217,
+      "url": "https://kiro.dev/changelog/ide/1-0-337/",
+      "checkedAt": "2026-08-20T07:59:48.892Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/changelog/ide/1-0-337/"
+    },
+    {
+      "index": 218,
+      "url": "https://kiro.dev/docs/chat/autopilot/",
+      "checkedAt": "2026-08-20T07:59:48.900Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/docs/chat/autopilot/"
+    },
+    {
+      "index": 219,
+      "url": "https://kiro.dev/docs/chat/terminal/",
+      "checkedAt": "2026-08-20T07:59:48.906Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/docs/chat/terminal/"
+    },
+    {
+      "index": 220,
+      "url": "https://kiro.dev/docs/cli/",
+      "checkedAt": "2026-08-20T07:59:48.908Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/docs/cli/"
+    },
+    {
+      "index": 221,
+      "url": "https://kiro.dev/docs/hooks/actions/",
+      "checkedAt": "2026-08-20T07:59:48.939Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/docs/hooks/actions/"
+    },
+    {
+      "index": 222,
+      "url": "https://kiro.dev/docs/mcp/usage/",
+      "checkedAt": "2026-08-20T07:59:49.080Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/docs/mcp/usage/"
+    },
+    {
+      "index": 223,
+      "url": "https://kiro.dev/docs/models/",
+      "checkedAt": "2026-08-20T07:59:49.117Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/docs/models/"
+    },
+    {
+      "index": 224,
+      "url": "https://kiro.dev/docs/privacy-and-security/",
+      "checkedAt": "2026-08-20T07:59:49.124Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/docs/privacy-and-security/"
+    },
+    {
+      "index": 225,
+      "url": "https://kiro.dev/docs/specs/quick-spec/",
+      "checkedAt": "2026-08-20T07:59:49.162Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/docs/specs/quick-spec/"
+    },
+    {
+      "index": 226,
+      "url": "https://kiro.dev/docs/web/using-the-agent/",
+      "checkedAt": "2026-08-20T07:59:49.163Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://kiro.dev/docs/web/using-the-agent/"
+    },
+    {
+      "index": 227,
+      "url": "https://learn.chatgpt.com/docs/agent-approvals-security",
+      "checkedAt": "2026-08-20T07:59:49.165Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://learn.chatgpt.com/docs/agent-approvals-security"
+    },
+    {
+      "index": 228,
+      "url": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev",
+      "checkedAt": "2026-08-20T07:59:49.210Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev"
+    },
+    {
+      "index": 229,
+      "url": "https://opencode.ai/docs/",
+      "checkedAt": "2026-08-20T07:59:49.212Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://opencode.ai/docs/"
+    },
+    {
+      "index": 230,
+      "url": "https://opencode.ai/docs/agents/",
+      "checkedAt": "2026-08-20T07:59:49.226Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://opencode.ai/docs/agents/"
+    },
+    {
+      "index": 231,
+      "url": "https://opencode.ai/docs/cli/",
+      "checkedAt": "2026-08-20T07:59:49.229Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://opencode.ai/docs/cli/"
+    },
+    {
+      "index": 232,
+      "url": "https://opencode.ai/docs/permissions/",
+      "checkedAt": "2026-08-20T07:59:49.230Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://opencode.ai/docs/permissions/"
+    },
+    {
+      "index": 233,
+      "url": "https://opencode.ai/docs/providers/",
+      "checkedAt": "2026-08-20T07:59:49.243Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://opencode.ai/docs/providers/"
+    },
+    {
+      "index": 234,
+      "url": "https://opencode.ai/docs/share/",
+      "checkedAt": "2026-08-20T07:59:49.286Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://opencode.ai/docs/share/"
+    },
+    {
+      "index": 235,
+      "url": "https://opencode.ai/docs/tools/",
+      "checkedAt": "2026-08-20T07:59:49.430Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://opencode.ai/docs/tools/"
+    },
+    {
+      "index": 236,
+      "url": "https://opencode.ai/docs/zen/",
+      "checkedAt": "2026-08-20T07:59:49.452Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://opencode.ai/docs/zen/"
+    },
+    {
+      "index": 237,
+      "url": "https://opencode.ai/legal/terms-of-service",
+      "checkedAt": "2026-08-20T07:59:49.479Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://opencode.ai/legal/terms-of-service"
+    },
+    {
+      "index": 238,
+      "url": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1013527",
+      "checkedAt": "2026-08-20T07:59:49.483Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1013527"
+    },
+    {
+      "index": 239,
+      "url": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1130261",
+      "checkedAt": "2026-08-20T07:59:49.503Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1130261"
+    },
+    {
+      "index": 240,
+      "url": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1136756",
+      "checkedAt": "2026-08-20T07:59:49.590Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1136756"
+    },
+    {
+      "index": 241,
+      "url": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1138682",
+      "checkedAt": "2026-08-20T07:59:49.872Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1138682"
+    },
+    {
+      "index": 242,
+      "url": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1141035",
+      "checkedAt": "2026-08-20T07:59:49.912Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1141035"
+    },
+    {
+      "index": 243,
+      "url": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1142176",
+      "checkedAt": "2026-08-20T07:59:49.917Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1142176"
+    },
+    {
+      "index": 244,
+      "url": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1144887",
+      "checkedAt": "2026-08-20T07:59:49.930Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1144887"
+    },
+    {
+      "index": 245,
+      "url": "https://qwenlm.github.io/qwen-code-docs/en/",
+      "checkedAt": "2026-08-20T07:59:49.934Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://qwenlm.github.io/qwen-code-docs/en/"
+    },
+    {
+      "index": 246,
+      "url": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
+      "checkedAt": "2026-08-20T07:59:50.022Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/"
+    },
+    {
+      "index": 247,
+      "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/roadmap/",
+      "checkedAt": "2026-08-20T07:59:50.091Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://qwenlm.github.io/qwen-code-docs/en/developers/roadmap/"
+    },
+    {
+      "index": 248,
+      "url": "https://roocodeinc.github.io/Roo-Code/getting-started/installing/",
+      "checkedAt": "2026-08-20T07:59:50.147Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://roocodeinc.github.io/Roo-Code/getting-started/installing/"
+    },
+    {
+      "index": 249,
+      "url": "https://support.bolt.new/building/switch-v1-projects",
+      "checkedAt": "2026-08-20T07:59:50.208Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://support.bolt.new/building/using-bolt/agents"
+    },
+    {
+      "index": 250,
+      "url": "https://support.bolt.new/release-notes",
+      "checkedAt": "2026-08-20T07:59:50.215Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://support.bolt.new/release-notes"
+    },
+    {
+      "index": 251,
+      "url": "https://v0.dev/docs",
+      "checkedAt": "2026-08-20T07:59:50.301Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://v0.app/docs"
+    },
+    {
+      "index": 252,
+      "url": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta",
+      "checkedAt": "2026-08-20T07:59:50.506Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta"
+    },
+    {
+      "index": 253,
+      "url": "https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent",
+      "checkedAt": "2026-08-20T07:59:50.517Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent"
+    },
+    {
+      "index": 254,
+      "url": "https://zed.dev/docs/ai/agent-profiles",
+      "checkedAt": "2026-08-20T07:59:50.571Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/docs/ai/agent-profiles"
+    },
+    {
+      "index": 255,
+      "url": "https://zed.dev/docs/ai/agents",
+      "checkedAt": "2026-08-20T07:59:50.806Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/docs/ai/agents"
+    },
+    {
+      "index": 256,
+      "url": "https://zed.dev/docs/ai/llm-providers",
+      "checkedAt": "2026-08-20T07:59:50.820Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/docs/ai/llm-providers"
+    },
+    {
+      "index": 257,
+      "url": "https://zed.dev/docs/ai/mcp",
+      "checkedAt": "2026-08-20T07:59:50.853Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/docs/ai/mcp"
+    },
+    {
+      "index": 258,
+      "url": "https://zed.dev/docs/ai/privacy-and-security",
+      "checkedAt": "2026-08-20T07:59:50.878Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/docs/ai/privacy-and-security"
+    },
+    {
+      "index": 259,
+      "url": "https://zed.dev/docs/ai/sandboxing",
+      "checkedAt": "2026-08-20T07:59:50.930Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/docs/ai/sandboxing"
+    },
+    {
+      "index": 260,
+      "url": "https://zed.dev/docs/ai/skills",
+      "checkedAt": "2026-08-20T07:59:50.942Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/docs/ai/skills"
+    },
+    {
+      "index": 261,
+      "url": "https://zed.dev/docs/ai/tool-permissions",
+      "checkedAt": "2026-08-20T07:59:50.972Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/docs/ai/tool-permissions"
+    },
+    {
+      "index": 262,
+      "url": "https://zed.dev/docs/ai/zed-agent.html",
+      "checkedAt": "2026-08-20T07:59:51.018Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/docs/ai/zed-agent"
+    },
+    {
+      "index": 263,
+      "url": "https://zed.dev/releases/preview?b=1",
+      "checkedAt": "2026-08-20T07:59:51.032Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/releases/preview?b=1"
+    },
+    {
+      "index": 264,
+      "url": "https://zed.dev/releases/stable",
+      "checkedAt": "2026-08-20T07:59:51.063Z",
+      "result": "reachable",
+      "status": 200,
+      "finalUrl": "https://zed.dev/releases/stable"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.jetbrains.junie.ide-plugin.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.jetbrains.junie.ide-plugin",
+    "name": "Junie IDE plugin",
+    "publisher": "JetBrains",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Junie IDE plugin",
+      "slug": "jetbrains-junie-ide-262-579-38"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "JetBrains's official documentation describes Junie IDE plugin as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Junie surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "JetBrains"
+  },
+  "source": {
+    "uri": "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+    "title": "Junie IDE plugin documentation",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-20T07:58:04.370Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "262.579.38"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-20",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-20",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "IDE family, plugin version, AI subscription and model choice must be scoped",
+    "Junie plugin behavior must not be merged with Junie CLI beta"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.local-cli-delivery-0-148-0",
+  "slug": "local-cli-delivery-0-148-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": {
+      "kind": "cli",
+      "name": "Codex CLI",
+      "slug": "openai-codex-cli-0-148-0"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery",
+    "statement": "The README at tag rust-v0.148.0 describes Codex CLI as a local coding agent and documents install-script, npm, Homebrew and platform-binary acquisition paths."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "OpenAI"
+  },
+  "source": {
+    "uri": "https://github.com/openai/codex/blob/rust-v0.148.0/README.md",
+    "title": "Codex README at rust-v0.148.0",
+    "locator": "Opening description and installation sections",
+    "publishedAt": null,
+    "capturedAt": "2026-08-20T07:58:04.453Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "0.148.0"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "npm package",
+        "Homebrew cask",
+        "platform-specific release binary"
+      ]
+    },
+    "platform": {
+      "scope": "alternatives",
+      "values": [
+        "supported macOS",
+        "supported Linux",
+        "supported Windows"
+      ]
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local Codex CLI"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-20",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-20",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "source-unavailable",
+      "claimant-correction",
+      "product-version-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Documented acquisition routes do not prove which artifact a user installed or invoked.",
+    "The README also names IDE, desktop and web products; those surfaces are outside this CLI record."
+  ],
+  "unknowns": [
+    "The effective installation route, platform, architecture and executable identity are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

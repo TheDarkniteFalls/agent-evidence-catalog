@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.release-identity-0-148-0",
+  "slug": "release-identity-0-148-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": {
+      "kind": "cli",
+      "name": "Codex CLI",
+      "slug": "openai-codex-cli-0-148-0"
+    }
+  },
+  "claim": {
+    "category": "identity.release",
+    "statement": "OpenAI's official stable release metadata identifies Codex CLI 0.148.0 at tag rust-v0.148.0, published 2026-08-18T22:26:03Z; the installed package, platform build and executable digest remain unresolved."
+  },
+  "provenance": {
+    "kind": "publisher-release-metadata",
+    "claimant": "OpenAI"
+  },
+  "source": {
+    "uri": "https://github.com/openai/codex/releases/tag/rust-v0.148.0",
+    "title": "OpenAI Codex CLI 0.148.0 release",
+    "locator": "Release heading, Latest marker, tag and release metadata",
+    "publishedAt": "2026-08-18T22:26:03Z",
+    "capturedAt": "2026-08-20T07:58:04.453Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "0.148.0"
+    },
+    "configuration": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local Codex CLI release artifact"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-20",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-20",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "new-official-latest-release",
+      "source-unavailable",
+      "claimant-correction",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Release metadata identifies the published source release, not the package or executable invoked by a particular session.",
+    "The catalog did not download or execute a 0.148.0 artifact."
+  ],
+  "unknowns": [
+    "The installed package path, operating-system build, architecture, executable digest and effective runtime identity remain unresolved."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

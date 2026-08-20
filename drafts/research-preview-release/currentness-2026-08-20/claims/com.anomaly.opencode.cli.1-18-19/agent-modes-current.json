@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anomaly.opencode.cli.agent-modes-current",
+  "slug": "agent-modes-current",
+  "subject": {
+    "id": "com.anomaly.opencode.cli",
+    "name": "OpenCode CLI",
+    "publisher": "Anomaly Innovations, Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "OpenCode CLI/TUI",
+      "slug": "opencode-cli-1-18-19"
+    }
+  },
+  "claim": {
+    "category": "interaction.mode",
+    "statement": "Current OpenCode agent documentation describes Build as the default primary agent with all tools enabled and Plan as a restricted primary agent in which file edits and bash commands require approval; it also distinguishes primary agents from manually or automatically invoked subagents."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Anomaly Innovations, Inc."
+  },
+  "source": {
+    "uri": "https://opencode.ai/docs/agents/",
+    "title": "OpenCode Agents",
+    "locator": "Primary agents; Build; Plan; Subagents; permissions",
+    "publishedAt": null,
+    "capturedAt": "2026-08-20T07:58:02.257Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "Build primary agent",
+        "Plan primary agent",
+        "subagent",
+        "custom agent",
+        "permission overrides"
+      ]
+    },
+    "platform": {
+      "scope": "all",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "current CLI/TUI agent configuration"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher documentation that may postdate v1.18.19."
+  },
+  "review": {
+    "reviewedAt": "2026-08-20",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "agent-documentation-change",
+      "permission-default-change",
+      "mode-change"
+    ]
+  },
+  "limitations": [
+    "The current page is not exact-version evidence for v1.18.19 and does not establish which agent or custom configuration applies to a session."
+  ],
+  "unknowns": [
+    "The current documentation revision, selected primary agent, subagent path and effective permission policy are unknown for any use."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.anomaly.opencode.cli.agent-modes-1-18-19",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "Rolling-current documentation and exact v1.18.19 source have different version/time applicability; the documented current Plan restrictions are not silently treated as v1.18.19 behavior."
+    }
+  ],
+  "validationRefs": []
+}
