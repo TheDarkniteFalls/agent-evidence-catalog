@@ -1,0 +1,767 @@
+{
+  "schemaVersion": "agent-evidence-currentness-receipt/0.1-draft",
+  "artifactType": "official-source-all-surface-currentness-receipt",
+  "asOf": "2026-08-20",
+  "checkedAt": "2026-08-20T07:58:07.382Z",
+  "scope": {
+    "surfacesReviewed": 55,
+    "priorRecordsRetained": 106,
+    "exactIdentitySuccessorsAdded": 9,
+    "recordsPresentedIncludingHistory": 115,
+    "publisherSourcesOnly": true,
+    "agentsInstalledOrRun": false,
+    "independentEvidenceCredit": 0
+  },
+  "sourceLinkAudit": {
+    "recordsChecked": 115,
+    "uniqueOfficialUrlsChecked": 264,
+    "reachable": 264,
+    "unreachable": 0,
+    "checkedAt": "2026-08-20T07:59:52.428Z",
+    "state": "complete",
+    "receiptPath": "drafts/research-preview-release/currentness-2026-08-20/official-url-audit.json",
+    "receiptSha256": "bb1fd5845c2c49db408ce68a9269e4e0a88fccb7697df3c5a8e0e475e10dc201",
+    "method": "HTTP GET with redirects against every unique named official source URL in the projected 115-record corpus",
+    "boundary": "Reachability is not treated as product behaviour, independent verification or proof that rolling prose is unchanged."
+  },
+  "officialSurfaceAudit": {
+    "path": "drafts/research-preview-release/currentness-2026-08-20/official-source-audit.json",
+    "sha256": "8419ca273d3a3316ef30f139366fa20954773242a64e9aa8a80fd5c799deb90b",
+    "observations": 55,
+    "reachable": 55,
+    "failed": 0,
+    "method": {
+      "client": "Node.js fetch",
+      "action": "Make one bounded unauthenticated HTTP GET with redirects to the preferred publisher-controlled source for every accepted surface.",
+      "publisherSourcesOnly": true,
+      "authenticated": false,
+      "productInstalledDownloadedExecutedOrObserved": false
+    },
+    "limitations": [
+      "Reachability and response capture do not establish product behaviour, independent verification, quality, safety, popularity, ranking or suitability.",
+      "Exact identity transitions are admitted only from separately reviewed identity evidence; a successful request alone is not an identity decision.",
+      "Rolling product, hosted-service, model, effective-configuration, installed-artifact and runtime applicability remain unresolved unless a dated exact-identity transition expressly narrows them."
+    ]
+  },
+  "reviewedSurfaces": [
+    {
+      "surfaceKey": "ai.factory.droid-computers.service",
+      "name": "Factory-managed Droid Computers",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "ai.factory.droid-computers.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.factory.ai/cli/features/droid-computers",
+      "checkedAt": "2026-08-20T07:58:01.402Z",
+      "finalUrl": "https://docs.factory.ai/droid-computers/overview",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "ai.factory.droid.cli.release-stream",
+      "name": "Droid CLI",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "ai.factory.droid.cli.rolling",
+      "currentIdentity": "unresolved",
+      "officialSource": "https://docs.factory.ai/cli/getting-started/overview",
+      "checkedAt": "2026-08-20T07:58:01.430Z",
+      "finalUrl": "https://docs.factory.ai/droid-cli/overview",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "ai.mistral.vibe-code.vscode-extension.service",
+      "name": "Vibe Code VS Code extension",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "ai.mistral.vibe-code.vscode-extension.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.mistral.ai/vibe/choose-chat-work-code",
+      "checkedAt": "2026-08-20T07:58:01.431Z",
+      "finalUrl": "https://docs.mistral.ai/vibe/choose-chat-work-code",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "ai.mistral.vibe-code.web.service",
+      "name": "Vibe Code Web",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "ai.mistral.vibe-code.web.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started",
+      "checkedAt": "2026-08-20T07:58:01.431Z",
+      "finalUrl": "https://docs.mistral.ai/vibe/code/vibe-code-web/get-started",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "ai.mistral.vibe.cli.release-stream",
+      "name": "Vibe CLI",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "ai.mistral.vibe.cli.rolling",
+      "currentIdentity": "unresolved",
+      "officialSource": "https://docs.mistral.ai/vibe/overview",
+      "checkedAt": "2026-08-20T07:58:01.431Z",
+      "finalUrl": "https://docs.mistral.ai/vibe",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
+      "name": "Qwen Code CLI",
+      "result": "successor-added",
+      "currentRecordId": "com.alibaba.qwen-code.cli.0-21-14",
+      "currentIdentity": "0.21.14",
+      "officialSource": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.14",
+      "checkedAt": "2026-08-20T07:58:01.432Z",
+      "finalUrl": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.14",
+      "note": "The official release feed identifies v0.21.14 as the latest stable Qwen Code CLI release reviewed on 2026-08-20."
+    },
+    {
+      "surfaceKey": "com.alibaba.qwen-code.vscode-extension.beta",
+      "name": "Qwen Code VS Code extension",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.alibaba.qwen-code.vscode-extension.beta-rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
+      "checkedAt": "2026-08-20T07:58:01.432Z",
+      "finalUrl": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/getting-started/",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.amazon.kiro.cli.release-stream",
+      "name": "Kiro CLI",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.amazon.kiro.cli.rolling",
+      "currentIdentity": "unresolved",
+      "officialSource": "https://kiro.dev/",
+      "checkedAt": "2026-08-20T07:58:01.432Z",
+      "finalUrl": "https://kiro.dev/",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
+      "name": "Kiro IDE",
+      "result": "successor-added",
+      "currentRecordId": "com.amazon.kiro.ide.1-0-337",
+      "currentIdentity": "1.0.337",
+      "officialSource": "https://kiro.dev/changelog/ide/1-0-337/",
+      "checkedAt": "2026-08-20T07:58:02.088Z",
+      "finalUrl": "https://kiro.dev/changelog/ide/1-0-337/",
+      "note": "Kiro's official IDE changelog lists 1.0.337 first and dates it 2026-08-18."
+    },
+    {
+      "surfaceKey": "com.amazon.kiro.web.preview",
+      "name": "Kiro Web",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.amazon.kiro.web.preview-rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://kiro.dev/docs/web/using-the-agent/",
+      "checkedAt": "2026-08-20T07:58:02.103Z",
+      "finalUrl": "https://kiro.dev/docs/web/using-the-agent/",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.amazon.q-developer.github.preview",
+      "name": "Amazon Q Developer for GitHub",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.amazon.q-developer.github.preview-rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
+      "checkedAt": "2026-08-20T07:58:02.110Z",
+      "finalUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/amazon-q-for-github.html",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.amazon.q-developer.ide-plugins.supported-sunset",
+      "name": "Amazon Q Developer IDE plugins",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.amazon.q-developer.ide-plugins.sunset",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
+      "checkedAt": "2026-08-20T07:58:02.135Z",
+      "finalUrl": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
+      "name": "OpenCode CLI",
+      "result": "successor-added",
+      "currentRecordId": "com.anomaly.opencode.cli.1-18-19",
+      "currentIdentity": "1.18.19",
+      "officialSource": "https://github.com/anomalyco/opencode/releases/tag/v1.18.19",
+      "checkedAt": "2026-08-20T07:58:02.257Z",
+      "finalUrl": "https://github.com/anomalyco/opencode/releases/tag/v1.18.19",
+      "note": "The official release feed identifies v1.18.19 as the latest stable OpenCode release reviewed on 2026-08-20."
+    },
+    {
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "name": "Claude Code CLI",
+      "result": "successor-added",
+      "currentRecordId": "com.anthropic.claude-code.cli.2-1-237",
+      "currentIdentity": "2.1.237",
+      "officialSource": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
+      "checkedAt": "2026-08-20T07:58:02.532Z",
+      "finalUrl": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
+      "note": "Anthropic's official release feed identifies v2.1.237 as the latest stable Claude Code CLI release reviewed on 2026-08-20."
+    },
+    {
+      "surfaceKey": "com.augmentcode.agent.ide.plugins",
+      "name": "Augment Agent in IDE",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.augmentcode.agent.ide.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.augmentcode.com/using-augment/agent",
+      "checkedAt": "2026-08-20T07:58:02.548Z",
+      "finalUrl": "https://docs.augmentcode.com/using-augment/agent",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.augmentcode.auggie.cli.release-stream",
+      "name": "Auggie CLI",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.augmentcode.auggie.cli.rolling",
+      "currentIdentity": "unresolved",
+      "officialSource": "https://docs.augmentcode.com/cli/reference",
+      "checkedAt": "2026-08-20T07:58:02.556Z",
+      "finalUrl": "https://docs.augmentcode.com/cli/reference",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.cline.bot.cli.release-stream",
+      "name": "Cline CLI",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.cline.bot.cli.3-0-55",
+      "currentIdentity": "3.0.55",
+      "officialSource": "https://github.com/cline/cline/releases/tag/cli-v3.0.55",
+      "checkedAt": "2026-08-20T07:58:02.595Z",
+      "finalUrl": "https://github.com/cline/cline/releases/tag/cli-v3.0.55",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
+      "name": "Cline",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.cline.bot.vscode-extension.4-1-10",
+      "currentIdentity": "4.1.10",
+      "officialSource": "https://github.com/cline/cline/releases/tag/v4.1.10",
+      "checkedAt": "2026-08-20T07:58:02.601Z",
+      "finalUrl": "https://github.com/cline/cline/releases/tag/v4.1.10",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.cognition.devin-desktop.cascade.desktop-stable",
+      "name": "Cascade in Devin Desktop",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.cognition.devin-desktop.cascade.3-7-25",
+      "currentIdentity": "3.7.25",
+      "officialSource": "https://docs.devin.ai/desktop/releases#v3-7-25",
+      "checkedAt": "2026-08-20T07:58:02.940Z",
+      "finalUrl": "https://docs.devin.ai/desktop/releases",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.cognition.devin.hosted.rolling-service",
+      "name": "Devin",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.cognition.devin.hosted.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.devin.ai/release-notes/overview",
+      "checkedAt": "2026-08-20T07:58:03.092Z",
+      "finalUrl": "https://docs.devin.ai/release-notes/overview",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.continue.dev.ide-agent.final",
+      "name": "Continue IDE Agent mode",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": null,
+      "currentIdentity": null,
+      "officialSource": "https://docs.continue.dev/",
+      "checkedAt": "2026-08-20T07:58:03.176Z",
+      "finalUrl": "https://docs.continue.dev/",
+      "note": "The accepted non-current lifecycle status and retained record were rechecked; no current successor was established."
+    },
+    {
+      "surfaceKey": "com.cursor.cloud-agents.service",
+      "name": "Cursor Cloud Agents",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.cursor.cloud-agents.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://cursor.com/cloud",
+      "checkedAt": "2026-08-20T07:58:03.255Z",
+      "finalUrl": "https://cursor.com/cloud",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
+      "name": "Cursor IDE foreground Agent",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.cursor.ide.foreground-agent.3-16",
+      "currentIdentity": "3.16",
+      "officialSource": "https://cursor.com/download",
+      "checkedAt": "2026-08-20T07:58:03.390Z",
+      "finalUrl": "https://cursor.com/download",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.github.anthropic.claude-agent.preview",
+      "name": "Claude coding agent on GitHub",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.github.anthropic.claude-agent.preview-rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "checkedAt": "2026-08-20T07:58:03.451Z",
+      "finalUrl": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.github.copilot.cli.release-stream",
+      "name": "GitHub Copilot CLI",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.github.copilot.cli.1-0-80",
+      "currentIdentity": "1.0.80",
+      "officialSource": "https://github.com/github/copilot-cli/releases/tag/v1.0.80",
+      "checkedAt": "2026-08-20T07:58:03.469Z",
+      "finalUrl": "https://github.com/github/copilot-cli/releases/tag/v1.0.80",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.github.copilot.cloud-agent.rolling-service",
+      "name": "GitHub Copilot cloud agent",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.github.copilot.cloud-agent.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
+      "checkedAt": "2026-08-20T07:58:03.533Z",
+      "finalUrl": "https://github.blog/changelog/2025-09-25-copilot-coding-agent-is-now-generally-available/",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.github.copilot.vscode-agent.local-host",
+      "name": "Copilot agent harness in Visual Studio Code",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.github.copilot.vscode-agent.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://code.visualstudio.com/docs/agents/concepts/agents",
+      "checkedAt": "2026-08-20T07:58:03.617Z",
+      "finalUrl": "https://code.visualstudio.com/docs/agents/concepts/agents",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.github.openai.codex-agent.preview",
+      "name": "Codex coding agent on GitHub",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.github.openai.codex-agent.preview-rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "checkedAt": "2026-08-20T07:58:03.620Z",
+      "finalUrl": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
+      "name": "GitLab Duo Developer Flow",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.gitlab.duo.developer-flow.19-2-4",
+      "currentIdentity": "19.2.4-ee",
+      "officialSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.4-ee",
+      "checkedAt": "2026-08-20T07:58:03.803Z",
+      "finalUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.4-ee",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
+      "name": "GitLab Code Review Flow",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.gitlab.duo.code-review-flow.19-2-4",
+      "currentIdentity": "19.2.4-ee",
+      "officialSource": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.4-ee",
+      "checkedAt": "2026-08-20T07:58:03.890Z",
+      "finalUrl": "https://gitlab.com/gitlab-org/gitlab/-/tags/v19.2.4-ee",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.gitlab.duo.software-development-flow.service",
+      "name": "GitLab Software Development Flow",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.gitlab.duo.software-development-flow.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.gitlab.com/user/duo_agent_platform/",
+      "checkedAt": "2026-08-20T07:58:03.956Z",
+      "finalUrl": "https://docs.gitlab.com/user/duo_agent_platform/",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.google.antigravity.cli.release-stream",
+      "name": "Antigravity CLI",
+      "result": "successor-added",
+      "currentRecordId": "com.google.antigravity.cli.1-1-16",
+      "currentIdentity": "1.1.16",
+      "officialSource": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.16",
+      "checkedAt": "2026-08-20T07:58:03.966Z",
+      "finalUrl": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.16",
+      "note": "Google's official release feed identifies 1.1.16 as the latest Antigravity CLI release reviewed on 2026-08-20."
+    },
+    {
+      "surfaceKey": "com.google.gemini-code-assist.ide-agent.service",
+      "name": "Gemini Code Assist IDE agent mode",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.google.gemini-code-assist.ide-agent.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer",
+      "checkedAt": "2026-08-20T07:58:04.015Z",
+      "finalUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.google.gemini.cli.release-stream",
+      "name": "Gemini CLI",
+      "result": "successor-added",
+      "currentRecordId": "com.google.gemini.cli.0-56-0",
+      "currentIdentity": "0.56.0",
+      "officialSource": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.56.0",
+      "checkedAt": "2026-08-20T07:58:04.017Z",
+      "finalUrl": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.56.0",
+      "note": "Google's official release feed identifies v0.56.0 as the latest Gemini CLI release reviewed on 2026-08-20."
+    },
+    {
+      "surfaceKey": "com.google.jules.hosted.rolling-service",
+      "name": "Google Jules",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.google.jules.hosted.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://jules.google/docs/changelog/2025-08-06/",
+      "checkedAt": "2026-08-20T07:58:04.087Z",
+      "finalUrl": "https://jules.google/docs/changelog/2025-08-06/",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.jetbrains.junie.cli.beta",
+      "name": "Junie CLI",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.jetbrains.junie.cli.beta-rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
+      "checkedAt": "2026-08-20T07:58:04.089Z",
+      "finalUrl": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
+      "name": "Junie IDE plugin",
+      "result": "successor-added",
+      "currentRecordId": "com.jetbrains.junie.ide-plugin.262-579-38",
+      "currentIdentity": "262.579.38",
+      "officialSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1144887",
+      "checkedAt": "2026-08-20T07:58:04.370Z",
+      "finalUrl": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1144887",
+      "note": "JetBrains Marketplace identifies stable Junie IDE plugin update 1144887 as version 262.579.38, published 2026-08-20T06:16:46Z."
+    },
+    {
+      "surfaceKey": "com.lovable.build-mode.hosted.rolling-service",
+      "name": "Lovable Build mode",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.lovable.agent.hosted.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.lovable.dev/changelog?page=1",
+      "checkedAt": "2026-08-20T07:58:04.443Z",
+      "finalUrl": "https://docs.lovable.dev/changelog?page=1",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.openai.codex.cli.stable",
+      "name": "OpenAI Codex CLI",
+      "result": "successor-added",
+      "currentRecordId": "com.openai.codex.cli.0-148-0",
+      "currentIdentity": "0.148.0",
+      "officialSource": "https://github.com/openai/codex/releases/tag/rust-v0.148.0",
+      "checkedAt": "2026-08-20T07:58:04.453Z",
+      "finalUrl": "https://github.com/openai/codex/releases/tag/rust-v0.148.0",
+      "note": "OpenAI's official release feed identifies rust-v0.148.0 as the latest stable Codex CLI release reviewed on 2026-08-20."
+    },
+    {
+      "surfaceKey": "com.openai.codex.cloud.service",
+      "name": "Codex cloud agent",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.openai.codex.cloud.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://developers.openai.com/codex/cloud/",
+      "checkedAt": "2026-08-20T07:58:04.525Z",
+      "finalUrl": "https://learn.chatgpt.com/docs/cloud",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.openai.codex.ide-extension.service",
+      "name": "Codex IDE extension",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.openai.codex.ide-extension.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://developers.openai.com/codex/ide/",
+      "checkedAt": "2026-08-20T07:58:04.526Z",
+      "finalUrl": "https://learn.chatgpt.com/docs/codex/ide",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.replit.agent.hosted.agent-4-service",
+      "name": "Replit Agent",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.replit.agent.hosted.agent-4",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.replit.com/updates/2026/03/13/changelog",
+      "checkedAt": "2026-08-20T07:58:04.698Z",
+      "finalUrl": "https://docs.replit.com/updates/2026/03/13/changelog",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.roocode.vscode-extension.final",
+      "name": "Roo Code VS Code extension",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": null,
+      "currentIdentity": null,
+      "officialSource": "https://github.com/RooCodeInc/Roo-Code",
+      "checkedAt": "2026-08-20T07:58:04.730Z",
+      "finalUrl": "https://github.com/RooCodeInc/Roo-Code",
+      "note": "The accepted non-current lifecycle status and retained record were rechecked; no current successor was established."
+    },
+    {
+      "surfaceKey": "com.sourcegraph.amp.cli.release-stream",
+      "name": "Amp CLI",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.sourcegraph.amp.cli.rolling",
+      "currentIdentity": "unresolved",
+      "officialSource": "https://ampcode.com/manual",
+      "checkedAt": "2026-08-20T07:58:04.817Z",
+      "finalUrl": "https://ampcode.com/manual",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.stackblitz.bolt.claude-agent.service",
+      "name": "Claude Agent in Bolt",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.stackblitz.bolt.claude-agent.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://support.bolt.new/release-notes",
+      "checkedAt": "2026-08-20T07:58:04.928Z",
+      "finalUrl": "https://support.bolt.new/release-notes",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.tabnine.agent.ide.deployment-lines",
+      "name": "Tabnine Agent in IDE",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.tabnine.agent.ide.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.tabnine.com/main/getting-started/tabnine-agent",
+      "checkedAt": "2026-08-20T07:58:04.982Z",
+      "finalUrl": "https://docs.tabnine.com/main/getting-started/tabnine-agent",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.vercel.agent.public-beta",
+      "name": "Vercel Agent",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.vercel.agent.public-beta",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta",
+      "checkedAt": "2026-08-20T07:58:05.041Z",
+      "finalUrl": "https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "com.vercel.v0.agent.service",
+      "name": "v0 hosted development agent",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "com.vercel.v0.agent.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://api2.v0.dev/docs/faqs",
+      "checkedAt": "2026-08-20T07:58:05.312Z",
+      "finalUrl": "https://api2.v0.dev/docs/faqs",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "dev.warp.oz.cloud-agents.service",
+      "name": "Oz Cloud Agents",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "dev.warp.oz.cloud-agents.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.warp.dev/?fallback=true",
+      "checkedAt": "2026-08-20T07:58:05.359Z",
+      "finalUrl": "https://docs.warp.dev/?fallback=true",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "dev.warp.oz.local-agent.desktop",
+      "name": "Oz local Agent in Warp desktop",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "dev.warp.oz.local-agent.desktop.rolling",
+      "currentIdentity": "unresolved",
+      "officialSource": "https://docs.warp.dev/?fallback=true",
+      "checkedAt": "2026-08-20T07:58:05.387Z",
+      "finalUrl": "https://docs.warp.dev/?fallback=true",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "dev.zed.agent.native.desktop-stable",
+      "name": "Zed Agent",
+      "result": "successor-added",
+      "currentRecordId": "dev.zed.agent.native.1-16-1",
+      "currentIdentity": "1.16.1",
+      "officialSource": "https://zed.dev/releases/stable",
+      "checkedAt": "2026-08-20T07:58:05.501Z",
+      "finalUrl": "https://zed.dev/releases/stable",
+      "note": "Zed's official stable release page identifies 1.16.1 as the latest stable release reviewed on 2026-08-20."
+    },
+    {
+      "surfaceKey": "org.aaif.goose.cli.release-stream",
+      "name": "Goose CLI",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "org.aaif.goose.cli.1-46-0",
+      "currentIdentity": "1.46.0",
+      "officialSource": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0",
+      "checkedAt": "2026-08-20T07:58:05.592Z",
+      "finalUrl": "https://github.com/aaif-goose/goose/releases/tag/v1.46.0",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "org.aider-ai.aider.cli.stable",
+      "name": "Aider CLI",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "org.aider-ai.aider.cli.0-86-0",
+      "currentIdentity": "0.86.0",
+      "officialSource": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
+      "checkedAt": "2026-08-20T07:58:05.607Z",
+      "finalUrl": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "org.openhands.cloud.service",
+      "name": "OpenHands Cloud",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "org.openhands.cloud.rolling",
+      "currentIdentity": "rolling-service",
+      "officialSource": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud",
+      "checkedAt": "2026-08-20T07:58:05.704Z",
+      "finalUrl": "https://docs.openhands.dev/openhands/usage/cloud/openhands-cloud",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    },
+    {
+      "surfaceKey": "org.openhands.openhands.cli.stable",
+      "name": "OpenHands",
+      "result": "retained-no-exact-successor-admitted",
+      "currentRecordId": "org.openhands.cli.1-16-0",
+      "currentIdentity": "1.16.0",
+      "officialSource": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
+      "checkedAt": "2026-08-20T07:58:05.709Z",
+      "finalUrl": "https://github.com/OpenHands/OpenHands-CLI/releases/tag/1.16.0",
+      "note": "Official identity and retained current status were rechecked; no newer exact identity or lifecycle transition was established."
+    }
+  ],
+  "materialTransitions": [
+    {
+      "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
+      "fromRecordId": "com.alibaba.qwen-code.cli.0-21-13",
+      "toRecordId": "com.alibaba.qwen-code.cli.0-21-14",
+      "fromVersion": "0.21.13",
+      "toVersion": "0.21.14",
+      "releaseSource": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.14"
+    },
+    {
+      "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
+      "fromRecordId": "com.amazon.kiro.ide.1-0-309",
+      "toRecordId": "com.amazon.kiro.ide.1-0-337",
+      "fromVersion": "1.0.309",
+      "toVersion": "1.0.337",
+      "releaseSource": "https://kiro.dev/changelog/ide/1-0-337/"
+    },
+    {
+      "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
+      "fromRecordId": "com.anomaly.opencode.cli.1-18-18",
+      "toRecordId": "com.anomaly.opencode.cli.1-18-19",
+      "fromVersion": "1.18.18",
+      "toVersion": "1.18.19",
+      "releaseSource": "https://github.com/anomalyco/opencode/releases/tag/v1.18.19"
+    },
+    {
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "fromRecordId": "com.anthropic.claude-code.cli.2-1-234",
+      "toRecordId": "com.anthropic.claude-code.cli.2-1-237",
+      "fromVersion": "2.1.234",
+      "toVersion": "2.1.237",
+      "releaseSource": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237"
+    },
+    {
+      "surfaceKey": "com.google.antigravity.cli.release-stream",
+      "fromRecordId": "com.google.antigravity.cli.1-1-14",
+      "toRecordId": "com.google.antigravity.cli.1-1-16",
+      "fromVersion": "1.1.14",
+      "toVersion": "1.1.16",
+      "releaseSource": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.16"
+    },
+    {
+      "surfaceKey": "com.google.gemini.cli.release-stream",
+      "fromRecordId": "com.google.gemini.cli.0-55-1",
+      "toRecordId": "com.google.gemini.cli.0-56-0",
+      "fromVersion": "0.55.1",
+      "toVersion": "0.56.0",
+      "releaseSource": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.56.0"
+    },
+    {
+      "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
+      "fromRecordId": "com.jetbrains.junie.ide-plugin.262-579-25",
+      "toRecordId": "com.jetbrains.junie.ide-plugin.262-579-38",
+      "fromVersion": "262.579.25",
+      "toVersion": "262.579.38",
+      "releaseSource": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1144887"
+    },
+    {
+      "surfaceKey": "com.openai.codex.cli.stable",
+      "fromRecordId": "com.openai.codex.cli.0-147-0",
+      "toRecordId": "com.openai.codex.cli.0-148-0",
+      "fromVersion": "0.147.0",
+      "toVersion": "0.148.0",
+      "releaseSource": "https://github.com/openai/codex/releases/tag/rust-v0.148.0"
+    },
+    {
+      "surfaceKey": "dev.zed.agent.native.desktop-stable",
+      "fromRecordId": "dev.zed.agent.native.1-15-0",
+      "toRecordId": "dev.zed.agent.native.1-16-1",
+      "fromVersion": "1.15.0",
+      "toVersion": "1.16.1",
+      "releaseSource": "https://zed.dev/releases/stable"
+    }
+  ],
+  "sourceOnlyDossierDecisions": [
+    {
+      "recordId": "com.cursor.cli.agent.beta",
+      "identity": "rolling beta",
+      "officialSource": "https://cursor.com/docs/cli/overview",
+      "decision": "retained-source-only-not-admitted"
+    },
+    {
+      "recordId": "com.windsurf.cascade.ide.rolling",
+      "identity": "rolling service",
+      "officialSource": "https://docs.windsurf.com/llms.txt",
+      "decision": "retained-source-only-not-admitted"
+    },
+    {
+      "recordId": "com.github.copilot.visual-studio.agent-mode.rolling",
+      "identity": "Visual Studio 2022 17.14+ rolling host",
+      "officialSource": "https://learn.microsoft.com/en-us/visualstudio/ide/copilot-agent-mode?view=visualstudio",
+      "decision": "retained-source-only-not-admitted"
+    },
+    {
+      "recordId": "org.zoo-code.vscode-extension.3-78-0",
+      "identity": "v3.78.0",
+      "officialSource": "https://github.com/Zoo-Code-Org/Zoo-Code/releases/tag/v3.78.0",
+      "decision": "retained-source-only-not-admitted"
+    }
+  ],
+  "excludedScopeDecisions": [
+    "CodeRabbit",
+    "Greptile",
+    "generic JetBrains agent-host surface"
+  ],
+  "boundaries": {
+    "publisherSourcesOnly": true,
+    "agentsInstalledOrRun": false,
+    "independentEvidenceCredited": false,
+    "rankings": false,
+    "recommendations": false,
+    "suitabilityCalculations": false,
+    "note": "This refresh rechecked current identity and retention state for every accepted surface on 2026-08-20. It preserves all 106 prior records and adds successors only where an official publisher source establishes a newer exact identity. Rolling runtime, model and effective-configuration applicability remain unresolved. Retention means no exact successor was admitted; it does not claim rolling source prose was unchanged."
+  }
+}

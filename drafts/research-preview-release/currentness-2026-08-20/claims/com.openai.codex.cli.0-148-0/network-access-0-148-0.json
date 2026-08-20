@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.network-access-0-148-0",
+  "slug": "network-access-0-148-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": {
+      "kind": "cli",
+      "name": "Codex CLI",
+      "slug": "openai-codex-cli-0-148-0"
+    }
+  },
+  "claim": {
+    "category": "authority.network",
+    "statement": "The generated configuration schema at tag rust-v0.148.0 represents workspace-write network access as a separate boolean setting that defaults to false."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "OpenAI"
+  },
+  "source": {
+    "uri": "https://github.com/openai/codex/blob/rust-v0.148.0/codex-rs/core/config.schema.json",
+    "title": "Codex 0.148.0 generated configuration schema",
+    "locator": "sandbox_workspace_write network_access property and default",
+    "publishedAt": null,
+    "capturedAt": "2026-08-20T07:58:04.453Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "0.148.0"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "network disabled",
+        "network enabled"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "workspace-write sandbox network setting"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-20",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-20",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "source-unavailable",
+      "claimant-correction",
+      "product-version-change",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "A schema default does not prove the effective value or all network paths of a session.",
+    "Proxy routing, web-search mode and remote-host transport remain separate boundaries."
+  ],
+  "unknowns": [
+    "The effective network flag, destinations, DNS path, subprocess coverage and enforcement are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

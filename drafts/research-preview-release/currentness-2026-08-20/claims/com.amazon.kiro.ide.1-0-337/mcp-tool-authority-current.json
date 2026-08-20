@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.amazon.kiro.ide.mcp-tool-authority-current",
+  "slug": "mcp-tool-authority-current",
+  "subject": {
+    "id": "com.amazon.kiro.ide",
+    "name": "Kiro IDE",
+    "publisher": "Amazon Web Services",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Kiro IDE",
+      "slug": "aws-kiro-ide-1-0-337"
+    }
+  },
+  "claim": {
+    "category": "tool.mcp-authority",
+    "statement": "Current Kiro MCP documentation says configured servers can expose tools, Kiro can select them, tools request approval by default, named tools may be auto-approved, and servers or individual tools may be disabled."
+  },
+  "provenance": {
+    "kind": "publisher-documentation",
+    "claimant": "Amazon Web Services"
+  },
+  "source": {
+    "uri": "https://kiro.dev/docs/mcp/usage/",
+    "title": "Kiro MCP tools",
+    "locator": "Managing individual tools and Tool approval process",
+    "publishedAt": null,
+    "capturedAt": "2026-08-20T07:58:02.088Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "configured MCP server",
+        "tool enabled or disabled",
+        "per-use approval",
+        "autoApprove"
+      ]
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local or remote MCP server"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": null,
+    "reason": "Rolling publisher documentation."
+  },
+  "review": {
+    "reviewedAt": "2026-08-20",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "mcp-documentation-change",
+      "tool-policy-change"
+    ]
+  },
+  "limitations": [
+    "MCP servers are external components with their own authority and are not identified by the Kiro client version."
+  ],
+  "unknowns": [
+    "Servers, transport, tools, schemas, parameters, credentials, disabled lists and approvals are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

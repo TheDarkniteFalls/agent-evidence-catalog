@@ -3,13 +3,13 @@
   "artifactType": "unpublished-real-agent-lifecycle-overlay",
   "synthetic": false,
   "unpublished": true,
-  "asOf": "2026-08-18",
+  "asOf": "2026-08-20",
   "interpretationBoundary": {
     "recordsModified": false,
     "publisherSourcesOnly": true,
     "claimsOrObservationsAdded": false,
     "catalogIntegration": false,
-    "note": "This additive all-surface currentness projection preserves every prior record, rechecks retention state for all 55 surfaces, and adds only official-source exact-identity successors. It does not add observed behaviour, independent evidence, scoring, ranking, recommendations or suitability calculations."
+    "note": "This additive all-surface currentness projection preserves every prior record, rechecks retention state for all 55 surfaces, and adds only official-source exact-identity successors. A retained surface means no exact successor was admitted; it does not claim that rolling source prose was unchanged. The projection does not add observed behaviour, independent evidence, scoring, ranking, recommendations or suitability calculations."
   },
   "sources": [
     {
@@ -965,6 +965,87 @@
       "kind": "release-list",
       "publisherControlled": true,
       "reviewedAt": "2026-08-18"
+    },
+    {
+      "id": "currentness-qwen-code-cli-v0-21-14",
+      "publisher": "Alibaba Cloud Qwen team",
+      "title": "Qwen Code CLI 0.21.14 official current identity",
+      "uri": "https://github.com/QwenLM/qwen-code/releases/tag/v0.21.14",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-20"
+    },
+    {
+      "id": "currentness-kiro-ide-1-0-337",
+      "publisher": "Amazon Web Services",
+      "title": "Kiro IDE 1.0.337 official current identity",
+      "uri": "https://kiro.dev/changelog/ide/1-0-337/",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-20"
+    },
+    {
+      "id": "currentness-opencode-v1-18-19",
+      "publisher": "Anomaly Innovations, Inc.",
+      "title": "OpenCode CLI 1.18.19 official current identity",
+      "uri": "https://github.com/anomalyco/opencode/releases/tag/v1.18.19",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-20"
+    },
+    {
+      "id": "currentness-claude-code-v2-1-237",
+      "publisher": "Anthropic PBC",
+      "title": "Claude Code CLI 2.1.237 official current identity",
+      "uri": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-20"
+    },
+    {
+      "id": "currentness-antigravity-cli-1-1-16",
+      "publisher": "Google",
+      "title": "Antigravity CLI 1.1.16 official current identity",
+      "uri": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.16",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-20"
+    },
+    {
+      "id": "currentness-gemini-cli-v0-56-0",
+      "publisher": "Google",
+      "title": "Gemini CLI 0.56.0 official current identity",
+      "uri": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.56.0",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-20"
+    },
+    {
+      "id": "currentness-junie-plugin-262-579-38",
+      "publisher": "JetBrains",
+      "title": "Junie IDE plugin 262.579.38 official current identity",
+      "uri": "https://plugins.jetbrains.com/plugin/30252-junie/versions/stable/1144887",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-20"
+    },
+    {
+      "id": "currentness-openai-codex-rust-v0-148-0",
+      "publisher": "OpenAI",
+      "title": "OpenAI Codex CLI 0.148.0 official current identity",
+      "uri": "https://github.com/openai/codex/releases/tag/rust-v0.148.0",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-20"
+    },
+    {
+      "id": "currentness-zed-stable-1-16-1",
+      "publisher": "Zed Industries, Inc.",
+      "title": "Zed Agent 1.16.1 official current identity",
+      "uri": "https://zed.dev/releases/stable",
+      "kind": "release-list",
+      "publisherControlled": true,
+      "reviewedAt": "2026-08-20"
     }
   ],
   "entries": [
@@ -972,7 +1053,7 @@
       "recordId": "com.cline.bot.vscode-extension.4-1-2",
       "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "cline-marketplace-listing"
       ],
@@ -985,7 +1066,7 @@
       "recordId": "org.openhands.cli.1-16-0",
       "surfaceKey": "org.openhands.openhands.cli.stable",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "openhands-cli-release-list",
         "openhands-cli-readme"
@@ -999,7 +1080,7 @@
       "recordId": "com.github.copilot.cloud-agent.rolling",
       "surfaceKey": "com.github.copilot.cloud-agent.rolling-service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "github-copilot-cloud-agent-changelog"
       ],
@@ -1012,7 +1093,7 @@
       "recordId": "com.google.jules.hosted.rolling",
       "surfaceKey": "com.google.jules.hosted.rolling-service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "google-jules-changelog"
       ],
@@ -1025,7 +1106,7 @@
       "recordId": "com.openai.codex.cli.0-90-0",
       "surfaceKey": "com.openai.codex.cli.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "openai-codex-latest-release"
       ],
@@ -1038,7 +1119,7 @@
       "recordId": "com.cursor.ide.foreground-agent.3-14",
       "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "cursor-desktop-download"
       ],
@@ -1051,7 +1132,7 @@
       "recordId": "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
       "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
       "status": "historical",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "gitlab-developer-flow-documentation",
         "gitlab-19-2-release-notes"
@@ -1065,7 +1146,7 @@
       "recordId": "com.cognition.devin.hosted.rolling",
       "surfaceKey": "com.cognition.devin.hosted.rolling-service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "cognition-devin-2026-release-notes"
       ],
@@ -1078,7 +1159,7 @@
       "recordId": "com.anthropic.claude-code.cli.2-1-117",
       "surfaceKey": "com.anthropic.claude-code.cli.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "anthropic-claude-code-latest-release"
       ],
@@ -1091,7 +1172,7 @@
       "recordId": "dev.zed.agent.native.1-13-1",
       "surfaceKey": "dev.zed.agent.native.desktop-stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "zed-stable-releases"
       ],
@@ -1104,7 +1185,7 @@
       "recordId": "com.replit.agent.hosted.agent-4",
       "surfaceKey": "com.replit.agent.hosted.agent-4-service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "replit-agent-4-announcement"
       ],
@@ -1117,7 +1198,7 @@
       "recordId": "org.aider-ai.aider.cli.0-86-0",
       "surfaceKey": "org.aider-ai.aider.cli.stable",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "aider-latest-release"
       ],
@@ -1130,7 +1211,7 @@
       "recordId": "com.amazon.kiro.ide.1-0-242",
       "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "kiro-ide-changelog"
       ],
@@ -1143,7 +1224,7 @@
       "recordId": "com.lovable.agent.hosted.rolling",
       "surfaceKey": "com.lovable.build-mode.hosted.rolling-service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "lovable-build-mode-documentation"
       ],
@@ -1156,7 +1237,7 @@
       "recordId": "com.anomaly.opencode.cli.1-18-11",
       "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "opencode-latest-release"
       ],
@@ -1169,7 +1250,7 @@
       "recordId": "com.cognition.devin-desktop.cascade.3-6-27",
       "surfaceKey": "com.cognition.devin-desktop.cascade.desktop-stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "cognition-devin-desktop-releases",
         "cognition-cascade-documentation"
@@ -1183,7 +1264,7 @@
       "recordId": "com.openai.codex.cli.0-146-0",
       "surfaceKey": "com.openai.codex.cli.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "openai-codex-latest-release"
       ],
@@ -1196,7 +1277,7 @@
       "recordId": "com.anthropic.claude-code.cli.2-1-220",
       "surfaceKey": "com.anthropic.claude-code.cli.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "anthropic-claude-code-latest-release"
       ],
@@ -1209,7 +1290,7 @@
       "recordId": "com.gitlab.duo.developer-flow.19-2",
       "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "gitlab-developer-flow-documentation",
         "gitlab-19-2-release-notes"
@@ -1223,7 +1304,7 @@
       "recordId": "com.zed.agent.native.stable.1-12-1",
       "surfaceKey": "dev.zed.agent.native.desktop-stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "zed-stable-releases",
         "zed-preview-releases"
@@ -1237,7 +1318,7 @@
       "recordId": "com.cline.bot.vscode-extension.4-1-3",
       "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "cline-marketplace-listing"
       ],
@@ -1250,7 +1331,7 @@
       "recordId": "com.gitlab.duo.developer-flow.19-2-1",
       "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "gitlab-19-2-1-patch-release",
         "gitlab-19-2-1-protected-tag",
@@ -1266,7 +1347,7 @@
       "recordId": "com.google.gemini.cli.0-54-4",
       "surfaceKey": "com.google.gemini.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-google-gemini-cli"
       ],
@@ -1279,7 +1360,7 @@
       "recordId": "com.google.antigravity.cli.1-1-11",
       "surfaceKey": "com.google.antigravity.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-google-antigravity-cli"
       ],
@@ -1292,7 +1373,7 @@
       "recordId": "org.aaif.goose.cli.1-45-0",
       "surfaceKey": "org.aaif.goose.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-aaif-goose-cli"
       ],
@@ -1305,7 +1386,7 @@
       "recordId": "com.alibaba.qwen-code.cli.0-21-7",
       "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-alibaba-qwen-code-cli"
       ],
@@ -1318,7 +1399,7 @@
       "recordId": "ai.mistral.vibe.cli.rolling",
       "surfaceKey": "ai.mistral.vibe.cli.release-stream",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-mistral-vibe-cli"
       ],
@@ -1331,7 +1412,7 @@
       "recordId": "com.sourcegraph.amp.cli.rolling",
       "surfaceKey": "com.sourcegraph.amp.cli.release-stream",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-amp-cli"
       ],
@@ -1344,7 +1425,7 @@
       "recordId": "com.github.copilot.cli.1-0-78",
       "surfaceKey": "com.github.copilot.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-github-copilot-cli"
       ],
@@ -1357,7 +1438,7 @@
       "recordId": "com.jetbrains.junie.cli.beta-rolling",
       "surfaceKey": "com.jetbrains.junie.cli.beta",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-jetbrains-junie-cli"
       ],
@@ -1370,7 +1451,7 @@
       "recordId": "com.amazon.kiro.cli.rolling",
       "surfaceKey": "com.amazon.kiro.cli.release-stream",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-aws-kiro-cli"
       ],
@@ -1383,7 +1464,7 @@
       "recordId": "com.cline.bot.cli.3-0-51",
       "surfaceKey": "com.cline.bot.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-cline-cli"
       ],
@@ -1396,7 +1477,7 @@
       "recordId": "com.augmentcode.auggie.cli.rolling",
       "surfaceKey": "com.augmentcode.auggie.cli.release-stream",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-augment-auggie-cli"
       ],
@@ -1409,7 +1490,7 @@
       "recordId": "ai.factory.droid.cli.rolling",
       "surfaceKey": "ai.factory.droid.cli.release-stream",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-factory-droid-cli"
       ],
@@ -1422,7 +1503,7 @@
       "recordId": "com.roocode.vscode-extension.3-54-0",
       "surfaceKey": "com.roocode.vscode-extension.final",
       "status": "discontinued",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-roo-code-vscode"
       ],
@@ -1435,7 +1516,7 @@
       "recordId": "com.continue.dev.ide-agent.2-0-0",
       "surfaceKey": "com.continue.dev.ide-agent.final",
       "status": "historical",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-continue-vscode-agent"
       ],
@@ -1448,7 +1529,7 @@
       "recordId": "com.jetbrains.junie.ide-plugin.262-132-31",
       "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-jetbrains-junie-ide"
       ],
@@ -1461,7 +1542,7 @@
       "recordId": "com.amazon.q-developer.ide-plugins.sunset",
       "surfaceKey": "com.amazon.q-developer.ide-plugins.supported-sunset",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-aws-amazon-q-developer-ide"
       ],
@@ -1474,7 +1555,7 @@
       "recordId": "com.google.gemini-code-assist.ide-agent.rolling",
       "surfaceKey": "com.google.gemini-code-assist.ide-agent.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-google-gemini-code-assist-agent"
       ],
@@ -1487,7 +1568,7 @@
       "recordId": "com.github.copilot.vscode-agent.rolling",
       "surfaceKey": "com.github.copilot.vscode-agent.local-host",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-github-copilot-vscode-agent"
       ],
@@ -1500,7 +1581,7 @@
       "recordId": "com.openai.codex.ide-extension.rolling",
       "surfaceKey": "com.openai.codex.ide-extension.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-openai-codex-ide-extension"
       ],
@@ -1513,7 +1594,7 @@
       "recordId": "com.alibaba.qwen-code.vscode-extension.beta-rolling",
       "surfaceKey": "com.alibaba.qwen-code.vscode-extension.beta",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-alibaba-qwen-code-vscode"
       ],
@@ -1526,7 +1607,7 @@
       "recordId": "ai.mistral.vibe-code.vscode-extension.rolling",
       "surfaceKey": "ai.mistral.vibe-code.vscode-extension.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-mistral-vibe-code-vscode"
       ],
@@ -1539,7 +1620,7 @@
       "recordId": "com.tabnine.agent.ide.rolling",
       "surfaceKey": "com.tabnine.agent.ide.deployment-lines",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-tabnine-agent-ide"
       ],
@@ -1552,7 +1633,7 @@
       "recordId": "dev.warp.oz.local-agent.desktop.rolling",
       "surfaceKey": "dev.warp.oz.local-agent.desktop",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-warp-agent-mode-desktop"
       ],
@@ -1565,7 +1646,7 @@
       "recordId": "com.augmentcode.agent.ide.rolling",
       "surfaceKey": "com.augmentcode.agent.ide.plugins",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-augment-ide-agent"
       ],
@@ -1578,7 +1659,7 @@
       "recordId": "com.openai.codex.cloud.rolling",
       "surfaceKey": "com.openai.codex.cloud.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-openai-codex-cloud"
       ],
@@ -1591,7 +1672,7 @@
       "recordId": "com.cursor.cloud-agents.rolling",
       "surfaceKey": "com.cursor.cloud-agents.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-cursor-background-agents"
       ],
@@ -1604,7 +1685,7 @@
       "recordId": "com.gitlab.duo.software-development-flow.rolling",
       "surfaceKey": "com.gitlab.duo.software-development-flow.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-gitlab-duo-software-development-flow"
       ],
@@ -1617,7 +1698,7 @@
       "recordId": "com.gitlab.duo.code-review-flow.19-2",
       "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-gitlab-duo-code-review-flow"
       ],
@@ -1630,7 +1711,7 @@
       "recordId": "ai.mistral.vibe-code.web.rolling",
       "surfaceKey": "ai.mistral.vibe-code.web.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-mistral-vibe-code-web"
       ],
@@ -1643,7 +1724,7 @@
       "recordId": "com.amazon.kiro.web.preview-rolling",
       "surfaceKey": "com.amazon.kiro.web.preview",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-aws-kiro-web"
       ],
@@ -1656,7 +1737,7 @@
       "recordId": "org.openhands.cloud.rolling",
       "surfaceKey": "org.openhands.cloud.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-openhands-cloud"
       ],
@@ -1669,7 +1750,7 @@
       "recordId": "com.github.anthropic.claude-agent.preview-rolling",
       "surfaceKey": "com.github.anthropic.claude-agent.preview",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-github-anthropic-claude-agent"
       ],
@@ -1682,7 +1763,7 @@
       "recordId": "com.github.openai.codex-agent.preview-rolling",
       "surfaceKey": "com.github.openai.codex-agent.preview",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-github-openai-codex-agent"
       ],
@@ -1695,7 +1776,7 @@
       "recordId": "ai.factory.droid-computers.rolling",
       "surfaceKey": "ai.factory.droid-computers.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-factory-cloud-droids"
       ],
@@ -1708,7 +1789,7 @@
       "recordId": "dev.warp.oz.cloud-agents.rolling",
       "surfaceKey": "dev.warp.oz.cloud-agents.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-warp-cloud-agents"
       ],
@@ -1721,7 +1802,7 @@
       "recordId": "com.amazon.q-developer.github.preview-rolling",
       "surfaceKey": "com.amazon.q-developer.github.preview",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-amazon-q-developer-github"
       ],
@@ -1734,7 +1815,7 @@
       "recordId": "com.stackblitz.bolt.claude-agent.rolling",
       "surfaceKey": "com.stackblitz.bolt.claude-agent.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-stackblitz-bolt-claude-agent"
       ],
@@ -1747,7 +1828,7 @@
       "recordId": "com.vercel.v0.agent.rolling",
       "surfaceKey": "com.vercel.v0.agent.service",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-vercel-v0-agent"
       ],
@@ -1760,7 +1841,7 @@
       "recordId": "com.vercel.agent.public-beta",
       "surfaceKey": "com.vercel.agent.public-beta",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "critical-mass-vercel-agent"
       ],
@@ -1773,7 +1854,7 @@
       "recordId": "com.alibaba.qwen-code.cli.0-21-8",
       "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-qwen-code-cli-v0-21-8"
       ],
@@ -1786,7 +1867,7 @@
       "recordId": "com.amazon.kiro.ide.1-0-288",
       "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-kiro-ide-1-0-288"
       ],
@@ -1799,7 +1880,7 @@
       "recordId": "com.anomaly.opencode.cli.1-18-15",
       "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-opencode-v1-18-15"
       ],
@@ -1812,7 +1893,7 @@
       "recordId": "com.anomaly.opencode.cli.1-18-16",
       "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-opencode-v1-18-16"
       ],
@@ -1825,7 +1906,7 @@
       "recordId": "com.anthropic.claude-code.cli.2-1-226",
       "surfaceKey": "com.anthropic.claude-code.cli.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-claude-code-v2-1-226"
       ],
@@ -1838,7 +1919,7 @@
       "recordId": "com.cline.bot.cli.3-0-52",
       "surfaceKey": "com.cline.bot.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-cline-cli-v3-0-52"
       ],
@@ -1851,7 +1932,7 @@
       "recordId": "com.cline.bot.vscode-extension.4-1-7",
       "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-cline-marketplace-4-1-7"
       ],
@@ -1864,7 +1945,7 @@
       "recordId": "com.cursor.ide.foreground-agent.3-15",
       "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-cursor-desktop-3-15"
       ],
@@ -1877,7 +1958,7 @@
       "recordId": "com.gitlab.duo.code-review-flow.19-2-1",
       "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-gitlab-code-review-flow-19-2-1"
       ],
@@ -1890,7 +1971,7 @@
       "recordId": "com.jetbrains.junie.ide-plugin.262-132-35",
       "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-junie-plugin-262-132-35"
       ],
@@ -1902,21 +1983,21 @@
     {
       "recordId": "com.openai.codex.cli.0-147-0",
       "surfaceKey": "com.openai.codex.cli.stable",
-      "status": "current",
-      "reviewedAt": "2026-08-18",
+      "status": "superseded",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-openai-codex-rust-v0-147-0"
       ],
       "supersedesRecordId": "com.openai.codex.cli.0-146-0",
-      "supersededByRecordId": null,
+      "supersededByRecordId": "com.openai.codex.cli.0-148-0",
       "historicalSignificance": null,
-      "note": "OpenAI's official release feed identifies rust-v0.147.0 as the latest stable Codex CLI release; prerelease 0.148 tags are excluded."
+      "note": "OpenAI's official release feed identifies rust-v0.148.0 as the latest stable Codex CLI release reviewed on 2026-08-20. The preserved 0.147.0 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "dev.zed.agent.native.1-14-2",
       "surfaceKey": "dev.zed.agent.native.desktop-stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-zed-stable-1-14-2"
       ],
@@ -1929,7 +2010,7 @@
       "recordId": "com.alibaba.qwen-code.cli.0-21-11",
       "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-qwen-code-cli-v0-21-11"
       ],
@@ -1942,7 +2023,7 @@
       "recordId": "com.amazon.kiro.ide.1-0-293",
       "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-kiro-ide-1-0-293"
       ],
@@ -1954,21 +2035,21 @@
     {
       "recordId": "com.anomaly.opencode.cli.1-18-18",
       "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
-      "status": "current",
-      "reviewedAt": "2026-08-18",
+      "status": "superseded",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-opencode-v1-18-18"
       ],
       "supersedesRecordId": "com.anomaly.opencode.cli.1-18-16",
-      "supersededByRecordId": null,
+      "supersededByRecordId": "com.anomaly.opencode.cli.1-18-19",
       "historicalSignificance": null,
-      "note": "The official release feed identifies v1.18.18 as the latest stable OpenCode release reviewed on 2026-08-13."
+      "note": "The official release feed identifies v1.18.19 as the latest stable OpenCode release reviewed on 2026-08-20. The preserved 1.18.18 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.anthropic.claude-code.cli.2-1-231",
       "surfaceKey": "com.anthropic.claude-code.cli.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-claude-code-v2-1-231"
       ],
@@ -1981,7 +2062,7 @@
       "recordId": "com.cline.bot.cli.3-0-54",
       "surfaceKey": "com.cline.bot.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-cline-cli-v3-0-54"
       ],
@@ -1994,7 +2075,7 @@
       "recordId": "com.cline.bot.vscode-extension.4-1-9",
       "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-cline-vscode-v4-1-9"
       ],
@@ -2007,7 +2088,7 @@
       "recordId": "com.cognition.devin-desktop.cascade.3-7-16",
       "surfaceKey": "com.cognition.devin-desktop.cascade.desktop-stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-devin-desktop-v3-7-16"
       ],
@@ -2020,7 +2101,7 @@
       "recordId": "com.github.copilot.cli.1-0-79",
       "surfaceKey": "com.github.copilot.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-github-copilot-cli-v1-0-79"
       ],
@@ -2033,7 +2114,7 @@
       "recordId": "com.gitlab.duo.developer-flow.19-2-2",
       "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-gitlab-developer-flow-v19-2-2-ee"
       ],
@@ -2046,7 +2127,7 @@
       "recordId": "com.gitlab.duo.code-review-flow.19-2-2",
       "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-gitlab-code-review-flow-v19-2-2-ee"
       ],
@@ -2059,7 +2140,7 @@
       "recordId": "com.google.antigravity.cli.1-1-12",
       "surfaceKey": "com.google.antigravity.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-antigravity-cli-1-1-12"
       ],
@@ -2071,21 +2152,21 @@
     {
       "recordId": "com.google.gemini.cli.0-55-1",
       "surfaceKey": "com.google.gemini.cli.release-stream",
-      "status": "current",
-      "reviewedAt": "2026-08-18",
+      "status": "superseded",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-gemini-cli-v0-55-1"
       ],
       "supersedesRecordId": "com.google.gemini.cli.0-54-4",
-      "supersededByRecordId": null,
+      "supersededByRecordId": "com.google.gemini.cli.0-56-0",
       "historicalSignificance": null,
-      "note": "Google's official release feed identifies v0.55.1 as the latest Gemini CLI release reviewed on 2026-08-13."
+      "note": "Google's official release feed identifies v0.56.0 as the latest Gemini CLI release reviewed on 2026-08-20. The preserved 0.55.1 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.jetbrains.junie.ide-plugin.262-579-3",
       "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-junie-plugin-262-579-3"
       ],
@@ -2097,21 +2178,21 @@
     {
       "recordId": "dev.zed.agent.native.1-15-0",
       "surfaceKey": "dev.zed.agent.native.desktop-stable",
-      "status": "current",
-      "reviewedAt": "2026-08-18",
+      "status": "superseded",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-zed-stable-1-15-0"
       ],
       "supersedesRecordId": "dev.zed.agent.native.1-14-2",
-      "supersededByRecordId": null,
+      "supersededByRecordId": "dev.zed.agent.native.1-16-1",
       "historicalSignificance": null,
-      "note": "Zed's official stable release page identifies 1.15.0 as the latest stable release reviewed on 2026-08-13."
+      "note": "Zed's official stable release page identifies 1.16.1 as the latest stable release reviewed on 2026-08-20. The preserved 1.15.0 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "org.aaif.goose.cli.1-46-0",
       "surfaceKey": "org.aaif.goose.cli.release-stream",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-goose-cli-v1-46-0"
       ],
@@ -2124,7 +2205,7 @@
       "recordId": "com.alibaba.qwen-code.cli.0-21-12",
       "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-qwen-code-cli-v0-21-12"
       ],
@@ -2136,21 +2217,21 @@
     {
       "recordId": "com.amazon.kiro.ide.1-0-309",
       "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
-      "status": "current",
-      "reviewedAt": "2026-08-18",
+      "status": "superseded",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-kiro-ide-1-0-309"
       ],
       "supersedesRecordId": "com.amazon.kiro.ide.1-0-293",
-      "supersededByRecordId": null,
+      "supersededByRecordId": "com.amazon.kiro.ide.1-0-337",
       "historicalSignificance": null,
-      "note": "Kiro's official IDE changelog lists 1.0.309 first and dates it 2026-08-13."
+      "note": "Kiro's official IDE changelog lists 1.0.337 first and dates it 2026-08-18. The preserved 1.0.309 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.anthropic.claude-code.cli.2-1-232",
       "surfaceKey": "com.anthropic.claude-code.cli.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-claude-code-v2-1-232"
       ],
@@ -2163,7 +2244,7 @@
       "recordId": "com.anthropic.claude-code.cli.2-1-233",
       "surfaceKey": "com.anthropic.claude-code.cli.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-claude-code-v2-1-233"
       ],
@@ -2176,7 +2257,7 @@
       "recordId": "com.cline.bot.cli.3-0-55",
       "surfaceKey": "com.cline.bot.cli.release-stream",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-cline-cli-v3-0-55"
       ],
@@ -2189,7 +2270,7 @@
       "recordId": "com.cline.bot.vscode-extension.4-1-10",
       "surfaceKey": "com.cline.bot.cline.vscode-extension.marketplace",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-cline-vscode-v4-1-10"
       ],
@@ -2202,7 +2283,7 @@
       "recordId": "com.cognition.devin-desktop.cascade.3-7-25",
       "surfaceKey": "com.cognition.devin-desktop.cascade.desktop-stable",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-devin-desktop-v3-7-25"
       ],
@@ -2215,7 +2296,7 @@
       "recordId": "com.github.copilot.cli.1-0-80",
       "surfaceKey": "com.github.copilot.cli.release-stream",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-github-copilot-cli-v1-0-80"
       ],
@@ -2228,7 +2309,7 @@
       "recordId": "com.google.antigravity.cli.1-1-13",
       "surfaceKey": "com.google.antigravity.cli.release-stream",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-antigravity-cli-1-1-13"
       ],
@@ -2241,7 +2322,7 @@
       "recordId": "com.jetbrains.junie.ide-plugin.262-579-14",
       "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-junie-plugin-262-579-14"
       ],
@@ -2253,21 +2334,21 @@
     {
       "recordId": "com.alibaba.qwen-code.cli.0-21-13",
       "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
-      "status": "current",
-      "reviewedAt": "2026-08-18",
+      "status": "superseded",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-qwen-code-cli-v0-21-13"
       ],
       "supersedesRecordId": "com.alibaba.qwen-code.cli.0-21-12",
-      "supersededByRecordId": null,
+      "supersededByRecordId": "com.alibaba.qwen-code.cli.0-21-14",
       "historicalSignificance": null,
-      "note": "The official release feed identifies v0.21.13 as the latest stable Qwen Code CLI release reviewed on 2026-08-17."
+      "note": "The official release feed identifies v0.21.14 as the latest stable Qwen Code CLI release reviewed on 2026-08-20. The preserved 0.21.13 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.cursor.ide.foreground-agent.3-16",
       "surfaceKey": "com.cursor.ide.foreground-agent.desktop-stable",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-cursor-ide-3-16"
       ],
@@ -2280,7 +2361,7 @@
       "recordId": "com.jetbrains.junie.ide-plugin.262-579-20",
       "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
       "status": "superseded",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-junie-plugin-262-579-20"
       ],
@@ -2292,47 +2373,47 @@
     {
       "recordId": "com.anthropic.claude-code.cli.2-1-234",
       "surfaceKey": "com.anthropic.claude-code.cli.stable",
-      "status": "current",
-      "reviewedAt": "2026-08-18",
+      "status": "superseded",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-claude-code-v2-1-234"
       ],
       "supersedesRecordId": "com.anthropic.claude-code.cli.2-1-233",
-      "supersededByRecordId": null,
+      "supersededByRecordId": "com.anthropic.claude-code.cli.2-1-237",
       "historicalSignificance": null,
-      "note": "Anthropic's official release feed identifies v2.1.234 as the latest stable Claude Code CLI release reviewed on 2026-08-18."
+      "note": "Anthropic's official release feed identifies v2.1.237 as the latest stable Claude Code CLI release reviewed on 2026-08-20. The preserved 2.1.234 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.google.antigravity.cli.1-1-14",
       "surfaceKey": "com.google.antigravity.cli.release-stream",
-      "status": "current",
-      "reviewedAt": "2026-08-18",
+      "status": "superseded",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-antigravity-cli-1-1-14"
       ],
       "supersedesRecordId": "com.google.antigravity.cli.1-1-13",
-      "supersededByRecordId": null,
+      "supersededByRecordId": "com.google.antigravity.cli.1-1-16",
       "historicalSignificance": null,
-      "note": "Google's official release feed identifies 1.1.14 as the latest Antigravity CLI release reviewed on 2026-08-18."
+      "note": "Google's official release feed identifies 1.1.16 as the latest Antigravity CLI release reviewed on 2026-08-20. The preserved 1.1.14 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.jetbrains.junie.ide-plugin.262-579-25",
       "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
-      "status": "current",
-      "reviewedAt": "2026-08-18",
+      "status": "superseded",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-junie-plugin-262-579-25"
       ],
       "supersedesRecordId": "com.jetbrains.junie.ide-plugin.262-579-20",
-      "supersededByRecordId": null,
+      "supersededByRecordId": "com.jetbrains.junie.ide-plugin.262-579-38",
       "historicalSignificance": null,
-      "note": "JetBrains Marketplace identifies stable Junie IDE plugin update 1142176 as version 262.579.25, published 2026-08-17T23:56:25Z."
+      "note": "JetBrains Marketplace identifies stable Junie IDE plugin update 1144887 as version 262.579.38, published 2026-08-20T06:16:46Z. The preserved 262.579.25 record remains inspectable as the direct predecessor."
     },
     {
       "recordId": "com.gitlab.duo.developer-flow.19-2-4",
       "surfaceKey": "com.gitlab.duo-agent-platform.developer-flow.release-line",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-gitlab-developer-flow-v19-2-4-ee"
       ],
@@ -2345,7 +2426,7 @@
       "recordId": "com.gitlab.duo.code-review-flow.19-2-4",
       "surfaceKey": "com.gitlab.duo.code-review-flow.release-line",
       "status": "current",
-      "reviewedAt": "2026-08-18",
+      "reviewedAt": "2026-08-20",
       "basisSourceIds": [
         "currentness-gitlab-code-review-flow-v19-2-4-ee"
       ],
@@ -2353,6 +2434,123 @@
       "supersededByRecordId": null,
       "historicalSignificance": null,
       "note": "GitLab's protected v19.2.4-ee tag advances the exact patch identity for the 19.2 release line containing Code Review Flow."
+    },
+    {
+      "recordId": "com.alibaba.qwen-code.cli.0-21-14",
+      "surfaceKey": "com.alibaba.qwen-code.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-20",
+      "basisSourceIds": [
+        "currentness-qwen-code-cli-v0-21-14"
+      ],
+      "supersedesRecordId": "com.alibaba.qwen-code.cli.0-21-13",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The official release feed identifies v0.21.14 as the latest stable Qwen Code CLI release reviewed on 2026-08-20."
+    },
+    {
+      "recordId": "com.amazon.kiro.ide.1-0-337",
+      "surfaceKey": "com.amazon.kiro.ide.desktop-stable",
+      "status": "current",
+      "reviewedAt": "2026-08-20",
+      "basisSourceIds": [
+        "currentness-kiro-ide-1-0-337"
+      ],
+      "supersedesRecordId": "com.amazon.kiro.ide.1-0-309",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Kiro's official IDE changelog lists 1.0.337 first and dates it 2026-08-18."
+    },
+    {
+      "recordId": "com.anomaly.opencode.cli.1-18-19",
+      "surfaceKey": "com.anomaly.opencode.cli-tui.stable",
+      "status": "current",
+      "reviewedAt": "2026-08-20",
+      "basisSourceIds": [
+        "currentness-opencode-v1-18-19"
+      ],
+      "supersedesRecordId": "com.anomaly.opencode.cli.1-18-18",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "The official release feed identifies v1.18.19 as the latest stable OpenCode release reviewed on 2026-08-20."
+    },
+    {
+      "recordId": "com.anthropic.claude-code.cli.2-1-237",
+      "surfaceKey": "com.anthropic.claude-code.cli.stable",
+      "status": "current",
+      "reviewedAt": "2026-08-20",
+      "basisSourceIds": [
+        "currentness-claude-code-v2-1-237"
+      ],
+      "supersedesRecordId": "com.anthropic.claude-code.cli.2-1-234",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Anthropic's official release feed identifies v2.1.237 as the latest stable Claude Code CLI release reviewed on 2026-08-20."
+    },
+    {
+      "recordId": "com.google.antigravity.cli.1-1-16",
+      "surfaceKey": "com.google.antigravity.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-20",
+      "basisSourceIds": [
+        "currentness-antigravity-cli-1-1-16"
+      ],
+      "supersedesRecordId": "com.google.antigravity.cli.1-1-14",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Google's official release feed identifies 1.1.16 as the latest Antigravity CLI release reviewed on 2026-08-20."
+    },
+    {
+      "recordId": "com.google.gemini.cli.0-56-0",
+      "surfaceKey": "com.google.gemini.cli.release-stream",
+      "status": "current",
+      "reviewedAt": "2026-08-20",
+      "basisSourceIds": [
+        "currentness-gemini-cli-v0-56-0"
+      ],
+      "supersedesRecordId": "com.google.gemini.cli.0-55-1",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Google's official release feed identifies v0.56.0 as the latest Gemini CLI release reviewed on 2026-08-20."
+    },
+    {
+      "recordId": "com.jetbrains.junie.ide-plugin.262-579-38",
+      "surfaceKey": "com.jetbrains.junie.ide-plugin.stable",
+      "status": "current",
+      "reviewedAt": "2026-08-20",
+      "basisSourceIds": [
+        "currentness-junie-plugin-262-579-38"
+      ],
+      "supersedesRecordId": "com.jetbrains.junie.ide-plugin.262-579-25",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "JetBrains Marketplace identifies stable Junie IDE plugin update 1144887 as version 262.579.38, published 2026-08-20T06:16:46Z."
+    },
+    {
+      "recordId": "com.openai.codex.cli.0-148-0",
+      "surfaceKey": "com.openai.codex.cli.stable",
+      "status": "current",
+      "reviewedAt": "2026-08-20",
+      "basisSourceIds": [
+        "currentness-openai-codex-rust-v0-148-0"
+      ],
+      "supersedesRecordId": "com.openai.codex.cli.0-147-0",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "OpenAI's official release feed identifies rust-v0.148.0 as the latest stable Codex CLI release reviewed on 2026-08-20."
+    },
+    {
+      "recordId": "dev.zed.agent.native.1-16-1",
+      "surfaceKey": "dev.zed.agent.native.desktop-stable",
+      "status": "current",
+      "reviewedAt": "2026-08-20",
+      "basisSourceIds": [
+        "currentness-zed-stable-1-16-1"
+      ],
+      "supersedesRecordId": "dev.zed.agent.native.1-15-0",
+      "supersededByRecordId": null,
+      "historicalSignificance": null,
+      "note": "Zed's official stable release page identifies 1.16.1 as the latest stable release reviewed on 2026-08-20."
     }
   ]
 }
