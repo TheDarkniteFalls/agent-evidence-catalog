@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "research-preview-browser-qa/0.9",
+  "schemaVersion": "research-preview-browser-qa/1.0",
   "asOf": "2026-08-21",
-  "checkedAt": "2026-08-21T07:09:13.105Z",
+  "checkedAt": "2026-08-21T09:36:03.376Z",
   "loopback": {
     "url": "http://localhost:4173/",
     "listener": "localhost:4173",
@@ -11,7 +11,7 @@
   },
   "sourceDigests": {
     "landingHtmlSha256": "9b2f97613d8c329b64675dcd03363337cd1b1e47e356fee77b338b5d40759268",
-    "previewHtmlSha256": "a311cab9220873f885151e18ab2cbc49ebbb19ef8543a0f2468198a9b00ca34a",
+    "previewHtmlSha256": "cf1de52c0f1035603086c53caa3f0db50b06edb3eb568bf900c73e7754a4b2af",
     "howItWorksHtmlSha256": "dc95f0b040f7646a65ad8e33294199b8d0750a12cd865b3599f395c3faa9acd8",
     "previewDataSha256": "4735a6a35dc16f82a7d84607c003a23f363cb17b5cd752c64776c2e5ee4cfbaf",
     "previewAppSha256": "ebb47482f7d2a12a1c60d1666acc479976bb6a2c34979b0d130b2e661435d21f",
@@ -19,7 +19,7 @@
     "comparisonCoreSha256": "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e",
     "comparisonAppSha256": "60922091477020eab24527ae406b3f8b290fc7e9f80d649fcb1916981793afc0",
     "recordDetailAppSha256": "adc6da13fc9f3fc734d95ba55a21ffd6591da8bd843901ec9851a4467213a45d",
-    "previewStylesSha256": "4920f88607a74785db174f69cf2071b05869971f858227ce45012c7cdc834285",
+    "previewStylesSha256": "04cc3dee588f42ddf4914289b7a6ccf903088fd5ccd529ceead8a7bc312663d9",
     "recordDetailsManifestSha256": "b9e6e68bec48ec368f50a0807551942e77b9bae8fe187cb5e683973e0da926ed",
     "sitemapSha256": "cc8e44b443de65309932bb701b4803036e8974603e0d9e02f56ef2b53d98871b"
   },
@@ -60,7 +60,7 @@
   "publicationAuthorQa": {
     "workstream": "AEC-REFRESH-2026-08-21-BROWSER-QA",
     "result": "PASS",
-    "checkedAt": "2026-08-21T07:09:13.105Z",
+    "checkedAt": "2026-08-21T09:36:03.376Z",
     "baseHead": "68522b168319ee17fe1c8290ffb9c284acf36b98",
     "browser": "Codex in-app Browser",
     "currentness": {
@@ -155,6 +155,32 @@
       "historyCards": 70,
       "historyCollapsedInitially": true,
       "historyExpandedOnRequest": true,
+      "historyRenderedState": {
+        "initial": {
+          "ariaExpanded": "false",
+          "boundingBoxHeightPx": 0,
+          "computedDisplay": "none",
+          "hiddenAttribute": true,
+          "toggleText": "Show 70 history records",
+          "visibleCardCount": 0
+        },
+        "expanded": {
+          "ariaExpanded": "true",
+          "boundingBoxHeightPx": 9087.439453125,
+          "computedDisplay": "grid",
+          "hiddenAttribute": false,
+          "toggleText": "Hide history records",
+          "visibleCardCount": 70
+        },
+        "recollapsed": {
+          "ariaExpanded": "false",
+          "boundingBoxHeightPx": 0,
+          "computedDisplay": "none",
+          "hiddenAttribute": true,
+          "toggleText": "Show 70 history records",
+          "visibleCardCount": 0
+        }
+      },
       "qwenSearchResultCount": "2 of 53 current records",
       "qwenCurrentIdentity": "0.21.15",
       "knownUpdateNotices": 0,
