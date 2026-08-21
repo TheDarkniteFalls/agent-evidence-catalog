@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.anthropic.claude-code.cli.sandbox-current-2-1-238",
+  "slug": "sandbox-current-2-1-238",
+  "subject": {
+    "id": "com.anthropic.claude-code.cli",
+    "name": "Claude Code CLI",
+    "publisher": "Anthropic PBC",
+    "surface": {
+      "kind": "cli",
+      "name": "Claude Code CLI",
+      "slug": "anthropic-claude-code-cli-2-1-238"
+    }
+  },
+  "claim": {
+    "category": "authority.sandbox",
+    "statement": "Current official documentation describes an OS-enforced Bash sandbox with filesystem and network boundaries, auto-allow and regular-permissions modes, optional fail-closed behavior and an explicitly configurable unsandboxed escape path."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anthropic PBC"
+  },
+  "source": {
+    "uri": "https://code.claude.com/docs/en/sandboxing",
+    "title": "Sandboxing - Claude Code Docs",
+    "locator": "Overview, sandbox modes, failIfUnavailable and allowUnsandboxedCommands",
+    "publishedAt": null,
+    "capturedAt": "2026-08-21T06:36:13.102Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "disabled",
+        "auto-allow",
+        "regular-permissions"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Bash and child processes"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-21",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Sandboxing applies to Bash and child processes, not every Claude Code tool.",
+    "Current documentation is not exact-version execution evidence."
+  ],
+  "unknowns": [
+    "The effective sandbox, platform primitives, dependencies, fallback and allowlists are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

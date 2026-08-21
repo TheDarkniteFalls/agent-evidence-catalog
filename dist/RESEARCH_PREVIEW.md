@@ -5,7 +5,8 @@ https://thedarknitefalls.github.io/agent-evidence-catalog/ and based on the
 2026-08-09 all-surface source-currentness and identity review, its 2026-08-10
 OpenCode release-feed follow-up, the prepared 2026-08-13 official-source
 currentness candidate, the 2026-08-15 same-surface correction, the 2026-08-17
-refresh, the 2026-08-18 refresh and the 2026-08-20 refresh. The latest prepared catalog is sealed to the exact 2026-08-20 source-review window and link-audit
+refresh, the 2026-08-18 refresh, the published 2026-08-20 refresh and the
+prepared 2026-08-21 refresh. The latest prepared catalog is sealed to the exact 2026-08-21 source-review window and link-audit
 completion recorded in its receipts. A separate publication-time freshness
 census can add notices but cannot promote identities into the snapshot. The
 prepared or committed candidate does not update the live site by itself.
@@ -86,7 +87,7 @@ artifacts. The research preview adds a derived projection:
 3. a separate lifecycle view selects one current record per surface;
 4. a separate watcher view reuses reviewed publisher sources and unchanged
    content fingerprints; and
-5. `catalog.json` projects 53 snapshot-current records and 62 non-current
+5. `catalog.json` projects 53 snapshot-current records and 70 non-current
    records into a static browser experience; and
 6. a generated snapshot seal and one-shot publication freshness census carry
    the exact review window, seal time, check time, known-newer notices and
@@ -94,7 +95,7 @@ artifacts. The research preview adds a derived projection:
 
 The machine-readable source is
 `drafts/real-agent-catalog/research-preview/catalog.json`. The static build
-copies only that projection and its 115 presentable record files to
+copies only that projection and its 123 presentable record files to
 `dist/research-preview/`. The comparison projector loads only the selected
 committed record files at runtime and does not modify that projection.
 
@@ -103,9 +104,9 @@ committed record files at runtime and does not modify that projection.
 The public Research Preview v0.1 uses the accepted release boundaries. The prepared projection keeps those boundaries, while a Pages deployment and live Browser receipt are required to establish that the public URL serves this exact projection:
 
 - 53 current records are present across the 55-surface catalog, including
-  Codex CLI 0.148.0 as the reciprocal same-surface successor to preserved
-  0.147.0, 0.146.0 and 0.90.0 history;
-- 59 superseded records, two historical records and one discontinued record
+  Codex CLI 0.149.0 as the reciprocal same-surface successor to preserved
+  0.148.0, 0.147.0, 0.146.0 and 0.90.0 history;
+- 67 superseded records, two historical records and one discontinued record
   remain available through explicit history;
 - publication-time known-newer identities are notices on the affected snapshot
   records, not automatic refreshes or lifecycle transitions;
@@ -115,7 +116,7 @@ The public Research Preview v0.1 uses the accepted release boundaries. The prepa
 - the four 2026-08-18 candidate dossiers remain source-only research outside
   catalog, mapping, lifecycle and presentation admission;
 - deterministic, preservation, source-link, browser and publication-safety
-  checks passed for the release; and
+  checks must pass for the exact candidate before publication; and
 - GitHub Pages serves only the committed `dist/` projection through a pinned,
   least-privilege workflow. It does not rebuild evidence or run agents.
 

@@ -1,0 +1,1494 @@
+{
+  "schemaVersion": "real-agent-dossier/0.2-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-21",
+  "sourceDossier": {
+    "path": "drafts/research-preview-release/currentness-2026-08-21/currentness-source.json",
+    "sha256": "1b40e6c9def8a8bb305d3bab6cf2ddb3730852ff656c486fa5a340e9a2c71162",
+    "relationship": "currentness-successor-derived-from-preserved-predecessor-and-reviewed-official-sources"
+  },
+  "identity": {
+    "recordId": "com.anthropic.claude-code.cli.2-1-238",
+    "agent": {
+      "id": "com.anthropic.claude-code.cli",
+      "name": "Claude Code CLI"
+    },
+    "publisher": {
+      "id": "anthropic-pbc",
+      "name": "Anthropic PBC"
+    },
+    "surface": {
+      "kind": "cli",
+      "name": "Claude Code CLI",
+      "slug": "anthropic-claude-code-cli-2-1-238",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "2.1.238",
+      "releaseTag": "v2.1.238",
+      "sourceRevision": null,
+      "releasedAt": "2026-08-20T20:33:51Z",
+      "channel": "Claude Code GitHub stable release",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "darwin-arm64",
+          "darwin-x64",
+          "linux-arm64-musl",
+          "linux-arm64",
+          "linux-x64-musl",
+          "linux-x64",
+          "win32-arm64",
+          "win32-x64"
+        ],
+        "note": "The official source identifies 2.1.238, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-21 currentness review."
+      },
+      "additionalIdentities": []
+    },
+    "artifacts": [
+      {
+        "id": "claude-code-darwin-arm64-2-1-238",
+        "kind": "standalone-binary",
+        "identityStatus": "exact",
+        "uri": "https://github.com/anthropics/claude-code/releases/download/v2.1.238/claude-darwin-arm64.tar.gz",
+        "ecosystem": "GitHub release asset",
+        "version": "2.1.238",
+        "digest": null,
+        "note": "Publisher-supplied SHA-256 digest; not independently recomputed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-18. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-20. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      },
+      {
+        "id": "claude-code-darwin-x64-2-1-238",
+        "kind": "standalone-binary",
+        "identityStatus": "exact",
+        "uri": "https://github.com/anthropics/claude-code/releases/download/v2.1.238/claude-darwin-x64.tar.gz",
+        "ecosystem": "GitHub release asset",
+        "version": "2.1.238",
+        "digest": null,
+        "note": "Publisher-supplied SHA-256 digest; not independently recomputed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-18. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-20. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      },
+      {
+        "id": "claude-code-linux-arm64-musl-2-1-238",
+        "kind": "standalone-binary",
+        "identityStatus": "exact",
+        "uri": "https://github.com/anthropics/claude-code/releases/download/v2.1.238/claude-linux-arm64-musl.tar.gz",
+        "ecosystem": "GitHub release asset",
+        "version": "2.1.238",
+        "digest": null,
+        "note": "Publisher-supplied SHA-256 digest; not independently recomputed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-18. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-20. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      },
+      {
+        "id": "claude-code-linux-arm64-2-1-238",
+        "kind": "standalone-binary",
+        "identityStatus": "exact",
+        "uri": "https://github.com/anthropics/claude-code/releases/download/v2.1.238/claude-linux-arm64.tar.gz",
+        "ecosystem": "GitHub release asset",
+        "version": "2.1.238",
+        "digest": null,
+        "note": "Publisher-supplied SHA-256 digest; not independently recomputed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-18. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-20. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      },
+      {
+        "id": "claude-code-linux-x64-musl-2-1-238",
+        "kind": "standalone-binary",
+        "identityStatus": "exact",
+        "uri": "https://github.com/anthropics/claude-code/releases/download/v2.1.238/claude-linux-x64-musl.tar.gz",
+        "ecosystem": "GitHub release asset",
+        "version": "2.1.238",
+        "digest": null,
+        "note": "Publisher-supplied SHA-256 digest; not independently recomputed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-18. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-20. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      },
+      {
+        "id": "claude-code-linux-x64-2-1-238",
+        "kind": "standalone-binary",
+        "identityStatus": "exact",
+        "uri": "https://github.com/anthropics/claude-code/releases/download/v2.1.238/claude-linux-x64.tar.gz",
+        "ecosystem": "GitHub release asset",
+        "version": "2.1.238",
+        "digest": null,
+        "note": "Publisher-supplied SHA-256 digest; not independently recomputed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-18. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-20. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      },
+      {
+        "id": "claude-code-win32-arm64-2-1-238",
+        "kind": "standalone-binary",
+        "identityStatus": "exact",
+        "uri": "https://github.com/anthropics/claude-code/releases/download/v2.1.238/claude-win32-arm64.zip",
+        "ecosystem": "GitHub release asset",
+        "version": "2.1.238",
+        "digest": null,
+        "note": "Publisher-supplied SHA-256 digest; not independently recomputed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-18. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-20. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      },
+      {
+        "id": "claude-code-win32-x64-2-1-238",
+        "kind": "standalone-binary",
+        "identityStatus": "exact",
+        "uri": "https://github.com/anthropics/claude-code/releases/download/v2.1.238/claude-win32-x64.zip",
+        "ecosystem": "GitHub release asset",
+        "version": "2.1.238",
+        "digest": null,
+        "note": "Publisher-supplied SHA-256 digest; not independently recomputed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-18. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-20. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      },
+      {
+        "id": "claude-code-current-service",
+        "kind": "other",
+        "identityStatus": "unresolved",
+        "uri": null,
+        "ecosystem": "Anthropic or configured third-party model service",
+        "version": null,
+        "digest": null,
+        "note": "The model, provider endpoint and backend revision remain unresolved. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-13. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-15. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-18. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-20. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "anthropic-pbc",
+        "name": "Anthropic PBC",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-release-identity-2-1-238",
+      "uri": "https://github.com/anthropics/claude-code/releases/tag/v2.1.238",
+      "title": "Claude Code v2.1.238 release",
+      "locator": "Release heading, publication metadata and tag reference",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "anthropic-pbc",
+      "publishedAt": "2026-08-20T20:33:51Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.102Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-authentication-routes-current-2-1-238",
+      "uri": "https://code.claude.com/docs/en/cli-usage",
+      "title": "Claude Code CLI reference",
+      "locator": "claude auth login options and authentication commands",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anthropic-pbc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.102Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-permissions-current-2-1-238",
+      "uri": "https://code.claude.com/docs/en/permissions",
+      "title": "Configure permissions - Claude Code Docs",
+      "locator": "Permission rule order, modes, hooks and managed settings",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anthropic-pbc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.102Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-sandbox-current-2-1-238",
+      "uri": "https://code.claude.com/docs/en/sandboxing",
+      "title": "Sandboxing - Claude Code Docs",
+      "locator": "Overview, sandbox modes, failIfUnavailable and allowUnsandboxedCommands",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anthropic-pbc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.102Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-model-routing-current-2-1-238",
+      "uri": "https://code.claude.com/docs/en/model-config",
+      "title": "Model configuration - Claude Code Docs",
+      "locator": "Model aliases, provider mappings, pinning and fallback",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anthropic-pbc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.102Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-tools-current-2-1-238",
+      "uri": "https://code.claude.com/docs/en/tools-reference",
+      "title": "Tools reference - Claude Code Docs",
+      "locator": "Built-in tool table and permission requirements",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anthropic-pbc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.102Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-mcp-current-2-1-238",
+      "uri": "https://code.claude.com/docs/en/mcp",
+      "title": "Connect Claude Code to tools via MCP",
+      "locator": "Server management, transports, authentication, plugin MCP and tool search",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anthropic-pbc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.102Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-extensions-current-2-1-238",
+      "uri": "https://code.claude.com/docs/en/features-overview",
+      "title": "Extend Claude Code",
+      "locator": "Extension overview and feature comparison",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anthropic-pbc",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.102Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "Release artifact, authentication, permission mode, sandbox, model route, tools, MCP and extensions are separate applicability dimensions; none was observed.",
+    "axes": [
+      {
+        "id": "authentication-route",
+        "label": "Authentication route",
+        "scope": "mutually-exclusive",
+        "dimension": "credential",
+        "alternatives": [
+          {
+            "id": "claude-subscription",
+            "label": "Claude subscription sign-in",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.authentication-routes-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "console-api",
+              "third-party-provider"
+            ]
+          },
+          {
+            "id": "console-api",
+            "label": "Anthropic Console API billing",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.authentication-routes-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "claude-subscription",
+              "third-party-provider"
+            ]
+          },
+          {
+            "id": "third-party-provider",
+            "label": "Bedrock, Vertex AI or Foundry",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.authentication-routes-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "claude-subscription",
+              "console-api"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective account, credential, provider and token scope are unknown."
+        ]
+      },
+      {
+        "id": "permission-mode",
+        "label": "Permission mode and rules",
+        "scope": "unresolved",
+        "dimension": "approval-authority",
+        "alternatives": [
+          {
+            "id": "configured-rules",
+            "label": "Configured allow, ask and deny rules",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.permissions-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [],
+            "controlMode": "conditional-policy",
+            "humanInteraction": "possible"
+          }
+        ],
+        "unknowns": [
+          "The effective permission mode and rule precedence inputs are unknown."
+        ]
+      },
+      {
+        "id": "sandbox-mode",
+        "label": "Bash sandbox",
+        "scope": "mutually-exclusive",
+        "dimension": "sandbox",
+        "alternatives": [
+          {
+            "id": "disabled",
+            "label": "Sandbox disabled or unavailable",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.sandbox-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "auto-allow",
+              "regular-permissions"
+            ],
+            "controlMode": "disabled",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "auto-allow",
+            "label": "Sandbox with auto-allow",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.sandbox-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "disabled",
+              "regular-permissions"
+            ],
+            "controlMode": "automatic-allow",
+            "humanInteraction": "possible"
+          },
+          {
+            "id": "regular-permissions",
+            "label": "Sandbox with regular permissions",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.sandbox-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "disabled",
+              "auto-allow"
+            ],
+            "controlMode": "manual-approval",
+            "humanInteraction": "required"
+          }
+        ],
+        "unknowns": [
+          "Enablement, platform enforcement, fallback, filesystem and network rules are unknown."
+        ]
+      },
+      {
+        "id": "model-route",
+        "label": "Model and provider route",
+        "scope": "mutually-exclusive",
+        "dimension": "model",
+        "alternatives": [
+          {
+            "id": "anthropic",
+            "label": "Anthropic service",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.model-routing-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "bedrock",
+              "vertex",
+              "foundry",
+              "gateway"
+            ]
+          },
+          {
+            "id": "bedrock",
+            "label": "Amazon Bedrock",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.model-routing-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "anthropic",
+              "vertex",
+              "foundry",
+              "gateway"
+            ]
+          },
+          {
+            "id": "vertex",
+            "label": "Google Vertex AI",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.model-routing-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "anthropic",
+              "bedrock",
+              "foundry",
+              "gateway"
+            ]
+          },
+          {
+            "id": "foundry",
+            "label": "Microsoft Foundry",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.model-routing-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "anthropic",
+              "bedrock",
+              "vertex",
+              "gateway"
+            ]
+          },
+          {
+            "id": "gateway",
+            "label": "Configured gateway",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.model-routing-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": [
+              "anthropic",
+              "bedrock",
+              "vertex",
+              "foundry"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective model ID, alias resolution, provider revision and fallback are unknown."
+        ]
+      },
+      {
+        "id": "extension-surface",
+        "label": "Tools and extension surface",
+        "scope": "composable",
+        "dimension": "tool-surface",
+        "alternatives": [
+          {
+            "id": "built-in-tools",
+            "label": "Built-in tools",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.tools-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "mcp",
+            "label": "Configured MCP servers",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.mcp-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "plugins-skills-hooks",
+            "label": "Plugins, skills, hooks and subagents",
+            "claimIds": [
+              "com.anthropic.claude-code.cli.extensions-current-2-1-238"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "Effective tools, plugins, skills, hooks, subagents, MCP servers and credentials are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "com.anthropic.claude-code.cli.release-identity-2-1-238",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.anthropic.claude-code.cli.2-1-238/release-identity-2-1-238.json",
+      "rawRecordSha256": "fca3a2e965b47aaf762660a6c7304d53bc92b2c69c64b0a3b53d69e865130bc5",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.anthropic.claude-code.cli.release-identity-2-1-238",
+        "slug": "release-identity-2-1-238",
+        "subject": {
+          "id": "com.anthropic.claude-code.cli",
+          "name": "Claude Code CLI",
+          "publisher": "Anthropic PBC",
+          "surface": {
+            "kind": "cli",
+            "name": "Claude Code CLI",
+            "slug": "anthropic-claude-code-cli-2-1-238"
+          }
+        },
+        "claim": {
+          "category": "identity.release",
+          "statement": "Anthropic's official release page identifies Claude Code CLI v2.1.238, published 2026-08-20T20:33:51Z; the installed platform archive and executable identity remain unresolved."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Anthropic PBC"
+        },
+        "source": {
+          "uri": "https://github.com/anthropics/claude-code/releases/tag/v2.1.238",
+          "title": "Claude Code v2.1.238 release",
+          "locator": "Release heading, publication metadata and tag reference",
+          "publishedAt": "2026-08-20T20:33:51Z",
+          "capturedAt": "2026-08-21T06:36:13.102Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "2.1.238"
+          },
+          "configuration": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Claude Code CLI release"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-21",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The release page identifies a source release, not the installed executable in any session."
+        ],
+        "unknowns": [
+          "The installed platform asset and executable path remain unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anthropic-pbc",
+      "sourceId": "source-release-identity-2-1-238",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.anthropic.claude-code.cli.authentication-routes-current-2-1-238",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.anthropic.claude-code.cli.2-1-238/authentication-routes-current-2-1-238.json",
+      "rawRecordSha256": "06338a15066e7a990f1faa85e4c86b5644e46d3009b921bfb0d43c66f169009e",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.anthropic.claude-code.cli.authentication-routes-current-2-1-238",
+        "slug": "authentication-routes-current-2-1-238",
+        "subject": {
+          "id": "com.anthropic.claude-code.cli",
+          "name": "Claude Code CLI",
+          "publisher": "Anthropic PBC",
+          "surface": {
+            "kind": "cli",
+            "name": "Claude Code CLI",
+            "slug": "anthropic-claude-code-cli-2-1-238"
+          }
+        },
+        "claim": {
+          "category": "identity.authentication",
+          "statement": "Current official CLI and installation documentation separates Claude subscription sign-in, Anthropic Console API billing and third-party provider routes including Bedrock, Vertex AI and Foundry."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anthropic PBC"
+        },
+        "source": {
+          "uri": "https://code.claude.com/docs/en/cli-usage",
+          "title": "Claude Code CLI reference",
+          "locator": "claude auth login options and authentication commands",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.102Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "subscription",
+              "console API",
+              "third-party provider"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Claude Code CLI"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Current documentation is not treated as frozen 2.1.238 runtime behavior."
+        ],
+        "unknowns": [
+          "The effective account, credential storage, token lifetime and provider route are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anthropic-pbc",
+      "sourceId": "source-authentication-routes-current-2-1-238",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.anthropic.claude-code.cli.permissions-current-2-1-238",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.anthropic.claude-code.cli.2-1-238/permissions-current-2-1-238.json",
+      "rawRecordSha256": "9405f6e5da51cd882e4b4e7a9acd25f64efb5eef28f7534c6c9f271ce9120510",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.anthropic.claude-code.cli.permissions-current-2-1-238",
+        "slug": "permissions-current-2-1-238",
+        "subject": {
+          "id": "com.anthropic.claude-code.cli",
+          "name": "Claude Code CLI",
+          "publisher": "Anthropic PBC",
+          "surface": {
+            "kind": "cli",
+            "name": "Claude Code CLI",
+            "slug": "anthropic-claude-code-cli-2-1-238"
+          }
+        },
+        "claim": {
+          "category": "authority.approval",
+          "statement": "Current official documentation describes deny-first tool permission rules, permission modes, managed settings and hook decisions as distinct controls over tool use."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anthropic PBC"
+        },
+        "source": {
+          "uri": "https://code.claude.com/docs/en/permissions",
+          "title": "Configure permissions - Claude Code Docs",
+          "locator": "Permission rule order, modes, hooks and managed settings",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.102Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "allow",
+              "ask",
+              "deny",
+              "managed settings",
+              "hooks"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Claude Code tool calls"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Documentation describes configurable controls, not the effective policy or observed enforcement in a 2.1.238 session."
+        ],
+        "unknowns": [
+          "The effective mode, rules, hooks and managed settings are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anthropic-pbc",
+      "sourceId": "source-permissions-current-2-1-238",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.anthropic.claude-code.cli.sandbox-current-2-1-238",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.anthropic.claude-code.cli.2-1-238/sandbox-current-2-1-238.json",
+      "rawRecordSha256": "1297e5fabe3370c3a9cdb89bc14f852922461705c55654ee6b1b043492ef7cbd",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.anthropic.claude-code.cli.sandbox-current-2-1-238",
+        "slug": "sandbox-current-2-1-238",
+        "subject": {
+          "id": "com.anthropic.claude-code.cli",
+          "name": "Claude Code CLI",
+          "publisher": "Anthropic PBC",
+          "surface": {
+            "kind": "cli",
+            "name": "Claude Code CLI",
+            "slug": "anthropic-claude-code-cli-2-1-238"
+          }
+        },
+        "claim": {
+          "category": "authority.sandbox",
+          "statement": "Current official documentation describes an OS-enforced Bash sandbox with filesystem and network boundaries, auto-allow and regular-permissions modes, optional fail-closed behavior and an explicitly configurable unsandboxed escape path."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anthropic PBC"
+        },
+        "source": {
+          "uri": "https://code.claude.com/docs/en/sandboxing",
+          "title": "Sandboxing - Claude Code Docs",
+          "locator": "Overview, sandbox modes, failIfUnavailable and allowUnsandboxedCommands",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.102Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "disabled",
+              "auto-allow",
+              "regular-permissions"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Bash and child processes"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Sandboxing applies to Bash and child processes, not every Claude Code tool.",
+          "Current documentation is not exact-version execution evidence."
+        ],
+        "unknowns": [
+          "The effective sandbox, platform primitives, dependencies, fallback and allowlists are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anthropic-pbc",
+      "sourceId": "source-sandbox-current-2-1-238",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.anthropic.claude-code.cli.model-routing-current-2-1-238",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.anthropic.claude-code.cli.2-1-238/model-routing-current-2-1-238.json",
+      "rawRecordSha256": "8f4859d923d76d9a0ea9aa202edf3e4cc4a00b13f571bd68134e772138756197",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.anthropic.claude-code.cli.model-routing-current-2-1-238",
+        "slug": "model-routing-current-2-1-238",
+        "subject": {
+          "id": "com.anthropic.claude-code.cli",
+          "name": "Claude Code CLI",
+          "publisher": "Anthropic PBC",
+          "surface": {
+            "kind": "cli",
+            "name": "Claude Code CLI",
+            "slug": "anthropic-claude-code-cli-2-1-238"
+          }
+        },
+        "claim": {
+          "category": "identity.model",
+          "statement": "Current model configuration documentation separates model aliases and pinned IDs across Anthropic, Bedrock, Vertex AI, Foundry and gateway routes, and warns that unpinned aliases can change."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anthropic PBC"
+        },
+        "source": {
+          "uri": "https://code.claude.com/docs/en/model-config",
+          "title": "Model configuration - Claude Code Docs",
+          "locator": "Model aliases, provider mappings, pinning and fallback",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.102Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "Anthropic",
+              "Bedrock",
+              "Vertex AI",
+              "Foundry",
+              "gateway"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "model service"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "No model or provider claim is inferred from the CLI release version."
+        ],
+        "unknowns": [
+          "The effective model ID, backend revision, alias resolution, fallback and inference settings are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anthropic-pbc",
+      "sourceId": "source-model-routing-current-2-1-238",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.anthropic.claude-code.cli.tools-current-2-1-238",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.anthropic.claude-code.cli.2-1-238/tools-current-2-1-238.json",
+      "rawRecordSha256": "3365ece296a5366bcc021769d278f469d97a7e8745be7dbdf3dc521f637133d7",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.anthropic.claude-code.cli.tools-current-2-1-238",
+        "slug": "tools-current-2-1-238",
+        "subject": {
+          "id": "com.anthropic.claude-code.cli",
+          "name": "Claude Code CLI",
+          "publisher": "Anthropic PBC",
+          "surface": {
+            "kind": "cli",
+            "name": "Claude Code CLI",
+            "slug": "anthropic-claude-code-cli-2-1-238"
+          }
+        },
+        "claim": {
+          "category": "authority.tools",
+          "statement": "Current official documentation lists built-in tools for file, shell, search, web, subagent and interaction operations, each subject to its documented permission path."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anthropic PBC"
+        },
+        "source": {
+          "uri": "https://code.claude.com/docs/en/tools-reference",
+          "title": "Tools reference - Claude Code Docs",
+          "locator": "Built-in tool table and permission requirements",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.102Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "built-in tool configuration"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Claude Code CLI"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The available tool list can change and was not observed in a 2.1.238 session."
+        ],
+        "unknowns": [
+          "The enabled tool set, tool annotations, inputs, outputs and side effects are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anthropic-pbc",
+      "sourceId": "source-tools-current-2-1-238",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.anthropic.claude-code.cli.mcp-current-2-1-238",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.anthropic.claude-code.cli.2-1-238/mcp-current-2-1-238.json",
+      "rawRecordSha256": "def1151c2b1e2131426c50f09ab7dc415e42c40cf72f4ce878afbfb318794508",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.anthropic.claude-code.cli.mcp-current-2-1-238",
+        "slug": "mcp-current-2-1-238",
+        "subject": {
+          "id": "com.anthropic.claude-code.cli",
+          "name": "Claude Code CLI",
+          "publisher": "Anthropic PBC",
+          "surface": {
+            "kind": "cli",
+            "name": "Claude Code CLI",
+            "slug": "anthropic-claude-code-cli-2-1-238"
+          }
+        },
+        "claim": {
+          "category": "authority.mcp",
+          "statement": "Current official documentation supports configured MCP servers over local and remote transports, OAuth for remote servers, tool search and plugin-provided MCP servers; configured server identities and credentials remain separate from the CLI release."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anthropic PBC"
+        },
+        "source": {
+          "uri": "https://code.claude.com/docs/en/mcp",
+          "title": "Connect Claude Code to tools via MCP",
+          "locator": "Server management, transports, authentication, plugin MCP and tool search",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.102Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "stdio",
+              "SSE",
+              "HTTP",
+              "OAuth",
+              "tool search"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "configured MCP servers"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "MCP availability depends on effective configuration, server behavior and model support."
+        ],
+        "unknowns": [
+          "Configured servers, tools, transports, credentials, destinations, data access and approvals are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anthropic-pbc",
+      "sourceId": "source-mcp-current-2-1-238",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.anthropic.claude-code.cli.extensions-current-2-1-238",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.anthropic.claude-code.cli.2-1-238/extensions-current-2-1-238.json",
+      "rawRecordSha256": "85f9ba42ec607b4ae8fd86b63b199516423ac530a163f9ed1ca737c81636f780",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.anthropic.claude-code.cli.extensions-current-2-1-238",
+        "slug": "extensions-current-2-1-238",
+        "subject": {
+          "id": "com.anthropic.claude-code.cli",
+          "name": "Claude Code CLI",
+          "publisher": "Anthropic PBC",
+          "surface": {
+            "kind": "cli",
+            "name": "Claude Code CLI",
+            "slug": "anthropic-claude-code-cli-2-1-238"
+          }
+        },
+        "claim": {
+          "category": "authority.extensions",
+          "statement": "Current official documentation keeps CLAUDE.md, skills, subagents, hooks, MCP and plugins as separate extension mechanisms with different loading and execution boundaries."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anthropic PBC"
+        },
+        "source": {
+          "uri": "https://code.claude.com/docs/en/features-overview",
+          "title": "Extend Claude Code",
+          "locator": "Extension overview and feature comparison",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.102Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "CLAUDE.md",
+              "skills",
+              "subagents",
+              "hooks",
+              "MCP",
+              "plugins"
+            ]
+          },
+          "platform": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Claude Code extension layer"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "new-official-release",
+            "source-unavailable",
+            "claimant-correction",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Extension documentation does not establish that any extension was configured for 2.1.238."
+        ],
+        "unknowns": [
+          "Installed plugins, skills, agents, hooks, instructions, provenance and permissions are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anthropic-pbc",
+      "sourceId": "source-extensions-current-2-1-238",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [],
+  "independentTests": [],
+  "independentEvidenceAdmissions": [
+    {
+      "id": "claude-code-2-1-238-independent-evidence-search",
+      "candidateLabel": null,
+      "candidateSourceIds": [],
+      "decision": "no-candidate",
+      "gates": [
+        {
+          "id": "evaluator-independence",
+          "dimension": "evaluator-independence",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate reached evaluator-independence review."
+        },
+        {
+          "id": "exact-release",
+          "dimension": "release",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed an inspectable exact 2.1.238 execution cell."
+        },
+        {
+          "id": "model-identity",
+          "dimension": "model",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed the exact model and provider-side revision used for the record."
+        },
+        {
+          "id": "configuration-cell",
+          "dimension": "configuration",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate disclosed the complete effective approval, sandbox, network, tool and extension configuration."
+        },
+        {
+          "id": "disclosure-completeness",
+          "dimension": "disclosure",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate supplied complete independence, funding, conflict and evaluation-method disclosures."
+        },
+        {
+          "id": "public-artifacts",
+          "dimension": "public-artifacts",
+          "status": "not-assessed",
+          "claimIds": [],
+          "note": "No candidate exposed a reproducible public artifact bundle for the exact cell."
+        }
+      ],
+      "includedTestIds": [],
+      "limitations": [
+        "No independent result, evaluator, finding, test or score is admitted because no candidate passed every required gate."
+      ]
+    }
+  ],
+  "dossier": {
+    "summary": "Claude Code CLI 2.1.238 is the current exact publisher identity reviewed on 2026-08-21. The retained claims remain attributed to their named official sources, and installed artifact, model, effective configuration, authority and runtime behaviour remain unresolved unless a claim expressly narrows them.",
+    "releaseContext": {
+      "statement": "Anthropic's official release feed identifies v2.1.238 as the latest stable Claude Code CLI release reviewed on 2026-08-21.",
+      "sourceId": "source-release-identity-2-1-238",
+      "legacySource": null
+    },
+    "limitations": [
+      "All behavior statements are publisher-attributed.",
+      "No release asset was downloaded, installed or run.",
+      "Rolling documentation is not treated as exact-version evidence.",
+      "No independent evidence candidate passed all gates.",
+      "The successor was created from reviewed official sources without installing or running the agent; release identity does not transfer unscoped behaviour claims.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion was added."
+    ],
+    "unknowns": [
+      "Installed artifact and executable digest.",
+      "Authentication and credential path.",
+      "Effective permissions and managed settings.",
+      "Sandbox enforcement and fallback.",
+      "Model, provider, endpoint and revision.",
+      "Built-in tool availability.",
+      "MCP server configuration.",
+      "Plugins, skills, hooks, subagents and instructions.",
+      "Independent reproducible behavior evidence."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the current identity, attributed publisher claims and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "publisher-claims",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Current identity",
+        "question": "Which exact surface is represented?",
+        "status": "2.1.238 current at review",
+        "answer": "Anthropic's official release feed identifies v2.1.238 as the latest stable Claude Code CLI release reviewed on 2026-08-21.",
+        "whyItMatters": "A newer exact publisher identity does not identify a particular installed artifact or effective session.",
+        "claimIds": [
+          "com.anthropic.claude-code.cli.release-identity-2-1-238",
+          "com.anthropic.claude-code.cli.authentication-routes-current-2-1-238",
+          "com.anthropic.claude-code.cli.model-routing-current-2-1-238"
+        ]
+      },
+      {
+        "id": "publisher-claims",
+        "eyebrow": "Attributed evidence",
+        "question": "What does the current record retain?",
+        "status": "8 publisher-attributed claims",
+        "answer": "The record retains only claims linked to the named official sources and keeps their applicability, limitations and unknowns explicit.",
+        "whyItMatters": "Publisher documentation is not observed product behaviour or independent verification.",
+        "claimIds": [
+          "com.anthropic.claude-code.cli.release-identity-2-1-238",
+          "com.anthropic.claude-code.cli.authentication-routes-current-2-1-238",
+          "com.anthropic.claude-code.cli.permissions-current-2-1-238",
+          "com.anthropic.claude-code.cli.sandbox-current-2-1-238",
+          "com.anthropic.claude-code.cli.model-routing-current-2-1-238",
+          "com.anthropic.claude-code.cli.tools-current-2-1-238",
+          "com.anthropic.claude-code.cli.mcp-current-2-1-238",
+          "com.anthropic.claude-code.cli.extensions-current-2-1-238"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this exact successor independently tested here?",
+        "status": "No",
+        "answer": "No agent was installed or run and no independent evidence was admitted during this currentness refresh.",
+        "whyItMatters": "Current identity and source attribution do not establish suitability, quality or safety.",
+        "claimIds": [
+          "com.anthropic.claude-code.cli.release-identity-2-1-238",
+          "com.anthropic.claude-code.cli.authentication-routes-current-2-1-238",
+          "com.anthropic.claude-code.cli.model-routing-current-2-1-238"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source currentness successor only. No product run, independent test, suitability calculation, ranking or recommendation is included."
+  }
+}

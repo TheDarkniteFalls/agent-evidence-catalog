@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.auto-review-current",
+  "slug": "auto-review-current",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cursor IDE foreground Agent",
+      "slug": "cursor-ide-foreground-agent-3-17"
+    }
+  },
+  "claim": {
+    "category": "authority.approval",
+    "statement": "Anysphere's June 2026 Auto-review description says the feature is focused on local agents in the desktop app, is the default for new users and can be enabled by existing users; its classifier can inspect workspace context before deciding how a tool call proceeds."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anysphere, Inc."
+  },
+  "source": {
+    "uri": "https://cursor.com/blog/agent-autonomy-auto-review",
+    "title": "Governing agent autonomy with Auto-review",
+    "locator": "Building the classifier and Refining agent autonomy",
+    "publishedAt": "2026-06-11T00:00:00Z",
+    "capturedAt": "2026-08-21T06:36:13.889Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "new-user Auto-review default",
+        "existing-user Auto-review opt-in",
+        "other run mode"
+      ]
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "local agents in Cursor desktop"
+      ]
+    },
+    "model": {
+      "scope": "configuration-dependent",
+      "values": [
+        "classifier model unresolved"
+      ]
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local foreground Agent"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-06-11",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-21",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "publisher-update",
+      "default-change",
+      "classifier-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The page is a publisher research description and does not bind the default to every 3.17 account, upgrade path or organization policy.",
+    "Reported internal classifier evaluation and aggregate interruption rates are not included as independent findings."
+  ],
+  "unknowns": [
+    "Whether a particular 3.17 user was new or existing and which run mode was effective are unknown.",
+    "The classifier model, policy revision, context, allowlist and decision for any action are unknown."
+  ],
+  "relationships": [
+    {
+      "type": "scope-differs",
+      "targetClaimId": "com.cursor.ide.foreground-agent.auto-review-3-6",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The rolling June description adds current audience and default statements to the 3.6 introduction milestone; the catalog preserves their different time applicability."
+    }
+  ],
+  "validationRefs": []
+}

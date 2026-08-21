@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.tool-configuration-0-149-0",
+  "slug": "tool-configuration-0-149-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": {
+      "kind": "cli",
+      "name": "Codex CLI",
+      "slug": "openai-codex-cli-0-149-0"
+    }
+  },
+  "claim": {
+    "category": "configuration.tools",
+    "statement": "The generated configuration schema at tag rust-v0.149.0 exposes tool-related settings including web-search modes and selected tool or feature toggles; configured MCP and plugin tools retain separate enablement and approval boundaries."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "OpenAI"
+  },
+  "source": {
+    "uri": "https://github.com/openai/codex/blob/rust-v0.149.0/codex-rs/core/config.schema.json",
+    "title": "Codex 0.149.0 generated configuration schema",
+    "locator": "properties.tools, properties.web_search and tool-related feature flags",
+    "publishedAt": null,
+    "capturedAt": "2026-08-21T06:36:14.846Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "0.149.0"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "web search disabled",
+        "web search cached",
+        "web search indexed",
+        "web search live",
+        "configured tool toggles"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local Codex CLI configured tool surface"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-21",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-21",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "source-unavailable",
+      "claimant-correction",
+      "product-version-change",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The schema is not a complete observed inventory of every tool exposed in a session.",
+    "Tool availability, approval and side effects can also depend on MCP servers, plugins, skills, feature flags and provider support."
+  ],
+  "unknowns": [
+    "The enabled built-in tools, web-search mode, tool annotations, approval coverage and side effects are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.native-terminal-current",
+  "slug": "native-terminal-current",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cursor IDE foreground Agent",
+      "slug": "cursor-ide-foreground-agent-3-17"
+    }
+  },
+  "claim": {
+    "category": "authority.command-execution",
+    "statement": "Cursor's rolling terminal documentation says foreground Agent executes commands in Cursor's native terminal, preserves terminal history and uses the configured terminal profile."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anysphere, Inc."
+  },
+  "source": {
+    "uri": "https://docs.cursor.com/en/agent/terminal",
+    "title": "Cursor Agent terminal",
+    "locator": "Run terminal commands automatically and terminal profile guidance",
+    "publishedAt": null,
+    "capturedAt": "2026-08-21T06:36:13.889Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "named",
+      "values": [
+        "configured native terminal profile",
+        "preserved terminal history"
+      ]
+    },
+    "platform": {
+      "scope": "configuration-dependent",
+      "values": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ]
+    },
+    "model": {
+      "scope": "configuration-dependent",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "local foreground Agent terminal"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": null,
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-21",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "documentation-change",
+      "terminal-integration-change",
+      "platform-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The rolling page is not an exact 3.17 runtime receipt and does not identify the user's shell initialization or environment variables.",
+    "Native terminal execution does not by itself establish a sandbox, filesystem boundary, network boundary or approval outcome."
+  ],
+  "unknowns": [
+    "The selected shell, terminal profile, environment, working directory and inherited credentials are unknown.",
+    "The commands proposed, approved, denied or executed in any session are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
