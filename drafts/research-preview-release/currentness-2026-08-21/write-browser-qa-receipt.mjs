@@ -14,6 +14,27 @@ const readJson = async (relativePath) => JSON.parse(await read(relativePath));
 const digest = async (relativePath) => sha256(await read(relativePath));
 const serialize = (value) => `${JSON.stringify(value, null, 2)}\n`;
 
+const measurementPath = process.argv[2];
+assert(measurementPath, "Usage: node write-browser-qa-receipt.mjs <history-rendered-state.json>");
+const historyRenderedState = JSON.parse(await readFile(path.resolve(process.cwd(), measurementPath), "utf8"));
+const initialHistoryState = {
+  hiddenAttribute: true,
+  ariaExpanded: "false",
+  toggleText: "Show 70 history records",
+  computedDisplay: "none",
+  boundingBoxHeightPx: 0,
+  visibleCardCount: 0
+};
+assert.deepEqual(historyRenderedState.initial, initialHistoryState, "Initial history state must be measured as fully non-rendered");
+assert.deepEqual(historyRenderedState.recollapsed, initialHistoryState, "Re-collapsed history state must return to fully non-rendered");
+assert.deepEqual(Object.keys(historyRenderedState.expanded).sort(), Object.keys(initialHistoryState).sort(), "Expanded history state must record the complete rendered measurement set");
+assert.equal(historyRenderedState.expanded.hiddenAttribute, false);
+assert.equal(historyRenderedState.expanded.ariaExpanded, "true");
+assert.equal(historyRenderedState.expanded.toggleText, "Hide history records");
+assert.equal(historyRenderedState.expanded.computedDisplay, "grid");
+assert(Number.isFinite(historyRenderedState.expanded.boundingBoxHeightPx) && historyRenderedState.expanded.boundingBoxHeightPx > 0, "Expanded history must have a positive measured bounding-box height");
+assert.equal(historyRenderedState.expanded.visibleCardCount, 70);
+
 const preview = await readJson("dist/research-preview/catalog.json");
 const lifecycle = await readJson("dist/research-preview/lifecycle.json");
 const buildManifest = await readJson("dist/build-manifest.json");
@@ -43,7 +64,7 @@ for (const summary of preview.previewRecords) {
 
 const checkedAt = new Date().toISOString();
 const receipt = {
-  schemaVersion: "research-preview-browser-qa/0.9",
+  schemaVersion: "research-preview-browser-qa/1.0",
   asOf: "2026-08-21",
   checkedAt,
   loopback: {
@@ -159,6 +180,7 @@ const receipt = {
       historyCards: 70,
       historyCollapsedInitially: true,
       historyExpandedOnRequest: true,
+      historyRenderedState,
       qwenSearchResultCount: "2 of 53 current records",
       qwenCurrentIdentity: "0.21.15",
       knownUpdateNotices: 0,

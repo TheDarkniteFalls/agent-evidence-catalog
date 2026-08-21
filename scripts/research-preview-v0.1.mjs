@@ -21,6 +21,26 @@ function assertExactCssViewport(label, requested, observed) {
   assert.deepEqual(observed, requested, `${label} observed CSS viewport must exactly match the requested viewport`);
 }
 
+function validateHistoryRenderedState(state) {
+  const initial = {
+    hiddenAttribute: true,
+    ariaExpanded: "false",
+    toggleText: "Show 70 history records",
+    computedDisplay: "none",
+    boundingBoxHeightPx: 0,
+    visibleCardCount: 0
+  };
+  assert.deepEqual(state.initial, initial, "Initial history state must be measured as fully non-rendered");
+  assert.deepEqual(state.recollapsed, initial, "Re-collapsed history state must return to fully non-rendered");
+  assert.deepEqual(Object.keys(state.expanded).sort(), Object.keys(initial).sort(), "Expanded history state must record the complete rendered measurement set");
+  assert.equal(state.expanded.hiddenAttribute, false);
+  assert.equal(state.expanded.ariaExpanded, "true");
+  assert.equal(state.expanded.toggleText, "Hide history records");
+  assert.equal(state.expanded.computedDisplay, "grid");
+  assert(Number.isFinite(state.expanded.boundingBoxHeightPx) && state.expanded.boundingBoxHeightPx > 0, "Expanded history must have a positive measured bounding-box height");
+  assert.equal(state.expanded.visibleCardCount, 70);
+}
+
 function resolvePublicctlPath() {
   const publicctlPath = [
     process.env.AEC_PUBLICCTL_PATH,
@@ -946,7 +966,7 @@ async function validateBrowserReceipt() {
   const urlAudit = JSON.parse(urlAuditText);
   const recordIds = buildManifest.researchPreview.recordDetails.records.map((item) => item.recordId);
 
-  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.9");
+  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/1.0");
   assert.equal(receipt.asOf, "2026-08-21");
   assert.equal(new Date(receipt.checkedAt).toISOString(), receipt.checkedAt);
   assert(new Date(receipt.checkedAt) >= new Date(census.census.completedAt));
@@ -1068,12 +1088,14 @@ async function validateBrowserReceipt() {
     historyCards: 70,
     historyCollapsedInitially: true,
     historyExpandedOnRequest: true,
+    historyRenderedState: receipt.journeys.catalog.historyRenderedState,
     qwenSearchResultCount: "2 of 53 current records",
     qwenCurrentIdentity: "0.21.15",
     knownUpdateNotices: census.counts.knownNewer,
     desktopHorizontalOverflow: false,
     mobileHorizontalOverflow: false
   });
+  validateHistoryRenderedState(receipt.journeys.catalog.historyRenderedState);
   assert.deepEqual(receipt.journeys.comparison.representativePair, ["com.anthropic.claude-code.cli.2-1-238", "com.openai.codex.cli.0-149-0"]);
   assert.equal(receipt.journeys.comparison.representativePairOfficialSourceLinks, 20);
   assert.equal(receipt.journeys.comparison.urlPersistsAcrossReload, true);
@@ -1359,6 +1381,12 @@ async function validateFirstScreenContract() {
   const catalog = await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8");
   const comparison = await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"), "utf8");
   const howItWorks = await readFile(path.join(packageRoot, "dist", "research-preview", "how-it-works.html"), "utf8");
+  const sourceStyles = await readFile(path.join(packageRoot, "site", "research-preview", "styles.css"), "utf8");
+  const builtStyles = await readFile(path.join(packageRoot, "dist", "research-preview", "styles.css"), "utf8");
+  const historyHiddenRule = "#historyRecords[hidden] { display: none; }";
+  for (const [label, css] of [["source", sourceStyles], ["built", builtStyles]]) {
+    assert.equal(css.split(historyHiddenRule).length - 1, 1, `${label} stylesheet must contain the exact history hidden-state rule once`);
+  }
   assert(landing.includes('<base href="./research-preview/">'), "Root landing must resolve catalog assets through the research-preview base");
   assert(landing.includes('<h1 id="home-title">Agent Evidence Catalog</h1>'), "Root landing must expose the unique branded page identity");
   assert(landing.includes('<a class="brand" aria-current="page" href="../index.html">Agent Evidence Catalog</a>'), "Root landing must identify the brand link as the current page");
@@ -1390,10 +1418,12 @@ async function validateFirstScreenContract() {
   }
   const visitorStyleVersion = "v=2026-08-16-visitor-ia-2";
   const visitorAssetVersion = "v=2026-08-16-visitor-ia-1";
-  for (const [label, html] of [["landing", landing], ["catalog", catalog], ["comparison", comparison], ["How it works", howItWorks]]) {
+  for (const [label, html] of [["landing", landing], ["comparison", comparison], ["How it works", howItWorks]]) {
     assert(html.includes(`styles.css?${visitorStyleVersion}`), `${label} must cache-bust the remediated visitor-facing stylesheet`);
     assert(html.includes(`comparison-core.js?${visitorAssetVersion}`), `${label} must cache-bust the shared snapshot and comparison logic`);
   }
+  assert(catalog.includes("styles.css?v=2026-08-21-history-collapse-1"), "Catalog must cache-bust the history-collapse stylesheet hotfix");
+  assert(catalog.includes(`comparison-core.js?${visitorAssetVersion}`), "Catalog must cache-bust the shared snapshot and comparison logic");
   assert(catalog.includes(`app.js?${visitorAssetVersion}`), "Catalog must cache-bust its readable update-marker logic");
   assert(!landing.includes("compare.js"), "Root landing must not load the comparison application");
   assert(comparison.includes("compare.js?v=2026-08-16-wide-workspace-1"), "Comparison route must preserve the accepted wide-workspace script");
