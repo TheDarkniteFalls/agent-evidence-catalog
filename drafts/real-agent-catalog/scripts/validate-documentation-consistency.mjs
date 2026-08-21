@@ -159,19 +159,21 @@ assert.equal(await read("dist/index.html"), landingHtml, "Built landing HTML dif
 assert(landingHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/"'));
 assert(siteHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/"'));
 assert(siteHtml.includes("data-snapshot-banner-copy"));
-assert(comparisonHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html"'));
+assert(comparisonHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/"'));
 assert(howItWorksHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html"'));
 assert(landingHtml.includes('<base href="./research-preview/">'));
-assert(landingHtml.includes('<h1 id="home-title">Agent Evidence Catalog</h1>'));
-assert(landingHtml.includes('<a class="brand" aria-current="page" href="../index.html">Agent Evidence Catalog</a>'));
-assert(landingHtml.includes('href="index.html">Browse current records</a>'));
-assert(landingHtml.includes('href="compare.html">Compare agent claims</a>'));
-assert(!landingHtml.includes('id="pickerRecords"'));
-assert(!landingHtml.includes('id="comparisonMatrix"'));
-assert(!landingHtml.includes("compare.js"));
+assert(landingHtml.includes('<h1 id="comparison-title">Compare agent claims, source by source.</h1>'));
+assert(landingHtml.includes('<a class="brand" href="../index.html">Agent Evidence Catalog</a>'));
+assert(landingHtml.includes('id="pickerRecords"'));
+assert(landingHtml.includes('id="comparisonMatrix"'));
+assert(landingHtml.includes("compare.js?v=2026-08-21-root-compare-1"));
+assert(siteHtml.includes('<h1 id="model-cards-title">Model Cards</h1>'));
+assert(siteHtml.includes('placeholder="Find a coding agent"'));
+assert(siteHtml.includes("Unresolved boundaries"));
+assert(!siteHtml.includes("<dt>Independent tests</dt>"));
 assert(comparisonHtml.includes('id="pickerRecords"'));
 assert(comparisonHtml.includes('id="comparisonMatrix"'));
-assert(comparisonHtml.includes("compare.js?v=2026-08-16-wide-workspace-1"));
+assert(comparisonHtml.includes("compare.js?v=2026-08-21-root-compare-1"));
 assert(!landingHtml.includes("secondary synthetic reference"));
 assert(!landingHtml.includes(">Method</a>"));
 assert(!landingHtml.includes(">Lifecycle</a>"));
@@ -180,9 +182,10 @@ for (const target of ["../RESEARCH_PREVIEW.md", "../GOVERNANCE.md", "../PUBLICAT
   await access(path.resolve(packageRoot, "dist/research-preview", target));
 }
 for (const html of [landingHtml, siteHtml, comparisonHtml, howItWorksHtml]) {
-  assert(html.includes(">Catalog</a>"));
   assert(html.includes(">Compare claims</a>"));
+  assert(html.includes(">Model Cards</a>"));
   assert(html.includes(">How it works</a>"));
+  assert(!html.includes(">Catalog</a>"));
   assert(html.includes("Corrections</a>"));
 }
 
@@ -200,4 +203,4 @@ for (const phrase of ["Refresh workflow", "Inventory expansion", "Concept and pr
 
 console.log("PASS documentation agrees on 55 surfaces, 123 lifecycle entries, 53 current cards and 70 explicit-history records");
 console.log(`PASS ${checkedSources} preview source links are HTTPS, publisher-attributed, non-search URLs and claim-linked`);
-console.log("PASS visitor-facing navigation, quiet global footers and demoted technical documentation links match their source files");
+console.log("PASS root comparison, Model Cards navigation, quiet global footers and demoted technical documentation links match their source files");

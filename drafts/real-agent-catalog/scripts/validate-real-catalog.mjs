@@ -201,7 +201,7 @@ async function assertNoPublicIntegration() {
   assert(comparisonHtml.includes('id="pickerRecords"'), "Canonical comparison route must expose the comparison picker");
   assert(comparisonHtml.includes('id="comparisonMatrix"'), "Canonical comparison route must expose the comparison matrix");
   assert(comparisonHtml.includes("No ranking, recommendation or independent-test result."), "Canonical comparison boundary is missing");
-  assert(comparisonHtml.includes("compare.js?v=2026-08-16-wide-workspace-1"), "Canonical comparison route must load the comparison application");
+  assert(comparisonHtml.includes("compare.js?v=2026-08-21-root-compare-1"), "Comparison compatibility route must load the shared root comparison application");
   const roots = ["catalog", "site", "dist"].map((name) => path.join(packageRoot, name));
   const files = (await Promise.all(roots.map(walk))).flat();
   for (const file of files) {
@@ -210,13 +210,12 @@ async function assertNoPublicIntegration() {
     const content = await readFile(file, "utf8");
     let integrationScanContent = content;
     if (relative === "site/index.html" || relative === "dist/index.html") {
-      assert(content.includes('<base href="./research-preview/">'), "Root landing must use the catalog asset base");
-      assert(content.includes('<h1 id="home-title">Agent Evidence Catalog</h1>'), "Root landing must expose the branded catalog identity");
-      assert(content.includes('<a class="brand" aria-current="page" href="../index.html">Agent Evidence Catalog</a>'), "Root landing must mark the catalog brand as the current page");
-      assert(content.includes('href="compare.html">Compare agent claims</a>'), "Root landing must link to the canonical comparison route");
-      assert(!content.includes('id="pickerRecords"') && !content.includes('id="comparisonMatrix"'), "Root landing must not duplicate the comparison application");
-      assert(!content.includes("compare.js"), "Root landing must not load the comparison application");
-      assert(content.includes("No rankings or recommendations"), "Root landing research boundary is missing");
+      assert(content.includes('<base href="./research-preview/">'), "Root comparison must use the shared research-preview asset base");
+      assert(content.includes('<h1 id="comparison-title">Compare agent claims, source by source.</h1>'), "Root must expose comparison as its primary identity");
+      assert(content.includes('<a class="brand" href="../index.html">Agent Evidence Catalog</a>'), "Root brand must resolve to root comparison");
+      assert(content.includes('id="pickerRecords"') && content.includes('id="comparisonMatrix"'), "Root must render the complete comparison application");
+      assert(content.includes("compare.js?v=2026-08-21-root-compare-1"), "Root must load the comparison application");
+      assert(content.includes("No ranking, recommendation or independent-test result."), "Root comparison research boundary is missing");
     }
     if (relative === "dist/build-manifest.json") {
       const manifest = JSON.parse(content);
@@ -234,11 +233,11 @@ async function assertNoPublicIntegration() {
     if (relative === "dist/sitemap.xml") {
       const manifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
       const details = manifest.researchPreview.recordDetails;
-      assert.equal([...content.matchAll(/<loc>/g)].length, details.count + 4, "Sitemap route count drift");
+      assert.equal([...content.matchAll(/<loc>/g)].length, details.count + 3, "Sitemap route count drift");
       assert.equal(
         content.split("https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html").length - 1,
-        1,
-        "Comparison sitemap route count drift"
+        0,
+        "Compatibility comparison route must not duplicate the canonical root in the sitemap"
       );
       assert.equal(
         content.split("https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html").length - 1,

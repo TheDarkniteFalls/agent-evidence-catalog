@@ -94,20 +94,36 @@ function staticVersionLabel(record) {
   return record.release.releaseTag ?? label(record.release.scope);
 }
 
+function staticPublisherIdentity(publisher) {
+  const words = String(publisher).match(/[A-Za-z0-9]+/g) ?? ["AEC"];
+  const monogram = words.slice(0, 2).map((word) => word[0]).join("").toUpperCase();
+  let hash = 0;
+  for (const character of String(publisher)) hash = ((hash * 31) + character.codePointAt(0)) >>> 0;
+  const accents = ["#176044", "#245ca6", "#8a5a12", "#7653a6", "#ad552f", "#087d7a", "#4d6478", "#8b2f32"];
+  return { monogram, accent: accents[hash % accents.length] };
+}
+
 function renderStaticCurrentRecordCard(record) {
   const recordHref = `records/${encodeURIComponent(record.recordId)}.html`;
-  return `          <article class="record-card" data-static-current-record="${escapeHtml(record.recordId)}">
-            <div class="card-heading">
-              <div><h3>${escapeHtml(record.name)}</h3><p>${escapeHtml(record.publisher)} · ${escapeHtml(record.surface.name)}</p></div>
+  const rawHref = `records/${encodeURIComponent(record.recordId)}.json`;
+  const compareHref = `../index.html?agents=${encodeURIComponent(record.recordId)}`;
+  const publisher = staticPublisherIdentity(record.publisher);
+  return `          <article class="record-card model-card" data-static-current-record="${escapeHtml(record.recordId)}" data-publisher="${escapeHtml(record.publisher)}" style="--card-accent: ${publisher.accent}">
+            <div class="model-card-heading">
+              <span class="publisher-monogram" aria-hidden="true">${publisher.monogram}</span>
+              <div class="model-card-title"><h3>${escapeHtml(record.name)}</h3><p>${escapeHtml(record.publisher)} · ${escapeHtml(record.surface.name)}</p></div>
+              <div class="model-card-identity"><strong>${escapeHtml(staticVersionLabel(record))}</strong><span>${record.release.version ? "Exact version" : "Release scope"}</span><strong>${escapeHtml(label(record.surface.deliveryModel))}</strong><span>Delivery</span></div>
               <span class="lifecycle lifecycle-current">current</span>
             </div>
-            <p class="identity">${escapeHtml(staticVersionLabel(record))} · ${escapeHtml(record.release.channel ?? record.release.scope)} · ${escapeHtml(record.surface.deliveryModel)}</p>
+            <p class="release-scope">${escapeHtml(label(record.surface.kind))} · ${escapeHtml(record.release.channel ?? label(record.release.scope))}</p>
+            <p class="evidence-profile-label">Evidence profile</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>${escapeHtml(record.claimCount)}</dd></div>
-              <div><dt>Publisher sources</dt><dd>${escapeHtml(record.sourceCount)}</dd></div>
-              <div><dt>Independent tests</dt><dd>${escapeHtml(record.independentTestCount)}</dd></div>
+              <div><dt>Official sources</dt><dd>${escapeHtml(record.sourceCount)}</dd></div>
+              <div><dt>Unresolved boundaries</dt><dd>${escapeHtml(record.unknownCount)}</dd></div>
             </dl>
-            <div class="card-links"><a class="primary-record-link" href="${recordHref}">Read the evidence record</a></div>
+            <p class="boundary-note">${escapeHtml(record.lifecycleNote)}</p>
+            <div class="card-links"><a class="compare-card-button" href="${compareHref}">Add to compare</a><a class="primary-record-link" href="${recordHref}">Open evidence</a><a class="raw-json-link" href="${rawHref}">Raw JSON</a></div>
           </article>`;
 }
 
@@ -153,14 +169,13 @@ async function materializeSearchFoundation() {
   const routeEntries = [
     { url: canonicalBaseUrl, lastmod: sharedLastmod },
     { url: `${canonicalBaseUrl}research-preview/`, lastmod: sharedLastmod },
-    { url: `${canonicalBaseUrl}research-preview/compare.html`, lastmod: sharedLastmod },
     { url: `${canonicalBaseUrl}research-preview/how-it-works.html`, lastmod: sharedLastmod },
     ...preview.previewRecords.map((record) => ({
       url: `${canonicalBaseUrl}research-preview/records/${record.recordId}.html`,
       lastmod: acceptedDate(record.reviewedAt, `Accepted review date for ${record.recordId}`)
     }))
   ];
-  assert.equal(routeEntries.length, preview.counts.recordsPresentedIncludingHistory + 4, "Sitemap route count differs from the accepted public projection");
+  assert.equal(routeEntries.length, preview.counts.recordsPresentedIncludingHistory + 3, "Sitemap route count differs from the accepted public projection");
   assert.equal(new Set(routeEntries.map((entry) => entry.url)).size, routeEntries.length, "Sitemap route projection contains duplicate URLs");
   const sitemap = renderDatedSitemap(routeEntries);
   await writeFile(path.join(packageRoot, "dist", "sitemap.xml"), sitemap, "utf8");
@@ -170,7 +185,7 @@ async function materializeSearchFoundation() {
   assert.equal(manifest.researchPreview.discovery.humanReadableRouteCount, routeEntries.length, "Build manifest route count differs before search-foundation materialization");
   manifest.researchPreview.discovery.sitemapSha256 = sha256(sitemap);
   await writeFile(manifestPath, serialize(manifest), "utf8");
-  console.log(`PASS search-foundation materialization: branded root source, ${currentRecords.length} static current-record links and ${routeEntries.length} snapshot-dated sitemap routes`);
+  console.log(`PASS search-foundation materialization: root comparison application, ${currentRecords.length} static Model Cards and ${routeEntries.length} snapshot-dated sitemap routes`);
 }
 
 function run(label, command, args) {
@@ -966,7 +981,7 @@ async function validateBrowserReceipt() {
   const urlAudit = JSON.parse(urlAuditText);
   const recordIds = buildManifest.researchPreview.recordDetails.records.map((item) => item.recordId);
 
-  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/1.0");
+  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/1.1");
   assert.equal(receipt.asOf, "2026-08-21");
   assert.equal(new Date(receipt.checkedAt).toISOString(), receipt.checkedAt);
   assert(new Date(receipt.checkedAt) >= new Date(census.census.completedAt));
@@ -979,8 +994,8 @@ async function validateBrowserReceipt() {
   });
 
   const digestPairs = [
-    ["landingHtmlSha256", "dist/index.html"],
-    ["previewHtmlSha256", "dist/research-preview/index.html"],
+    ["rootComparisonHtmlSha256", "dist/index.html"],
+    ["modelCardsHtmlSha256", "dist/research-preview/index.html"],
     ["howItWorksHtmlSha256", "dist/research-preview/how-it-works.html"],
     ["previewDataSha256", "dist/research-preview/catalog.json"],
     ["previewAppSha256", "dist/research-preview/app.js"],
@@ -1011,10 +1026,10 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.snapshot.cacheBustingVersion, "2026-08-21-sealed-snapshot");
 
   const publicationQa = receipt.publicationAuthorQa;
-  assert.equal(publicationQa.workstream, "AEC-REFRESH-2026-08-21-BROWSER-QA");
+  assert.equal(publicationQa.workstream, "AEC-COMPARE-MODEL-CARDS-2026-08-21-BROWSER-QA");
   assert.equal(publicationQa.result, "PASS");
   assert.equal(publicationQa.checkedAt, receipt.checkedAt);
-  assert.equal(publicationQa.baseHead, "68522b168319ee17fe1c8290ffb9c284acf36b98");
+  assert.equal(publicationQa.baseHead, "941dab8dd874a972699de9e9bf4a119f70954b0b");
   assert.equal(publicationQa.browser, "Codex in-app Browser");
   assert.deepEqual(publicationQa.currentness, {
     records: 123,
@@ -1043,59 +1058,89 @@ async function validateBrowserReceipt() {
     mobileHorizontalOverflow: false,
     narrowMobileHorizontalOverflow: false,
     mobileNavigationOpened: true,
-    mobileCatalogNavigationPassed: true
+    mobileModelCardsNavigationPassed: true
   });
-  assert.equal(publicationQa.screenshotsCaptured, 5);
+  assert.equal(publicationQa.screenshotsCaptured, 6);
   assert.deepEqual(publicationQa.console, { errors: 0, warnings: 0 });
   const acceptedLastmod = acceptedDate(seal.sealedAt, "Accepted snapshot seal");
   assert.deepEqual(publicationQa.sitemap, {
-    routes: 127,
-    uniqueRoutes: 127,
-    lastmodEntries: 127,
+    routes: 126,
+    uniqueRoutes: 126,
+    lastmodEntries: 126,
     sharedLastmod: acceptedLastmod,
     source: "accepted snapshot seal and accepted record review dates",
     sha256: sha256(await readFile(path.join(packageRoot, "dist", "sitemap.xml")))
   });
 
-  assert.equal(receipt.journeys.landing.result, "PASS");
-  assert.equal(receipt.journeys.landing.mode, "branded-homepage");
-  assert.equal(receipt.journeys.landing.headline, "Agent Evidence Catalog");
-  assert.equal(receipt.journeys.landing.comparisonApplicationPresent, false);
-  assert.deepEqual(receipt.journeys.landing.navigation, ["Catalog", "Compare claims", "How it works"]);
-  assert.deepEqual(receipt.journeys.landing.destinations, {
-    catalog: "research-preview/index.html",
-    comparison: "research-preview/compare.html",
-    howItWorks: "research-preview/how-it-works.html"
-  });
-  assert.deepEqual(receipt.journeys.landing.desktop, {
+  assert.deepEqual(receipt.journeys.rootComparison, {
+    result: "PASS",
+    mode: "comparison-application",
+    route: "/",
+    title: "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
+    headline: "Compare agent claims, source by source.",
+    comparisonApplicationPresent: true,
+    navigation: ["Compare claims", "Model Cards", "How it works"],
+    representativePair: ["com.anthropic.claude-code.cli.2-1-238", "com.openai.codex.cli.0-149-0"],
+    representativePairOfficialSourceLinks: 20,
+    urlPersistsAcrossReload: true,
+    activeFourRecordMatrixRows: 40,
+    maximumSelectedRecords: 4,
+    desktop: {
     observedCss: { width: 1422, height: 800 },
     horizontalOverflow: false
-  });
-  assert.deepEqual(receipt.journeys.landing.mobile, {
-    targetCss: { width: 390, height: 844 },
-    controlViewport: { width: 351, height: 760 },
-    observedCss: { width: 390, height: 844 },
-    devicePixelRatio: 0.9,
-    horizontalOverflow: false,
-    navigationOpened: true,
-    catalogNavigationPassed: true
+    },
+    mobile: {
+      targetCss: { width: 390, height: 844 },
+      controlViewport: { width: 351, height: 760 },
+      observedCss: { width: 390, height: 844 },
+      devicePixelRatio: 0.9,
+      horizontalOverflow: false,
+      navigationOpened: true,
+      matrixInternalOverflow: true
+    }
   });
 
-  assert.deepEqual(receipt.journeys.catalog, {
+  assert.deepEqual(receipt.journeys.modelCards, {
     result: "PASS",
     surfaces: 55,
-    currentCards: 53,
+    route: "/research-preview/",
+    title: "Model Cards for Current Coding Agents · Agent Evidence Catalog",
+    headline: "Model Cards",
+    navigation: ["Compare claims", "Model Cards", "How it works"],
+    staticCurrentCards: 53,
+    renderedCurrentCards: 53,
+    publisherMonograms: 53,
+    evidenceProfiles: 53,
+    unresolvedBoundaryMetrics: 53,
+    repeatedIndependentTestMetrics: 0,
+    deliveryFilterCounts: { all: 53, local: 1, hybrid: 32, hosted: 20 },
+    qwenSearchResultCount: "2 of 53 surfaces",
+    qwenCurrentIdentity: "0.21.15",
+    desktop: { observedCss: { width: 1422, height: 800 }, gridColumns: 3, horizontalOverflow: false },
+    mobile: {
+      targetCss: { width: 390, height: 844 },
+      controlViewport: { width: 351, height: 760 },
+      observedCss: { width: 390, height: 844 },
+      devicePixelRatio: 0.9,
+      gridColumns: 1,
+      cardsAndActionsContained: true,
+      horizontalOverflow: false,
+      navigationOpened: true
+    },
     historyCards: 70,
     historyCollapsedInitially: true,
     historyExpandedOnRequest: true,
-    historyRenderedState: receipt.journeys.catalog.historyRenderedState,
-    qwenSearchResultCount: "2 of 53 current records",
-    qwenCurrentIdentity: "0.21.15",
+    historyRenderedState: receipt.journeys.modelCards.historyRenderedState,
     knownUpdateNotices: census.counts.knownNewer,
-    desktopHorizontalOverflow: false,
-    mobileHorizontalOverflow: false
   });
-  validateHistoryRenderedState(receipt.journeys.catalog.historyRenderedState);
+  validateHistoryRenderedState(receipt.journeys.modelCards.historyRenderedState);
+  assert.deepEqual(receipt.journeys.comparisonCompatibility, {
+    result: "PASS",
+    route: "/research-preview/compare.html",
+    completeApplicationPresent: true,
+    canonicalHref: "https://thedarknitefalls.github.io/agent-evidence-catalog/",
+    selectionStateWorks: true
+  });
   assert.deepEqual(receipt.journeys.comparison.representativePair, ["com.anthropic.claude-code.cli.2-1-238", "com.openai.codex.cli.0-149-0"]);
   assert.equal(receipt.journeys.comparison.representativePairOfficialSourceLinks, 20);
   assert.equal(receipt.journeys.comparison.urlPersistsAcrossReload, true);
@@ -1142,7 +1187,7 @@ async function validateBrowserReceipt() {
   assert.deepEqual(receipt.journeys.discoveryMetadata, {
     result: "PASS",
     recordPagesAudited: 123,
-    sitemapHumanReadableRoutes: 127,
+    sitemapHumanReadableRoutes: 126,
     sitemapRecordRoutes: 123,
     canonicalAndStructuredMetadataFailures: 0
   });
@@ -1184,12 +1229,12 @@ async function validateBrowserReceipt() {
     independentTestsCredited: 0,
     rankingsOrSuitabilityCalculations: false,
     priorAcceptedRecordsOrSourceArtifactsRewritten: false,
-    currentnessLifecycleProjectionUpdated: true,
-    visitorInformationArchitectureChanged: false,
+    currentnessLifecycleProjectionUpdated: false,
+    visitorInformationArchitectureChanged: true,
     githubStateChanged: false,
     publicationAuthorizedByReceipt: false
   });
-  console.log("PASS digest-bound Browser QA: 123 desktop and mobile record pages, refreshed catalog identities, responsive comparison and zero console errors");
+  console.log("PASS digest-bound Browser QA: root comparison, 53 Model Cards, compatibility routes, 123 desktop and mobile record pages and zero console errors");
 }
 
 function validatePageDiscovery(html, expected) {
@@ -1219,8 +1264,8 @@ function validatePageDiscovery(html, expected) {
 async function validateDiscoveryMetadata() {
   const preview = JSON.parse(await readFile(path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json"), "utf8"));
   const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
-  const landingDescription = "Research exact coding-agent identities, attributed publisher claims, official sources, version history and unresolved unknowns without rankings or behavior claims.";
-  const landingTitle = "Agent Evidence Catalog · Coding-Agent Claims and Sources";
+  const landingDescription = "Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.";
+  const landingTitle = "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog";
   validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "index.html"), "utf8"), {
     title: landingTitle,
     description: landingDescription,
@@ -1228,16 +1273,23 @@ async function validateDiscoveryMetadata() {
     openGraphType: "website",
     structuredData: {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Agent Evidence Catalog",
+      "@type": "WebApplication",
+      name: "Compare Coding-Agent Claims and Sources",
       description: landingDescription,
-      url: canonicalBaseUrl
+      url: canonicalBaseUrl,
+      applicationCategory: "ResearchApplication",
+      operatingSystem: "Any",
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Agent Evidence Catalog",
+        url: canonicalBaseUrl
+      }
     }
   });
 
   const historyCount = preview.counts.recordsPresentedIncludingHistory - preview.counts.currentRecordsPresented;
-  const catalogDescription = `Browse ${preview.counts.currentRecordsPresented} current and ${historyCount} retained history records across ${preview.counts.surfaces} coding-agent surfaces, with exact identities, attributed publisher claims, version history and open unknowns.`;
-  const catalogTitle = "Find Current Coding-Agent Evidence · Agent Evidence Catalog";
+  const catalogDescription = `Browse Model Cards for ${preview.counts.currentRecordsPresented} current and ${historyCount} retained history records across ${preview.counts.surfaces} coding-agent surfaces, with exact identities, publisher claims, official sources and unresolved boundaries.`;
+  const catalogTitle = "Model Cards for Current Coding Agents · Agent Evidence Catalog";
   const catalogUrl = `${canonicalBaseUrl}research-preview/`;
   const catalogHtml = await readFile(path.join(packageRoot, "dist", "research-preview", "index.html"), "utf8");
   validatePageDiscovery(catalogHtml, {
@@ -1248,7 +1300,7 @@ async function validateDiscoveryMetadata() {
     structuredData: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: "Agent Evidence Catalog",
+      name: "Model Cards for Current Coding Agents",
       description: catalogDescription,
       url: catalogUrl,
       isPartOf: {
@@ -1260,15 +1312,18 @@ async function validateDiscoveryMetadata() {
   });
   const expectedCurrentRecordIds = currentPreviewRecords(preview).map((record) => record.recordId);
   const staticCurrentRecordIds = [...catalogHtml.matchAll(/data-static-current-record="([^"]+)"/g)].map((match) => match[1]);
-  const staticCurrentRecordHrefs = [...catalogHtml.matchAll(/<a class="primary-record-link" href="records\/([^"]+)\.html">Read the evidence record<\/a>/g)].map((match) => decodeURIComponent(match[1]));
-  assert.deepEqual(staticCurrentRecordIds, expectedCurrentRecordIds, "Initial catalog HTML must identify every current record exactly once in accepted surface order");
-  assert.deepEqual(staticCurrentRecordHrefs, expectedCurrentRecordIds, "Initial catalog HTML must expose one crawlable human-readable link for every current record");
-  assert.equal(catalogHtml.split(staticRecordStartMarker).length, 2, "Generated catalog HTML must retain one static-link start marker");
-  assert.equal(catalogHtml.split(staticRecordEndMarker).length, 2, "Generated catalog HTML must retain one static-link end marker");
+  const staticCurrentRecordHrefs = [...catalogHtml.matchAll(/<a class="primary-record-link" href="records\/([^"]+)\.html">Open evidence<\/a>/g)].map((match) => decodeURIComponent(match[1]));
+  assert.deepEqual(staticCurrentRecordIds, expectedCurrentRecordIds, "Initial Model Cards HTML must identify every current record exactly once in accepted surface order");
+  assert.deepEqual(staticCurrentRecordHrefs, expectedCurrentRecordIds, "Initial Model Cards HTML must expose one crawlable human-readable link for every current record");
+  assert.equal([...catalogHtml.matchAll(/class="publisher-monogram"/g)].length, expectedCurrentRecordIds.length, "Every static Model Card must include one deterministic publisher monogram");
+  assert.equal([...catalogHtml.matchAll(/<dt>Unresolved boundaries<\/dt>/g)].length, expectedCurrentRecordIds.length, "Every static Model Card must expose its unresolved-boundary count");
+  assert.equal([...catalogHtml.matchAll(/<dt>Independent tests<\/dt>/g)].length, 0, "Model Cards must not repeat zero independent-test credit per card");
+  assert.equal(catalogHtml.split(staticRecordStartMarker).length, 2, "Generated Model Cards HTML must retain one static-link start marker");
+  assert.equal(catalogHtml.split(staticRecordEndMarker).length, 2, "Generated Model Cards HTML must retain one static-link end marker");
 
   const comparisonDescription = "Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.";
   const comparisonTitle = "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog";
-  const comparisonUrl = `${canonicalBaseUrl}research-preview/compare.html`;
+  const comparisonUrl = canonicalBaseUrl;
   validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "research-preview", "compare.html"), "utf8"), {
     title: comparisonTitle,
     description: comparisonDescription,
@@ -1276,10 +1331,12 @@ async function validateDiscoveryMetadata() {
     openGraphType: "website",
     structuredData: {
       "@context": "https://schema.org",
-      "@type": "WebPage",
+      "@type": "WebApplication",
       name: "Compare Coding-Agent Claims and Sources",
       description: comparisonDescription,
       url: comparisonUrl,
+      applicationCategory: "ResearchApplication",
+      operatingSystem: "Any",
       isPartOf: {
         "@type": "WebSite",
         name: "Agent Evidence Catalog",
@@ -1346,7 +1403,6 @@ async function validateDiscoveryMetadata() {
   const expectedSitemapEntries = [
     { url: canonicalBaseUrl, lastmod: sharedLastmod },
     { url: catalogUrl, lastmod: sharedLastmod },
-    { url: comparisonUrl, lastmod: sharedLastmod },
     { url: howUrl, lastmod: sharedLastmod },
     ...buildManifest.researchPreview.recordDetails.records.map((record) => ({
       url: `${canonicalBaseUrl}${record.entryPoint}`,
@@ -1373,7 +1429,7 @@ async function validateDiscoveryMetadata() {
     humanReadableRecordRouteCount: buildManifest.researchPreview.recordDetails.count,
     rawJsonRoutesListed: 0
   });
-  console.log(`PASS discovery metadata on branded landing, catalog, comparison, How it works and all ${buildManifest.researchPreview.recordDetails.count} record pages; ${expectedCurrentRecordIds.length} static current links and deterministic ${expectedUrls.length}-route dated sitemap exclude raw JSON`);
+  console.log(`PASS discovery metadata on root comparison, Model Cards, comparison compatibility, How it works and all ${buildManifest.researchPreview.recordDetails.count} record pages; ${expectedCurrentRecordIds.length} static Model Cards and deterministic ${expectedUrls.length}-route dated sitemap exclude duplicate and raw JSON routes`);
 }
 
 async function validateFirstScreenContract() {
@@ -1387,26 +1443,31 @@ async function validateFirstScreenContract() {
   for (const [label, css] of [["source", sourceStyles], ["built", builtStyles]]) {
     assert.equal(css.split(historyHiddenRule).length - 1, 1, `${label} stylesheet must contain the exact history hidden-state rule once`);
   }
-  assert(landing.includes('<base href="./research-preview/">'), "Root landing must resolve catalog assets through the research-preview base");
-  assert(landing.includes('<h1 id="home-title">Agent Evidence Catalog</h1>'), "Root landing must expose the unique branded page identity");
-  assert(landing.includes('<a class="brand" aria-current="page" href="../index.html">Agent Evidence Catalog</a>'), "Root landing must identify the brand link as the current page");
-  assert(!landing.includes('id="pickerRecords"') && !landing.includes('id="comparisonMatrix"'), "Root landing must not duplicate the comparison application");
-  assert(comparison.includes('id="pickerRecords"') && comparison.includes('id="comparisonMatrix"'), "Canonical comparison route must retain the complete comparison application");
-  for (const [label, html] of [["landing", landing], ["catalog", catalog], ["comparison", comparison], ["How it works", howItWorks]]) {
+  assert(landing.includes('<base href="./research-preview/">'), "Root comparison must resolve shared assets through the research-preview base");
+  assert(landing.includes('<h1 id="comparison-title">Compare agent claims, source by source.</h1>'), "Root must expose comparison as its unique page identity");
+  assert(landing.includes('<a class="brand" href="../index.html">Agent Evidence Catalog</a>'), "Root brand link must resolve to root comparison");
+  assert(!landing.includes('http-equiv="refresh"'), "Root comparison must render directly rather than redirect");
+  for (const [label, html] of [["root comparison", landing], ["comparison compatibility", comparison]]) {
+    assert(html.includes('id="pickerRecords"') && html.includes('id="comparisonMatrix"'), `${label} must retain the complete comparison application`);
+    assert(html.includes('id="selectedRecords"') && html.includes('id="comparisonResults"'), `${label} must retain selection and result state`);
+  }
+  assert(catalog.includes('<h1 id="model-cards-title">Model Cards</h1>'), "Old Catalog URL must render the Model Cards identity");
+  for (const [label, html] of [["root comparison", landing], ["Model Cards", catalog], ["comparison compatibility", comparison], ["How it works", howItWorks]]) {
     const navStart = html.indexOf('<nav aria-label="Primary navigation">');
     const navEnd = html.indexOf("</nav>", navStart);
     const nav = html.slice(navStart, navEnd);
     assert(navStart >= 0 && navEnd > navStart, `${label} must expose primary navigation`);
-    assert(nav.indexOf(">Catalog</a>") < nav.indexOf(">Compare claims</a>"), `${label} must keep Catalog before Compare claims`);
-    assert(nav.indexOf(">Compare claims</a>") < nav.indexOf(">How it works</a>"), `${label} must keep Compare claims before How it works`);
-    assert(!nav.includes(">Method</a>") && !nav.includes(">Lifecycle</a>"), `${label} must not expose maintainer-facing navigation`);
+    assert(nav.indexOf(">Compare claims</a>") >= 0, `${label} must expose Compare claims`);
+    assert(nav.indexOf(">Compare claims</a>") < nav.indexOf(">Model Cards</a>"), `${label} must keep Compare claims before Model Cards`);
+    assert(nav.indexOf(">Model Cards</a>") < nav.indexOf(">How it works</a>"), `${label} must keep Model Cards before How it works`);
+    assert(!nav.includes(">Catalog</a>") && !nav.includes(">Method</a>") && !nav.includes(">Lifecycle</a>"), `${label} must expose only the approved three-link information architecture`);
     assert(html.includes("data-snapshot-banner-copy"), `${label} must use the shared data-derived snapshot copy`);
     assert(!html.includes("Research Preview v0.1. Sealed"), `${label} must not expose the technical release receipt`);
   }
-  assert(landing.includes('href="index.html">Browse current records</a>'), "Root landing must expose the catalog as its primary reading path");
-  assert(landing.includes('href="compare.html">Compare agent claims</a>'), "Root landing must expose the canonical comparison route");
-  assert(catalog.includes('class="primary-action" href="compare.html">Compare agent claims</a>'), "Catalog first screen must expose the primary comparison CTA");
-  assert(comparison.includes("Select 2–4 exact records"), "Comparison route must expose the empty picker state");
+  assert(landing.includes('aria-current="page" href="../index.html">Compare claims</a>'), "Root must mark Compare claims current");
+  assert(catalog.includes('aria-current="page" href="index.html">Model Cards</a>'), "Model Cards must mark its navigation item current");
+  assert(comparison.includes('aria-current="page" href="../index.html">Compare claims</a>'), "Comparison compatibility route must mark root Compare claims current");
+  assert(landing.includes("Select 2–4 exact records") && comparison.includes("Select 2–4 exact records"), "Both comparison entry routes must expose the empty picker state");
   const snapshotAssetVersion = "v=2026-08-21-sealed-snapshot";
   for (const [label, html, assets] of [
     ["landing", landing, ["data.js"]],
@@ -1416,27 +1477,33 @@ async function validateFirstScreenContract() {
   ]) {
     for (const asset of assets) assert(html.includes(`${asset}?${snapshotAssetVersion}`), `${label} must cache-bust ${asset} for the retained snapshot data`);
   }
-  const visitorStyleVersion = "v=2026-08-16-visitor-ia-2";
+  const visitorStyleVersion = "v=2026-08-21-model-cards-1";
   const visitorAssetVersion = "v=2026-08-16-visitor-ia-1";
   for (const [label, html] of [["landing", landing], ["comparison", comparison], ["How it works", howItWorks]]) {
     assert(html.includes(`styles.css?${visitorStyleVersion}`), `${label} must cache-bust the remediated visitor-facing stylesheet`);
     assert(html.includes(`comparison-core.js?${visitorAssetVersion}`), `${label} must cache-bust the shared snapshot and comparison logic`);
   }
-  assert(catalog.includes("styles.css?v=2026-08-21-history-collapse-1"), "Catalog must cache-bust the history-collapse stylesheet hotfix");
+  assert(catalog.includes(`styles.css?${visitorStyleVersion}`), "Model Cards must load the shared collectible-card and history-collapse stylesheet");
   assert(catalog.includes(`comparison-core.js?${visitorAssetVersion}`), "Catalog must cache-bust the shared snapshot and comparison logic");
-  assert(catalog.includes(`app.js?${visitorAssetVersion}`), "Catalog must cache-bust its readable update-marker logic");
-  assert(!landing.includes("compare.js"), "Root landing must not load the comparison application");
-  assert(comparison.includes("compare.js?v=2026-08-16-wide-workspace-1"), "Comparison route must preserve the accepted wide-workspace script");
+  assert(catalog.includes("app.js?v=2026-08-21-model-cards-1"), "Model Cards must cache-bust its card and filter application");
+  assert(landing.includes("compare.js?v=2026-08-21-root-compare-1"), "Root must load the comparison application directly");
+  assert(comparison.includes("compare.js?v=2026-08-21-root-compare-1"), "Compatibility comparison route must load the same comparison application");
   for (const required of [
     "id=\"catalog-controls\"",
-    ">Search current records<",
-    "Filters apply to current records. The separate history section stays collapsed until you open it.",
-    "Coverage counts, not quality scores.",
-    "they do not rank agents or establish quality, safety or suitability",
+    "placeholder=\"Find a coding agent\"",
+    "name=\"delivery\" value=\"all\" checked",
+    "name=\"delivery\" value=\"local\"",
+    "name=\"delivery\" value=\"hybrid\"",
+    "name=\"delivery\" value=\"hosted\"",
+    "Publisher-source research.",
+    "No rankings, recommendations or independent testing.",
+    "not observed product behavior, quality, safety or suitability",
+    "Unresolved boundaries",
+    "Open evidence",
     "data-snapshot-banner-copy",
     "How updates work →",
-    "current within this dated review snapshot—not a claim of publication-time currency or observed runtime behavior"
-  ]) assert(catalog.includes(required), `Catalog first-screen contract is missing ${required}`);
+    "Superseded versions, historical milestones and publisher-discontinued surfaces remain preserved outside the current Model Card set."
+  ]) assert(catalog.includes(required), `Model Cards contract is missing ${required}`);
   for (const required of [
     "Start with the exact identity",
     "Follow each claim to its source",
@@ -1457,12 +1524,12 @@ async function validateFirstScreenContract() {
     assert(!html.includes("secondary synthetic reference"));
   }
   const controlsIndex = catalog.indexOf('id="catalog-controls"');
-  const statsIndex = catalog.indexOf('class="stats"');
   const recordsIndex = catalog.indexOf('id="currentRecords"');
-  assert(controlsIndex > catalog.indexOf("<h1"), "Catalog filters must follow the page identity");
-  assert(controlsIndex < statsIndex, "Catalog filters must precede coverage counts");
-  assert(statsIndex < recordsIndex, "Coverage counts must precede the current record grid");
-  console.log("PASS unique branded landing, canonical comparison application, static-link catalog first-screen contract and complete visitor-facing How it works copy inventory");
+  assert(controlsIndex > catalog.indexOf("<h1"), "Model Card filters must follow the page identity");
+  assert(controlsIndex < recordsIndex, "Model Card filters must precede the card grid");
+  assert.equal([...catalog.matchAll(/data-static-current-record=/g)].length, 53, "Model Cards must statically expose all 53 current surfaces");
+  assert.equal([...catalog.matchAll(/<dt>Independent tests<\/dt>/g)].length, 0, "Model Cards must keep independent-test status global rather than repeat zero on each card");
+  console.log("PASS root comparison application, Model Cards compatibility route, three-link navigation, meaningful static cards and complete visitor-facing How it works copy inventory");
 }
 async function validatePagesWorkflow() {
   const workflow = await readFile(pagesWorkflowPath, "utf8");

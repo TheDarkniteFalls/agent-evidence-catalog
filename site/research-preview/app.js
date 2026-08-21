@@ -9,7 +9,7 @@
   const currentRecords = data.surfaces.map((surface) => surface.currentRecord).filter(Boolean);
   const historyRecords = data.surfaces.flatMap((surface) => surface.history);
   const search = document.querySelector("#search");
-  const delivery = document.querySelector("#delivery");
+  const deliveryInputs = [...document.querySelectorAll('input[name="delivery"]')];
   const currentRoot = document.querySelector("#currentRecords");
   const historyRoot = document.querySelector("#historyRecords");
   const emptyState = document.querySelector("#emptyState");
@@ -21,11 +21,6 @@
   const compareSelection = document.querySelector("#compareSelection");
   comparison.applySnapshotBanner(data);
 
-  const setText = (selector, value) => { document.querySelector(selector).textContent = String(value); };
-  setText("#surfaceCount", data.counts.surfaces);
-  setText("#currentCount", data.counts.currentRecordsPresented);
-  setText("#historyCount", historyRecords.length);
-  setText("#testCount", data.counts.independentTestsCredited);
   const historyToggle = document.querySelector("#historyToggle");
   historyToggle.textContent = `Show ${historyRecords.length} history records`;
 
@@ -34,16 +29,28 @@
   const parsedSelection = comparison.parseRequestedIds(requestedState.get("agents"), new Set(byId.keys()));
   let selectedIds = [...parsedSelection.ids];
   search.value = requestedState.get("q") ?? "";
-  if (["all", "local", "hybrid", "hosted"].includes(requestedDelivery)) delivery.value = requestedDelivery;
+  if (["all", "local", "hybrid", "hosted"].includes(requestedDelivery)) {
+    const requestedInput = deliveryInputs.find((input) => input.value === requestedDelivery);
+    if (requestedInput) requestedInput.checked = true;
+  }
   selectionStatus.textContent = parsedSelection.messages.join(" ");
   selectionStatus.hidden = parsedSelection.messages.length === 0;
 
   const titleCase = (value) => String(value).replaceAll("-", " ").replace(/(^|\s)\S/g, (match) => match.toUpperCase());
   const versionLabel = (record) => record.release.version ? `v${record.release.version}` : (record.release.releaseTag ?? titleCase(record.release.scope));
+  const deliveryValue = () => deliveryInputs.find((input) => input.checked)?.value ?? "all";
+  const publisherIdentity = (publisher) => {
+    const words = String(publisher).match(/[A-Za-z0-9]+/g) ?? ["AEC"];
+    const monogram = words.slice(0, 2).map((word) => word[0]).join("").toUpperCase();
+    let hash = 0;
+    for (const character of String(publisher)) hash = ((hash * 31) + character.codePointAt(0)) >>> 0;
+    const accents = ["#176044", "#245ca6", "#8a5a12", "#7653a6", "#ad552f", "#087d7a", "#4d6478", "#8b2f32"];
+    return { monogram, accent: accents[hash % accents.length] };
+  };
   const catalogParams = () => {
     const params = new URLSearchParams();
     if (search.value.trim()) params.set("q", search.value.trim());
-    if (delivery.value !== "all") params.set("delivery", delivery.value);
+    if (deliveryValue() !== "all") params.set("delivery", deliveryValue());
     if (selectedIds.length) params.set("agents", selectedIds.join(","));
     return params;
   };
@@ -82,27 +89,50 @@
 
   const recordCard = (record, history = false) => {
     const article = document.createElement("article");
-    article.className = `record-card${history ? " history-card" : ""}`;
+    article.className = `record-card model-card${history ? " history-card" : ""}`;
+    const publisher = publisherIdentity(record.publisher);
+    article.style.setProperty("--card-accent", publisher.accent);
+    article.dataset.publisher = record.publisher;
     const heading = document.createElement("div");
-    heading.className = "card-heading";
+    heading.className = "model-card-heading";
+    const monogram = document.createElement("span");
+    monogram.className = "publisher-monogram";
+    monogram.textContent = publisher.monogram;
+    monogram.setAttribute("aria-hidden", "true");
     const titleWrap = document.createElement("div");
+    titleWrap.className = "model-card-title";
     const title = document.createElement("h3");
     title.textContent = record.name;
-    const publisher = document.createElement("p");
-    publisher.textContent = `${record.publisher} · ${record.surface.name}`;
-    titleWrap.append(title, publisher);
+    const surface = document.createElement("p");
+    surface.textContent = `${record.publisher} · ${record.surface.name}`;
+    titleWrap.append(title, surface);
+    const identity = document.createElement("div");
+    identity.className = "model-card-identity";
+    const releaseValue = document.createElement("strong");
+    releaseValue.textContent = versionLabel(record);
+    const releaseLabel = document.createElement("span");
+    releaseLabel.textContent = record.release.version ? "Exact version" : "Release scope";
+    const deliveryValueNode = document.createElement("strong");
+    deliveryValueNode.textContent = titleCase(record.surface.deliveryModel);
+    const deliveryLabel = document.createElement("span");
+    deliveryLabel.textContent = "Delivery";
+    identity.append(releaseValue, releaseLabel, deliveryValueNode, deliveryLabel);
     const status = document.createElement("span");
     status.className = `lifecycle lifecycle-${record.lifecycleStatus}`;
     status.textContent = history ? record.lifecycleStatus : "current";
-    heading.append(titleWrap, status);
+    heading.append(monogram, titleWrap, identity, status);
 
-    const identity = document.createElement("p");
-    identity.className = "identity";
-    identity.textContent = `${versionLabel(record)} · ${record.release.channel ?? record.release.scope} · ${record.surface.deliveryModel}`;
+    const releaseScope = document.createElement("p");
+    releaseScope.className = "release-scope";
+    releaseScope.textContent = `${titleCase(record.surface.kind)} · ${record.release.channel ?? titleCase(record.release.scope)}`;
+
+    const profileHeading = document.createElement("p");
+    profileHeading.className = "evidence-profile-label";
+    profileHeading.textContent = "Evidence profile";
 
     const metrics = document.createElement("dl");
     metrics.className = "record-metrics";
-    for (const [label, value] of [["Publisher claims", record.claimCount], ["Publisher sources", record.sourceCount], ["Independent tests", record.independentTestCount]]) {
+    for (const [label, value] of [["Publisher claims", record.claimCount], ["Official sources", record.sourceCount], ["Unresolved boundaries", record.unknownCount]]) {
       const wrapper = document.createElement("div");
       const term = document.createElement("dt");
       const description = document.createElement("dd");
@@ -139,13 +169,14 @@
     const detailLink = document.createElement("a");
     detailLink.className = "primary-record-link";
     detailLink.href = `records/${encodeURIComponent(record.recordId)}.html${catalogState()}`;
-    detailLink.textContent = "Read the evidence record";
+    detailLink.textContent = "Open evidence";
     links.append(detailLink);
     const rawLink = document.createElement("a");
+    rawLink.className = "raw-json-link";
     rawLink.href = `records/${encodeURIComponent(record.recordId)}.json`;
     rawLink.textContent = "Raw JSON";
     links.append(rawLink);
-    article.append(heading, identity, metrics, boundary);
+    article.append(heading, releaseScope, profileHeading, metrics, boundary);
     if (freshnessNotice) article.append(freshnessNotice);
     article.append(links);
     return article;
@@ -175,14 +206,16 @@
 
   function renderCurrent() {
     const query = search.value.trim().toLowerCase();
-    const deliveryValue = delivery.value;
+    const selectedDelivery = deliveryValue();
     const visible = currentRecords.filter((record) => {
       const haystack = `${record.name} ${record.publisher} ${record.surface.name} ${record.recordId}`.toLowerCase();
-      return (!query || haystack.includes(query)) && (deliveryValue === "all" || record.surface.deliveryModel === deliveryValue);
+      return (!query || haystack.includes(query)) && (selectedDelivery === "all" || record.surface.deliveryModel === selectedDelivery);
     });
     currentRoot.replaceChildren(...visible.map((record) => recordCard(record)));
     historyRoot.replaceChildren(...historyRecords.map((record) => recordCard(byId.get(record.recordId), true)));
-    resultCount.textContent = `${visible.length} of ${currentRecords.length} current records`;
+    resultCount.textContent = visible.length === currentRecords.length
+      ? `${visible.length} surfaces`
+      : `${visible.length} of ${currentRecords.length} surfaces`;
     emptyState.hidden = visible.length !== 0;
     renderTray();
     updateUrl();
@@ -195,11 +228,11 @@
     historyRoot.hidden = expanded;
   });
   search.addEventListener("input", renderCurrent);
-  delivery.addEventListener("change", renderCurrent);
+  deliveryInputs.forEach((input) => input.addEventListener("change", renderCurrent));
   compareSelection.addEventListener("click", () => {
     if (selectedIds.length < 2) return;
     const params = catalogParams();
-    window.location.href = `compare.html?${params.toString()}`;
+    window.location.href = `../index.html?${params.toString()}`;
   });
   renderCurrent();
 })();

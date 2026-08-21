@@ -212,6 +212,7 @@ function visit(value) {
 visit(preview);
 
 const siteHtml = await readFile(path.join(packageRoot, "site", "research-preview", "index.html"), "utf8");
+const landingHtml = await readFile(path.join(packageRoot, "site", "index.html"), "utf8");
 const siteApp = await readFile(path.join(packageRoot, "site", "research-preview", "app.js"), "utf8");
 const comparisonHtml = await readFile(path.join(packageRoot, "site", "research-preview", "compare.html"), "utf8");
 const comparisonCore = await readFile(path.join(packageRoot, "site", "research-preview", "comparison-core.js"), "utf8");
@@ -221,23 +222,25 @@ const howItWorksHtml = await readFile(path.join(packageRoot, "site", "research-p
 assert(siteHtml.includes('id="currentRecords"'));
 assert(siteHtml.includes('id="historyRecords" class="record-grid history-grid" hidden'));
 assert(siteHtml.includes('aria-expanded="false"'));
-assert(siteHtml.includes("Zero independent tests"));
-assert(siteHtml.includes("For researchers, builders and maintainers"));
-assert(siteHtml.includes("Selected, not comprehensive"));
-assert(siteHtml.includes("Fastest path:"));
-assert(siteHtml.includes("current within this dated review snapshot—not a claim of publication-time currency or observed runtime behavior"));
+assert(siteHtml.includes('<h1 id="model-cards-title">Model Cards</h1>'));
+assert(siteHtml.includes("53 current coding-agent surfaces, each grounded in attributed publisher evidence."));
+assert(siteHtml.includes("No rankings, recommendations or independent testing."));
+assert(siteHtml.includes('placeholder="Find a coding agent"'));
+for (const delivery of ["all", "local", "hybrid", "hosted"]) assert(siteHtml.includes(`name="delivery" value="${delivery}"`));
 assert(siteHtml.includes("data-snapshot-banner-copy"));
 assert(siteHtml.includes('href="how-it-works.html#snapshots">How updates work →</a>'));
 assert(!siteHtml.includes("Research Preview v0.1. Sealed"));
-assert(siteHtml.includes('href="compare.html">Compare agent claims</a>'));
+assert(siteHtml.includes('href="../index.html">Compare claims</a>'));
 assert(siteHtml.includes('id="selectionTray"'));
 assert(!siteHtml.includes('id="releaseGate"'));
 assert(!siteApp.includes("requiredConsecutiveDays"));
 assert(siteApp.includes("surface.currentRecord").valueOf());
 assert(siteApp.includes("surface.history").valueOf());
 assert(siteApp.includes('"Publisher claims"'));
-assert(siteApp.includes('"Publisher sources"'));
-assert(siteApp.includes("Read the evidence record"));
+assert(siteApp.includes('"Official sources"'));
+assert(siteApp.includes('"Unresolved boundaries"'));
+assert(!siteApp.includes('"Independent tests"'));
+assert(siteApp.includes("Open evidence"));
 assert(siteApp.includes('"Raw JSON"'));
 assert(!siteApp.includes("detailPilot"));
 assert(siteApp.includes('new URLSearchParams(window.location.search)'));
@@ -245,12 +248,17 @@ assert(siteApp.includes('detailLink.href = `records/${encodeURIComponent(record.
 assert(siteApp.includes('window.history.replaceState'));
 assert(siteApp.includes('"Add to compare"'));
 assert(siteApp.includes('params.set("agents", selectedIds.join(","))'));
+assert(siteApp.includes('window.location.href = `../index.html?${params.toString()}`'));
+assert(siteApp.includes("publisherIdentity"));
 assert(siteApp.includes('record.publicationFreshness?.status === "known-newer"'));
 assert(siteApp.includes("Version update known:"));
 assert(siteApp.includes("readableUtcMinute"));
 assert(comparisonHtml.includes("Compare agent claims, source by source."));
 assert(comparisonHtml.includes("Publisher claims only.</strong> No ranking, recommendation or independent-test result."));
-assert(comparisonHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/compare.html"'));
+assert(comparisonHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/"'));
+assert(landingHtml.includes('<h1 id="comparison-title">Compare agent claims, source by source.</h1>'));
+assert(landingHtml.includes('id="pickerRecords"') && landingHtml.includes('id="comparisonMatrix"'));
+assert(landingHtml.includes("compare.js?v=2026-08-21-root-compare-1"));
 assert(comparisonHtml.includes('id="claimFilter"'));
 assert(comparisonHtml.includes('id="differencesOnly"'));
 assert(comparisonCore.includes("rawRecord.claim.category"));
@@ -280,10 +288,11 @@ for (const required of [
   "Inspect the evidence or suggest a correction",
   "Technical documentation"
 ]) assert(howItWorksHtml.includes(required), `How it works page omitted ${required}`);
-for (const sourceHtml of [siteHtml, comparisonHtml, howItWorksHtml]) {
+for (const sourceHtml of [landingHtml, siteHtml, comparisonHtml, howItWorksHtml]) {
   const desktopNav = sourceHtml.slice(sourceHtml.indexOf('<nav aria-label="Primary navigation">'), sourceHtml.indexOf("</nav>", sourceHtml.indexOf('<nav aria-label="Primary navigation">')));
-  assert(desktopNav.indexOf(">Catalog</a>") < desktopNav.indexOf(">Compare claims</a>"));
-  assert(desktopNav.indexOf(">Compare claims</a>") < desktopNav.indexOf(">How it works</a>"));
+  assert(desktopNav.indexOf(">Compare claims</a>") < desktopNav.indexOf(">Model Cards</a>"));
+  assert(desktopNav.indexOf(">Model Cards</a>") < desktopNav.indexOf(">How it works</a>"));
+  assert(!desktopNav.includes(">Catalog</a>"));
   assert(!desktopNav.includes(">Method</a>"));
   assert(!desktopNav.includes(">Lifecycle</a>"));
 }
@@ -291,6 +300,7 @@ assert(recordDetailApp.includes('[data-catalog-return]'));
 assert(recordDetailApp.includes('[data-compare-return]'));
 assert(recordDetailApp.includes('[data-record-detail-link]'));
 assert(recordDetailApp.includes('["local", "hybrid", "hosted"].includes(delivery)'));
+assert(recordDetailApp.includes('link.href = `../../index.html${querySuffix}`'));
 assert.equal(
   await readFile(path.join(packageRoot, "dist", "research-preview", "record-detail.js"), "utf8"),
   recordDetailApp,
@@ -330,8 +340,10 @@ assert.deepEqual(buildManifest.researchPreview.publicationFreshness, {
 assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "snapshot-seal.json"), "utf8"), snapshotSealText);
 assert.equal(await readFile(path.join(packageRoot, "dist", "research-preview", "publication-freshness-census.json"), "utf8"), freshnessCensusText);
 assert.deepEqual(buildManifest.researchPreview.comparison, {
-  entryPoint: "research-preview/compare.html",
-  htmlSha256: sha256(comparisonHtml),
+  entryPoint: "index.html",
+  htmlSha256: sha256(landingHtml),
+  compatibilityEntryPoint: "research-preview/compare.html",
+  compatibilityHtmlSha256: sha256(comparisonHtml),
   projector: "research-preview/comparison-core.js",
   projectorSha256: sha256(comparisonCore),
   app: "research-preview/compare.js",
@@ -339,6 +351,12 @@ assert.deepEqual(buildManifest.researchPreview.comparison, {
   stateStorage: "url-and-memory-only",
   maximumRecords: 4,
   claimAlignment: "exact-accepted-category-string"
+});
+assert.deepEqual(buildManifest.researchPreview.modelCards, {
+  entryPoint: "research-preview/index.html",
+  htmlSha256: sha256(siteHtml),
+  currentCards: 53,
+  historyCards: 70
 });
 assert.deepEqual(buildManifest.researchPreview.howItWorks, {
   entryPoint: "research-preview/how-it-works.html",
@@ -392,11 +410,12 @@ for (const summary of preview.previewRecords) {
   const rawAction = detailHtml.indexOf(`class="secondary-link" href="${summary.recordId}.json">Raw JSON</a>`, sectionIndex);
   assert(sectionIndex >= 0 && claimsJump > sectionIndex && rawAction > claimsJump, `${summary.recordId} must keep raw JSON secondary to human-readable section navigation`);
   assert(detailHtml.includes('data-catalog-return href="../index.html"'), `${summary.recordId} omitted catalog return-state hooks`);
-  assert(detailHtml.includes('data-compare-return href="../compare.html"'), `${summary.recordId} omitted comparison return-state hooks`);
+  assert(detailHtml.includes('data-compare-return href="../../index.html"'), `${summary.recordId} omitted root comparison return-state hooks`);
   assert(detailHtml.includes('href="../how-it-works.html">How it works</a>'), `${summary.recordId} omitted the visitor-facing method destination`);
-  assert.equal((detailHtml.match(/aria-current="page" data-catalog-return/g) || []).length, 2, `${summary.recordId} must mark Catalog active in desktop and mobile navigation`);
+  assert.equal((detailHtml.match(/aria-current="page" data-catalog-return/g) || []).length, 2, `${summary.recordId} must mark Model Cards active in desktop and mobile navigation`);
   assert(detailHtml.includes(`data-add-record-to-compare data-record-id="${escapeHtml(summary.recordId)}"`), `${summary.recordId} omitted its exact-record comparison control`);
   assert(detailHtml.includes('../comparison-core.js?v=2026-08-16-visitor-ia-1'), `${summary.recordId} omitted cache-busted visitor-facing shell logic`);
+  assert(detailHtml.includes('../record-detail.js?v=2026-08-21-model-cards-1'), `${summary.recordId} omitted cache-busted root-comparison navigation logic`);
   if (summary.recordId === "com.stackblitz.bolt.claude-agent.rolling") {
     assert(detailHtml.includes("How the legacy Bolt v1 Agent retirement completion date of 2026-08-03 applied to individual projects remains unresolved"), "Bolt record omitted its exact-date applicability boundary");
     assert(!detailHtml.includes("two days after this registry snapshot"), "Bolt record retained stale snapshot-relative wording");
