@@ -42,7 +42,7 @@
       link.href = `../index.html${querySuffix}`;
     });
     document.querySelectorAll("[data-compare-return]").forEach((link) => {
-      link.href = `../compare.html${querySuffix}`;
+      link.href = `../../index.html${querySuffix}`;
     });
     document.querySelectorAll("[data-record-detail-link]").forEach((link) => {
       link.href = `${link.getAttribute("href").split("?")[0]}${querySuffix}`;
@@ -106,7 +106,7 @@
   addButton?.addEventListener("click", toggleCurrentRecord);
   compareSelection.addEventListener("click", () => {
     if (selectedIds.length < 2) return;
-    window.location.href = `../compare.html${suffix()}`;
+    window.location.href = `../../index.html${suffix()}`;
   });
 
   updateNavigation();

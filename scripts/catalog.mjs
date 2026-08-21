@@ -289,22 +289,22 @@ function renderRecordDetail(record, preview, lifecycle) {
     <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
     <meta name="twitter:description" content="${escapeHtml(pageDescription)}">
     <script type="application/ld+json">${pageStructuredData}</script>
-    <link rel="stylesheet" href="../styles.css?v=2026-08-16-visitor-ia-2">
+    <link rel="stylesheet" href="../styles.css?v=2026-08-21-model-cards-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to record</a>
     <header class="site-header">
       <a class="brand" href="../../index.html">Agent Evidence Catalog</a>
       <nav aria-label="Primary navigation">
-        <a aria-current="page" data-catalog-return href="../index.html">Catalog</a>
-        <a data-compare-return href="../compare.html">Compare claims</a>
+        <a data-compare-return href="../../index.html">Compare claims</a>
+        <a aria-current="page" data-catalog-return href="../index.html">Model Cards</a>
         <a href="../how-it-works.html">How it works</a>
       </nav>
       <details class="mobile-nav">
         <summary class="mobile-nav-toggle" aria-label="Open navigation"><span class="mobile-nav-icon" aria-hidden="true"></span></summary>
         <nav aria-label="Mobile primary navigation">
-          <a aria-current="page" data-catalog-return href="../index.html">Catalog</a>
-          <a data-compare-return href="../compare.html">Compare claims</a>
+          <a data-compare-return href="../../index.html">Compare claims</a>
+          <a aria-current="page" data-catalog-return href="../index.html">Model Cards</a>
           <a href="../how-it-works.html">How it works</a>
         </nav>
       </details>
@@ -327,7 +327,7 @@ function renderRecordDetail(record, preview, lifecycle) {
         <p class="detail-status"><strong>Version status:</strong> ${escapeHtml(selected.note)}</p>
 ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}        <div class="detail-actions">
           <button class="primary-action" type="button" data-add-record-to-compare data-record-id="${escapeHtml(recordId)}" data-record-name="${escapeHtml(summary.name)}">Add exact record to compare</button>
-          <a data-compare-return href="../compare.html">Open comparison picker</a>
+          <a data-compare-return href="../../index.html">Open comparison picker</a>
         </div>
         <div id="selectionStatus" class="comparison-status" role="status" aria-live="polite" hidden></div>
       </section>
@@ -432,7 +432,7 @@ ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}  
     </div>
     <script src="../data.js?v=2026-08-21-sealed-snapshot"></script>
     <script src="../comparison-core.js?v=2026-08-16-visitor-ia-1"></script>
-    <script src="../record-detail.js?v=2026-08-21-sealed-snapshot"></script>
+    <script src="../record-detail.js?v=2026-08-21-model-cards-1"></script>
   </body>
 </html>
 `;
@@ -911,7 +911,6 @@ async function commandBuild() {
   const humanReadableUrls = [
     CANONICAL_BASE_URL,
     `${CANONICAL_BASE_URL}research-preview/`,
-    `${CANONICAL_BASE_URL}research-preview/compare.html`,
     `${CANONICAL_BASE_URL}research-preview/how-it-works.html`,
     ...recordDetails.map((record) => `${CANONICAL_BASE_URL}${record.entryPoint}`)
   ].sort((left, right) => left.localeCompare(right));
@@ -940,7 +939,13 @@ async function commandBuild() {
       synthetic: true
     },
     researchPreview: {
-      entryPoint: "research-preview/index.html",
+      entryPoint: "index.html",
+      modelCards: {
+        entryPoint: "research-preview/index.html",
+        htmlSha256: createHash("sha256").update(await readFile(join(DIST, "research-preview", "index.html"))).digest("hex"),
+        currentCards: researchPreview.counts.currentRecordsPresented,
+        historyCards: researchPreview.counts.recordsPresentedIncludingHistory - researchPreview.counts.currentRecordsPresented
+      },
       data: "research-preview/catalog.json",
       dataSha256: createHash("sha256").update(researchPreviewRaw).digest("hex"),
       asOf: researchPreview.asOf,
@@ -967,8 +972,10 @@ async function commandBuild() {
         surfaces: freshnessCensus.counts.surfaces
       },
       comparison: {
-        entryPoint: "research-preview/compare.html",
-        htmlSha256: createHash("sha256").update(await readFile(join(DIST, "research-preview", "compare.html"))).digest("hex"),
+        entryPoint: "index.html",
+        htmlSha256: createHash("sha256").update(await readFile(join(DIST, "index.html"))).digest("hex"),
+        compatibilityEntryPoint: "research-preview/compare.html",
+        compatibilityHtmlSha256: createHash("sha256").update(await readFile(join(DIST, "research-preview", "compare.html"))).digest("hex"),
         projector: "research-preview/comparison-core.js",
         projectorSha256: createHash("sha256").update(await readFile(join(DIST, "research-preview", "comparison-core.js"))).digest("hex"),
         app: "research-preview/compare.js",

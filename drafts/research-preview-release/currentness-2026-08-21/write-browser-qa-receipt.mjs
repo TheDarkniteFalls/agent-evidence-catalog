@@ -15,8 +15,9 @@ const digest = async (relativePath) => sha256(await read(relativePath));
 const serialize = (value) => `${JSON.stringify(value, null, 2)}\n`;
 
 const measurementPath = process.argv[2];
-assert(measurementPath, "Usage: node write-browser-qa-receipt.mjs <history-rendered-state.json>");
-const historyRenderedState = JSON.parse(await readFile(path.resolve(process.cwd(), measurementPath), "utf8"));
+assert(measurementPath, "Usage: node write-browser-qa-receipt.mjs <browser-measurements.json>");
+const browserMeasurements = JSON.parse(await readFile(path.resolve(process.cwd(), measurementPath), "utf8"));
+const { historyRenderedState, rootComparison, modelCards, comparisonCompatibility } = browserMeasurements;
 const initialHistoryState = {
   hiddenAttribute: true,
   ariaExpanded: "false",
@@ -34,6 +35,64 @@ assert.equal(historyRenderedState.expanded.toggleText, "Hide history records");
 assert.equal(historyRenderedState.expanded.computedDisplay, "grid");
 assert(Number.isFinite(historyRenderedState.expanded.boundingBoxHeightPx) && historyRenderedState.expanded.boundingBoxHeightPx > 0, "Expanded history must have a positive measured bounding-box height");
 assert.equal(historyRenderedState.expanded.visibleCardCount, 70);
+assert.deepEqual(rootComparison, {
+  route: "/",
+  title: "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
+  headline: "Compare agent claims, source by source.",
+  comparisonApplicationPresent: true,
+  navigation: ["Compare claims", "Model Cards", "How it works"],
+  representativePair: ["com.anthropic.claude-code.cli.2-1-238", "com.openai.codex.cli.0-149-0"],
+  representativePairOfficialSourceLinks: 20,
+  urlPersistsAcrossReload: true,
+  activeFourRecordMatrixRows: 40,
+  maximumSelectedRecords: 4,
+  desktop: {
+    observedCss: { width: 1422, height: 800 },
+    horizontalOverflow: false
+  },
+  mobile: {
+    targetCss: { width: 390, height: 844 },
+    controlViewport: { width: 351, height: 760 },
+    observedCss: { width: 390, height: 844 },
+    devicePixelRatio: 0.9,
+    horizontalOverflow: false,
+    navigationOpened: true,
+    matrixInternalOverflow: true
+  }
+});
+assert.deepEqual(modelCards, {
+  route: "/research-preview/",
+  title: "Model Cards for Current Coding Agents · Agent Evidence Catalog",
+  headline: "Model Cards",
+  navigation: ["Compare claims", "Model Cards", "How it works"],
+  staticCurrentCards: 53,
+  renderedCurrentCards: 53,
+  publisherMonograms: 53,
+  evidenceProfiles: 53,
+  unresolvedBoundaryMetrics: 53,
+  repeatedIndependentTestMetrics: 0,
+  deliveryFilterCounts: { all: 53, local: 1, hybrid: 32, hosted: 20 },
+  qwenSearchResultCount: "2 of 53 surfaces",
+  qwenCurrentIdentity: "0.21.15",
+  desktop: { observedCss: { width: 1422, height: 800 }, gridColumns: 3, horizontalOverflow: false },
+  mobile: {
+    targetCss: { width: 390, height: 844 },
+    controlViewport: { width: 351, height: 760 },
+    observedCss: { width: 390, height: 844 },
+    devicePixelRatio: 0.9,
+    gridColumns: 1,
+    cardsAndActionsContained: true,
+    horizontalOverflow: false,
+    navigationOpened: true
+  }
+});
+assert.deepEqual(comparisonCompatibility, {
+  route: "/research-preview/compare.html",
+  completeApplicationPresent: true,
+  canonicalHref: "https://thedarknitefalls.github.io/agent-evidence-catalog/",
+  selectionStateWorks: true
+});
+assert.equal(browserMeasurements.screenshotsCaptured, 6);
 
 const preview = await readJson("dist/research-preview/catalog.json");
 const lifecycle = await readJson("dist/research-preview/lifecycle.json");
@@ -64,7 +123,7 @@ for (const summary of preview.previewRecords) {
 
 const checkedAt = new Date().toISOString();
 const receipt = {
-  schemaVersion: "research-preview-browser-qa/1.0",
+  schemaVersion: "research-preview-browser-qa/1.1",
   asOf: "2026-08-21",
   checkedAt,
   loopback: {
@@ -75,8 +134,8 @@ const receipt = {
     browserNavigation: "PASS"
   },
   sourceDigests: {
-    landingHtmlSha256: await digest("dist/index.html"),
-    previewHtmlSha256: await digest("dist/research-preview/index.html"),
+    rootComparisonHtmlSha256: await digest("dist/index.html"),
+    modelCardsHtmlSha256: await digest("dist/research-preview/index.html"),
     howItWorksHtmlSha256: await digest("dist/research-preview/how-it-works.html"),
     previewDataSha256: await digest("dist/research-preview/catalog.json"),
     previewAppSha256: await digest("dist/research-preview/app.js"),
@@ -102,10 +161,10 @@ const receipt = {
     cacheBustingVersion: "2026-08-21-sealed-snapshot"
   },
   publicationAuthorQa: {
-    workstream: "AEC-REFRESH-2026-08-21-BROWSER-QA",
+    workstream: "AEC-COMPARE-MODEL-CARDS-2026-08-21-BROWSER-QA",
     result: "PASS",
     checkedAt,
-    baseHead: "68522b168319ee17fe1c8290ffb9c284acf36b98",
+    baseHead: "941dab8dd874a972699de9e9bf4a119f70954b0b",
     browser: "Codex in-app Browser",
     currentness: {
       records: 123,
@@ -134,13 +193,13 @@ const receipt = {
       mobileHorizontalOverflow: false,
       narrowMobileHorizontalOverflow: false,
       mobileNavigationOpened: true,
-      mobileCatalogNavigationPassed: true
+      mobileModelCardsNavigationPassed: true
     },
-    screenshotsCaptured: 5,
+    screenshotsCaptured: browserMeasurements.screenshotsCaptured,
     sitemap: {
-      routes: 127,
-      uniqueRoutes: 127,
-      lastmodEntries: 127,
+      routes: 126,
+      uniqueRoutes: 126,
+      lastmodEntries: 126,
       sharedLastmod: "2026-08-21",
       source: "accepted snapshot seal and accepted record review dates",
       sha256: await digest("dist/sitemap.xml")
@@ -148,55 +207,32 @@ const receipt = {
     console: { errors: 0, warnings: 0 }
   },
   journeys: {
-    landing: {
+    rootComparison: {
       result: "PASS",
-      mode: "branded-homepage",
-      headline: "Agent Evidence Catalog",
-      comparisonApplicationPresent: false,
-      navigation: ["Catalog", "Compare claims", "How it works"],
-      destinations: {
-        catalog: "research-preview/index.html",
-        comparison: "research-preview/compare.html",
-        howItWorks: "research-preview/how-it-works.html"
-      },
-      desktop: {
-        observedCss: { width: 1422, height: 800 },
-        horizontalOverflow: false
-      },
-      mobile: {
-        targetCss: { width: 390, height: 844 },
-        controlViewport: { width: 351, height: 760 },
-        observedCss: { width: 390, height: 844 },
-        devicePixelRatio: 0.9,
-        horizontalOverflow: false,
-        navigationOpened: true,
-        catalogNavigationPassed: true
-      }
+      mode: "comparison-application",
+      ...rootComparison
     },
-    catalog: {
+    modelCards: {
       result: "PASS",
       surfaces: 55,
-      currentCards: 53,
+      ...modelCards,
       historyCards: 70,
       historyCollapsedInitially: true,
       historyExpandedOnRequest: true,
       historyRenderedState,
-      qwenSearchResultCount: "2 of 53 current records",
-      qwenCurrentIdentity: "0.21.15",
-      knownUpdateNotices: 0,
-      desktopHorizontalOverflow: false,
-      mobileHorizontalOverflow: false
+      knownUpdateNotices: census.counts.knownNewer
     },
     comparison: {
       result: "PASS",
-      representativePair: ["com.anthropic.claude-code.cli.2-1-238", "com.openai.codex.cli.0-149-0"],
-      representativePairOfficialSourceLinks: 20,
-      urlPersistsAcrossReload: true,
-      maximumSelectedRecords: 4,
-      activeFourRecordMatrixRows: 40,
-      mobileMatrixInternalOverflow: true,
-      mobileBodyHorizontalOverflow: false
+      representativePair: rootComparison.representativePair,
+      representativePairOfficialSourceLinks: rootComparison.representativePairOfficialSourceLinks,
+      urlPersistsAcrossReload: rootComparison.urlPersistsAcrossReload,
+      maximumSelectedRecords: rootComparison.maximumSelectedRecords,
+      activeFourRecordMatrixRows: rootComparison.activeFourRecordMatrixRows,
+      mobileMatrixInternalOverflow: rootComparison.mobile.matrixInternalOverflow,
+      mobileBodyHorizontalOverflow: rootComparison.mobile.horizontalOverflow
     },
+    comparisonCompatibility: { result: "PASS", ...comparisonCompatibility },
     howItWorks: {
       result: "PASS",
       sections: [
@@ -253,7 +289,7 @@ const receipt = {
     discoveryMetadata: {
       result: "PASS",
       recordPagesAudited: 123,
-      sitemapHumanReadableRoutes: 127,
+      sitemapHumanReadableRoutes: 126,
       sitemapRecordRoutes: 123,
       canonicalAndStructuredMetadataFailures: 0
     }
@@ -295,8 +331,8 @@ const receipt = {
     independentTestsCredited: 0,
     rankingsOrSuitabilityCalculations: false,
     priorAcceptedRecordsOrSourceArtifactsRewritten: false,
-    currentnessLifecycleProjectionUpdated: true,
-    visitorInformationArchitectureChanged: false,
+    currentnessLifecycleProjectionUpdated: false,
+    visitorInformationArchitectureChanged: true,
     githubStateChanged: false,
     publicationAuthorizedByReceipt: false
   }

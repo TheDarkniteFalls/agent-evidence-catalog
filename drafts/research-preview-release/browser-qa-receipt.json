@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "research-preview-browser-qa/1.0",
+  "schemaVersion": "research-preview-browser-qa/1.1",
   "asOf": "2026-08-21",
-  "checkedAt": "2026-08-21T09:36:03.376Z",
+  "checkedAt": "2026-08-21T12:12:05.621Z",
   "loopback": {
     "url": "http://localhost:4173/",
     "listener": "localhost:4173",
@@ -10,18 +10,18 @@
     "browserNavigation": "PASS"
   },
   "sourceDigests": {
-    "landingHtmlSha256": "9b2f97613d8c329b64675dcd03363337cd1b1e47e356fee77b338b5d40759268",
-    "previewHtmlSha256": "cf1de52c0f1035603086c53caa3f0db50b06edb3eb568bf900c73e7754a4b2af",
-    "howItWorksHtmlSha256": "dc95f0b040f7646a65ad8e33294199b8d0750a12cd865b3599f395c3faa9acd8",
+    "rootComparisonHtmlSha256": "62e70b94f0013c96242ec5b6e2cbb801ab0a21e0ba5ad192dca35f10365c0706",
+    "modelCardsHtmlSha256": "ff3f27e820805e8d6fad24b63d8524336dc7947c87b489e518e0620d5a1e7938",
+    "howItWorksHtmlSha256": "df006e08d0cbda4fcf7789f8e8818dbb7a5ec42106dcc5ffe192f2cf58eac195",
     "previewDataSha256": "4735a6a35dc16f82a7d84607c003a23f363cb17b5cd752c64776c2e5ee4cfbaf",
-    "previewAppSha256": "ebb47482f7d2a12a1c60d1666acc479976bb6a2c34979b0d130b2e661435d21f",
-    "comparisonHtmlSha256": "8b71e7ba32faee18e4c229ca97489cffd370686d77137a5fb7698c25fe43292c",
+    "previewAppSha256": "a7171b3d5c3bba6c88ea88b0dfa8f1595c6d462e38d455288747e70b932cff09",
+    "comparisonHtmlSha256": "56797d81813573b725aaf705deb1b2d9f3f3ddc70cd1605aa6c1dceeb8fbd5d2",
     "comparisonCoreSha256": "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e",
     "comparisonAppSha256": "60922091477020eab24527ae406b3f8b290fc7e9f80d649fcb1916981793afc0",
-    "recordDetailAppSha256": "adc6da13fc9f3fc734d95ba55a21ffd6591da8bd843901ec9851a4467213a45d",
-    "previewStylesSha256": "04cc3dee588f42ddf4914289b7a6ccf903088fd5ccd529ceead8a7bc312663d9",
-    "recordDetailsManifestSha256": "b9e6e68bec48ec368f50a0807551942e77b9bae8fe187cb5e683973e0da926ed",
-    "sitemapSha256": "cc8e44b443de65309932bb701b4803036e8974603e0d9e02f56ef2b53d98871b"
+    "recordDetailAppSha256": "87e143ac1e24a652ea606bbae367633e1f0ee2707e12ee1453c23c3a0f5dcd1f",
+    "previewStylesSha256": "fb663b4aab2d456f20fc42e986e51d0e60b4fa4d2f2f234ad4c332e7501cb3da",
+    "recordDetailsManifestSha256": "cf5bbf9411d2096ab6c9073c3e305b425a43589e61ba5aa14cf5d4f814e16b9d",
+    "sitemapSha256": "09ce1c60d416593a6e2e850a379a9ca9bd65b536ebe1803889ade4c7423afe6e"
   },
   "snapshot": {
     "sourceReviewWindow": {
@@ -58,10 +58,10 @@
     "cacheBustingVersion": "2026-08-21-sealed-snapshot"
   },
   "publicationAuthorQa": {
-    "workstream": "AEC-REFRESH-2026-08-21-BROWSER-QA",
+    "workstream": "AEC-COMPARE-MODEL-CARDS-2026-08-21-BROWSER-QA",
     "result": "PASS",
-    "checkedAt": "2026-08-21T09:36:03.376Z",
-    "baseHead": "68522b168319ee17fe1c8290ffb9c284acf36b98",
+    "checkedAt": "2026-08-21T12:12:05.621Z",
+    "baseHead": "941dab8dd874a972699de9e9bf4a119f70954b0b",
     "browser": "Codex in-app Browser",
     "currentness": {
       "records": 123,
@@ -90,16 +90,16 @@
       "mobileHorizontalOverflow": false,
       "narrowMobileHorizontalOverflow": false,
       "mobileNavigationOpened": true,
-      "mobileCatalogNavigationPassed": true
+      "mobileModelCardsNavigationPassed": true
     },
-    "screenshotsCaptured": 5,
+    "screenshotsCaptured": 6,
     "sitemap": {
-      "routes": 127,
-      "uniqueRoutes": 127,
-      "lastmodEntries": 127,
+      "routes": 126,
+      "uniqueRoutes": 126,
+      "lastmodEntries": 126,
       "sharedLastmod": "2026-08-21",
       "source": "accepted snapshot seal and accepted record review dates",
-      "sha256": "cc8e44b443de65309932bb701b4803036e8974603e0d9e02f56ef2b53d98871b"
+      "sha256": "09ce1c60d416593a6e2e850a379a9ca9bd65b536ebe1803889ade4c7423afe6e"
     },
     "console": {
       "errors": 0,
@@ -107,21 +107,26 @@
     }
   },
   "journeys": {
-    "landing": {
+    "rootComparison": {
       "result": "PASS",
-      "mode": "branded-homepage",
-      "headline": "Agent Evidence Catalog",
-      "comparisonApplicationPresent": false,
+      "mode": "comparison-application",
+      "route": "/",
+      "title": "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
+      "headline": "Compare agent claims, source by source.",
+      "comparisonApplicationPresent": true,
       "navigation": [
-        "Catalog",
         "Compare claims",
+        "Model Cards",
         "How it works"
       ],
-      "destinations": {
-        "catalog": "research-preview/index.html",
-        "comparison": "research-preview/compare.html",
-        "howItWorks": "research-preview/how-it-works.html"
-      },
+      "representativePair": [
+        "com.anthropic.claude-code.cli.2-1-238",
+        "com.openai.codex.cli.0-149-0"
+      ],
+      "representativePairOfficialSourceLinks": 20,
+      "urlPersistsAcrossReload": true,
+      "activeFourRecordMatrixRows": 40,
+      "maximumSelectedRecords": 4,
       "desktop": {
         "observedCss": {
           "width": 1422,
@@ -145,47 +150,91 @@
         "devicePixelRatio": 0.9,
         "horizontalOverflow": false,
         "navigationOpened": true,
-        "catalogNavigationPassed": true
+        "matrixInternalOverflow": true
       }
     },
-    "catalog": {
+    "modelCards": {
       "result": "PASS",
       "surfaces": 55,
-      "currentCards": 53,
+      "route": "/research-preview/",
+      "title": "Model Cards for Current Coding Agents · Agent Evidence Catalog",
+      "headline": "Model Cards",
+      "navigation": [
+        "Compare claims",
+        "Model Cards",
+        "How it works"
+      ],
+      "staticCurrentCards": 53,
+      "renderedCurrentCards": 53,
+      "publisherMonograms": 53,
+      "evidenceProfiles": 53,
+      "unresolvedBoundaryMetrics": 53,
+      "repeatedIndependentTestMetrics": 0,
+      "deliveryFilterCounts": {
+        "all": 53,
+        "local": 1,
+        "hybrid": 32,
+        "hosted": 20
+      },
+      "qwenSearchResultCount": "2 of 53 surfaces",
+      "qwenCurrentIdentity": "0.21.15",
+      "desktop": {
+        "observedCss": {
+          "width": 1422,
+          "height": 800
+        },
+        "gridColumns": 3,
+        "horizontalOverflow": false
+      },
+      "mobile": {
+        "targetCss": {
+          "width": 390,
+          "height": 844
+        },
+        "controlViewport": {
+          "width": 351,
+          "height": 760
+        },
+        "observedCss": {
+          "width": 390,
+          "height": 844
+        },
+        "devicePixelRatio": 0.9,
+        "gridColumns": 1,
+        "cardsAndActionsContained": true,
+        "horizontalOverflow": false,
+        "navigationOpened": true
+      },
       "historyCards": 70,
       "historyCollapsedInitially": true,
       "historyExpandedOnRequest": true,
       "historyRenderedState": {
         "initial": {
-          "ariaExpanded": "false",
-          "boundingBoxHeightPx": 0,
-          "computedDisplay": "none",
           "hiddenAttribute": true,
+          "ariaExpanded": "false",
           "toggleText": "Show 70 history records",
+          "computedDisplay": "none",
+          "boundingBoxHeightPx": 0,
           "visibleCardCount": 0
         },
         "expanded": {
-          "ariaExpanded": "true",
-          "boundingBoxHeightPx": 9087.439453125,
-          "computedDisplay": "grid",
           "hiddenAttribute": false,
+          "ariaExpanded": "true",
           "toggleText": "Hide history records",
+          "computedDisplay": "grid",
+          "boundingBoxHeightPx": 10158.9765625,
           "visibleCardCount": 70
         },
         "recollapsed": {
-          "ariaExpanded": "false",
-          "boundingBoxHeightPx": 0,
-          "computedDisplay": "none",
           "hiddenAttribute": true,
+          "ariaExpanded": "false",
           "toggleText": "Show 70 history records",
+          "computedDisplay": "none",
+          "boundingBoxHeightPx": 0,
           "visibleCardCount": 0
         }
       },
-      "qwenSearchResultCount": "2 of 53 current records",
-      "qwenCurrentIdentity": "0.21.15",
-      "knownUpdateNotices": 0,
-      "desktopHorizontalOverflow": false,
-      "mobileHorizontalOverflow": false
+      "knownUpdateNotices": 0
     },
     "comparison": {
       "result": "PASS",
@@ -199,6 +248,13 @@
       "activeFourRecordMatrixRows": 40,
       "mobileMatrixInternalOverflow": true,
       "mobileBodyHorizontalOverflow": false
+    },
+    "comparisonCompatibility": {
+      "result": "PASS",
+      "route": "/research-preview/compare.html",
+      "completeApplicationPresent": true,
+      "canonicalHref": "https://thedarknitefalls.github.io/agent-evidence-catalog/",
+      "selectionStateWorks": true
     },
     "howItWorks": {
       "result": "PASS",
@@ -401,7 +457,7 @@
     "discoveryMetadata": {
       "result": "PASS",
       "recordPagesAudited": 123,
-      "sitemapHumanReadableRoutes": 127,
+      "sitemapHumanReadableRoutes": 126,
       "sitemapRecordRoutes": 123,
       "canonicalAndStructuredMetadataFailures": 0
     }
@@ -441,8 +497,8 @@
     "independentTestsCredited": 0,
     "rankingsOrSuitabilityCalculations": false,
     "priorAcceptedRecordsOrSourceArtifactsRewritten": false,
-    "currentnessLifecycleProjectionUpdated": true,
-    "visitorInformationArchitectureChanged": false,
+    "currentnessLifecycleProjectionUpdated": false,
+    "visitorInformationArchitectureChanged": true,
     "githubStateChanged": false,
     "publicationAuthorizedByReceipt": false
   }
