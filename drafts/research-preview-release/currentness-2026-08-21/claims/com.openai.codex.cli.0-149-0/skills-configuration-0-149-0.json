@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.openai.codex.cli.skills-configuration-0-149-0",
+  "slug": "skills-configuration-0-149-0",
+  "subject": {
+    "id": "com.openai.codex.cli",
+    "name": "OpenAI Codex CLI",
+    "publisher": "OpenAI",
+    "surface": {
+      "kind": "cli",
+      "name": "Codex CLI",
+      "slug": "openai-codex-cli-0-149-0"
+    }
+  },
+  "claim": {
+    "category": "configuration.skills",
+    "statement": "The generated configuration schema at tag rust-v0.149.0 represents skill enablement and configured skill paths separately from plugins, MCP servers and built-in tools."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "OpenAI"
+  },
+  "source": {
+    "uri": "https://github.com/openai/codex/blob/rust-v0.149.0/codex-rs/core/config.schema.json",
+    "title": "Codex 0.149.0 generated configuration schema",
+    "locator": "properties.skills and skill configuration definitions",
+    "publishedAt": null,
+    "capturedAt": "2026-08-21T06:36:14.846Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "0.149.0"
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "skills unconfigured",
+        "configured skill",
+        "executor-provided skill"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Codex skill discovery and executor-provided skill path"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-21",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-21",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "source-unavailable",
+      "claimant-correction",
+      "product-version-change",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Feature support does not identify which skills are present, selected or trusted.",
+    "A skill may alter instructions and resource access without being a model, plugin, MCP server or built-in tool."
+  ],
+  "unknowns": [
+    "Available skills, their source paths, contents, enablement, resource scope and invocation are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

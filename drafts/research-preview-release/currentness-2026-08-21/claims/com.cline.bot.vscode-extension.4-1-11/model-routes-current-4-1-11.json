@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.model-routes-current-4-1-11",
+  "slug": "model-routes-current-4-1-11",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension-4-1-11"
+    }
+  },
+  "claim": {
+    "category": "identity.model",
+    "statement": "Cline's current official repository describes multiple hosted, gateway, cloud-platform, local and OpenAI-compatible model-provider routes rather than one model fixed by the extension version."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://github.com/cline/cline",
+    "title": "cline/cline official repository",
+    "locator": "Works With Every Model",
+    "publishedAt": null,
+    "capturedAt": "2026-08-21T06:36:13.302Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "configured provider route"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Cline VS Code extension"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-21",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "Provider names do not identify the model, endpoint, revision, account, retention policy or effective request path."
+  ],
+  "unknowns": [
+    "The effective model, provider, endpoint, model revision, credentials and data policy are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

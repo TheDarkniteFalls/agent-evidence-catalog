@@ -430,9 +430,9 @@ ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}  
       <p id="trayCount" class="selection-tray-count"></p>
       <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected claims</button>
     </div>
-    <script src="../data.js?v=2026-08-20-sealed-snapshot"></script>
+    <script src="../data.js?v=2026-08-21-sealed-snapshot"></script>
     <script src="../comparison-core.js?v=2026-08-16-visitor-ia-1"></script>
-    <script src="../record-detail.js?v=2026-08-20-sealed-snapshot"></script>
+    <script src="../record-detail.js?v=2026-08-21-sealed-snapshot"></script>
   </body>
 </html>
 `;
@@ -876,10 +876,10 @@ async function commandBuild() {
   const researchPreviewLifecycleSource = join(ROOT, "drafts", "real-agent-catalog", "research-preview", "lifecycle.json");
   const researchPreviewLifecycle = JSON.parse(await readFile(researchPreviewLifecycleSource, "utf8"));
   await copyFile(researchPreviewLifecycleSource, join(DIST, "research-preview", "lifecycle.json"));
-  const snapshotSealSource = join(ROOT, "drafts", "research-preview-release", "currentness-2026-08-20", "snapshot-seal.json");
+  const snapshotSealSource = join(ROOT, "drafts", "research-preview-release", "currentness-2026-08-21", "snapshot-seal.json");
   const snapshotSealRaw = await readFile(snapshotSealSource, "utf8");
   const snapshotSeal = JSON.parse(snapshotSealRaw);
-  const freshnessCensusSource = join(ROOT, "drafts", "research-preview-release", "currentness-2026-08-20", "publication-freshness-census.json");
+  const freshnessCensusSource = join(ROOT, "drafts", "research-preview-release", "currentness-2026-08-21", "publication-freshness-census.json");
   const freshnessCensusRaw = await readFile(freshnessCensusSource, "utf8");
   const freshnessCensus = JSON.parse(freshnessCensusRaw);
   if (JSON.stringify(researchPreview.snapshotSeal) !== JSON.stringify(snapshotSeal)) {

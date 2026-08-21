@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.vscode-extension.approval-current-4-1-11",
+  "slug": "approval-current-4-1-11",
+  "subject": {
+    "id": "com.cline.bot",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "ide-extension",
+      "name": "Cline VS Code extension",
+      "slug": "cline-vscode-extension-4-1-11"
+    }
+  },
+  "claim": {
+    "category": "authority.approval",
+    "statement": "Current official documentation separates per-tool-call approval, selected Auto Approve categories and YOLO Mode, which auto-approves file, terminal, browser, MCP and mode-transition actions."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://docs.cline.bot/features/auto-approve",
+    "title": "Auto Approve and YOLO Mode - Cline",
+    "locator": "How It Works, Permissions and YOLO Mode",
+    "publishedAt": null,
+    "capturedAt": "2026-08-21T06:36:13.302Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "alternatives",
+      "values": [
+        "manual approval",
+        "selective Auto Approve",
+        "YOLO Mode"
+      ]
+    },
+    "platform": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "model": {
+      "scope": "unspecified",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Cline IDE extension"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-08-02",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-21",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "new-official-release",
+      "source-unavailable",
+      "claimant-correction",
+      "configuration-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The documentation describes configurable authority; it does not establish the effective settings of any installation."
+  ],
+  "unknowns": [
+    "The active approval categories, command classification, MCP servers and mode-transition policy are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

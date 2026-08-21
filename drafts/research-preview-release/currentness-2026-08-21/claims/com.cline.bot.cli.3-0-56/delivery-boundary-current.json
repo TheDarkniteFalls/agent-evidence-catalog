@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cline.bot.cli.delivery-boundary-current",
+  "slug": "delivery-boundary-current",
+  "subject": {
+    "id": "com.cline.bot.cli",
+    "name": "Cline CLI",
+    "publisher": "Cline Bot Inc.",
+    "surface": {
+      "kind": "cli",
+      "name": "Cline CLI",
+      "slug": "cline-cli-3-0-56"
+    }
+  },
+  "claim": {
+    "category": "identity.delivery-boundary",
+    "statement": "Cline Bot Inc.'s official documentation describes Cline CLI as a client or editor surface combined with separately revisioned model or service paths; the catalog keeps that delivery path separate from other Cline surfaces."
+  },
+  "provenance": {
+    "kind": "publisher-statement",
+    "claimant": "Cline Bot Inc."
+  },
+  "source": {
+    "uri": "https://docs.cline.bot/usage/cli-overview",
+    "title": "Cline CLI overview",
+    "locator": "Official publisher page reviewed for the named surface and delivery boundary",
+    "publishedAt": null,
+    "capturedAt": "2026-08-21T06:36:13.293Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "exact-version",
+      "value": "3.0.56"
+    },
+    "configuration": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "platform": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "model": {
+      "scope": "unresolved",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "hybrid"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "current",
+    "changedAt": "2026-08-21",
+    "reason": "The claim is admitted only for the named record, reviewed source and applicability boundary."
+  },
+  "review": {
+    "reviewedAt": "2026-08-21",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "publisher-source-change",
+      "surface-rename",
+      "release-or-service-boundary-change"
+    ]
+  },
+  "limitations": [
+    "The documented delivery model is an applicability boundary, not evidence of product quality, runtime behavior or suitability."
+  ],
+  "unknowns": [
+    "CLI package identity must be separated from the accepted VS Code extension 4.1.2",
+    "Shared documentation cannot be presumed to apply equally to both surfaces"
+  ],
+  "relationships": [],
+  "validationRefs": []
+}

@@ -221,8 +221,8 @@ async function assertNoPublicIntegration() {
     if (relative === "dist/build-manifest.json") {
       const manifest = JSON.parse(content);
       const details = manifest.researchPreview.recordDetails;
-      assert.equal(details.count, 115);
-      assert.equal(details.records.length, 115);
+      assert.equal(details.count, 123);
+      assert.equal(details.records.length, 123);
       assertUnique(details.records.map((entry) => entry.recordId), "Human-readable record-detail IDs");
       for (const entry of details.records) {
         assert.equal(entry.entryPoint, `research-preview/records/${entry.recordId}.html`);

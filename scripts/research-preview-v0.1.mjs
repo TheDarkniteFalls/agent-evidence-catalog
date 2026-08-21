@@ -231,6 +231,10 @@ function classify(relativePath) {
     if (relativePath.endsWith(".mjs")) return ["canonical-source", "Repeatable official-source currentness capture, builder, validator, census, link auditor or Browser receipt writer."];
     return ["accepted-evidence-provenance", "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."];
   }
+  if (relativePath.startsWith("drafts/research-preview-release/currentness-2026-08-21/")) {
+    if (relativePath.endsWith(".mjs")) return ["canonical-source", "Repeatable official-source currentness capture, builder, validator, census, link auditor or Browser receipt writer."];
+    return ["accepted-evidence-provenance", "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."];
+  }
   if (relativePath.startsWith("drafts/research-preview-release/")) {
     return ["release-control-artifact", "Baseline, preservation, manifest or release-validation control."];
   }
@@ -259,7 +263,7 @@ function artifacts(files) {
   ]));
   return {
     schemaVersion: "research-preview-path-classification/0.1",
-    asOf: "2026-08-20",
+    asOf: "2026-08-21",
     repository: "agent-evidence-catalog",
     classificationRule: "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
     counts,
@@ -271,7 +275,7 @@ function releaseManifest(files) {
   const distPaths = files.filter((relativePath) => relativePath.startsWith("dist/"));
   return {
     schemaVersion: "research-preview-release-manifest/0.1",
-    asOf: "2026-08-20",
+    asOf: "2026-08-21",
     targetRepository: "agent-evidence-catalog",
     primaryProduct: "real-agent-research-preview-v0.1",
     publicationStatus: "public-research-preview-v0.1",
@@ -371,6 +375,8 @@ async function buildOneWayProjection() {
   node("official-source 2026-08-18 currentness projection", "drafts/research-preview-release/currentness-2026-08-18/build-currentness.mjs");
   node("official-source 2026-08-18 currentness validation", "drafts/research-preview-release/currentness-2026-08-18/validate-currentness.mjs");
   node("official-source 2026-08-20 currentness projection", "drafts/research-preview-release/currentness-2026-08-20/build-currentness.mjs");
+  node("official-source 2026-08-20 currentness validation", "drafts/research-preview-release/currentness-2026-08-20/validate-currentness.mjs");
+  node("official-source 2026-08-21 currentness projection", "drafts/research-preview-release/currentness-2026-08-21/build-currentness.mjs");
   const preview = JSON.parse(await readFile(path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json"), "utf8"));
   await materializeStaticCatalogSource(preview);
   node("static source-to-dist build", "scripts/catalog.mjs", "build");
@@ -414,8 +420,8 @@ const validatorCommands = [
   ["pre-currentness generated refreshes", "drafts/real-agent-catalog/scripts/validate-current-record-refreshes.mjs"],
   ["critical-mass expansion", "drafts/real-agent-catalog/scripts/validate-critical-mass-expansion.mjs"],
   ["source-only 2026-08-18 candidates", "drafts/real-agent-catalog/scripts/validate-source-only-candidates-2026-08-18.mjs"],
-  ["official-source 2026-08-20 currentness", "drafts/research-preview-release/currentness-2026-08-20/validate-currentness.mjs"],
-  ["unified 115-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
+  ["official-source 2026-08-21 currentness", "drafts/research-preview-release/currentness-2026-08-21/validate-currentness.mjs"],
+  ["unified 123-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
   ["evidence-exact agent-claims comparison", "scripts/validate-comparison-mvp.mjs"],
   ["governance requirements", "drafts/real-agent-catalog/scripts/validate-governance.mjs"],
   ["documentation and publisher source links", "drafts/real-agent-catalog/scripts/validate-documentation-consistency.mjs"],
@@ -932,16 +938,16 @@ async function validateBrowserReceipt() {
   const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
   const preview = JSON.parse(await readFile(path.join(packageRoot, "dist", "research-preview", "catalog.json"), "utf8"));
   const lifecycle = JSON.parse(await readFile(path.join(packageRoot, "dist", "research-preview", "lifecycle.json"), "utf8"));
-  const seal = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-20", "snapshot-seal.json"), "utf8"));
-  const census = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-20", "publication-freshness-census.json"), "utf8"));
-  const surfaceAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-20", "official-source-audit.json"), "utf8");
+  const seal = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "snapshot-seal.json"), "utf8"));
+  const census = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "publication-freshness-census.json"), "utf8"));
+  const surfaceAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "official-source-audit.json"), "utf8");
   const surfaceAudit = JSON.parse(surfaceAuditText);
-  const urlAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-20", "official-url-audit.json"), "utf8");
+  const urlAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "official-url-audit.json"), "utf8");
   const urlAudit = JSON.parse(urlAuditText);
   const recordIds = buildManifest.researchPreview.recordDetails.records.map((item) => item.recordId);
 
   assert.equal(receipt.schemaVersion, "research-preview-browser-qa/0.9");
-  assert.equal(receipt.asOf, "2026-08-20");
+  assert.equal(receipt.asOf, "2026-08-21");
   assert.equal(new Date(receipt.checkedAt).toISOString(), receipt.checkedAt);
   assert(new Date(receipt.checkedAt) >= new Date(census.census.completedAt));
   assert.deepEqual(receipt.loopback, {
@@ -981,29 +987,28 @@ async function validateBrowserReceipt() {
     completedAt: census.census.completedAt,
     ...census.counts
   });
-  assert.equal(receipt.snapshot.bannerCopy, "Catalog snapshot: 20 August 2026, 07:59 UTC. Agent releases change quickly; records with known updates are marked.");
-  assert.equal(receipt.snapshot.cacheBustingVersion, "2026-08-20-sealed-snapshot");
+  assert.equal(receipt.snapshot.bannerCopy, "Catalog snapshot: 21 August 2026, 06:43 UTC. Agent releases change quickly; records with known updates are marked.");
+  assert.equal(receipt.snapshot.cacheBustingVersion, "2026-08-21-sealed-snapshot");
 
   const publicationQa = receipt.publicationAuthorQa;
-  assert.equal(publicationQa.workstream, "AEC-REFRESH-2026-08-20-AUTHOR");
+  assert.equal(publicationQa.workstream, "AEC-REFRESH-2026-08-21-BROWSER-QA");
   assert.equal(publicationQa.result, "PASS");
   assert.equal(publicationQa.checkedAt, receipt.checkedAt);
-  assert.equal(publicationQa.baseHead, "9897aae13a2cd2d70c856f25d0781ba5586b0d60");
+  assert.equal(publicationQa.baseHead, "68522b168319ee17fe1c8290ffb9c284acf36b98");
   assert.equal(publicationQa.browser, "Codex in-app Browser");
   assert.deepEqual(publicationQa.currentness, {
-    records: 115,
+    records: 123,
     currentRecords: 53,
-    historyRecords: 62,
+    historyRecords: 70,
     refreshedRecordIds: [
-      "com.alibaba.qwen-code.cli.0-21-14",
-      "com.amazon.kiro.ide.1-0-337",
-      "com.anomaly.opencode.cli.1-18-19",
-      "com.anthropic.claude-code.cli.2-1-237",
-      "com.google.antigravity.cli.1-1-16",
-      "com.google.gemini.cli.0-56-0",
-      "com.jetbrains.junie.ide-plugin.262-579-38",
-      "com.openai.codex.cli.0-148-0",
-      "dev.zed.agent.native.1-16-1"
+      "com.alibaba.qwen-code.cli.0-21-15",
+      "com.anthropic.claude-code.cli.2-1-238",
+      "com.google.antigravity.cli.1-1-17",
+      "com.cline.bot.cli.3-0-56",
+      "com.cline.bot.vscode-extension.4-1-11",
+      "com.cursor.ide.foreground-agent.3-17",
+      "com.jetbrains.junie.ide-plugin.262-579-44",
+      "com.openai.codex.cli.0-149-0"
     ],
     sourceOnlyDossierRecordIds: [
       "com.cursor.cli.agent.beta",
@@ -1024,9 +1029,9 @@ async function validateBrowserReceipt() {
   assert.deepEqual(publicationQa.console, { errors: 0, warnings: 0 });
   const acceptedLastmod = acceptedDate(seal.sealedAt, "Accepted snapshot seal");
   assert.deepEqual(publicationQa.sitemap, {
-    routes: 119,
-    uniqueRoutes: 119,
-    lastmodEntries: 119,
+    routes: 127,
+    uniqueRoutes: 127,
+    lastmodEntries: 127,
     sharedLastmod: acceptedLastmod,
     source: "accepted snapshot seal and accepted record review dates",
     sha256: sha256(await readFile(path.join(packageRoot, "dist", "sitemap.xml")))
@@ -1060,16 +1065,16 @@ async function validateBrowserReceipt() {
     result: "PASS",
     surfaces: 55,
     currentCards: 53,
-    historyCards: 62,
+    historyCards: 70,
     historyCollapsedInitially: true,
     historyExpandedOnRequest: true,
     qwenSearchResultCount: "2 of 53 current records",
-    qwenCurrentIdentity: "0.21.14",
+    qwenCurrentIdentity: "0.21.15",
     knownUpdateNotices: census.counts.knownNewer,
     desktopHorizontalOverflow: false,
     mobileHorizontalOverflow: false
   });
-  assert.deepEqual(receipt.journeys.comparison.representativePair, ["com.anthropic.claude-code.cli.2-1-237", "com.openai.codex.cli.0-148-0"]);
+  assert.deepEqual(receipt.journeys.comparison.representativePair, ["com.anthropic.claude-code.cli.2-1-238", "com.openai.codex.cli.0-149-0"]);
   assert.equal(receipt.journeys.comparison.representativePairOfficialSourceLinks, 20);
   assert.equal(receipt.journeys.comparison.urlPersistsAcrossReload, true);
   assert.equal(receipt.journeys.comparison.maximumSelectedRecords, 4);
@@ -1089,15 +1094,15 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.journeys.howItWorks.desktopHorizontalOverflow, false);
   assert.equal(receipt.journeys.howItWorks.mobileHorizontalOverflow, false);
 
-  assert.equal(preview.previewRecords.length, 115);
-  assert.equal(lifecycle.entries.length, 115);
+  assert.equal(preview.previewRecords.length, 123);
+  assert.equal(lifecycle.entries.length, 123);
   assert.deepEqual(receipt.journeys.records.recordIds, recordIds);
-  assert.equal(receipt.journeys.records.desktop.pagesAudited, 115);
+  assert.equal(receipt.journeys.records.desktop.pagesAudited, 123);
   assert.deepEqual(receipt.journeys.records.desktop.failureRecordIds, []);
   assert.equal(receipt.journeys.records.desktop.controlViewport, "browser-default");
   assert.deepEqual(receipt.journeys.records.desktop.observedCss, { width: 1422, height: 800 });
   assert.equal(receipt.journeys.records.desktop.devicePixelRatio, 1.8);
-  assert.equal(receipt.journeys.records.mobile.pagesAudited, 115);
+  assert.equal(receipt.journeys.records.mobile.pagesAudited, 123);
   assert.deepEqual(receipt.journeys.records.mobile.failureRecordIds, []);
   assert.deepEqual(receipt.journeys.records.mobile.targetCss, { width: 390, height: 844 });
   assert.deepEqual(receipt.journeys.records.mobile.controlViewport, { width: 351, height: 760 });
@@ -1114,9 +1119,9 @@ async function validateBrowserReceipt() {
   assert(Object.values(receipt.journeys.records.checksAppliedToEveryPage).every(Boolean));
   assert.deepEqual(receipt.journeys.discoveryMetadata, {
     result: "PASS",
-    recordPagesAudited: 115,
-    sitemapHumanReadableRoutes: 119,
-    sitemapRecordRoutes: 115,
+    recordPagesAudited: 123,
+    sitemapHumanReadableRoutes: 127,
+    sitemapRecordRoutes: 123,
     canonicalAndStructuredMetadataFailures: 0
   });
 
@@ -1144,7 +1149,7 @@ async function validateBrowserReceipt() {
     uniqueEndpointsChecked: urlAudit.counts.uniqueOfficialUrlsChecked,
     passed: urlAudit.counts.reachable,
     unresolved: urlAudit.counts.unreachable,
-    receiptPath: "drafts/research-preview-release/currentness-2026-08-20/official-url-audit.json",
+    receiptPath: "drafts/research-preview-release/currentness-2026-08-21/official-url-audit.json",
     receiptSha256: sha256(urlAuditText)
   });
   assert.equal(receipt.sourceLinks.unresolved.length, urlAudit.counts.unreachable);
@@ -1162,7 +1167,7 @@ async function validateBrowserReceipt() {
     githubStateChanged: false,
     publicationAuthorizedByReceipt: false
   });
-  console.log("PASS digest-bound Browser QA: 115 desktop and mobile record pages, refreshed catalog identities, responsive comparison and zero console errors");
+  console.log("PASS digest-bound Browser QA: 123 desktop and mobile record pages, refreshed catalog identities, responsive comparison and zero console errors");
 }
 
 function validatePageDiscovery(html, expected) {
@@ -1374,7 +1379,7 @@ async function validateFirstScreenContract() {
   assert(landing.includes('href="compare.html">Compare agent claims</a>'), "Root landing must expose the canonical comparison route");
   assert(catalog.includes('class="primary-action" href="compare.html">Compare agent claims</a>'), "Catalog first screen must expose the primary comparison CTA");
   assert(comparison.includes("Select 2–4 exact records"), "Comparison route must expose the empty picker state");
-  const snapshotAssetVersion = "v=2026-08-20-sealed-snapshot";
+  const snapshotAssetVersion = "v=2026-08-21-sealed-snapshot";
   for (const [label, html, assets] of [
     ["landing", landing, ["data.js"]],
     ["catalog", catalog, ["data.js"]],

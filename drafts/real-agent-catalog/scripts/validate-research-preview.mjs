@@ -16,6 +16,7 @@ const currentness20260815Path = path.join(packageRoot, "drafts", "research-previ
 const currentness20260817Path = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-17", "currentness-source.json");
 const currentness20260818Path = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-18", "currentness-source.json");
 const currentness20260820Path = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-20", "currentness-source.json");
+const currentness20260821Path = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "currentness-source.json");
 const baseLifecycleText = await readFile(baseLifecyclePath, "utf8");
 const baseWatcherText = await readFile(baseWatcherPath, "utf8");
 const currentnessLifecycleText = await readFile(currentnessLifecyclePath, "utf8");
@@ -27,8 +28,9 @@ const currentness20260815Text = await readFile(currentness20260815Path, "utf8");
 const currentness20260817Text = await readFile(currentness20260817Path, "utf8");
 const currentness20260818Text = await readFile(currentness20260818Path, "utf8");
 const currentness20260820Text = await readFile(currentness20260820Path, "utf8");
-const snapshotSealText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-20", "snapshot-seal.json"), "utf8");
-const freshnessCensusText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-20", "publication-freshness-census.json"), "utf8");
+const currentness20260821Text = await readFile(currentness20260821Path, "utf8");
+const snapshotSealText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "snapshot-seal.json"), "utf8");
+const freshnessCensusText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "publication-freshness-census.json"), "utf8");
 const snapshotSeal = JSON.parse(snapshotSealText);
 const freshnessCensus = JSON.parse(freshnessCensusText);
 const baseLifecycle = JSON.parse(baseLifecycleText);
@@ -42,6 +44,7 @@ const currentness20260815 = JSON.parse(currentness20260815Text);
 const currentness20260817 = JSON.parse(currentness20260817Text);
 const currentness20260818 = JSON.parse(currentness20260818Text);
 const currentness20260820 = JSON.parse(currentness20260820Text);
+const currentness20260821 = JSON.parse(currentness20260821Text);
 const lifecycle = await readJson(path.join(previewRoot, "lifecycle.json"));
 const watcher = await readJson(path.join(previewRoot, "source-registry.json"));
 const preview = await readJson(path.join(previewRoot, "catalog.json"));
@@ -60,10 +63,10 @@ for (const accepted of acceptedLifecycleEntries) {
   assert(projected, `Accepted lifecycle record ${accepted.recordId} was not preserved`);
   assert.equal(projected.surfaceKey, accepted.surfaceKey, `${accepted.recordId} surface key changed`);
 }
-assert.equal(lifecycle.entries.length, 115);
+assert.equal(lifecycle.entries.length, 123);
 const lifecycleById = new Map(lifecycle.entries.map((entry) => [entry.recordId, entry]));
 assert.equal(lifecycleById.size, lifecycle.entries.length, "Lifecycle record IDs must be unique");
-const expectedCounts = { current: 53, superseded: 59, historical: 2, discontinued: 1, unresolved: 0 };
+const expectedCounts = { current: 53, superseded: 67, historical: 2, discontinued: 1, unresolved: 0 };
 for (const [status, expected] of Object.entries(expectedCounts)) {
   assert.equal(lifecycle.entries.filter((entry) => entry.status === status).length, expected, `${status} count mismatch`);
 }
@@ -95,11 +98,14 @@ assert.equal(lifecycleById.get("com.gitlab.duo.developer-flow.19-2-2").supersede
 assert.equal(lifecycleById.get("com.gitlab.duo.developer-flow.19-2-4").status, "current");
 assert.equal(lifecycleById.get("com.gitlab.duo.code-review-flow.19-2-4").status, "current");
 assert.equal(lifecycleById.get("com.anthropic.claude-code.cli.2-1-234").supersededByRecordId, "com.anthropic.claude-code.cli.2-1-237");
-assert.equal(lifecycleById.get("com.anthropic.claude-code.cli.2-1-237").status, "current");
+assert.equal(lifecycleById.get("com.anthropic.claude-code.cli.2-1-237").supersededByRecordId, "com.anthropic.claude-code.cli.2-1-238");
+assert.equal(lifecycleById.get("com.anthropic.claude-code.cli.2-1-238").status, "current");
 assert.equal(lifecycleById.get("com.google.antigravity.cli.1-1-14").supersededByRecordId, "com.google.antigravity.cli.1-1-16");
-assert.equal(lifecycleById.get("com.google.antigravity.cli.1-1-16").status, "current");
+assert.equal(lifecycleById.get("com.google.antigravity.cli.1-1-16").supersededByRecordId, "com.google.antigravity.cli.1-1-17");
+assert.equal(lifecycleById.get("com.google.antigravity.cli.1-1-17").status, "current");
 assert.equal(lifecycleById.get("com.jetbrains.junie.ide-plugin.262-579-25").supersededByRecordId, "com.jetbrains.junie.ide-plugin.262-579-38");
-assert.equal(lifecycleById.get("com.jetbrains.junie.ide-plugin.262-579-38").status, "current");
+assert.equal(lifecycleById.get("com.jetbrains.junie.ide-plugin.262-579-38").supersededByRecordId, "com.jetbrains.junie.ide-plugin.262-579-44");
+assert.equal(lifecycleById.get("com.jetbrains.junie.ide-plugin.262-579-44").status, "current");
 assert.equal(lifecycleById.get("dev.zed.agent.native.1-13-1").status, "superseded");
 assert.equal(lifecycleById.get("dev.zed.agent.native.1-14-2").status, "superseded");
 assert.equal(lifecycleById.get("dev.zed.agent.native.1-14-2").supersededByRecordId, "dev.zed.agent.native.1-15-0");
@@ -155,22 +161,23 @@ assert.equal(preview.provenance.currentness20260815Sha256, sha256(currentness202
 assert.equal(preview.provenance.currentness20260817Sha256, sha256(currentness20260817Text));
 assert.equal(preview.provenance.currentness20260818Sha256, sha256(currentness20260818Text));
 assert.equal(preview.provenance.currentness20260820Sha256, sha256(currentness20260820Text));
+assert.equal(preview.provenance.currentness20260821Sha256, sha256(currentness20260821Text));
 assert.equal(preview.counts.surfaces, 55);
 assert.equal(preview.counts.currentLifecycleRecords, 53);
 assert.equal(preview.counts.currentRecordsPresented, 53);
-assert.equal(preview.counts.recordsPresentedIncludingHistory, 115);
+assert.equal(preview.counts.recordsPresentedIncludingHistory, 123);
 assert.equal(preview.counts.independentTestsCredited, 0);
 assert.equal(preview.surfaces.length, 55);
-assert.equal(preview.previewRecords.length, 115);
-assert.equal(new Set(preview.previewRecords.map((record) => record.recordId)).size, 115);
+assert.equal(preview.previewRecords.length, 123);
+assert.equal(new Set(preview.previewRecords.map((record) => record.recordId)).size, 123);
 assert(preview.previewRecords.every((record) => record.independentTestCount === 0));
-assert(preview.previewRecords.some((record) => record.recordId === "com.openai.codex.cli.0-148-0"));
+assert(preview.previewRecords.some((record) => record.recordId === "com.openai.codex.cli.0-149-0"));
 assert(preview.previewRecords.some((record) => record.recordId === "com.anomaly.opencode.cli.1-18-19"));
 assert.deepEqual(preview.gates, {});
 const codexSurface = preview.surfaces.find((surface) => surface.surfaceKey === "com.openai.codex.cli.stable");
-assert.equal(codexSurface.currentRecordId, "com.openai.codex.cli.0-148-0");
+assert.equal(codexSurface.currentRecordId, "com.openai.codex.cli.0-149-0");
 assert.equal(codexSurface.currentRecordAvailable, true);
-assert.equal(codexSurface.currentRecord.recordId, "com.openai.codex.cli.0-148-0");
+assert.equal(codexSurface.currentRecord.recordId, "com.openai.codex.cli.0-149-0");
 assert.equal(codexSurface.gate, null);
 for (const surface of preview.surfaces) {
   if (surface.currentRecordId) {
@@ -185,10 +192,10 @@ for (const surface of preview.surfaces) {
 
 await createSixteenRecordCatalog();
 const history = preview.surfaces.flatMap((surface) => surface.history);
-assert.equal(history.length, 62);
+assert.equal(history.length, 70);
 assert.deepEqual(preview.snapshotSeal, snapshotSeal);
 assert.deepEqual(preview.publicationFreshness, freshnessCensus);
-assert.deepEqual(snapshotSeal.catalogCounts, { surfaces: 55, current: 53, total: 115, nonCurrent: 62, superseded: 59, historical: 2, discontinued: 1 });
+assert.deepEqual(snapshotSeal.catalogCounts, { surfaces: 55, current: 53, total: 123, nonCurrent: 70, superseded: 67, historical: 2, discontinued: 1 });
 assert.equal(freshnessCensus.counts.surfaces, 55);
 assert.equal(freshnessCensus.counts.knownNewer, freshnessCensus.entries.filter((entry) => entry.status === "known-newer").length);
 assert.equal(freshnessCensus.counts.incompleteCoverage, freshnessCensus.entries.filter((entry) => entry.status.startsWith("incomplete-")).length);
@@ -303,8 +310,8 @@ const detailsRoot = path.join(packageRoot, "dist", "research-preview", "records"
 const detailHtmlFiles = (await readdir(detailsRoot)).filter((name) => name.endsWith(".html")).sort();
 const expectedDetailHtmlFiles = preview.previewRecords.map((record) => `${record.recordId}.html`).sort();
 assert.deepEqual(detailHtmlFiles, expectedDetailHtmlFiles, "Every projected record must have exactly one human-readable detail page");
-assert.equal(buildManifest.researchPreview.recordDetails.count, 115);
-assert.equal(buildManifest.researchPreview.recordDetails.records.length, 115);
+assert.equal(buildManifest.researchPreview.recordDetails.count, 123);
+assert.equal(buildManifest.researchPreview.recordDetails.records.length, 123);
 assert.deepEqual(buildManifest.researchPreview.snapshotSeal, {
   data: "research-preview/snapshot-seal.json",
   dataSha256: sha256(snapshotSealText),
@@ -338,7 +345,7 @@ assert.deepEqual(buildManifest.researchPreview.howItWorks, {
   htmlSha256: sha256(howItWorksHtml)
 });
 const manifestDetailsById = new Map(buildManifest.researchPreview.recordDetails.records.map((entry) => [entry.recordId, entry]));
-assert.equal(manifestDetailsById.size, 115, "Human-readable record-detail manifest IDs must be unique");
+assert.equal(manifestDetailsById.size, 123, "Human-readable record-detail manifest IDs must be unique");
 
 const escapeHtml = (value) => String(value)
   .replaceAll("&", "&amp;")
@@ -423,12 +430,12 @@ for (const summary of preview.previewRecords) {
   assert.equal(manifestDetail.htmlSha256, sha256(detailHtml));
 }
 
-console.log("PASS additive 115-entry lifecycle: 53 current, 59 superseded, 2 historical, 1 discontinued and 0 unresolved");
+console.log("PASS additive 123-entry lifecycle: 53 current, 67 superseded, 2 historical, 1 discontinued and 0 unresolved");
 console.log("PASS derived 16-surface watcher retains all 22 source URLs, fingerprints and check dates unchanged");
-console.log("PASS current-default research preview presents all 53 current records across 55 surfaces plus 62 explicit-history records with zero independent-test credit");
-console.log("PASS Codex 0.148.0 is integrated as the current same-surface successor while 0.147.0, 0.146.0 and 0.90.0 remain preserved in history");
+console.log("PASS current-default research preview presents all 53 current records across 55 surfaces plus 70 explicit-history records with zero independent-test credit");
+console.log("PASS Codex 0.149.0 is integrated as the current same-surface successor while 0.148.0, 0.147.0, 0.146.0 and 0.90.0 remain preserved in history");
 console.log("PASS static current-default presentation and collapsed explicit-history control match the source dataset");
-console.log("PASS one deterministic record-agnostic template presents all 115 records with every claim, official source link, unknown, limitation and reciprocal lifecycle link preserved");
+console.log("PASS one deterministic record-agnostic template presents all 123 records with every claim, official source link, unknown, limitation and reciprocal lifecycle link preserved");
 console.log("PASS evidence-exact comparison route, URL-only state and current-record picker are copied through the deterministic build");
 console.log("PASS visitor-facing How it works route, three-link global navigation, readable snapshot copy and translated version terminology are deterministic");
-console.log("PASS compact record identity, section navigation and catalog search/delivery/comparison return state are shared across all 115 pages");
+console.log("PASS compact record identity, section navigation and catalog search/delivery/comparison return state are shared across all 123 pages");

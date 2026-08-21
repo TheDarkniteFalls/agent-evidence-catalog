@@ -1,7 +1,7 @@
 {
   "schemaVersion": "research-preview-browser-qa/0.9",
-  "asOf": "2026-08-20",
-  "checkedAt": "2026-08-20T08:51:54.685Z",
+  "asOf": "2026-08-21",
+  "checkedAt": "2026-08-21T07:09:13.105Z",
   "loopback": {
     "url": "http://localhost:4173/",
     "listener": "localhost:4173",
@@ -10,41 +10,41 @@
     "browserNavigation": "PASS"
   },
   "sourceDigests": {
-    "landingHtmlSha256": "2f3139abc8e21b53d029011a5ac0cec620bf3a8edbc4a0f630feb9e5826fbf64",
-    "previewHtmlSha256": "ead2c48085fafbffe8b355cb73a3f9138e1982cf429d42f1d5c4387dfc8f2f3f",
-    "howItWorksHtmlSha256": "e08f159017d51bd63df90320fc40ea2802067daccb344fe5128d430718d34cd5",
-    "previewDataSha256": "3eb943d433e700b914dcda6da8020c4de730d008e5bbb239d74254d678336c0b",
+    "landingHtmlSha256": "9b2f97613d8c329b64675dcd03363337cd1b1e47e356fee77b338b5d40759268",
+    "previewHtmlSha256": "a311cab9220873f885151e18ab2cbc49ebbb19ef8543a0f2468198a9b00ca34a",
+    "howItWorksHtmlSha256": "dc95f0b040f7646a65ad8e33294199b8d0750a12cd865b3599f395c3faa9acd8",
+    "previewDataSha256": "4735a6a35dc16f82a7d84607c003a23f363cb17b5cd752c64776c2e5ee4cfbaf",
     "previewAppSha256": "ebb47482f7d2a12a1c60d1666acc479976bb6a2c34979b0d130b2e661435d21f",
-    "comparisonHtmlSha256": "1ebc928d0207a854bf937463a92b5ca38e5a404edd7801387cf4470e3eb0b0fe",
+    "comparisonHtmlSha256": "8b71e7ba32faee18e4c229ca97489cffd370686d77137a5fb7698c25fe43292c",
     "comparisonCoreSha256": "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e",
     "comparisonAppSha256": "60922091477020eab24527ae406b3f8b290fc7e9f80d649fcb1916981793afc0",
     "recordDetailAppSha256": "adc6da13fc9f3fc734d95ba55a21ffd6591da8bd843901ec9851a4467213a45d",
     "previewStylesSha256": "4920f88607a74785db174f69cf2071b05869971f858227ce45012c7cdc834285",
-    "recordDetailsManifestSha256": "47bcf096c0c0902a8e7984ee21787c542cd1b5a05b8dff8e0495a85174df9152",
-    "sitemapSha256": "fd21e8af68c0a64628a93165905de80a4d7034ae31c04ee31694032e1578045d"
+    "recordDetailsManifestSha256": "b9e6e68bec48ec368f50a0807551942e77b9bae8fe187cb5e683973e0da926ed",
+    "sitemapSha256": "cc8e44b443de65309932bb701b4803036e8974603e0d9e02f56ef2b53d98871b"
   },
   "snapshot": {
     "sourceReviewWindow": {
-      "startedAt": "2026-08-20T07:58:01.402Z",
-      "completedAt": "2026-08-20T07:58:07.382Z"
+      "startedAt": "2026-08-21T06:36:12.211Z",
+      "completedAt": "2026-08-21T06:36:18.465Z"
     },
     "sourceLinkAuditWindow": {
-      "startedAt": "2026-08-20T07:59:38.964Z",
-      "completedAt": "2026-08-20T07:59:52.428Z"
+      "startedAt": "2026-08-21T06:43:08.998Z",
+      "completedAt": "2026-08-21T06:43:39.525Z"
     },
-    "sealedAt": "2026-08-20T07:59:52.428Z",
+    "sealedAt": "2026-08-21T06:43:39.525Z",
     "catalogCounts": {
       "surfaces": 55,
       "current": 53,
-      "total": 115,
-      "nonCurrent": 62,
-      "superseded": 59,
+      "total": 123,
+      "nonCurrent": 70,
+      "superseded": 67,
       "historical": 2,
       "discontinued": 1
     },
     "publicationCheck": {
-      "startedAt": "2026-08-20T08:00:28.814Z",
-      "completedAt": "2026-08-20T08:00:34.827Z",
+      "startedAt": "2026-08-21T06:44:02.784Z",
+      "completedAt": "2026-08-21T06:44:09.079Z",
       "surfaces": 55,
       "uniqueOfficialSources": 52,
       "reachable": 55,
@@ -54,29 +54,28 @@
       "noNewerIdentityProven": 2,
       "incompleteCoverage": 53
     },
-    "bannerCopy": "Catalog snapshot: 20 August 2026, 07:59 UTC. Agent releases change quickly; records with known updates are marked.",
-    "cacheBustingVersion": "2026-08-20-sealed-snapshot"
+    "bannerCopy": "Catalog snapshot: 21 August 2026, 06:43 UTC. Agent releases change quickly; records with known updates are marked.",
+    "cacheBustingVersion": "2026-08-21-sealed-snapshot"
   },
   "publicationAuthorQa": {
-    "workstream": "AEC-REFRESH-2026-08-20-AUTHOR",
+    "workstream": "AEC-REFRESH-2026-08-21-BROWSER-QA",
     "result": "PASS",
-    "checkedAt": "2026-08-20T08:51:54.685Z",
-    "baseHead": "9897aae13a2cd2d70c856f25d0781ba5586b0d60",
+    "checkedAt": "2026-08-21T07:09:13.105Z",
+    "baseHead": "68522b168319ee17fe1c8290ffb9c284acf36b98",
     "browser": "Codex in-app Browser",
     "currentness": {
-      "records": 115,
+      "records": 123,
       "currentRecords": 53,
-      "historyRecords": 62,
+      "historyRecords": 70,
       "refreshedRecordIds": [
-        "com.alibaba.qwen-code.cli.0-21-14",
-        "com.amazon.kiro.ide.1-0-337",
-        "com.anomaly.opencode.cli.1-18-19",
-        "com.anthropic.claude-code.cli.2-1-237",
-        "com.google.antigravity.cli.1-1-16",
-        "com.google.gemini.cli.0-56-0",
-        "com.jetbrains.junie.ide-plugin.262-579-38",
-        "com.openai.codex.cli.0-148-0",
-        "dev.zed.agent.native.1-16-1"
+        "com.alibaba.qwen-code.cli.0-21-15",
+        "com.anthropic.claude-code.cli.2-1-238",
+        "com.google.antigravity.cli.1-1-17",
+        "com.cline.bot.cli.3-0-56",
+        "com.cline.bot.vscode-extension.4-1-11",
+        "com.cursor.ide.foreground-agent.3-17",
+        "com.jetbrains.junie.ide-plugin.262-579-44",
+        "com.openai.codex.cli.0-149-0"
       ],
       "sourceOnlyDossierRecordIds": [
         "com.cursor.cli.agent.beta",
@@ -95,12 +94,12 @@
     },
     "screenshotsCaptured": 5,
     "sitemap": {
-      "routes": 119,
-      "uniqueRoutes": 119,
-      "lastmodEntries": 119,
-      "sharedLastmod": "2026-08-20",
+      "routes": 127,
+      "uniqueRoutes": 127,
+      "lastmodEntries": 127,
+      "sharedLastmod": "2026-08-21",
       "source": "accepted snapshot seal and accepted record review dates",
-      "sha256": "fd21e8af68c0a64628a93165905de80a4d7034ae31c04ee31694032e1578045d"
+      "sha256": "cc8e44b443de65309932bb701b4803036e8974603e0d9e02f56ef2b53d98871b"
     },
     "console": {
       "errors": 0,
@@ -153,11 +152,11 @@
       "result": "PASS",
       "surfaces": 55,
       "currentCards": 53,
-      "historyCards": 62,
+      "historyCards": 70,
       "historyCollapsedInitially": true,
       "historyExpandedOnRequest": true,
       "qwenSearchResultCount": "2 of 53 current records",
-      "qwenCurrentIdentity": "0.21.14",
+      "qwenCurrentIdentity": "0.21.15",
       "knownUpdateNotices": 0,
       "desktopHorizontalOverflow": false,
       "mobileHorizontalOverflow": false
@@ -165,8 +164,8 @@
     "comparison": {
       "result": "PASS",
       "representativePair": [
-        "com.anthropic.claude-code.cli.2-1-237",
-        "com.openai.codex.cli.0-148-0"
+        "com.anthropic.claude-code.cli.2-1-238",
+        "com.openai.codex.cli.0-149-0"
       ],
       "representativePairOfficialSourceLinks": 20,
       "urlPersistsAcrossReload": true,
@@ -307,7 +306,15 @@
         "com.google.gemini.cli.0-56-0",
         "com.jetbrains.junie.ide-plugin.262-579-38",
         "com.openai.codex.cli.0-148-0",
-        "dev.zed.agent.native.1-16-1"
+        "dev.zed.agent.native.1-16-1",
+        "com.alibaba.qwen-code.cli.0-21-15",
+        "com.anthropic.claude-code.cli.2-1-238",
+        "com.google.antigravity.cli.1-1-17",
+        "com.cline.bot.cli.3-0-56",
+        "com.cline.bot.vscode-extension.4-1-11",
+        "com.cursor.ide.foreground-agent.3-17",
+        "com.jetbrains.junie.ide-plugin.262-579-44",
+        "com.openai.codex.cli.0-149-0"
       ],
       "desktop": {
         "controlViewport": "browser-default",
@@ -316,7 +323,7 @@
           "height": 800
         },
         "devicePixelRatio": 1.8,
-        "pagesAudited": 115,
+        "pagesAudited": 123,
         "failureRecordIds": []
       },
       "mobile": {
@@ -333,7 +340,7 @@
           "height": 844
         },
         "devicePixelRatio": 0.9,
-        "pagesAudited": 115,
+        "pagesAudited": 123,
         "failureRecordIds": []
       },
       "narrowMobileRepresentative": {
@@ -367,28 +374,28 @@
     },
     "discoveryMetadata": {
       "result": "PASS",
-      "recordPagesAudited": 115,
-      "sitemapHumanReadableRoutes": 119,
-      "sitemapRecordRoutes": 115,
+      "recordPagesAudited": 123,
+      "sitemapHumanReadableRoutes": 127,
+      "sitemapRecordRoutes": 123,
       "canonicalAndStructuredMetadataFailures": 0
     }
   },
   "sourceLinks": {
-    "projectedClaimLinkedHttpsEntries": 617,
-    "sourceUrlIdentitiesChecked": 618,
+    "projectedClaimLinkedHttpsEntries": 662,
+    "sourceUrlIdentitiesChecked": 663,
     "preferredSurfaceSources": {
       "checked": 55,
       "reachable": 55,
       "failed": 0,
-      "receiptSha256": "8419ca273d3a3316ef30f139366fa20954773242a64e9aa8a80fd5c799deb90b"
+      "receiptSha256": "e558d2af3cdb5e5dba382a8a542d6e2e069d1cf17dc9ad9fdf661c709efdac45"
     },
     "fullCorpus": {
-      "recordsChecked": 115,
-      "uniqueEndpointsChecked": 264,
-      "passed": 264,
+      "recordsChecked": 123,
+      "uniqueEndpointsChecked": 273,
+      "passed": 273,
       "unresolved": 0,
-      "receiptPath": "drafts/research-preview-release/currentness-2026-08-20/official-url-audit.json",
-      "receiptSha256": "bb1fd5845c2c49db408ce68a9269e4e0a88fccb7697df3c5a8e0e475e10dc201"
+      "receiptPath": "drafts/research-preview-release/currentness-2026-08-21/official-url-audit.json",
+      "receiptSha256": "d9198630150aeb6f833cb35592ffbd5d914c1fb3ac5fc5204419bad61e647fd1"
     },
     "unresolved": []
   },

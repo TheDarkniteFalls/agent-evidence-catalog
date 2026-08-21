@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "id": "com.cursor.ide.foreground-agent.backend-request-path-current",
+  "slug": "backend-request-path-current",
+  "subject": {
+    "id": "com.cursor.ide.foreground-agent",
+    "name": "Cursor IDE foreground Agent",
+    "publisher": "Anysphere, Inc.",
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cursor IDE foreground Agent",
+      "slug": "cursor-ide-foreground-agent-3-17"
+    }
+  },
+  "claim": {
+    "category": "data.destination",
+    "statement": "Anysphere's current security and data-use pages say the Cursor app contacts Cursor backend domains for AI and product services, and that even bring-your-own-key AI requests pass through Cursor's backend for final prompt construction."
+  },
+  "provenance": {
+    "kind": "publisher-declared",
+    "claimant": "Anysphere, Inc."
+  },
+  "source": {
+    "uri": "https://cursor.com/data-use",
+    "title": "Cursor Data Use and Privacy Overview",
+    "locator": "Other notes: bring-your-own-key requests traverse Cursor backend; AI request handling",
+    "publishedAt": "2026-07-15T00:00:00Z",
+    "capturedAt": "2026-08-21T06:36:13.889Z",
+    "snapshot": null
+  },
+  "applicability": {
+    "version": {
+      "kind": "rolling-current",
+      "value": null
+    },
+    "configuration": {
+      "scope": "composable",
+      "values": [
+        "Cursor backend",
+        "Cursor-managed model access",
+        "bring-your-own-key model access",
+        "selected or auxiliary model provider"
+      ]
+    },
+    "platform": {
+      "scope": "named",
+      "values": [
+        "Cursor app AI requests"
+      ]
+    },
+    "model": {
+      "scope": "configuration-dependent",
+      "values": []
+    },
+    "deployment": {
+      "scope": "named",
+      "values": [
+        "Cursor-hosted backend request path"
+      ]
+    }
+  },
+  "lifecycle": {
+    "status": "active",
+    "changedAt": "2026-07-15",
+    "reason": null
+  },
+  "review": {
+    "reviewedAt": "2026-08-21",
+    "recheckAfter": "2026-09-20",
+    "invalidatedBy": [
+      "data-use-update",
+      "backend-change",
+      "provider-change",
+      "manual-review"
+    ]
+  },
+  "limitations": [
+    "The page describes service-level request routing and does not enumerate the exact destination sequence for one Agent request.",
+    "A user-supplied provider key does not establish a direct client-to-provider path under the publisher statement."
+  ],
+  "unknowns": [
+    "The exact Cursor services, model providers, auxiliary models, regions and subprocessors used for a request are unknown.",
+    "Request payload construction, filtering, logging and retention for any particular session are unknown."
+  ],
+  "relationships": [],
+  "validationRefs": []
+}
