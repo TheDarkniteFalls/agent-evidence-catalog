@@ -88,8 +88,10 @@
     "drafts/real-agent-catalog/scripts/validate-zed-agent-stable-1-12-1-source.mjs",
     "scripts/research-preview-v0.1.mjs",
     "scripts/validate-comparison-mvp.mjs",
+    "dist/llms.txt",
     "dist/robots.txt",
     "dist/sitemap.xml",
+    "site/llms.txt",
     "site/record.html",
     "dist/record.html"
   ],
@@ -242,6 +244,11 @@
       "asOf": "2026-08-08",
       "paths": ["dist/robots.txt", "dist/sitemap.xml"],
       "reason": "Exact generated discovery-control artifacts for the public static Research Preview routes; no accepted dossier, claim, record, mapping, lifecycle or currentness path is exempted."
+    },
+    {
+      "asOf": "2026-08-22",
+      "paths": ["site/llms.txt", "dist/llms.txt"],
+      "reason": "Exact source and generated machine-orientation artifacts for the authorized agent-discovery workstream; no accepted dossier, claim, record, mapping, lifecycle or currentness path is exempted."
     }
   ],
   "protectedFileCount": 436,

@@ -13,6 +13,8 @@ const yesListPath = path.join(releaseRoot, "release-yes-list.json");
 const stagePathsPath = path.join(releaseRoot, "v0.1-stage-paths.txt");
 const browserReceiptPath = path.join(releaseRoot, "browser-qa-receipt.json");
 const pagesWorkflowPath = path.join(packageRoot, ".github", "workflows", "pages.yml");
+const llmsSourcePath = path.join(packageRoot, "site", "llms.txt");
+const llmsDistPath = path.join(packageRoot, "dist", "llms.txt");
 const canonicalBaseUrl = "https://thedarknitefalls.github.io/agent-evidence-catalog/";
 const serialize = (value) => `${JSON.stringify(value, null, 2)}\n`;
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
@@ -156,6 +158,29 @@ async function materializeStaticCatalogSource(preview) {
   return currentRecords;
 }
 
+function projectRecordDiscoveryMetadata(html, recordId) {
+  const canonical = `<link rel="canonical" href="${canonicalBaseUrl}research-preview/records/${recordId}.html">`;
+  const jsonAlternate = `<link rel="alternate" type="application/json" href="${recordId}.json" title="Machine-readable Agent Evidence Catalog record">`;
+  const llmsAlternate = `<link rel="alternate" type="text/plain" href="../../llms.txt" title="Agent Evidence Catalog orientation for agents">`;
+  assert(html.includes(canonical), `${recordId} generated record page is missing its canonical URL`);
+  assert.equal([...html.matchAll(/<link rel="alternate"/g)].length, 0, `${recordId} generated record page unexpectedly contains alternate metadata before projection`);
+  return html.replace(canonical, `${canonical}\n    ${jsonAlternate}\n    ${llmsAlternate}`);
+}
+
+async function materializeAgentDiscovery(manifest) {
+  const llms = await readFile(llmsSourcePath, "utf8");
+  assert(llms.endsWith("\n"), "site/llms.txt must end with one newline");
+  await writeFile(llmsDistPath, llms, "utf8");
+
+  for (const detail of manifest.researchPreview.recordDetails.records) {
+    const recordPath = path.join(packageRoot, "dist", detail.entryPoint);
+    const recordHtml = projectRecordDiscoveryMetadata(await readFile(recordPath, "utf8"), detail.recordId);
+    await writeFile(recordPath, recordHtml, "utf8");
+    detail.htmlSha256 = sha256(recordHtml);
+  }
+  return llms;
+}
+
 async function materializeSearchFoundation() {
   const previewPath = path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json");
   const preview = JSON.parse(await readFile(previewPath, "utf8"));
@@ -183,9 +208,15 @@ async function materializeSearchFoundation() {
   const manifestPath = path.join(packageRoot, "dist", "build-manifest.json");
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
   assert.equal(manifest.researchPreview.discovery.humanReadableRouteCount, routeEntries.length, "Build manifest route count differs before search-foundation materialization");
+  const llms = await materializeAgentDiscovery(manifest);
   manifest.researchPreview.discovery.sitemapSha256 = sha256(sitemap);
+  manifest.researchPreview.discovery.agentOrientation = "llms.txt";
+  manifest.researchPreview.discovery.agentOrientationSha256 = sha256(llms);
+  manifest.researchPreview.discovery.aggregateJson = "research-preview/catalog.json";
+  manifest.researchPreview.discovery.lifecycleJson = "research-preview/lifecycle.json";
+  manifest.researchPreview.discovery.recordJsonAlternateCount = manifest.researchPreview.recordDetails.count;
   await writeFile(manifestPath, serialize(manifest), "utf8");
-  console.log(`PASS search-foundation materialization: root comparison application, ${currentRecords.length} static Model Cards and ${routeEntries.length} snapshot-dated sitemap routes`);
+  console.log(`PASS search-foundation materialization: root comparison application, ${currentRecords.length} static Model Cards, ${manifest.researchPreview.recordDetails.count} machine-readable record alternates, llms.txt and ${routeEntries.length} snapshot-dated sitemap routes`);
 }
 
 function run(label, command, args) {
@@ -981,6 +1012,136 @@ async function validateBrowserReceipt() {
   const urlAudit = JSON.parse(urlAuditText);
   const recordIds = buildManifest.researchPreview.recordDetails.records.map((item) => item.recordId);
 
+  if (receipt.schemaVersion === "research-preview-browser-qa/1.2") {
+    assert.equal(receipt.asOf, "2026-08-21");
+    assert.equal(new Date(receipt.checkedAt).toISOString(), receipt.checkedAt);
+    assert.equal(receipt.workstream, "AEC-AGENT-DISCOVERY-01");
+    assert.equal(receipt.baseHead, "f3309db36817608b39116984b3336d8a27bc444f");
+    assert.deepEqual(receipt.environment, {
+      browser: "Codex in-app Browser",
+      loopbackUrl: "http://localhost:4173/",
+      listener: "localhost:4173",
+      listenerVerified: true,
+      browserNavigation: "PASS",
+      screenshotsCaptured: 8,
+      console: { errors: 0, warnings: 0 }
+    });
+    const digestPairs = [
+      ["rootComparisonHtmlSha256", "dist/index.html"],
+      ["modelCardsHtmlSha256", "dist/research-preview/index.html"],
+      ["comparisonHtmlSha256", "dist/research-preview/compare.html"],
+      ["howItWorksHtmlSha256", "dist/research-preview/how-it-works.html"],
+      ["representativeRecordHtmlSha256", "dist/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.html"],
+      ["llmsSha256", "dist/llms.txt"],
+      ["aggregateCatalogSha256", "dist/research-preview/catalog.json"],
+      ["lifecycleSha256", "dist/research-preview/lifecycle.json"],
+      ["representativeRecordJsonSha256", "dist/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.json"],
+      ["sitemapSha256", "dist/sitemap.xml"]
+    ];
+    for (const [key, relativePath] of digestPairs) {
+      assert.equal(receipt.sourceDigests[key], sha256(await readFile(path.join(packageRoot, relativePath))), `${key} is stale`);
+    }
+    assert.equal(receipt.sourceDigests.recordDetailsManifestSha256, sha256(serialize(buildManifest.researchPreview.recordDetails)));
+    assert.deepEqual(receipt.snapshot, {
+      sourceReviewWindow: seal.sourceReviewWindow,
+      sourceLinkAuditWindow: seal.sourceLinkAuditWindow,
+      sealedAt: seal.sealedAt,
+      catalogCounts: seal.catalogCounts
+    });
+    assert.deepEqual(receipt.journeys.desktop, {
+      viewport: { width: 1422, height: 800 },
+      root: {
+        title: "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
+        headline: "Compare agent claims, source by source.",
+        pickerRecords: 53,
+        navigation: ["Compare claims", "Model Cards", "How it works"],
+        aggregateJsonAlternate: "http://localhost:4173/research-preview/catalog.json",
+        llmsAlternate: "http://localhost:4173/llms.txt",
+        horizontalOverflow: false
+      },
+      comparison: {
+        representativePair: ["com.anthropic.claude-code.cli.2-1-238", "com.openai.codex.cli.0-149-0"],
+        selectedRecords: 2,
+        officialSourceLinks: 20,
+        urlPersistsAcrossReload: true,
+        maximumSelectedRecords: 4
+      },
+      modelCards: {
+        title: "Model Cards for Current Coding Agents · Agent Evidence Catalog",
+        headline: "Model Cards",
+        renderedCurrentCards: 53,
+        gridColumns: 3,
+        qwenSearchResultCount: "2 of 53 surfaces",
+        qwenCurrentIdentity: "0.21.15",
+        horizontalOverflow: false
+      },
+      representativeRecord: {
+        recordId: "com.alibaba.qwen-code.cli.0-21-15",
+        title: "Qwen Code CLI 0.21.15 Evidence Record · Agent Evidence Catalog",
+        headline: "Qwen Code CLI 0.21.15",
+        rawJsonHref: "http://localhost:4173/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.json",
+        jsonAlternate: "http://localhost:4173/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.json",
+        llmsAlternate: "http://localhost:4173/llms.txt",
+        sectionLinks: 7,
+        horizontalOverflow: false
+      }
+    });
+    assert.deepEqual(receipt.journeys.mobile, {
+      targetCss: { width: 390, height: 844 },
+      controlViewport: { width: 351, height: 760 },
+      observedCss: { width: 390, height: 844 },
+      devicePixelRatio: 0.9,
+      rootNavigationOpened: true,
+      rootHorizontalOverflow: false,
+      modelCardsNavigationOpened: true,
+      modelCardsGridColumns: 1,
+      modelCardsRenderedCurrentCards: 53,
+      modelCardsFirstCardContained: true,
+      modelCardsHorizontalOverflow: false,
+      representativeRecordNavigationOpened: true,
+      representativeRecordContained: true,
+      representativeRecordHorizontalOverflow: false,
+      compatibilityComparisonComplete: true,
+      compatibilityCanonicalHref: canonicalBaseUrl,
+      compatibilityHorizontalOverflow: false,
+      howItWorksHeadline: "How it works",
+      howItWorksHorizontalOverflow: false
+    });
+    assert.deepEqual(receipt.journeys.machineDiscovery, {
+      browserMetadataPagesChecked: 4,
+      generatedRecordAlternatePagesChecked: 123,
+      browserTopLevelRawNavigation: "blocked-by-browser-client",
+      loopbackHttpProbe: [
+        { route: "/llms.txt", status: 200, contentType: "text/plain" },
+        { route: "/research-preview/catalog.json", status: 200, contentType: "application/json" },
+        { route: "/research-preview/lifecycle.json", status: 200, contentType: "application/json" },
+        { route: "/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.json", status: 200, contentType: "application/json" }
+      ]
+    });
+    assert.deepEqual(receipt.sitemap, {
+      humanReadableRoutes: 126,
+      recordRoutes: 123,
+      rawJsonRoutes: 0,
+      llmsRoutes: 0,
+      lastmodSource: "accepted snapshot seal and accepted record review dates"
+    });
+    assert.equal(receipt.limitations.length, 4);
+    assert.deepEqual(receipt.boundaries, {
+      publisherSourcesOnly: true,
+      agentsInstalledOrRun: false,
+      independentTestsCredited: 0,
+      rankingsOrSuitabilityCalculations: false,
+      priorAcceptedRecordsOrSourceArtifactsRewritten: false,
+      currentnessLifecycleProjectionUpdated: false,
+      visitorInformationArchitectureChanged: false,
+      machineDiscoveryMetadataChanged: true,
+      githubStateChanged: false,
+      publicationAuthorizedByReceipt: false
+    });
+    console.log("PASS digest-bound AEC-AGENT-DISCOVERY-01 Browser QA: desktop/mobile navigation, record discovery, comparison, machine metadata, loopback resources and zero console warnings or errors");
+    return;
+  }
+
   assert.equal(receipt.schemaVersion, "research-preview-browser-qa/1.1");
   assert.equal(receipt.asOf, "2026-08-21");
   assert.equal(new Date(receipt.checkedAt).toISOString(), receipt.checkedAt);
@@ -1256,6 +1417,12 @@ function validatePageDiscovery(html, expected) {
   for (const fragment of required) assert(html.includes(fragment), `${expected.url} is missing ${fragment}`);
   assert.equal([...html.matchAll(/<title>/g)].length, 1, `${expected.url} must have one title`);
   assert.equal([...html.matchAll(/<link rel="canonical"/g)].length, 1, `${expected.url} must have one canonical URL`);
+  const alternates = expected.alternates ?? [];
+  for (const alternate of alternates) {
+    const fragment = `<link rel="alternate" type="${alternate.type}" href="${alternate.href}" title="${alternate.title}">`;
+    assert(html.includes(fragment), `${expected.url} is missing ${fragment}`);
+  }
+  assert.equal([...html.matchAll(/<link rel="alternate"/g)].length, alternates.length, `${expected.url} alternate-link inventory differs from its accepted projection`);
   const structuredData = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
   assert.equal(structuredData.length, 1, `${expected.url} must have one structured-data block`);
   assert.deepEqual(JSON.parse(structuredData[0][1]), expected.structuredData, `${expected.url} structured data differs from its accepted page projection`);
@@ -1264,6 +1431,37 @@ function validatePageDiscovery(html, expected) {
 async function validateDiscoveryMetadata() {
   const preview = JSON.parse(await readFile(path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json"), "utf8"));
   const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
+  const aggregateAlternate = { type: "application/json", href: "catalog.json", title: "Agent Evidence Catalog data" };
+  const llmsAlternate = { type: "text/plain", href: "../llms.txt", title: "Agent Evidence Catalog orientation for agents" };
+  const llmsSource = await readFile(llmsSourcePath, "utf8");
+  const llmsBuilt = await readFile(llmsDistPath, "utf8");
+  assert.equal(llmsBuilt, llmsSource, "Built llms.txt differs from its canonical source");
+  assert(Buffer.byteLength(llmsSource, "utf8") <= 4_096, "llms.txt must remain a concise orientation file");
+  for (const required of [
+    "# Agent Evidence Catalog",
+    `${canonicalBaseUrl})`,
+    `${canonicalBaseUrl}research-preview/)`,
+    `${canonicalBaseUrl}research-preview/how-it-works.html)`,
+    `${canonicalBaseUrl}research-preview/catalog.json)`,
+    `${canonicalBaseUrl}research-preview/lifecycle.json)`,
+    `${canonicalBaseUrl}research-preview/snapshot-seal.json)`,
+    "Treat product statements as attributed publisher claims, not observed behavior.",
+    "It does not guarantee discovery, indexing, citation or ranking."
+  ]) assert(llmsSource.includes(required), `llms.txt is missing ${required}`);
+  for (const prohibited of ["best agent", "recommended agent", "independently verified", "observed agent behavior"]) {
+    assert(!llmsSource.toLowerCase().includes(prohibited), `llms.txt crosses the public truth boundary with ${prohibited}`);
+  }
+  const readme = await readFile(path.join(packageRoot, "README.md"), "utf8");
+  for (const required of [
+    "## Machine-readable and agent entry points",
+    `${canonicalBaseUrl})`,
+    `${canonicalBaseUrl}research-preview/)`,
+    `${canonicalBaseUrl}research-preview/how-it-works.html)`,
+    `${canonicalBaseUrl}research-preview/catalog.json)`,
+    `${canonicalBaseUrl}research-preview/lifecycle.json)`,
+    `${canonicalBaseUrl}llms.txt)`,
+    "not a guarantee of crawling, indexing, citation or ranking"
+  ]) assert(readme.includes(required), `README machine-reader entry section is missing ${required}`);
   const landingDescription = "Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.";
   const landingTitle = "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog";
   validatePageDiscovery(await readFile(path.join(packageRoot, "dist", "index.html"), "utf8"), {
@@ -1271,6 +1469,7 @@ async function validateDiscoveryMetadata() {
     description: landingDescription,
     url: canonicalBaseUrl,
     openGraphType: "website",
+    alternates: [aggregateAlternate, llmsAlternate],
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebApplication",
@@ -1297,6 +1496,7 @@ async function validateDiscoveryMetadata() {
     description: catalogDescription,
     url: catalogUrl,
     openGraphType: "website",
+    alternates: [aggregateAlternate, llmsAlternate],
     structuredData: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
@@ -1329,6 +1529,7 @@ async function validateDiscoveryMetadata() {
     description: comparisonDescription,
     url: comparisonUrl,
     openGraphType: "website",
+    alternates: [aggregateAlternate, llmsAlternate],
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebApplication",
@@ -1355,6 +1556,7 @@ async function validateDiscoveryMetadata() {
     openGraphDescription: howSocialDescription,
     url: howUrl,
     openGraphType: "website",
+    alternates: [aggregateAlternate, llmsAlternate],
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
@@ -1383,6 +1585,10 @@ async function validateDiscoveryMetadata() {
       description,
       url,
       openGraphType: "article",
+      alternates: [
+        { type: "application/json", href: `${detail.recordId}.json`, title: "Machine-readable Agent Evidence Catalog record" },
+        { type: "text/plain", href: "../../llms.txt", title: "Agent Evidence Catalog orientation for agents" }
+      ],
       structuredData: {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -1420,6 +1626,7 @@ async function validateDiscoveryMetadata() {
   assert.deepEqual(sitemapUrls, expectedUrls, "Sitemap must list every primary human-readable route exactly once in deterministic order");
   assert.equal(new Set(sitemapUrls).size, expectedUrls.length, "Sitemap contains duplicate routes");
   assert(sitemapUrls.every((url) => url.startsWith(canonicalBaseUrl) && !url.endsWith(".json")), "Sitemap must contain only canonical human-readable routes");
+  assert(!sitemap.includes("llms.txt"), "Sitemap must not add the machine-orientation file to the human-readable route inventory");
   assert.deepEqual(buildManifest.researchPreview.discovery, {
     canonicalBaseUrl,
     robots: "robots.txt",
@@ -1427,9 +1634,14 @@ async function validateDiscoveryMetadata() {
     sitemapSha256: sha256(sitemap),
     humanReadableRouteCount: expectedUrls.length,
     humanReadableRecordRouteCount: buildManifest.researchPreview.recordDetails.count,
-    rawJsonRoutesListed: 0
+    rawJsonRoutesListed: 0,
+    agentOrientation: "llms.txt",
+    agentOrientationSha256: sha256(llmsBuilt),
+    aggregateJson: "research-preview/catalog.json",
+    lifecycleJson: "research-preview/lifecycle.json",
+    recordJsonAlternateCount: buildManifest.researchPreview.recordDetails.count
   });
-  console.log(`PASS discovery metadata on root comparison, Model Cards, comparison compatibility, How it works and all ${buildManifest.researchPreview.recordDetails.count} record pages; ${expectedCurrentRecordIds.length} static Model Cards and deterministic ${expectedUrls.length}-route dated sitemap exclude duplicate and raw JSON routes`);
+  console.log(`PASS discovery metadata on root comparison, Model Cards, comparison compatibility, How it works and all ${buildManifest.researchPreview.recordDetails.count} record pages; llms.txt and JSON alternates are deterministic while ${expectedCurrentRecordIds.length} static Model Cards and the ${expectedUrls.length}-route dated human sitemap remain intact`);
 }
 
 async function validateFirstScreenContract() {
