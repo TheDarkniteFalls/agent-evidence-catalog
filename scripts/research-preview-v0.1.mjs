@@ -1088,9 +1088,9 @@ async function validateBrowserReceipt() {
     });
     assert.deepEqual(receipt.journeys.mobile, {
       targetCss: { width: 390, height: 844 },
-      controlViewport: { width: 351, height: 760 },
-      observedCss: { width: 390, height: 844 },
-      devicePixelRatio: 0.9,
+      controlViewport: { width: 293, height: 633 },
+      observedCss: { width: 391, height: 844 },
+      devicePixelRatio: 0.75,
       rootNavigationOpened: true,
       rootHorizontalOverflow: false,
       modelCardsNavigationOpened: true,
@@ -1142,7 +1142,7 @@ async function validateBrowserReceipt() {
     return;
   }
 
-  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/1.1");
+  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/1.3");
   assert.equal(receipt.asOf, "2026-08-21");
   assert.equal(new Date(receipt.checkedAt).toISOString(), receipt.checkedAt);
   assert(new Date(receipt.checkedAt) >= new Date(census.census.completedAt));
@@ -1165,6 +1165,10 @@ async function validateBrowserReceipt() {
     ["comparisonAppSha256", "dist/research-preview/compare.js"],
     ["recordDetailAppSha256", "dist/research-preview/record-detail.js"],
     ["previewStylesSha256", "dist/research-preview/styles.css"],
+    ["llmsSha256", "dist/llms.txt"],
+    ["lifecycleSha256", "dist/research-preview/lifecycle.json"],
+    ["representativeRecordHtmlSha256", "dist/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.html"],
+    ["representativeRecordJsonSha256", "dist/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.json"],
     ["sitemapSha256", "dist/sitemap.xml"]
   ];
   for (const [key, relativePath] of digestPairs) {
@@ -1187,10 +1191,10 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.snapshot.cacheBustingVersion, "2026-08-21-sealed-snapshot");
 
   const publicationQa = receipt.publicationAuthorQa;
-  assert.equal(publicationQa.workstream, "AEC-COMPARE-MODEL-CARDS-2026-08-21-BROWSER-QA");
+  assert.equal(publicationQa.workstream, "AEC-COMPARISON-CONCEPT-FIDELITY-LIVE-BASE-2026-08-22-BROWSER-QA");
   assert.equal(publicationQa.result, "PASS");
   assert.equal(publicationQa.checkedAt, receipt.checkedAt);
-  assert.equal(publicationQa.baseHead, "941dab8dd874a972699de9e9bf4a119f70954b0b");
+  assert.equal(publicationQa.baseHead, "576f472e0848907dc916e161b793af53c255f3d4");
   assert.equal(publicationQa.browser, "Codex in-app Browser");
   assert.deepEqual(publicationQa.currentness, {
     records: 123,
@@ -1252,9 +1256,9 @@ async function validateBrowserReceipt() {
     },
     mobile: {
       targetCss: { width: 390, height: 844 },
-      controlViewport: { width: 351, height: 760 },
-      observedCss: { width: 390, height: 844 },
-      devicePixelRatio: 0.9,
+      controlViewport: { width: 293, height: 633 },
+      observedCss: { width: 391, height: 844 },
+      devicePixelRatio: 0.75,
       horizontalOverflow: false,
       navigationOpened: true,
       matrixInternalOverflow: true
@@ -1280,9 +1284,9 @@ async function validateBrowserReceipt() {
     desktop: { observedCss: { width: 1422, height: 800 }, gridColumns: 3, horizontalOverflow: false },
     mobile: {
       targetCss: { width: 390, height: 844 },
-      controlViewport: { width: 351, height: 760 },
-      observedCss: { width: 390, height: 844 },
-      devicePixelRatio: 0.9,
+      controlViewport: { width: 293, height: 633 },
+      observedCss: { width: 391, height: 844 },
+      devicePixelRatio: 0.75,
       gridColumns: 1,
       cardsAndActionsContained: true,
       horizontalOverflow: false,
@@ -1329,18 +1333,18 @@ async function validateBrowserReceipt() {
   assert.deepEqual(receipt.journeys.records.desktop.failureRecordIds, []);
   assert.equal(receipt.journeys.records.desktop.controlViewport, "browser-default");
   assert.deepEqual(receipt.journeys.records.desktop.observedCss, { width: 1422, height: 800 });
-  assert.equal(receipt.journeys.records.desktop.devicePixelRatio, 1.8);
+  assert.equal(receipt.journeys.records.desktop.devicePixelRatio, 0.75);
   assert.equal(receipt.journeys.records.mobile.pagesAudited, 123);
   assert.deepEqual(receipt.journeys.records.mobile.failureRecordIds, []);
   assert.deepEqual(receipt.journeys.records.mobile.targetCss, { width: 390, height: 844 });
-  assert.deepEqual(receipt.journeys.records.mobile.controlViewport, { width: 351, height: 760 });
-  assert.deepEqual(receipt.journeys.records.mobile.observedCss, { width: 390, height: 844 });
-  assert.equal(receipt.journeys.records.mobile.devicePixelRatio, 0.9);
+  assert.deepEqual(receipt.journeys.records.mobile.controlViewport, { width: 293, height: 633 });
+  assert.deepEqual(receipt.journeys.records.mobile.observedCss, { width: 391, height: 844 });
+  assert.equal(receipt.journeys.records.mobile.devicePixelRatio, 0.75);
   assert.deepEqual(receipt.journeys.records.narrowMobileRepresentative, {
     targetCss: { width: 320, height: 700 },
-    controlViewport: { width: 288, height: 630 },
+    controlViewport: { width: 240, height: 525 },
     observedCss: { width: 320, height: 700 },
-    devicePixelRatio: 0.9,
+    devicePixelRatio: 0.75,
     routesAudited: 5,
     failureRoutes: []
   });
@@ -1351,6 +1355,29 @@ async function validateBrowserReceipt() {
     sitemapHumanReadableRoutes: 126,
     sitemapRecordRoutes: 123,
     canonicalAndStructuredMetadataFailures: 0
+  });
+  assert.deepEqual(receipt.machineDiscovery, {
+    entryPagesWithCatalogJsonAndLlmsAlternates: [
+      "/",
+      "/research-preview/",
+      "/research-preview/compare.html",
+      "/research-preview/how-it-works.html"
+    ],
+    recordHtmlPagesWithExactJsonAlternate: 123,
+    recordHtmlAlternateFailures: 0,
+    loopbackResources: {
+      llms: { status: 200, contentType: "text/plain" },
+      catalog: { status: 200, contentType: "application/json" },
+      representativeJson: { status: 200, contentType: "application/json" },
+      sitemap: {
+        status: 200,
+        contentType: "application/xml",
+        humanRoutes: 126,
+        recordHtmlRoutes: 123,
+        jsonRoutes: 0,
+        llmsRoutes: 0
+      }
+    }
   });
 
   let projectedClaimLinkedHttpsEntries = 0;
@@ -1679,7 +1706,7 @@ async function validateFirstScreenContract() {
   assert(landing.includes('aria-current="page" href="../index.html">Compare claims</a>'), "Root must mark Compare claims current");
   assert(catalog.includes('aria-current="page" href="index.html">Model Cards</a>'), "Model Cards must mark its navigation item current");
   assert(comparison.includes('aria-current="page" href="../index.html">Compare claims</a>'), "Comparison compatibility route must mark root Compare claims current");
-  assert(landing.includes("Select 2–4 exact records") && comparison.includes("Select 2–4 exact records"), "Both comparison entry routes must expose the empty picker state");
+  assert(landing.includes("1. Find coding agents") && comparison.includes("1. Find coding agents"), "Both comparison entry routes must expose the compact finder state");
   const snapshotAssetVersion = "v=2026-08-21-sealed-snapshot";
   for (const [label, html, assets] of [
     ["landing", landing, ["data.js"]],
@@ -1689,7 +1716,7 @@ async function validateFirstScreenContract() {
   ]) {
     for (const asset of assets) assert(html.includes(`${asset}?${snapshotAssetVersion}`), `${label} must cache-bust ${asset} for the retained snapshot data`);
   }
-  const visitorStyleVersion = "v=2026-08-21-model-cards-1";
+  const visitorStyleVersion = "v=2026-08-22-comparison-fidelity-1";
   const visitorAssetVersion = "v=2026-08-16-visitor-ia-1";
   for (const [label, html] of [["landing", landing], ["comparison", comparison], ["How it works", howItWorks]]) {
     assert(html.includes(`styles.css?${visitorStyleVersion}`), `${label} must cache-bust the remediated visitor-facing stylesheet`);
@@ -1698,8 +1725,9 @@ async function validateFirstScreenContract() {
   assert(catalog.includes(`styles.css?${visitorStyleVersion}`), "Model Cards must load the shared collectible-card and history-collapse stylesheet");
   assert(catalog.includes(`comparison-core.js?${visitorAssetVersion}`), "Catalog must cache-bust the shared snapshot and comparison logic");
   assert(catalog.includes("app.js?v=2026-08-21-model-cards-1"), "Model Cards must cache-bust its card and filter application");
-  assert(landing.includes("compare.js?v=2026-08-21-root-compare-1"), "Root must load the comparison application directly");
-  assert(comparison.includes("compare.js?v=2026-08-21-root-compare-1"), "Compatibility comparison route must load the same comparison application");
+  assert(landing.includes("compare.js?v=2026-08-22-comparison-fidelity-1"), "Root must load the comparison application directly");
+  assert(comparison.includes("compare.js?v=2026-08-22-comparison-fidelity-1"), "Compatibility comparison route must load the same comparison application");
+  assert(sourceStyles.includes(".text-button[hidden] { display: none; }"), "Hidden comparison actions must remain visually absent until applicable");
   for (const required of [
     "id=\"catalog-controls\"",
     "placeholder=\"Find a coding agent\"",

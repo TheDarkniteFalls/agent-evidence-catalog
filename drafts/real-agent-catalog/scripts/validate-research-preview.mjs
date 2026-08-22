@@ -258,7 +258,7 @@ assert(comparisonHtml.includes("Publisher claims only.</strong> No ranking, reco
 assert(comparisonHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/"'));
 assert(landingHtml.includes('<h1 id="comparison-title">Compare agent claims, source by source.</h1>'));
 assert(landingHtml.includes('id="pickerRecords"') && landingHtml.includes('id="comparisonMatrix"'));
-assert(landingHtml.includes("compare.js?v=2026-08-21-root-compare-1"));
+assert(landingHtml.includes("compare.js?v=2026-08-22-comparison-fidelity-1"));
 assert(comparisonHtml.includes('id="claimFilter"'));
 assert(comparisonHtml.includes('id="differencesOnly"'));
 assert(comparisonCore.includes("rawRecord.claim.category"));

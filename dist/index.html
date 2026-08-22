@@ -20,7 +20,7 @@
     <meta name="twitter:title" content="Compare Coding-Agent Claims and Sources · Agent Evidence Catalog">
     <meta name="twitter:description" content="Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Compare Coding-Agent Claims and Sources","description":"Compare 2–4 exact coding-agent records side by side: identities, attributed publisher claims, applicability boundaries, official sources and unresolved unknowns.","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/","applicationCategory":"ResearchApplication","operatingSystem":"Any","isPartOf":{"@type":"WebSite","name":"Agent Evidence Catalog","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/"}}</script>
-    <link rel="stylesheet" href="styles.css?v=2026-08-21-model-cards-1">
+    <link rel="stylesheet" href="styles.css?v=2026-08-22-comparison-fidelity-1">
   </head>
   <body class="comparison-page">
     <a class="skip-link" href="#main">Skip to comparison</a>
@@ -47,9 +47,8 @@
 
     <main id="main" class="comparison-main">
       <section class="comparison-hero" aria-labelledby="comparison-title">
-        <p class="eyebrow">Evidence-exact comparison</p>
         <h1 id="comparison-title">Compare agent claims, source by source.</h1>
-        <p class="lede">See the exact accepted publisher claims, the precise product identity they apply to and the official source.</p>
+        <p class="lede">Select 2–4 exact coding-agent surfaces to compare attributed publisher claims, official sources and unresolved boundaries.</p>
         <p class="comparison-boundary"><strong>Publisher claims only.</strong> No ranking, recommendation or independent-test result.</p>
       </section>
 
@@ -57,15 +56,30 @@
         <div class="comparison-picker">
           <div class="section-heading compact-heading">
             <div>
-              <p class="eyebrow">Current discovery set</p>
-              <h2 id="picker-heading">Select 2–4 exact records</h2>
-              <p>All 53 current records are available here. Historical records remain valid through record pages and shared URLs.</p>
+              <h2 id="picker-heading">1. Find coding agents</h2>
             </div>
           </div>
-          <label class="picker-search">
-            <span class="sr-only">Find a current agent</span>
-            <input id="pickerSearch" type="search" placeholder="Search agents by name" autocomplete="off">
-          </label>
+          <div class="picker-controls">
+            <label class="picker-search">
+              <span class="sr-only">Find a current agent</span>
+              <span class="search-icon" aria-hidden="true"></span>
+              <input id="pickerSearch" type="search" placeholder="Search agents, publishers or versions…" autocomplete="off">
+            </label>
+            <details class="picker-filter">
+              <summary>
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.25 3.25h11.5L9.4 8.1v3.45l-2.8 1.2V8.1L2.25 3.25Z" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/></svg>
+                Filters
+              </summary>
+              <fieldset>
+                <legend>Delivery</legend>
+                <label><input type="radio" name="pickerDelivery" value="all" checked> All</label>
+                <label><input type="radio" name="pickerDelivery" value="local"> Local</label>
+                <label><input type="radio" name="pickerDelivery" value="hybrid"> Hybrid</label>
+                <label><input type="radio" name="pickerDelivery" value="hosted"> Hosted</label>
+              </fieldset>
+            </details>
+          </div>
+          <p id="pickerResultMeta" class="picker-result-meta">Showing current coding-agent surfaces</p>
           <div id="pickerRecords" class="picker-records" role="list" aria-label="Current agent records"></div>
           <p id="pickerEmpty" class="empty-state compact-empty" hidden>No current records match that search.</p>
         </div>
@@ -74,50 +88,64 @@
           <div class="selected-panel" aria-labelledby="selected-heading">
             <div class="selected-panel-heading">
               <div>
-                <p class="eyebrow">Ordered comparison</p>
-                <h2 id="selected-heading">Selected records <span id="selectedCount">(0 of 4)</span></h2>
+                <h2 id="selected-heading">2. Selected records <span id="selectedCount">(0 of 4)</span></h2>
               </div>
-              <button id="clearSelection" class="text-button" type="button" hidden>Clear all</button>
+              <button id="clearSelection" class="text-button" type="button" hidden>
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.25 5.5v6.25m2.75-6.25v6.25m2.75-6.25v6.25M3.5 3.5h9M6 3.5V2.25h4V3.5m-5.5 0 .5 10.25h6L11.5 3.5" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Clear all
+              </button>
             </div>
             <div id="selectedRecords" class="selected-records" aria-label="Ordered comparison slots"></div>
             <p id="selectionEmpty" class="sr-only">No records selected. Choose any two current agents to begin.</p>
           </div>
 
           <div id="comparisonStatus" class="comparison-status" role="status" aria-live="polite"></div>
-
-          <section id="comparisonResults" class="comparison-results" aria-labelledby="results-heading" hidden>
-            <div class="comparison-tools">
-              <label>
-                <span class="sr-only">Focus accepted claims</span>
-                <input id="claimFilter" type="search" placeholder="Focus accepted claims" autocomplete="off">
-              </label>
-              <div class="differences-field">
-                <span class="sr-only">Show only differences</span>
-                <label class="differences-toggle">
-                  <input id="differencesOnly" type="checkbox">
-                  <span>Only show where claims differ</span>
-                </label>
-              </div>
-            </div>
-            <div class="sr-only">
-              <div>
-                <p class="eyebrow">Side-by-side evidence</p>
-                <h2 id="results-heading">Selected exact records</h2>
-                <p>Coverage counts describe documentation, not product quality or capability.</p>
-              </div>
-            </div>
-            <div id="comparisonMatrix" class="comparison-matrix-shell" tabindex="0" aria-label="Selected agent claims comparison; horizontally scrollable"></div>
-            <p id="noClaimMatches" class="empty-state" hidden>No accepted claim rows match that filter. This does not indicate capability absence.</p>
-            <div id="recordBoundaries" class="record-boundaries"></div>
-          </section>
-
           <section id="comparisonStart" class="comparison-start" aria-labelledby="start-heading">
-            <p class="eyebrow">Start comparing</p>
-            <h2 id="start-heading">Choose two records to build the matrix.</h2>
-            <p>No records selected. Choose any two current agents to begin.</p>
-            <p class="comparison-start-note">Your ordered selection, claim focus and differences toggle stay in the URL. No cookies, local storage or tracking are used.</p>
+            <svg class="matrix-empty-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16M4 14h16M9 4v16M14 4v16" fill="none" stroke="currentColor" stroke-width="1.35"/></svg>
+            <h3 id="start-heading">Choose two records to build the matrix.</h3>
+            <p>Add 2–4 records from the list to compare their attributed claims and sources.</p>
           </section>
         </div>
+      </section>
+
+      <section class="comparison-stage" aria-labelledby="matrix-stage-heading">
+        <header class="comparison-stage-heading">
+          <div>
+            <h2 id="matrix-stage-heading">3. Claims matrix <span>(appears after selection)</span></h2>
+            <p>Side-by-side comparison of publisher claims, official sources and unresolved boundaries for the selected records.</p>
+          </div>
+          <button id="exportComparison" class="export-button" type="button" disabled>
+            Export matrix
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v7m-2.5-2L8 10l2.5-2.5M3 11v2.5h10V11" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </header>
+        <div id="comparisonStageEmpty" class="comparison-stage-empty" aria-hidden="true">
+          <span>←</span> Add at least two records to generate the comparison matrix <span>→</span>
+        </div>
+        <section id="comparisonResults" class="comparison-results" aria-labelledby="results-heading" hidden>
+          <div class="comparison-tools">
+            <label>
+              <span class="sr-only">Focus accepted claims</span>
+              <input id="claimFilter" type="search" placeholder="Focus accepted claims" autocomplete="off">
+            </label>
+            <div class="differences-field">
+              <span class="sr-only">Show only differences</span>
+              <label class="differences-toggle">
+                <input id="differencesOnly" type="checkbox">
+                <span>Only show where claims differ</span>
+              </label>
+            </div>
+          </div>
+          <div class="sr-only">
+            <div>
+              <h2 id="results-heading">Selected exact records</h2>
+              <p>Coverage counts describe documentation, not product quality or capability.</p>
+            </div>
+          </div>
+          <div id="comparisonMatrix" class="comparison-matrix-shell" tabindex="0" aria-label="Selected agent claims comparison; horizontally scrollable"></div>
+          <p id="noClaimMatches" class="empty-state" hidden>No accepted claim rows match that filter. This does not indicate capability absence.</p>
+          <div id="recordBoundaries" class="record-boundaries"></div>
+        </section>
       </section>
     </main>
 
@@ -135,6 +163,6 @@
     <noscript><p class="noscript">JavaScript is required for the comparison interface. Human-readable records remain available from <a href="index.html">Model Cards</a>.</p></noscript>
     <script src="data.js?v=2026-08-21-sealed-snapshot"></script>
     <script src="comparison-core.js?v=2026-08-16-visitor-ia-1"></script>
-    <script src="compare.js?v=2026-08-21-root-compare-1"></script>
+    <script src="compare.js?v=2026-08-22-comparison-fidelity-1"></script>
   </body>
 </html>

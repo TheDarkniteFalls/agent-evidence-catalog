@@ -201,7 +201,7 @@ async function assertNoPublicIntegration() {
   assert(comparisonHtml.includes('id="pickerRecords"'), "Canonical comparison route must expose the comparison picker");
   assert(comparisonHtml.includes('id="comparisonMatrix"'), "Canonical comparison route must expose the comparison matrix");
   assert(comparisonHtml.includes("No ranking, recommendation or independent-test result."), "Canonical comparison boundary is missing");
-  assert(comparisonHtml.includes("compare.js?v=2026-08-21-root-compare-1"), "Comparison compatibility route must load the shared root comparison application");
+  assert(comparisonHtml.includes("compare.js?v=2026-08-22-comparison-fidelity-1"), "Comparison compatibility route must load the shared root comparison application");
   const roots = ["catalog", "site", "dist"].map((name) => path.join(packageRoot, name));
   const files = (await Promise.all(roots.map(walk))).flat();
   for (const file of files) {
@@ -214,7 +214,7 @@ async function assertNoPublicIntegration() {
       assert(content.includes('<h1 id="comparison-title">Compare agent claims, source by source.</h1>'), "Root must expose comparison as its primary identity");
       assert(content.includes('<a class="brand" href="../index.html">Agent Evidence Catalog</a>'), "Root brand must resolve to root comparison");
       assert(content.includes('id="pickerRecords"') && content.includes('id="comparisonMatrix"'), "Root must render the complete comparison application");
-      assert(content.includes("compare.js?v=2026-08-21-root-compare-1"), "Root must load the comparison application");
+      assert(content.includes("compare.js?v=2026-08-22-comparison-fidelity-1"), "Root must load the comparison application");
       assert(content.includes("No ranking, recommendation or independent-test result."), "Root comparison research boundary is missing");
     }
     if (relative === "dist/build-manifest.json") {

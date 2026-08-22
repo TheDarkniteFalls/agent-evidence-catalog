@@ -6,10 +6,11 @@ https://thedarknitefalls.github.io/agent-evidence-catalog/ and based on the
 OpenCode release-feed follow-up, the prepared 2026-08-13 official-source
 currentness candidate, the 2026-08-15 same-surface correction, the 2026-08-17
 refresh, the 2026-08-18 refresh, the published 2026-08-20 refresh and the
-prepared 2026-08-21 refresh. The latest prepared catalog is sealed to the exact 2026-08-21 source-review window and link-audit
+published 2026-08-21 refresh. The published catalog is sealed to the exact 2026-08-21 source-review window and link-audit
 completion recorded in its receipts. A separate publication-time freshness
 census can add notices but cannot promote identities into the snapshot. The
-prepared or committed candidate does not update the live site by itself.
+published snapshot remains distinct from any later prepared or committed
+candidate, which does not update the live site by itself.
 
 This research preview is a static, maintainer-curated view of attributed
 publisher claims about 55 coding-agent surface keys. It asks a deliberately
@@ -101,7 +102,11 @@ committed record files at runtime and does not modify that projection.
 
 ## Release boundary
 
-The public Research Preview v0.1 uses the accepted release boundaries. The prepared projection keeps those boundaries, while a Pages deployment and live Browser receipt are required to establish that the public URL serves this exact projection:
+The public Research Preview v0.1 uses the accepted release boundaries. The
+2026-08-21 projection is the published snapshot. Any later presentation or
+metadata candidate keeps those boundaries, while its own Pages deployment and
+live Browser receipt are required to establish that the public URL serves that
+exact candidate:
 
 - 53 current records are present across the 55-surface catalog, including
   Codex CLI 0.149.0 as the reciprocal same-surface successor to preserved

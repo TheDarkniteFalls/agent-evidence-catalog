@@ -289,7 +289,7 @@ function renderRecordDetail(record, preview, lifecycle) {
     <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
     <meta name="twitter:description" content="${escapeHtml(pageDescription)}">
     <script type="application/ld+json">${pageStructuredData}</script>
-    <link rel="stylesheet" href="../styles.css?v=2026-08-21-model-cards-1">
+    <link rel="stylesheet" href="../styles.css?v=2026-08-22-comparison-fidelity-1">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to record</a>
