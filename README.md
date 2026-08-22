@@ -24,6 +24,16 @@ Publication status: [Research Preview v0.1](https://thedarknitefalls.github.io/a
 
 `docs/claims-first-mvp.md` records the accepted claims-first direction: catalog attributable publisher sources first and defer maintainer-run agent evaluation. The research preview applies that method to real products without installing or running them and gives zero independent-test credit. The secondary synthetic reference includes a clearly labeled fictional PatchPilot example, and `docs/real-agent-mvp-pilot.md` remains a deferred optional validation design. Neither document opens intake.
 
+## Machine-readable and agent entry points
+
+- [Compare accepted claims](https://thedarknitefalls.github.io/agent-evidence-catalog/) — the canonical 2–4-record comparison application.
+- [Browse Model Cards](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/) — current and retained human-readable records.
+- [Read how AEC works](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html) — identity, source, unknown, comparison and snapshot boundaries.
+- [Read the aggregate catalog JSON](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/catalog.json) and [lifecycle JSON](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/lifecycle.json) — the existing machine-readable public projection and retained lifecycle relationships.
+- [Read `llms.txt`](https://thedarknitefalls.github.io/agent-evidence-catalog/llms.txt) — a concise orientation file for machine readers. It is an optional discovery proposal, not a guarantee of crawling, indexing, citation or ranking.
+
+Each human-readable evidence record advertises its corresponding raw JSON with `rel="alternate"`. Agents and other readers should keep exact version, surface, channel, configuration and source boundaries intact: AEC reports attributed publisher claims and unresolved unknowns, not observed behavior, independent testing, ranking, recommendation, quality, safety or suitability.
+
 ## What is here
 
 - `catalog/*.json` — one reviewable record per exact agent version.

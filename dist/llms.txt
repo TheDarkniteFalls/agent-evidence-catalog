@@ -1,0 +1,28 @@
+# Agent Evidence Catalog
+
+> A dated, maintainer-curated research catalog of exact coding-agent versions and service surfaces, grounded only in attributed official publisher sources.
+
+Agent Evidence Catalog (AEC) helps readers identify what accepted publisher sources say, where each statement applies, which identities were current within an accepted sealed snapshot, and what remains unknown. It does not run agents, observe behavior, independently test products, rank or recommend products, or establish quality, safety, suitability or publication-time currency.
+
+## Canonical human entry points
+
+- [Compare accepted claims](https://thedarknitefalls.github.io/agent-evidence-catalog/): compare 2–4 exact accepted records without scoring products.
+- [Browse Model Cards](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/): inspect current and retained human-readable records.
+- [Read how AEC works](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html): understand identity, source, unknown, comparison and snapshot boundaries.
+
+## Machine-readable entry points
+
+- [Catalog JSON](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/catalog.json): accepted public catalog projection and snapshot metadata.
+- [Lifecycle JSON](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/lifecycle.json): retained lifecycle relationships among exact records.
+- [Snapshot seal JSON](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/snapshot-seal.json): accepted review window, seal time and catalog counts.
+- Individual human-readable record pages under `research-preview/records/` advertise their corresponding record JSON with `rel="alternate"` metadata.
+
+## Reading rules
+
+- Treat product statements as attributed publisher claims, not observed behavior.
+- Keep exact version, surface, channel, configuration, platform, model and deployment boundaries intact.
+- Treat unknown as not established by the accepted sources, not as evidence of absence.
+- Follow each record's named official-source links for the applicable publisher material.
+- Inclusion is not endorsement; absence is not an adverse finding.
+
+This file supplies optional orientation for machine readers. It does not guarantee discovery, indexing, citation or ranking.

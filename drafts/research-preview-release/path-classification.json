@@ -5,8 +5,8 @@
   "classificationRule": "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
   "counts": {
     "accepted-evidence-provenance": 1074,
-    "canonical-source": 114,
-    "generated-publication-output": 312,
+    "canonical-source": 115,
+    "generated-publication-output": 313,
     "release-control-artifact": 44,
     "retained-experiment": 87
   },
@@ -337,6 +337,12 @@
     },
     {
       "path": "dist/index.html",
+      "classification": "generated-publication-output",
+      "publicationBoundary": "public-v0.1-static-output",
+      "rationale": "Generated static publication output."
+    },
+    {
+      "path": "dist/llms.txt",
       "classification": "generated-publication-output",
       "publicationBoundary": "public-v0.1-static-output",
       "rationale": "Generated static publication output."
@@ -9721,6 +9727,12 @@
     },
     {
       "path": "site/index.html",
+      "classification": "canonical-source",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Canonical static site, schema, method or deterministic build source."
+    },
+    {
+      "path": "site/llms.txt",
       "classification": "canonical-source",
       "publicationBoundary": "git-research-or-source-only",
       "rationale": "Canonical static site, schema, method or deterministic build source."

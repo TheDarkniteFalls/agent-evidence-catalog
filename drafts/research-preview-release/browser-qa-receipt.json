@@ -1,26 +1,32 @@
 {
-  "schemaVersion": "research-preview-browser-qa/1.1",
+  "schemaVersion": "research-preview-browser-qa/1.2",
   "asOf": "2026-08-21",
-  "checkedAt": "2026-08-21T12:12:05.621Z",
-  "loopback": {
-    "url": "http://localhost:4173/",
+  "checkedAt": "2026-08-21T23:58:15.465Z",
+  "workstream": "AEC-AGENT-DISCOVERY-01",
+  "baseHead": "f3309db36817608b39116984b3336d8a27bc444f",
+  "environment": {
+    "browser": "Codex in-app Browser",
+    "loopbackUrl": "http://localhost:4173/",
     "listener": "localhost:4173",
     "listenerVerified": true,
-    "browser": "Codex in-app Browser",
-    "browserNavigation": "PASS"
+    "browserNavigation": "PASS",
+    "screenshotsCaptured": 8,
+    "console": {
+      "errors": 0,
+      "warnings": 0
+    }
   },
   "sourceDigests": {
-    "rootComparisonHtmlSha256": "62e70b94f0013c96242ec5b6e2cbb801ab0a21e0ba5ad192dca35f10365c0706",
-    "modelCardsHtmlSha256": "ff3f27e820805e8d6fad24b63d8524336dc7947c87b489e518e0620d5a1e7938",
-    "howItWorksHtmlSha256": "df006e08d0cbda4fcf7789f8e8818dbb7a5ec42106dcc5ffe192f2cf58eac195",
-    "previewDataSha256": "4735a6a35dc16f82a7d84607c003a23f363cb17b5cd752c64776c2e5ee4cfbaf",
-    "previewAppSha256": "a7171b3d5c3bba6c88ea88b0dfa8f1595c6d462e38d455288747e70b932cff09",
-    "comparisonHtmlSha256": "56797d81813573b725aaf705deb1b2d9f3f3ddc70cd1605aa6c1dceeb8fbd5d2",
-    "comparisonCoreSha256": "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e",
-    "comparisonAppSha256": "60922091477020eab24527ae406b3f8b290fc7e9f80d649fcb1916981793afc0",
-    "recordDetailAppSha256": "87e143ac1e24a652ea606bbae367633e1f0ee2707e12ee1453c23c3a0f5dcd1f",
-    "previewStylesSha256": "fb663b4aab2d456f20fc42e986e51d0e60b4fa4d2f2f234ad4c332e7501cb3da",
-    "recordDetailsManifestSha256": "cf5bbf9411d2096ab6c9073c3e305b425a43589e61ba5aa14cf5d4f814e16b9d",
+    "rootComparisonHtmlSha256": "88ff64f6741dcdf03b6ed366fd4bfca8228885fc63abf42c4ebee8562fc8e31f",
+    "modelCardsHtmlSha256": "5573e9ca2429594fa4345e7ec0ce52a3f65716f625b45f55125221e613b1347e",
+    "comparisonHtmlSha256": "30e019f7eb406c425942687fdb137896dfc237d9f6b45c16df0eaa317eb960db",
+    "howItWorksHtmlSha256": "1788f2da92ef867934cd4672305d8725af3333a6c6cfd31c53e5bbef47b533de",
+    "representativeRecordHtmlSha256": "da76ec9d8a4c4b6c547b7fc3bac5293671f0dd34c55231ef1303886c9df0d576",
+    "llmsSha256": "1e70673e715d33bf911d52226651c5c801a9e0714afd01bdcd10f8f80110bf48",
+    "aggregateCatalogSha256": "4735a6a35dc16f82a7d84607c003a23f363cb17b5cd752c64776c2e5ee4cfbaf",
+    "lifecycleSha256": "a9edb5b85d14048815bc16f4cb9887315395fd62d5e7564757cb1d440c5027ca",
+    "representativeRecordJsonSha256": "f1cc69981c257445d3f4132c30e290995f3099f770c5638bf0b97e3e17e0717d",
+    "recordDetailsManifestSha256": "a3abbef7ceb2c0ad09bb3ab750478ea4955be58f5143872996342211c0853342",
     "sitemapSha256": "09ce1c60d416593a6e2e850a379a9ca9bd65b536ebe1803889ade4c7423afe6e"
   },
   "snapshot": {
@@ -41,455 +47,127 @@
       "superseded": 67,
       "historical": 2,
       "discontinued": 1
-    },
-    "publicationCheck": {
-      "startedAt": "2026-08-21T06:44:02.784Z",
-      "completedAt": "2026-08-21T06:44:09.079Z",
-      "surfaces": 55,
-      "uniqueOfficialSources": 52,
-      "reachable": 55,
-      "unreachable": 0,
-      "currentnessComparable": 2,
-      "knownNewer": 0,
-      "noNewerIdentityProven": 2,
-      "incompleteCoverage": 53
-    },
-    "bannerCopy": "Catalog snapshot: 21 August 2026, 06:43 UTC. Agent releases change quickly; records with known updates are marked.",
-    "cacheBustingVersion": "2026-08-21-sealed-snapshot"
-  },
-  "publicationAuthorQa": {
-    "workstream": "AEC-COMPARE-MODEL-CARDS-2026-08-21-BROWSER-QA",
-    "result": "PASS",
-    "checkedAt": "2026-08-21T12:12:05.621Z",
-    "baseHead": "941dab8dd874a972699de9e9bf4a119f70954b0b",
-    "browser": "Codex in-app Browser",
-    "currentness": {
-      "records": 123,
-      "currentRecords": 53,
-      "historyRecords": 70,
-      "refreshedRecordIds": [
-        "com.alibaba.qwen-code.cli.0-21-15",
-        "com.anthropic.claude-code.cli.2-1-238",
-        "com.google.antigravity.cli.1-1-17",
-        "com.cline.bot.cli.3-0-56",
-        "com.cline.bot.vscode-extension.4-1-11",
-        "com.cursor.ide.foreground-agent.3-17",
-        "com.jetbrains.junie.ide-plugin.262-579-44",
-        "com.openai.codex.cli.0-149-0"
-      ],
-      "sourceOnlyDossierRecordIds": [
-        "com.cursor.cli.agent.beta",
-        "com.windsurf.cascade.ide.rolling",
-        "com.github.copilot.visual-studio.agent-mode.rolling",
-        "org.zoo-code.vscode-extension.3-78-0"
-      ],
-      "sourceOnlyDossiersAdmitted": 0
-    },
-    "responsive": {
-      "desktopHorizontalOverflow": false,
-      "mobileHorizontalOverflow": false,
-      "narrowMobileHorizontalOverflow": false,
-      "mobileNavigationOpened": true,
-      "mobileModelCardsNavigationPassed": true
-    },
-    "screenshotsCaptured": 6,
-    "sitemap": {
-      "routes": 126,
-      "uniqueRoutes": 126,
-      "lastmodEntries": 126,
-      "sharedLastmod": "2026-08-21",
-      "source": "accepted snapshot seal and accepted record review dates",
-      "sha256": "09ce1c60d416593a6e2e850a379a9ca9bd65b536ebe1803889ade4c7423afe6e"
-    },
-    "console": {
-      "errors": 0,
-      "warnings": 0
     }
   },
   "journeys": {
-    "rootComparison": {
-      "result": "PASS",
-      "mode": "comparison-application",
-      "route": "/",
-      "title": "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
-      "headline": "Compare agent claims, source by source.",
-      "comparisonApplicationPresent": true,
-      "navigation": [
-        "Compare claims",
-        "Model Cards",
-        "How it works"
-      ],
-      "representativePair": [
-        "com.anthropic.claude-code.cli.2-1-238",
-        "com.openai.codex.cli.0-149-0"
-      ],
-      "representativePairOfficialSourceLinks": 20,
-      "urlPersistsAcrossReload": true,
-      "activeFourRecordMatrixRows": 40,
-      "maximumSelectedRecords": 4,
-      "desktop": {
-        "observedCss": {
-          "width": 1422,
-          "height": 800
-        },
+    "desktop": {
+      "viewport": {
+        "width": 1422,
+        "height": 800
+      },
+      "root": {
+        "title": "Compare Coding-Agent Claims and Sources · Agent Evidence Catalog",
+        "headline": "Compare agent claims, source by source.",
+        "pickerRecords": 53,
+        "navigation": [
+          "Compare claims",
+          "Model Cards",
+          "How it works"
+        ],
+        "aggregateJsonAlternate": "http://localhost:4173/research-preview/catalog.json",
+        "llmsAlternate": "http://localhost:4173/llms.txt",
         "horizontalOverflow": false
       },
-      "mobile": {
-        "targetCss": {
-          "width": 390,
-          "height": 844
-        },
-        "controlViewport": {
-          "width": 351,
-          "height": 760
-        },
-        "observedCss": {
-          "width": 390,
-          "height": 844
-        },
-        "devicePixelRatio": 0.9,
-        "horizontalOverflow": false,
-        "navigationOpened": true,
-        "matrixInternalOverflow": true
-      }
-    },
-    "modelCards": {
-      "result": "PASS",
-      "surfaces": 55,
-      "route": "/research-preview/",
-      "title": "Model Cards for Current Coding Agents · Agent Evidence Catalog",
-      "headline": "Model Cards",
-      "navigation": [
-        "Compare claims",
-        "Model Cards",
-        "How it works"
-      ],
-      "staticCurrentCards": 53,
-      "renderedCurrentCards": 53,
-      "publisherMonograms": 53,
-      "evidenceProfiles": 53,
-      "unresolvedBoundaryMetrics": 53,
-      "repeatedIndependentTestMetrics": 0,
-      "deliveryFilterCounts": {
-        "all": 53,
-        "local": 1,
-        "hybrid": 32,
-        "hosted": 20
+      "comparison": {
+        "representativePair": [
+          "com.anthropic.claude-code.cli.2-1-238",
+          "com.openai.codex.cli.0-149-0"
+        ],
+        "selectedRecords": 2,
+        "officialSourceLinks": 20,
+        "urlPersistsAcrossReload": true,
+        "maximumSelectedRecords": 4
       },
-      "qwenSearchResultCount": "2 of 53 surfaces",
-      "qwenCurrentIdentity": "0.21.15",
-      "desktop": {
-        "observedCss": {
-          "width": 1422,
-          "height": 800
-        },
+      "modelCards": {
+        "title": "Model Cards for Current Coding Agents · Agent Evidence Catalog",
+        "headline": "Model Cards",
+        "renderedCurrentCards": 53,
         "gridColumns": 3,
+        "qwenSearchResultCount": "2 of 53 surfaces",
+        "qwenCurrentIdentity": "0.21.15",
         "horizontalOverflow": false
       },
-      "mobile": {
-        "targetCss": {
-          "width": 390,
-          "height": 844
-        },
-        "controlViewport": {
-          "width": 351,
-          "height": 760
-        },
-        "observedCss": {
-          "width": 390,
-          "height": 844
-        },
-        "devicePixelRatio": 0.9,
-        "gridColumns": 1,
-        "cardsAndActionsContained": true,
-        "horizontalOverflow": false,
-        "navigationOpened": true
-      },
-      "historyCards": 70,
-      "historyCollapsedInitially": true,
-      "historyExpandedOnRequest": true,
-      "historyRenderedState": {
-        "initial": {
-          "hiddenAttribute": true,
-          "ariaExpanded": "false",
-          "toggleText": "Show 70 history records",
-          "computedDisplay": "none",
-          "boundingBoxHeightPx": 0,
-          "visibleCardCount": 0
-        },
-        "expanded": {
-          "hiddenAttribute": false,
-          "ariaExpanded": "true",
-          "toggleText": "Hide history records",
-          "computedDisplay": "grid",
-          "boundingBoxHeightPx": 10158.9765625,
-          "visibleCardCount": 70
-        },
-        "recollapsed": {
-          "hiddenAttribute": true,
-          "ariaExpanded": "false",
-          "toggleText": "Show 70 history records",
-          "computedDisplay": "none",
-          "boundingBoxHeightPx": 0,
-          "visibleCardCount": 0
-        }
-      },
-      "knownUpdateNotices": 0
-    },
-    "comparison": {
-      "result": "PASS",
-      "representativePair": [
-        "com.anthropic.claude-code.cli.2-1-238",
-        "com.openai.codex.cli.0-149-0"
-      ],
-      "representativePairOfficialSourceLinks": 20,
-      "urlPersistsAcrossReload": true,
-      "maximumSelectedRecords": 4,
-      "activeFourRecordMatrixRows": 40,
-      "mobileMatrixInternalOverflow": true,
-      "mobileBodyHorizontalOverflow": false
-    },
-    "comparisonCompatibility": {
-      "result": "PASS",
-      "route": "/research-preview/compare.html",
-      "completeApplicationPresent": true,
-      "canonicalHref": "https://thedarknitefalls.github.io/agent-evidence-catalog/",
-      "selectionStateWorks": true
-    },
-    "howItWorks": {
-      "result": "PASS",
-      "sections": [
-        "Start with the exact identity",
-        "Follow each claim to its source",
-        "Unknown stays visible",
-        "Compare claims, not agents",
-        "Snapshots, known updates and version history",
-        "What AEC does not establish",
-        "Inspect the evidence or suggest a correction"
-      ],
-      "technicalDocumentationClosedInitially": true,
-      "desktopHorizontalOverflow": false,
-      "mobileHorizontalOverflow": false
-    },
-    "records": {
-      "result": "PASS",
-      "recordIds": [
-        "com.cline.bot.vscode-extension.4-1-2",
-        "org.openhands.cli.1-16-0",
-        "com.github.copilot.cloud-agent.rolling",
-        "com.google.jules.hosted.rolling",
-        "com.openai.codex.cli.0-90-0",
-        "com.cursor.ide.foreground-agent.3-14",
-        "com.gitlab.duo-agent-platform.developer-flow.18-8-0-ee",
-        "com.cognition.devin.hosted.rolling",
-        "com.anthropic.claude-code.cli.2-1-117",
-        "dev.zed.agent.native.1-13-1",
-        "com.replit.agent.hosted.agent-4",
-        "org.aider-ai.aider.cli.0-86-0",
-        "com.amazon.kiro.ide.1-0-242",
-        "com.lovable.agent.hosted.rolling",
-        "com.anomaly.opencode.cli.1-18-11",
-        "com.cognition.devin-desktop.cascade.3-6-27",
-        "com.openai.codex.cli.0-146-0",
-        "com.anthropic.claude-code.cli.2-1-220",
-        "com.gitlab.duo.developer-flow.19-2",
-        "com.zed.agent.native.stable.1-12-1",
-        "com.cline.bot.vscode-extension.4-1-3",
-        "com.gitlab.duo.developer-flow.19-2-1",
-        "com.google.gemini.cli.0-54-4",
-        "com.google.antigravity.cli.1-1-11",
-        "org.aaif.goose.cli.1-45-0",
-        "com.alibaba.qwen-code.cli.0-21-7",
-        "ai.mistral.vibe.cli.rolling",
-        "com.sourcegraph.amp.cli.rolling",
-        "com.github.copilot.cli.1-0-78",
-        "com.jetbrains.junie.cli.beta-rolling",
-        "com.amazon.kiro.cli.rolling",
-        "com.cline.bot.cli.3-0-51",
-        "com.augmentcode.auggie.cli.rolling",
-        "ai.factory.droid.cli.rolling",
-        "com.roocode.vscode-extension.3-54-0",
-        "com.continue.dev.ide-agent.2-0-0",
-        "com.jetbrains.junie.ide-plugin.262-132-31",
-        "com.amazon.q-developer.ide-plugins.sunset",
-        "com.google.gemini-code-assist.ide-agent.rolling",
-        "com.github.copilot.vscode-agent.rolling",
-        "com.openai.codex.ide-extension.rolling",
-        "com.alibaba.qwen-code.vscode-extension.beta-rolling",
-        "ai.mistral.vibe-code.vscode-extension.rolling",
-        "com.tabnine.agent.ide.rolling",
-        "dev.warp.oz.local-agent.desktop.rolling",
-        "com.augmentcode.agent.ide.rolling",
-        "com.openai.codex.cloud.rolling",
-        "com.cursor.cloud-agents.rolling",
-        "com.gitlab.duo.software-development-flow.rolling",
-        "com.gitlab.duo.code-review-flow.19-2",
-        "ai.mistral.vibe-code.web.rolling",
-        "com.amazon.kiro.web.preview-rolling",
-        "org.openhands.cloud.rolling",
-        "com.github.anthropic.claude-agent.preview-rolling",
-        "com.github.openai.codex-agent.preview-rolling",
-        "ai.factory.droid-computers.rolling",
-        "dev.warp.oz.cloud-agents.rolling",
-        "com.amazon.q-developer.github.preview-rolling",
-        "com.stackblitz.bolt.claude-agent.rolling",
-        "com.vercel.v0.agent.rolling",
-        "com.vercel.agent.public-beta",
-        "com.alibaba.qwen-code.cli.0-21-8",
-        "com.amazon.kiro.ide.1-0-288",
-        "com.anomaly.opencode.cli.1-18-15",
-        "com.anomaly.opencode.cli.1-18-16",
-        "com.anthropic.claude-code.cli.2-1-226",
-        "com.cline.bot.cli.3-0-52",
-        "com.cline.bot.vscode-extension.4-1-7",
-        "com.cursor.ide.foreground-agent.3-15",
-        "com.gitlab.duo.code-review-flow.19-2-1",
-        "com.jetbrains.junie.ide-plugin.262-132-35",
-        "com.openai.codex.cli.0-147-0",
-        "dev.zed.agent.native.1-14-2",
-        "com.alibaba.qwen-code.cli.0-21-11",
-        "com.amazon.kiro.ide.1-0-293",
-        "com.anomaly.opencode.cli.1-18-18",
-        "com.anthropic.claude-code.cli.2-1-231",
-        "com.cline.bot.cli.3-0-54",
-        "com.cline.bot.vscode-extension.4-1-9",
-        "com.cognition.devin-desktop.cascade.3-7-16",
-        "com.github.copilot.cli.1-0-79",
-        "com.gitlab.duo.developer-flow.19-2-2",
-        "com.gitlab.duo.code-review-flow.19-2-2",
-        "com.google.antigravity.cli.1-1-12",
-        "com.google.gemini.cli.0-55-1",
-        "com.jetbrains.junie.ide-plugin.262-579-3",
-        "dev.zed.agent.native.1-15-0",
-        "org.aaif.goose.cli.1-46-0",
-        "com.alibaba.qwen-code.cli.0-21-12",
-        "com.amazon.kiro.ide.1-0-309",
-        "com.anthropic.claude-code.cli.2-1-232",
-        "com.anthropic.claude-code.cli.2-1-233",
-        "com.cline.bot.cli.3-0-55",
-        "com.cline.bot.vscode-extension.4-1-10",
-        "com.cognition.devin-desktop.cascade.3-7-25",
-        "com.github.copilot.cli.1-0-80",
-        "com.google.antigravity.cli.1-1-13",
-        "com.jetbrains.junie.ide-plugin.262-579-14",
-        "com.alibaba.qwen-code.cli.0-21-13",
-        "com.cursor.ide.foreground-agent.3-16",
-        "com.jetbrains.junie.ide-plugin.262-579-20",
-        "com.anthropic.claude-code.cli.2-1-234",
-        "com.google.antigravity.cli.1-1-14",
-        "com.jetbrains.junie.ide-plugin.262-579-25",
-        "com.gitlab.duo.developer-flow.19-2-4",
-        "com.gitlab.duo.code-review-flow.19-2-4",
-        "com.alibaba.qwen-code.cli.0-21-14",
-        "com.amazon.kiro.ide.1-0-337",
-        "com.anomaly.opencode.cli.1-18-19",
-        "com.anthropic.claude-code.cli.2-1-237",
-        "com.google.antigravity.cli.1-1-16",
-        "com.google.gemini.cli.0-56-0",
-        "com.jetbrains.junie.ide-plugin.262-579-38",
-        "com.openai.codex.cli.0-148-0",
-        "dev.zed.agent.native.1-16-1",
-        "com.alibaba.qwen-code.cli.0-21-15",
-        "com.anthropic.claude-code.cli.2-1-238",
-        "com.google.antigravity.cli.1-1-17",
-        "com.cline.bot.cli.3-0-56",
-        "com.cline.bot.vscode-extension.4-1-11",
-        "com.cursor.ide.foreground-agent.3-17",
-        "com.jetbrains.junie.ide-plugin.262-579-44",
-        "com.openai.codex.cli.0-149-0"
-      ],
-      "desktop": {
-        "controlViewport": "browser-default",
-        "observedCss": {
-          "width": 1422,
-          "height": 800
-        },
-        "devicePixelRatio": 1.8,
-        "pagesAudited": 123,
-        "failureRecordIds": []
-      },
-      "mobile": {
-        "targetCss": {
-          "width": 390,
-          "height": 844
-        },
-        "controlViewport": {
-          "width": 351,
-          "height": 760
-        },
-        "observedCss": {
-          "width": 390,
-          "height": 844
-        },
-        "devicePixelRatio": 0.9,
-        "pagesAudited": 123,
-        "failureRecordIds": []
-      },
-      "narrowMobileRepresentative": {
-        "targetCss": {
-          "width": 320,
-          "height": 700
-        },
-        "controlViewport": {
-          "width": 288,
-          "height": 630
-        },
-        "observedCss": {
-          "width": 320,
-          "height": 700
-        },
-        "devicePixelRatio": 0.9,
-        "routesAudited": 5,
-        "failureRoutes": []
-      },
-      "checksAppliedToEveryPage": {
-        "humanReadableHeading": true,
-        "claimCountMatchesProjection": true,
-        "sourceCountAndHttpsTargetsMatchProjection": true,
-        "rawJsonTargetExact": true,
-        "datedSnapshotRendered": true,
-        "noUndefinedOrNaNText": true,
-        "desktopDocumentAndBodyContained": true,
-        "mobileDocumentBodyAndRequiredRegionsContained": true,
-        "mobileNavigationPresent": true
+      "representativeRecord": {
+        "recordId": "com.alibaba.qwen-code.cli.0-21-15",
+        "title": "Qwen Code CLI 0.21.15 Evidence Record · Agent Evidence Catalog",
+        "headline": "Qwen Code CLI 0.21.15",
+        "rawJsonHref": "http://localhost:4173/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.json",
+        "jsonAlternate": "http://localhost:4173/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.json",
+        "llmsAlternate": "http://localhost:4173/llms.txt",
+        "sectionLinks": 7,
+        "horizontalOverflow": false
       }
     },
-    "discoveryMetadata": {
-      "result": "PASS",
-      "recordPagesAudited": 123,
-      "sitemapHumanReadableRoutes": 126,
-      "sitemapRecordRoutes": 123,
-      "canonicalAndStructuredMetadataFailures": 0
+    "mobile": {
+      "targetCss": {
+        "width": 390,
+        "height": 844
+      },
+      "controlViewport": {
+        "width": 351,
+        "height": 760
+      },
+      "observedCss": {
+        "width": 390,
+        "height": 844
+      },
+      "devicePixelRatio": 0.9,
+      "rootNavigationOpened": true,
+      "rootHorizontalOverflow": false,
+      "modelCardsNavigationOpened": true,
+      "modelCardsGridColumns": 1,
+      "modelCardsRenderedCurrentCards": 53,
+      "modelCardsFirstCardContained": true,
+      "modelCardsHorizontalOverflow": false,
+      "representativeRecordNavigationOpened": true,
+      "representativeRecordContained": true,
+      "representativeRecordHorizontalOverflow": false,
+      "compatibilityComparisonComplete": true,
+      "compatibilityCanonicalHref": "https://thedarknitefalls.github.io/agent-evidence-catalog/",
+      "compatibilityHorizontalOverflow": false,
+      "howItWorksHeadline": "How it works",
+      "howItWorksHorizontalOverflow": false
+    },
+    "machineDiscovery": {
+      "browserMetadataPagesChecked": 4,
+      "generatedRecordAlternatePagesChecked": 123,
+      "browserTopLevelRawNavigation": "blocked-by-browser-client",
+      "loopbackHttpProbe": [
+        {
+          "route": "/llms.txt",
+          "status": 200,
+          "contentType": "text/plain"
+        },
+        {
+          "route": "/research-preview/catalog.json",
+          "status": 200,
+          "contentType": "application/json"
+        },
+        {
+          "route": "/research-preview/lifecycle.json",
+          "status": 200,
+          "contentType": "application/json"
+        },
+        {
+          "route": "/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.json",
+          "status": 200,
+          "contentType": "application/json"
+        }
+      ]
     }
   },
-  "sourceLinks": {
-    "projectedClaimLinkedHttpsEntries": 662,
-    "sourceUrlIdentitiesChecked": 663,
-    "preferredSurfaceSources": {
-      "checked": 55,
-      "reachable": 55,
-      "failed": 0,
-      "receiptSha256": "e558d2af3cdb5e5dba382a8a542d6e2e069d1cf17dc9ad9fdf661c709efdac45"
-    },
-    "fullCorpus": {
-      "recordsChecked": 123,
-      "uniqueEndpointsChecked": 273,
-      "passed": 273,
-      "unresolved": 0,
-      "receiptPath": "drafts/research-preview-release/currentness-2026-08-21/official-url-audit.json",
-      "receiptSha256": "d9198630150aeb6f833cb35592ffbd5d914c1fb3ac5fc5204419bad61e647fd1"
-    },
-    "unresolved": []
-  },
-  "console": {
-    "errors": 0,
-    "warnings": 0
+  "sitemap": {
+    "humanReadableRoutes": 126,
+    "recordRoutes": 123,
+    "rawJsonRoutes": 0,
+    "llmsRoutes": 0,
+    "lastmodSource": "accepted snapshot seal and accepted record review dates"
   },
   "limitations": [
-    "The in-app Browser viewport control is recorded separately from the observed CSS viewport because this session applied a 0.9 device scale; the receipt claims only the measured 390 by 844 and 320 by 700 CSS viewports.",
-    "Cursor CLI, Cascade in Windsurf IDE, Copilot Agent Mode for Visual Studio and Zoo Code v3.78.0 are source-only dossiers and are not catalog, mapping, lifecycle or presentation admissions.",
-    "The publication-time census proves no known-newer identity for the two comparable live indexes but cannot prove publication-time currency for 53 surfaces; exact release pages, rolling identities and unparseable indexes remain incomplete coverage.",
-    "Rendered local behavior, source reachability and deterministic validation do not establish catalogued product behavior, independent verification, quality, safety, popularity, ranking or suitability."
+    "The in-app Browser blocks top-level navigation to raw text and JSON resources; their advertised URLs were verified in rendered metadata and a separate loopback-only HTTP probe returned the recorded status and content types.",
+    "Browser screenshots and responsive interaction cover representative routes; deterministic validation checks alternate metadata on all 123 generated record pages.",
+    "llms.txt and rel=alternate metadata provide optional machine-reader orientation and do not guarantee crawling, indexing, citation or ranking.",
+    "Rendered local behavior and deterministic validation do not establish catalogued product behavior, independent verification, quality, safety, popularity, ranking or suitability."
   ],
   "boundaries": {
     "publisherSourcesOnly": true,
@@ -498,7 +176,8 @@
     "rankingsOrSuitabilityCalculations": false,
     "priorAcceptedRecordsOrSourceArtifactsRewritten": false,
     "currentnessLifecycleProjectionUpdated": false,
-    "visitorInformationArchitectureChanged": true,
+    "visitorInformationArchitectureChanged": false,
+    "machineDiscoveryMetadataChanged": true,
     "githubStateChanged": false,
     "publicationAuthorizedByReceipt": false
   }
