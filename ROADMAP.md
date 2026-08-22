@@ -7,16 +7,15 @@ a response-time commitment.
 ## Current position
 
 The live [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
-is the published sealed 2026-08-20 55-surface snapshot with 115 records. The
-repository's latest prepared candidate is the sealed 2026-08-21 snapshot: 53
+is the published sealed 2026-08-21 55-surface snapshot with 123 records: 53
 current records and 70 non-current records, comprising 67 superseded
-identities, two historical records and one discontinued surface. All 123
-candidate records are static, maintainer-curated and based only on attributed
-publisher sources. Both snapshots assign zero independent-test credit and
-provide no rankings, recommendations or suitability calculation.
+identities, two historical records and one discontinued surface. All records
+are static, maintainer-curated and based only on attributed publisher sources.
+The snapshot assigns zero independent-test credit and provides no rankings,
+recommendations or suitability calculation.
 
-The 2026-08-21 refresh preserves all 115 records from the published snapshot
-and adds eight same-surface successors for Qwen Code CLI, Claude Code CLI,
+The 2026-08-21 refresh preserves all 115 records from the prior published
+2026-08-20 snapshot and adds eight same-surface successors for Qwen Code CLI, Claude Code CLI,
 Antigravity CLI, Cline CLI, Cline VS Code extension, Cursor IDE foreground
 Agent, Junie IDE plugin and OpenAI Codex CLI. Four
 additional products are represented only by source dossiers and are not
@@ -29,8 +28,8 @@ Publication-time drift is reported separately and does not reopen a sealed
 snapshot. A pinned, least-privilege GitHub Pages workflow publishes only the
 committed `dist/` tree. Every later commit, push, pull request and publication
 still requires the applicable public-lane gates and scoped authority. The
-2026-08-21 candidate has conditional publication authority only after fresh
-independent acceptance and every release gate passes.
+2026-08-21 release completed fresh independent acceptance and every applicable
+release gate before publication.
 
 ## Near-term roadmap
 
@@ -55,8 +54,7 @@ concept review in step 4.
 
 Status: repeatable capture, projection, full-corpus link audit and
 publication-census commands are exercised across all 55 surfaces. The
-2026-08-20 receipts describe the published baseline; the 2026-08-21 receipts
-describe the latest prepared candidate. Publishing the new exact candidate
+2026-08-21 receipts describe the published baseline. Every later exact refresh
 remains trigger-dependent on fresh independent acceptance and all release
 gates. Operational dashboard and scheduling remain deferred.
 
@@ -97,8 +95,9 @@ presentation validation and receives a separate scope decision.
 
 ### 4. Concept and presentation review
 
-Status: the branded homepage and search/discovery foundation are published;
-continue with real-world comprehension and navigation feedback.
+Status: Compare claims is the primary route, Model Cards preserve the
+53-surface card view and the compact logo-led comparison workspace is
+published; continue with real-world comprehension and navigation feedback.
 
 - Define the primary reader and the decision the catalog helps them make.
 - Check terminology, navigation, record density and the balance between current

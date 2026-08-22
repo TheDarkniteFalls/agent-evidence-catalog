@@ -7,13 +7,15 @@
 
   // Editorial starting points for first-visit recognition, not a ranking or endorsement.
   // Every other current record retains its canonical catalog order.
-  const recognizableStartingRecordIds = Object.freeze([
-    "com.anthropic.claude-code.cli.2-1-233",
-    "com.openai.codex.cli.0-147-0",
-    "com.github.copilot.cli.1-0-80",
-    "com.cursor.ide.foreground-agent.3-16"
+  const recognizableStartingRecordNames = Object.freeze([
+    "Claude Code CLI",
+    "OpenAI Codex CLI",
+    "Cursor IDE foreground Agent",
+    "Kiro IDE",
+    "GitHub Copilot CLI",
+    "Qwen Code CLI"
   ]);
-  const recognizableStartingOrder = new Map(recognizableStartingRecordIds.map((recordId, index) => [recordId, index]));
+  const recognizableStartingOrder = new Map(recognizableStartingRecordNames.map((name, index) => [name, index]));
   const summariesById = new Map(data.previewRecords.map((record) => [record.recordId, record]));
   const knownIds = new Set(summariesById.keys());
   const currentRecords = data.surfaces
@@ -21,8 +23,8 @@
     .filter(Boolean)
     .map((record, canonicalIndex) => ({ record, canonicalIndex }))
     .sort((left, right) => {
-      const leftStart = recognizableStartingOrder.get(left.record.recordId);
-      const rightStart = recognizableStartingOrder.get(right.record.recordId);
+      const leftStart = recognizableStartingOrder.get(left.record.name);
+      const rightStart = recognizableStartingOrder.get(right.record.name);
       if (leftStart !== undefined || rightStart !== undefined) {
         return (leftStart ?? Number.MAX_SAFE_INTEGER) - (rightStart ?? Number.MAX_SAFE_INTEGER);
       }
@@ -39,6 +41,8 @@
   const pickerSearch = document.querySelector("#pickerSearch");
   const pickerRecords = document.querySelector("#pickerRecords");
   const pickerEmpty = document.querySelector("#pickerEmpty");
+  const pickerResultMeta = document.querySelector("#pickerResultMeta");
+  const pickerDeliveryInputs = [...document.querySelectorAll('input[name="pickerDelivery"]')];
   const selectedRecords = document.querySelector("#selectedRecords");
   const selectedCount = document.querySelector("#selectedCount");
   const selectionEmpty = document.querySelector("#selectionEmpty");
@@ -46,6 +50,8 @@
   const comparisonStatus = document.querySelector("#comparisonStatus");
   const comparisonResults = document.querySelector("#comparisonResults");
   const comparisonStart = document.querySelector("#comparisonStart");
+  const comparisonStageEmpty = document.querySelector("#comparisonStageEmpty");
+  const exportComparison = document.querySelector("#exportComparison");
   const comparisonMatrix = document.querySelector("#comparisonMatrix");
   const recordBoundaries = document.querySelector("#recordBoundaries");
   const noClaimMatches = document.querySelector("#noClaimMatches");
@@ -57,19 +63,67 @@
   const compareSelection = document.querySelector("#compareSelection");
   core.applySnapshotBanner(data);
 
+  pickerSearch.value = initialParams.get("q") ?? "";
+  const requestedDelivery = initialParams.get("delivery");
+  if (["local", "hybrid", "hosted"].includes(requestedDelivery)) {
+    const requestedInput = pickerDeliveryInputs.find((input) => input.value === requestedDelivery);
+    if (requestedInput) requestedInput.checked = true;
+  }
   claimFilter.value = initialParams.get("claim") ?? "";
   differencesOnly.checked = initialParams.get("differences") === "1";
 
   const versionLabel = (record) => record.release.version
     ? `Exact version ${record.release.version}`
     : core.readableLabel(record.release.scope);
+  const versionValue = (record) => record.release.version
+    ?? record.release.releaseTag
+    ?? core.readableLabel(record.release.scope);
+  const deliveryValue = () => pickerDeliveryInputs.find((input) => input.checked)?.value ?? "all";
+
+  const productMark = (record) => {
+    const name = record.name.toLowerCase();
+    if (name.includes("claude")) return "claude";
+    if (name.includes("codex")) return "codex";
+    if (name.includes("cursor")) return "cursor";
+    if (name.includes("kiro")) return "kiro";
+    if (name.includes("github") || name.includes("copilot")) return "github";
+    if (name.includes("qwen")) return "qwen";
+    return "publisher";
+  };
+
+  const markSvg = Object.freeze({
+    claude: '<svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.15" stroke-linecap="round"><path d="M12 2.5v5M12 16.5v5M2.5 12h5M16.5 12h5M5.3 5.3l3.5 3.5M15.2 15.2l3.5 3.5M18.7 5.3l-3.5 3.5M8.8 15.2l-3.5 3.5"/></g></svg>',
+    codex: '<svg viewBox="0 0 24 24"><path d="M12 2.4 21 7.5v9L12 21.6 3 16.5v-9Z" fill="currentColor"/><path d="m12 5.1 5.9 3.3-5.9 3.4-5.9-3.4L12 5.1Zm-6.4 5.6 5.2 3v5L5.6 15.7v-5Zm12.8 0v5l-5.2 3v-5l5.2-3Z" fill="white"/></svg>',
+    cursor: '<svg viewBox="0 0 24 24"><path d="m12 2.5 9 5.2v8.6l-9 5.2-9-5.2V7.7Z" fill="#e9eceb"/><path d="m12 2.5 4.5 8-4.5 2.6-4.5-2.6 4.5-8Z" fill="#fafafa"/><path d="m3 7.7 4.5 2.8L12 21.5l-9-5.2V7.7Z" fill="#b9bfbc"/><path d="m21 7.7-4.5 2.8L12 21.5l9-5.2V7.7Z" fill="#d4d8d6"/><path d="m7.5 10.5 4.5 2.6 4.5-2.6-4.5-8-4.5 8Z" fill="none" stroke="#707975" stroke-width=".65"/></svg>',
+    kiro: '<svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="3.5" fill="currentColor"/><path d="M7.3 6.5h3v4.4l3.8-4.4h3.6l-4.4 4.9 4.7 6.1h-3.7l-3-4.1-1 1.1v3h-3V6.5Z" fill="white"/></svg>',
+    github: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7 10 8 7l3 2h2l3-2 1 3v4c0 3-2 5-5 5s-5-2-5-5v-4Z" fill="white"/></svg>',
+    qwen: '<svg viewBox="0 0 24 24"><path d="m12 2 2 4 5-1-1 5 4 2-4 2 1 5-5-1-2 4-2-4-5 1 1-5-4-2 4-2-1-5 5 1 2-4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m8 8 8 8m0-8-8 8" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>'
+  });
+
+  function makeProductMark(record) {
+    const mark = document.createElement("span");
+    const key = productMark(record);
+    mark.className = `agent-logo agent-logo-${key}`;
+    mark.setAttribute("aria-hidden", "true");
+    if (key !== "publisher") {
+      mark.innerHTML = markSvg[key];
+      return mark;
+    }
+    const words = String(record.publisher).match(/[A-Za-z0-9]+/g) ?? ["AEC"];
+    mark.textContent = words.slice(0, 2).map((word) => word[0]).join("").toUpperCase();
+    let hash = 0;
+    for (const character of String(record.publisher)) hash = ((hash * 31) + character.codePointAt(0)) >>> 0;
+    const accents = ["#176044", "#245ca6", "#8a5a12", "#7653a6", "#ad552f", "#087d7a", "#4d6478", "#8b2f32"];
+    mark.style.setProperty("--agent-mark", accents[hash % accents.length]);
+    return mark;
+  }
 
   function stateParams({ includeComparisonControls = true } = {}) {
     const params = new URLSearchParams();
-    const q = initialParams.get("q");
-    const delivery = initialParams.get("delivery");
+    const q = pickerSearch.value.trim();
+    const delivery = deliveryValue();
     if (q) params.set("q", q);
-    if (["local", "hybrid", "hosted"].includes(delivery)) params.set("delivery", delivery);
+    if (delivery !== "all") params.set("delivery", delivery);
     if (selectedIds.length) params.set("agents", selectedIds.join(","));
     if (includeComparisonControls && claimFilter.value.trim()) params.set("claim", claimFilter.value.trim());
     if (includeComparisonControls && differencesOnly.checked) params.set("differences", "1");
@@ -153,24 +207,49 @@
 
   function renderPicker() {
     const query = pickerSearch.value.trim().toLowerCase();
-    const visible = currentRecords.filter((record) => `${record.name} ${record.publisher} ${record.surface.name} ${record.recordId}`.toLowerCase().includes(query));
+    const delivery = deliveryValue();
+    const visible = currentRecords.filter((record) => {
+      const haystack = `${record.name} ${record.publisher} ${record.surface.name} ${record.recordId} ${versionValue(record)}`.toLowerCase();
+      return (!query || haystack.includes(query)) && (delivery === "all" || record.surface.deliveryModel === delivery);
+    });
     pickerRecords.replaceChildren(...visible.map((record) => {
       const row = document.createElement("div");
       row.className = "picker-record";
       row.setAttribute("role", "listitem");
+      const mark = makeProductMark(record);
       const copy = document.createElement("div");
+      copy.className = "picker-record-copy";
       const name = document.createElement("strong");
       name.textContent = record.name;
       const detail = document.createElement("span");
-      detail.textContent = `${record.publisher} · ${versionLabel(record)} · ${core.readableLabel(record.surface.deliveryModel)}`;
-      copy.append(name, detail);
+      detail.textContent = record.publisher;
+      const compactDetail = document.createElement("small");
+      compactDetail.textContent = `${versionValue(record)} · ${core.readableLabel(record.surface.deliveryModel)}`;
+      copy.append(name, detail, compactDetail);
+      const release = document.createElement("div");
+      release.className = "picker-record-meta";
+      const releaseValue = document.createElement("strong");
+      releaseValue.textContent = versionValue(record);
+      const releaseLabel = document.createElement("span");
+      releaseLabel.textContent = record.release.version ? "Version" : "Scope";
+      release.append(releaseValue, releaseLabel);
+      const deliveryMeta = document.createElement("div");
+      deliveryMeta.className = "picker-record-meta";
+      const deliveryValueNode = document.createElement("strong");
+      deliveryValueNode.textContent = core.readableLabel(record.surface.deliveryModel);
+      const deliveryLabel = document.createElement("span");
+      deliveryLabel.textContent = "Delivery";
+      deliveryMeta.append(deliveryValueNode, deliveryLabel);
       const selected = selectedIds.includes(record.recordId);
-      const button = makeButton(selected ? "Selected" : "Add", "picker-add", () => selected ? removeRecord(record.recordId) : addRecord(record.recordId));
+      const button = makeButton(selected ? "Selected" : "Add +", "picker-add", () => selected ? removeRecord(record.recordId) : addRecord(record.recordId));
       button.setAttribute("aria-pressed", String(selected));
       button.setAttribute("aria-label", `${selected ? "Remove" : "Add"} ${record.name} ${versionLabel(record)} ${selected ? "from" : "to"} comparison`);
-      row.append(copy, button);
+      row.append(mark, copy, release, deliveryMeta, button);
       return row;
     }));
+    pickerResultMeta.textContent = visible.length === currentRecords.length
+      ? `Showing ${visible.length} current coding-agent surfaces`
+      : `Showing ${visible.length} of ${currentRecords.length} current coding-agent surfaces`;
     pickerEmpty.hidden = visible.length !== 0;
   }
 
@@ -200,11 +279,15 @@
       position.textContent = String(index + 1);
       position.setAttribute("aria-label", `Position ${index + 1}`);
       const copy = document.createElement("div");
+      copy.className = "selected-record-copy";
+      const mark = makeProductMark(record);
+      const text = document.createElement("div");
       const name = document.createElement("h3");
       name.textContent = record.name;
       const detail = document.createElement("p");
       detail.textContent = `${versionLabel(record)} · ${core.readableLabel(record.surface.deliveryModel)}`;
-      copy.append(name, detail);
+      text.append(name, detail);
+      copy.append(mark, text);
       const controls = document.createElement("div");
       controls.className = "selection-controls";
       const earlier = makeButton("←", "icon-button", () => moveRecord(recordId, -1));
@@ -438,6 +521,8 @@
     const ready = selectedIds.length >= 2;
     comparisonResults.hidden = !ready;
     comparisonStart.hidden = ready;
+    comparisonStageEmpty.hidden = ready;
+    exportComparison.disabled = !ready;
     if (!ready) {
       comparisonMatrix.replaceChildren();
       recordBoundaries.replaceChildren();
@@ -463,7 +548,16 @@
     renderComparison();
   }
 
-  pickerSearch.addEventListener("input", renderPicker);
+  pickerSearch.addEventListener("input", () => {
+    updateUrl();
+    updateNavigationLinks();
+    renderPicker();
+  });
+  pickerDeliveryInputs.forEach((input) => input.addEventListener("change", () => {
+    updateUrl();
+    updateNavigationLinks();
+    renderPicker();
+  }));
   claimFilter.addEventListener("input", () => {
     updateUrl();
     updateNavigationLinks();
@@ -474,6 +568,18 @@
     renderComparison();
   });
   clearSelection.addEventListener("click", () => setSelection([], "Selection cleared."));
+  exportComparison.addEventListener("click", () => {
+    if (exportComparison.disabled) return;
+    const rows = [...comparisonMatrix.querySelectorAll("tr")].map((row) =>
+      [...row.querySelectorAll("th, td")].map((cell) => `"${cell.innerText.replaceAll('"', '""').replaceAll(/\s+/g, " ").trim()}"`).join(",")
+    );
+    const blob = new Blob([`${rows.join("\n")}\n`], { type: "text/csv;charset=utf-8" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "agent-evidence-comparison.csv";
+    link.click();
+    window.setTimeout(() => URL.revokeObjectURL(link.href), 0);
+  });
   compareSelection.addEventListener("click", () => {
     if (selectedIds.length < 2) return;
     document.querySelector("#comparisonResults").scrollIntoView({ behavior: "smooth", block: "start" });

@@ -166,14 +166,14 @@ assert(landingHtml.includes('<h1 id="comparison-title">Compare agent claims, sou
 assert(landingHtml.includes('<a class="brand" href="../index.html">Agent Evidence Catalog</a>'));
 assert(landingHtml.includes('id="pickerRecords"'));
 assert(landingHtml.includes('id="comparisonMatrix"'));
-assert(landingHtml.includes("compare.js?v=2026-08-21-root-compare-1"));
+assert(landingHtml.includes("compare.js?v=2026-08-22-comparison-fidelity-1"));
 assert(siteHtml.includes('<h1 id="model-cards-title">Model Cards</h1>'));
 assert(siteHtml.includes('placeholder="Find a coding agent"'));
 assert(siteHtml.includes("Unresolved boundaries"));
 assert(!siteHtml.includes("<dt>Independent tests</dt>"));
 assert(comparisonHtml.includes('id="pickerRecords"'));
 assert(comparisonHtml.includes('id="comparisonMatrix"'));
-assert(comparisonHtml.includes("compare.js?v=2026-08-21-root-compare-1"));
+assert(comparisonHtml.includes("compare.js?v=2026-08-22-comparison-fidelity-1"));
 assert(!landingHtml.includes("secondary synthetic reference"));
 assert(!landingHtml.includes(">Method</a>"));
 assert(!landingHtml.includes(">Lifecycle</a>"));
