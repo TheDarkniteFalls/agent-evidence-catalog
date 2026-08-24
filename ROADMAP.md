@@ -1,23 +1,24 @@
 # Agent Evidence Catalog roadmap
 
-Updated: 2026-08-21. This roadmap records intended work; it does not authorize
+Updated: 2026-08-24. This roadmap records intended work; it does not authorize
 publication, GitHub changes, publisher contact, agent execution, open intake or
 a response-time commitment.
 
 ## Current position
 
 The live [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
-is the published sealed 2026-08-21 55-surface snapshot with 123 records: 53
-current records and 70 non-current records, comprising 67 superseded
-identities, two historical records and one discontinued surface. All records
+remains the published sealed 2026-08-21 55-surface snapshot with 123 records.
+The prepared, uncommitted 2026-08-24 refresh candidate contains 133 records: 53
+current records and 80 non-current records, comprising 77 superseded
+identities, two historical records and one discontinued surface. All candidate records
 are static, maintainer-curated and based only on attributed publisher sources.
 The snapshot assigns zero independent-test credit and provides no rankings,
 recommendations or suitability calculation.
 
-The 2026-08-21 refresh preserves all 115 records from the prior published
-2026-08-20 snapshot and adds eight same-surface successors for Qwen Code CLI, Claude Code CLI,
-Antigravity CLI, Cline CLI, Cline VS Code extension, Cursor IDE foreground
-Agent, Junie IDE plugin and OpenAI Codex CLI. Four
+The 2026-08-24 refresh candidate preserves all 123 records from the published
+2026-08-21 snapshot and adds exactly ten same-surface successors for Qwen Code
+CLI, OpenCode CLI, Claude Code CLI, Cline CLI, Cline VS Code extension, Cascade
+in Devin Desktop, Antigravity CLI, Junie IDE plugin, OpenAI Codex CLI and Goose CLI. Four
 additional products are represented only by source dossiers and are not
 catalog surfaces: Cursor CLI, Cascade in Windsurf IDE, Copilot Agent Mode for
 Visual Studio and Zoo Code v3.78.0. CodeRabbit, Greptile and a generic
@@ -29,7 +30,8 @@ snapshot. A pinned, least-privilege GitHub Pages workflow publishes only the
 committed `dist/` tree. Every later commit, push, pull request and publication
 still requires the applicable public-lane gates and scoped authority. The
 2026-08-21 release completed fresh independent acceptance and every applicable
-release gate before publication.
+release gate before publication. The 2026-08-24 author candidate does not
+declare review acceptance or publication complete.
 
 ## Near-term roadmap
 
@@ -54,7 +56,8 @@ concept review in step 4.
 
 Status: repeatable capture, projection, full-corpus link audit and
 publication-census commands are exercised across all 55 surfaces. The
-2026-08-21 receipts describe the published baseline. Every later exact refresh
+2026-08-21 receipts describe the published baseline; the 2026-08-24 receipts
+describe the prepared candidate. Every later exact refresh
 remains trigger-dependent on fresh independent acceptance and all release
 gates. Operational dashboard and scheduling remain deferred.
 

@@ -1,0 +1,528 @@
+import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
+import { lstat, readdir, readFile } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+export const TARGET_CSS_VIEWPORT = Object.freeze({ width: 390, height: 844 });
+export const REQUIRED_BRACKET = Object.freeze({ lower: 389, upper: 391 });
+export const BROWSER_QA_CALIBRATION = Object.freeze({
+  devicePixelRatio: 0.75,
+  lowerControl: Object.freeze({ width: 292, height: 633 }),
+  upperControl: Object.freeze({ width: 293, height: 633 }),
+  desktopControl: Object.freeze({ width: 1080, height: 675 }),
+  narrowMobileControl: Object.freeze({ width: 240, height: 525 })
+});
+
+export const RESPONSIVE_CODE_REVIEW_SCHEMA = "research-preview-responsive-code-review/1.0";
+export const RESPONSIVE_CODE_REVIEW_PATH = "drafts/research-preview-release/currentness-2026-08-24/responsive-width-bracketing-audit.json";
+export const RESPONSIVE_CODE_REVIEW_SHA256 = "8066212a5dda0c10cff1da9811cc18886312eb0e89d37954bf0245ef4688d168";
+export const REVIEWED_ACTIVE_SCOPE_SHA256 = "a5c8e7a1f9c5bc97621ca7d06c656cda71fbe4b0afa91c16d326999db889b19f";
+export const BROWSER_EVIDENCE_CONTRACT = "target-390-approved-adjacent-observations-389-391";
+export const BROWSER_EVIDENCE_RATIONALE = "The installed in-app Browser cannot produce an observed 390 CSS-pixel viewport in this environment. Genuine rendered passes at exact 389 and 391 CSS pixels are the approved adjacent operational evidence, supported by exact 320 and 1440 controls. This is not formal proof of arbitrary behavior at exactly 390; the responsive code review is valid only for the exact hash-bound AEC bytes and must be refreshed when those bytes change.";
+
+const moduleRoot = path.dirname(fileURLToPath(import.meta.url));
+const defaultPackageRoot = path.resolve(moduleRoot, "../../..");
+const ACTIVE_SCOPE_INPUTS = Object.freeze([
+  "site/index.html",
+  "site/research-preview",
+  "dist/index.html",
+  "dist/research-preview"
+]);
+const REVIEWED_AT = "2026-08-24T10:19:23Z";
+const sha256 = (value) => createHash("sha256").update(value).digest("hex");
+const serialize = (value) => JSON.stringify(value, null, 2) + "\n";
+const iso = (value) => new Date(value).toISOString() === value;
+
+async function deriveSealedSuccessorEvidence(packageRoot) {
+  const sealPath = path.join(packageRoot, "drafts/research-preview-release/currentness-2026-08-24/snapshot-seal.json");
+  const seal = JSON.parse(await readFile(sealPath, "utf8"));
+  const receiptBinding = seal.sources?.currentnessReceipt;
+  assert.deepEqual(receiptBinding, {
+    path: "drafts/research-preview-release/currentness-2026-08-24/currentness-receipt.json",
+    sha256: "456056d8f29162a8db9cf090640d136449736930e656141a6e6bdeef86df6a67"
+  }, "Snapshot seal does not bind the exact currentness receipt used by Browser QA");
+  const receiptText = await readFile(path.join(packageRoot, receiptBinding.path));
+  assert.equal(sha256(receiptText), receiptBinding.sha256, "Sealed currentness receipt digest mismatch");
+  const receipt = JSON.parse(receiptText);
+  assert.equal(receipt.materialTransitions.length, 10, "Browser QA requires the exact ten sealed material transitions");
+  const transitions = receipt.materialTransitions.map(({ surfaceKey, fromRecordId, toRecordId }) => ({ surfaceKey, fromRecordId, toRecordId }))
+    .sort((left, right) => left.toRecordId.localeCompare(right.toRecordId));
+  const currentnessSource = JSON.parse(await readFile(path.join(packageRoot, "drafts/research-preview-release/currentness-2026-08-24/currentness-source.json"), "utf8"));
+  const sourceTransitions = currentnessSource.transitions.map(({ surfaceKey, fromRecordId, toRecordId }) => ({ surfaceKey, fromRecordId, toRecordId }))
+    .sort((left, right) => left.toRecordId.localeCompare(right.toRecordId));
+  assert.deepEqual(sourceTransitions, transitions, "Sealed receipt and currentness source disagree on successor transitions");
+  const lifecycle = JSON.parse(await readFile(path.join(packageRoot, "dist/research-preview/lifecycle.json"), "utf8"));
+  const lifecycleByRecordId = new Map(lifecycle.entries.map((entry) => [entry.recordId, entry]));
+  for (const transition of transitions) {
+    const successor = lifecycleByRecordId.get(transition.toRecordId);
+    const predecessor = lifecycleByRecordId.get(transition.fromRecordId);
+    assert(successor && predecessor, `Lifecycle is missing ${transition.toRecordId} or ${transition.fromRecordId}`);
+    assert.equal(successor.surfaceKey, transition.surfaceKey);
+    assert.equal(predecessor.surfaceKey, transition.surfaceKey);
+    assert.equal(successor.supersedesRecordId, transition.fromRecordId);
+    assert.equal(predecessor.supersededByRecordId, transition.toRecordId);
+  }
+  const recordPredecessorPairs = transitions.map(({ fromRecordId, toRecordId }) => Object.freeze({
+    recordId: toRecordId,
+    predecessorRecordId: fromRecordId
+  }));
+  return Object.freeze({
+    changedRecordIds: Object.freeze(recordPredecessorPairs.map(({ recordId }) => recordId)),
+    recordPredecessorPairs: Object.freeze(recordPredecessorPairs)
+  });
+}
+
+export const EXPECTED_SUCCESSOR_EVIDENCE = await deriveSealedSuccessorEvidence(defaultPackageRoot);
+export const EXPECTED_SUCCESSOR_RECORD_IDS = EXPECTED_SUCCESSOR_EVIDENCE.changedRecordIds;
+export const EXPECTED_SUCCESSOR_RECORD_PAIRS = EXPECTED_SUCCESSOR_EVIDENCE.recordPredecessorPairs;
+
+
+const SOURCE_SHIPPED_PAIRS = Object.freeze([
+  { sourcePath: "site/index.html", shippedPath: "dist/index.html", sha256: "ded5cc71f53b116698607828d71f66b50fb633ce9770381fa90c516a2df0baab" },
+  { sourcePath: "site/research-preview/app.js", shippedPath: "dist/research-preview/app.js", sha256: "a7171b3d5c3bba6c88ea88b0dfa8f1595c6d462e38d455288747e70b932cff09" },
+  { sourcePath: "site/research-preview/compare.html", shippedPath: "dist/research-preview/compare.html", sha256: "ba944a05b277a329be33405846c6238976e0075bb148dda5369c39f3e7a61246" },
+  { sourcePath: "site/research-preview/compare.js", shippedPath: "dist/research-preview/compare.js", sha256: "f8c8ab12c77b6b2ddaacde9a503c9338b2c9c3ee554248c631acc19078078e3c" },
+  { sourcePath: "site/research-preview/comparison-core.js", shippedPath: "dist/research-preview/comparison-core.js", sha256: "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e" },
+  { sourcePath: "site/research-preview/how-it-works.html", shippedPath: "dist/research-preview/how-it-works.html", sha256: "46cff1b0c874ef7743fee13135a7b61d691ebce59eaeee6d3f0c1842adcdaca6" },
+  { sourcePath: "site/research-preview/index.html", shippedPath: "dist/research-preview/index.html", sha256: "535002844df64e0dd5b05d544b1f5ccd79f24a7a7a44ee1e4153a0d0d1e75bfc" },
+  { sourcePath: "site/research-preview/record-detail.js", shippedPath: "dist/research-preview/record-detail.js", sha256: "87e143ac1e24a652ea606bbae367633e1f0ee2707e12ee1453c23c3a0f5dcd1f" },
+  { sourcePath: "site/research-preview/styles.css", shippedPath: "dist/research-preview/styles.css", sha256: "16a92ecc636c747b687605452e14b924be5ae4ebd194d38551f1ce97ec2f821a" }
+]);
+
+const JAVASCRIPT_REVIEW = Object.freeze([
+  { sourcePath: "site/research-preview/app.js", shippedPath: "dist/research-preview/app.js", sha256: "a7171b3d5c3bba6c88ea88b0dfa8f1595c6d462e38d455288747e70b932cff09", responsiveDecisionCount: 0, finding: "Exact-byte review found no viewport-width or element-width responsive branch in the current Model Cards application." },
+  { sourcePath: "site/research-preview/compare.js", shippedPath: "dist/research-preview/compare.js", sha256: "f8c8ab12c77b6b2ddaacde9a503c9338b2c9c3ee554248c631acc19078078e3c", responsiveDecisionCount: 0, finding: "Exact-byte review found no viewport-width or element-width responsive branch in the current comparison application." },
+  { sourcePath: "site/research-preview/comparison-core.js", shippedPath: "dist/research-preview/comparison-core.js", sha256: "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e", responsiveDecisionCount: 0, finding: "Exact-byte review found no viewport-width or element-width responsive branch in the current shared comparison logic." },
+  { sourcePath: "site/research-preview/record-detail.js", shippedPath: "dist/research-preview/record-detail.js", sha256: "87e143ac1e24a652ea606bbae367633e1f0ee2707e12ee1453c23c3a0f5dcd1f", responsiveDecisionCount: 0, finding: "Exact-byte review found no viewport-width or element-width responsive branch in the current record-detail application." }
+]);
+
+const VIEWPORT_META_EXCERPT = "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">";
+const HTML_REVIEW = Object.freeze([
+  { sourcePath: "site/index.html", shippedPath: "dist/index.html", sha256: "ded5cc71f53b116698607828d71f66b50fb633ce9770381fa90c516a2df0baab", viewportMeta: { line: 5, excerpt: VIEWPORT_META_EXCERPT }, activeInlineBehavior: [], inlineResponsiveDecisionCount: 0 },
+  { sourcePath: "site/research-preview/compare.html", shippedPath: "dist/research-preview/compare.html", sha256: "ba944a05b277a329be33405846c6238976e0075bb148dda5369c39f3e7a61246", viewportMeta: { line: 5, excerpt: VIEWPORT_META_EXCERPT }, activeInlineBehavior: [], inlineResponsiveDecisionCount: 0 },
+  { sourcePath: "site/research-preview/how-it-works.html", shippedPath: "dist/research-preview/how-it-works.html", sha256: "46cff1b0c874ef7743fee13135a7b61d691ebce59eaeee6d3f0c1842adcdaca6", viewportMeta: { line: 5, excerpt: VIEWPORT_META_EXCERPT }, activeInlineBehavior: [{ line: 141, excerpt: "<script>window.AGENT_CLAIMS_COMPARISON.applySnapshotBanner(window.RESEARCH_PREVIEW);</script>", finding: "Snapshot-banner application only; no width decision." }], inlineResponsiveDecisionCount: 0 },
+  { sourcePath: "site/research-preview/index.html", shippedPath: "dist/research-preview/index.html", sha256: "535002844df64e0dd5b05d544b1f5ccd79f24a7a7a44ee1e4153a0d0d1e75bfc", viewportMeta: { line: 5, excerpt: VIEWPORT_META_EXCERPT }, activeInlineBehavior: [], inlineResponsiveDecisionCount: 0 }
+]);
+
+const STYLESHEET_SHA256 = "16a92ecc636c747b687605452e14b924be5ae4ebd194d38551f1ce97ec2f821a";
+const RESPONSIVE_DECISIONS = Object.freeze([
+  { id: "preview-max-920", sourcePath: "site/research-preview/styles.css", shippedPath: "dist/research-preview/styles.css", sha256: STYLESHEET_SHA256, sourceLine: 249, shippedLine: 249, excerpt: "@media (max-width: 920px) {", expression: "(max-width: 920px)", resolvedBoundaryCssPx: 920, selection: "width <= 920" },
+  { id: "preview-max-620-content", sourcePath: "site/research-preview/styles.css", shippedPath: "dist/research-preview/styles.css", sha256: STYLESHEET_SHA256, sourceLine: 265, shippedLine: 265, excerpt: "@media (max-width: 620px) {", expression: "(max-width: 620px)", resolvedBoundaryCssPx: 620, selection: "width <= 620" },
+  { id: "comparison-min-821", sourcePath: "site/research-preview/styles.css", shippedPath: "dist/research-preview/styles.css", sha256: STYLESHEET_SHA256, sourceLine: 524, shippedLine: 524, excerpt: "@media (min-width: 821px) {", expression: "(min-width: 821px)", resolvedBoundaryCssPx: 821, selection: "width >= 821" },
+  { id: "comparison-max-820", sourcePath: "site/research-preview/styles.css", shippedPath: "dist/research-preview/styles.css", sha256: STYLESHEET_SHA256, sourceLine: 529, shippedLine: 529, excerpt: "@media (max-width: 820px) {", expression: "(max-width: 820px)", resolvedBoundaryCssPx: 820, selection: "width <= 820" },
+  { id: "comparison-max-620-navigation", sourcePath: "site/research-preview/styles.css", shippedPath: "dist/research-preview/styles.css", sha256: STYLESHEET_SHA256, sourceLine: 543, shippedLine: 543, excerpt: "@media (max-width: 620px) {", expression: "(max-width: 620px)", resolvedBoundaryCssPx: 620, selection: "width <= 620" }
+]);
+
+const CONTINUOUS_SIZING_CONTEXT = Object.freeze([
+  { sourceLine: 47, shippedLine: 47, excerpt: "h1 { max-width: 880px; margin-bottom: 14px; font-size: clamp(40px, 6vw, 72px); line-height: 1.02; letter-spacing: -.055em; }", finding: "Continuous fluid font sizing; not a discrete width selector." },
+  { sourceLine: 104, shippedLine: 104, excerpt: ".model-cards-intro h1 { margin-bottom: 8px; font-size: clamp(42px, 5vw, 58px); }", finding: "Continuous fluid font sizing; not a discrete width selector." },
+  { sourceLine: 152, shippedLine: 152, excerpt: ".detail-hero h1 { max-width: none; margin-bottom: 14px; font-size: clamp(30px, 4vw, 44px); line-height: 1.05; letter-spacing: -.04em; overflow-wrap: anywhere; }", finding: "Continuous fluid font sizing; not a discrete width selector." },
+  { sourceLine: 206, shippedLine: 206, excerpt: ".method-hero h1 { margin-bottom: 14px; font-size: clamp(42px, 6vw, 62px); }", finding: "Continuous fluid font sizing; not a discrete width selector." }
+]);
+
+const REVIEW_LIMITATIONS = Object.freeze([
+  "This receipt is valid only for the exact hash-bound AEC bytes listed here. Any active visitor-file addition, removal or byte change requires a fresh explicit human/code review and a new receipt.",
+  "The validator checks exact paths, hashes, source/shipped equality, inventory structure and known reviewed excerpts. It does not parse or infer arbitrary JavaScript or CSS runtime semantics.",
+  "The installed in-app Browser cannot produce an observed 390 CSS-pixel viewport in this environment. Exact 389 and 391 observations are approved adjacent operational evidence, not formal proof of arbitrary behavior at exactly 390."
+]);
+
+function lineText(text, line) {
+  return text.split("\n")[line - 1];
+}
+
+async function filesBelow(absolute) {
+  const entry = await lstat(absolute);
+  if (entry.isFile()) return [absolute];
+  assert(entry.isDirectory(), "Active visitor scope contains a non-file, non-directory input: " + absolute);
+  const files = [];
+  for (const child of (await readdir(absolute, { withFileTypes: true })).sort((left, right) => left.name.localeCompare(right.name))) {
+    const candidate = path.join(absolute, child.name);
+    if (child.isDirectory()) files.push(...await filesBelow(candidate));
+    else if (child.isFile()) files.push(candidate);
+    else assert.fail("Active visitor scope contains a symlink or non-regular entry: " + candidate);
+  }
+  return files;
+}
+
+async function collectActiveVisitorInventory(packageRoot) {
+  const absoluteFiles = [];
+  for (const input of ACTIVE_SCOPE_INPUTS) absoluteFiles.push(...await filesBelow(path.join(packageRoot, input)));
+  const uniqueFiles = [...new Set(absoluteFiles)].sort((left, right) => left.localeCompare(right));
+  const inventory = [];
+  for (const absolute of uniqueFiles) {
+    const content = await readFile(absolute);
+    inventory.push({
+      path: path.relative(packageRoot, absolute).split(path.sep).join("/"),
+      sha256: sha256(content),
+      bytes: content.length
+    });
+  }
+  return inventory;
+}
+
+function inventoryCounts(inventory) {
+  const extensionCount = (extension) => inventory.filter((item) => item.path.endsWith(extension)).length;
+  return {
+    sourceFiles: inventory.filter((item) => item.path.startsWith("site/")).length,
+    shippedFiles: inventory.filter((item) => item.path.startsWith("dist/")).length,
+    files: inventory.length,
+    cssFiles: extensionCount(".css"),
+    htmlFiles: extensionCount(".html"),
+    javascriptFiles: extensionCount(".js"),
+    jsonFiles: extensionCount(".json")
+  };
+}
+
+export async function buildResponsiveCodeReview(packageRoot = defaultPackageRoot) {
+  const activeVisitorFiles = await collectActiveVisitorInventory(packageRoot);
+  return {
+    schemaVersion: RESPONSIVE_CODE_REVIEW_SCHEMA,
+    asOf: "2026-08-24",
+    reviewedAt: REVIEWED_AT,
+    reviewType: "human-code-review-of-exact-aec-bytes",
+    result: "PASS",
+    targetCssViewport: TARGET_CSS_VIEWPORT,
+    approvedOperationalEvidence: {
+      exact390Observed: false,
+      adjacentObservedWidths: REQUIRED_BRACKET,
+      adjacentObservationsAreApprovedOperationalEvidence: true,
+      desktopControlCss: { width: 1440, height: 900 },
+      narrowControlCss: { width: 320, height: 700 }
+    },
+    activeScope: {
+      purpose: "Complete active visitor source and shipped scope for the root comparison, Model Cards, How it works, compatibility route and generated record pages.",
+      inputs: ACTIVE_SCOPE_INPUTS,
+      inventoryAlgorithm: "SHA-256 of the pretty-printed ordered path/sha256/bytes inventory with one trailing newline.",
+      inventorySha256: sha256(serialize(activeVisitorFiles)),
+      ...inventoryCounts(activeVisitorFiles)
+    },
+    activeVisitorFiles,
+    sourceShippedPairs: SOURCE_SHIPPED_PAIRS,
+    behaviorReview: {
+      javascriptFiles: JAVASCRIPT_REVIEW,
+      htmlFiles: HTML_REVIEW,
+      stylesheet: {
+        sourcePath: "site/research-preview/styles.css",
+        shippedPath: "dist/research-preview/styles.css",
+        sha256: STYLESHEET_SHA256,
+        discreteResponsiveDecisionCount: 5,
+        continuousSizingContext: CONTINUOUS_SIZING_CONTEXT
+      }
+    },
+    responsiveDecisions: RESPONSIVE_DECISIONS,
+    conclusion: {
+      exactReviewedBytesOnly: true,
+      selectsExactly390CssPx: false,
+      selectsOnlyWidthsStrictlyBetween389And391CssPx: false,
+      statement: "The exact reviewed AEC bytes contain no discrete responsive decision selecting exactly 390 CSS pixels and no decision selecting only widths strictly between 389 and 391 CSS pixels."
+    },
+    limitations: REVIEW_LIMITATIONS
+  };
+}
+
+export function validateResponsiveCodeReviewShape(review) {
+  assert.equal(review.schemaVersion, RESPONSIVE_CODE_REVIEW_SCHEMA);
+  assert.equal(review.asOf, "2026-08-24");
+  assert.equal(review.reviewedAt, REVIEWED_AT);
+  assert.equal(review.reviewType, "human-code-review-of-exact-aec-bytes");
+  assert.equal(review.result, "PASS");
+  assert.deepEqual(review.targetCssViewport, TARGET_CSS_VIEWPORT);
+  assert.deepEqual(review.approvedOperationalEvidence, {
+    exact390Observed: false,
+    adjacentObservedWidths: REQUIRED_BRACKET,
+    adjacentObservationsAreApprovedOperationalEvidence: true,
+    desktopControlCss: { width: 1440, height: 900 },
+    narrowControlCss: { width: 320, height: 700 }
+  });
+  assert.deepEqual(review.activeScope, {
+    purpose: "Complete active visitor source and shipped scope for the root comparison, Model Cards, How it works, compatibility route and generated record pages.",
+    inputs: ACTIVE_SCOPE_INPUTS,
+    inventoryAlgorithm: "SHA-256 of the pretty-printed ordered path/sha256/bytes inventory with one trailing newline.",
+    inventorySha256: REVIEWED_ACTIVE_SCOPE_SHA256,
+    sourceFiles: 9,
+    shippedFiles: 280,
+    files: 289,
+    cssFiles: 2,
+    htmlFiles: 141,
+    javascriptFiles: 9,
+    jsonFiles: 137
+  }, "Active visitor scope structure or digest requires a fresh explicit review");
+  assert.equal(sha256(serialize(review.activeVisitorFiles)), REVIEWED_ACTIVE_SCOPE_SHA256, "Active visitor inventory does not match the reviewed digest");
+  assert.deepEqual(inventoryCounts(review.activeVisitorFiles), {
+    sourceFiles: 9,
+    shippedFiles: 280,
+    files: 289,
+    cssFiles: 2,
+    htmlFiles: 141,
+    javascriptFiles: 9,
+    jsonFiles: 137
+  });
+  assert.equal(new Set(review.activeVisitorFiles.map((item) => item.path)).size, 289, "Active visitor paths must be unique");
+  assert.deepEqual(review.sourceShippedPairs, SOURCE_SHIPPED_PAIRS, "Source/shipped pair review is stale");
+  assert.deepEqual(review.behaviorReview.javascriptFiles, JAVASCRIPT_REVIEW, "JavaScript exact-byte review is stale");
+  assert.deepEqual(review.behaviorReview.htmlFiles, HTML_REVIEW, "HTML exact-byte review is stale");
+  assert.deepEqual(review.behaviorReview.stylesheet, {
+    sourcePath: "site/research-preview/styles.css",
+    shippedPath: "dist/research-preview/styles.css",
+    sha256: STYLESHEET_SHA256,
+    discreteResponsiveDecisionCount: 5,
+    continuousSizingContext: CONTINUOUS_SIZING_CONTEXT
+  }, "Stylesheet exact-byte review is stale");
+  assert.deepEqual(review.responsiveDecisions, RESPONSIVE_DECISIONS, "Responsive decision inventory is stale or incomplete");
+  assert.deepEqual(review.conclusion, {
+    exactReviewedBytesOnly: true,
+    selectsExactly390CssPx: false,
+    selectsOnlyWidthsStrictlyBetween389And391CssPx: false,
+    statement: "The exact reviewed AEC bytes contain no discrete responsive decision selecting exactly 390 CSS pixels and no decision selecting only widths strictly between 389 and 391 CSS pixels."
+  }, "Responsive review conclusion is stale or altered");
+  assert.deepEqual(review.limitations, REVIEW_LIMITATIONS);
+}
+
+export async function validateResponsiveCodeReview(review, packageRoot = defaultPackageRoot, reviewText = null) {
+  validateResponsiveCodeReviewShape(review);
+  if (reviewText !== null) assert.equal(sha256(reviewText), RESPONSIVE_CODE_REVIEW_SHA256, "Responsive code-review receipt byte digest is stale");
+  const freshInventory = await collectActiveVisitorInventory(packageRoot);
+  assert.equal(sha256(serialize(freshInventory)), REVIEWED_ACTIVE_SCOPE_SHA256, "Active visitor bytes changed and require a fresh explicit review");
+  assert.deepEqual(review.activeVisitorFiles, freshInventory, "Active visitor file inventory is stale");
+
+  for (const pair of SOURCE_SHIPPED_PAIRS) {
+    const source = await readFile(path.join(packageRoot, pair.sourcePath));
+    const shipped = await readFile(path.join(packageRoot, pair.shippedPath));
+    assert.equal(sha256(source), pair.sha256, pair.sourcePath + " changed and requires fresh review");
+    assert.equal(sha256(shipped), pair.sha256, pair.shippedPath + " changed and requires fresh review");
+    assert.deepEqual(source, shipped, pair.sourcePath + " and " + pair.shippedPath + " diverge");
+  }
+  for (const item of JAVASCRIPT_REVIEW) {
+    assert.equal(sha256(await readFile(path.join(packageRoot, item.sourcePath))), item.sha256);
+    assert.equal(sha256(await readFile(path.join(packageRoot, item.shippedPath))), item.sha256);
+  }
+  for (const item of HTML_REVIEW) {
+    const source = await readFile(path.join(packageRoot, item.sourcePath), "utf8");
+    const shipped = await readFile(path.join(packageRoot, item.shippedPath), "utf8");
+    assert.equal(lineText(source, item.viewportMeta.line).trim(), item.viewportMeta.excerpt);
+    assert.equal(lineText(shipped, item.viewportMeta.line).trim(), item.viewportMeta.excerpt);
+    for (const inline of item.activeInlineBehavior) {
+      assert.equal(lineText(source, inline.line).trim(), inline.excerpt);
+      assert.equal(lineText(shipped, inline.line).trim(), inline.excerpt);
+    }
+  }
+  const sourceStyles = await readFile(path.join(packageRoot, "site/research-preview/styles.css"), "utf8");
+  const shippedStyles = await readFile(path.join(packageRoot, "dist/research-preview/styles.css"), "utf8");
+  for (const decision of RESPONSIVE_DECISIONS) {
+    assert.equal(lineText(sourceStyles, decision.sourceLine), decision.excerpt, "Responsive decision source locator is stale: " + decision.id);
+    assert.equal(lineText(shippedStyles, decision.shippedLine), decision.excerpt, "Responsive decision shipped locator is stale: " + decision.id);
+  }
+  for (const context of CONTINUOUS_SIZING_CONTEXT) {
+    assert.equal(lineText(sourceStyles, context.sourceLine), context.excerpt, "Continuous sizing source locator is stale");
+    assert.equal(lineText(shippedStyles, context.shippedLine), context.excerpt, "Continuous sizing shipped locator is stale");
+  }
+  return true;
+}
+
+function assertExactRecordEvidence(records, label) {
+  assert.equal(records.pagesAudited, 10, `${label} must audit exactly ten successor pages`);
+  assert.deepEqual(records.changedRecordIds, EXPECTED_SUCCESSOR_RECORD_IDS, `${label} successor record IDs must equal sealed truth`);
+  assert.equal(new Set(records.changedRecordIds).size, 10, `${label} successor record IDs must be unique`);
+  assert.deepEqual(records.recordPredecessorPairs, EXPECTED_SUCCESSOR_RECORD_PAIRS, `${label} successor/predecessor pairs must equal sealed truth`);
+  assert.equal(new Set(records.recordPredecessorPairs.map(({ recordId, predecessorRecordId }) => `${recordId}\u0000${predecessorRecordId}`)).size, 10, `${label} successor/predecessor pairs must be unique`);
+  assert.deepEqual(records.recordPredecessorPairs.map(({ recordId }) => recordId), records.changedRecordIds, `${label} pair inventory must bind the same successor IDs`);
+  assert.equal(records.predecessorLinksVerified, 10, `${label} must verify all ten predecessor links`);
+  assert.deepEqual(records.failureRecordIds, [], `${label} must have no failed successor pages`);
+  assert.equal(records.horizontalOverflowFailures, 0, `${label} must have no record-page overflow failures`);
+}
+
+function assertObservedSide(side, label, expectedWidth, expectedControl) {
+  assert.equal(side.label, label);
+  assert.equal(side.route, "/");
+  assert.deepEqual(side.requestedTargetCss, TARGET_CSS_VIEWPORT);
+  assert.deepEqual(side.browserViewportControl, expectedControl);
+  assert(iso(side.startedAt) && iso(side.completedAt));
+  assert(new Date(side.startedAt) <= new Date(side.completedAt));
+  assert.deepEqual(side.windowInner, { width: expectedWidth, height: 844 });
+  assert.deepEqual(side.documentElementClient, { width: expectedWidth, height: 844 });
+  assert.equal(side.devicePixelRatio, BROWSER_QA_CALIBRATION.devicePixelRatio);
+  assert.equal(side.scrollbarWidth, 0);
+  assert(Math.abs(side.visualViewport.height - 844) < 0.5, `${label} visual viewport height must round to 844 CSS pixels`);
+  assert.equal(side.visualViewport.scale, 1);
+  assert(Math.abs(side.visualViewport.width - expectedWidth) < 0.5, `${label} visual viewport width must round to the exact observed integer width`);
+  assert(side.screenshots.length >= 2, `${label} evidence must bind at least two screenshots`);
+  for (const screenshot of side.screenshots) {
+    assert(screenshot.path.endsWith(".png"));
+    assert(/^[a-f0-9]{64}$/.test(screenshot.sha256));
+    assert(iso(screenshot.capturedAt));
+    assert.equal(screenshot.observedCssWidth, expectedWidth);
+    assert.equal(screenshot.observedCssHeight, 844);
+  }
+  assert.deepEqual(side.journeys.root, {
+    initialSelectedRecords: 0,
+    navigation: ["Compare claims", "Model Cards", "How it works"],
+    navigationOpened: true,
+    horizontalOverflow: false
+  });
+  assert.deepEqual(side.journeys.comparison, {
+    selectedOrder: [
+      "com.anthropic.claude-code.cli.2-1-241",
+      "com.openai.codex.cli.0-149-1",
+      "com.github.copilot.cli.1-0-80",
+      "com.cursor.ide.foreground-agent.3-17"
+    ],
+    maximumSelectedRecords: 4,
+    fifthSelectionRejected: true,
+    deliveryFilterExercised: true,
+    differencesOnlyExercised: true,
+    urlPersistsAcrossReload: true,
+    activeMatrixRows: 41,
+    matrixInternalOverflow: true,
+    pageHorizontalOverflow: false
+  });
+  assert.deepEqual(side.journeys.modelCards, {
+    currentCards: 53,
+    historyCards: 80,
+    historyCollapsedInitially: true,
+    historyExpanded: true,
+    historyRecollapsed: true,
+    qwenSearchResultCount: "2 of 53 surfaces",
+    deliveryFilterCounts: { all: 53, local: 1, hybrid: 32, hosted: 20 },
+    navigationOpened: true,
+    horizontalOverflow: false
+  });
+  assert.deepEqual(side.journeys.howItWorks, { sections: 7, technicalDocumentationClosedInitially: true, horizontalOverflow: false });
+  assert.deepEqual(side.journeys.compatibility, { route: "/research-preview/compare.html", completeApplicationPresent: true, selectionStateWorks: true, horizontalOverflow: false });
+  assertExactRecordEvidence(side.journeys.records, `${label} observation`);
+  assert.deepEqual(side.journeys.discovery, { entryRoutes: 4, recordAlternatePages: 133, resourceFailures: 0 });
+  assert.deepEqual(side.console, { errors: 0, warnings: 0 });
+}
+
+
+export function validateExactBrowserBracketProof(proof) {
+  assert.equal(proof.contract, BROWSER_EVIDENCE_CONTRACT);
+  assert.deepEqual(proof.targetCss, TARGET_CSS_VIEWPORT);
+  assert.deepEqual(proof.requiredObservedWidths, REQUIRED_BRACKET);
+  assert.equal(proof.exact390Observed, false);
+  assert.equal(proof.adjacentObservationsAreApprovedOperationalEvidence, true);
+  assert.equal(proof.substituteWidthsAllowed, false);
+  assert.deepEqual(proof.recordEvidence, {
+    changedRecordIds: EXPECTED_SUCCESSOR_RECORD_IDS,
+    recordPredecessorPairs: EXPECTED_SUCCESSOR_RECORD_PAIRS
+  }, "Top-level Browser bracket record evidence must equal sealed truth");
+  assert.deepEqual(Object.keys(proof.observations).sort(), ["lower", "upper"]);
+  assertObservedSide(proof.observations.lower, "lower", REQUIRED_BRACKET.lower, BROWSER_QA_CALIBRATION.lowerControl);
+  assertObservedSide(proof.observations.upper, "upper", REQUIRED_BRACKET.upper, BROWSER_QA_CALIBRATION.upperControl);
+  for (const label of ["lower", "upper"]) {
+    assert.deepEqual(proof.observations[label].journeys.records.changedRecordIds, proof.recordEvidence.changedRecordIds, label + " IDs must bind to top-level exact inventory");
+    assert.deepEqual(proof.observations[label].journeys.records.recordPredecessorPairs, proof.recordEvidence.recordPredecessorPairs, label + " pairs must bind to top-level exact inventory");
+  }
+  assert.equal(proof.observations.lower.windowInner.width < proof.targetCss.width, true);
+  assert.equal(proof.observations.upper.windowInner.width > proof.targetCss.width, true);
+  assert.deepEqual(proof.responsiveCodeReview, {
+    path: RESPONSIVE_CODE_REVIEW_PATH,
+    sha256: RESPONSIVE_CODE_REVIEW_SHA256,
+    schemaVersion: RESPONSIVE_CODE_REVIEW_SCHEMA,
+    activeScopeSha256: REVIEWED_ACTIVE_SCOPE_SHA256,
+    result: "PASS"
+  });
+  assert.equal(proof.rationale, BROWSER_EVIDENCE_RATIONALE);
+}
+
+export function runResponsiveContractNegativeTests(validReview, validProof) {
+  const clone = (value) => structuredClone(value);
+
+  assert.throws(() => validateExactBrowserBracketProof({ ...clone(validProof), observations: { lower: clone(validProof.observations.lower) } }));
+  assert.throws(() => validateExactBrowserBracketProof({ ...clone(validProof), observations: { upper: clone(validProof.observations.upper) } }));
+  for (const [side, width] of [["lower", 388], ["upper", 392]]) {
+    const changed = clone(validProof);
+    changed.observations[side].windowInner.width = width;
+    changed.observations[side].documentElementClient.width = width;
+    assert.throws(() => validateExactBrowserBracketProof(changed));
+  }
+  const wrongHeight = clone(validProof);
+  wrongHeight.observations.lower.windowInner.height = 843;
+  assert.throws(() => validateExactBrowserBracketProof(wrongHeight));
+  const wrongTarget = clone(validProof);
+  wrongTarget.targetCss.width = 391;
+  assert.throws(() => validateExactBrowserBracketProof(wrongTarget));
+  const falselyObserved390 = clone(validProof);
+  falselyObserved390.exact390Observed = true;
+  assert.throws(() => validateExactBrowserBracketProof(falselyObserved390));
+  const unapprovedAdjacentEvidence = clone(validProof);
+  unapprovedAdjacentEvidence.adjacentObservationsAreApprovedOperationalEvidence = false;
+  assert.throws(() => validateExactBrowserBracketProof(unapprovedAdjacentEvidence));
+  const rangeOnly = { contract: "generic-range", targetCss: TARGET_CSS_VIEWPORT, allowedWidthRange: [389, 391] };
+  assert.throws(() => validateExactBrowserBracketProof(rangeOnly));
+  const missingJourney = clone(validProof);
+  delete missingJourney.observations.upper.journeys.records;
+  assert.throws(() => validateExactBrowserBracketProof(missingJourney));
+  const wrongRoute = clone(validProof);
+  wrongRoute.observations.lower.route = "/research-preview/";
+  assert.throws(() => validateExactBrowserBracketProof(wrongRoute));
+  const missingScreenshot = clone(validProof);
+  missingScreenshot.observations.upper.screenshots.pop();
+  assert.throws(() => validateExactBrowserBracketProof(missingScreenshot));
+  const consoleFailure = clone(validProof);
+  consoleFailure.observations.lower.console.errors = 1;
+  assert.throws(() => validateExactBrowserBracketProof(consoleFailure));
+  const overflowFailure = clone(validProof);
+  overflowFailure.observations.upper.journeys.root.horizontalOverflow = true;
+  assert.throws(() => validateExactBrowserBracketProof(overflowFailure));
+
+  const duplicateIds = clone(validProof);
+  duplicateIds.observations.lower.journeys.records.changedRecordIds = Array(10).fill(EXPECTED_SUCCESSOR_RECORD_IDS[0]);
+  assert.throws(() => validateExactBrowserBracketProof(duplicateIds), /sealed truth|unique/);
+  const wrongUniqueId = clone(validProof);
+  wrongUniqueId.observations.lower.journeys.records.changedRecordIds[0] = "example.invalid.successor";
+  assert.throws(() => validateExactBrowserBracketProof(wrongUniqueId), /sealed truth/);
+  const missingId = clone(validProof);
+  missingId.observations.lower.journeys.records.changedRecordIds.pop();
+  assert.throws(() => validateExactBrowserBracketProof(missingId), /sealed truth/);
+  const wrongPredecessor = clone(validProof);
+  wrongPredecessor.observations.lower.journeys.records.recordPredecessorPairs[0].predecessorRecordId = "example.invalid.predecessor";
+  assert.throws(() => validateExactBrowserBracketProof(wrongPredecessor), /sealed truth/);
+  const duplicatePair = clone(validProof);
+  duplicatePair.observations.lower.journeys.records.recordPredecessorPairs[9] = clone(duplicatePair.observations.lower.journeys.records.recordPredecessorPairs[0]);
+  assert.throws(() => validateExactBrowserBracketProof(duplicatePair), /sealed truth|unique/);
+  const missingPair = clone(validProof);
+  missingPair.observations.lower.journeys.records.recordPredecessorPairs.pop();
+  assert.throws(() => validateExactBrowserBracketProof(missingPair), /sealed truth/);
+  const reorderedPairs = clone(validProof);
+  [reorderedPairs.observations.lower.journeys.records.recordPredecessorPairs[0], reorderedPairs.observations.lower.journeys.records.recordPredecessorPairs[1]] =
+    [reorderedPairs.observations.lower.journeys.records.recordPredecessorPairs[1], reorderedPairs.observations.lower.journeys.records.recordPredecessorPairs[0]];
+  assert.throws(() => validateExactBrowserBracketProof(reorderedPairs), /sealed truth/);
+  const topLevelPairsOnly = clone(validProof);
+  delete topLevelPairsOnly.observations.lower.journeys.records.recordPredecessorPairs;
+  assert.throws(() => validateExactBrowserBracketProof(topLevelPairsOnly), /sealed truth/);
+  const oneSideCorrupt = clone(validProof);
+  oneSideCorrupt.observations.upper.journeys.records.recordPredecessorPairs[0].predecessorRecordId = "example.invalid.predecessor";
+  assert.throws(() => validateExactBrowserBracketProof(oneSideCorrupt), /sealed truth/);
+
+  const staleScopeDigest = clone(validReview);
+  staleScopeDigest.activeScope.inventorySha256 = "0".repeat(64);
+  assert.throws(() => validateResponsiveCodeReviewShape(staleScopeDigest), /fresh explicit review/);
+  const staleBehaviorHash = clone(validReview);
+  staleBehaviorHash.sourceShippedPairs[0].sha256 = "0".repeat(64);
+  assert.throws(() => validateResponsiveCodeReviewShape(staleBehaviorHash), /stale/);
+  const staleExcerpt = clone(validReview);
+  staleExcerpt.responsiveDecisions[0].excerpt = "@media (max-width: 390px) {";
+  assert.throws(() => validateResponsiveCodeReviewShape(staleExcerpt), /stale or incomplete/);
+  const staleLocator = clone(validReview);
+  staleLocator.responsiveDecisions[0].sourceLine = 250;
+  assert.throws(() => validateResponsiveCodeReviewShape(staleLocator), /stale or incomplete/);
+  const missingDecision = clone(validReview);
+  missingDecision.responsiveDecisions.pop();
+  assert.throws(() => validateResponsiveCodeReviewShape(missingDecision), /stale or incomplete/);
+  const alteredConclusion = clone(validReview);
+  alteredConclusion.conclusion.selectsExactly390CssPx = true;
+  assert.throws(() => validateResponsiveCodeReviewShape(alteredConclusion), /conclusion/);
+  const staleReviewBinding = clone(validProof);
+  staleReviewBinding.responsiveCodeReview.sha256 = "0".repeat(64);
+  assert.throws(() => validateExactBrowserBracketProof(staleReviewBinding));
+}
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const inputPath = process.argv[2];
+  assert(inputPath, "Usage: node responsive-bracketing-contract.mjs <responsive-code-review.json>");
+  const reviewText = await readFile(path.resolve(process.cwd(), inputPath));
+  const review = JSON.parse(reviewText);
+  await validateResponsiveCodeReview(review, defaultPackageRoot, reviewText);
+  console.log("PASS validated exact-byte responsive code review for " + review.activeScope.files + " active visitor files");
+}
