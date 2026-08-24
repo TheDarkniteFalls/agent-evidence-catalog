@@ -1,85 +1,595 @@
 {
-  "schemaVersion": "research-preview-browser-qa/1.3",
-  "asOf": "2026-08-21",
-  "checkedAt": "2026-08-22T01:07:34.046Z",
+  "schemaVersion": "research-preview-browser-qa/1.7",
+  "asOf": "2026-08-24",
+  "checkedAt": "2026-08-24T10:56:05.355Z",
   "loopback": {
     "url": "http://localhost:4173/",
-    "listener": "localhost:4173",
+    "listener": "loopback-only port 4173",
     "listenerVerified": true,
     "browser": "Codex in-app Browser",
     "browserNavigation": "PASS"
   },
   "sourceDigests": {
-    "rootComparisonHtmlSha256": "9a3674cef9dcf81dea1984212b57aa339c83e311670d3138cc8322e30d14daac",
-    "modelCardsHtmlSha256": "169e47e1bd322a6da4246eb71fa5f7f8771920857a069a4b5a0abd4c2b166748",
-    "howItWorksHtmlSha256": "e3896274f2c29b4fc2065fe3249dc1f24afef39c763d5fab517792f300c0724c",
-    "previewDataSha256": "4735a6a35dc16f82a7d84607c003a23f363cb17b5cd752c64776c2e5ee4cfbaf",
+    "rootComparisonHtmlSha256": "ded5cc71f53b116698607828d71f66b50fb633ce9770381fa90c516a2df0baab",
+    "modelCardsHtmlSha256": "535002844df64e0dd5b05d544b1f5ccd79f24a7a7a44ee1e4153a0d0d1e75bfc",
+    "howItWorksHtmlSha256": "46cff1b0c874ef7743fee13135a7b61d691ebce59eaeee6d3f0c1842adcdaca6",
+    "previewDataSha256": "c8efd5ad53671bafb920beca2629e5200cba55e4d6d851817de9602ee3f5cffa",
     "previewAppSha256": "a7171b3d5c3bba6c88ea88b0dfa8f1595c6d462e38d455288747e70b932cff09",
-    "comparisonHtmlSha256": "bca96211f22bde93643897b744dc929283114046cfff0c8d0f6c16a59c0799ec",
+    "comparisonHtmlSha256": "ba944a05b277a329be33405846c6238976e0075bb148dda5369c39f3e7a61246",
     "comparisonCoreSha256": "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e",
     "comparisonAppSha256": "f8c8ab12c77b6b2ddaacde9a503c9338b2c9c3ee554248c631acc19078078e3c",
     "recordDetailAppSha256": "87e143ac1e24a652ea606bbae367633e1f0ee2707e12ee1453c23c3a0f5dcd1f",
     "previewStylesSha256": "16a92ecc636c747b687605452e14b924be5ae4ebd194d38551f1ce97ec2f821a",
     "llmsSha256": "1e70673e715d33bf911d52226651c5c801a9e0714afd01bdcd10f8f80110bf48",
-    "lifecycleSha256": "a9edb5b85d14048815bc16f4cb9887315395fd62d5e7564757cb1d440c5027ca",
-    "representativeRecordHtmlSha256": "2cc5153d826e5924bd9c22006ec9de2755636c86db45e43fe6b41b1167652952",
-    "representativeRecordJsonSha256": "f1cc69981c257445d3f4132c30e290995f3099f770c5638bf0b97e3e17e0717d",
-    "recordDetailsManifestSha256": "919cc013ba6b7ee06c312ccc3346b683b5fc0cbab075c0ec076d137b7353f1c4",
-    "sitemapSha256": "09ce1c60d416593a6e2e850a379a9ca9bd65b536ebe1803889ade4c7423afe6e"
+    "lifecycleSha256": "45d8a8d7de3c554e88d8703681b85b767e348a81a9004f0e9125a390e7355ae0",
+    "representativeRecordHtmlSha256": "63a2bf08775b7e878fc9cd98e4777938ba0b0e2fe652eda6a3f20bff7efd7172",
+    "representativeRecordJsonSha256": "abdf886732ab43b799097078f5fd6804051e7bb99dec458266c463216ebcfa0d",
+    "recordDetailsManifestSha256": "de0b683897cf396a0cf867ea927f3830237adca7570fc715ebef900c5ec5dd7b",
+    "sitemapSha256": "92aef0ba309232236f47c25deaa818c26d96feed38a5965f49e57d6d36c3cc88"
   },
   "snapshot": {
     "sourceReviewWindow": {
-      "startedAt": "2026-08-21T06:36:12.211Z",
-      "completedAt": "2026-08-21T06:36:18.465Z"
+      "startedAt": "2026-08-24T06:38:43.420Z",
+      "completedAt": "2026-08-24T06:38:50.382Z"
     },
     "sourceLinkAuditWindow": {
-      "startedAt": "2026-08-21T06:43:08.998Z",
-      "completedAt": "2026-08-21T06:43:39.525Z"
+      "startedAt": "2026-08-24T06:39:15.995Z",
+      "completedAt": "2026-08-24T06:39:30.076Z"
     },
-    "sealedAt": "2026-08-21T06:43:39.525Z",
+    "sealedAt": "2026-08-24T06:39:30.076Z",
     "catalogCounts": {
       "surfaces": 55,
       "current": 53,
-      "total": 123,
-      "nonCurrent": 70,
-      "superseded": 67,
+      "total": 133,
+      "nonCurrent": 80,
+      "superseded": 77,
       "historical": 2,
       "discontinued": 1
     },
     "publicationCheck": {
-      "startedAt": "2026-08-21T06:44:02.784Z",
-      "completedAt": "2026-08-21T06:44:09.079Z",
+      "startedAt": "2026-08-24T06:40:22.190Z",
+      "completedAt": "2026-08-24T06:40:29.406Z",
       "surfaces": 55,
-      "uniqueOfficialSources": 52,
-      "reachable": 55,
-      "unreachable": 0,
-      "currentnessComparable": 2,
+      "uniqueOfficialSources": 51,
+      "reachable": 54,
+      "unreachable": 1,
+      "currentnessComparable": 1,
       "knownNewer": 0,
-      "noNewerIdentityProven": 2,
-      "incompleteCoverage": 53
+      "noNewerIdentityProven": 1,
+      "incompleteCoverage": 54
     },
-    "bannerCopy": "Catalog snapshot: 21 August 2026, 06:43 UTC. Agent releases change quickly; records with known updates are marked.",
-    "cacheBustingVersion": "2026-08-21-sealed-snapshot"
+    "bannerCopy": "Catalog snapshot: 24 August 2026, 06:39 UTC. Agent releases change quickly; records with known updates are marked.",
+    "cacheBustingVersion": "2026-08-24-sealed-snapshot"
+  },
+  "qaContractAuthor": {
+    "workstream": "AEC-QA-PRACTICAL-RESPONSIVE-01-AUTHOR",
+    "result": "PASS",
+    "scope": "Exact-byte active visitor responsive code review and per-side exact successor/predecessor Browser evidence only",
+    "baseHead": "e54894052d97a2d5d8687c36b01fc8ae27c18a19",
+    "exactCodeReviewPerformed": true,
+    "independentAcceptanceReviewPerformed": false,
+    "commitOrPublicationPerformed": false
+  },
+  "viewportProof": {
+    "contract": "target-390-approved-adjacent-observations-389-391",
+    "targetCss": {
+      "width": 390,
+      "height": 844
+    },
+    "requiredObservedWidths": {
+      "lower": 389,
+      "upper": 391
+    },
+    "substituteWidthsAllowed": false,
+    "recordEvidence": {
+      "changedRecordIds": [
+        "com.alibaba.qwen-code.cli.0-22-0",
+        "com.anomaly.opencode.cli.1-18-21",
+        "com.anthropic.claude-code.cli.2-1-241",
+        "com.cline.bot.cli.3-0-57",
+        "com.cline.bot.vscode-extension.4-1-15",
+        "com.cognition.devin-desktop.cascade.3-8-20",
+        "com.google.antigravity.cli.1-1-19",
+        "com.jetbrains.junie.ide-plugin.262-579-48",
+        "com.openai.codex.cli.0-149-1",
+        "org.aaif.goose.cli.1-47-0"
+      ],
+      "recordPredecessorPairs": [
+        {
+          "recordId": "com.alibaba.qwen-code.cli.0-22-0",
+          "predecessorRecordId": "com.alibaba.qwen-code.cli.0-21-15"
+        },
+        {
+          "recordId": "com.anomaly.opencode.cli.1-18-21",
+          "predecessorRecordId": "com.anomaly.opencode.cli.1-18-19"
+        },
+        {
+          "recordId": "com.anthropic.claude-code.cli.2-1-241",
+          "predecessorRecordId": "com.anthropic.claude-code.cli.2-1-238"
+        },
+        {
+          "recordId": "com.cline.bot.cli.3-0-57",
+          "predecessorRecordId": "com.cline.bot.cli.3-0-56"
+        },
+        {
+          "recordId": "com.cline.bot.vscode-extension.4-1-15",
+          "predecessorRecordId": "com.cline.bot.vscode-extension.4-1-11"
+        },
+        {
+          "recordId": "com.cognition.devin-desktop.cascade.3-8-20",
+          "predecessorRecordId": "com.cognition.devin-desktop.cascade.3-7-25"
+        },
+        {
+          "recordId": "com.google.antigravity.cli.1-1-19",
+          "predecessorRecordId": "com.google.antigravity.cli.1-1-17"
+        },
+        {
+          "recordId": "com.jetbrains.junie.ide-plugin.262-579-48",
+          "predecessorRecordId": "com.jetbrains.junie.ide-plugin.262-579-44"
+        },
+        {
+          "recordId": "com.openai.codex.cli.0-149-1",
+          "predecessorRecordId": "com.openai.codex.cli.0-149-0"
+        },
+        {
+          "recordId": "org.aaif.goose.cli.1-47-0",
+          "predecessorRecordId": "org.aaif.goose.cli.1-46-0"
+        }
+      ]
+    },
+    "observations": {
+      "lower": {
+        "label": "lower",
+        "route": "/",
+        "requestedTargetCss": {
+          "width": 390,
+          "height": 844
+        },
+        "browserViewportControl": {
+          "width": 292,
+          "height": 633
+        },
+        "startedAt": "2026-08-24T10:30:49.211Z",
+        "completedAt": "2026-08-24T10:35:44.002Z",
+        "windowInner": {
+          "width": 389,
+          "height": 844
+        },
+        "documentElementClient": {
+          "width": 389,
+          "height": 844
+        },
+        "visualViewport": {
+          "width": 389.3333435058594,
+          "height": 844,
+          "scale": 1
+        },
+        "devicePixelRatio": 0.75,
+        "scrollbarWidth": 0,
+        "screenshots": [
+          {
+            "path": "drafts/research-preview-release/currentness-2026-08-24/screenshots/lower-389-root-navigation.png",
+            "sha256": "6f493da1fbf2aacef54911ff9748b9d5dcae04f9dc9659800a4f71b929b7b0da",
+            "capturedAt": "2026-08-24T07:55:58.311Z",
+            "observedCssWidth": 389,
+            "observedCssHeight": 844
+          },
+          {
+            "path": "drafts/research-preview-release/currentness-2026-08-24/screenshots/lower-389-model-cards.png",
+            "sha256": "59eb469444c85e514c8f8754c4c1f788172bef58b03ea75c1a7a531b1f96c060",
+            "capturedAt": "2026-08-24T08:00:43.484Z",
+            "observedCssWidth": 389,
+            "observedCssHeight": 844
+          }
+        ],
+        "journeys": {
+          "root": {
+            "initialSelectedRecords": 0,
+            "navigation": [
+              "Compare claims",
+              "Model Cards",
+              "How it works"
+            ],
+            "navigationOpened": true,
+            "horizontalOverflow": false
+          },
+          "comparison": {
+            "selectedOrder": [
+              "com.anthropic.claude-code.cli.2-1-241",
+              "com.openai.codex.cli.0-149-1",
+              "com.github.copilot.cli.1-0-80",
+              "com.cursor.ide.foreground-agent.3-17"
+            ],
+            "maximumSelectedRecords": 4,
+            "fifthSelectionRejected": true,
+            "deliveryFilterExercised": true,
+            "differencesOnlyExercised": true,
+            "urlPersistsAcrossReload": true,
+            "activeMatrixRows": 41,
+            "matrixInternalOverflow": true,
+            "pageHorizontalOverflow": false
+          },
+          "modelCards": {
+            "currentCards": 53,
+            "historyCards": 80,
+            "historyCollapsedInitially": true,
+            "historyExpanded": true,
+            "historyRecollapsed": true,
+            "qwenSearchResultCount": "2 of 53 surfaces",
+            "deliveryFilterCounts": {
+              "all": 53,
+              "local": 1,
+              "hybrid": 32,
+              "hosted": 20
+            },
+            "navigationOpened": true,
+            "horizontalOverflow": false
+          },
+          "howItWorks": {
+            "sections": 7,
+            "technicalDocumentationClosedInitially": true,
+            "horizontalOverflow": false
+          },
+          "compatibility": {
+            "route": "/research-preview/compare.html",
+            "completeApplicationPresent": true,
+            "selectionStateWorks": true,
+            "horizontalOverflow": false
+          },
+          "records": {
+            "pagesAudited": 10,
+            "changedRecordIds": [
+              "com.alibaba.qwen-code.cli.0-22-0",
+              "com.anomaly.opencode.cli.1-18-21",
+              "com.anthropic.claude-code.cli.2-1-241",
+              "com.cline.bot.cli.3-0-57",
+              "com.cline.bot.vscode-extension.4-1-15",
+              "com.cognition.devin-desktop.cascade.3-8-20",
+              "com.google.antigravity.cli.1-1-19",
+              "com.jetbrains.junie.ide-plugin.262-579-48",
+              "com.openai.codex.cli.0-149-1",
+              "org.aaif.goose.cli.1-47-0"
+            ],
+            "recordPredecessorPairs": [
+              {
+                "recordId": "com.alibaba.qwen-code.cli.0-22-0",
+                "predecessorRecordId": "com.alibaba.qwen-code.cli.0-21-15"
+              },
+              {
+                "recordId": "com.anomaly.opencode.cli.1-18-21",
+                "predecessorRecordId": "com.anomaly.opencode.cli.1-18-19"
+              },
+              {
+                "recordId": "com.anthropic.claude-code.cli.2-1-241",
+                "predecessorRecordId": "com.anthropic.claude-code.cli.2-1-238"
+              },
+              {
+                "recordId": "com.cline.bot.cli.3-0-57",
+                "predecessorRecordId": "com.cline.bot.cli.3-0-56"
+              },
+              {
+                "recordId": "com.cline.bot.vscode-extension.4-1-15",
+                "predecessorRecordId": "com.cline.bot.vscode-extension.4-1-11"
+              },
+              {
+                "recordId": "com.cognition.devin-desktop.cascade.3-8-20",
+                "predecessorRecordId": "com.cognition.devin-desktop.cascade.3-7-25"
+              },
+              {
+                "recordId": "com.google.antigravity.cli.1-1-19",
+                "predecessorRecordId": "com.google.antigravity.cli.1-1-17"
+              },
+              {
+                "recordId": "com.jetbrains.junie.ide-plugin.262-579-48",
+                "predecessorRecordId": "com.jetbrains.junie.ide-plugin.262-579-44"
+              },
+              {
+                "recordId": "com.openai.codex.cli.0-149-1",
+                "predecessorRecordId": "com.openai.codex.cli.0-149-0"
+              },
+              {
+                "recordId": "org.aaif.goose.cli.1-47-0",
+                "predecessorRecordId": "org.aaif.goose.cli.1-46-0"
+              }
+            ],
+            "predecessorLinksVerified": 10,
+            "failureRecordIds": [],
+            "horizontalOverflowFailures": 0
+          },
+          "discovery": {
+            "entryRoutes": 4,
+            "recordAlternatePages": 133,
+            "resourceFailures": 0
+          }
+        },
+        "console": {
+          "errors": 0,
+          "warnings": 0
+        }
+      },
+      "upper": {
+        "label": "upper",
+        "route": "/",
+        "requestedTargetCss": {
+          "width": 390,
+          "height": 844
+        },
+        "browserViewportControl": {
+          "width": 293,
+          "height": 633
+        },
+        "startedAt": "2026-08-24T10:36:37.728Z",
+        "completedAt": "2026-08-24T10:38:51.725Z",
+        "windowInner": {
+          "width": 391,
+          "height": 844
+        },
+        "documentElementClient": {
+          "width": 391,
+          "height": 844
+        },
+        "visualViewport": {
+          "width": 390.6666564941406,
+          "height": 844,
+          "scale": 1
+        },
+        "devicePixelRatio": 0.75,
+        "scrollbarWidth": 0,
+        "screenshots": [
+          {
+            "path": "drafts/research-preview-release/currentness-2026-08-24/screenshots/upper-391-root-navigation.png",
+            "sha256": "6cb2cb824be19fd8762b54b00cbed80ef1966f362c62b0f4dd6d079db862cfe3",
+            "capturedAt": "2026-08-24T08:03:08.758Z",
+            "observedCssWidth": 391,
+            "observedCssHeight": 844
+          },
+          {
+            "path": "drafts/research-preview-release/currentness-2026-08-24/screenshots/upper-391-model-cards.png",
+            "sha256": "784449c14955ac01222e3f17ce097f9e226f693e0392f2fb4c119aea090da970",
+            "capturedAt": "2026-08-24T08:04:23.073Z",
+            "observedCssWidth": 391,
+            "observedCssHeight": 844
+          }
+        ],
+        "journeys": {
+          "root": {
+            "initialSelectedRecords": 0,
+            "navigation": [
+              "Compare claims",
+              "Model Cards",
+              "How it works"
+            ],
+            "navigationOpened": true,
+            "horizontalOverflow": false
+          },
+          "comparison": {
+            "selectedOrder": [
+              "com.anthropic.claude-code.cli.2-1-241",
+              "com.openai.codex.cli.0-149-1",
+              "com.github.copilot.cli.1-0-80",
+              "com.cursor.ide.foreground-agent.3-17"
+            ],
+            "maximumSelectedRecords": 4,
+            "fifthSelectionRejected": true,
+            "deliveryFilterExercised": true,
+            "differencesOnlyExercised": true,
+            "urlPersistsAcrossReload": true,
+            "activeMatrixRows": 41,
+            "matrixInternalOverflow": true,
+            "pageHorizontalOverflow": false
+          },
+          "modelCards": {
+            "currentCards": 53,
+            "historyCards": 80,
+            "historyCollapsedInitially": true,
+            "historyExpanded": true,
+            "historyRecollapsed": true,
+            "qwenSearchResultCount": "2 of 53 surfaces",
+            "deliveryFilterCounts": {
+              "all": 53,
+              "local": 1,
+              "hybrid": 32,
+              "hosted": 20
+            },
+            "navigationOpened": true,
+            "horizontalOverflow": false
+          },
+          "howItWorks": {
+            "sections": 7,
+            "technicalDocumentationClosedInitially": true,
+            "horizontalOverflow": false
+          },
+          "compatibility": {
+            "route": "/research-preview/compare.html",
+            "completeApplicationPresent": true,
+            "selectionStateWorks": true,
+            "horizontalOverflow": false
+          },
+          "records": {
+            "pagesAudited": 10,
+            "changedRecordIds": [
+              "com.alibaba.qwen-code.cli.0-22-0",
+              "com.anomaly.opencode.cli.1-18-21",
+              "com.anthropic.claude-code.cli.2-1-241",
+              "com.cline.bot.cli.3-0-57",
+              "com.cline.bot.vscode-extension.4-1-15",
+              "com.cognition.devin-desktop.cascade.3-8-20",
+              "com.google.antigravity.cli.1-1-19",
+              "com.jetbrains.junie.ide-plugin.262-579-48",
+              "com.openai.codex.cli.0-149-1",
+              "org.aaif.goose.cli.1-47-0"
+            ],
+            "recordPredecessorPairs": [
+              {
+                "recordId": "com.alibaba.qwen-code.cli.0-22-0",
+                "predecessorRecordId": "com.alibaba.qwen-code.cli.0-21-15"
+              },
+              {
+                "recordId": "com.anomaly.opencode.cli.1-18-21",
+                "predecessorRecordId": "com.anomaly.opencode.cli.1-18-19"
+              },
+              {
+                "recordId": "com.anthropic.claude-code.cli.2-1-241",
+                "predecessorRecordId": "com.anthropic.claude-code.cli.2-1-238"
+              },
+              {
+                "recordId": "com.cline.bot.cli.3-0-57",
+                "predecessorRecordId": "com.cline.bot.cli.3-0-56"
+              },
+              {
+                "recordId": "com.cline.bot.vscode-extension.4-1-15",
+                "predecessorRecordId": "com.cline.bot.vscode-extension.4-1-11"
+              },
+              {
+                "recordId": "com.cognition.devin-desktop.cascade.3-8-20",
+                "predecessorRecordId": "com.cognition.devin-desktop.cascade.3-7-25"
+              },
+              {
+                "recordId": "com.google.antigravity.cli.1-1-19",
+                "predecessorRecordId": "com.google.antigravity.cli.1-1-17"
+              },
+              {
+                "recordId": "com.jetbrains.junie.ide-plugin.262-579-48",
+                "predecessorRecordId": "com.jetbrains.junie.ide-plugin.262-579-44"
+              },
+              {
+                "recordId": "com.openai.codex.cli.0-149-1",
+                "predecessorRecordId": "com.openai.codex.cli.0-149-0"
+              },
+              {
+                "recordId": "org.aaif.goose.cli.1-47-0",
+                "predecessorRecordId": "org.aaif.goose.cli.1-46-0"
+              }
+            ],
+            "predecessorLinksVerified": 10,
+            "failureRecordIds": [],
+            "horizontalOverflowFailures": 0
+          },
+          "discovery": {
+            "entryRoutes": 4,
+            "recordAlternatePages": 133,
+            "resourceFailures": 0
+          }
+        },
+        "console": {
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "rationale": "The installed in-app Browser cannot produce an observed 390 CSS-pixel viewport in this environment. Genuine rendered passes at exact 389 and 391 CSS pixels are the approved adjacent operational evidence, supported by exact 320 and 1440 controls. This is not formal proof of arbitrary behavior at exactly 390; the responsive code review is valid only for the exact hash-bound AEC bytes and must be refreshed when those bytes change.",
+    "exact390Observed": false,
+    "adjacentObservationsAreApprovedOperationalEvidence": true,
+    "responsiveCodeReview": {
+      "path": "drafts/research-preview-release/currentness-2026-08-24/responsive-width-bracketing-audit.json",
+      "sha256": "8066212a5dda0c10cff1da9811cc18886312eb0e89d37954bf0245ef4688d168",
+      "schemaVersion": "research-preview-responsive-code-review/1.0",
+      "activeScopeSha256": "a5c8e7a1f9c5bc97621ca7d06c656cda71fbe4b0afa91c16d326999db889b19f",
+      "result": "PASS"
+    }
+  },
+  "controlGates": {
+    "desktop": {
+      "targetCss": {
+        "width": 1440,
+        "height": 900
+      },
+      "browserViewportControl": {
+        "width": 1080,
+        "height": 675
+      },
+      "windowInner": {
+        "width": 1440,
+        "height": 900
+      },
+      "documentElementClient": {
+        "width": 1440,
+        "height": 900
+      },
+      "visualViewport": {
+        "width": 1440,
+        "height": 900,
+        "scale": 1
+      },
+      "devicePixelRatio": 0.75,
+      "scrollbarWidth": 0,
+      "route": "/",
+      "horizontalOverflow": false,
+      "console": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "screenshot": {
+        "path": "drafts/research-preview-release/currentness-2026-08-24/screenshots/desktop-1440x900-root.png",
+        "sha256": "ab503a4fc21d8aab213dd62ff42a19929f1a5ce269338800f03081173b949e01",
+        "capturedAt": "2026-08-24T08:05:09.978Z",
+        "observedCssWidth": 1440,
+        "observedCssHeight": 900
+      },
+      "observedAt": "2026-08-24T10:40:16.425Z"
+    },
+    "narrowMobile": {
+      "targetCss": {
+        "width": 320,
+        "height": 700
+      },
+      "browserViewportControl": {
+        "width": 240,
+        "height": 525
+      },
+      "windowInner": {
+        "width": 320,
+        "height": 700
+      },
+      "documentElementClient": {
+        "width": 320,
+        "height": 700
+      },
+      "visualViewport": {
+        "width": 320,
+        "height": 700,
+        "scale": 1
+      },
+      "devicePixelRatio": 0.75,
+      "scrollbarWidth": 0,
+      "route": "/",
+      "horizontalOverflow": false,
+      "navigationOpened": true,
+      "console": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "screenshot": {
+        "path": "drafts/research-preview-release/currentness-2026-08-24/screenshots/narrow-320x700-root.png",
+        "sha256": "3fa4e7edd6f5e733b0018b70006fe0c137fd9739347c5632a5a973130c0e3b53",
+        "capturedAt": "2026-08-24T08:05:23.759Z",
+        "observedCssWidth": 320,
+        "observedCssHeight": 700
+      },
+      "observedAt": "2026-08-24T10:40:00.981Z"
+    }
   },
   "publicationAuthorQa": {
-    "workstream": "AEC-COMPARISON-CONCEPT-FIDELITY-LIVE-BASE-2026-08-22-BROWSER-QA",
+    "workstream": "AEC-CURRENTNESS-2026-08-24-REFRESH-01-AUTHOR",
     "result": "PASS",
-    "checkedAt": "2026-08-22T01:07:34.046Z",
-    "baseHead": "576f472e0848907dc916e161b793af53c255f3d4",
+    "checkedAt": "2026-08-24T10:56:05.355Z",
+    "baseHead": "e54894052d97a2d5d8687c36b01fc8ae27c18a19",
     "browser": "Codex in-app Browser",
     "currentness": {
-      "records": 123,
+      "records": 133,
       "currentRecords": 53,
-      "historyRecords": 70,
+      "historyRecords": 80,
       "refreshedRecordIds": [
-        "com.alibaba.qwen-code.cli.0-21-15",
-        "com.anthropic.claude-code.cli.2-1-238",
-        "com.google.antigravity.cli.1-1-17",
-        "com.cline.bot.cli.3-0-56",
-        "com.cline.bot.vscode-extension.4-1-11",
-        "com.cursor.ide.foreground-agent.3-17",
-        "com.jetbrains.junie.ide-plugin.262-579-44",
-        "com.openai.codex.cli.0-149-0"
+        "com.alibaba.qwen-code.cli.0-22-0",
+        "com.anomaly.opencode.cli.1-18-21",
+        "com.anthropic.claude-code.cli.2-1-241",
+        "com.cline.bot.cli.3-0-57",
+        "com.cline.bot.vscode-extension.4-1-15",
+        "com.cognition.devin-desktop.cascade.3-8-20",
+        "com.google.antigravity.cli.1-1-19",
+        "com.jetbrains.junie.ide-plugin.262-579-48",
+        "com.openai.codex.cli.0-149-1",
+        "org.aaif.goose.cli.1-47-0"
       ],
       "sourceOnlyDossierRecordIds": [
         "com.cursor.cli.agent.beta",
@@ -94,16 +604,27 @@
       "mobileHorizontalOverflow": false,
       "narrowMobileHorizontalOverflow": false,
       "mobileNavigationOpened": true,
-      "mobileModelCardsNavigationPassed": true
+      "mobileModelCardsNavigationPassed": true,
+      "targetCss": {
+        "width": 390,
+        "height": 844
+      },
+      "mandatoryObservedBracket": {
+        "lower": 389,
+        "upper": 391
+      },
+      "exact390Observed": false,
+      "adjacentObservationsAreApprovedOperationalEvidence": true,
+      "responsiveCodeReviewResult": "PASS"
     },
     "screenshotsCaptured": 6,
     "sitemap": {
-      "routes": 126,
-      "uniqueRoutes": 126,
-      "lastmodEntries": 126,
-      "sharedLastmod": "2026-08-21",
+      "routes": 136,
+      "uniqueRoutes": 136,
+      "lastmodEntries": 136,
+      "sharedLastmod": "2026-08-24",
       "source": "accepted snapshot seal and accepted record review dates",
-      "sha256": "09ce1c60d416593a6e2e850a379a9ca9bd65b536ebe1803889ade4c7423afe6e"
+      "sha256": "92aef0ba309232236f47c25deaa818c26d96feed38a5965f49e57d6d36c3cc88"
     },
     "console": {
       "errors": 0,
@@ -124,17 +645,17 @@
         "How it works"
       ],
       "representativePair": [
-        "com.anthropic.claude-code.cli.2-1-238",
-        "com.openai.codex.cli.0-149-0"
+        "com.anthropic.claude-code.cli.2-1-241",
+        "com.openai.codex.cli.0-149-1"
       ],
       "representativePairOfficialSourceLinks": 20,
       "urlPersistsAcrossReload": true,
-      "activeFourRecordMatrixRows": 40,
+      "activeFourRecordMatrixRows": 41,
       "maximumSelectedRecords": 4,
       "desktop": {
         "observedCss": {
-          "width": 1422,
-          "height": 800
+          "width": 1440,
+          "height": 900
         },
         "horizontalOverflow": false
       },
@@ -143,18 +664,23 @@
           "width": 390,
           "height": 844
         },
-        "controlViewport": {
-          "width": 293,
-          "height": 633
+        "evidenceContract": "target-390-approved-adjacent-observations-389-391",
+        "requiredObservedWidths": {
+          "lower": 389,
+          "upper": 391
         },
-        "observedCss": {
+        "substituteWidthsAllowed": false,
+        "lowerObservedCss": {
+          "width": 389,
+          "height": 844
+        },
+        "upperObservedCss": {
           "width": 391,
           "height": 844
         },
-        "devicePixelRatio": 0.75,
         "horizontalOverflow": false,
-        "navigationOpened": true,
-        "matrixInternalOverflow": true
+        "navigationOpenedAtBothWidths": true,
+        "matrixInternalOverflowAtBothWidths": true
       }
     },
     "modelCards": {
@@ -181,11 +707,11 @@
         "hosted": 20
       },
       "qwenSearchResultCount": "2 of 53 surfaces",
-      "qwenCurrentIdentity": "0.21.15",
+      "qwenCurrentIdentity": "0.22.0",
       "desktop": {
         "observedCss": {
-          "width": 1422,
-          "height": 800
+          "width": 1440,
+          "height": 900
         },
         "gridColumns": 3,
         "horizontalOverflow": false
@@ -195,46 +721,43 @@
           "width": 390,
           "height": 844
         },
-        "controlViewport": {
-          "width": 293,
-          "height": 633
+        "evidenceContract": "target-390-approved-adjacent-observations-389-391",
+        "requiredObservedWidths": {
+          "lower": 389,
+          "upper": 391
         },
-        "observedCss": {
-          "width": 391,
-          "height": 844
-        },
-        "devicePixelRatio": 0.75,
+        "substituteWidthsAllowed": false,
         "gridColumns": 1,
         "cardsAndActionsContained": true,
-        "horizontalOverflow": false,
-        "navigationOpened": true
+        "horizontalOverflowAtBothWidths": false,
+        "navigationOpenedAtBothWidths": true
       },
-      "historyCards": 70,
+      "historyCards": 80,
       "historyCollapsedInitially": true,
       "historyExpandedOnRequest": true,
       "historyRenderedState": {
         "initial": {
-          "hiddenAttribute": true,
           "ariaExpanded": "false",
-          "toggleText": "Show 70 history records",
-          "computedDisplay": "none",
           "boundingBoxHeightPx": 0,
+          "computedDisplay": "none",
+          "hiddenAttribute": true,
+          "toggleText": "Show 80 history records",
           "visibleCardCount": 0
         },
         "expanded": {
-          "hiddenAttribute": false,
           "ariaExpanded": "true",
-          "toggleText": "Hide history records",
+          "boundingBoxHeightPx": 38439.9296875,
           "computedDisplay": "grid",
-          "boundingBoxHeightPx": 10169.75,
-          "visibleCardCount": 70
+          "hiddenAttribute": false,
+          "toggleText": "Hide history records",
+          "visibleCardCount": 80
         },
         "recollapsed": {
-          "hiddenAttribute": true,
           "ariaExpanded": "false",
-          "toggleText": "Show 70 history records",
-          "computedDisplay": "none",
           "boundingBoxHeightPx": 0,
+          "computedDisplay": "none",
+          "hiddenAttribute": true,
+          "toggleText": "Show 80 history records",
           "visibleCardCount": 0
         }
       },
@@ -243,13 +766,13 @@
     "comparison": {
       "result": "PASS",
       "representativePair": [
-        "com.anthropic.claude-code.cli.2-1-238",
-        "com.openai.codex.cli.0-149-0"
+        "com.anthropic.claude-code.cli.2-1-241",
+        "com.openai.codex.cli.0-149-1"
       ],
       "representativePairOfficialSourceLinks": 20,
       "urlPersistsAcrossReload": true,
       "maximumSelectedRecords": 4,
-      "activeFourRecordMatrixRows": 40,
+      "activeFourRecordMatrixRows": 41,
       "mobileMatrixInternalOverflow": true,
       "mobileBodyHorizontalOverflow": false
     },
@@ -277,7 +800,7 @@
     },
     "records": {
       "result": "PASS",
-      "recordIds": [
+      "deterministicallyValidatedRecordIds": [
         "com.cline.bot.vscode-extension.4-1-2",
         "org.openhands.cli.1-16-0",
         "com.github.copilot.cloud-agent.rolling",
@@ -400,34 +923,126 @@
         "com.cline.bot.vscode-extension.4-1-11",
         "com.cursor.ide.foreground-agent.3-17",
         "com.jetbrains.junie.ide-plugin.262-579-44",
-        "com.openai.codex.cli.0-149-0"
+        "com.openai.codex.cli.0-149-0",
+        "com.alibaba.qwen-code.cli.0-22-0",
+        "com.anomaly.opencode.cli.1-18-21",
+        "com.anthropic.claude-code.cli.2-1-241",
+        "com.cline.bot.cli.3-0-57",
+        "com.cline.bot.vscode-extension.4-1-15",
+        "com.cognition.devin-desktop.cascade.3-8-20",
+        "com.google.antigravity.cli.1-1-19",
+        "com.jetbrains.junie.ide-plugin.262-579-48",
+        "com.openai.codex.cli.0-149-1",
+        "org.aaif.goose.cli.1-47-0"
+      ],
+      "changedRecordIds": [
+        "com.alibaba.qwen-code.cli.0-22-0",
+        "com.anomaly.opencode.cli.1-18-21",
+        "com.anthropic.claude-code.cli.2-1-241",
+        "com.cline.bot.cli.3-0-57",
+        "com.cline.bot.vscode-extension.4-1-15",
+        "com.cognition.devin-desktop.cascade.3-8-20",
+        "com.google.antigravity.cli.1-1-19",
+        "com.jetbrains.junie.ide-plugin.262-579-48",
+        "com.openai.codex.cli.0-149-1",
+        "org.aaif.goose.cli.1-47-0"
+      ],
+      "recordPredecessorPairs": [
+        {
+          "recordId": "com.alibaba.qwen-code.cli.0-22-0",
+          "predecessorRecordId": "com.alibaba.qwen-code.cli.0-21-15"
+        },
+        {
+          "recordId": "com.anomaly.opencode.cli.1-18-21",
+          "predecessorRecordId": "com.anomaly.opencode.cli.1-18-19"
+        },
+        {
+          "recordId": "com.anthropic.claude-code.cli.2-1-241",
+          "predecessorRecordId": "com.anthropic.claude-code.cli.2-1-238"
+        },
+        {
+          "recordId": "com.cline.bot.cli.3-0-57",
+          "predecessorRecordId": "com.cline.bot.cli.3-0-56"
+        },
+        {
+          "recordId": "com.cline.bot.vscode-extension.4-1-15",
+          "predecessorRecordId": "com.cline.bot.vscode-extension.4-1-11"
+        },
+        {
+          "recordId": "com.cognition.devin-desktop.cascade.3-8-20",
+          "predecessorRecordId": "com.cognition.devin-desktop.cascade.3-7-25"
+        },
+        {
+          "recordId": "com.google.antigravity.cli.1-1-19",
+          "predecessorRecordId": "com.google.antigravity.cli.1-1-17"
+        },
+        {
+          "recordId": "com.jetbrains.junie.ide-plugin.262-579-48",
+          "predecessorRecordId": "com.jetbrains.junie.ide-plugin.262-579-44"
+        },
+        {
+          "recordId": "com.openai.codex.cli.0-149-1",
+          "predecessorRecordId": "com.openai.codex.cli.0-149-0"
+        },
+        {
+          "recordId": "org.aaif.goose.cli.1-47-0",
+          "predecessorRecordId": "org.aaif.goose.cli.1-46-0"
+        }
+      ],
+      "changedRecordPagesRendered": 20,
+      "representativeUnchangedRenderedRecordIds": [
+        "com.github.copilot.cli.1-0-80",
+        "com.amazon.kiro.ide.1-0-242",
+        "org.aider-ai.aider.cli.0-86-0"
       ],
       "desktop": {
-        "controlViewport": "browser-default",
+        "controlViewport": {
+          "width": 1080,
+          "height": 675
+        },
         "observedCss": {
-          "width": 1422,
-          "height": 800
+          "width": 1440,
+          "height": 900
         },
         "devicePixelRatio": 0.75,
-        "pagesAudited": 123,
+        "pagesAudited": 10,
         "failureRecordIds": []
       },
-      "mobile": {
+      "mobileBracket": {
         "targetCss": {
           "width": 390,
           "height": 844
         },
-        "controlViewport": {
-          "width": 293,
-          "height": 633
+        "requiredObservedWidths": {
+          "lower": 389,
+          "upper": 391
         },
-        "observedCss": {
-          "width": 391,
-          "height": 844
+        "lower": {
+          "controlViewport": {
+            "width": 292,
+            "height": 633
+          },
+          "observedCss": {
+            "width": 389,
+            "height": 844
+          },
+          "devicePixelRatio": 0.75,
+          "pagesAudited": 10,
+          "failureRecordIds": []
         },
-        "devicePixelRatio": 0.75,
-        "pagesAudited": 123,
-        "failureRecordIds": []
+        "upper": {
+          "controlViewport": {
+            "width": 293,
+            "height": 633
+          },
+          "observedCss": {
+            "width": 391,
+            "height": 844
+          },
+          "devicePixelRatio": 0.75,
+          "pagesAudited": 10,
+          "failureRecordIds": []
+        }
       },
       "narrowMobileRepresentative": {
         "targetCss": {
@@ -446,7 +1061,7 @@
         "routesAudited": 5,
         "failureRoutes": []
       },
-      "checksAppliedToEveryPage": {
+      "checksAppliedToEveryChangedRecord": {
         "humanReadableHeading": true,
         "claimCountMatchesProjection": true,
         "sourceCountAndHttpsTargetsMatchProjection": true,
@@ -460,28 +1075,30 @@
     },
     "discoveryMetadata": {
       "result": "PASS",
-      "recordPagesAudited": 123,
-      "sitemapHumanReadableRoutes": 126,
-      "sitemapRecordRoutes": 123,
+      "recordRoutesDeterministicallyValidated": 133,
+      "changedRecordPagesRendered": 20,
+      "representativeUnchangedRecordPagesRendered": 3,
+      "sitemapHumanReadableRoutes": 136,
+      "sitemapRecordRoutes": 133,
       "canonicalAndStructuredMetadataFailures": 0
     }
   },
   "sourceLinks": {
-    "projectedClaimLinkedHttpsEntries": 662,
-    "sourceUrlIdentitiesChecked": 663,
+    "projectedClaimLinkedHttpsEntries": 723,
+    "sourceUrlIdentitiesChecked": 724,
     "preferredSurfaceSources": {
       "checked": 55,
       "reachable": 55,
       "failed": 0,
-      "receiptSha256": "e558d2af3cdb5e5dba382a8a542d6e2e069d1cf17dc9ad9fdf661c709efdac45"
+      "receiptSha256": "00e5e2ec11369932c4f3500f916f55ce27470171a679482cd953416384869c40"
     },
     "fullCorpus": {
-      "recordsChecked": 123,
-      "uniqueEndpointsChecked": 273,
-      "passed": 273,
+      "recordsChecked": 133,
+      "uniqueEndpointsChecked": 286,
+      "passed": 286,
       "unresolved": 0,
-      "receiptPath": "drafts/research-preview-release/currentness-2026-08-21/official-url-audit.json",
-      "receiptSha256": "d9198630150aeb6f833cb35592ffbd5d914c1fb3ac5fc5204419bad61e647fd1"
+      "receiptPath": "drafts/research-preview-release/currentness-2026-08-24/official-url-audit.json",
+      "receiptSha256": "b65252e81a953d114453b9eb08f36a3eb475f1fa518315a11d184b49a8885bbe"
     },
     "unresolved": []
   },
@@ -492,7 +1109,7 @@
       "/research-preview/compare.html",
       "/research-preview/how-it-works.html"
     ],
-    "recordHtmlPagesWithExactJsonAlternate": 123,
+    "recordHtmlPagesWithExactJsonAlternate": 133,
     "recordHtmlAlternateFailures": 0,
     "loopbackResources": {
       "llms": {
@@ -510,8 +1127,8 @@
       "sitemap": {
         "status": 200,
         "contentType": "application/xml",
-        "humanRoutes": 126,
-        "recordHtmlRoutes": 123,
+        "humanRoutes": 136,
+        "recordHtmlRoutes": 133,
         "jsonRoutes": 0,
         "llmsRoutes": 0
       }
@@ -522,9 +1139,10 @@
     "warnings": 0
   },
   "limitations": [
-    "The in-app Browser viewport control is recorded separately from the observed CSS viewport because this session applied a 0.75 device scale; 390 CSS pixels was quantized between measured widths of 389 and 391, so the gate used the conservative 391 by 844 viewport and also measured 320 by 700 exactly.",
+    "The installed in-app Browser at DPR 0.75 cannot produce an observed 390 CSS-pixel viewport in this environment. Genuine rendered passes at exact 389 and 391 by 844 CSS pixels are the approved adjacent operational evidence, with exact 320 by 700 and 1440 by 900 controls. This is not formal proof of arbitrary behavior at exactly 390.",
+    "The responsive code-review receipt is valid only for its exact hash-bound AEC visitor bytes. Any active visitor-file addition, removal or byte change requires a fresh explicit human/code review and a new receipt; the validator does not infer arbitrary future JavaScript or CSS semantics.",
     "Cursor CLI, Cascade in Windsurf IDE, Copilot Agent Mode for Visual Studio and Zoo Code v3.78.0 are source-only dossiers and are not catalog, mapping, lifecycle or presentation admissions.",
-    "The publication-time census proves no known-newer identity for the two comparable live indexes but cannot prove publication-time currency for 53 surfaces; exact release pages, rolling identities and unparseable indexes remain incomplete coverage.",
+    "The publication-time census proves no newer identity for one comparable live index but cannot prove publication-time currency for 54 surfaces; the Junie update-list probe returned HTTP 406 while its exact official update page passed the full source-link audit.",
     "Rendered local behavior, source reachability and deterministic validation do not establish catalogued product behavior, independent verification, quality, safety, popularity, ranking or suitability."
   ],
   "boundaries": {
@@ -533,8 +1151,8 @@
     "independentTestsCredited": 0,
     "rankingsOrSuitabilityCalculations": false,
     "priorAcceptedRecordsOrSourceArtifactsRewritten": false,
-    "currentnessLifecycleProjectionUpdated": false,
-    "visitorInformationArchitectureChanged": true,
+    "currentnessLifecycleProjectionUpdated": true,
+    "visitorInformationArchitectureChanged": false,
     "githubStateChanged": false,
     "publicationAuthorizedByReceipt": false
   }

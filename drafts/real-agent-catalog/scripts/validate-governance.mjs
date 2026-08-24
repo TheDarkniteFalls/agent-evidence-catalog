@@ -39,11 +39,11 @@ assert(corrections.includes("not for the\nstatic closed-intake preview"));
 assert(method.includes("zero independent tests"));
 assert(method.includes("public Research Preview v0.1"));
 assert(method.includes("https://thedarknitefalls.github.io/agent-evidence-catalog/"));
-assert(readiness.includes("Release status: **THE SEALED 55-SURFACE, 123-RECORD 2026-08-21 SNAPSHOT IS PUBLISHED; ANY LATER PRESENTATION OR METADATA CANDIDATE MAY BE PUBLISHED ONLY AFTER FRESH INDEPENDENT ACCEPTANCE AND ALL RELEASE GATES PASS**"));
-assert(readiness.includes("Codex CLI 0.149.0 current record | PASS"));
-assert(readiness.includes("CONDITIONAL PUBLICATION AUTHORITY RECORDED"));
-assert(readiness.includes("only for the exact candidate after fresh independent acceptance"));
-assert(readiness.includes("This authority does not waive or retroactively satisfy any gate"));
+assert(readiness.includes("Release status: **THE SEALED 55-SURFACE, 123-RECORD 2026-08-21 SNAPSHOT REMAINS PUBLISHED; THE PREPARED 55-SURFACE, 133-RECORD 2026-08-24 REFRESH CANDIDATE MAY BE PUBLISHED ONLY AFTER FRESH INDEPENDENT ACCEPTANCE AND ALL RELEASE GATES PASS**"));
+assert(readiness.includes("Codex CLI 0.149.1 current record | PASS"));
+assert(readiness.includes("GitHub publication state | NOT AUTHORIZED BY THIS CANDIDATE"));
+assert(readiness.includes("Any later publication requires separate authority, fresh independent acceptance and all applicable commit, public-lane and remote checks."));
+assert(readiness.includes("does not change the live site by itself."));
 assert(roadmap.includes("Private reporting route"));
 assert(roadmap.includes("not a blocker for the static closed-intake research preview"));
 

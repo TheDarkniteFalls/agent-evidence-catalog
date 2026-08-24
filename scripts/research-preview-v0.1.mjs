@@ -5,6 +5,15 @@ import { readFile, readdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import {
+  BROWSER_EVIDENCE_CONTRACT,
+  BROWSER_QA_CALIBRATION,
+  EXPECTED_SUCCESSOR_RECORD_IDS,
+  EXPECTED_SUCCESSOR_RECORD_PAIRS,
+  runResponsiveContractNegativeTests,
+  validateExactBrowserBracketProof,
+  validateResponsiveCodeReview
+} from "../drafts/research-preview-release/currentness-2026-08-24/responsive-bracketing-contract.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const releaseRoot = path.join(packageRoot, "drafts", "research-preview-release");
@@ -27,7 +36,7 @@ function validateHistoryRenderedState(state) {
   const initial = {
     hiddenAttribute: true,
     ariaExpanded: "false",
-    toggleText: "Show 70 history records",
+    toggleText: "Show 80 history records",
     computedDisplay: "none",
     boundingBoxHeightPx: 0,
     visibleCardCount: 0
@@ -40,7 +49,7 @@ function validateHistoryRenderedState(state) {
   assert.equal(state.expanded.toggleText, "Hide history records");
   assert.equal(state.expanded.computedDisplay, "grid");
   assert(Number.isFinite(state.expanded.boundingBoxHeightPx) && state.expanded.boundingBoxHeightPx > 0, "Expanded history must have a positive measured bounding-box height");
-  assert.equal(state.expanded.visibleCardCount, 70);
+  assert.equal(state.expanded.visibleCardCount, 80);
 }
 
 function resolvePublicctlPath() {
@@ -301,6 +310,10 @@ function classify(relativePath) {
     if (relativePath.endsWith(".mjs")) return ["canonical-source", "Repeatable official-source currentness capture, builder, validator, census, link auditor or Browser receipt writer."];
     return ["accepted-evidence-provenance", "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."];
   }
+  if (relativePath.startsWith("drafts/research-preview-release/currentness-2026-08-24/")) {
+    if (relativePath.endsWith(".mjs")) return ["canonical-source", "Repeatable official-source currentness capture, builder, validator, census, link auditor or Browser receipt writer."];
+    return ["accepted-evidence-provenance", "Validated official-source audit, currentness input, generated successor evidence, snapshot seal or dated receipt."];
+  }
   if (relativePath.startsWith("drafts/research-preview-release/")) {
     return ["release-control-artifact", "Baseline, preservation, manifest or release-validation control."];
   }
@@ -329,7 +342,7 @@ function artifacts(files) {
   ]));
   return {
     schemaVersion: "research-preview-path-classification/0.1",
-    asOf: "2026-08-21",
+    asOf: "2026-08-24",
     repository: "agent-evidence-catalog",
     classificationRule: "Every Git-visible path is assigned exactly one release classification. Generated dist is the only public static output; accepted research provenance remains in Git; retained experiments are not primary v0.1 routes.",
     counts,
@@ -341,7 +354,7 @@ function releaseManifest(files) {
   const distPaths = files.filter((relativePath) => relativePath.startsWith("dist/"));
   return {
     schemaVersion: "research-preview-release-manifest/0.1",
-    asOf: "2026-08-21",
+    asOf: "2026-08-24",
     targetRepository: "agent-evidence-catalog",
     primaryProduct: "real-agent-research-preview-v0.1",
     publicationStatus: "public-research-preview-v0.1",
@@ -443,6 +456,8 @@ async function buildOneWayProjection() {
   node("official-source 2026-08-20 currentness projection", "drafts/research-preview-release/currentness-2026-08-20/build-currentness.mjs");
   node("official-source 2026-08-20 currentness validation", "drafts/research-preview-release/currentness-2026-08-20/validate-currentness.mjs");
   node("official-source 2026-08-21 currentness projection", "drafts/research-preview-release/currentness-2026-08-21/build-currentness.mjs");
+  node("official-source 2026-08-21 currentness validation", "drafts/research-preview-release/currentness-2026-08-21/validate-currentness.mjs");
+  node("official-source 2026-08-24 currentness projection", "drafts/research-preview-release/currentness-2026-08-24/build-currentness.mjs");
   const preview = JSON.parse(await readFile(path.join(packageRoot, "drafts", "real-agent-catalog", "research-preview", "catalog.json"), "utf8"));
   await materializeStaticCatalogSource(preview);
   node("static source-to-dist build", "scripts/catalog.mjs", "build");
@@ -486,8 +501,8 @@ const validatorCommands = [
   ["pre-currentness generated refreshes", "drafts/real-agent-catalog/scripts/validate-current-record-refreshes.mjs"],
   ["critical-mass expansion", "drafts/real-agent-catalog/scripts/validate-critical-mass-expansion.mjs"],
   ["source-only 2026-08-18 candidates", "drafts/real-agent-catalog/scripts/validate-source-only-candidates-2026-08-18.mjs"],
-  ["official-source 2026-08-21 currentness", "drafts/research-preview-release/currentness-2026-08-21/validate-currentness.mjs"],
-  ["unified 123-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
+  ["official-source 2026-08-24 currentness", "drafts/research-preview-release/currentness-2026-08-24/validate-currentness.mjs"],
+  ["unified 133-record research preview", "drafts/real-agent-catalog/scripts/validate-research-preview.mjs"],
   ["evidence-exact agent-claims comparison", "scripts/validate-comparison-mvp.mjs"],
   ["governance requirements", "drafts/real-agent-catalog/scripts/validate-governance.mjs"],
   ["documentation and publisher source links", "drafts/real-agent-catalog/scripts/validate-documentation-consistency.mjs"],
@@ -664,7 +679,7 @@ async function validateLegacyBrowserReceipt() {
       redundantStickyTrayHidden: true
     },
     mobile: {
-      observedCss: { width: 391, height: 844 },
+      observedCss: { width: 390, height: 844 },
       orderedSlots: 4,
       slotLayout: "2x2",
       bodyHorizontalOverflow: false,
@@ -714,7 +729,7 @@ async function validateLegacyBrowserReceipt() {
       emptyStateVisible: true
     },
     mobile: {
-      observedCss: { width: 391, height: 844 },
+      observedCss: { width: 390, height: 844 },
       currentPickerRecords: 53,
       defaultSelectedRecords: 0,
       orderedSlots: 4,
@@ -1004,11 +1019,11 @@ async function validateBrowserReceipt() {
   const buildManifest = JSON.parse(await readFile(path.join(packageRoot, "dist", "build-manifest.json"), "utf8"));
   const preview = JSON.parse(await readFile(path.join(packageRoot, "dist", "research-preview", "catalog.json"), "utf8"));
   const lifecycle = JSON.parse(await readFile(path.join(packageRoot, "dist", "research-preview", "lifecycle.json"), "utf8"));
-  const seal = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "snapshot-seal.json"), "utf8"));
-  const census = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "publication-freshness-census.json"), "utf8"));
-  const surfaceAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "official-source-audit.json"), "utf8");
+  const seal = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-24", "snapshot-seal.json"), "utf8"));
+  const census = JSON.parse(await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-24", "publication-freshness-census.json"), "utf8"));
+  const surfaceAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-24", "official-source-audit.json"), "utf8");
   const surfaceAudit = JSON.parse(surfaceAuditText);
-  const urlAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-21", "official-url-audit.json"), "utf8");
+  const urlAuditText = await readFile(path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-24", "official-url-audit.json"), "utf8");
   const urlAudit = JSON.parse(urlAuditText);
   const recordIds = buildManifest.researchPreview.recordDetails.records.map((item) => item.recordId);
 
@@ -1142,17 +1157,89 @@ async function validateBrowserReceipt() {
     return;
   }
 
-  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/1.3");
-  assert.equal(receipt.asOf, "2026-08-21");
+  assert.equal(receipt.schemaVersion, "research-preview-browser-qa/1.7");
+  assert.equal(receipt.asOf, "2026-08-24");
   assert.equal(new Date(receipt.checkedAt).toISOString(), receipt.checkedAt);
   assert(new Date(receipt.checkedAt) >= new Date(census.census.completedAt));
   assert.deepEqual(receipt.loopback, {
     url: "http://localhost:4173/",
-    listener: "localhost:4173",
+    listener: "loopback-only port 4173",
     listenerVerified: true,
     browser: "Codex in-app Browser",
     browserNavigation: "PASS"
   });
+
+  const responsiveCodeReviewPath = path.join(packageRoot, "drafts", "research-preview-release", "currentness-2026-08-24", "responsive-width-bracketing-audit.json");
+  const responsiveCodeReviewText = await readFile(responsiveCodeReviewPath);
+  const responsiveCodeReview = JSON.parse(responsiveCodeReviewText);
+  await validateResponsiveCodeReview(responsiveCodeReview, packageRoot, responsiveCodeReviewText);
+  validateExactBrowserBracketProof(receipt.viewportProof);
+  assert.equal(receipt.viewportProof.responsiveCodeReview.sha256, sha256(responsiveCodeReviewText), "Browser proof is not bound to the current exact-byte responsive code review");
+  runResponsiveContractNegativeTests(responsiveCodeReview, receipt.viewportProof);
+
+  const screenshotBindings = [
+    ...receipt.viewportProof.observations.lower.screenshots,
+    ...receipt.viewportProof.observations.upper.screenshots,
+    receipt.controlGates.desktop.screenshot,
+    receipt.controlGates.narrowMobile.screenshot
+  ];
+  const expectedScreenshotPrefix = "drafts/research-preview-release/currentness-2026-08-24/screenshots/";
+  const assertScreenshotBinding = (screenshot, actualSha256) => {
+    assert(screenshot.path.startsWith(expectedScreenshotPrefix) && !screenshot.path.includes(".."), "Browser screenshot path escapes its exact QA evidence directory");
+    assert.equal(screenshot.sha256, actualSha256, `${screenshot.path} is stale or mismatched`);
+  };
+  for (const screenshot of screenshotBindings) {
+    const absoluteScreenshotPath = path.join(packageRoot, screenshot.path);
+    assertScreenshotBinding(screenshot, sha256(await readFile(absoluteScreenshotPath)));
+  }
+  const staleScreenshot = structuredClone(screenshotBindings[0]);
+  staleScreenshot.sha256 = "0".repeat(64);
+  assert.throws(() => assertScreenshotBinding(staleScreenshot, screenshotBindings[0].sha256));
+  const staleReviewProof = structuredClone(receipt.viewportProof);
+  staleReviewProof.responsiveCodeReview.sha256 = "0".repeat(64);
+  assert.throws(() => assert.equal(staleReviewProof.responsiveCodeReview.sha256, sha256(responsiveCodeReviewText)));
+
+  assert.deepEqual(receipt.qaContractAuthor, {
+    workstream: "AEC-QA-PRACTICAL-RESPONSIVE-01-AUTHOR",
+    result: "PASS",
+    scope: "Exact-byte active visitor responsive code review and per-side exact successor/predecessor Browser evidence only",
+    baseHead: "e54894052d97a2d5d8687c36b01fc8ae27c18a19",
+    exactCodeReviewPerformed: true,
+    independentAcceptanceReviewPerformed: false,
+    commitOrPublicationPerformed: false
+  });
+  assert.deepEqual(receipt.controlGates.desktop, {
+    targetCss: { width: 1440, height: 900 },
+    browserViewportControl: BROWSER_QA_CALIBRATION.desktopControl,
+    windowInner: { width: 1440, height: 900 },
+    documentElementClient: { width: 1440, height: 900 },
+    visualViewport: { width: 1440, height: 900, scale: 1 },
+    devicePixelRatio: BROWSER_QA_CALIBRATION.devicePixelRatio,
+    scrollbarWidth: 0,
+    route: "/",
+    horizontalOverflow: false,
+    console: { errors: 0, warnings: 0 },
+    screenshot: receipt.controlGates.desktop.screenshot,
+    observedAt: receipt.controlGates.desktop.observedAt
+  });
+  assert.deepEqual(receipt.controlGates.narrowMobile, {
+    targetCss: { width: 320, height: 700 },
+    browserViewportControl: BROWSER_QA_CALIBRATION.narrowMobileControl,
+    windowInner: { width: 320, height: 700 },
+    documentElementClient: { width: 320, height: 700 },
+    visualViewport: { width: 320, height: 700, scale: 1 },
+    devicePixelRatio: BROWSER_QA_CALIBRATION.devicePixelRatio,
+    scrollbarWidth: 0,
+    route: "/",
+    horizontalOverflow: false,
+    navigationOpened: true,
+    console: { errors: 0, warnings: 0 },
+    screenshot: receipt.controlGates.narrowMobile.screenshot,
+    observedAt: receipt.controlGates.narrowMobile.observedAt
+  });
+  for (const control of [receipt.controlGates.desktop, receipt.controlGates.narrowMobile]) {
+    assert.equal(new Date(control.observedAt).toISOString(), control.observedAt);
+  }
 
   const digestPairs = [
     ["rootComparisonHtmlSha256", "dist/index.html"],
@@ -1167,8 +1254,8 @@ async function validateBrowserReceipt() {
     ["previewStylesSha256", "dist/research-preview/styles.css"],
     ["llmsSha256", "dist/llms.txt"],
     ["lifecycleSha256", "dist/research-preview/lifecycle.json"],
-    ["representativeRecordHtmlSha256", "dist/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.html"],
-    ["representativeRecordJsonSha256", "dist/research-preview/records/com.alibaba.qwen-code.cli.0-21-15.json"],
+    ["representativeRecordHtmlSha256", "dist/research-preview/records/com.alibaba.qwen-code.cli.0-22-0.html"],
+    ["representativeRecordJsonSha256", "dist/research-preview/records/com.alibaba.qwen-code.cli.0-22-0.json"],
     ["sitemapSha256", "dist/sitemap.xml"]
   ];
   for (const [key, relativePath] of digestPairs) {
@@ -1187,29 +1274,20 @@ async function validateBrowserReceipt() {
     completedAt: census.census.completedAt,
     ...census.counts
   });
-  assert.equal(receipt.snapshot.bannerCopy, "Catalog snapshot: 21 August 2026, 06:43 UTC. Agent releases change quickly; records with known updates are marked.");
-  assert.equal(receipt.snapshot.cacheBustingVersion, "2026-08-21-sealed-snapshot");
+  assert.equal(receipt.snapshot.bannerCopy, "Catalog snapshot: 24 August 2026, 06:39 UTC. Agent releases change quickly; records with known updates are marked.");
+  assert.equal(receipt.snapshot.cacheBustingVersion, "2026-08-24-sealed-snapshot");
 
   const publicationQa = receipt.publicationAuthorQa;
-  assert.equal(publicationQa.workstream, "AEC-COMPARISON-CONCEPT-FIDELITY-LIVE-BASE-2026-08-22-BROWSER-QA");
+  assert.equal(publicationQa.workstream, "AEC-CURRENTNESS-2026-08-24-REFRESH-01-AUTHOR");
   assert.equal(publicationQa.result, "PASS");
   assert.equal(publicationQa.checkedAt, receipt.checkedAt);
-  assert.equal(publicationQa.baseHead, "576f472e0848907dc916e161b793af53c255f3d4");
+  assert.equal(publicationQa.baseHead, "e54894052d97a2d5d8687c36b01fc8ae27c18a19");
   assert.equal(publicationQa.browser, "Codex in-app Browser");
   assert.deepEqual(publicationQa.currentness, {
-    records: 123,
+    records: 133,
     currentRecords: 53,
-    historyRecords: 70,
-    refreshedRecordIds: [
-      "com.alibaba.qwen-code.cli.0-21-15",
-      "com.anthropic.claude-code.cli.2-1-238",
-      "com.google.antigravity.cli.1-1-17",
-      "com.cline.bot.cli.3-0-56",
-      "com.cline.bot.vscode-extension.4-1-11",
-      "com.cursor.ide.foreground-agent.3-17",
-      "com.jetbrains.junie.ide-plugin.262-579-44",
-      "com.openai.codex.cli.0-149-0"
-    ],
+    historyRecords: 80,
+    refreshedRecordIds: EXPECTED_SUCCESSOR_RECORD_IDS,
     sourceOnlyDossierRecordIds: [
       "com.cursor.cli.agent.beta",
       "com.windsurf.cascade.ide.rolling",
@@ -1223,15 +1301,20 @@ async function validateBrowserReceipt() {
     mobileHorizontalOverflow: false,
     narrowMobileHorizontalOverflow: false,
     mobileNavigationOpened: true,
-    mobileModelCardsNavigationPassed: true
+    mobileModelCardsNavigationPassed: true,
+    targetCss: { width: 390, height: 844 },
+    mandatoryObservedBracket: { lower: 389, upper: 391 },
+    exact390Observed: false,
+    adjacentObservationsAreApprovedOperationalEvidence: true,
+    responsiveCodeReviewResult: "PASS"
   });
   assert.equal(publicationQa.screenshotsCaptured, 6);
   assert.deepEqual(publicationQa.console, { errors: 0, warnings: 0 });
   const acceptedLastmod = acceptedDate(seal.sealedAt, "Accepted snapshot seal");
   assert.deepEqual(publicationQa.sitemap, {
-    routes: 126,
-    uniqueRoutes: 126,
-    lastmodEntries: 126,
+    routes: 136,
+    uniqueRoutes: 136,
+    lastmodEntries: 136,
     sharedLastmod: acceptedLastmod,
     source: "accepted snapshot seal and accepted record review dates",
     sha256: sha256(await readFile(path.join(packageRoot, "dist", "sitemap.xml")))
@@ -1245,23 +1328,25 @@ async function validateBrowserReceipt() {
     headline: "Compare agent claims, source by source.",
     comparisonApplicationPresent: true,
     navigation: ["Compare claims", "Model Cards", "How it works"],
-    representativePair: ["com.anthropic.claude-code.cli.2-1-238", "com.openai.codex.cli.0-149-0"],
+    representativePair: ["com.anthropic.claude-code.cli.2-1-241", "com.openai.codex.cli.0-149-1"],
     representativePairOfficialSourceLinks: 20,
     urlPersistsAcrossReload: true,
-    activeFourRecordMatrixRows: 40,
+    activeFourRecordMatrixRows: 41,
     maximumSelectedRecords: 4,
     desktop: {
-    observedCss: { width: 1422, height: 800 },
+    observedCss: { width: 1440, height: 900 },
     horizontalOverflow: false
     },
     mobile: {
       targetCss: { width: 390, height: 844 },
-      controlViewport: { width: 293, height: 633 },
-      observedCss: { width: 391, height: 844 },
-      devicePixelRatio: 0.75,
+      evidenceContract: BROWSER_EVIDENCE_CONTRACT,
+      requiredObservedWidths: { lower: 389, upper: 391 },
+      substituteWidthsAllowed: false,
+      lowerObservedCss: { width: 389, height: 844 },
+      upperObservedCss: { width: 391, height: 844 },
       horizontalOverflow: false,
-      navigationOpened: true,
-      matrixInternalOverflow: true
+      navigationOpenedAtBothWidths: true,
+      matrixInternalOverflowAtBothWidths: true
     }
   });
 
@@ -1280,19 +1365,19 @@ async function validateBrowserReceipt() {
     repeatedIndependentTestMetrics: 0,
     deliveryFilterCounts: { all: 53, local: 1, hybrid: 32, hosted: 20 },
     qwenSearchResultCount: "2 of 53 surfaces",
-    qwenCurrentIdentity: "0.21.15",
-    desktop: { observedCss: { width: 1422, height: 800 }, gridColumns: 3, horizontalOverflow: false },
+    qwenCurrentIdentity: "0.22.0",
+    desktop: { observedCss: { width: 1440, height: 900 }, gridColumns: 3, horizontalOverflow: false },
     mobile: {
       targetCss: { width: 390, height: 844 },
-      controlViewport: { width: 293, height: 633 },
-      observedCss: { width: 391, height: 844 },
-      devicePixelRatio: 0.75,
+      evidenceContract: BROWSER_EVIDENCE_CONTRACT,
+      requiredObservedWidths: { lower: 389, upper: 391 },
+      substituteWidthsAllowed: false,
       gridColumns: 1,
       cardsAndActionsContained: true,
-      horizontalOverflow: false,
-      navigationOpened: true
+      horizontalOverflowAtBothWidths: false,
+      navigationOpenedAtBothWidths: true
     },
-    historyCards: 70,
+    historyCards: 80,
     historyCollapsedInitially: true,
     historyExpandedOnRequest: true,
     historyRenderedState: receipt.journeys.modelCards.historyRenderedState,
@@ -1306,11 +1391,11 @@ async function validateBrowserReceipt() {
     canonicalHref: "https://thedarknitefalls.github.io/agent-evidence-catalog/",
     selectionStateWorks: true
   });
-  assert.deepEqual(receipt.journeys.comparison.representativePair, ["com.anthropic.claude-code.cli.2-1-238", "com.openai.codex.cli.0-149-0"]);
+  assert.deepEqual(receipt.journeys.comparison.representativePair, ["com.anthropic.claude-code.cli.2-1-241", "com.openai.codex.cli.0-149-1"]);
   assert.equal(receipt.journeys.comparison.representativePairOfficialSourceLinks, 20);
   assert.equal(receipt.journeys.comparison.urlPersistsAcrossReload, true);
   assert.equal(receipt.journeys.comparison.maximumSelectedRecords, 4);
-  assert.equal(receipt.journeys.comparison.activeFourRecordMatrixRows, 40);
+  assert.equal(receipt.journeys.comparison.activeFourRecordMatrixRows, 41);
   assert.equal(receipt.journeys.comparison.mobileMatrixInternalOverflow, true);
   assert.equal(receipt.journeys.comparison.mobileBodyHorizontalOverflow, false);
   assert.deepEqual(receipt.journeys.howItWorks.sections, [
@@ -1326,34 +1411,61 @@ async function validateBrowserReceipt() {
   assert.equal(receipt.journeys.howItWorks.desktopHorizontalOverflow, false);
   assert.equal(receipt.journeys.howItWorks.mobileHorizontalOverflow, false);
 
-  assert.equal(preview.previewRecords.length, 123);
-  assert.equal(lifecycle.entries.length, 123);
-  assert.deepEqual(receipt.journeys.records.recordIds, recordIds);
-  assert.equal(receipt.journeys.records.desktop.pagesAudited, 123);
+  assert.equal(preview.previewRecords.length, 133);
+  assert.equal(lifecycle.entries.length, 133);
+  assert.deepEqual(receipt.journeys.records.deterministicallyValidatedRecordIds, recordIds);
+  assert.deepEqual(receipt.journeys.records.changedRecordIds, EXPECTED_SUCCESSOR_RECORD_IDS);
+  assert.deepEqual(receipt.journeys.records.recordPredecessorPairs, EXPECTED_SUCCESSOR_RECORD_PAIRS);
+  assert.equal(receipt.journeys.records.changedRecordPagesRendered, 20);
+  assert.deepEqual(receipt.journeys.records.representativeUnchangedRenderedRecordIds, [
+    "com.github.copilot.cli.1-0-80",
+    "com.amazon.kiro.ide.1-0-242",
+    "org.aider-ai.aider.cli.0-86-0"
+  ]);
+  assert.deepEqual(publicationQa.currentness.refreshedRecordIds, EXPECTED_SUCCESSOR_RECORD_IDS);
+  for (const label of ["lower", "upper"]) {
+    assert.deepEqual(receipt.viewportProof.observations[label].journeys.records.changedRecordIds, receipt.journeys.records.changedRecordIds, `${label} successor IDs must bind to the top-level record inventory`);
+    assert.deepEqual(receipt.viewportProof.observations[label].journeys.records.recordPredecessorPairs, receipt.journeys.records.recordPredecessorPairs, `${label} successor/predecessor pairs must bind to the top-level record inventory`);
+  }
+  assert.equal(receipt.journeys.records.desktop.pagesAudited, 10);
   assert.deepEqual(receipt.journeys.records.desktop.failureRecordIds, []);
-  assert.equal(receipt.journeys.records.desktop.controlViewport, "browser-default");
-  assert.deepEqual(receipt.journeys.records.desktop.observedCss, { width: 1422, height: 800 });
-  assert.equal(receipt.journeys.records.desktop.devicePixelRatio, 0.75);
-  assert.equal(receipt.journeys.records.mobile.pagesAudited, 123);
-  assert.deepEqual(receipt.journeys.records.mobile.failureRecordIds, []);
-  assert.deepEqual(receipt.journeys.records.mobile.targetCss, { width: 390, height: 844 });
-  assert.deepEqual(receipt.journeys.records.mobile.controlViewport, { width: 293, height: 633 });
-  assert.deepEqual(receipt.journeys.records.mobile.observedCss, { width: 391, height: 844 });
-  assert.equal(receipt.journeys.records.mobile.devicePixelRatio, 0.75);
+  assert.deepEqual(receipt.journeys.records.desktop.controlViewport, BROWSER_QA_CALIBRATION.desktopControl);
+  assert.deepEqual(receipt.journeys.records.desktop.observedCss, { width: 1440, height: 900 });
+  assert.equal(receipt.journeys.records.desktop.devicePixelRatio, BROWSER_QA_CALIBRATION.devicePixelRatio);
+  assert.deepEqual(receipt.journeys.records.mobileBracket, {
+    targetCss: { width: 390, height: 844 },
+    requiredObservedWidths: { lower: 389, upper: 391 },
+    lower: {
+      controlViewport: BROWSER_QA_CALIBRATION.lowerControl,
+      observedCss: { width: 389, height: 844 },
+      devicePixelRatio: BROWSER_QA_CALIBRATION.devicePixelRatio,
+      pagesAudited: 10,
+      failureRecordIds: []
+    },
+    upper: {
+      controlViewport: BROWSER_QA_CALIBRATION.upperControl,
+      observedCss: { width: 391, height: 844 },
+      devicePixelRatio: BROWSER_QA_CALIBRATION.devicePixelRatio,
+      pagesAudited: 10,
+      failureRecordIds: []
+    }
+  });
   assert.deepEqual(receipt.journeys.records.narrowMobileRepresentative, {
     targetCss: { width: 320, height: 700 },
-    controlViewport: { width: 240, height: 525 },
+    controlViewport: BROWSER_QA_CALIBRATION.narrowMobileControl,
     observedCss: { width: 320, height: 700 },
-    devicePixelRatio: 0.75,
+    devicePixelRatio: BROWSER_QA_CALIBRATION.devicePixelRatio,
     routesAudited: 5,
     failureRoutes: []
   });
-  assert(Object.values(receipt.journeys.records.checksAppliedToEveryPage).every(Boolean));
+  assert(Object.values(receipt.journeys.records.checksAppliedToEveryChangedRecord).every(Boolean));
   assert.deepEqual(receipt.journeys.discoveryMetadata, {
     result: "PASS",
-    recordPagesAudited: 123,
-    sitemapHumanReadableRoutes: 126,
-    sitemapRecordRoutes: 123,
+    recordRoutesDeterministicallyValidated: 133,
+    changedRecordPagesRendered: 20,
+    representativeUnchangedRecordPagesRendered: 3,
+    sitemapHumanReadableRoutes: 136,
+    sitemapRecordRoutes: 133,
     canonicalAndStructuredMetadataFailures: 0
   });
   assert.deepEqual(receipt.machineDiscovery, {
@@ -1363,7 +1475,7 @@ async function validateBrowserReceipt() {
       "/research-preview/compare.html",
       "/research-preview/how-it-works.html"
     ],
-    recordHtmlPagesWithExactJsonAlternate: 123,
+    recordHtmlPagesWithExactJsonAlternate: 133,
     recordHtmlAlternateFailures: 0,
     loopbackResources: {
       llms: { status: 200, contentType: "text/plain" },
@@ -1372,8 +1484,8 @@ async function validateBrowserReceipt() {
       sitemap: {
         status: 200,
         contentType: "application/xml",
-        humanRoutes: 126,
-        recordHtmlRoutes: 123,
+        humanRoutes: 136,
+        recordHtmlRoutes: 133,
         jsonRoutes: 0,
         llmsRoutes: 0
       }
@@ -1404,25 +1516,27 @@ async function validateBrowserReceipt() {
     uniqueEndpointsChecked: urlAudit.counts.uniqueOfficialUrlsChecked,
     passed: urlAudit.counts.reachable,
     unresolved: urlAudit.counts.unreachable,
-    receiptPath: "drafts/research-preview-release/currentness-2026-08-21/official-url-audit.json",
+    receiptPath: "drafts/research-preview-release/currentness-2026-08-24/official-url-audit.json",
     receiptSha256: sha256(urlAuditText)
   });
   assert.equal(receipt.sourceLinks.unresolved.length, urlAudit.counts.unreachable);
   assert.deepEqual(receipt.sourceLinks.unresolved, []);
   assert.deepEqual(receipt.console, { errors: 0, warnings: 0 });
-  assert.equal(receipt.limitations.length, 4);
+  assert.equal(receipt.limitations.length, 5);
+  assert.equal(receipt.limitations[0], "The installed in-app Browser at DPR 0.75 cannot produce an observed 390 CSS-pixel viewport in this environment. Genuine rendered passes at exact 389 and 391 by 844 CSS pixels are the approved adjacent operational evidence, with exact 320 by 700 and 1440 by 900 controls. This is not formal proof of arbitrary behavior at exactly 390.");
+  assert.equal(receipt.limitations[1], "The responsive code-review receipt is valid only for its exact hash-bound AEC visitor bytes. Any active visitor-file addition, removal or byte change requires a fresh explicit human/code review and a new receipt; the validator does not infer arbitrary future JavaScript or CSS semantics.");
   assert.deepEqual(receipt.boundaries, {
     publisherSourcesOnly: true,
     agentsInstalledOrRun: false,
     independentTestsCredited: 0,
     rankingsOrSuitabilityCalculations: false,
     priorAcceptedRecordsOrSourceArtifactsRewritten: false,
-    currentnessLifecycleProjectionUpdated: false,
-    visitorInformationArchitectureChanged: true,
+    currentnessLifecycleProjectionUpdated: true,
+    visitorInformationArchitectureChanged: false,
     githubStateChanged: false,
     publicationAuthorizedByReceipt: false
   });
-  console.log("PASS digest-bound Browser QA: root comparison, 53 Model Cards, compatibility routes, 123 desktop and mobile record pages and zero console errors");
+  console.log("PASS digest-bound Browser QA: root comparison, 53 Model Cards, compatibility routes, ten changed records at desktop and mobile, all 133 record discovery routes and zero console errors");
 }
 
 function validatePageDiscovery(html, expected) {
@@ -1707,7 +1821,7 @@ async function validateFirstScreenContract() {
   assert(catalog.includes('aria-current="page" href="index.html">Model Cards</a>'), "Model Cards must mark its navigation item current");
   assert(comparison.includes('aria-current="page" href="../index.html">Compare claims</a>'), "Comparison compatibility route must mark root Compare claims current");
   assert(landing.includes("1. Find coding agents") && comparison.includes("1. Find coding agents"), "Both comparison entry routes must expose the compact finder state");
-  const snapshotAssetVersion = "v=2026-08-21-sealed-snapshot";
+  const snapshotAssetVersion = "v=2026-08-24-sealed-snapshot";
   for (const [label, html, assets] of [
     ["landing", landing, ["data.js"]],
     ["catalog", catalog, ["data.js"]],
@@ -1724,7 +1838,7 @@ async function validateFirstScreenContract() {
   }
   assert(catalog.includes(`styles.css?${visitorStyleVersion}`), "Model Cards must load the shared collectible-card and history-collapse stylesheet");
   assert(catalog.includes(`comparison-core.js?${visitorAssetVersion}`), "Catalog must cache-bust the shared snapshot and comparison logic");
-  assert(catalog.includes("app.js?v=2026-08-21-model-cards-1"), "Model Cards must cache-bust its card and filter application");
+  assert(catalog.includes("app.js?v=2026-08-24-model-cards-1"), "Model Cards must cache-bust its card and filter application");
   assert(landing.includes("compare.js?v=2026-08-22-comparison-fidelity-1"), "Root must load the comparison application directly");
   assert(comparison.includes("compare.js?v=2026-08-22-comparison-fidelity-1"), "Compatibility comparison route must load the same comparison application");
   assert(sourceStyles.includes(".text-button[hidden] { display: none; }"), "Hidden comparison actions must remain visually absent until applicable");
