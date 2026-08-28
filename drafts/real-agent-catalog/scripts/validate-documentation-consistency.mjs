@@ -11,6 +11,7 @@ const snapshotSeal = await readJson("drafts/research-preview-release/currentness
 const freshnessCensus = await readJson("drafts/research-preview-release/currentness-2026-08-24/publication-freshness-census.json");
 
 const documents = {
+  agents: await read("AGENTS.md"),
   root: await read("README.md"),
   method: await read("RESEARCH_PREVIEW.md"),
   readiness: await read("PUBLICATION_READINESS.md"),
@@ -50,7 +51,7 @@ for (const phrase of [
   "research-preview/compare.html",
   "accepted category strings are exactly equal"
 ]) assert(documents.root.includes(phrase), `Root README is missing ${phrase}`);
-for (const phrase of ["prepared 2026-08-24 official-source refresh candidate", "53 records current within the candidate snapshot", "80 non-current records", "77 superseded identities", "133 records total", "publication freshness census"]) {
+for (const phrase of ["published 2026-08-24 official-source snapshot", "53 records current within the published snapshot", "80 non-current records", "77 superseded identities", "133 records total", "publication freshness census"]) {
   assert(documents.root.includes(phrase), `Root README is missing sealed-snapshot truth: ${phrase}`);
 }
 
@@ -65,10 +66,19 @@ for (const phrase of [
   "rawRecord.claim.category",
   "Record unavailable"
 ]) assert(documents.method.includes(phrase), `Research-preview method is missing ${phrase}`);
-for (const phrase of ["sealed source-review snapshot", "publication-time currency", "77 superseded records", "publication freshness census"]) {
+for (const phrase of ["published snapshot", "publication-time currency", "77 superseded records", "publication freshness census"]) {
   assert(documents.method.includes(phrase), `Research-preview method is missing sealed-snapshot truth: ${phrase}`);
 }
 assert(documents.readiness.includes("Ten exact-identity successors"), "Publication readiness must report all ten 2026-08-24 exact-identity successors");
+for (const phrase of [
+  "source-attributed market evidence reference",
+  "not a benchmark, ranking, recommendation, certification",
+  "repository owner",
+  "authorized publication lane",
+  "separate authority levels",
+  "Preserve all pre-existing tracked and untracked changes",
+  "A green gate is evidence, not permission"
+]) assert(documents.agents.includes(phrase), `AGENTS.md is missing public repository governance: ${phrase}`);
 
 for (const phrase of ["55-surface currentness receipt", "Every accepted surface was rechecked", "Twelve newer exact identities"]) {
   assert(documents.currentnessReceipt.includes(phrase), `Currentness receipt is missing ${phrase}`);

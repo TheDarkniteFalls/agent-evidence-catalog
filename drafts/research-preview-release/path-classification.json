@@ -7,7 +7,7 @@
     "accepted-evidence-provenance": 1167,
     "canonical-source": 123,
     "generated-publication-output": 333,
-    "release-control-artifact": 44,
+    "release-control-artifact": 45,
     "retained-experiment": 87
   },
   "entries": [
@@ -31,6 +31,12 @@
     },
     {
       "path": ".gitleaksignore",
+      "classification": "release-control-artifact",
+      "publicationBoundary": "git-research-or-source-only",
+      "rationale": "Repository governance, release metadata, license or publication control."
+    },
+    {
+      "path": "AGENTS.md",
       "classification": "release-control-artifact",
       "publicationBoundary": "git-research-or-source-only",
       "rationale": "Repository governance, release metadata, license or publication control."

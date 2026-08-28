@@ -6,13 +6,12 @@ https://thedarknitefalls.github.io/agent-evidence-catalog/ and based on the
 OpenCode release-feed follow-up, the prepared 2026-08-13 official-source
 currentness candidate, the 2026-08-15 same-surface correction, the 2026-08-17
 refresh, the 2026-08-18 refresh, the published 2026-08-20 and 2026-08-21
-refreshes, and the prepared 2026-08-24 refresh candidate. The live published
-catalog remains sealed to the exact 2026-08-21 source-review window; the
-prepared candidate is sealed to the exact 2026-08-24 source-review window and
-link-audit completion recorded in its receipts. A separate publication-time freshness
-census can add notices but cannot promote identities into the snapshot. The
-published snapshot remains distinct from any later prepared or committed
-candidate, which does not update the live site by itself.
+refreshes, and the published 2026-08-24 refresh. The live catalog is sealed to
+the exact 2026-08-24 source-review window and link-audit completion recorded in
+its receipts. A separate publication-time freshness census can add notices but
+cannot promote identities into the snapshot. This published snapshot remains
+distinct from any later prepared or committed candidate, which does not update
+the live site by itself.
 
 This research preview is a static, maintainer-curated view of attributed
 publisher claims about 55 coding-agent surface keys. It asks a deliberately
@@ -105,10 +104,9 @@ committed record files at runtime and does not modify that projection.
 ## Release boundary
 
 The public Research Preview v0.1 uses the accepted release boundaries. The
-2026-08-21 projection is the published snapshot. The prepared 2026-08-24
-candidate keeps those boundaries, while its own Pages deployment and
-live Browser receipt are required to establish that the public URL serves that
-exact candidate:
+2026-08-24 projection is the published snapshot. Successful Pages deployment,
+live-byte checks and live Browser verification established that the public URL
+serves its exact committed `dist/` tree:
 
 - 53 current records are present across the 55-surface catalog, including
   Codex CLI 0.149.1 as the reciprocal same-surface successor to preserved
@@ -123,7 +121,8 @@ exact candidate:
 - the four 2026-08-18 candidate dossiers remain source-only research outside
   catalog, mapping, lifecycle and presentation admission;
 - deterministic, preservation, source-link, browser and publication-safety
-  checks must pass for the exact candidate before publication; and
+  checks passed for this published snapshot and remain required for each later
+  exact candidate before publication; and
 - GitHub Pages serves only the committed `dist/` projection through a pinned,
   least-privilege workflow. It does not rebuild evidence or run agents.
 

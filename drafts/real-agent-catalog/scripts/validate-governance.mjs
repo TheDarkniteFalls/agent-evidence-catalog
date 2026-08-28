@@ -4,6 +4,7 @@ import path from "node:path";
 import { draftRoot, packageRoot } from "./real-catalog-lib.mjs";
 
 const read = (relative) => readFile(path.join(packageRoot, relative), "utf8");
+const agents = await read("AGENTS.md");
 const governance = await read("GOVERNANCE.md");
 const security = await read("SECURITY.md");
 const corrections = await read("CORRECTIONS.md");
@@ -13,8 +14,21 @@ const readiness = await read("PUBLICATION_READINESS.md");
 const roadmap = await read("ROADMAP.md");
 const dryRun = JSON.parse(await readFile(path.join(draftRoot, "research-preview", "governance-dry-run.json"), "utf8"));
 
-for (const [name, content] of Object.entries({ governance, security, corrections, contributing, method, readiness })) {
+for (const [name, content] of Object.entries({ agents, governance, security, corrections, contributing, method, readiness })) {
   assert(content.endsWith("\n"), `${name} must end with a newline`);
+}
+
+for (const phrase of [
+  "source-attributed market evidence reference",
+  "not a benchmark, ranking, recommendation, certification",
+  "repository owner",
+  "authorized publication lane",
+  "separate authority levels",
+  "Preserve all pre-existing tracked and untracked changes",
+  "A green gate is evidence, not permission"
+]) assert(agents.includes(phrase), `Repository operating contract is missing ${phrase}`);
+for (const prohibited of ["Mike", "Codex Home", "Project Lead", "sibling Project", "source_thread_id"]) {
+  assert(!agents.includes(prohibited), `Repository operating contract exposes internal routing language: ${prohibited}`);
 }
 
 for (const phrase of [
@@ -39,9 +53,10 @@ assert(corrections.includes("not for the\nstatic closed-intake preview"));
 assert(method.includes("zero independent tests"));
 assert(method.includes("public Research Preview v0.1"));
 assert(method.includes("https://thedarknitefalls.github.io/agent-evidence-catalog/"));
-assert(readiness.includes("Release status: **THE SEALED 55-SURFACE, 123-RECORD 2026-08-21 SNAPSHOT REMAINS PUBLISHED; THE PREPARED 55-SURFACE, 133-RECORD 2026-08-24 REFRESH CANDIDATE MAY BE PUBLISHED ONLY AFTER FRESH INDEPENDENT ACCEPTANCE AND ALL RELEASE GATES PASS**"));
+assert(readiness.includes("Release status: **THE SEALED 55-SURFACE, 133-RECORD 2026-08-24 SNAPSHOT IS PUBLISHED**"));
 assert(readiness.includes("Codex CLI 0.149.1 current record | PASS"));
-assert(readiness.includes("GitHub publication state | NOT AUTHORIZED BY THIS CANDIDATE"));
+assert(readiness.includes("GitHub publication state | PUBLISHED FOR THE 2026-08-24 SNAPSHOT"));
+assert(readiness.includes("2668c0cd698127bc4a4468d4dc090a27f3676b2c"));
 assert(readiness.includes("Any later publication requires separate authority, fresh independent acceptance and all applicable commit, public-lane and remote checks."));
 assert(readiness.includes("does not change the live site by itself."));
 assert(roadmap.includes("Private reporting route"));
