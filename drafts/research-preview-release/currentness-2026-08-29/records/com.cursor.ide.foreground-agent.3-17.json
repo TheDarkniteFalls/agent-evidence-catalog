@@ -1,0 +1,2151 @@
+{
+  "schemaVersion": "real-agent-dossier/0.1-draft",
+  "artifactType": "unpublished-real-agent-dossier",
+  "synthetic": false,
+  "unpublished": true,
+  "asOf": "2026-08-21",
+  "sourceDossier": {
+    "path": "drafts/research-preview-release/currentness-2026-08-21/currentness-source.json",
+    "sha256": "1b40e6c9def8a8bb305d3bab6cf2ddb3730852ff656c486fa5a340e9a2c71162",
+    "relationship": "currentness-successor-derived-from-preserved-predecessor-and-reviewed-official-sources"
+  },
+  "identity": {
+    "recordId": "com.cursor.ide.foreground-agent.3-17",
+    "agent": {
+      "id": "com.cursor.ide.foreground-agent",
+      "name": "Cursor IDE foreground Agent"
+    },
+    "publisher": {
+      "id": "anysphere",
+      "name": "Anysphere, Inc."
+    },
+    "surface": {
+      "kind": "desktop-app",
+      "name": "Cursor IDE foreground Agent",
+      "slug": "cursor-ide-foreground-agent-3-17",
+      "deliveryModel": "hybrid"
+    },
+    "release": {
+      "scope": "exact-version",
+      "version": "3.17",
+      "releaseTag": null,
+      "sourceRevision": null,
+      "releasedAt": null,
+      "channel": "Cursor stable desktop download archive",
+      "installedRuntimeVariant": {
+        "status": "unresolved",
+        "value": null,
+        "alternatives": [
+          "macOS ARM64 DMG",
+          "macOS x64 DMG",
+          "macOS Universal DMG",
+          "Windows x64 system installer",
+          "Windows x64 user installer",
+          "Windows ARM64 system installer",
+          "Windows ARM64 user installer",
+          "Linux DEB ARM64",
+          "Linux DEB x64",
+          "Linux RPM ARM64",
+          "Linux RPM x64",
+          "Linux AppImage ARM64",
+          "Linux AppImage x64"
+        ],
+        "note": "The official source identifies 3.17, but no package, client, extension, binary or hosted runtime was downloaded, hashed, installed or run during the 2026-08-21 currentness review."
+      },
+      "additionalIdentities": []
+    },
+    "artifacts": [
+      {
+        "id": "download-listing-3-17",
+        "kind": "hosted-release",
+        "identityStatus": "exact",
+        "uri": "https://cursor.com/download",
+        "ecosystem": "Cursor desktop download archive",
+        "version": "3.17",
+        "digest": null,
+        "note": "The mutable publisher download archive names exact client version 3.17 but supplies no catalog-captured digest or source revision. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-17. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      },
+      {
+        "id": "macos-arm64-endpoint-3-17",
+        "kind": "other",
+        "identityStatus": "exact",
+        "uri": "https://api2.cursor.sh/updates/download/golden/darwin-arm64/cursor/3.17",
+        "ecosystem": "Cursor versioned macOS ARM64 download endpoint",
+        "version": "3.17",
+        "digest": null,
+        "note": "The official endpoint redirected to a production DMG path containing opaque token a758f2241ca99fecf380180b6cbdbbce0f1f42cf. Anysphere did not identify that token as a source revision, and the package was not downloaded or hashed. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-17. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      },
+      {
+        "id": "installed-desktop-runtime-3-17",
+        "kind": "other",
+        "identityStatus": "unresolved",
+        "uri": null,
+        "ecosystem": "macOS, Windows or Linux desktop package",
+        "version": "3.17",
+        "digest": null,
+        "note": "No installed or invoked artifact exists in this public-source dossier. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-09. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-17. Currentness successor reference only; no artifact digest was independently recomputed on 2026-08-21."
+      }
+    ]
+  },
+  "roles": {
+    "claimants": [
+      {
+        "id": "anysphere",
+        "name": "Anysphere, Inc.",
+        "kind": "publisher"
+      }
+    ],
+    "sourceCapturers": [
+      {
+        "id": "catalog-source-capturer",
+        "name": "Agent Evidence Catalog maintainer",
+        "kind": "catalog-maintainer"
+      }
+    ],
+    "independentEvaluators": []
+  },
+  "sources": [
+    {
+      "id": "source-release-identity-3-17",
+      "uri": "https://cursor.com/download",
+      "title": "Cursor desktop download archive",
+      "locator": "Desktop download archive: 3.17 Latest",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "anysphere",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-platform-downloads-3-17",
+      "uri": "https://cursor.com/download",
+      "title": "Cursor desktop download archive",
+      "locator": "Desktop download archive: 3.17 Latest",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "anysphere",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-agents-window-targets-3-0",
+      "uri": "https://cursor.com/changelog/3-0",
+      "title": "New Cursor Interface",
+      "locator": "3.0 changelog, Agents Window and Agent Tabs in the Editor",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "anysphere",
+      "publishedAt": "2026-04-02T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-agent-modes-current",
+      "uri": "https://docs.cursor.com/agent",
+      "title": "Cursor Agent modes",
+      "locator": "Modes table and Agent, Ask, Manual and Custom sections",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anysphere",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-tool-inventory-current",
+      "uri": "https://docs.cursor.com/en/agent/tools",
+      "title": "Cursor Agent tools",
+      "locator": "Search, Edit, Run, MCP and Advanced options sections",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anysphere",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-native-terminal-current",
+      "uri": "https://docs.cursor.com/en/agent/terminal",
+      "title": "Cursor Agent terminal",
+      "locator": "Run terminal commands automatically and terminal profile guidance",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anysphere",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-mcp-approval-current",
+      "uri": "https://docs.cursor.com/context/model-context-protocol",
+      "title": "Cursor Model Context Protocol documentation",
+      "locator": "Using MCP in chat, Toggling tools, Tool approval and Auto-run",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anysphere",
+      "publishedAt": null,
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-auto-review-3-6",
+      "uri": "https://cursor.com/changelog/auto-review",
+      "title": "Auto-review Run Mode",
+      "locator": "3.6 changelog, Auto-review execution path and settings",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "anysphere",
+      "publishedAt": "2026-05-29T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-auto-review-current",
+      "uri": "https://cursor.com/blog/agent-autonomy-auto-review",
+      "title": "Governing agent autonomy with Auto-review",
+      "locator": "Building the classifier and Refining agent autonomy",
+      "sourceKind": "publisher-rolling-documentation",
+      "claimantId": "anysphere",
+      "publishedAt": "2026-06-11T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-cursor-router-current",
+      "uri": "https://cursor.com/changelog/router",
+      "title": "Cursor Router",
+      "locator": "Auto mode, Optimization modes and Admin controls",
+      "sourceKind": "publisher-release-metadata",
+      "claimantId": "anysphere",
+      "publishedAt": "2026-07-22T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "immutable-reference",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-backend-request-path-current",
+      "uri": "https://cursor.com/data-use",
+      "title": "Cursor Data Use and Privacy Overview",
+      "locator": "Other notes: bring-your-own-key requests traverse Cursor backend; AI request handling",
+      "sourceKind": "publisher-policy",
+      "claimantId": "anysphere",
+      "publishedAt": "2026-07-15T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    },
+    {
+      "id": "source-privacy-mode-current",
+      "uri": "https://cursor.com/data-use",
+      "title": "Cursor Data Use and Privacy Overview",
+      "locator": "Privacy Mode enabled and disabled alternatives; last updated 15 July 2026",
+      "sourceKind": "publisher-policy",
+      "claimantId": "anysphere",
+      "publishedAt": "2026-07-15T00:00:00Z",
+      "capture": {
+        "capturerId": "catalog-source-capturer",
+        "capturedAt": "2026-08-21T06:36:13.889Z",
+        "snapshotStatus": "live-page",
+        "contentDigest": null,
+        "note": "Official publisher source reviewed for the 2026-08-21 currentness successor; no product was installed, run or independently evaluated."
+      }
+    }
+  ],
+  "configurationModel": {
+    "effectiveConfigurationStatus": "unresolved",
+    "note": "No Cursor package, account or session was inspected. Exact client identity, rolling backend state and mutually scoped configuration alternatives remain separate.",
+    "axes": [
+      {
+        "id": "installed-platform",
+        "label": "Installed desktop platform",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "macos",
+            "label": "macOS package",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.platform-downloads-3-17"
+            ],
+            "mutuallyExclusiveWith": [
+              "windows",
+              "linux"
+            ]
+          },
+          {
+            "id": "windows",
+            "label": "Windows package",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.platform-downloads-3-17"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos",
+              "linux"
+            ]
+          },
+          {
+            "id": "linux",
+            "label": "Linux package",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.platform-downloads-3-17"
+            ],
+            "mutuallyExclusiveWith": [
+              "macos",
+              "windows"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The installed platform, architecture, package type and digest are unresolved."
+        ]
+      },
+      {
+        "id": "foreground-target",
+        "label": "Foreground execution target",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "local-workspace",
+            "label": "Local workspace",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.agents-window-targets-3-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "local-worktree",
+              "remote-ssh"
+            ]
+          },
+          {
+            "id": "local-worktree",
+            "label": "Local isolated worktree",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.agents-window-targets-3-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "local-workspace",
+              "remote-ssh"
+            ]
+          },
+          {
+            "id": "remote-ssh",
+            "label": "Remote SSH workspace",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.agents-window-targets-3-0"
+            ],
+            "mutuallyExclusiveWith": [
+              "local-workspace",
+              "local-worktree"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The selected foreground target and its filesystem, Git and network boundaries are unknown. Cloud is a separate catalog surface and is not an alternative inside this record."
+        ]
+      },
+      {
+        "id": "interaction-mode",
+        "label": "IDE interaction mode",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "agent",
+            "label": "Agent",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.agent-modes-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "ask",
+              "manual",
+              "custom"
+            ]
+          },
+          {
+            "id": "ask",
+            "label": "Ask",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.agent-modes-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "agent",
+              "manual",
+              "custom"
+            ]
+          },
+          {
+            "id": "manual",
+            "label": "Manual",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.agent-modes-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "agent",
+              "ask",
+              "custom"
+            ]
+          },
+          {
+            "id": "custom",
+            "label": "Custom",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.agent-modes-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "agent",
+              "ask",
+              "manual"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The selected mode and any custom tool configuration are unknown."
+        ]
+      },
+      {
+        "id": "enabled-tools",
+        "label": "Enabled Agent tools",
+        "scope": "composable",
+        "alternatives": [
+          {
+            "id": "search-read",
+            "label": "Search and read tools",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.tool-inventory-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "edit-delete",
+            "label": "Edit and delete tools",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.tool-inventory-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "terminal",
+            "label": "Native terminal",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.tool-inventory-current",
+              "com.cursor.ide.foreground-agent.native-terminal-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "web-fetch",
+            "label": "Web and Fetch",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.tool-inventory-current",
+              "com.cursor.ide.foreground-agent.auto-review-3-6"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "mcp",
+            "label": "Configured MCP tools",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.tool-inventory-current",
+              "com.cursor.ide.foreground-agent.mcp-approval-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The effective tool inventory, plugins, extensions, MCP servers, credentials and destinations are unknown."
+        ]
+      },
+      {
+        "id": "mcp-state",
+        "label": "MCP availability and approval",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "mcp-disabled",
+            "label": "MCP disabled",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.mcp-approval-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "mcp-manual",
+              "mcp-auto"
+            ]
+          },
+          {
+            "id": "mcp-manual",
+            "label": "MCP enabled with approval",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.mcp-approval-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "mcp-disabled",
+              "mcp-auto"
+            ]
+          },
+          {
+            "id": "mcp-auto",
+            "label": "MCP enabled with Auto-run or Auto-review",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.mcp-approval-current",
+              "com.cursor.ide.foreground-agent.auto-review-3-6"
+            ],
+            "mutuallyExclusiveWith": [
+              "mcp-disabled",
+              "mcp-manual"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The MCP configuration and per-call authority are unknown."
+        ]
+      },
+      {
+        "id": "run-mode",
+        "label": "Tool execution review mode",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "manual-review",
+            "label": "Manual approval path",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.mcp-approval-current",
+              "com.cursor.ide.foreground-agent.auto-review-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "auto-review"
+            ]
+          },
+          {
+            "id": "auto-review",
+            "label": "Auto-review",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.auto-review-3-6",
+              "com.cursor.ide.foreground-agent.auto-review-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "manual-review"
+            ]
+          }
+        ],
+        "unknowns": [
+          "New-user, existing-user and organization settings can differ; the effective run mode is unknown."
+        ]
+      },
+      {
+        "id": "auto-review-path",
+        "label": "Auto-review decision path",
+        "scope": "composable",
+        "alternatives": [
+          {
+            "id": "allowlisted",
+            "label": "Allowlisted immediate execution",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.auto-review-3-6"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "sandboxed",
+            "label": "Sandboxed execution",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.auto-review-3-6"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "classifier-reviewed",
+            "label": "Classifier-reviewed action",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.auto-review-3-6",
+              "com.cursor.ide.foreground-agent.auto-review-current"
+            ],
+            "mutuallyExclusiveWith": []
+          },
+          {
+            "id": "user-prompted",
+            "label": "User approval requested",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.auto-review-3-6",
+              "com.cursor.ide.foreground-agent.auto-review-current"
+            ],
+            "mutuallyExclusiveWith": []
+          }
+        ],
+        "unknowns": [
+          "The branch taken, classifier revision and final result for any action are unknown."
+        ]
+      },
+      {
+        "id": "model-selection",
+        "label": "Model and routing selection",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "explicit-model",
+            "label": "Explicit model",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.cursor-router-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "auto-cost",
+              "auto-balance",
+              "auto-intelligence"
+            ]
+          },
+          {
+            "id": "auto-cost",
+            "label": "Cursor Router Cost",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.cursor-router-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "explicit-model",
+              "auto-balance",
+              "auto-intelligence"
+            ]
+          },
+          {
+            "id": "auto-balance",
+            "label": "Cursor Router Balance",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.cursor-router-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "explicit-model",
+              "auto-cost",
+              "auto-intelligence"
+            ]
+          },
+          {
+            "id": "auto-intelligence",
+            "label": "Cursor Router Intelligence",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.cursor-router-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "explicit-model",
+              "auto-cost",
+              "auto-balance"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The model, provider, checkpoint, endpoint revision, reasoning setting, router policy and administrator restrictions are unknown."
+        ]
+      },
+      {
+        "id": "privacy-mode",
+        "label": "Privacy and training mode",
+        "scope": "mutually-exclusive",
+        "alternatives": [
+          {
+            "id": "privacy-enabled",
+            "label": "Privacy Mode enabled",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.privacy-mode-current",
+              "com.cursor.ide.foreground-agent.backend-request-path-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "privacy-disabled"
+            ]
+          },
+          {
+            "id": "privacy-disabled",
+            "label": "Privacy Mode disabled",
+            "claimIds": [
+              "com.cursor.ide.foreground-agent.privacy-mode-current",
+              "com.cursor.ide.foreground-agent.backend-request-path-current"
+            ],
+            "mutuallyExclusiveWith": [
+              "privacy-enabled"
+            ]
+          }
+        ],
+        "unknowns": [
+          "The effective user or team Privacy Mode, provider ZDR status, abuse-classifier exception and training/retention outcome are unknown."
+        ]
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "com.cursor.ide.foreground-agent.release-identity-3-17",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/release-identity-3-17.json",
+      "rawRecordSha256": "d4920a5ddb73bbcf0ff4142bcef19a0ba671790848e45f199c5d8f0a9f7f7ea7",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.release-identity-3-17",
+        "slug": "release-identity-3-17",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "identity",
+          "statement": "Cursor's official download archive identifies Cursor 3.17 as Latest; no platform package was downloaded, installed or independently verified."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://cursor.com/download",
+          "title": "Cursor desktop download archive",
+          "locator": "Desktop download archive: 3.17 Latest",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "3.17"
+          },
+          "configuration": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Cursor desktop"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "desktop client release listing"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-21",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "download-listing-change",
+            "publisher-correction",
+            "version-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The download page is mutable and did not expose an exact release date or source revision for 3.17.",
+          "The listing identifies a client version; it does not version the hosted model, Router policy, backend services or server-side feature flags."
+        ],
+        "unknowns": [
+          "The exact release time and source revision for client 3.17 are unknown.",
+          "Whether a particular installation used 3.17 or received server-side feature variants is unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-release-identity-3-17",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.platform-downloads-3-17",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/platform-downloads-3-17.json",
+      "rawRecordSha256": "a7464dd60d63a115e561b1cff0bcd8226e536a55d875bfc5fed68fe4f38b8902",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.platform-downloads-3-17",
+        "slug": "platform-downloads-3-17",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "identity.artifact",
+          "statement": "The official 3.17 download listing exposes versioned Cursor desktop endpoints for macOS ARM64, x64 and Universal; Windows x64 and ARM64 system and user installers; and Linux DEB, RPM and AppImage packages for ARM64 and x64."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://cursor.com/download",
+          "title": "Cursor desktop download archive",
+          "locator": "Desktop download archive: 3.17 Latest",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "exact-version",
+            "value": "3.17"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "macOS ARM64",
+              "macOS x64",
+              "macOS Universal",
+              "Windows x64 system",
+              "Windows x64 user",
+              "Windows ARM64 system",
+              "Windows ARM64 user",
+              "Linux DEB ARM64",
+              "Linux DEB x64",
+              "Linux RPM ARM64",
+              "Linux RPM x64",
+              "Linux AppImage ARM64",
+              "Linux AppImage x64"
+            ]
+          },
+          "platform": {
+            "scope": "alternatives",
+            "values": [
+              "macOS",
+              "Windows",
+              "Linux"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "publisher desktop download endpoints"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-08-21",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "download-endpoint-change",
+            "artifact-withdrawal",
+            "publisher-correction",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "No package was downloaded, installed or hashed, so the endpoint labels are not independently verified artifact digests.",
+          "The platform packages are alternatives and must not be collapsed into one installed runtime."
+        ],
+        "unknowns": [
+          "The installed operating system, architecture, installer type and package digest are unknown.",
+          "The reproducible relationship among platform packages, the opaque production build token and any source revision is unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-platform-downloads-3-17",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "identity",
+        "publisher-claims",
+        "evaluation"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.agents-window-targets-3-0",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/agents-window-targets-3-0.json",
+      "rawRecordSha256": "956ec67287c8567d3c2392eb0026034661899d4607547a5e0427f87d7233ab4c",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.agents-window-targets-3-0",
+        "slug": "agents-window-targets-3-0",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "surface.delivery",
+          "statement": "Cursor's 3.0 release announcement introduced an Agents Window that can run agents locally, in worktrees, in the cloud and on remote SSH, while allowing users to switch back to the IDE or use both interfaces."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://cursor.com/changelog/3-0",
+          "title": "New Cursor Interface",
+          "locator": "3.0 changelog, Agents Window and Agent Tabs in the Editor",
+          "publishedAt": "2026-04-02T00:00:00Z",
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "3.0"
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "local workspace",
+              "worktree",
+              "cloud",
+              "remote SSH",
+              "Agents Window",
+              "IDE Agent tab"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Cursor desktop"
+            ]
+          },
+          "model": {
+            "scope": "unspecified",
+            "values": []
+          },
+          "deployment": {
+            "scope": "alternatives",
+            "values": [
+              "local",
+              "worktree",
+              "hosted cloud",
+              "remote SSH"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-04-02",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "publisher-correction",
+            "surface-redesign",
+            "version-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is a Cursor 3.0 milestone and is not proof that every target or UI path is unchanged in 3.17.",
+          "Cloud execution is a separate hosted-agent surface and is not included as observed foreground-Agent behavior in this record."
+        ],
+        "unknowns": [
+          "The execution target and interface selected for any 3.17 session are unknown.",
+          "The filesystem, Git and network boundaries of local, worktree and remote-SSH targets were not tested."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-agents-window-targets-3-0",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.agent-modes-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/agent-modes-current.json",
+      "rawRecordSha256": "f4c6f1ace0bb7e7c0b66e0a24340419510a2ee2f05f8189c81372584ced18d57",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.agent-modes-current",
+        "slug": "agent-modes-current",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "configuration.mode",
+          "statement": "Cursor's rolling modes documentation distinguishes Agent for autonomous exploration, multi-file edits and commands; Ask for read-only exploration; Manual for selected-file editing; and configurable Custom modes."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://docs.cursor.com/agent",
+          "title": "Cursor Agent modes",
+          "locator": "Modes table and Agent, Ask, Manual and Custom sections",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "Agent",
+              "Ask",
+              "Manual",
+              "Custom"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Cursor desktop"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "foreground IDE interaction"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "documentation-change",
+            "mode-redesign",
+            "server-side-feature-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The page is rolling documentation and is not tied to the exact 3.17 binary or one account's feature flags.",
+          "The modes are mutually scoped alternatives; capabilities from Agent must not be attributed to Ask or Manual."
+        ],
+        "unknowns": [
+          "The selected mode and effective custom-mode tool configuration are unknown.",
+          "Whether the documented mode set was identical for every 3.17 account and platform is unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-agent-modes-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.tool-inventory-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/tool-inventory-current.json",
+      "rawRecordSha256": "9c9750349d6f0a217c54ec8e391189fc9d65552407ec837845e65bea4bc427e5",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.tool-inventory-current",
+        "slug": "tool-inventory-current",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "authority.tools",
+          "statement": "Cursor's rolling Agent tools documentation lists codebase and web search, file reading and directory listing, edit and delete operations, terminal execution and configured MCP tools, with tool selection varying by mode and settings."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://docs.cursor.com/en/agent/tools",
+          "title": "Cursor Agent tools",
+          "locator": "Search, Edit, Run, MCP and Advanced options sections",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "composable",
+            "values": [
+              "codebase search",
+              "web search",
+              "read file",
+              "list directory",
+              "edit",
+              "delete file",
+              "terminal",
+              "MCP",
+              "auto-apply edits",
+              "auto-run",
+              "guardrails",
+              "auto-fix errors"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Cursor desktop"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "foreground Agent tools"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "documentation-change",
+            "tool-change",
+            "configuration-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The documentation names available tool categories; it does not establish which tools were enabled for a particular 3.17 session.",
+          "Listing a tool does not demonstrate enforcement of approvals, workspace limits, network limits or rollback."
+        ],
+        "unknowns": [
+          "The exact tool inventory, extensions, plugins, MCP servers and credentials visible to any session are unknown.",
+          "Tool-call limits, indirect side effects and destination coverage were not tested."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-tool-inventory-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.native-terminal-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/native-terminal-current.json",
+      "rawRecordSha256": "c1f065ec867e916cb2360fbb1149041811e1fa52544990a79d1dc6d7352f289c",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.native-terminal-current",
+        "slug": "native-terminal-current",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "authority.command-execution",
+          "statement": "Cursor's rolling terminal documentation says foreground Agent executes commands in Cursor's native terminal, preserves terminal history and uses the configured terminal profile."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://docs.cursor.com/en/agent/terminal",
+          "title": "Cursor Agent terminal",
+          "locator": "Run terminal commands automatically and terminal profile guidance",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "named",
+            "values": [
+              "configured native terminal profile",
+              "preserved terminal history"
+            ]
+          },
+          "platform": {
+            "scope": "configuration-dependent",
+            "values": [
+              "macOS",
+              "Windows",
+              "Linux"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local foreground Agent terminal"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "documentation-change",
+            "terminal-integration-change",
+            "platform-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The rolling page is not an exact 3.17 runtime receipt and does not identify the user's shell initialization or environment variables.",
+          "Native terminal execution does not by itself establish a sandbox, filesystem boundary, network boundary or approval outcome."
+        ],
+        "unknowns": [
+          "The selected shell, terminal profile, environment, working directory and inherited credentials are unknown.",
+          "The commands proposed, approved, denied or executed in any session are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-native-terminal-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.mcp-approval-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/mcp-approval-current.json",
+      "rawRecordSha256": "c7454f466141b208907417a6558ad5815f13f417af206a203d567df947209e91",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.mcp-approval-current",
+        "slug": "mcp-approval-current",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "authority.mcp",
+          "statement": "Cursor's rolling MCP documentation says configured MCP servers can expose external tools and data; tools may be disabled, Agent asks for approval before use by default, and Auto-run can allow MCP use without asking."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://docs.cursor.com/context/model-context-protocol",
+          "title": "Cursor Model Context Protocol documentation",
+          "locator": "Using MCP in chat, Toggling tools, Tool approval and Auto-run",
+          "publishedAt": null,
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "MCP disabled",
+              "MCP enabled with per-use approval",
+              "MCP enabled with Auto-run"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Cursor desktop"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": []
+          },
+          "deployment": {
+            "scope": "configuration-dependent",
+            "values": [
+              "local stdio MCP",
+              "local or remote SSE MCP",
+              "local or remote Streamable HTTP MCP"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": null,
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "documentation-change",
+            "approval-change",
+            "transport-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The documentation describes configuration alternatives; it does not establish any installed MCP server, tool, credential or approval decision.",
+          "Auto-run and manual approval must remain separate applicability scopes."
+        ],
+        "unknowns": [
+          "Configured MCP servers, exposed tools, arguments, credentials and data destinations are unknown.",
+          "Whether approval or Auto-run covered every MCP call and indirect side effect was not tested."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-mcp-approval-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.auto-review-3-6",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/auto-review-3-6.json",
+      "rawRecordSha256": "efc4a4f24357e9ea1ff25db2be219f23781a0afa5109cfd7f396f9f2b1b66e27",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.auto-review-3-6",
+        "slug": "auto-review-3-6",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "authority.approval",
+          "statement": "Cursor's 3.6 changelog introduced Auto-review for Shell, MCP and Fetch: allowlisted calls run immediately, sandboxable calls run in the sandbox, and other actions go to a classifier that may allow, redirect or request approval."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://cursor.com/changelog/auto-review",
+          "title": "Auto-review Run Mode",
+          "locator": "3.6 changelog, Auto-review execution path and settings",
+          "publishedAt": "2026-05-29T00:00:00Z",
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "release-line",
+            "value": "3.6"
+          },
+          "configuration": {
+            "scope": "composable",
+            "values": [
+              "Shell",
+              "MCP",
+              "Fetch",
+              "allowlist",
+              "sandbox",
+              "classifier review",
+              "user approval"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Cursor desktop"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": [
+              "classifier model unresolved"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "foreground Agent Auto-review"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-05-29",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "publisher-correction",
+            "approval-redesign",
+            "sandbox-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "This is a 3.6 introduction milestone, not proof of identical policy, classifier or sandbox behavior in client 3.17.",
+          "The publisher description is not an independent enforcement or escape test."
+        ],
+        "unknowns": [
+          "The complete allowlist matching rules, sandbox implementation and classifier policy for 3.17 are unknown.",
+          "The selected run mode and outcome for any tool call are unknown."
+        ],
+        "relationships": [
+          {
+            "type": "scope-differs",
+            "targetClaimId": "com.cursor.ide.foreground-agent.auto-review-current",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The 3.6 introduction milestone and later rolling publisher description discuss the same named feature under different time applicability; neither is projected into the other's scope."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-auto-review-3-6",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.auto-review-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/auto-review-current.json",
+      "rawRecordSha256": "294c75ffa9f5d9f0cf25d8fdd62a3f2a604f07d684eaad340d22799f87c24506",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.auto-review-current",
+        "slug": "auto-review-current",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "authority.approval",
+          "statement": "Anysphere's June 2026 Auto-review description says the feature is focused on local agents in the desktop app, is the default for new users and can be enabled by existing users; its classifier can inspect workspace context before deciding how a tool call proceeds."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://cursor.com/blog/agent-autonomy-auto-review",
+          "title": "Governing agent autonomy with Auto-review",
+          "locator": "Building the classifier and Refining agent autonomy",
+          "publishedAt": "2026-06-11T00:00:00Z",
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "new-user Auto-review default",
+              "existing-user Auto-review opt-in",
+              "other run mode"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "local agents in Cursor desktop"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": [
+              "classifier model unresolved"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "local foreground Agent"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-06-11",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "publisher-update",
+            "default-change",
+            "classifier-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The page is a publisher research description and does not bind the default to every 3.17 account, upgrade path or organization policy.",
+          "Reported internal classifier evaluation and aggregate interruption rates are not included as independent findings."
+        ],
+        "unknowns": [
+          "Whether a particular 3.17 user was new or existing and which run mode was effective are unknown.",
+          "The classifier model, policy revision, context, allowlist and decision for any action are unknown."
+        ],
+        "relationships": [
+          {
+            "type": "scope-differs",
+            "targetClaimId": "com.cursor.ide.foreground-agent.auto-review-3-6",
+            "extent": "partial",
+            "status": "resolved",
+            "resolution": "scope-difference",
+            "note": "The rolling June description adds current audience and default statements to the 3.6 introduction milestone; the catalog preserves their different time applicability."
+          }
+        ],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-auto-review-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.cursor-router-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/cursor-router-current.json",
+      "rawRecordSha256": "d40f4526db8e739fbd61bf84020260bd76a5fd2bb53eab87ee7556325507abf3",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.cursor-router-current",
+        "slug": "cursor-router-current",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "configuration.model",
+          "statement": "Anysphere's 22 July 2026 Cursor Router announcement says Auto analyzes each request and routes it to a model, offers Cost, Balance and Intelligence optimization modes, supports desktop, and allows administrator controls that can restrict modes and underlying models or hide the routed model."
+        },
+        "provenance": {
+          "kind": "publisher-release-metadata",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://cursor.com/changelog/router",
+          "title": "Cursor Router",
+          "locator": "Auto mode, Optimization modes and Admin controls",
+          "publishedAt": "2026-07-22T00:00:00Z",
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "explicit model selection",
+              "Auto Cost",
+              "Auto Balance",
+              "Auto Intelligence",
+              "administrator model allowlist",
+              "administrator model blocklist",
+              "routed model displayed",
+              "routed model hidden"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Cursor desktop"
+            ]
+          },
+          "model": {
+            "scope": "dynamic",
+            "values": [
+              "Cursor Router-selected underlying model"
+            ]
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cursor-hosted model-routing service"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-22",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "router-change",
+            "model-pool-change",
+            "admin-policy-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The routing announcement is a rolling service statement and is not versioned with the 3.17 desktop binary.",
+          "Auto is configuration-dependent and does not identify a stable model checkpoint, provider endpoint or per-request routing result."
+        ],
+        "unknowns": [
+          "The selected model, provider, checkpoint, endpoint revision, reasoning mode and optimization mode are unknown.",
+          "Whether the routed model was visible and which organization restrictions applied are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-cursor-router-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.backend-request-path-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/backend-request-path-current.json",
+      "rawRecordSha256": "9b7c5064d43a3d7dc535d021878e9d2e91e20969c4199ed47925897153968cca",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.backend-request-path-current",
+        "slug": "backend-request-path-current",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "data.destination",
+          "statement": "Anysphere's current security and data-use pages say the Cursor app contacts Cursor backend domains for AI and product services, and that even bring-your-own-key AI requests pass through Cursor's backend for final prompt construction."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://cursor.com/data-use",
+          "title": "Cursor Data Use and Privacy Overview",
+          "locator": "Other notes: bring-your-own-key requests traverse Cursor backend; AI request handling",
+          "publishedAt": "2026-07-15T00:00:00Z",
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "composable",
+            "values": [
+              "Cursor backend",
+              "Cursor-managed model access",
+              "bring-your-own-key model access",
+              "selected or auxiliary model provider"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Cursor app AI requests"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cursor-hosted backend request path"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-15",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "data-use-update",
+            "backend-change",
+            "provider-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "The page describes service-level request routing and does not enumerate the exact destination sequence for one Agent request.",
+          "A user-supplied provider key does not establish a direct client-to-provider path under the publisher statement."
+        ],
+        "unknowns": [
+          "The exact Cursor services, model providers, auxiliary models, regions and subprocessors used for a request are unknown.",
+          "Request payload construction, filtering, logging and retention for any particular session are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-backend-request-path-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    },
+    {
+      "id": "com.cursor.ide.foreground-agent.privacy-mode-current",
+      "rawRecordPath": "drafts/research-preview-release/currentness-2026-08-21/claims/com.cursor.ide.foreground-agent.3-17/privacy-mode-current.json",
+      "rawRecordSha256": "0218701673afc755ac7d58fb10db96b1217ef44d1cec92af4037c2634bcfd20d",
+      "rawRecord": {
+        "schemaVersion": "1.0",
+        "id": "com.cursor.ide.foreground-agent.privacy-mode-current",
+        "slug": "privacy-mode-current",
+        "subject": {
+          "id": "com.cursor.ide.foreground-agent",
+          "name": "Cursor IDE foreground Agent",
+          "publisher": "Anysphere, Inc.",
+          "surface": {
+            "kind": "desktop-app",
+            "name": "Cursor IDE foreground Agent",
+            "slug": "cursor-ide-foreground-agent-3-17"
+          }
+        },
+        "claim": {
+          "category": "data.retention",
+          "statement": "Anysphere's current data-use page says Privacy Mode prevents Cursor training on Customer Data and uses zero-data-retention provider agreements, subject to stated abuse-classifier exceptions; with Privacy Mode off, Cursor may store and use codebase data, prompts, editor actions and code snippets to improve and train AI features."
+        },
+        "provenance": {
+          "kind": "publisher-declared",
+          "claimant": "Anysphere, Inc."
+        },
+        "source": {
+          "uri": "https://cursor.com/data-use",
+          "title": "Cursor Data Use and Privacy Overview",
+          "locator": "Privacy Mode enabled and disabled alternatives; last updated 15 July 2026",
+          "publishedAt": "2026-07-15T00:00:00Z",
+          "capturedAt": "2026-08-21T06:36:13.889Z",
+          "snapshot": null
+        },
+        "applicability": {
+          "version": {
+            "kind": "rolling-current",
+            "value": null
+          },
+          "configuration": {
+            "scope": "alternatives",
+            "values": [
+              "Privacy Mode enabled",
+              "Privacy Mode disabled",
+              "non-ZDR model administrator opt-in",
+              "abuse-classifier retention exception"
+            ]
+          },
+          "platform": {
+            "scope": "named",
+            "values": [
+              "Cursor service account and AI requests"
+            ]
+          },
+          "model": {
+            "scope": "configuration-dependent",
+            "values": []
+          },
+          "deployment": {
+            "scope": "named",
+            "values": [
+              "Cursor-hosted service and model-provider request path"
+            ]
+          }
+        },
+        "lifecycle": {
+          "status": "active",
+          "changedAt": "2026-07-15",
+          "reason": null
+        },
+        "review": {
+          "reviewedAt": "2026-08-21",
+          "recheckAfter": "2026-09-20",
+          "invalidatedBy": [
+            "privacy-policy-change",
+            "data-use-change",
+            "provider-term-change",
+            "manual-review"
+          ]
+        },
+        "limitations": [
+          "Privacy Mode alternatives and stated exceptions must remain visible; the claim is not a guarantee of zero processing or zero transient handling.",
+          "The current policy is not proof of the effective setting, team enforcement or provider terms for a particular 3.17 session."
+        ],
+        "unknowns": [
+          "The effective Privacy Mode, team policy, model ZDR status and abuse-classifier outcome are unknown.",
+          "The data actually transmitted, stored, used for training or retained for any session are unknown."
+        ],
+        "relationships": [],
+        "validationRefs": []
+      },
+      "claimantId": "anysphere",
+      "sourceId": "source-privacy-mode-current",
+      "sourceCapturerId": "catalog-source-capturer",
+      "independentEvaluatorRefs": [],
+      "assertionType": "publisher-attributed-claim",
+      "publisherClaimBoundary": "attributed-not-observed",
+      "propositionIds": [
+        "publisher-claims"
+      ],
+      "personaIds": [
+        "record-reader"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "relationship-01",
+      "fromClaimId": "com.cursor.ide.foreground-agent.auto-review-3-6",
+      "toClaimId": "com.cursor.ide.foreground-agent.auto-review-current",
+      "kind": "scope-differs",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The 3.6 introduction milestone and later rolling publisher description discuss the same named feature under different time applicability; neither is projected into the other's scope."
+    },
+    {
+      "id": "relationship-02",
+      "fromClaimId": "com.cursor.ide.foreground-agent.auto-review-current",
+      "toClaimId": "com.cursor.ide.foreground-agent.auto-review-3-6",
+      "kind": "scope-differs",
+      "extent": "partial",
+      "status": "resolved",
+      "resolution": "scope-difference",
+      "note": "The rolling June description adds current audience and default statements to the 3.6 introduction milestone; the catalog preserves their different time applicability."
+    }
+  ],
+  "independentTests": [],
+  "dossier": {
+    "summary": "Cursor IDE foreground Agent 3.17 is the current exact publisher identity reviewed on 2026-08-21. The retained claims remain attributed to their named official sources, and installed artifact, model, effective configuration, authority and runtime behaviour remain unresolved unless a claim expressly narrows them.",
+    "releaseContext": {
+      "statement": "Cursor's official desktop download archive identifies 3.17 as Latest in the stable desktop channel reviewed on 2026-08-21.",
+      "sourceId": "source-release-identity-3-17",
+      "legacySource": null
+    },
+    "limitations": [
+      "All claims are attributed to public publisher sources; no behavior was observed.",
+      "No package was downloaded, installed, hashed or executed, and no account or effective configuration was inspected.",
+      "The exact 3.17 client does not pin Cursor's hosted backend, model provider, model checkpoint, Router policy or server-side feature flags.",
+      "Cursor 3.0 and 3.6 sources are dated milestones, not proof that their complete behavior is unchanged in 3.17.",
+      "Mutable documentation, security and data-use pages are rolling-current only.",
+      "Cloud Agents are a separate hosted surface and are not collapsed into this foreground IDE record.",
+      "The METR study failed exact client, mode, model and configuration applicability and is excluded from the generated record.",
+      "No independent behavior, enforcement, privacy, performance, quality or safety conclusion is supported.",
+      "The successor was created from reviewed official sources without installing or running the agent; release identity does not transfer unscoped behaviour claims.",
+      "No independent evidence, score, ranking, recommendation, safety certification or suitability conclusion was added."
+    ],
+    "unknowns": [
+      "The installed operating system, architecture, package type, package digest and executable identity are unknown.",
+      "The exact 3.17 release time, source revision and reproducible package-to-source relationship are unknown.",
+      "Whether rolling Agent documentation and server-side features matched a particular 3.17 installation is unknown.",
+      "The account, plan, organization policy, feature flags and backend service revision are unknown.",
+      "The selected foreground target, repository, workspace, worktree or remote-SSH boundary is unknown.",
+      "The selected Agent mode, custom instructions, rules, plugins, extensions and enabled tools are unknown.",
+      "The terminal profile, shell, inherited environment, credentials, commands and approval outcomes are unknown.",
+      "The run mode, allowlists, sandbox policy, classifier model, classifier policy and per-action decision path are unknown.",
+      "The configured MCP servers, tools, transports, credentials, arguments and destinations are unknown.",
+      "The selected model, provider, checkpoint, endpoint revision, Router mode and administrator restrictions are unknown.",
+      "The effective Privacy Mode, provider ZDR status, data transmitted, retention, training use and abuse-classifier exceptions are unknown.",
+      "Task completion, edit quality, rollback, command containment, data handling and safety were not independently tested."
+    ]
+  },
+  "mappings": {
+    "personas": [
+      {
+        "id": "record-reader",
+        "label": "Evidence record reader",
+        "prompt": "Confirm the current identity, attributed publisher claims and unresolved applicability gaps.",
+        "propositionIds": [
+          "identity",
+          "publisher-claims",
+          "evaluation"
+        ]
+      }
+    ],
+    "propositions": [
+      {
+        "id": "identity",
+        "eyebrow": "Current identity",
+        "question": "Which exact surface is represented?",
+        "status": "3.17 current at review",
+        "answer": "Cursor's official desktop download archive identifies 3.17 as Latest in the stable desktop channel reviewed on 2026-08-21.",
+        "whyItMatters": "A newer exact publisher identity does not identify a particular installed artifact or effective session.",
+        "claimIds": [
+          "com.cursor.ide.foreground-agent.release-identity-3-17",
+          "com.cursor.ide.foreground-agent.platform-downloads-3-17"
+        ]
+      },
+      {
+        "id": "publisher-claims",
+        "eyebrow": "Attributed evidence",
+        "question": "What does the current record retain?",
+        "status": "12 publisher-attributed claims",
+        "answer": "The record retains only claims linked to the named official sources and keeps their applicability, limitations and unknowns explicit.",
+        "whyItMatters": "Publisher documentation is not observed product behaviour or independent verification.",
+        "claimIds": [
+          "com.cursor.ide.foreground-agent.release-identity-3-17",
+          "com.cursor.ide.foreground-agent.platform-downloads-3-17",
+          "com.cursor.ide.foreground-agent.agents-window-targets-3-0",
+          "com.cursor.ide.foreground-agent.agent-modes-current",
+          "com.cursor.ide.foreground-agent.tool-inventory-current",
+          "com.cursor.ide.foreground-agent.native-terminal-current",
+          "com.cursor.ide.foreground-agent.mcp-approval-current",
+          "com.cursor.ide.foreground-agent.auto-review-3-6",
+          "com.cursor.ide.foreground-agent.auto-review-current",
+          "com.cursor.ide.foreground-agent.cursor-router-current",
+          "com.cursor.ide.foreground-agent.backend-request-path-current",
+          "com.cursor.ide.foreground-agent.privacy-mode-current"
+        ]
+      },
+      {
+        "id": "evaluation",
+        "eyebrow": "Independent evidence",
+        "question": "Was this exact successor independently tested here?",
+        "status": "No",
+        "answer": "No agent was installed or run and no independent evidence was admitted during this currentness refresh.",
+        "whyItMatters": "Current identity and source attribution do not establish suitability, quality or safety.",
+        "claimIds": [
+          "com.cursor.ide.foreground-agent.release-identity-3-17",
+          "com.cursor.ide.foreground-agent.platform-downloads-3-17"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "publisherContacted": false,
+    "intakeOpened": false,
+    "agentInstalled": false,
+    "agentRun": false,
+    "independentlyTested": false,
+    "catalogEvaluation": false,
+    "ranking": false,
+    "recommendation": false,
+    "safetyCertification": false,
+    "published": false,
+    "note": "Attributed official public-source currentness successor only. No product run, independent test, suitability calculation, ranking or recommendation is included."
+  },
+  "independentEvidenceAdmissions": []
+}

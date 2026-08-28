@@ -6,13 +6,13 @@ https://thedarknitefalls.github.io/agent-evidence-catalog/ and based on the
 OpenCode release-feed follow-up, the prepared 2026-08-13 official-source
 currentness candidate, the 2026-08-15 same-surface correction, the 2026-08-17
 refresh, the 2026-08-18 refresh, the published 2026-08-20 and 2026-08-21
-refreshes, and the prepared 2026-08-24 refresh candidate. The live published
-catalog remains sealed to the exact 2026-08-21 source-review window; the
-prepared candidate is sealed to the exact 2026-08-24 source-review window and
-link-audit completion recorded in its receipts. A separate publication-time freshness
-census can add notices but cannot promote identities into the snapshot. The
-published snapshot remains distinct from any later prepared or committed
-candidate, which does not update the live site by itself.
+refreshes, the published 2026-08-24 refresh and the sealed 2026-08-29
+candidate. The repository candidate is sealed to the exact 2026-08-29
+source-review window and link-audit completion recorded in its receipts. A
+separate publication freshness census can add notices but cannot promote
+identities into the snapshot. The live catalog remains on the accepted
+2026-08-24 snapshot until a separate independent review and publication; this
+candidate does not update the live site by itself.
 
 This research preview is a static, maintainer-curated view of attributed
 publisher claims about 55 coding-agent surface keys. It asks a deliberately
@@ -90,7 +90,7 @@ artifacts. The research preview adds a derived projection:
 3. a separate lifecycle view selects one current record per surface;
 4. a separate watcher view reuses reviewed publisher sources and unchanged
    content fingerprints; and
-5. `catalog.json` projects 53 snapshot-current records and 80 non-current
+5. `catalog.json` projects 53 snapshot-current records and 95 non-current
    records into a static browser experience; and
 6. a generated snapshot seal and one-shot publication freshness census carry
    the exact review window, seal time, check time, known-newer notices and
@@ -98,22 +98,21 @@ artifacts. The research preview adds a derived projection:
 
 The machine-readable source is
 `drafts/real-agent-catalog/research-preview/catalog.json`. The static build
-copies only that projection and its 133 presentable record files to
+copies only that projection and its 148 presentable record files to
 `dist/research-preview/`. The comparison projector loads only the selected
 committed record files at runtime and does not modify that projection.
 
 ## Release boundary
 
 The public Research Preview v0.1 uses the accepted release boundaries. The
-2026-08-21 projection is the published snapshot. The prepared 2026-08-24
-candidate keeps those boundaries, while its own Pages deployment and
-live Browser receipt are required to establish that the public URL serves that
-exact candidate:
+2026-08-24 projection remains the published snapshot. The 2026-08-29 projection
+is a sealed candidate pending fresh independent acceptance and separate Git
+and publication authority:
 
 - 53 current records are present across the 55-surface catalog, including
-  Codex CLI 0.149.1 as the reciprocal same-surface successor to preserved
-  0.149.0, 0.148.0, 0.147.0, 0.146.0 and 0.90.0 history;
-- 77 superseded records, two historical records and one discontinued record
+  Codex CLI 0.150.1 as the reciprocal same-surface successor to preserved
+  0.149.1, 0.149.0, 0.148.0, 0.147.0, 0.146.0 and 0.90.0 history;
+- 92 superseded records, two historical records and one discontinued record
   remain available through explicit history;
 - publication-time known-newer identities are notices on the affected snapshot
   records, not automatic refreshes or lifecycle transitions;
@@ -123,7 +122,8 @@ exact candidate:
 - the four 2026-08-18 candidate dossiers remain source-only research outside
   catalog, mapping, lifecycle and presentation admission;
 - deterministic, preservation, source-link, browser and publication-safety
-  checks must pass for the exact candidate before publication; and
+  checks are required for this exact candidate; their success is evidence for
+  independent review, not acceptance or publication authority; and
 - GitHub Pages serves only the committed `dist/` projection through a pinned,
   least-privilege workflow. It does not rebuild evidence or run agents.
 
