@@ -1,23 +1,26 @@
 # Agent Evidence Catalog roadmap
 
-Updated: 2026-08-24. This roadmap records intended work; it does not authorize
+Updated: 2026-08-29. This roadmap records intended work; it does not authorize
 publication, GitHub changes, publisher contact, agent execution, open intake or
 a response-time commitment.
 
 ## Current position
 
+The repository contains a sealed, unpublished 2026-08-29 55-surface candidate
+with 148 records: 53 current records and 95 non-current records, comprising 92
+superseded identities, two historical records and one discontinued surface.
+All candidate records are static, maintainer-curated and based only on
+attributed publisher sources. The snapshot assigns zero independent-test
+credit and provides no rankings, recommendations or suitability calculation.
 The live [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
-serves the published sealed 2026-08-24 55-surface snapshot with 133 records: 53
-current records and 80 non-current records, comprising 77 superseded
-identities, two historical records and one discontinued surface. All published
-records are static, maintainer-curated and based only on attributed publisher
-sources. The snapshot assigns zero independent-test credit and provides no
-rankings, recommendations or suitability calculation.
+continues to serve the accepted 2026-08-24 snapshot until a separately
+authorized independent review and publication completes.
 
-The 2026-08-24 published refresh preserves all 123 records from the
-2026-08-21 snapshot and adds exactly ten same-surface successors for Qwen Code
-CLI, OpenCode CLI, Claude Code CLI, Cline CLI, Cline VS Code extension, Cascade
-in Devin Desktop, Antigravity CLI, Junie IDE plugin, OpenAI Codex CLI and Goose CLI. Four
+The 2026-08-29 candidate preserves all 133 records from the accepted
+2026-08-24 snapshot and adds exactly fifteen same-surface successors for Qwen
+Code CLI, Kiro IDE, OpenCode CLI, Claude Code CLI, Cline CLI, Cline VS Code
+extension, GitHub Copilot CLI, both GitLab flows, Antigravity CLI, Gemini CLI,
+Junie IDE plugin, OpenAI Codex CLI, Zed and Goose CLI. Four
 additional products are represented only by source dossiers and are not
 catalog surfaces: Cursor CLI, Cascade in Windsurf IDE, Copilot Agent Mode for
 Visual Studio and Zoo Code v3.78.0. CodeRabbit, Greptile and a generic
@@ -30,8 +33,10 @@ committed `dist/` tree. Every later commit, push, pull request and publication
 still requires the applicable public-lane gates and scoped authority. The
 2026-08-24 release completed fresh independent acceptance, every applicable
 release and publication gate, Pages deployment, live-byte verification and
-live Browser QA. Every later commit, release or publication remains a separate
-candidate with its own authority and evidence requirements.
+live Browser QA. The 2026-08-29 candidate has not received independent
+acceptance and is not committed or published. Every later commit, release or
+publication remains a separate candidate with its own authority and evidence
+requirements.
 
 ## Near-term roadmap
 
@@ -56,9 +61,10 @@ concept review in step 4.
 
 Status: repeatable capture, projection, full-corpus link audit and
 publication-census commands are exercised across all 55 surfaces. The
-2026-08-24 receipts describe the published baseline. Every later exact refresh
-remains trigger-dependent on fresh independent acceptance and all release
-gates. Operational dashboard and scheduling remain deferred.
+2026-08-24 receipts describe the published baseline; 2026-08-29 receipts
+describe the sealed candidate only. Every later exact refresh remains
+trigger-dependent on fresh independent acceptance and all release gates.
+Operational dashboard and scheduling remain deferred.
 
 - Maintain the bounded refresh commands that identify source changes without
   promoting them into evidence automatically.

@@ -1,6 +1,6 @@
 # Research-preview publication readiness
 
-Reviewed: 2026-08-24. Release status: **THE SEALED 55-SURFACE, 133-RECORD 2026-08-24 SNAPSHOT IS PUBLISHED**.
+Reviewed: 2026-08-29. Release status: **SEALED 55-SURFACE, 148-RECORD 2026-08-29 CANDIDATE; INDEPENDENT REVIEW AND PUBLICATION PENDING**.
 
 The public static artifact is served at
 https://thedarknitefalls.github.io/agent-evidence-catalog/. GitHub Pages uploads
@@ -30,9 +30,9 @@ intake, add analytics or authorize any other GitHub mutation.
 
 | Gate | Status | Release condition |
 |---|---|---|
-| All-surface currentness review | PASS | All 55 accepted surfaces have a dated 2026-08-24 official-source decision. Ten exact-identity successors extend the preserved 123-record baseline to the published 133-record snapshot; all 123 prior records remain inspectable and 45 surfaces admit no exact successor in this slice. |
-| Codex CLI 0.149.1 current record | PASS | The validated source-derived record is integrated as current; 0.149.0, 0.148.0, 0.147.0, 0.146.0 and 0.90.0 remain inspectable through reciprocal same-surface links. |
-| Snapshot-current and non-current data/UI | PASS | The published snapshot covers 53 snapshot-current cards by default and 80 non-current records across 55 surfaces: 77 superseded, two historical and one discontinued. The publication freshness census may add notices but cannot refresh these identities. |
+| All-surface currentness review | PASS | All 55 accepted surfaces have a dated 2026-08-29 official-source decision. Fifteen exact-identity successors extend the preserved 133-record baseline to the sealed 148-record candidate; all 133 prior records remain inspectable and 40 surfaces admit no exact successor in this slice. |
+| Codex CLI 0.150.1 current record | PASS | The validated source-derived record is integrated as current; 0.149.1, 0.149.0, 0.148.0, 0.147.0, 0.146.0 and 0.90.0 remain inspectable through reciprocal same-surface links. |
+| Snapshot-current and non-current data/UI | PASS | The sealed candidate covers 53 snapshot-current cards by default and 95 non-current records across 55 surfaces: 92 superseded, two historical and one discontinued. The publication freshness census may add notices but cannot refresh these identities. |
 | Evidence-exact agent-claims comparison | PASS | The public root and dedicated comparison route expose all 53 current records to an ordered 2–4 record picker, accept exact historical IDs from records or URLs, project selected committed JSON only, align claims only by accepted category-string equality, preserve URL-only state and add no ranking, suitability logic, taxonomy, analytics or evidence changes. The catalog remains one navigation step away. |
 | Critical-mass evidence boundary | PASS | The 39 additions admit two official publisher-source claims each for identity and delivery only. Their mappings remain wholly unknown and credit no independent evidence. |
 | Four source-only dossiers | PASS | The official source identities for Cursor CLI, Cascade in Windsurf IDE, Copilot Agent Mode for Visual Studio and Zoo Code v3.78.0 were rechecked and remain outside catalog, mapping, lifecycle and presentation admission. CodeRabbit, Greptile and a generic JetBrains agent-host surface remain outside this release scope. |
@@ -40,9 +40,11 @@ intake, add analytics or authorize any other GitHub mutation.
 | Independent-test credit | PASS | Must remain exactly zero. |
 | Rankings, recommendations and calculations | PASS | Must remain absent. |
 | Publication-safety scan | REQUIRED FOR EVERY RELEASE CANDIDATE | The unmodified `publicctl.py check` must inspect the exact candidate in a disposable full public-lane checkout and report no findings, no symlinks and a GitHub noreply commit email. |
-| Deterministic, preservation and source-link validation | REQUIRED FOR EVERY RELEASE CANDIDATE | The exact candidate must pass deterministic double-build, protected-corpus preservation, product validation, digest-bound Browser QA and the unchanged public-lane safety check. The 2026-08-24 source-link receipt projects 286 unique official URLs and records all 286 as reachable; reachability does not establish product behavior or publication-time currency. |
+| Deterministic, preservation and source-link validation | REQUIRED FOR EVERY RELEASE CANDIDATE | The exact candidate must pass deterministic double-build, protected-corpus preservation, product validation, digest-bound Browser QA and the unchanged public-lane safety check. The 2026-08-29 source-link receipt projects 302 unique official URLs and records all 302 as reachable; reachability does not establish product behavior or publication-time currency. |
 | Public-lane pre-push check | REQUIRED BEFORE EVERY PUSH | The exact release commit must pass the unchanged public-lane gate before it is pushed. |
-| GitHub publication state | PUBLISHED FOR THE 2026-08-24 SNAPSHOT | The accepted two-commit candidate was merged through PR #19 as `2668c0cd698127bc4a4468d4dc090a27f3676b2c`. Required pull-request and post-merge checks passed; Pages deployment, live-byte checks and live Browser QA verified the committed `dist/` tree. Any later publication requires separate authority, fresh independent acceptance and all applicable commit, public-lane and remote checks. |
+| GitHub publication state | 2026-08-29 CANDIDATE NOT PUBLISHED | The accepted 2026-08-24 candidate was merged through PR #19 as `2668c0cd698127bc4a4468d4dc090a27f3676b2c`; its Pages and live-byte checks passed. The 2026-08-29 candidate is uncommitted and has not received independent acceptance. Any publication requires separate authority and all applicable commit, public-lane and remote checks. |
+
+Any later publication requires separate authority, fresh independent acceptance and all applicable commit, public-lane and remote checks.
 
 ## Release decision rule
 
