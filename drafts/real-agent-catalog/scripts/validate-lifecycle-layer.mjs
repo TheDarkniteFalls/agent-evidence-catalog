@@ -79,6 +79,18 @@ function validate(value, rule, location = "$") {
     return;
   }
 
+  if (rule.oneOf) {
+    const matches = rule.oneOf.filter((variant) => {
+      try {
+        validate(value, variant, location);
+        return true;
+      } catch {
+        return false;
+      }
+    }).length;
+    assert.equal(matches, 1, `${location} must match exactly one oneOf branch`);
+  }
+
   if (rule.type) {
     const allowed = Array.isArray(rule.type) ? rule.type : [rule.type];
     assert(
@@ -230,6 +242,23 @@ async function protectedDigest(files) {
 
 validate(overlay, schema);
 assert(overlayText.endsWith("\n"), "Lifecycle overlay must end with a newline");
+assert(!Object.hasOwn(overlay, "publicationStatus"), "Source lineage overlay must not claim deployment state");
+
+const publishedProjection = {
+  ...structuredClone(overlay),
+  artifactType: "real-agent-lifecycle-projection",
+  unpublished: false,
+  publicationStatus: "public-research-preview-v0.1"
+};
+validate(publishedProjection, schema);
+for (const invalid of [
+  { ...structuredClone(overlay), publicationStatus: "public-research-preview-v0.1" },
+  { ...structuredClone(publishedProjection), unpublished: true },
+  Object.fromEntries(Object.entries(publishedProjection).filter(([key]) => key !== "publicationStatus")),
+  { ...structuredClone(publishedProjection), publicationStatus: "ready-for-release-review" }
+]) {
+  assert.throws(() => validate(invalid, schema), "Lifecycle schema must reject mixed or candidate publication state");
+}
 
 const catalog = await createSixteenRecordCatalog();
 const livePilotText = await readFile(livePilotPath, "utf8");
@@ -351,3 +380,4 @@ console.log("PASS publisher-source references, historical significance, current-
 console.log("PASS deterministic live pilot rebuild and deterministic lifecycle summary derivation");
 console.log("PASS Phase 0 research-preview preservation manifest protects the accepted aggregate boundary");
 console.log("PASS lifecycle overlay remains unpublished and is not integrated into catalog pages or public lanes");
+console.log("PASS lifecycle schema accepts the published projection and rejects four mixed candidate/deployment-state regressions");

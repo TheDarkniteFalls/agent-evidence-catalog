@@ -1,7 +1,7 @@
 {
   "schemaVersion": "research-preview-browser-qa/1.7",
   "asOf": "2026-08-29",
-  "checkedAt": "2026-08-28T12:51:19.878Z",
+  "checkedAt": "2026-08-29T00:35:33.167Z",
   "loopback": {
     "url": "http://localhost:4173/",
     "listener": "loopback-only port 4173",
@@ -13,7 +13,7 @@
     "rootComparisonHtmlSha256": "6d87f1766b7affc79fc9f51416ed67a4c3a9152c638f55a45c8557798b966018",
     "modelCardsHtmlSha256": "7778854afe00083bd9e20acf4eae2e6b4a98285a87a19c8bb9cc24fe27f3c594",
     "howItWorksHtmlSha256": "7acba0c41cffc881f2dbd5c02ad7cb48174b3aa61bbb198c85d70c9d5ad3f7c7",
-    "previewDataSha256": "62bfff27c62ba99a5b395a222836705f38182f4ec21a35254168a58fff98504c",
+    "previewDataSha256": "73414d182ebe38afa55f145cf730e9703b8d7d8aad17782944cad7bcf3bcc908",
     "previewAppSha256": "a7171b3d5c3bba6c88ea88b0dfa8f1595c6d462e38d455288747e70b932cff09",
     "comparisonHtmlSha256": "cf378361fbd7261391c0345a12bc28731ccf5b81d489f608ca5ad742457b7ea6",
     "comparisonCoreSha256": "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e",
@@ -21,7 +21,7 @@
     "recordDetailAppSha256": "87e143ac1e24a652ea606bbae367633e1f0ee2707e12ee1453c23c3a0f5dcd1f",
     "previewStylesSha256": "16a92ecc636c747b687605452e14b924be5ae4ebd194d38551f1ce97ec2f821a",
     "llmsSha256": "1e70673e715d33bf911d52226651c5c801a9e0714afd01bdcd10f8f80110bf48",
-    "lifecycleSha256": "3f4dd0729b26048ad3a1ebca95fa9c1b82071cccf27f1985db57b518ff6137a1",
+    "lifecycleSha256": "2449edb7bd913873914d93d3a9121ad712fd7954dc93309a47766d969c26e5ae",
     "representativeRecordHtmlSha256": "065f6adb7ec1213189f03556ba7701d64e06c9ea24f8b779577f50720831900f",
     "representativeRecordJsonSha256": "000700c69ed833c59cb1776a3bfc9a4048ac47b431ee8389c68809e1366a6ae9",
     "recordDetailsManifestSha256": "d3db564f4b622a7ab302f828ff3d764c14bca7a1fee58d2a726633e7bbd9a201",
@@ -62,65 +62,76 @@
     "cacheBustingVersion": "2026-08-29-sealed-snapshot"
   },
   "qaContractAuthor": {
-    "workstream": "AEC-QA-PRACTICAL-RESPONSIVE-01-AUTHOR",
+    "workstream": "AEC-PUBLISHED-STATUS-2026-08-29-PRACTICAL-QA-01-AUTHOR",
     "result": "PASS",
-    "scope": "Exact-byte active visitor responsive code review and per-side exact successor/predecessor Browser evidence only",
-    "baseHead": "9b457a61aba35cfe5ad48c4e640fac37c868f746",
+    "scope": "Exact-byte active visitor responsive code review and per-side practical 389/391 successor/predecessor Browser evidence only",
+    "baseHead": "454f2ecec6a89ce0634bb8d4a962a920cae0fb2f",
     "exactCodeReviewPerformed": true,
     "independentAcceptanceReviewPerformed": false,
     "commitOrPublicationPerformed": false
   },
   "viewportProof": {
-    "contract": "target-390-exact-observation",
+    "contract": "target-390-approved-adjacent-observations-389-391",
     "targetCss": {
       "width": 390,
       "height": 844
     },
-    "exact390Observed": true,
-    "adjacentObservationsUsed": false,
+    "requiredObservedWidths": {
+      "lower": 389,
+      "upper": 391
+    },
+    "exact390Observed": false,
+    "adjacentObservationsAreApprovedOperationalEvidence": true,
     "substituteWidthsAllowed": false,
+    "responsiveCodeReview": {
+      "path": "drafts/research-preview-release/currentness-2026-08-29/responsive-width-bracketing-audit.json",
+      "sha256": "0bf2630e3d85834248fbb72016e802afd02637b1507b402cfbc494022fa9287c",
+      "schemaVersion": "research-preview-responsive-code-review/1.0",
+      "activeScopeSha256": "d670f720503536098087af15b34dd6bf45286322b63c84cbc2088dc373dc18ec",
+      "result": "PASS"
+    },
     "observations": {
-      "exact": {
-        "label": "exact",
+      "lower": {
+        "label": "lower",
         "route": "/",
         "requestedTargetCss": {
           "width": 390,
           "height": 844
         },
         "browserViewportControl": {
-          "width": 351,
-          "height": 760
+          "width": 292,
+          "height": 633
         },
-        "startedAt": "2026-08-28T12:45:34.000Z",
-        "completedAt": "2026-08-28T12:48:20.000Z",
+        "startedAt": "2026-08-29T00:12:12.794Z",
+        "completedAt": "2026-08-29T00:16:15.949Z",
         "windowInner": {
-          "width": 390,
+          "width": 389,
           "height": 844
         },
         "documentElementClient": {
-          "width": 390,
+          "width": 389,
           "height": 844
         },
         "visualViewport": {
-          "width": 390,
-          "height": 844.4444580078125,
+          "width": 389.3333435058594,
+          "height": 844,
           "scale": 1
         },
-        "devicePixelRatio": 0.8999999761581421,
+        "devicePixelRatio": 0.75,
         "scrollbarWidth": 0,
         "screenshots": [
           {
-            "path": "drafts/research-preview-release/currentness-2026-08-29/screenshots/exact-390-root-navigation.png",
-            "sha256": "2dbb7bb7a80f2b93fb69ce1e04a8bba24a12d1afdd5b45af5757deaaa5a56047",
-            "capturedAt": "2026-08-28T12:45:34.000Z",
-            "observedCssWidth": 390,
+            "path": "drafts/research-preview-release/currentness-2026-08-29/screenshots/mobile-389-root-navigation.png",
+            "sha256": "03b54e5496f3979d4ad9e640b60b2e67a6851c29ea121ee026604d33d80eea97",
+            "capturedAt": "2026-08-29T00:12:13.361Z",
+            "observedCssWidth": 389,
             "observedCssHeight": 844
           },
           {
-            "path": "drafts/research-preview-release/currentness-2026-08-29/screenshots/exact-390-model-cards.png",
-            "sha256": "d88b982faa725821dc9742c001b1557416c5b4aabc403ba62e045b81c54506c5",
-            "capturedAt": "2026-08-28T12:47:01.000Z",
-            "observedCssWidth": 390,
+            "path": "drafts/research-preview-release/currentness-2026-08-29/screenshots/mobile-389-model-cards.png",
+            "sha256": "0a661824f93ea6bae1e8f45331801a2432db830e3422bb7a4c48f8897427c218",
+            "capturedAt": "2026-08-29T00:14:41.458Z",
+            "observedCssWidth": 389,
             "observedCssHeight": 844
           }
         ],
@@ -180,9 +191,6 @@
           },
           "records": {
             "pagesAudited": 30,
-            "predecessorLinksVerified": 15,
-            "failureRecordIds": [],
-            "horizontalOverflowFailures": 0,
             "changedRecordIds": [
               "com.alibaba.qwen-code.cli.0-22-2",
               "com.amazon.kiro.ide.1-0-395",
@@ -261,7 +269,218 @@
                 "recordId": "org.aaif.goose.cli.1-48-0",
                 "predecessorRecordId": "org.aaif.goose.cli.1-47-0"
               }
-            ]
+            ],
+            "predecessorLinksVerified": 15,
+            "failureRecordIds": [],
+            "horizontalOverflowFailures": 0,
+            "representativeUnchangedRecordIds": [
+              "com.cursor.ide.foreground-agent.3-17",
+              "com.cognition.devin-desktop.cascade.3-8-20",
+              "org.aider-ai.aider.cli.0-86-0"
+            ],
+            "representativeUnchangedPagesAudited": 3,
+            "representativeUnchangedFailureRecordIds": []
+          },
+          "discovery": {
+            "entryRoutes": 4,
+            "recordAlternatePages": 148,
+            "resourceFailures": 0
+          }
+        },
+        "console": {
+          "errors": 0,
+          "warnings": 0
+        }
+      },
+      "upper": {
+        "label": "upper",
+        "route": "/",
+        "requestedTargetCss": {
+          "width": 390,
+          "height": 844
+        },
+        "browserViewportControl": {
+          "width": 293,
+          "height": 633
+        },
+        "startedAt": "2026-08-29T00:16:15.949Z",
+        "completedAt": "2026-08-29T00:17:35.498Z",
+        "windowInner": {
+          "width": 391,
+          "height": 844
+        },
+        "documentElementClient": {
+          "width": 391,
+          "height": 844
+        },
+        "visualViewport": {
+          "width": 390.6666564941406,
+          "height": 844,
+          "scale": 1
+        },
+        "devicePixelRatio": 0.75,
+        "scrollbarWidth": 0,
+        "screenshots": [
+          {
+            "path": "drafts/research-preview-release/currentness-2026-08-29/screenshots/mobile-391-root-navigation.png",
+            "sha256": "6efb90825098327eb9c75d7972114a1ae6955cf1b020832313d9d5ded5b9e12f",
+            "capturedAt": "2026-08-29T00:16:16.474Z",
+            "observedCssWidth": 391,
+            "observedCssHeight": 844
+          },
+          {
+            "path": "drafts/research-preview-release/currentness-2026-08-29/screenshots/mobile-391-model-cards.png",
+            "sha256": "e2cdd05bdfca24422d122511b2578e2516c64c64e2b3d1d060deec564e67b2a1",
+            "capturedAt": "2026-08-29T00:17:22.766Z",
+            "observedCssWidth": 391,
+            "observedCssHeight": 844
+          }
+        ],
+        "journeys": {
+          "root": {
+            "initialSelectedRecords": 0,
+            "navigation": [
+              "Compare claims",
+              "Model Cards",
+              "How it works"
+            ],
+            "navigationOpened": true,
+            "horizontalOverflow": false
+          },
+          "comparison": {
+            "selectedOrder": [
+              "com.anthropic.claude-code.cli.2-1-250",
+              "com.openai.codex.cli.0-150-1",
+              "com.github.copilot.cli.1-0-81",
+              "com.cursor.ide.foreground-agent.3-17"
+            ],
+            "maximumSelectedRecords": 4,
+            "fifthSelectionRejected": true,
+            "deliveryFilterExercised": true,
+            "differencesOnlyExercised": true,
+            "urlPersistsAcrossReload": true,
+            "activeMatrixRows": 41,
+            "matrixInternalOverflow": true,
+            "pageHorizontalOverflow": false
+          },
+          "modelCards": {
+            "currentCards": 53,
+            "historyCards": 95,
+            "historyCollapsedInitially": true,
+            "historyExpanded": true,
+            "historyRecollapsed": true,
+            "qwenSearchResultCount": "2 of 53 surfaces",
+            "deliveryFilterCounts": {
+              "all": 53,
+              "local": 1,
+              "hybrid": 32,
+              "hosted": 20
+            },
+            "navigationOpened": true,
+            "horizontalOverflow": false
+          },
+          "howItWorks": {
+            "sections": 7,
+            "technicalDocumentationClosedInitially": true,
+            "horizontalOverflow": false
+          },
+          "compatibility": {
+            "route": "/research-preview/compare.html",
+            "completeApplicationPresent": true,
+            "selectionStateWorks": true,
+            "horizontalOverflow": false
+          },
+          "records": {
+            "pagesAudited": 30,
+            "changedRecordIds": [
+              "com.alibaba.qwen-code.cli.0-22-2",
+              "com.amazon.kiro.ide.1-0-395",
+              "com.anomaly.opencode.cli.1-18-25",
+              "com.anthropic.claude-code.cli.2-1-250",
+              "com.cline.bot.cli.3-0-60",
+              "com.cline.bot.vscode-extension.4-1-16",
+              "com.github.copilot.cli.1-0-81",
+              "com.gitlab.duo.code-review-flow.19-2-5",
+              "com.gitlab.duo.developer-flow.19-2-5",
+              "com.google.antigravity.cli.1-1-22",
+              "com.google.gemini.cli.0-57-0",
+              "com.jetbrains.junie.ide-plugin.262-834-10",
+              "com.openai.codex.cli.0-150-1",
+              "dev.zed.agent.native.1-17-2",
+              "org.aaif.goose.cli.1-48-0"
+            ],
+            "recordPredecessorPairs": [
+              {
+                "recordId": "com.alibaba.qwen-code.cli.0-22-2",
+                "predecessorRecordId": "com.alibaba.qwen-code.cli.0-22-0"
+              },
+              {
+                "recordId": "com.amazon.kiro.ide.1-0-395",
+                "predecessorRecordId": "com.amazon.kiro.ide.1-0-337"
+              },
+              {
+                "recordId": "com.anomaly.opencode.cli.1-18-25",
+                "predecessorRecordId": "com.anomaly.opencode.cli.1-18-21"
+              },
+              {
+                "recordId": "com.anthropic.claude-code.cli.2-1-250",
+                "predecessorRecordId": "com.anthropic.claude-code.cli.2-1-241"
+              },
+              {
+                "recordId": "com.cline.bot.cli.3-0-60",
+                "predecessorRecordId": "com.cline.bot.cli.3-0-57"
+              },
+              {
+                "recordId": "com.cline.bot.vscode-extension.4-1-16",
+                "predecessorRecordId": "com.cline.bot.vscode-extension.4-1-15"
+              },
+              {
+                "recordId": "com.github.copilot.cli.1-0-81",
+                "predecessorRecordId": "com.github.copilot.cli.1-0-80"
+              },
+              {
+                "recordId": "com.gitlab.duo.code-review-flow.19-2-5",
+                "predecessorRecordId": "com.gitlab.duo.code-review-flow.19-2-4"
+              },
+              {
+                "recordId": "com.gitlab.duo.developer-flow.19-2-5",
+                "predecessorRecordId": "com.gitlab.duo.developer-flow.19-2-4"
+              },
+              {
+                "recordId": "com.google.antigravity.cli.1-1-22",
+                "predecessorRecordId": "com.google.antigravity.cli.1-1-19"
+              },
+              {
+                "recordId": "com.google.gemini.cli.0-57-0",
+                "predecessorRecordId": "com.google.gemini.cli.0-56-0"
+              },
+              {
+                "recordId": "com.jetbrains.junie.ide-plugin.262-834-10",
+                "predecessorRecordId": "com.jetbrains.junie.ide-plugin.262-579-48"
+              },
+              {
+                "recordId": "com.openai.codex.cli.0-150-1",
+                "predecessorRecordId": "com.openai.codex.cli.0-149-1"
+              },
+              {
+                "recordId": "dev.zed.agent.native.1-17-2",
+                "predecessorRecordId": "dev.zed.agent.native.1-16-1"
+              },
+              {
+                "recordId": "org.aaif.goose.cli.1-48-0",
+                "predecessorRecordId": "org.aaif.goose.cli.1-47-0"
+              }
+            ],
+            "predecessorLinksVerified": 15,
+            "failureRecordIds": [],
+            "horizontalOverflowFailures": 0,
+            "representativeUnchangedRecordIds": [
+              "com.cursor.ide.foreground-agent.3-17",
+              "com.cognition.devin-desktop.cascade.3-8-20",
+              "org.aider-ai.aider.cli.0-86-0"
+            ],
+            "representativeUnchangedPagesAudited": 3,
+            "representativeUnchangedFailureRecordIds": []
           },
           "discovery": {
             "entryRoutes": 4,
@@ -275,14 +494,7 @@
         }
       }
     },
-    "responsiveCodeReview": {
-      "path": "drafts/research-preview-release/currentness-2026-08-29/responsive-width-bracketing-audit.json",
-      "sha256": "374aab8de6f35ea6e7e4e55288bdf7667fa21f42e66e81ccffb2a7ad6906bf59",
-      "schemaVersion": "research-preview-responsive-code-review/1.0",
-      "activeScopeSha256": "21a46662b0febc7efd67d0f5f6b2b708ae9341865e5c9863c2cbe9fd0dc4eab7",
-      "result": "PASS"
-    },
-    "rationale": "The installed in-app Browser produced a genuine rendered observation at exactly 390 by 844 CSS pixels, supported by exact 320 by 700 and 1440 by 900 controls. The responsive code review is valid only for the exact hash-bound AEC bytes and must be refreshed when those bytes change.",
+    "rationale": "The installed in-app Browser cannot produce an observed 390 CSS-pixel viewport in this environment. Genuine rendered passes at exact 389 and 391 CSS pixels are the approved adjacent operational evidence, supported by exact 320 and 1440 controls. This is practical operational evidence for the unavailable 390 target, not formal proof of arbitrary behavior at exactly 390; the responsive code review is valid only for the exact hash-bound AEC bytes and must be refreshed when those bytes change.",
     "recordEvidence": {
       "changedRecordIds": [
         "com.alibaba.qwen-code.cli.0-22-2",
@@ -372,8 +584,8 @@
         "height": 900
       },
       "browserViewportControl": {
-        "width": 1296,
-        "height": 810
+        "width": 1080,
+        "height": 675
       },
       "windowInner": {
         "width": 1440,
@@ -388,7 +600,7 @@
         "height": 900,
         "scale": 1
       },
-      "devicePixelRatio": 0.8999999761581421,
+      "devicePixelRatio": 0.75,
       "scrollbarWidth": 0,
       "route": "/",
       "horizontalOverflow": false,
@@ -398,12 +610,12 @@
       },
       "screenshot": {
         "path": "drafts/research-preview-release/currentness-2026-08-29/screenshots/desktop-1440x900-root.png",
-        "sha256": "f8356c505f696c5479a2f461f7c2e7411cd0fe273f3470b43b61d7591461ea10",
-        "capturedAt": "2026-08-28T12:48:29.000Z",
+        "sha256": "28c81f89e58e68d455b74ab0818bc04c8b9c0947e5c3b8225e9f207406d1a97d",
+        "capturedAt": "2026-08-29T00:18:31.116Z",
         "observedCssWidth": 1440,
         "observedCssHeight": 900
       },
-      "observedAt": "2026-08-28T12:48:29.000Z"
+      "observedAt": "2026-08-29T00:18:30.944Z"
     },
     "narrowMobile": {
       "targetCss": {
@@ -411,8 +623,8 @@
         "height": 700
       },
       "browserViewportControl": {
-        "width": 288,
-        "height": 630
+        "width": 240,
+        "height": 525
       },
       "windowInner": {
         "width": 320,
@@ -427,7 +639,7 @@
         "height": 700,
         "scale": 1
       },
-      "devicePixelRatio": 0.8999999761581421,
+      "devicePixelRatio": 0.75,
       "scrollbarWidth": 0,
       "route": "/",
       "horizontalOverflow": false,
@@ -438,19 +650,19 @@
       },
       "screenshot": {
         "path": "drafts/research-preview-release/currentness-2026-08-29/screenshots/narrow-320x700-root.png",
-        "sha256": "a1bac695c8c0ccce44cbf2e2bfc996ee34959f87acb2c6136b683003fe5afb1a",
-        "capturedAt": "2026-08-28T12:48:54.000Z",
+        "sha256": "fe454cf9d6432412abaf4d74dc07457664d91e9c6fecc69e98ed79d770da868d",
+        "capturedAt": "2026-08-29T00:18:53.297Z",
         "observedCssWidth": 320,
         "observedCssHeight": 700
       },
-      "observedAt": "2026-08-28T12:48:54.000Z"
+      "observedAt": "2026-08-29T00:18:52.830Z"
     }
   },
   "publicationAuthorQa": {
-    "workstream": "AEC-CURRENTNESS-2026-08-29-REFRESH-01-AUTHOR",
+    "workstream": "AEC-PUBLISHED-STATUS-2026-08-29-PRACTICAL-QA-01-AUTHOR",
     "result": "PASS",
-    "checkedAt": "2026-08-28T12:51:19.878Z",
-    "baseHead": "9b457a61aba35cfe5ad48c4e640fac37c868f746",
+    "checkedAt": "2026-08-29T00:35:33.167Z",
+    "baseHead": "454f2ecec6a89ce0634bb8d4a962a920cae0fb2f",
     "browser": "Codex in-app Browser",
     "currentness": {
       "records": 148,
@@ -491,11 +703,15 @@
         "width": 390,
         "height": 844
       },
-      "exact390Observed": true,
-      "adjacentObservationsUsed": false,
+      "mandatoryObservedBracket": {
+        "lower": 389,
+        "upper": 391
+      },
+      "exact390Observed": false,
+      "adjacentObservationsAreApprovedOperationalEvidence": true,
       "responsiveCodeReviewResult": "PASS"
     },
-    "screenshotsCaptured": 4,
+    "screenshotsCaptured": 6,
     "sitemap": {
       "routes": 151,
       "uniqueRoutes": 151,
@@ -542,16 +758,24 @@
           "width": 390,
           "height": 844
         },
-        "evidenceContract": "target-390-exact-observation",
+        "evidenceContract": "target-390-approved-adjacent-observations-389-391",
+        "requiredObservedWidths": {
+          "lower": 389,
+          "upper": 391
+        },
         "substituteWidthsAllowed": false,
-        "exact390Observed": true,
-        "observedCss": {
-          "width": 390,
+        "exact390Observed": false,
+        "lowerObservedCss": {
+          "width": 389,
+          "height": 844
+        },
+        "upperObservedCss": {
+          "width": 391,
           "height": 844
         },
         "horizontalOverflow": false,
-        "navigationOpened": true,
-        "matrixInternalOverflow": true
+        "navigationOpenedAtBothWidths": true,
+        "matrixInternalOverflowAtBothWidths": true
       }
     },
     "modelCards": {
@@ -592,13 +816,17 @@
           "width": 390,
           "height": 844
         },
-        "evidenceContract": "target-390-exact-observation",
+        "evidenceContract": "target-390-approved-adjacent-observations-389-391",
+        "requiredObservedWidths": {
+          "lower": 389,
+          "upper": 391
+        },
         "substituteWidthsAllowed": false,
-        "exact390Observed": true,
+        "exact390Observed": false,
         "gridColumns": 1,
         "cardsAndActionsContained": true,
-        "horizontalOverflow": false,
-        "navigationOpened": true
+        "horizontalOverflowAtBothWidths": false,
+        "navigationOpenedAtBothWidths": true
       },
       "historyCards": 95,
       "historyCollapsedInitially": true,
@@ -617,7 +845,7 @@
           "ariaExpanded": "true",
           "toggleText": "Hide history records",
           "computedDisplay": "grid",
-          "boundingBoxHeightPx": 45585.2890625,
+          "boundingBoxHeightPx": 45631.4296875,
           "visibleCardCount": 95
         },
         "recollapsed": {
@@ -897,7 +1125,7 @@
           "predecessorRecordId": "org.aaif.goose.cli.1-47-0"
         }
       ],
-      "changedRecordPagesRendered": 30,
+      "changedRecordPagesRendered": 60,
       "representativeUnchangedRenderedRecordIds": [
         "com.cursor.ide.foreground-agent.3-17",
         "com.cognition.devin-desktop.cascade.3-8-20",
@@ -905,33 +1133,52 @@
       ],
       "desktop": {
         "controlViewport": {
-          "width": 1296,
-          "height": 810
+          "width": 1080,
+          "height": 675
         },
         "observedCss": {
           "width": 1440,
           "height": 900
         },
-        "devicePixelRatio": 0.8999999761581421,
+        "devicePixelRatio": 0.75,
         "pagesAudited": 30,
         "failureRecordIds": []
       },
-      "mobileExact": {
+      "mobileBracket": {
         "targetCss": {
           "width": 390,
           "height": 844
         },
-        "controlViewport": {
-          "width": 351,
-          "height": 760
+        "requiredObservedWidths": {
+          "lower": 389,
+          "upper": 391
         },
-        "observedCss": {
-          "width": 390,
-          "height": 844
+        "lower": {
+          "controlViewport": {
+            "width": 292,
+            "height": 633
+          },
+          "observedCss": {
+            "width": 389,
+            "height": 844
+          },
+          "devicePixelRatio": 0.75,
+          "pagesAudited": 30,
+          "failureRecordIds": []
         },
-        "devicePixelRatio": 0.8999999761581421,
-        "pagesAudited": 30,
-        "failureRecordIds": []
+        "upper": {
+          "controlViewport": {
+            "width": 293,
+            "height": 633
+          },
+          "observedCss": {
+            "width": 391,
+            "height": 844
+          },
+          "devicePixelRatio": 0.75,
+          "pagesAudited": 30,
+          "failureRecordIds": []
+        }
       },
       "narrowMobileRepresentative": {
         "targetCss": {
@@ -939,14 +1186,14 @@
           "height": 700
         },
         "controlViewport": {
-          "width": 288,
-          "height": 630
+          "width": 240,
+          "height": 525
         },
         "observedCss": {
           "width": 320,
           "height": 700
         },
-        "devicePixelRatio": 0.8999999761581421,
+        "devicePixelRatio": 0.75,
         "routesAudited": 5,
         "failureRoutes": []
       },
@@ -965,7 +1212,7 @@
     "discoveryMetadata": {
       "result": "PASS",
       "recordRoutesDeterministicallyValidated": 148,
-      "changedRecordPagesRendered": 30,
+      "changedRecordPagesRendered": 60,
       "representativeUnchangedRecordPagesRendered": 3,
       "sitemapHumanReadableRoutes": 151,
       "sitemapRecordRoutes": 148,
@@ -1028,8 +1275,9 @@
     "warnings": 0
   },
   "limitations": [
-    "The installed in-app Browser at approximately DPR 0.9 produced a genuine rendered pass at exact 390 by 844 CSS pixels, with exact 320 by 700 and 1440 by 900 controls; adjacent-width substitution was not used.",
+    "The installed in-app Browser at DPR 0.75 cannot produce an observed 390 CSS-pixel viewport in this environment. Genuine rendered passes at exact 389 and 391 by 844 CSS pixels are the approved adjacent operational evidence, with exact 320 by 700 and 1440 by 900 controls. This is practical operational evidence for the unavailable 390 target, not formal proof of arbitrary behavior at exactly 390.",
     "The responsive code-review receipt is valid only for its exact hash-bound AEC visitor bytes. Any active visitor-file addition, removal or byte change requires a fresh explicit human/code review and a new receipt; the validator does not infer arbitrary future JavaScript or CSS semantics.",
+    "The in-app Browser rendered every HTML journey and initiated the machine-readable resource requests, while its client blocked direct non-HTML document display after the loopback server returned HTTP 200. Content types and sitemap counts were verified from the exact served files and the server mapping.",
     "Cursor CLI, Cascade in Windsurf IDE, Copilot Agent Mode for Visual Studio and Zoo Code v3.78.0 are source-only dossiers and are not catalog, mapping, lifecycle or presentation admissions.",
     "The publication-time census proves no newer identity for one comparable live index but cannot prove publication-time currency for 54 surfaces; the Junie update-list probe returned HTTP 406 while its exact official update page passed the full source-link audit.",
     "Rendered local behavior, source reachability and deterministic validation do not establish catalogued product behavior, independent verification, quality, safety, popularity, ranking or suitability."

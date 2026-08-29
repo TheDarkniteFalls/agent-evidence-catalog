@@ -9,6 +9,8 @@ import {
   sha256
 } from "./real-catalog-lib.mjs";
 
+const PUBLICATION_STATUS = "public-research-preview-v0.1";
+
 const refreshes = [
   {
     dossierSlug: "anthropic-claude-code-cli-2-1-220",
@@ -146,7 +148,18 @@ const currentnessLifecyclePath = path.join(
   "lifecycle-overlay.json"
 );
 const currentnessLifecycleText = await readFile(currentnessLifecyclePath, "utf8");
-const lifecycle = structuredClone(JSON.parse(currentnessLifecycleText));
+const lifecycleLineage = structuredClone(JSON.parse(currentnessLifecycleText));
+const lifecycle = {
+  schemaVersion: lifecycleLineage.schemaVersion,
+  artifactType: "real-agent-lifecycle-projection",
+  synthetic: lifecycleLineage.synthetic,
+  unpublished: false,
+  publicationStatus: PUBLICATION_STATUS,
+  asOf: lifecycleLineage.asOf,
+  interpretationBoundary: lifecycleLineage.interpretationBoundary,
+  sources: lifecycleLineage.sources,
+  entries: lifecycleLineage.entries
+};
 const criticalMassSourcePath = path.join(draftRoot, "critical-mass-expansion", "admission-source.json");
 const criticalMassSourceText = await readFile(criticalMassSourcePath, "utf8");
 const criticalMassSource = JSON.parse(criticalMassSourceText);
@@ -254,9 +267,9 @@ const surfaces = [...new Set(lifecycle.entries.map((entry) => entry.surfaceKey))
 
 const preview = {
   schemaVersion: "agent-evidence-research-preview/0.1-draft",
-  artifactType: "unpublished-maintainer-curated-research-preview",
+  artifactType: "maintainer-curated-research-preview",
   asOf: criticalMassSource.asOf,
-  releaseCandidateStatus: "ready-for-release-review",
+  publicationStatus: PUBLICATION_STATUS,
   boundaries: {
     static: true,
     maintainerCurated: true,

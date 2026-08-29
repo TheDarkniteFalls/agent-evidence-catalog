@@ -3,6 +3,7 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { createSixteenRecordCatalog, draftRoot, packageRoot, sha256 } from "./real-catalog-lib.mjs";
 
+const PUBLICATION_STATUS = "public-research-preview-v0.1";
 const previewRoot = path.join(draftRoot, "research-preview");
 const readJson = async (filePath) => JSON.parse(await readFile(filePath, "utf8"));
 const baseLifecyclePath = path.join(draftRoot, "lifecycle", "lifecycle-source.json");
@@ -56,7 +57,9 @@ const watcher = await readJson(path.join(previewRoot, "source-registry.json"));
 const preview = await readJson(path.join(previewRoot, "catalog.json"));
 
 assert.equal(lifecycle.schemaVersion, "real-agent-lifecycle/0.1-draft");
-assert.equal(lifecycle.artifactType, "unpublished-real-agent-lifecycle-overlay");
+assert.equal(lifecycle.artifactType, "real-agent-lifecycle-projection");
+assert.equal(lifecycle.unpublished, false);
+assert.equal(lifecycle.publicationStatus, PUBLICATION_STATUS);
 assert.deepEqual(lifecycle.sources.slice(0, currentnessLifecycle.sources.length), currentnessLifecycle.sources, "Accepted lifecycle sources changed");
 assert.deepEqual(
   lifecycle.sources.slice(currentnessLifecycle.sources.length, currentnessLifecycle.sources.length + criticalMassLifecycle.sources.length),
@@ -152,7 +155,10 @@ for (const surface of watcher.surfaces) {
 }
 
 assert.equal(preview.schemaVersion, "agent-evidence-research-preview/0.1-draft");
-assert.equal(preview.releaseCandidateStatus, "ready-for-release-review");
+assert.equal(preview.artifactType, "maintainer-curated-research-preview");
+assert.equal(preview.publicationStatus, PUBLICATION_STATUS);
+assert(!Object.hasOwn(preview, "releaseCandidateStatus"), "Published catalog projection must not retain candidate-state metadata");
+assert.equal(preview.publicationStatus, lifecycle.publicationStatus, "Catalog and lifecycle publication state must agree");
 assert.equal(preview.boundaries.static, true);
 assert.equal(preview.boundaries.maintainerCurated, true);
 assert.equal(preview.boundaries.publisherSourcesOnly, true);
@@ -387,6 +393,8 @@ const plainLabel = (value) => String(value).replaceAll("-", " ").replace(/(^|\s)
 
 for (const summary of preview.previewRecords) {
   const record = builtRecords.get(summary.recordId);
+  assert.equal(record.artifactType, "unpublished-real-agent-dossier", `${summary.recordId} provenance artifact type changed`);
+  assert.equal(record.unpublished, true, `${summary.recordId} provenance lineage changed`);
   const lifecycleEntry = lifecycleById.get(summary.recordId);
   const detailName = `${summary.recordId}.html`;
   const detailHtml = await readFile(path.join(detailsRoot, detailName), "utf8");

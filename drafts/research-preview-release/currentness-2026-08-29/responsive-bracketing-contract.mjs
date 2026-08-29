@@ -5,19 +5,21 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 export const TARGET_CSS_VIEWPORT = Object.freeze({ width: 390, height: 844 });
+export const REQUIRED_BRACKET = Object.freeze({ lower: 389, upper: 391 });
 export const BROWSER_QA_CALIBRATION = Object.freeze({
-  devicePixelRatio: 0.8999999761581421,
-  exactControl: Object.freeze({ width: 351, height: 760 }),
-  desktopControl: Object.freeze({ width: 1296, height: 810 }),
-  narrowMobileControl: Object.freeze({ width: 288, height: 630 })
+  devicePixelRatio: 0.75,
+  lowerControl: Object.freeze({ width: 292, height: 633 }),
+  upperControl: Object.freeze({ width: 293, height: 633 }),
+  desktopControl: Object.freeze({ width: 1080, height: 675 }),
+  narrowMobileControl: Object.freeze({ width: 240, height: 525 })
 });
 
 export const RESPONSIVE_CODE_REVIEW_SCHEMA = "research-preview-responsive-code-review/1.0";
 export const RESPONSIVE_CODE_REVIEW_PATH = "drafts/research-preview-release/currentness-2026-08-29/responsive-width-bracketing-audit.json";
-export const RESPONSIVE_CODE_REVIEW_SHA256 = "374aab8de6f35ea6e7e4e55288bdf7667fa21f42e66e81ccffb2a7ad6906bf59";
-export const REVIEWED_ACTIVE_SCOPE_SHA256 = "21a46662b0febc7efd67d0f5f6b2b708ae9341865e5c9863c2cbe9fd0dc4eab7";
-export const BROWSER_EVIDENCE_CONTRACT = "target-390-exact-observation";
-export const BROWSER_EVIDENCE_RATIONALE = "The installed in-app Browser produced a genuine rendered observation at exactly 390 by 844 CSS pixels, supported by exact 320 by 700 and 1440 by 900 controls. The responsive code review is valid only for the exact hash-bound AEC bytes and must be refreshed when those bytes change.";
+export const RESPONSIVE_CODE_REVIEW_SHA256 = "0bf2630e3d85834248fbb72016e802afd02637b1507b402cfbc494022fa9287c";
+export const REVIEWED_ACTIVE_SCOPE_SHA256 = "d670f720503536098087af15b34dd6bf45286322b63c84cbc2088dc373dc18ec";
+export const BROWSER_EVIDENCE_CONTRACT = "target-390-approved-adjacent-observations-389-391";
+export const BROWSER_EVIDENCE_RATIONALE = "The installed in-app Browser cannot produce an observed 390 CSS-pixel viewport in this environment. Genuine rendered passes at exact 389 and 391 CSS pixels are the approved adjacent operational evidence, supported by exact 320 and 1440 controls. This is practical operational evidence for the unavailable 390 target, not formal proof of arbitrary behavior at exactly 390; the responsive code review is valid only for the exact hash-bound AEC bytes and must be refreshed when those bytes change.";
 
 const moduleRoot = path.dirname(fileURLToPath(import.meta.url));
 const defaultPackageRoot = path.resolve(moduleRoot, "../../..");
@@ -27,7 +29,7 @@ const ACTIVE_SCOPE_INPUTS = Object.freeze([
   "dist/index.html",
   "dist/research-preview"
 ]);
-const REVIEWED_AT = "2026-08-28T12:38:56Z";
+const REVIEWED_AT = "2026-08-29T00:04:03Z";
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 const serialize = (value) => JSON.stringify(value, null, 2) + "\n";
 const iso = (value) => new Date(value).toISOString() === value;
@@ -74,6 +76,11 @@ async function deriveSealedSuccessorEvidence(packageRoot) {
 export const EXPECTED_SUCCESSOR_EVIDENCE = await deriveSealedSuccessorEvidence(defaultPackageRoot);
 export const EXPECTED_SUCCESSOR_RECORD_IDS = EXPECTED_SUCCESSOR_EVIDENCE.changedRecordIds;
 export const EXPECTED_SUCCESSOR_RECORD_PAIRS = EXPECTED_SUCCESSOR_EVIDENCE.recordPredecessorPairs;
+export const EXPECTED_REPRESENTATIVE_UNCHANGED_RECORD_IDS = Object.freeze([
+  "com.cursor.ide.foreground-agent.3-17",
+  "com.cognition.devin-desktop.cascade.3-8-20",
+  "org.aider-ai.aider.cli.0-86-0"
+]);
 
 
 const SOURCE_SHIPPED_PAIRS = Object.freeze([
@@ -122,7 +129,7 @@ const CONTINUOUS_SIZING_CONTEXT = Object.freeze([
 const REVIEW_LIMITATIONS = Object.freeze([
   "This receipt is valid only for the exact hash-bound AEC bytes listed here. Any active visitor-file addition, removal or byte change requires a fresh explicit human/code review and a new receipt.",
   "The validator checks exact paths, hashes, source/shipped equality, inventory structure and known reviewed excerpts. It does not parse or infer arbitrary JavaScript or CSS runtime semantics.",
-  "The installed in-app Browser produced an observed 390 by 844 CSS-pixel viewport in this environment; adjacent-width substitution was not used."
+  "The installed in-app Browser cannot produce an observed 390 CSS-pixel viewport in this environment. Exact 389 and 391 observations are approved adjacent operational evidence, not formal proof of arbitrary behavior at exactly 390."
 ]);
 
 function lineText(text, line) {
@@ -182,9 +189,9 @@ export async function buildResponsiveCodeReview(packageRoot = defaultPackageRoot
     result: "PASS",
     targetCssViewport: TARGET_CSS_VIEWPORT,
     approvedOperationalEvidence: {
-      exact390Observed: true,
-      exactObservedCss: TARGET_CSS_VIEWPORT,
-      adjacentObservationsUsed: false,
+      exact390Observed: false,
+      adjacentObservedWidths: REQUIRED_BRACKET,
+      adjacentObservationsAreApprovedOperationalEvidence: true,
       desktopControlCss: { width: 1440, height: 900 },
       narrowControlCss: { width: 320, height: 700 }
     },
@@ -227,9 +234,9 @@ export function validateResponsiveCodeReviewShape(review) {
   assert.equal(review.result, "PASS");
   assert.deepEqual(review.targetCssViewport, TARGET_CSS_VIEWPORT);
   assert.deepEqual(review.approvedOperationalEvidence, {
-    exact390Observed: true,
-    exactObservedCss: TARGET_CSS_VIEWPORT,
-    adjacentObservationsUsed: false,
+    exact390Observed: false,
+    adjacentObservedWidths: REQUIRED_BRACKET,
+    adjacentObservationsAreApprovedOperationalEvidence: true,
     desktopControlCss: { width: 1440, height: 900 },
     narrowControlCss: { width: 320, height: 700 }
   });
@@ -328,15 +335,16 @@ function assertExactRecordEvidence(records, label) {
   assert.equal(records.predecessorLinksVerified, 15, `${label} must verify all fifteen predecessor links`);
   assert.deepEqual(records.failureRecordIds, [], `${label} must have no failed successor pages`);
   assert.equal(records.horizontalOverflowFailures, 0, `${label} must have no record-page overflow failures`);
+  assert.deepEqual(records.representativeUnchangedRecordIds, EXPECTED_REPRESENTATIVE_UNCHANGED_RECORD_IDS, `${label} must bind the exact representative unchanged record inventory`);
+  assert.equal(records.representativeUnchangedPagesAudited, 3, `${label} must audit all representative unchanged pages`);
+  assert.deepEqual(records.representativeUnchangedFailureRecordIds, [], `${label} must have no representative unchanged page failures`);
 }
 
-function assertObservedExact(side) {
-  const label = "exact";
-  const expectedWidth = TARGET_CSS_VIEWPORT.width;
+function assertObservedSide(side, label, expectedWidth, expectedControl) {
   assert.equal(side.label, label);
   assert.equal(side.route, "/");
   assert.deepEqual(side.requestedTargetCss, TARGET_CSS_VIEWPORT);
-  assert.deepEqual(side.browserViewportControl, BROWSER_QA_CALIBRATION.exactControl);
+  assert.deepEqual(side.browserViewportControl, expectedControl);
   assert(iso(side.startedAt) && iso(side.completedAt));
   assert(new Date(side.startedAt) <= new Date(side.completedAt));
   assert.deepEqual(side.windowInner, { width: expectedWidth, height: 844 });
@@ -398,17 +406,23 @@ function assertObservedExact(side) {
 export function validateExactBrowserBracketProof(proof) {
   assert.equal(proof.contract, BROWSER_EVIDENCE_CONTRACT);
   assert.deepEqual(proof.targetCss, TARGET_CSS_VIEWPORT);
-  assert.equal(proof.exact390Observed, true);
-  assert.equal(proof.adjacentObservationsUsed, false);
+  assert.deepEqual(proof.requiredObservedWidths, REQUIRED_BRACKET);
+  assert.equal(proof.exact390Observed, false);
+  assert.equal(proof.adjacentObservationsAreApprovedOperationalEvidence, true);
   assert.equal(proof.substituteWidthsAllowed, false);
   assert.deepEqual(proof.recordEvidence, {
     changedRecordIds: EXPECTED_SUCCESSOR_RECORD_IDS,
     recordPredecessorPairs: EXPECTED_SUCCESSOR_RECORD_PAIRS
-  }, "Top-level Browser exact record evidence must equal sealed truth");
-  assert.deepEqual(Object.keys(proof.observations), ["exact"]);
-  assertObservedExact(proof.observations.exact);
-  assert.deepEqual(proof.observations.exact.journeys.records.changedRecordIds, proof.recordEvidence.changedRecordIds, "Exact observation IDs must bind to top-level exact inventory");
-  assert.deepEqual(proof.observations.exact.journeys.records.recordPredecessorPairs, proof.recordEvidence.recordPredecessorPairs, "Exact observation pairs must bind to top-level exact inventory");
+  }, "Top-level Browser bracket record evidence must equal sealed truth");
+  assert.deepEqual(Object.keys(proof.observations).sort(), ["lower", "upper"]);
+  assertObservedSide(proof.observations.lower, "lower", REQUIRED_BRACKET.lower, BROWSER_QA_CALIBRATION.lowerControl);
+  assertObservedSide(proof.observations.upper, "upper", REQUIRED_BRACKET.upper, BROWSER_QA_CALIBRATION.upperControl);
+  for (const label of ["lower", "upper"]) {
+    assert.deepEqual(proof.observations[label].journeys.records.changedRecordIds, proof.recordEvidence.changedRecordIds, label + " IDs must bind to top-level exact inventory");
+    assert.deepEqual(proof.observations[label].journeys.records.recordPredecessorPairs, proof.recordEvidence.recordPredecessorPairs, label + " pairs must bind to top-level exact inventory");
+  }
+  assert.equal(proof.observations.lower.windowInner.width < proof.targetCss.width, true);
+  assert.equal(proof.observations.upper.windowInner.width > proof.targetCss.width, true);
   assert.deepEqual(proof.responsiveCodeReview, {
     path: RESPONSIVE_CODE_REVIEW_PATH,
     sha256: RESPONSIVE_CODE_REVIEW_SHA256,
@@ -421,70 +435,94 @@ export function validateExactBrowserBracketProof(proof) {
 
 export function runResponsiveContractNegativeTests(validReview, validProof) {
   const clone = (value) => structuredClone(value);
-  assert.throws(() => validateExactBrowserBracketProof({ ...clone(validProof), observations: {} }));
-  const changedWidth = clone(validProof);
-  changedWidth.observations.exact.windowInner.width = 389;
-  changedWidth.observations.exact.documentElementClient.width = 389;
-  assert.throws(() => validateExactBrowserBracketProof(changedWidth));
+  assert.throws(() => validateExactBrowserBracketProof({ ...clone(validProof), observations: { lower: clone(validProof.observations.lower) } }));
+  assert.throws(() => validateExactBrowserBracketProof({ ...clone(validProof), observations: { upper: clone(validProof.observations.upper) } }));
+  for (const [side, width] of [["lower", 388], ["upper", 392]]) {
+    const changed = clone(validProof);
+    changed.observations[side].windowInner.width = width;
+    changed.observations[side].documentElementClient.width = width;
+    assert.throws(() => validateExactBrowserBracketProof(changed));
+  }
   const wrongHeight = clone(validProof);
-  wrongHeight.observations.exact.windowInner.height = 843;
+  wrongHeight.observations.lower.windowInner.height = 843;
   assert.throws(() => validateExactBrowserBracketProof(wrongHeight));
   const wrongTarget = clone(validProof);
   wrongTarget.targetCss.width = 391;
   assert.throws(() => validateExactBrowserBracketProof(wrongTarget));
-  const falselyMissing390 = clone(validProof);
-  falselyMissing390.exact390Observed = false;
-  assert.throws(() => validateExactBrowserBracketProof(falselyMissing390));
-  const adjacentSubstitution = clone(validProof);
-  adjacentSubstitution.adjacentObservationsUsed = true;
-  assert.throws(() => validateExactBrowserBracketProof(adjacentSubstitution));
+  const falselyObserved390 = clone(validProof);
+  falselyObserved390.exact390Observed = true;
+  assert.throws(() => validateExactBrowserBracketProof(falselyObserved390));
+  const unapprovedAdjacentEvidence = clone(validProof);
+  unapprovedAdjacentEvidence.adjacentObservationsAreApprovedOperationalEvidence = false;
+  assert.throws(() => validateExactBrowserBracketProof(unapprovedAdjacentEvidence));
   const rangeOnly = { contract: "generic-range", targetCss: TARGET_CSS_VIEWPORT, allowedWidthRange: [389, 391] };
   assert.throws(() => validateExactBrowserBracketProof(rangeOnly));
   const missingJourney = clone(validProof);
-  delete missingJourney.observations.exact.journeys.records;
+  delete missingJourney.observations.upper.journeys.records;
   assert.throws(() => validateExactBrowserBracketProof(missingJourney));
   const wrongRoute = clone(validProof);
-  wrongRoute.observations.exact.route = "/research-preview/";
+  wrongRoute.observations.lower.route = "/research-preview/";
   assert.throws(() => validateExactBrowserBracketProof(wrongRoute));
   const missingScreenshot = clone(validProof);
-  missingScreenshot.observations.exact.screenshots.pop();
+  missingScreenshot.observations.upper.screenshots.pop();
   assert.throws(() => validateExactBrowserBracketProof(missingScreenshot));
   const consoleFailure = clone(validProof);
-  consoleFailure.observations.exact.console.errors = 1;
+  consoleFailure.observations.lower.console.errors = 1;
   assert.throws(() => validateExactBrowserBracketProof(consoleFailure));
   const overflowFailure = clone(validProof);
-  overflowFailure.observations.exact.journeys.root.horizontalOverflow = true;
+  overflowFailure.observations.upper.journeys.root.horizontalOverflow = true;
   assert.throws(() => validateExactBrowserBracketProof(overflowFailure));
+  const recordContainmentFailure = clone(validProof);
+  recordContainmentFailure.observations.lower.journeys.records.horizontalOverflowFailures = 1;
+  assert.throws(() => validateExactBrowserBracketProof(recordContainmentFailure));
+  const matrixContainmentFailure = clone(validProof);
+  matrixContainmentFailure.observations.upper.journeys.comparison.matrixInternalOverflow = false;
+  assert.throws(() => validateExactBrowserBracketProof(matrixContainmentFailure));
 
   const duplicateIds = clone(validProof);
-  duplicateIds.observations.exact.journeys.records.changedRecordIds = Array(15).fill(EXPECTED_SUCCESSOR_RECORD_IDS[0]);
+  duplicateIds.observations.lower.journeys.records.changedRecordIds = Array(15).fill(EXPECTED_SUCCESSOR_RECORD_IDS[0]);
   assert.throws(() => validateExactBrowserBracketProof(duplicateIds), /sealed truth|unique/);
   const wrongUniqueId = clone(validProof);
-  wrongUniqueId.observations.exact.journeys.records.changedRecordIds[0] = "example.invalid.successor";
+  wrongUniqueId.observations.lower.journeys.records.changedRecordIds[0] = "example.invalid.successor";
   assert.throws(() => validateExactBrowserBracketProof(wrongUniqueId), /sealed truth/);
   const missingId = clone(validProof);
-  missingId.observations.exact.journeys.records.changedRecordIds.pop();
+  missingId.observations.lower.journeys.records.changedRecordIds.pop();
   assert.throws(() => validateExactBrowserBracketProof(missingId), /sealed truth/);
   const wrongPredecessor = clone(validProof);
-  wrongPredecessor.observations.exact.journeys.records.recordPredecessorPairs[0].predecessorRecordId = "example.invalid.predecessor";
+  wrongPredecessor.observations.lower.journeys.records.recordPredecessorPairs[0].predecessorRecordId = "example.invalid.predecessor";
   assert.throws(() => validateExactBrowserBracketProof(wrongPredecessor), /sealed truth/);
   const duplicatePair = clone(validProof);
-  duplicatePair.observations.exact.journeys.records.recordPredecessorPairs[14] = clone(duplicatePair.observations.exact.journeys.records.recordPredecessorPairs[0]);
+  duplicatePair.observations.lower.journeys.records.recordPredecessorPairs[14] = clone(duplicatePair.observations.lower.journeys.records.recordPredecessorPairs[0]);
   assert.throws(() => validateExactBrowserBracketProof(duplicatePair), /sealed truth|unique/);
   const missingPair = clone(validProof);
-  missingPair.observations.exact.journeys.records.recordPredecessorPairs.pop();
+  missingPair.observations.lower.journeys.records.recordPredecessorPairs.pop();
   assert.throws(() => validateExactBrowserBracketProof(missingPair), /sealed truth/);
   const reorderedPairs = clone(validProof);
-  [reorderedPairs.observations.exact.journeys.records.recordPredecessorPairs[0], reorderedPairs.observations.exact.journeys.records.recordPredecessorPairs[1]] =
-    [reorderedPairs.observations.exact.journeys.records.recordPredecessorPairs[1], reorderedPairs.observations.exact.journeys.records.recordPredecessorPairs[0]];
+  [reorderedPairs.observations.lower.journeys.records.recordPredecessorPairs[0], reorderedPairs.observations.lower.journeys.records.recordPredecessorPairs[1]] =
+    [reorderedPairs.observations.lower.journeys.records.recordPredecessorPairs[1], reorderedPairs.observations.lower.journeys.records.recordPredecessorPairs[0]];
   assert.throws(() => validateExactBrowserBracketProof(reorderedPairs), /sealed truth/);
   const topLevelPairsOnly = clone(validProof);
-  delete topLevelPairsOnly.observations.exact.journeys.records.recordPredecessorPairs;
+  delete topLevelPairsOnly.observations.lower.journeys.records.recordPredecessorPairs;
   assert.throws(() => validateExactBrowserBracketProof(topLevelPairsOnly), /sealed truth/);
+  const oneSideCorrupt = clone(validProof);
+  oneSideCorrupt.observations.upper.journeys.records.recordPredecessorPairs[0].predecessorRecordId = "example.invalid.predecessor";
+  assert.throws(() => validateExactBrowserBracketProof(oneSideCorrupt), /sealed truth/);
+  const missingRepresentative = clone(validProof);
+  missingRepresentative.observations.lower.journeys.records.representativeUnchangedRecordIds.pop();
+  assert.throws(() => validateExactBrowserBracketProof(missingRepresentative), /representative unchanged/);
 
   const staleScopeDigest = clone(validReview);
   staleScopeDigest.activeScope.inventorySha256 = "0".repeat(64);
   assert.throws(() => validateResponsiveCodeReviewShape(staleScopeDigest), /fresh explicit review/);
+  const changedActiveAsset = clone(validReview);
+  changedActiveAsset.activeVisitorFiles[0].sha256 = "0".repeat(64);
+  assert.throws(() => validateResponsiveCodeReviewShape(changedActiveAsset), /reviewed digest/);
+  const addedActiveAsset = clone(validReview);
+  addedActiveAsset.activeVisitorFiles.push({ path: "dist/research-preview/unreviewed.js", sha256: "0".repeat(64), bytes: 1 });
+  assert.throws(() => validateResponsiveCodeReviewShape(addedActiveAsset), /reviewed digest|structure/);
+  const removedActiveAsset = clone(validReview);
+  removedActiveAsset.activeVisitorFiles.pop();
+  assert.throws(() => validateResponsiveCodeReviewShape(removedActiveAsset), /reviewed digest|structure/);
   const staleBehaviorHash = clone(validReview);
   staleBehaviorHash.sourceShippedPairs[0].sha256 = "0".repeat(64);
   assert.throws(() => validateResponsiveCodeReviewShape(staleBehaviorHash), /stale/);

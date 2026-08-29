@@ -6,13 +6,15 @@ https://thedarknitefalls.github.io/agent-evidence-catalog/ and based on the
 OpenCode release-feed follow-up, the prepared 2026-08-13 official-source
 currentness candidate, the 2026-08-15 same-surface correction, the 2026-08-17
 refresh, the 2026-08-18 refresh, the published 2026-08-20 and 2026-08-21
-refreshes, the published 2026-08-24 refresh and the sealed 2026-08-29
-candidate. The repository candidate is sealed to the exact 2026-08-29
+refreshes, the published 2026-08-24 refresh and the published 2026-08-29
+dated snapshot. The published snapshot is sealed to the exact 2026-08-29
 source-review window and link-audit completion recorded in its receipts. A
 separate publication freshness census can add notices but cannot promote
-identities into the snapshot. The live catalog remains on the accepted
-2026-08-24 snapshot until a separate independent review and publication; this
-candidate does not update the live site by itself.
+identities into the snapshot. Independent acceptance, ready
+[PR #20](https://github.com/TheDarkniteFalls/agent-evidence-catalog/pull/20),
+merge, Pages deployment, live-byte verification and bounded live Browser QA
+all completed. Publication does not turn the dated snapshot into
+publication-time currency or observed behavior evidence.
 
 This research preview is a static, maintainer-curated view of attributed
 publisher claims about 55 coding-agent surface keys. It asks a deliberately
@@ -102,12 +104,28 @@ copies only that projection and its 148 presentable record files to
 `dist/research-preview/`. The comparison projector loads only the selected
 committed record files at runtime and does not modify that projection.
 
+## Machine publication state
+
+The catalog projection, lifecycle projection, build manifest and exact release
+manifest use one top-level deployment field: `publicationStatus` with the
+value `public-research-preview-v0.1`. That value means only that this exact
+dated static snapshot was deployed as the public Research Preview v0.1. It
+does not assert continuous freshness, observed behavior, independent testing,
+ranking, recommendation or suitability.
+
+Draft schema-version labels and `artifactType` or `unpublished` fields inside
+retained record, dossier and lifecycle-source objects describe their immutable
+provenance and schema lineage. They are not site deployment fields. The public
+lifecycle projection instead has `artifactType` set to
+`real-agent-lifecycle-projection`, `unpublished` set to `false`, and the shared
+published `publicationStatus`; no nested record, dossier, source, mapping,
+claim or lifecycle entry is rewritten to express deployment state.
+
 ## Release boundary
 
 The public Research Preview v0.1 uses the accepted release boundaries. The
-2026-08-24 projection remains the published snapshot. The 2026-08-29 projection
-is a sealed candidate pending fresh independent acceptance and separate Git
-and publication authority:
+2026-08-29 projection is the published dated snapshot after fresh independent
+acceptance:
 
 - 53 current records are present across the 55-surface catalog, including
   Codex CLI 0.150.1 as the reciprocal same-surface successor to preserved
@@ -122,10 +140,22 @@ and publication authority:
 - the four 2026-08-18 candidate dossiers remain source-only research outside
   catalog, mapping, lifecycle and presentation admission;
 - deterministic, preservation, source-link, browser and publication-safety
-  checks are required for this exact candidate; their success is evidence for
-  independent review, not acceptance or publication authority; and
+  checks passed for this exact snapshot; their success is evidence for this
+  release, not authority for any later candidate; and
 - GitHub Pages serves only the committed `dist/` projection through a pinned,
   least-privilege workflow. It does not rebuild evidence or run agents.
+
+Publication completed through ready
+[PR #20](https://github.com/TheDarkniteFalls/agent-evidence-catalog/pull/20).
+Merge commit `454f2ecec6a89ce0634bb8d4a962a920cae0fb2f`, with parents
+`2668c0cd698127bc4a4468d4dc090a27f3676b2c` and
+`c715bfe98c528f4510690768f94590073e0144e7`, retains candidate tree
+`d7e164299b0da3ace3090bd6da840654cf1e1284`. Post-merge checks run
+`33181128838` passed; Pages run `33181128829`, job `98882283197`, and deployment
+`6143061032` succeeded. The live root and key assets byte-matched committed
+`dist/`, and bounded live Browser QA passed. Future prepared or committed
+snapshots retain candidate semantics until their own acceptance and separately
+authorized Git and publication steps complete.
 
 The catalog does not yet provide an operational private reporting route. That
 is a documented limitation and a roadmap requirement before accepting

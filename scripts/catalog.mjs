@@ -949,7 +949,7 @@ async function commandBuild() {
       data: "research-preview/catalog.json",
       dataSha256: createHash("sha256").update(researchPreviewRaw).digest("hex"),
       asOf: researchPreview.asOf,
-      releaseCandidateStatus: researchPreview.releaseCandidateStatus,
+      publicationStatus: researchPreview.publicationStatus,
       surfaces: researchPreview.counts.surfaces,
       currentRecordsPresented: researchPreview.counts.currentRecordsPresented,
       historyRecordsPresented: researchPreview.counts.recordsPresentedIncludingHistory - researchPreview.counts.currentRecordsPresented,

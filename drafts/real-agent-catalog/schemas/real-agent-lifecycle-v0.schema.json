@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://agent-evidence-catalog.example/drafts/real-agent-lifecycle-v0.schema.json",
-  "title": "Unpublished real-agent lifecycle overlay draft",
-  "description": "A separate backward-compatible lifecycle overlay for immutable accepted real-agent records. It records currentness review and direct record-to-record supersession links without changing evidence or catalog pages.",
+  "title": "Real-agent lifecycle overlay and public projection",
+  "description": "A backward-compatible lifecycle contract for immutable accepted real-agent records. Unpublished overlay objects describe source provenance. The public projection uses publicationStatus only for the deployment state of the exact dated snapshot; neither form changes record evidence.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -17,9 +17,15 @@
   ],
   "properties": {
     "schemaVersion": { "const": "real-agent-lifecycle/0.1-draft" },
-    "artifactType": { "const": "unpublished-real-agent-lifecycle-overlay" },
+    "artifactType": {
+      "enum": [
+        "unpublished-real-agent-lifecycle-overlay",
+        "real-agent-lifecycle-projection"
+      ]
+    },
     "synthetic": { "const": false },
-    "unpublished": { "const": true },
+    "unpublished": { "type": "boolean" },
+    "publicationStatus": { "const": "public-research-preview-v0.1" },
     "asOf": { "$ref": "#/$defs/date" },
     "interpretationBoundary": { "$ref": "#/$defs/interpretationBoundary" },
     "sources": {
@@ -33,6 +39,24 @@
       "items": { "$ref": "#/$defs/lifecycleEntry" }
     }
   },
+  "oneOf": [
+    {
+      "required": ["unpublished"],
+      "properties": {
+        "artifactType": { "const": "unpublished-real-agent-lifecycle-overlay" },
+        "unpublished": { "const": true },
+        "publicationStatus": { "type": "null" }
+      }
+    },
+    {
+      "required": ["unpublished", "publicationStatus"],
+      "properties": {
+        "artifactType": { "const": "real-agent-lifecycle-projection" },
+        "unpublished": { "const": false },
+        "publicationStatus": { "const": "public-research-preview-v0.1" }
+      }
+    }
+  ],
   "$defs": {
     "id": {
       "type": "string",

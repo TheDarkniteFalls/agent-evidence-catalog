@@ -52,8 +52,11 @@ for (const phrase of [
   "research-preview/compare.html",
   "accepted category strings are exactly equal"
 ]) assert(documents.root.includes(phrase), `Root README is missing ${phrase}`);
-for (const phrase of ["sealed 2026-08-29 official-source candidate", "53 records current within the sealed snapshot", "95 non-current records", "92 superseded identities", "148 records total", "publication freshness census"]) {
-  assert(documents.root.includes(phrase), `Root README is missing sealed-snapshot truth: ${phrase}`);
+for (const phrase of ["published 2026-08-29 official-source snapshot", "53 records current within the sealed snapshot", "95 non-current records", "92 superseded identities", "148 records total", "publication freshness census"]) {
+  assert(documents.root.includes(phrase), `Root README is missing published-snapshot truth: ${phrase}`);
+}
+for (const phrase of ["publicationStatus", "public-research-preview-v0.1", "immutable provenance lineage", "not the site's\ndeployment state"]) {
+  assert(documents.root.includes(phrase), `Root README is missing machine publication-state boundary: ${phrase}`);
 }
 
 for (const phrase of [
@@ -69,6 +72,9 @@ for (const phrase of [
 ]) assert(documents.method.includes(phrase), `Research-preview method is missing ${phrase}`);
 for (const phrase of ["published snapshot", "publication-time currency", "92 superseded records", "publication freshness census"]) {
   assert(documents.method.includes(phrase), `Research-preview method is missing sealed-snapshot truth: ${phrase}`);
+}
+for (const phrase of ["Machine publication state", "publicationStatus", "public-research-preview-v0.1", "immutable\nprovenance and schema lineage", "not site deployment fields"]) {
+  assert(documents.method.includes(phrase), `Research-preview method is missing machine publication-state boundary: ${phrase}`);
 }
 assert(documents.readiness.includes("Fifteen exact-identity successors"), "Publication readiness must report all fifteen 2026-08-29 exact-identity successors");
 for (const phrase of [
