@@ -29,6 +29,22 @@
     return `${day} ${month} ${year}, ${hour}:${minute} UTC`;
   }
 
+  function readableSnapshotDate(value) {
+    const date = new Date(`${value}T00:00:00Z`);
+    if (Number.isNaN(date.valueOf())) throw new Error("Snapshot date is invalid.");
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return `${date.getUTCDate()} ${months[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
+  }
+
+  function readableSealMinute(value) {
+    const date = new Date(value);
+    if (Number.isNaN(date.valueOf())) throw new Error("Seal timestamp is invalid.");
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const hour = String(date.getUTCHours()).padStart(2, "0");
+    const minute = String(date.getUTCMinutes()).padStart(2, "0");
+    return `${date.getUTCDate()} ${months[date.getUTCMonth()]}, ${hour}:${minute} UTC`;
+  }
+
   const dimensionText = (name, value = {}) => {
     const values = Array.isArray(value.values) && value.values.length ? ` — ${value.values.join(", ")}` : "";
     return `${name}: ${readableLabel(value.scope ?? "unspecified")}${values}`;
@@ -197,7 +213,7 @@
     const seal = data?.snapshotSeal;
     const freshness = data?.publicationFreshness;
     if (!seal || !freshness) throw new Error("Catalog snapshot or update metadata is unavailable.");
-    const copy = `Catalog snapshot: ${readableUtcMinute(seal.sealedAt)}. Agent releases change quickly; records with known updates are marked.`;
+    const copy = `Dated catalog view: ${readableSnapshotDate(data.asOf)}. Source review sealed ${readableSealMinute(seal.sealedAt)}. Later releases may exist.`;
     root.querySelectorAll("[data-snapshot-banner-copy]").forEach((node) => { node.textContent = copy; });
   }
 

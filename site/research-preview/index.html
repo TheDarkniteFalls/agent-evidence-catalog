@@ -4,52 +4,52 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="data:,">
-    <meta name="description" content="Browse Model Cards for 53 current and 95 retained history records across 55 coding-agent surfaces, with exact identities, publisher claims, official sources and unresolved boundaries.">
+    <meta name="description" content="Browse 53 current and 95 retained coding-agent records across 55 product surfaces. Check exact identities, publisher documentation, sources, lifecycle history, and what remains unknown.">
     <meta name="robots" content="index,follow">
-    <title>Model Cards for Current Coding Agents · Agent Evidence Catalog</title>
+    <title>Browse Exact Coding-Agent Records · Agent Evidence Catalog</title>
     <link rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/">
     <link rel="alternate" type="application/json" href="catalog.json" title="Agent Evidence Catalog data">
     <link rel="alternate" type="text/plain" href="../llms.txt" title="Agent Evidence Catalog orientation for agents">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Agent Evidence Catalog">
-    <meta property="og:title" content="Model Cards for Current Coding Agents · Agent Evidence Catalog">
-    <meta property="og:description" content="Browse Model Cards for 53 current and 95 retained history records across 55 coding-agent surfaces, with exact identities, publisher claims, official sources and unresolved boundaries.">
+    <meta property="og:title" content="Browse Exact Coding-Agent Records · Agent Evidence Catalog">
+    <meta property="og:description" content="Browse 53 current and 95 retained coding-agent records across 55 product surfaces. Check exact identities, publisher documentation, sources, lifecycle history, and what remains unknown.">
     <meta property="og:url" content="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Model Cards for Current Coding Agents · Agent Evidence Catalog">
-    <meta name="twitter:description" content="Browse Model Cards for 53 current and 95 retained history records across 55 coding-agent surfaces, with exact identities, publisher claims, official sources and unresolved boundaries.">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Model Cards for Current Coding Agents","description":"Browse Model Cards for 53 current and 95 retained history records across 55 coding-agent surfaces, with exact identities, publisher claims, official sources and unresolved boundaries.","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/","isPartOf":{"@type":"WebSite","name":"Agent Evidence Catalog","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/"}}</script>
-    <link rel="stylesheet" href="styles.css?v=2026-08-22-comparison-fidelity-1">
+    <meta name="twitter:title" content="Browse Exact Coding-Agent Records · Agent Evidence Catalog">
+    <meta name="twitter:description" content="Browse 53 current and 95 retained coding-agent records across 55 product surfaces. Check exact identities, publisher documentation, sources, lifecycle history, and what remains unknown.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Browse Exact Coding-Agent Records","description":"Browse 53 current and 95 retained coding-agent records across 55 product surfaces. Check exact identities, publisher documentation, sources, lifecycle history, and what remains unknown.","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/","isPartOf":{"@type":"WebSite","name":"Agent Evidence Catalog","url":"https://thedarknitefalls.github.io/agent-evidence-catalog/"}}</script>
+    <link rel="stylesheet" href="styles.css?v=2026-08-29-audience-journeys-2">
   </head>
   <body class="model-cards-page">
-    <a class="skip-link" href="#main">Skip to Model Cards</a>
+    <a class="skip-link" href="#main">Skip to coding-agent records</a>
     <header class="site-header">
       <a class="brand" href="../index.html">Agent Evidence Catalog</a>
       <nav aria-label="Primary navigation">
-        <a href="../index.html">Compare claims</a>
-        <a aria-current="page" href="index.html">Model Cards</a>
-        <a href="how-it-works.html">How it works</a>
+        <a href="../index.html">Compare records</a>
+        <a aria-current="page" href="index.html">Browse records</a>
+        <a href="how-it-works.html">How to read AEC</a>
       </nav>
       <details class="mobile-nav">
         <summary class="mobile-nav-toggle" aria-label="Open navigation"><span class="mobile-nav-icon" aria-hidden="true"></span></summary>
         <nav aria-label="Mobile primary navigation">
-          <a href="../index.html">Compare claims</a>
-          <a aria-current="page" href="index.html">Model Cards</a>
-          <a href="how-it-works.html">How it works</a>
+          <a href="../index.html">Compare records</a>
+          <a aria-current="page" href="index.html">Browse records</a>
+          <a href="how-it-works.html">How to read AEC</a>
         </nav>
       </details>
     </header>
 
     <aside class="preview-banner" aria-label="Catalog snapshot">
-      <span data-snapshot-banner-copy></span> <a href="how-it-works.html#snapshots">How updates work →</a>
+      <span data-snapshot-banner-copy></span> <a href="how-it-works.html#snapshots">What this date means →</a>
     </aside>
 
     <main id="main" class="model-cards-main">
       <section class="model-cards-intro" aria-labelledby="model-cards-title">
-        <h1 id="model-cards-title">Model Cards</h1>
-        <p class="lede">53 current coding-agent surfaces, each grounded in attributed publisher evidence.</p>
+        <h1 id="model-cards-title">Coding-agent records</h1>
+        <p class="lede">Find the exact product surface, version or rolling service you mean, then inspect what its publisher sources say.</p>
 
-        <div id="catalog-controls" class="model-card-controls" aria-label="Model Card filters">
+        <div id="catalog-controls" class="model-card-controls" aria-label="Coding-agent record filters">
           <label class="model-card-search">
             <span class="sr-only">Find a coding agent</span>
             <input id="search" type="search" placeholder="Find a coding agent" autocomplete="off">
@@ -64,14 +64,25 @@
             </div>
           </fieldset>
           <span id="resultCount" class="result-count" aria-live="polite"></span>
+          <div class="catalog-facets" aria-label="Identity filters">
+            <label for="surfaceKind">Surface kind</label>
+            <select id="surfaceKind">
+              <option value="all">All surface kinds</option>
+            </select>
+            <label for="releaseScope">Release scope</label>
+            <select id="releaseScope">
+              <option value="all">All release scopes</option>
+            </select>
+            <p>Release channel stays searchable in the field above.</p>
+          </div>
         </div>
 
         <div id="selectionStatus" class="comparison-status" role="status" aria-live="polite" hidden></div>
-        <p class="evidence-boundary"><strong>Publisher-source research.</strong> No rankings, recommendations or independent testing. Each card describes documentation coverage and unresolved boundaries—not observed product behavior, quality, safety or suitability.</p>
+        <p class="evidence-boundary"><strong>Publisher documentation only.</strong> No observed performance, rankings, recommendations, certifications, or independent tests. Each record shows documentation coverage and what its sources leave unknown—not product quality, safety, or suitability.</p>
       </section>
 
       <section class="catalog model-card-catalog" aria-labelledby="current-heading">
-        <h2 id="current-heading" class="sr-only">Current coding-agent Model Cards</h2>
+        <h2 id="current-heading" class="sr-only">Current coding-agent records</h2>
         <div id="currentRecords" class="record-grid model-card-grid">
         <!-- current-record-links:start -->
           <article class="record-card model-card" data-static-current-record="ai.factory.droid-computers.rolling" data-publisher="Factory AI" style="--card-accent: #4d6478">
@@ -82,14 +93,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Factory-managed persistent Droid Computers</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Factory-managed Droid Computers boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=ai.factory.droid-computers.rolling">Add to compare</a><a class="primary-record-link" href="records/ai.factory.droid-computers.rolling.html">Open evidence</a><a class="raw-json-link" href="records/ai.factory.droid-computers.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=ai.factory.droid-computers.rolling">Add to compare</a><a class="primary-record-link" href="records/ai.factory.droid-computers.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/ai.factory.droid-computers.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="ai.factory.droid.cli.rolling" data-publisher="Factory AI" style="--card-accent: #4d6478">
             <div class="model-card-heading">
@@ -99,14 +110,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Droid CLI rolling release stream</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Droid CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=ai.factory.droid.cli.rolling">Add to compare</a><a class="primary-record-link" href="records/ai.factory.droid.cli.rolling.html">Open evidence</a><a class="raw-json-link" href="records/ai.factory.droid.cli.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=ai.factory.droid.cli.rolling">Add to compare</a><a class="primary-record-link" href="records/ai.factory.droid.cli.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/ai.factory.droid.cli.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="ai.mistral.vibe-code.vscode-extension.rolling" data-publisher="Mistral AI" style="--card-accent: #176044">
             <div class="model-card-heading">
@@ -116,14 +127,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Ide Extension · Vibe 2.0 extension and rolling service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Vibe Code VS Code extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=ai.mistral.vibe-code.vscode-extension.rolling">Add to compare</a><a class="primary-record-link" href="records/ai.mistral.vibe-code.vscode-extension.rolling.html">Open evidence</a><a class="raw-json-link" href="records/ai.mistral.vibe-code.vscode-extension.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=ai.mistral.vibe-code.vscode-extension.rolling">Add to compare</a><a class="primary-record-link" href="records/ai.mistral.vibe-code.vscode-extension.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/ai.mistral.vibe-code.vscode-extension.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="ai.mistral.vibe-code.web.rolling" data-publisher="Mistral AI" style="--card-accent: #176044">
             <div class="model-card-heading">
@@ -133,14 +144,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Vibe Code Web rolling service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Vibe Code Web boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=ai.mistral.vibe-code.web.rolling">Add to compare</a><a class="primary-record-link" href="records/ai.mistral.vibe-code.web.rolling.html">Open evidence</a><a class="raw-json-link" href="records/ai.mistral.vibe-code.web.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=ai.mistral.vibe-code.web.rolling">Add to compare</a><a class="primary-record-link" href="records/ai.mistral.vibe-code.web.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/ai.mistral.vibe-code.web.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="ai.mistral.vibe.cli.rolling" data-publisher="Mistral AI" style="--card-accent: #176044">
             <div class="model-card-heading">
@@ -150,14 +161,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Vibe 2.0 CLI release family</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Vibe CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=ai.mistral.vibe.cli.rolling">Add to compare</a><a class="primary-record-link" href="records/ai.mistral.vibe.cli.rolling.html">Open evidence</a><a class="raw-json-link" href="records/ai.mistral.vibe.cli.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=ai.mistral.vibe.cli.rolling">Add to compare</a><a class="primary-record-link" href="records/ai.mistral.vibe.cli.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/ai.mistral.vibe.cli.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.alibaba.qwen-code.cli.0-22-2" data-publisher="Alibaba Cloud Qwen team" style="--card-accent: #8b2f32">
             <div class="model-card-heading">
@@ -167,14 +178,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Qwen Code CLI release stream</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">The official release feed identifies v0.22.2 as the latest non-prerelease Qwen Code CLI release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.alibaba.qwen-code.cli.0-22-2">Add to compare</a><a class="primary-record-link" href="records/com.alibaba.qwen-code.cli.0-22-2.html">Open evidence</a><a class="raw-json-link" href="records/com.alibaba.qwen-code.cli.0-22-2.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.alibaba.qwen-code.cli.0-22-2">Add to compare</a><a class="primary-record-link" href="records/com.alibaba.qwen-code.cli.0-22-2.html">View claims and sources</a><a class="raw-json-link" href="records/com.alibaba.qwen-code.cli.0-22-2.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.alibaba.qwen-code.vscode-extension.beta-rolling" data-publisher="Alibaba Cloud Qwen team" style="--card-accent: #8b2f32">
             <div class="model-card-heading">
@@ -184,14 +195,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Ide Extension · Qwen Code VS Code integration beta</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Qwen Code VS Code extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.alibaba.qwen-code.vscode-extension.beta-rolling">Add to compare</a><a class="primary-record-link" href="records/com.alibaba.qwen-code.vscode-extension.beta-rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.alibaba.qwen-code.vscode-extension.beta-rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.alibaba.qwen-code.vscode-extension.beta-rolling">Add to compare</a><a class="primary-record-link" href="records/com.alibaba.qwen-code.vscode-extension.beta-rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.alibaba.qwen-code.vscode-extension.beta-rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.amazon.kiro.cli.rolling" data-publisher="Amazon Web Services" style="--card-accent: #4d6478">
             <div class="model-card-heading">
@@ -201,14 +212,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Kiro CLI auto-updating release stream</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Kiro CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.amazon.kiro.cli.rolling">Add to compare</a><a class="primary-record-link" href="records/com.amazon.kiro.cli.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.amazon.kiro.cli.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.amazon.kiro.cli.rolling">Add to compare</a><a class="primary-record-link" href="records/com.amazon.kiro.cli.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.amazon.kiro.cli.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.amazon.kiro.ide.1-0-395" data-publisher="Amazon Web Services" style="--card-accent: #4d6478">
             <div class="model-card-heading">
@@ -218,14 +229,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Desktop App · Kiro IDE desktop release</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>8</dd></div>
-              <div><dt>Official sources</dt><dd>8</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>10</dd></div>
+              <div><dt>Publisher sources</dt><dd>8</dd></div>
+              <div><dt>Unknowns</dt><dd>10</dd></div>
             </dl>
             <p class="boundary-note">Kiro&#39;s official download page marks IDE 1.0.395 Latest, and its official IDE changelog dates that exact release 2026-08-27.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.amazon.kiro.ide.1-0-395">Add to compare</a><a class="primary-record-link" href="records/com.amazon.kiro.ide.1-0-395.html">Open evidence</a><a class="raw-json-link" href="records/com.amazon.kiro.ide.1-0-395.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.amazon.kiro.ide.1-0-395">Add to compare</a><a class="primary-record-link" href="records/com.amazon.kiro.ide.1-0-395.html">View claims and sources</a><a class="raw-json-link" href="records/com.amazon.kiro.ide.1-0-395.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.amazon.kiro.web.preview-rolling" data-publisher="Amazon Web Services" style="--card-accent: #4d6478">
             <div class="model-card-heading">
@@ -235,14 +246,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Kiro Web public preview</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Kiro Web boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.amazon.kiro.web.preview-rolling">Add to compare</a><a class="primary-record-link" href="records/com.amazon.kiro.web.preview-rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.amazon.kiro.web.preview-rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.amazon.kiro.web.preview-rolling">Add to compare</a><a class="primary-record-link" href="records/com.amazon.kiro.web.preview-rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.amazon.kiro.web.preview-rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.amazon.q-developer.github.preview-rolling" data-publisher="Amazon Web Services" style="--card-accent: #4d6478">
             <div class="model-card-heading">
@@ -252,14 +263,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Amazon Q Developer for GitHub public preview</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Amazon Q Developer for GitHub boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.amazon.q-developer.github.preview-rolling">Add to compare</a><a class="primary-record-link" href="records/com.amazon.q-developer.github.preview-rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.amazon.q-developer.github.preview-rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.amazon.q-developer.github.preview-rolling">Add to compare</a><a class="primary-record-link" href="records/com.amazon.q-developer.github.preview-rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.amazon.q-developer.github.preview-rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.amazon.q-developer.ide-plugins.sunset" data-publisher="Amazon Web Services" style="--card-accent: #4d6478">
             <div class="model-card-heading">
@@ -269,14 +280,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Ide Extension · Existing-customer support through 2027-04-30</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Amazon Q Developer IDE plugins boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.amazon.q-developer.ide-plugins.sunset">Add to compare</a><a class="primary-record-link" href="records/com.amazon.q-developer.ide-plugins.sunset.html">Open evidence</a><a class="raw-json-link" href="records/com.amazon.q-developer.ide-plugins.sunset.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.amazon.q-developer.ide-plugins.sunset">Add to compare</a><a class="primary-record-link" href="records/com.amazon.q-developer.ide-plugins.sunset.html">View claims and sources</a><a class="raw-json-link" href="records/com.amazon.q-developer.ide-plugins.sunset.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.anomaly.opencode.cli.1-18-25" data-publisher="Anomaly Innovations, Inc." style="--card-accent: #087d7a">
             <div class="model-card-heading">
@@ -286,14 +297,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · OpenCode GitHub release</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>12</dd></div>
-              <div><dt>Official sources</dt><dd>12</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>13</dd></div>
+              <div><dt>Publisher sources</dt><dd>12</dd></div>
+              <div><dt>Unknowns</dt><dd>13</dd></div>
             </dl>
             <p class="boundary-note">The official release feed identifies v1.18.25 as the latest non-prerelease OpenCode release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.anomaly.opencode.cli.1-18-25">Add to compare</a><a class="primary-record-link" href="records/com.anomaly.opencode.cli.1-18-25.html">Open evidence</a><a class="raw-json-link" href="records/com.anomaly.opencode.cli.1-18-25.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.anomaly.opencode.cli.1-18-25">Add to compare</a><a class="primary-record-link" href="records/com.anomaly.opencode.cli.1-18-25.html">View claims and sources</a><a class="raw-json-link" href="records/com.anomaly.opencode.cli.1-18-25.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.anthropic.claude-code.cli.2-1-250" data-publisher="Anthropic PBC" style="--card-accent: #087d7a">
             <div class="model-card-heading">
@@ -303,14 +314,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Claude Code GitHub stable release</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>8</dd></div>
-              <div><dt>Official sources</dt><dd>8</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>9</dd></div>
+              <div><dt>Publisher sources</dt><dd>8</dd></div>
+              <div><dt>Unknowns</dt><dd>9</dd></div>
             </dl>
             <p class="boundary-note">Anthropic&#39;s official release feed identifies v2.1.250 as the latest non-prerelease Claude Code CLI release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.anthropic.claude-code.cli.2-1-250">Add to compare</a><a class="primary-record-link" href="records/com.anthropic.claude-code.cli.2-1-250.html">Open evidence</a><a class="raw-json-link" href="records/com.anthropic.claude-code.cli.2-1-250.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.anthropic.claude-code.cli.2-1-250">Add to compare</a><a class="primary-record-link" href="records/com.anthropic.claude-code.cli.2-1-250.html">View claims and sources</a><a class="raw-json-link" href="records/com.anthropic.claude-code.cli.2-1-250.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.augmentcode.agent.ide.rolling" data-publisher="Augment Code" style="--card-accent: #ad552f">
             <div class="model-card-heading">
@@ -320,14 +331,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Ide Extension · Versioned IDE plugins plus rolling Augment services</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Augment Agent in VS Code and JetBrains IDEs boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.augmentcode.agent.ide.rolling">Add to compare</a><a class="primary-record-link" href="records/com.augmentcode.agent.ide.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.augmentcode.agent.ide.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.augmentcode.agent.ide.rolling">Add to compare</a><a class="primary-record-link" href="records/com.augmentcode.agent.ide.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.augmentcode.agent.ide.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.augmentcode.auggie.cli.rolling" data-publisher="Augment Code" style="--card-accent: #ad552f">
             <div class="model-card-heading">
@@ -337,14 +348,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Auggie auto-updating CLI</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Auggie CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.augmentcode.auggie.cli.rolling">Add to compare</a><a class="primary-record-link" href="records/com.augmentcode.auggie.cli.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.augmentcode.auggie.cli.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.augmentcode.auggie.cli.rolling">Add to compare</a><a class="primary-record-link" href="records/com.augmentcode.auggie.cli.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.augmentcode.auggie.cli.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.cline.bot.cli.3-0-60" data-publisher="Cline Bot Inc." style="--card-accent: #8a5a12">
             <div class="model-card-heading">
@@ -354,14 +365,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Cline CLI release stream</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Cline&#39;s official release feed identifies CLI v3.0.60 as the latest Cline CLI release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cline.bot.cli.3-0-60">Add to compare</a><a class="primary-record-link" href="records/com.cline.bot.cli.3-0-60.html">Open evidence</a><a class="raw-json-link" href="records/com.cline.bot.cli.3-0-60.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cline.bot.cli.3-0-60">Add to compare</a><a class="primary-record-link" href="records/com.cline.bot.cli.3-0-60.html">View claims and sources</a><a class="raw-json-link" href="records/com.cline.bot.cli.3-0-60.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.cline.bot.vscode-extension.4-1-16" data-publisher="Cline Bot Inc." style="--card-accent: #8a5a12">
             <div class="model-card-heading">
@@ -371,14 +382,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Ide Extension · Visual Studio Marketplace stable listing</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>5</dd></div>
-              <div><dt>Official sources</dt><dd>5</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>8</dd></div>
+              <div><dt>Publisher sources</dt><dd>5</dd></div>
+              <div><dt>Unknowns</dt><dd>8</dd></div>
             </dl>
             <p class="boundary-note">Cline&#39;s official release feed identifies v4.1.16 as the latest VS Code extension release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cline.bot.vscode-extension.4-1-16">Add to compare</a><a class="primary-record-link" href="records/com.cline.bot.vscode-extension.4-1-16.html">Open evidence</a><a class="raw-json-link" href="records/com.cline.bot.vscode-extension.4-1-16.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cline.bot.vscode-extension.4-1-16">Add to compare</a><a class="primary-record-link" href="records/com.cline.bot.vscode-extension.4-1-16.html">View claims and sources</a><a class="raw-json-link" href="records/com.cline.bot.vscode-extension.4-1-16.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.cognition.devin-desktop.cascade.3-8-20" data-publisher="Cognition AI, Inc." style="--card-accent: #8a5a12">
             <div class="model-card-heading">
@@ -388,14 +399,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Desktop App · Devin Desktop stable release</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>14</dd></div>
-              <div><dt>Official sources</dt><dd>14</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>14</dd></div>
+              <div><dt>Publisher sources</dt><dd>14</dd></div>
+              <div><dt>Unknowns</dt><dd>14</dd></div>
             </dl>
             <p class="boundary-note">Cognition&#39;s official Devin Desktop release index identifies v3.8.20 as the latest stable desktop release reviewed on 2026-08-24.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cognition.devin-desktop.cascade.3-8-20">Add to compare</a><a class="primary-record-link" href="records/com.cognition.devin-desktop.cascade.3-8-20.html">Open evidence</a><a class="raw-json-link" href="records/com.cognition.devin-desktop.cascade.3-8-20.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cognition.devin-desktop.cascade.3-8-20">Add to compare</a><a class="primary-record-link" href="records/com.cognition.devin-desktop.cascade.3-8-20.html">View claims and sources</a><a class="raw-json-link" href="records/com.cognition.devin-desktop.cascade.3-8-20.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.cognition.devin.hosted.rolling" data-publisher="Cognition AI, Inc." style="--card-accent: #8a5a12">
             <div class="model-card-heading">
@@ -405,14 +416,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Cognition-managed rolling Devin service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>13</dd></div>
-              <div><dt>Official sources</dt><dd>13</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>14</dd></div>
+              <div><dt>Publisher sources</dt><dd>13</dd></div>
+              <div><dt>Unknowns</dt><dd>14</dd></div>
             </dl>
             <p class="boundary-note">Current means the Cognition-managed hosted surface remains documented as of review; it does not import claims from Devin Desktop, Cascade, or Devin Local.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cognition.devin.hosted.rolling">Add to compare</a><a class="primary-record-link" href="records/com.cognition.devin.hosted.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.cognition.devin.hosted.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cognition.devin.hosted.rolling">Add to compare</a><a class="primary-record-link" href="records/com.cognition.devin.hosted.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.cognition.devin.hosted.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.cursor.cloud-agents.rolling" data-publisher="Anysphere" style="--card-accent: #245ca6">
             <div class="model-card-heading">
@@ -422,14 +433,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Renamed Cursor Cloud Agents service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Cursor Cloud Agents (formerly Background Agents) boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cursor.cloud-agents.rolling">Add to compare</a><a class="primary-record-link" href="records/com.cursor.cloud-agents.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.cursor.cloud-agents.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cursor.cloud-agents.rolling">Add to compare</a><a class="primary-record-link" href="records/com.cursor.cloud-agents.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.cursor.cloud-agents.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.cursor.ide.foreground-agent.3-17" data-publisher="Anysphere, Inc." style="--card-accent: #087d7a">
             <div class="model-card-heading">
@@ -439,14 +450,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Desktop App · Cursor stable desktop download archive</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>12</dd></div>
-              <div><dt>Official sources</dt><dd>12</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>12</dd></div>
+              <div><dt>Publisher sources</dt><dd>12</dd></div>
+              <div><dt>Unknowns</dt><dd>12</dd></div>
             </dl>
             <p class="boundary-note">Cursor&#39;s official desktop download archive identifies 3.17 as Latest in the stable desktop channel reviewed on 2026-08-21.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cursor.ide.foreground-agent.3-17">Add to compare</a><a class="primary-record-link" href="records/com.cursor.ide.foreground-agent.3-17.html">Open evidence</a><a class="raw-json-link" href="records/com.cursor.ide.foreground-agent.3-17.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.cursor.ide.foreground-agent.3-17">Add to compare</a><a class="primary-record-link" href="records/com.cursor.ide.foreground-agent.3-17.html">View claims and sources</a><a class="raw-json-link" href="records/com.cursor.ide.foreground-agent.3-17.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.github.anthropic.claude-agent.preview-rolling" data-publisher="GitHub and Anthropic" style="--card-accent: #4d6478">
             <div class="model-card-heading">
@@ -456,14 +467,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · GitHub third-party coding agents public preview</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed GitHub-hosted third-party Claude coding agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.github.anthropic.claude-agent.preview-rolling">Add to compare</a><a class="primary-record-link" href="records/com.github.anthropic.claude-agent.preview-rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.github.anthropic.claude-agent.preview-rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.github.anthropic.claude-agent.preview-rolling">Add to compare</a><a class="primary-record-link" href="records/com.github.anthropic.claude-agent.preview-rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.github.anthropic.claude-agent.preview-rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.github.copilot.cli.1-0-81" data-publisher="GitHub" style="--card-accent: #7653a6">
             <div class="model-card-heading">
@@ -473,14 +484,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · GitHub Copilot CLI release stream plus rolling service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">GitHub&#39;s official release feed identifies v1.0.81 as the latest non-prerelease Copilot CLI release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.github.copilot.cli.1-0-81">Add to compare</a><a class="primary-record-link" href="records/com.github.copilot.cli.1-0-81.html">Open evidence</a><a class="raw-json-link" href="records/com.github.copilot.cli.1-0-81.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.github.copilot.cli.1-0-81">Add to compare</a><a class="primary-record-link" href="records/com.github.copilot.cli.1-0-81.html">View claims and sources</a><a class="raw-json-link" href="records/com.github.copilot.cli.1-0-81.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.github.copilot.cloud-agent.rolling" data-publisher="GitHub" style="--card-accent: #7653a6">
             <div class="model-card-heading">
@@ -490,14 +501,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · GitHub-hosted rolling service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>11</dd></div>
-              <div><dt>Official sources</dt><dd>11</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>11</dd></div>
+              <div><dt>Publisher sources</dt><dd>11</dd></div>
+              <div><dt>Unknowns</dt><dd>11</dd></div>
             </dl>
             <p class="boundary-note">Current means the rolling hosted surface remains offered as of review; it does not identify an immutable service or model revision.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.github.copilot.cloud-agent.rolling">Add to compare</a><a class="primary-record-link" href="records/com.github.copilot.cloud-agent.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.github.copilot.cloud-agent.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.github.copilot.cloud-agent.rolling">Add to compare</a><a class="primary-record-link" href="records/com.github.copilot.cloud-agent.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.github.copilot.cloud-agent.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.github.copilot.vscode-agent.rolling" data-publisher="GitHub and Microsoft" style="--card-accent: #176044">
             <div class="model-card-heading">
@@ -507,14 +518,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Ide Extension · Versioned VS Code client plus rolling Copilot service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Copilot agent harness in Visual Studio Code boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.github.copilot.vscode-agent.rolling">Add to compare</a><a class="primary-record-link" href="records/com.github.copilot.vscode-agent.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.github.copilot.vscode-agent.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.github.copilot.vscode-agent.rolling">Add to compare</a><a class="primary-record-link" href="records/com.github.copilot.vscode-agent.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.github.copilot.vscode-agent.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.github.openai.codex-agent.preview-rolling" data-publisher="GitHub and OpenAI" style="--card-accent: #176044">
             <div class="model-card-heading">
@@ -524,14 +535,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · GitHub third-party coding agents public preview</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed GitHub-hosted third-party Codex coding agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.github.openai.codex-agent.preview-rolling">Add to compare</a><a class="primary-record-link" href="records/com.github.openai.codex-agent.preview-rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.github.openai.codex-agent.preview-rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.github.openai.codex-agent.preview-rolling">Add to compare</a><a class="primary-record-link" href="records/com.github.openai.codex-agent.preview-rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.github.openai.codex-agent.preview-rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.gitlab.duo.developer-flow.19-2-5" data-publisher="GitLab, Inc." style="--card-accent: #8b2f32">
             <div class="model-card-heading">
@@ -541,14 +552,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · GitLab 19.2.4 Enterprise Edition patch and rolling Agent Platform service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>8</dd></div>
-              <div><dt>Official sources</dt><dd>8</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>9</dd></div>
+              <div><dt>Publisher sources</dt><dd>8</dd></div>
+              <div><dt>Unknowns</dt><dd>9</dd></div>
             </dl>
             <p class="boundary-note">GitLab&#39;s protected v19.2.5-ee tag advances the exact patch identity for the 19.2 release line containing Developer Flow.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.gitlab.duo.developer-flow.19-2-5">Add to compare</a><a class="primary-record-link" href="records/com.gitlab.duo.developer-flow.19-2-5.html">Open evidence</a><a class="raw-json-link" href="records/com.gitlab.duo.developer-flow.19-2-5.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.gitlab.duo.developer-flow.19-2-5">Add to compare</a><a class="primary-record-link" href="records/com.gitlab.duo.developer-flow.19-2-5.html">View claims and sources</a><a class="raw-json-link" href="records/com.gitlab.duo.developer-flow.19-2-5.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.gitlab.duo.code-review-flow.19-2-5" data-publisher="GitLab" style="--card-accent: #7653a6">
             <div class="model-card-heading">
@@ -558,14 +569,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · GitLab 19.2 release line plus rolling Agent Platform service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>6</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>6</dd></div>
             </dl>
             <p class="boundary-note">GitLab&#39;s protected v19.2.5-ee tag advances the exact patch identity for the 19.2 release line containing Code Review Flow.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.gitlab.duo.code-review-flow.19-2-5">Add to compare</a><a class="primary-record-link" href="records/com.gitlab.duo.code-review-flow.19-2-5.html">Open evidence</a><a class="raw-json-link" href="records/com.gitlab.duo.code-review-flow.19-2-5.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.gitlab.duo.code-review-flow.19-2-5">Add to compare</a><a class="primary-record-link" href="records/com.gitlab.duo.code-review-flow.19-2-5.html">View claims and sources</a><a class="raw-json-link" href="records/com.gitlab.duo.code-review-flow.19-2-5.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.gitlab.duo.software-development-flow.rolling" data-publisher="GitLab" style="--card-accent: #7653a6">
             <div class="model-card-heading">
@@ -575,14 +586,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · GitLab release-scoped Agent Platform service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Software Development Flow boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.gitlab.duo.software-development-flow.rolling">Add to compare</a><a class="primary-record-link" href="records/com.gitlab.duo.software-development-flow.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.gitlab.duo.software-development-flow.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.gitlab.duo.software-development-flow.rolling">Add to compare</a><a class="primary-record-link" href="records/com.gitlab.duo.software-development-flow.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.gitlab.duo.software-development-flow.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.google.antigravity.cli.1-1-22" data-publisher="Google" style="--card-accent: #245ca6">
             <div class="model-card-heading">
@@ -592,14 +603,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Antigravity CLI release stream</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Google&#39;s official release feed identifies 1.1.22 as the latest Antigravity CLI release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.google.antigravity.cli.1-1-22">Add to compare</a><a class="primary-record-link" href="records/com.google.antigravity.cli.1-1-22.html">Open evidence</a><a class="raw-json-link" href="records/com.google.antigravity.cli.1-1-22.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.google.antigravity.cli.1-1-22">Add to compare</a><a class="primary-record-link" href="records/com.google.antigravity.cli.1-1-22.html">View claims and sources</a><a class="raw-json-link" href="records/com.google.antigravity.cli.1-1-22.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.google.gemini-code-assist.ide-agent.rolling" data-publisher="Google" style="--card-accent: #245ca6">
             <div class="model-card-heading">
@@ -609,14 +620,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Ide Extension · Audience-dependent Gemini Code Assist service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed IDE agent mode boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.google.gemini-code-assist.ide-agent.rolling">Add to compare</a><a class="primary-record-link" href="records/com.google.gemini-code-assist.ide-agent.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.google.gemini-code-assist.ide-agent.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.google.gemini-code-assist.ide-agent.rolling">Add to compare</a><a class="primary-record-link" href="records/com.google.gemini-code-assist.ide-agent.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.google.gemini-code-assist.ide-agent.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.google.gemini.cli.0-57-0" data-publisher="Google" style="--card-accent: #245ca6">
             <div class="model-card-heading">
@@ -626,14 +637,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Gemini CLI release stream</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Google&#39;s official release feed identifies v0.57.0 as the latest stable Gemini CLI release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.google.gemini.cli.0-57-0">Add to compare</a><a class="primary-record-link" href="records/com.google.gemini.cli.0-57-0.html">Open evidence</a><a class="raw-json-link" href="records/com.google.gemini.cli.0-57-0.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.google.gemini.cli.0-57-0">Add to compare</a><a class="primary-record-link" href="records/com.google.gemini.cli.0-57-0.html">View claims and sources</a><a class="raw-json-link" href="records/com.google.gemini.cli.0-57-0.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.google.jules.hosted.rolling" data-publisher="Google" style="--card-accent: #245ca6">
             <div class="model-card-heading">
@@ -643,14 +654,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Google-hosted rolling service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>10</dd></div>
-              <div><dt>Official sources</dt><dd>10</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>10</dd></div>
+              <div><dt>Publisher sources</dt><dd>10</dd></div>
+              <div><dt>Unknowns</dt><dd>10</dd></div>
             </dl>
             <p class="boundary-note">Current means the rolling hosted surface remains documented as of review; undisclosed runtime and model revisions remain unresolved.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.google.jules.hosted.rolling">Add to compare</a><a class="primary-record-link" href="records/com.google.jules.hosted.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.google.jules.hosted.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.google.jules.hosted.rolling">Add to compare</a><a class="primary-record-link" href="records/com.google.jules.hosted.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.google.jules.hosted.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.jetbrains.junie.cli.beta-rolling" data-publisher="JetBrains" style="--card-accent: #4d6478">
             <div class="model-card-heading">
@@ -660,14 +671,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Junie CLI public beta</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Junie CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.jetbrains.junie.cli.beta-rolling">Add to compare</a><a class="primary-record-link" href="records/com.jetbrains.junie.cli.beta-rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.jetbrains.junie.cli.beta-rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.jetbrains.junie.cli.beta-rolling">Add to compare</a><a class="primary-record-link" href="records/com.jetbrains.junie.cli.beta-rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.jetbrains.junie.cli.beta-rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.jetbrains.junie.ide-plugin.262-834-10" data-publisher="JetBrains" style="--card-accent: #4d6478">
             <div class="model-card-heading">
@@ -677,14 +688,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Ide Extension · JetBrains Marketplace stable plugin</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">JetBrains Marketplace identifies stable Junie IDE plugin update 1154815 as version 262.834.10, published 2026-08-28T05:41:16Z.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.jetbrains.junie.ide-plugin.262-834-10">Add to compare</a><a class="primary-record-link" href="records/com.jetbrains.junie.ide-plugin.262-834-10.html">Open evidence</a><a class="raw-json-link" href="records/com.jetbrains.junie.ide-plugin.262-834-10.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.jetbrains.junie.ide-plugin.262-834-10">Add to compare</a><a class="primary-record-link" href="records/com.jetbrains.junie.ide-plugin.262-834-10.html">View claims and sources</a><a class="raw-json-link" href="records/com.jetbrains.junie.ide-plugin.262-834-10.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.lovable.agent.hosted.rolling" data-publisher="Lovable" style="--card-accent: #087d7a">
             <div class="model-card-heading">
@@ -694,14 +705,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Lovable hosted service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>11</dd></div>
-              <div><dt>Official sources</dt><dd>11</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>12</dd></div>
+              <div><dt>Publisher sources</dt><dd>11</dd></div>
+              <div><dt>Unknowns</dt><dd>12</dd></div>
             </dl>
             <p class="boundary-note">Current publisher documentation uses Build mode as the canonical name and Agent mode as its former name; the sourced rename does not create a second surface.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.lovable.agent.hosted.rolling">Add to compare</a><a class="primary-record-link" href="records/com.lovable.agent.hosted.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.lovable.agent.hosted.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.lovable.agent.hosted.rolling">Add to compare</a><a class="primary-record-link" href="records/com.lovable.agent.hosted.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.lovable.agent.hosted.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.openai.codex.cli.0-150-1" data-publisher="OpenAI" style="--card-accent: #8a5a12">
             <div class="model-card-heading">
@@ -711,14 +722,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · GitHub release</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>12</dd></div>
-              <div><dt>Official sources</dt><dd>12</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>15</dd></div>
+              <div><dt>Publisher sources</dt><dd>12</dd></div>
+              <div><dt>Unknowns</dt><dd>15</dd></div>
             </dl>
             <p class="boundary-note">OpenAI&#39;s official release feed identifies rust-v0.150.1 as the latest stable Codex CLI release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.openai.codex.cli.0-150-1">Add to compare</a><a class="primary-record-link" href="records/com.openai.codex.cli.0-150-1.html">Open evidence</a><a class="raw-json-link" href="records/com.openai.codex.cli.0-150-1.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.openai.codex.cli.0-150-1">Add to compare</a><a class="primary-record-link" href="records/com.openai.codex.cli.0-150-1.html">View claims and sources</a><a class="raw-json-link" href="records/com.openai.codex.cli.0-150-1.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.openai.codex.cloud.rolling" data-publisher="OpenAI" style="--card-accent: #8a5a12">
             <div class="model-card-heading">
@@ -728,14 +739,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Codex cloud rolling service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Codex cloud/web agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.openai.codex.cloud.rolling">Add to compare</a><a class="primary-record-link" href="records/com.openai.codex.cloud.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.openai.codex.cloud.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.openai.codex.cloud.rolling">Add to compare</a><a class="primary-record-link" href="records/com.openai.codex.cloud.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.openai.codex.cloud.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.openai.codex.ide-extension.rolling" data-publisher="OpenAI" style="--card-accent: #8a5a12">
             <div class="model-card-heading">
@@ -745,14 +756,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Ide Extension · Versioned IDE extension plus rolling Codex service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Codex IDE extension boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.openai.codex.ide-extension.rolling">Add to compare</a><a class="primary-record-link" href="records/com.openai.codex.ide-extension.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.openai.codex.ide-extension.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.openai.codex.ide-extension.rolling">Add to compare</a><a class="primary-record-link" href="records/com.openai.codex.ide-extension.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.openai.codex.ide-extension.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.replit.agent.hosted.agent-4" data-publisher="Replit" style="--card-accent: #8a5a12">
             <div class="model-card-heading">
@@ -762,14 +773,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Replit-managed rolling Agent service after the Agent 4 milestone</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>8</dd></div>
-              <div><dt>Official sources</dt><dd>8</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>8</dd></div>
+              <div><dt>Publisher sources</dt><dd>8</dd></div>
+              <div><dt>Unknowns</dt><dd>8</dd></div>
             </dl>
             <p class="boundary-note">Current is scoped to the Agent 4 generation anchor and rolling Replit-managed service as of review; no Agent 5 publisher identity was identified in the bounded audit.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.replit.agent.hosted.agent-4">Add to compare</a><a class="primary-record-link" href="records/com.replit.agent.hosted.agent-4.html">Open evidence</a><a class="raw-json-link" href="records/com.replit.agent.hosted.agent-4.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.replit.agent.hosted.agent-4">Add to compare</a><a class="primary-record-link" href="records/com.replit.agent.hosted.agent-4.html">View claims and sources</a><a class="raw-json-link" href="records/com.replit.agent.hosted.agent-4.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.sourcegraph.amp.cli.rolling" data-publisher="Sourcegraph" style="--card-accent: #7653a6">
             <div class="model-card-heading">
@@ -779,14 +790,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Amp rolling client and service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Amp CLI boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.sourcegraph.amp.cli.rolling">Add to compare</a><a class="primary-record-link" href="records/com.sourcegraph.amp.cli.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.sourcegraph.amp.cli.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.sourcegraph.amp.cli.rolling">Add to compare</a><a class="primary-record-link" href="records/com.sourcegraph.amp.cli.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.sourcegraph.amp.cli.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.stackblitz.bolt.claude-agent.rolling" data-publisher="StackBlitz" style="--card-accent: #087d7a">
             <div class="model-card-heading">
@@ -796,14 +807,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Bolt Claude Agent rolling service after v1 retirement</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Claude Agent in Bolt boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.stackblitz.bolt.claude-agent.rolling">Add to compare</a><a class="primary-record-link" href="records/com.stackblitz.bolt.claude-agent.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.stackblitz.bolt.claude-agent.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.stackblitz.bolt.claude-agent.rolling">Add to compare</a><a class="primary-record-link" href="records/com.stackblitz.bolt.claude-agent.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.stackblitz.bolt.claude-agent.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.tabnine.agent.ide.rolling" data-publisher="Tabnine" style="--card-accent: #8b2f32">
             <div class="model-card-heading">
@@ -813,14 +824,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Ide Extension · Plugin and deployment-specific release lines</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Tabnine Agent in IDE boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.tabnine.agent.ide.rolling">Add to compare</a><a class="primary-record-link" href="records/com.tabnine.agent.ide.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.tabnine.agent.ide.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.tabnine.agent.ide.rolling">Add to compare</a><a class="primary-record-link" href="records/com.tabnine.agent.ide.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.tabnine.agent.ide.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.vercel.agent.public-beta" data-publisher="Vercel" style="--card-accent: #8b2f32">
             <div class="model-card-heading">
@@ -830,14 +841,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Expanded Vercel Agent public beta</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Vercel dashboard and repository-integrated Agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.vercel.agent.public-beta">Add to compare</a><a class="primary-record-link" href="records/com.vercel.agent.public-beta.html">Open evidence</a><a class="raw-json-link" href="records/com.vercel.agent.public-beta.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.vercel.agent.public-beta">Add to compare</a><a class="primary-record-link" href="records/com.vercel.agent.public-beta.html">View claims and sources</a><a class="raw-json-link" href="records/com.vercel.agent.public-beta.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="com.vercel.v0.agent.rolling" data-publisher="Vercel" style="--card-accent: #8b2f32">
             <div class="model-card-heading">
@@ -847,14 +858,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · v0 rolling hosted development service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed v0 hosted development agent boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.vercel.v0.agent.rolling">Add to compare</a><a class="primary-record-link" href="records/com.vercel.v0.agent.rolling.html">Open evidence</a><a class="raw-json-link" href="records/com.vercel.v0.agent.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=com.vercel.v0.agent.rolling">Add to compare</a><a class="primary-record-link" href="records/com.vercel.v0.agent.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/com.vercel.v0.agent.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="dev.warp.oz.cloud-agents.rolling" data-publisher="Warp" style="--card-accent: #176044">
             <div class="model-card-heading">
@@ -864,14 +875,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · Oz Cloud Agents rolling service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Oz Cloud Agents (Warp) boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=dev.warp.oz.cloud-agents.rolling">Add to compare</a><a class="primary-record-link" href="records/dev.warp.oz.cloud-agents.rolling.html">Open evidence</a><a class="raw-json-link" href="records/dev.warp.oz.cloud-agents.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=dev.warp.oz.cloud-agents.rolling">Add to compare</a><a class="primary-record-link" href="records/dev.warp.oz.cloud-agents.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/dev.warp.oz.cloud-agents.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="dev.warp.oz.local-agent.desktop.rolling" data-publisher="Warp" style="--card-accent: #176044">
             <div class="model-card-heading">
@@ -881,14 +892,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Desktop App · Warp desktop client plus Oz local agent service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed Agent Mode in Warp desktop terminal boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=dev.warp.oz.local-agent.desktop.rolling">Add to compare</a><a class="primary-record-link" href="records/dev.warp.oz.local-agent.desktop.rolling.html">Open evidence</a><a class="raw-json-link" href="records/dev.warp.oz.local-agent.desktop.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=dev.warp.oz.local-agent.desktop.rolling">Add to compare</a><a class="primary-record-link" href="records/dev.warp.oz.local-agent.desktop.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/dev.warp.oz.local-agent.desktop.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="dev.zed.agent.native.1-17-2" data-publisher="Zed Industries, Inc." style="--card-accent: #8b2f32">
             <div class="model-card-heading">
@@ -898,14 +909,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Desktop App · Zed stable release</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>7</dd></div>
-              <div><dt>Official sources</dt><dd>7</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>8</dd></div>
+              <div><dt>Publisher sources</dt><dd>7</dd></div>
+              <div><dt>Unknowns</dt><dd>8</dd></div>
             </dl>
             <p class="boundary-note">Zed&#39;s official stable release page marks 1.17.2 as the latest stable release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=dev.zed.agent.native.1-17-2">Add to compare</a><a class="primary-record-link" href="records/dev.zed.agent.native.1-17-2.html">Open evidence</a><a class="raw-json-link" href="records/dev.zed.agent.native.1-17-2.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=dev.zed.agent.native.1-17-2">Add to compare</a><a class="primary-record-link" href="records/dev.zed.agent.native.1-17-2.html">View claims and sources</a><a class="raw-json-link" href="records/dev.zed.agent.native.1-17-2.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="org.aaif.goose.cli.1-48-0" data-publisher="Agentic AI Foundation" style="--card-accent: #8a5a12">
             <div class="model-card-heading">
@@ -915,14 +926,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · AAIF Goose release stream</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Agentic AI Foundation&#39;s official release feed identifies v1.48.0 as the latest stable Goose CLI release reviewed on 2026-08-29.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=org.aaif.goose.cli.1-48-0">Add to compare</a><a class="primary-record-link" href="records/org.aaif.goose.cli.1-48-0.html">Open evidence</a><a class="raw-json-link" href="records/org.aaif.goose.cli.1-48-0.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=org.aaif.goose.cli.1-48-0">Add to compare</a><a class="primary-record-link" href="records/org.aaif.goose.cli.1-48-0.html">View claims and sources</a><a class="raw-json-link" href="records/org.aaif.goose.cli.1-48-0.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="org.aider-ai.aider.cli.0-86-0" data-publisher="Aider-AI project" style="--card-accent: #087d7a">
             <div class="model-card-heading">
@@ -932,14 +943,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · Aider GitHub release</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>9</dd></div>
-              <div><dt>Official sources</dt><dd>9</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>8</dd></div>
+              <div><dt>Publisher sources</dt><dd>9</dd></div>
+              <div><dt>Unknowns</dt><dd>8</dd></div>
             </dl>
             <p class="boundary-note">The publisher latest-release endpoint still resolves to v0.86.0; release age alone is not treated as supersession.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=org.aider-ai.aider.cli.0-86-0">Add to compare</a><a class="primary-record-link" href="records/org.aider-ai.aider.cli.0-86-0.html">Open evidence</a><a class="raw-json-link" href="records/org.aider-ai.aider.cli.0-86-0.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=org.aider-ai.aider.cli.0-86-0">Add to compare</a><a class="primary-record-link" href="records/org.aider-ai.aider.cli.0-86-0.html">View claims and sources</a><a class="raw-json-link" href="records/org.aider-ai.aider.cli.0-86-0.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="org.openhands.cloud.rolling" data-publisher="OpenHands AI" style="--card-accent: #4d6478">
             <div class="model-card-heading">
@@ -949,14 +960,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Hosted Service · OpenHands Cloud rolling service</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>2</dd></div>
-              <div><dt>Official sources</dt><dd>2</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>4</dd></div>
+              <div><dt>Publisher sources</dt><dd>2</dd></div>
+              <div><dt>Unknowns</dt><dd>4</dd></div>
             </dl>
             <p class="boundary-note">Official publisher sources identify this as the current reviewed OpenHands Cloud boundary. Exact runtime, model and effective configuration remain unresolved unless expressly named.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=org.openhands.cloud.rolling">Add to compare</a><a class="primary-record-link" href="records/org.openhands.cloud.rolling.html">Open evidence</a><a class="raw-json-link" href="records/org.openhands.cloud.rolling.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=org.openhands.cloud.rolling">Add to compare</a><a class="primary-record-link" href="records/org.openhands.cloud.rolling.html">View claims and sources</a><a class="raw-json-link" href="records/org.openhands.cloud.rolling.json">Machine-readable record</a></div>
           </article>
           <article class="record-card model-card" data-static-current-record="org.openhands.cli.1-16-0" data-publisher="OpenHands" style="--card-accent: #8a5a12">
             <div class="model-card-heading">
@@ -966,14 +977,14 @@
               <span class="lifecycle lifecycle-current">current</span>
             </div>
             <p class="release-scope">Cli · GitHub release</p>
-            <p class="evidence-profile-label">Evidence profile</p>
+            <p class="evidence-profile-label">Documented in this record</p>
             <dl class="record-metrics">
               <div><dt>Publisher claims</dt><dd>9</dd></div>
-              <div><dt>Official sources</dt><dd>9</dd></div>
-              <div><dt>Unresolved boundaries</dt><dd>9</dd></div>
+              <div><dt>Publisher sources</dt><dd>9</dd></div>
+              <div><dt>Unknowns</dt><dd>9</dd></div>
             </dl>
             <p class="boundary-note">The publisher labels 1.16.0 latest and describes V1 CLI as feature-complete and stability-maintained rather than discontinued.</p>
-            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=org.openhands.cli.1-16-0">Add to compare</a><a class="primary-record-link" href="records/org.openhands.cli.1-16-0.html">Open evidence</a><a class="raw-json-link" href="records/org.openhands.cli.1-16-0.json">Raw JSON</a></div>
+            <div class="card-links"><a class="compare-card-button" href="../index.html?agents=org.openhands.cli.1-16-0">Add to compare</a><a class="primary-record-link" href="records/org.openhands.cli.1-16-0.html">View claims and sources</a><a class="raw-json-link" href="records/org.openhands.cli.1-16-0.json">Machine-readable record</a></div>
           </article>
         <!-- current-record-links:end -->
         </div>
@@ -985,7 +996,7 @@
           <div>
             <p class="eyebrow">Separate history</p>
             <h2 id="history-heading">Earlier identities and milestones</h2>
-            <p>Superseded versions, historical milestones and publisher-discontinued surfaces remain preserved outside the current Model Card set.</p>
+            <p>Superseded versions, historical milestones, and publisher-discontinued surfaces remain preserved separately from current records.</p>
           </div>
           <button id="historyToggle" type="button" aria-expanded="false" aria-controls="historyRecords">Show history records</button>
         </div>
@@ -995,17 +1006,17 @@
 
     <footer>
       <p>Static research artifact. Inclusion is not endorsement; absence is not an adverse finding.</p>
-      <p><a href="how-it-works.html">How it works</a> · <a href="../CORRECTIONS.md">Corrections</a></p>
+      <p><a href="how-it-works.html">How to read AEC</a> · <a href="../CORRECTIONS.md">Correct a public factual error</a></p>
     </footer>
 
-    <noscript><p class="noscript">JavaScript is required for filtering and history. Every current Model Card retains a crawlable evidence link, and machine-readable data remains available at <a href="catalog.json">catalog.json</a>.</p></noscript>
+    <noscript><p class="noscript">JavaScript is required for filtering and history. Every current record retains a crawlable claims-and-sources link, and machine-readable data remains available at <a href="catalog.json">catalog.json</a>.</p></noscript>
     <div id="selectionTray" class="selection-tray" hidden>
       <div id="trayChips" class="selection-tray-chips" aria-label="Selected records"></div>
       <p id="trayCount" class="selection-tray-count"></p>
-      <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected claims</button>
+      <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected records</button>
     </div>
     <script src="data.js?v=2026-08-29-sealed-snapshot"></script>
-    <script src="comparison-core.js?v=2026-08-16-visitor-ia-1"></script>
-    <script src="app.js?v=2026-08-29-model-cards-1"></script>
+    <script src="comparison-core.js?v=2026-08-29-audience-journeys-2"></script>
+    <script src="app.js?v=2026-08-29-audience-journeys-2"></script>
   </body>
 </html>

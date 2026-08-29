@@ -25,8 +25,12 @@
     const params = new URLSearchParams();
     const search = requestedState.get("q");
     const delivery = requestedState.get("delivery");
+    const surface = requestedState.get("surface");
+    const scope = requestedState.get("scope");
     if (search) params.set("q", search);
     if (["local", "hybrid", "hosted"].includes(delivery)) params.set("delivery", delivery);
+    if (new Set(data.previewRecords.map((record) => record.surface.kind)).has(surface)) params.set("surface", surface);
+    if (["exact-version", "rolling-service", "unresolved"].includes(scope)) params.set("scope", scope);
     if (selectedIds.length) params.set("agents", selectedIds.join(","));
     return params;
   }

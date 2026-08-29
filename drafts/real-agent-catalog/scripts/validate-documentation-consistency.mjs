@@ -47,8 +47,9 @@ for (const phrase of [
   "55 defensible agent surfaces",
   "zero independent-test credit",
   "intake is not open",
-  "researchers, builders and maintainers",
-  "not a buying guide",
+  "what are you actually comparing when you compare coding agents?",
+  "A product name can refer to a CLI, IDE extension, cloud worker or rolling service",
+  "does not observe agent behavior, independently test products, score them, recommend a winner, certify them",
   "research-preview/compare.html",
   "accepted category strings are exactly equal"
 ]) assert(documents.root.includes(phrase), `Root README is missing ${phrase}`);
@@ -186,18 +187,18 @@ assert(siteHtml.includes("data-snapshot-banner-copy"));
 assert(comparisonHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/"'));
 assert(howItWorksHtml.includes('rel="canonical" href="https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html"'));
 assert(landingHtml.includes('<base href="./research-preview/">'));
-assert(landingHtml.includes('<h1 id="comparison-title">Compare agent claims, source by source.</h1>'));
+assert(landingHtml.includes('<h1 id="comparison-title">What are you actually comparing when you compare coding agents?</h1>'));
 assert(landingHtml.includes('<a class="brand" href="../index.html">Agent Evidence Catalog</a>'));
 assert(landingHtml.includes('id="pickerRecords"'));
 assert(landingHtml.includes('id="comparisonMatrix"'));
-assert(landingHtml.includes("compare.js?v=2026-08-22-comparison-fidelity-1"));
-assert(siteHtml.includes('<h1 id="model-cards-title">Model Cards</h1>'));
+assert(landingHtml.includes("compare.js?v=2026-08-29-audience-journeys-2"));
+assert(siteHtml.includes('<h1 id="model-cards-title">Coding-agent records</h1>'));
 assert(siteHtml.includes('placeholder="Find a coding agent"'));
-assert(siteHtml.includes("Unresolved boundaries"));
+assert(siteHtml.includes("Unknowns"));
 assert(!siteHtml.includes("<dt>Independent tests</dt>"));
 assert(comparisonHtml.includes('id="pickerRecords"'));
 assert(comparisonHtml.includes('id="comparisonMatrix"'));
-assert(comparisonHtml.includes("compare.js?v=2026-08-22-comparison-fidelity-1"));
+assert(comparisonHtml.includes("compare.js?v=2026-08-29-audience-journeys-2"));
 assert(!landingHtml.includes("secondary synthetic reference"));
 assert(!landingHtml.includes(">Method</a>"));
 assert(!landingHtml.includes(">Lifecycle</a>"));
@@ -206,11 +207,11 @@ for (const target of ["../RESEARCH_PREVIEW.md", "../GOVERNANCE.md", "../PUBLICAT
   await access(path.resolve(packageRoot, "dist/research-preview", target));
 }
 for (const html of [landingHtml, siteHtml, comparisonHtml, howItWorksHtml]) {
-  assert(html.includes(">Compare claims</a>"));
-  assert(html.includes(">Model Cards</a>"));
-  assert(html.includes(">How it works</a>"));
+  assert(html.includes(">Compare records</a>"));
+  assert(html.includes(">Browse records</a>"));
+  assert(html.includes(">How to read AEC</a>"));
   assert(!html.includes(">Catalog</a>"));
-  assert(html.includes("Corrections</a>"));
+  assert(html.includes("Correct a public factual error</a>"));
 }
 
 assert(preview.previewRecords.some((record) => record.recordId === "com.openai.codex.cli.0-147-0"));
@@ -227,4 +228,4 @@ for (const phrase of ["Refresh workflow", "Inventory expansion", "Concept and pr
 
 console.log("PASS documentation agrees on 55 surfaces, 148 lifecycle entries, 53 current cards and 95 explicit-history records");
 console.log(`PASS ${checkedSources} preview source links are HTTPS, publisher-attributed, non-search URLs and claim-linked`);
-console.log("PASS root comparison, Model Cards navigation, quiet global footers and demoted technical documentation links match their source files");
+console.log("PASS root comparison, browse-records navigation, quiet global footers and demoted technical documentation links match their source files");

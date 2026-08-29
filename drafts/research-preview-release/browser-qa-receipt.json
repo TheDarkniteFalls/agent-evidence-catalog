@@ -10,21 +10,21 @@
     "browserNavigation": "PASS"
   },
   "sourceDigests": {
-    "rootComparisonHtmlSha256": "6d87f1766b7affc79fc9f51416ed67a4c3a9152c638f55a45c8557798b966018",
-    "modelCardsHtmlSha256": "7778854afe00083bd9e20acf4eae2e6b4a98285a87a19c8bb9cc24fe27f3c594",
-    "howItWorksHtmlSha256": "7acba0c41cffc881f2dbd5c02ad7cb48174b3aa61bbb198c85d70c9d5ad3f7c7",
+    "rootComparisonHtmlSha256": "e3d7df740f055c322c9bdac8feeeedf23ed63317f9bb96f568fc67a714a722c8",
+    "modelCardsHtmlSha256": "42b5713b3273507eb95d540cd9ea7147c518294b09bb67881d076456166f4b21",
+    "howItWorksHtmlSha256": "6c74e77af5715ec367ccea21d27368985de7ed475e460cc2a2e217e38f03cd9e",
     "previewDataSha256": "73414d182ebe38afa55f145cf730e9703b8d7d8aad17782944cad7bcf3bcc908",
-    "previewAppSha256": "a7171b3d5c3bba6c88ea88b0dfa8f1595c6d462e38d455288747e70b932cff09",
-    "comparisonHtmlSha256": "cf378361fbd7261391c0345a12bc28731ccf5b81d489f608ca5ad742457b7ea6",
-    "comparisonCoreSha256": "86bee779a019426e2c0c843701d0235aa82aa7270f54c4134ed24f666c06c21e",
-    "comparisonAppSha256": "f8c8ab12c77b6b2ddaacde9a503c9338b2c9c3ee554248c631acc19078078e3c",
-    "recordDetailAppSha256": "87e143ac1e24a652ea606bbae367633e1f0ee2707e12ee1453c23c3a0f5dcd1f",
-    "previewStylesSha256": "16a92ecc636c747b687605452e14b924be5ae4ebd194d38551f1ce97ec2f821a",
-    "llmsSha256": "1e70673e715d33bf911d52226651c5c801a9e0714afd01bdcd10f8f80110bf48",
+    "previewAppSha256": "e3383e706797f3bff159d2c900b6a86a6841e36d9513bc0d7acd28cd3b20054e",
+    "comparisonHtmlSha256": "12a4357706f1a54809a994090098d12d76f1a366fa65992938c8a35f04bec4a0",
+    "comparisonCoreSha256": "c1d816caefeec6d9584040db21719b43752ed317ef283a47352f46c0cd134686",
+    "comparisonAppSha256": "8e209cd195a663c06d56586d75865fb9624e19104548c31dc9b1bb6af57fde13",
+    "recordDetailAppSha256": "58d00b23b13cb69c211997dc8e11cbac1135d1fc98ffac58efd5be960b01c461",
+    "previewStylesSha256": "8a0701bf1f62b6cd723136fd4641016e3ea6f3bc0bc3accc2da9bae29ad8afd5",
+    "llmsSha256": "e33db38a45e57c8626fd93f5f50c697e889ba7ebdf412da18bada7bc79a6c504",
     "lifecycleSha256": "2449edb7bd913873914d93d3a9121ad712fd7954dc93309a47766d969c26e5ae",
-    "representativeRecordHtmlSha256": "065f6adb7ec1213189f03556ba7701d64e06c9ea24f8b779577f50720831900f",
+    "representativeRecordHtmlSha256": "f657f31a44df5828d5f78a5a961a10e665deb8b7e1a5fca02f0eee0d745d3272",
     "representativeRecordJsonSha256": "000700c69ed833c59cb1776a3bfc9a4048ac47b431ee8389c68809e1366a6ae9",
-    "recordDetailsManifestSha256": "d3db564f4b622a7ab302f828ff3d764c14bca7a1fee58d2a726633e7bbd9a201",
+    "recordDetailsManifestSha256": "51f4c1b9d9772eec4b8cf6d172d1a4face412dcf0359c234c37c9bea8d6a8f3c",
     "sitemapSha256": "280b3fe3c5a648c3ab6d226f27b119240e29888de837515b9f55e87f8145d2a6"
   },
   "snapshot": {
@@ -85,9 +85,9 @@
     "substituteWidthsAllowed": false,
     "responsiveCodeReview": {
       "path": "drafts/research-preview-release/currentness-2026-08-29/responsive-width-bracketing-audit.json",
-      "sha256": "0bf2630e3d85834248fbb72016e802afd02637b1507b402cfbc494022fa9287c",
-      "schemaVersion": "research-preview-responsive-code-review/1.0",
-      "activeScopeSha256": "d670f720503536098087af15b34dd6bf45286322b63c84cbc2088dc373dc18ec",
+      "sha256": "f21f417d4bf29b865f3a8c8f5478ffcec9f4111746ed2f8942cc990de85f369f",
+      "schemaVersion": "research-preview-responsive-code-review/2.0",
+      "activeScopeSha256": "0006b693d3b358222060f2206f39d0eb076318039c15452830f571629d73a7c1",
       "result": "PASS"
     },
     "observations": {
@@ -494,7 +494,7 @@
         }
       }
     },
-    "rationale": "The installed in-app Browser cannot produce an observed 390 CSS-pixel viewport in this environment. Genuine rendered passes at exact 389 and 391 CSS pixels are the approved adjacent operational evidence, supported by exact 320 and 1440 controls. This is practical operational evidence for the unavailable 390 target, not formal proof of arbitrary behavior at exactly 390; the responsive code review is valid only for the exact hash-bound AEC bytes and must be refreshed when those bytes change.",
+    "rationale": "The retained Aug 29 screenshots and 389/391 observations are historical evidence for active visitor digest d670f720503536098087af15b34dd6bf45286322b63c84cbc2088dc373dc18ec only; they do not depict the Stage 1 + Stage 2 successor. Current responsive evidence is the independently accepted, hash-bound ten-row matrix plus exact 620 control recorded in successorResponsiveReview. Exact 390 was not observed and is not claimed.",
     "recordEvidence": {
       "changedRecordIds": [
         "com.alibaba.qwen-code.cli.0-22-2",
@@ -575,6 +575,241 @@
           "predecessorRecordId": "org.aaif.goose.cli.1-47-0"
         }
       ]
+    },
+    "legacyObservationApplicability": {
+      "status": "HISTORICAL_ONLY",
+      "activeVisitorSha256": "d670f720503536098087af15b34dd6bf45286322b63c84cbc2088dc373dc18ec",
+      "screenshotCount": 6,
+      "statement": "The retained Aug 29 screenshots and adjacent 389/391 observations do not depict or validate the Stage 1 + Stage 2 successor bytes."
+    },
+    "successorResponsiveReview": {
+      "schemaVersion": "aec-stage12-successor-responsive-review/1",
+      "result": "PASS",
+      "reviewVerdict": "ACCEPT_WITH_NONBLOCKING_NOTES",
+      "reviewedCandidate": {
+        "path": "/private/tmp/aec-stage12-css-successor.0xjZLq/agent-evidence-catalog",
+        "branch": "codex/aec-audience-journeys-stage1",
+        "head": "913dc6bef78647e0016ce8a4b091c128dcc03dc0",
+        "baseTree": "c7472294161127688b7467dbfb0cab470ec197bd",
+        "workingPatchSha256": "68f1c641a61ab38b15d437073bb0db4a22a64ea629387f2b0fbfa04f92ebbfc3",
+        "changedPathCount": 179,
+        "changedPathInventorySha256": "330ea499ff290659e0acc83adc3f604c463ea2cd8c3badd57b38e874515a6561",
+        "incrementalPaths": [
+          "dist/research-preview/styles.css",
+          "site/research-preview/styles.css"
+        ],
+        "incrementalPathInventorySha256": "05a2920814a4aa97dfd96a3d8636d4ef02e36c2a6622c63b8ad929ff9ea970ac",
+        "incrementalContentInventorySha256": "f5471a35e25ebab638184cbb27303004d7d84ab8a001f7f83ce7ff46b7d12524",
+        "incrementalNumstat": [
+          {
+            "path": "dist/research-preview/styles.css",
+            "added": 6,
+            "deleted": 0
+          },
+          {
+            "path": "site/research-preview/styles.css",
+            "added": 6,
+            "deleted": 0
+          }
+        ],
+        "deterministicDistSha256": "8ad907b56ad276d69b33f2161cfa65c2f281ac3a7caaa938bfca48e259d3478f",
+        "stylesheetSha256": "8a0701bf1f62b6cd723136fd4641016e3ea6f3bc0bc3accc2da9bae29ad8afd5",
+        "buildManifestSha256": "91ee48d15bdd802c4d365b853ff0c8244ac88d4e86fa4b6a9c3582da0c24ff4a",
+        "activeVisitorFileCount": 319,
+        "activeVisitorSha256": "0006b693d3b358222060f2206f39d0eb076318039c15452830f571629d73a7c1",
+        "indexEntries": 0,
+        "untrackedEntries": 0,
+        "unstagedEntries": 179
+      },
+      "independentReview": {
+        "taskId": "01a04e44-b469-78f2-93ec-494a440af958",
+        "reviewDate": "2026-08-30",
+        "packetPath": "/private/tmp/aec-stage12-acceptance.JbQR6w/review-artifacts/final-packet",
+        "packetFileCount": 6,
+        "packetInventorySha256": "1b38de5d3c2139dc0e0561489ef54350b261ad711bfd9b0a448396f3966c7928",
+        "files": [
+          {
+            "path": "REVIEW.md",
+            "sha256": "0f6d14c53fa74ec8a5e1c6221caedefdacbb7405e6f01a6b7d0b36e7ff37f4fb"
+          },
+          {
+            "path": "browser-evidence.json",
+            "sha256": "9bf236558dd5d87e37b7a64191c23fd7c7766befc1a70ca72d5551809c463024"
+          },
+          {
+            "path": "gates.md",
+            "sha256": "d2a70d9bacbdd5dae2d4f896d012c64f78f3b72a1a53ca98b78ce8363ccd5333"
+          },
+          {
+            "path": "negative-controls.md",
+            "sha256": "1614474bc094d320f541346afbabdf2b2ec83b3bbb150897e397859369ef5e1d"
+          },
+          {
+            "path": "preservation.md",
+            "sha256": "9219c9c7c6fdfd5d538e4cde1f22019c28a1a3eb4efe5933434c9c999581aed7"
+          },
+          {
+            "path": "artifact-inventory.json",
+            "sha256": "1b38de5d3c2139dc0e0561489ef54350b261ad711bfd9b0a448396f3966c7928"
+          }
+        ],
+        "priorRejectedPacketPath": "/private/tmp/aec-stage12-successor-review.1cMv91/review-artifacts/final-packet",
+        "priorRejectedPacketInventorySha256": "fca2729398f51fe60a5e2e747d0066391de5eeb2aa0ec0d2478a3e9f448692de"
+      },
+      "browserEvidence": {
+        "copiedFromAcceptedPacket": true,
+        "freshBrowserRunByReceiptAuthor": false,
+        "exact390Observed": false,
+        "journeys": [
+          "root",
+          "method",
+          "browse",
+          "current",
+          "history",
+          "comparison"
+        ],
+        "observedCssViewports": [
+          {
+            "viewport": "320x700",
+            "allJourneysContained": true,
+            "facetClientScroll": "284/284",
+            "recordActionHeight": 44,
+            "historyToggleHeight": 44,
+            "comparison": "stacked",
+            "comparisonShellClientScroll": "265/265"
+          },
+          {
+            "viewport": "389x844",
+            "allJourneysContained": true,
+            "facetClientScroll": "353/353",
+            "recordActionHeight": 44,
+            "historyToggleHeight": 44,
+            "comparison": "stacked",
+            "comparisonShellClientScroll": "335/335"
+          },
+          {
+            "viewport": "391x844",
+            "allJourneysContained": true,
+            "facetClientScroll": "355/355",
+            "recordActionHeight": 44,
+            "historyToggleHeight": 44,
+            "comparison": "stacked",
+            "comparisonShellClientScroll": "336/336"
+          },
+          {
+            "viewport": "619x844",
+            "allJourneysContained": true,
+            "facetClientScroll": "583/583",
+            "recordActionHeight": 44,
+            "historyToggleHeight": 44,
+            "comparison": "stacked",
+            "comparisonShellClientScroll": "564/564"
+          },
+          {
+            "viewport": "621x844",
+            "allJourneysContained": true,
+            "facetClientScroll": "565/565",
+            "recordActionHeight": 44,
+            "historyToggleHeight": 71.08,
+            "comparison": "matrix-local-scroll",
+            "comparisonShellClientScroll": "555/1350"
+          },
+          {
+            "viewport": "700x844",
+            "allJourneysContained": true,
+            "facetClientScroll": "644/644",
+            "recordActionHeight": 44,
+            "historyToggleHeight": 71.08,
+            "comparison": "matrix-local-scroll",
+            "comparisonShellClientScroll": "633/1350"
+          },
+          {
+            "viewport": "701x844",
+            "allJourneysContained": true,
+            "facetClientScroll": "645/645",
+            "recordActionHeight": 44,
+            "historyToggleHeight": 71.08,
+            "comparison": "matrix-local-scroll",
+            "comparisonShellClientScroll": "635/1350"
+          },
+          {
+            "viewport": "920x900",
+            "allJourneysContained": true,
+            "facetClientScroll": "864/864",
+            "facetHeight": 67.04,
+            "recordActionHeight": 44,
+            "historyToggleHeight": 47.83,
+            "comparison": "matrix-local-scroll",
+            "comparisonShellClientScroll": "853/1740"
+          },
+          {
+            "viewport": "921x900",
+            "allJourneysContained": true,
+            "facetClientScroll": "865/865",
+            "facetHeight": 42,
+            "recordActionHeight": 44,
+            "historyToggleHeight": 47.83,
+            "comparison": "matrix-local-scroll",
+            "comparisonShellClientScroll": "855/1740"
+          },
+          {
+            "viewport": "1440x900",
+            "allJourneysContained": true,
+            "facetClientScroll": "1384/1384",
+            "recordActionHeight": 44,
+            "historyToggleHeight": 42,
+            "comparison": "matrix-local-scroll",
+            "comparisonShellClientScroll": "1089/1740"
+          }
+        ],
+        "extraBreakpointControl": {
+          "viewport": "620x844",
+          "documentClientScroll": "620/620",
+          "matrixDisplay": "none",
+          "stackedDisplay": "grid",
+          "comparisonShellClientScroll": "565/565"
+        },
+        "allJourneyPagesContained": true,
+        "facetContainmentPass": true,
+        "recordActionMinimumCssPx": 44,
+        "historyToggleMobileMinimumCssPx": 44,
+        "comparisonStackedThroughCssPx": 620,
+        "comparisonMatrixFromCssPx": 621,
+        "consoleWarningCount": 0,
+        "consoleErrorCount": 0,
+        "exportControl": {
+          "activated": true,
+          "downloadedCsvBytesInspected": false,
+          "status": "NOT EVALUATED",
+          "limitation": "The in-app Browser backend did not expose a download event in the bounded wait, so downloaded CSV bytes were not independently inspected."
+        },
+        "nonblockingNotes": [
+          "The contained 920-to-921 facet reflow compacts the facet area from 67.04px to 42px without clipping or whole-page overflow."
+        ]
+      },
+      "completeValidateTransition": {
+        "priorStatus": "EXPECTED_RETAINED_RECEIPT_STOP",
+        "priorActiveVisitorSha256": "0006b693d3b358222060f2206f39d0eb076318039c15452830f571629d73a7c1",
+        "priorRetainedReceiptSha256": "d670f720503536098087af15b34dd6bf45286322b63c84cbc2088dc373dc18ec",
+        "successorRequiredStatus": "PASS"
+      },
+      "boundaries": {
+        "productOrVisitorBytesChangedByReceiptAuthor": false,
+        "evidenceCurrentnessSchemaLifecycleCountsChanged": false,
+        "downloadedCsvCorrectnessClaimed": false,
+        "deterministicValidationEstablishesStructuralCoherenceOnly": true
+      },
+      "authority": {
+        "acceptanceGrantedReceiptWritingAuthority": false,
+        "receiptAuthorAuthority": "Separate bounded Project Lead receipt-author delegation only.",
+        "stagingAuthorized": false,
+        "commitAuthorized": false,
+        "pushAuthorized": false,
+        "pullRequestAuthorized": false,
+        "mergeAuthorized": false,
+        "pagesOrPublicationAuthorized": false,
+        "contactOrFollowOnAuthorized": false
+      }
     }
   },
   "controlGates": {

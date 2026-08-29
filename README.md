@@ -12,9 +12,9 @@
 > **First check:** `node scripts/catalog.mjs test`
 <!-- toolkit-trust-card:end -->
 
-A small, static research index for researchers, builders and maintainers who need to answer: which exact coding-agent version or service surface was current within a sealed review window, what do official publisher sources say about it, and what remains unknown?
+A small, static research index built around one question: what are you actually comparing when you compare coding agents? A product name can refer to a CLI, IDE extension, cloud worker or rolling service. AEC helps readers choose the exact surface and version they mean, then inspect what publisher documentation says, where each claim applies and what those sources leave unknown.
 
-The public root opens the comparison experience directly: compare two exact records or search for one product, confirm the snapshot identity and applicability note, then inspect the attributed publisher claims and sources. The root and primary `research-preview/compare.html` route keep an ordered 2–4 record selection in the URL, align claims only when their accepted category strings are exactly equal, and link every displayed claim directly to its accepted official source. The catalog remains one navigation step away and presents exact identities, authority boundaries, lifecycle state and known gaps; this is not a buying guide or a claim about observed agent behavior or publication-time currency.
+The public root opens the comparison experience directly: compare two exact records or search for one product, confirm the dated snapshot and applicability note, then inspect attributed publisher claims and sources. The root and compatibility `research-preview/compare.html` route keep an ordered 2–4 record selection in the URL, align claims only when their accepted category strings are exactly equal, and link every displayed claim directly to its accepted publisher source. The catalog remains one navigation step away and presents exact identities, lifecycle state and source gaps. AEC does not observe agent behavior, independently test products, score them, recommend a winner, certify them or establish publication-time currency.
 
 This package deliberately has no accounts, database server, hosted execution, submission form, analytics, or external-service integration. Git is the data store, public intake is closed, and the current real-agent work is maintainer-curated only. One least-privilege GitHub Pages workflow publishes the already committed `dist/` tree without rebuilding it in CI.
 
@@ -40,13 +40,13 @@ deployment state; those objects remain byte-identical.
 
 ## Machine-readable and agent entry points
 
-- [Compare accepted claims](https://thedarknitefalls.github.io/agent-evidence-catalog/) — the canonical 2–4-record comparison application.
-- [Browse Model Cards](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/) — current and retained human-readable records.
-- [Read how AEC works](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html) — identity, source, unknown, comparison and snapshot boundaries.
+- [Compare exact coding-agent records](https://thedarknitefalls.github.io/agent-evidence-catalog/) — choose 2–4 exact surfaces or versions and compare attributed publisher documentation.
+- [Browse coding-agent records](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/) — inspect current and retained records with their exact identity, sources and unknowns.
+- [Read how to read AEC](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/how-it-works.html) — understand surfaces, sources, applicability, unknowns, lifecycle and snapshot dates.
 - [Read the aggregate catalog JSON](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/catalog.json) and [lifecycle JSON](https://thedarknitefalls.github.io/agent-evidence-catalog/research-preview/lifecycle.json) — the existing machine-readable public projection and retained lifecycle relationships.
 - [Read `llms.txt`](https://thedarknitefalls.github.io/agent-evidence-catalog/llms.txt) — a concise orientation file for machine readers. It is an optional discovery proposal, not a guarantee of crawling, indexing, citation or ranking.
 
-Each human-readable evidence record advertises its corresponding raw JSON with `rel="alternate"`. Agents and other readers should keep exact version, surface, channel, configuration and source boundaries intact: AEC reports attributed publisher claims and unresolved unknowns, not observed behavior, independent testing, ranking, recommendation, quality, safety or suitability.
+Each human-readable record advertises its corresponding machine-readable JSON with `rel="alternate"`. Agents and other readers should keep exact version, surface, channel, configuration and source boundaries intact: AEC reports attributed publisher claims and unresolved unknowns, not observed behavior, independent testing, ranking, recommendation, quality, safety or suitability.
 
 ## What is here
 

@@ -10,6 +10,8 @@
   const historyRecords = data.surfaces.flatMap((surface) => surface.history);
   const search = document.querySelector("#search");
   const deliveryInputs = [...document.querySelectorAll('input[name="delivery"]')];
+  const surfaceKindSelect = document.querySelector("#surfaceKind");
+  const releaseScopeSelect = document.querySelector("#releaseScope");
   const currentRoot = document.querySelector("#currentRecords");
   const historyRoot = document.querySelector("#historyRecords");
   const emptyState = document.querySelector("#emptyState");
@@ -22,10 +24,35 @@
   comparison.applySnapshotBanner(data);
 
   const historyToggle = document.querySelector("#historyToggle");
-  historyToggle.textContent = `Show ${historyRecords.length} history records`;
+  const titleCase = (value) => String(value).replaceAll("-", " ").replace(/(^|\s)\S/g, (match) => match.toUpperCase());
+  const releaseScopeFacet = (record) => record.release.version
+    ? "exact-version"
+    : ["rolling-service", "unresolved"].includes(record.release.scope) ? record.release.scope : "unresolved";
+  const facetLabel = (value) => ({
+    cli: "CLI",
+    "desktop-app": "Desktop app",
+    "hosted-service": "Hosted service",
+    "ide-extension": "IDE extension",
+    "exact-version": "Exact version",
+    "rolling-service": "Rolling service",
+    unresolved: "Unresolved"
+  })[value] ?? comparison.readableLabel(value);
+  const appendFacetOptions = (select, values) => {
+    select.append(...values.map((value) => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = facetLabel(value);
+      return option;
+    }));
+  };
+  appendFacetOptions(surfaceKindSelect, [...new Set(currentRecords.map((record) => record.surface.kind))].sort());
+  const releaseScopeOrder = ["exact-version", "rolling-service", "unresolved"];
+  appendFacetOptions(releaseScopeSelect, releaseScopeOrder.filter((value) => currentRecords.some((record) => releaseScopeFacet(record) === value)));
 
   const requestedState = new URLSearchParams(window.location.search);
   const requestedDelivery = requestedState.get("delivery");
+  const requestedSurfaceKind = requestedState.get("surface");
+  const requestedReleaseScope = requestedState.get("scope");
   const parsedSelection = comparison.parseRequestedIds(requestedState.get("agents"), new Set(byId.keys()));
   let selectedIds = [...parsedSelection.ids];
   search.value = requestedState.get("q") ?? "";
@@ -33,10 +60,11 @@
     const requestedInput = deliveryInputs.find((input) => input.value === requestedDelivery);
     if (requestedInput) requestedInput.checked = true;
   }
+  if ([...surfaceKindSelect.options].some((option) => option.value === requestedSurfaceKind)) surfaceKindSelect.value = requestedSurfaceKind;
+  if ([...releaseScopeSelect.options].some((option) => option.value === requestedReleaseScope)) releaseScopeSelect.value = requestedReleaseScope;
   selectionStatus.textContent = parsedSelection.messages.join(" ");
   selectionStatus.hidden = parsedSelection.messages.length === 0;
 
-  const titleCase = (value) => String(value).replaceAll("-", " ").replace(/(^|\s)\S/g, (match) => match.toUpperCase());
   const versionLabel = (record) => record.release.version ? `v${record.release.version}` : (record.release.releaseTag ?? titleCase(record.release.scope));
   const deliveryValue = () => deliveryInputs.find((input) => input.checked)?.value ?? "all";
   const publisherIdentity = (publisher) => {
@@ -51,6 +79,8 @@
     const params = new URLSearchParams();
     if (search.value.trim()) params.set("q", search.value.trim());
     if (deliveryValue() !== "all") params.set("delivery", deliveryValue());
+    if (surfaceKindSelect.value !== "all") params.set("surface", surfaceKindSelect.value);
+    if (releaseScopeSelect.value !== "all") params.set("scope", releaseScopeSelect.value);
     if (selectedIds.length) params.set("agents", selectedIds.join(","));
     return params;
   };
@@ -128,11 +158,11 @@
 
     const profileHeading = document.createElement("p");
     profileHeading.className = "evidence-profile-label";
-    profileHeading.textContent = "Evidence profile";
+    profileHeading.textContent = "Documented in this record";
 
     const metrics = document.createElement("dl");
     metrics.className = "record-metrics";
-    for (const [label, value] of [["Publisher claims", record.claimCount], ["Official sources", record.sourceCount], ["Unresolved boundaries", record.unknownCount]]) {
+    for (const [label, value] of [["Publisher claims", record.claimCount], ["Publisher sources", record.sourceCount], ["Unknowns", record.unknownCount]]) {
       const wrapper = document.createElement("div");
       const term = document.createElement("dt");
       const description = document.createElement("dd");
@@ -169,12 +199,12 @@
     const detailLink = document.createElement("a");
     detailLink.className = "primary-record-link";
     detailLink.href = `records/${encodeURIComponent(record.recordId)}.html${catalogState()}`;
-    detailLink.textContent = "Open evidence";
+    detailLink.textContent = "View claims and sources";
     links.append(detailLink);
     const rawLink = document.createElement("a");
     rawLink.className = "raw-json-link";
     rawLink.href = `records/${encodeURIComponent(record.recordId)}.json`;
-    rawLink.textContent = "Raw JSON";
+    rawLink.textContent = "Machine-readable record";
     links.append(rawLink);
     article.append(heading, releaseScope, profileHeading, metrics, boundary);
     if (freshnessNotice) article.append(freshnessNotice);
@@ -207,16 +237,30 @@
   function renderCurrent() {
     const query = search.value.trim().toLowerCase();
     const selectedDelivery = deliveryValue();
-    const visible = currentRecords.filter((record) => {
-      const haystack = `${record.name} ${record.publisher} ${record.surface.name} ${record.recordId}`.toLowerCase();
-      return (!query || haystack.includes(query)) && (selectedDelivery === "all" || record.surface.deliveryModel === selectedDelivery);
-    });
+    const selectedSurfaceKind = surfaceKindSelect.value;
+    const selectedReleaseScope = releaseScopeSelect.value;
+    const matches = (record) => {
+      const haystack = `${record.name} ${record.publisher} ${record.surface.name} ${record.surface.kind} ${record.surface.deliveryModel} ${record.recordId} ${record.release.version ?? ""} ${record.release.releaseTag ?? ""} ${record.release.scope ?? ""} ${record.release.channel ?? ""}`.toLowerCase();
+      return (!query || haystack.includes(query))
+        && (selectedDelivery === "all" || record.surface.deliveryModel === selectedDelivery)
+        && (selectedSurfaceKind === "all" || record.surface.kind === selectedSurfaceKind)
+        && (selectedReleaseScope === "all" || releaseScopeFacet(record) === selectedReleaseScope);
+    };
+    const visible = currentRecords.filter(matches);
+    const visibleHistory = historyRecords.map((record) => byId.get(record.recordId)).filter(Boolean).filter(matches);
     currentRoot.replaceChildren(...visible.map((record) => recordCard(record)));
-    historyRoot.replaceChildren(...historyRecords.map((record) => recordCard(byId.get(record.recordId), true)));
+    historyRoot.replaceChildren(...visibleHistory.map((record) => recordCard(record, true)));
     resultCount.textContent = visible.length === currentRecords.length
       ? `${visible.length} surfaces`
       : `${visible.length} of ${currentRecords.length} surfaces`;
     emptyState.hidden = visible.length !== 0;
+    const historyExpanded = historyToggle.getAttribute("aria-expanded") === "true";
+    const filtersActive = query || selectedDelivery !== "all" || selectedSurfaceKind !== "all" || selectedReleaseScope !== "all";
+    historyToggle.disabled = visibleHistory.length === 0;
+    historyToggle.textContent = historyExpanded
+      ? "Hide history records"
+      : `Show ${visibleHistory.length}${filtersActive ? " matching" : ""} history records`;
+    historyRoot.hidden = !historyExpanded;
     renderTray();
     updateUrl();
   }
@@ -224,11 +268,12 @@
   historyToggle.addEventListener("click", (event) => {
     const expanded = event.currentTarget.getAttribute("aria-expanded") === "true";
     event.currentTarget.setAttribute("aria-expanded", String(!expanded));
-    event.currentTarget.textContent = expanded ? `Show ${historyRecords.length} history records` : "Hide history records";
-    historyRoot.hidden = expanded;
+    renderCurrent();
   });
   search.addEventListener("input", renderCurrent);
   deliveryInputs.forEach((input) => input.addEventListener("change", renderCurrent));
+  surfaceKindSelect.addEventListener("change", renderCurrent);
+  releaseScopeSelect.addEventListener("change", renderCurrent);
   compareSelection.addEventListener("click", () => {
     if (selectedIds.length < 2) return;
     const params = catalogParams();
