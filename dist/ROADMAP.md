@@ -6,17 +6,16 @@ a response-time commitment.
 
 ## Current position
 
-The repository contains a sealed, unpublished 2026-08-29 55-surface candidate
+The repository and live site contain the published 2026-08-29 55-surface dated snapshot
 with 148 records: 53 current records and 95 non-current records, comprising 92
 superseded identities, two historical records and one discontinued surface.
-All candidate records are static, maintainer-curated and based only on
+All snapshot records are static, maintainer-curated and based only on
 attributed publisher sources. The snapshot assigns zero independent-test
 credit and provides no rankings, recommendations or suitability calculation.
 The live [Research Preview v0.1](https://thedarknitefalls.github.io/agent-evidence-catalog/)
-continues to serve the accepted 2026-08-24 snapshot until a separately
-authorized independent review and publication completes.
+serves this independently accepted, committed and published dated snapshot.
 
-The 2026-08-29 candidate preserves all 133 records from the accepted
+The 2026-08-29 snapshot preserves all 133 records from the accepted
 2026-08-24 snapshot and adds exactly fifteen same-surface successors for Qwen
 Code CLI, Kiro IDE, OpenCode CLI, Claude Code CLI, Cline CLI, Cline VS Code
 extension, GitHub Copilot CLI, both GitLab flows, Antigravity CLI, Gemini CLI,
@@ -27,16 +26,22 @@ Visual Studio and Zoo Code v3.78.0. CodeRabbit, Greptile and a generic
 JetBrains agent-host surface remain outside the authoring scope pending a
 repository-owner scope decision.
 
+The 2026-08-29 snapshot received fresh independent acceptance and was published
+through ready [PR #20](https://github.com/TheDarkniteFalls/agent-evidence-catalog/pull/20).
+Merge commit `454f2ecec6a89ce0634bb8d4a962a920cae0fb2f`, with parents
+`2668c0cd698127bc4a4468d4dc090a27f3676b2c` and
+`c715bfe98c528f4510690768f94590073e0144e7`, retains candidate tree
+`d7e164299b0da3ace3090bd6da840654cf1e1284`. Post-merge checks run
+`33181128838` passed; Pages run `33181128829`, job `98882283197`, and deployment
+`6143061032` succeeded. The live root and key assets byte-matched committed
+`dist/`, and bounded live Browser QA passed.
+
 Publication-time drift is reported separately and does not reopen a sealed
-snapshot. A pinned, least-privilege GitHub Pages workflow publishes only the
-committed `dist/` tree. Every later commit, push, pull request and publication
-still requires the applicable public-lane gates and scoped authority. The
-2026-08-24 release completed fresh independent acceptance, every applicable
-release and publication gate, Pages deployment, live-byte verification and
-live Browser QA. The 2026-08-29 candidate has not received independent
-acceptance and is not committed or published. Every later commit, release or
-publication remains a separate candidate with its own authority and evidence
-requirements.
+snapshot or turn it into publication-time currency or behavior evidence. A
+pinned, least-privilege GitHub Pages workflow publishes only the committed
+`dist/` tree. Every later snapshot remains a candidate until it receives its
+own independent acceptance, applicable public-lane gates and scoped Git and
+publication authority.
 
 ## Near-term roadmap
 
@@ -61,10 +66,10 @@ concept review in step 4.
 
 Status: repeatable capture, projection, full-corpus link audit and
 publication-census commands are exercised across all 55 surfaces. The
-2026-08-24 receipts describe the published baseline; 2026-08-29 receipts
-describe the sealed candidate only. Every later exact refresh remains
-trigger-dependent on fresh independent acceptance and all release gates.
-Operational dashboard and scheduling remain deferred.
+2026-08-24 receipts describe the prior published baseline; 2026-08-29 receipts
+describe the current published dated snapshot. Every later exact refresh
+remains trigger-dependent on fresh independent acceptance and all release
+gates. Operational dashboard and scheduling remain deferred.
 
 - Maintain the bounded refresh commands that identify source changes without
   promoting them into evidence automatically.

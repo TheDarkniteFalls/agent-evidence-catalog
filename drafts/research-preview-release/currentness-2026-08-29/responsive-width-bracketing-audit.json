@@ -1,7 +1,7 @@
 {
   "schemaVersion": "research-preview-responsive-code-review/1.0",
   "asOf": "2026-08-29",
-  "reviewedAt": "2026-08-28T12:38:56Z",
+  "reviewedAt": "2026-08-29T00:04:03Z",
   "reviewType": "human-code-review-of-exact-aec-bytes",
   "result": "PASS",
   "targetCssViewport": {
@@ -9,12 +9,12 @@
     "height": 844
   },
   "approvedOperationalEvidence": {
-    "exact390Observed": true,
-    "exactObservedCss": {
-      "width": 390,
-      "height": 844
+    "exact390Observed": false,
+    "adjacentObservedWidths": {
+      "lower": 389,
+      "upper": 391
     },
-    "adjacentObservationsUsed": false,
+    "adjacentObservationsAreApprovedOperationalEvidence": true,
     "desktopControlCss": {
       "width": 1440,
       "height": 900
@@ -33,7 +33,7 @@
       "dist/research-preview"
     ],
     "inventoryAlgorithm": "SHA-256 of the pretty-printed ordered path/sha256/bytes inventory with one trailing newline.",
-    "inventorySha256": "21a46662b0febc7efd67d0f5f6b2b708ae9341865e5c9863c2cbe9fd0dc4eab7",
+    "inventorySha256": "d670f720503536098087af15b34dd6bf45286322b63c84cbc2088dc373dc18ec",
     "sourceFiles": 9,
     "shippedFiles": 310,
     "files": 319,
@@ -55,8 +55,8 @@
     },
     {
       "path": "dist/research-preview/catalog.json",
-      "sha256": "62bfff27c62ba99a5b395a222836705f38182f4ec21a35254168a58fff98504c",
-      "bytes": 907570
+      "sha256": "73414d182ebe38afa55f145cf730e9703b8d7d8aad17782944cad7bcf3bcc908",
+      "bytes": 907557
     },
     {
       "path": "dist/research-preview/compare.html",
@@ -75,8 +75,8 @@
     },
     {
       "path": "dist/research-preview/data.js",
-      "sha256": "7827f56be8702c9a222aaba7afd65419b0af92500b26dc5d8efc547b583b1bab",
-      "bytes": 625626
+      "sha256": "c6fd82b06863af08a741683a15552d10826f6839ff5077769ea7c8d1fb1fe142",
+      "bytes": 625613
     },
     {
       "path": "dist/research-preview/how-it-works.html",
@@ -90,8 +90,8 @@
     },
     {
       "path": "dist/research-preview/lifecycle.json",
-      "sha256": "3f4dd0729b26048ad3a1ebca95fa9c1b82071cccf27f1985db57b518ff6137a1",
-      "bytes": 141310
+      "sha256": "2449edb7bd913873914d93d3a9121ad712fd7954dc93309a47766d969c26e5ae",
+      "bytes": 141357
     },
     {
       "path": "dist/research-preview/publication-freshness-census.json",
@@ -1873,6 +1873,6 @@
   "limitations": [
     "This receipt is valid only for the exact hash-bound AEC bytes listed here. Any active visitor-file addition, removal or byte change requires a fresh explicit human/code review and a new receipt.",
     "The validator checks exact paths, hashes, source/shipped equality, inventory structure and known reviewed excerpts. It does not parse or infer arbitrary JavaScript or CSS runtime semantics.",
-    "The installed in-app Browser produced an observed 390 by 844 CSS-pixel viewport in this environment; adjacent-width substitution was not used."
+    "The installed in-app Browser cannot produce an observed 390 CSS-pixel viewport in this environment. Exact 389 and 391 observations are approved adjacent operational evidence, not formal proof of arbitrary behavior at exactly 390."
   ]
 }

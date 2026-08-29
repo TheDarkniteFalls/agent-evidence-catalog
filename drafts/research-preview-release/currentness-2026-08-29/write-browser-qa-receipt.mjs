@@ -35,8 +35,10 @@ viewportProof.recordEvidence = {
   changedRecordIds: EXPECTED_SUCCESSOR_RECORD_IDS,
   recordPredecessorPairs: EXPECTED_SUCCESSOR_RECORD_PAIRS
 };
-viewportProof.observations.exact.journeys.records.changedRecordIds = EXPECTED_SUCCESSOR_RECORD_IDS;
-viewportProof.observations.exact.journeys.records.recordPredecessorPairs = EXPECTED_SUCCESSOR_RECORD_PAIRS;
+for (const side of [viewportProof.observations.lower, viewportProof.observations.upper]) {
+  side.journeys.records.changedRecordIds = EXPECTED_SUCCESSOR_RECORD_IDS;
+  side.journeys.records.recordPredecessorPairs = EXPECTED_SUCCESSOR_RECORD_PAIRS;
+}
 validateExactBrowserBracketProof(viewportProof);
 const reviewRelativePath = "drafts/research-preview-release/currentness-2026-08-29/responsive-width-bracketing-audit.json";
 const reviewText = await read(reviewRelativePath);
@@ -46,7 +48,8 @@ assert.equal(viewportProof.responsiveCodeReview.sha256, sha256(reviewText), "Bro
 runResponsiveContractNegativeTests(responsiveCodeReview, viewportProof);
 
 for (const screenshot of [
-  ...viewportProof.observations.exact.screenshots,
+  ...viewportProof.observations.lower.screenshots,
+  ...viewportProof.observations.upper.screenshots,
   controlGates.desktop.screenshot,
   controlGates.narrowMobile.screenshot
 ]) {
@@ -119,12 +122,14 @@ const rootComparison = {
   mobile: {
     targetCss: { width: 390, height: 844 },
     evidenceContract: viewportProof.contract,
+    requiredObservedWidths: viewportProof.requiredObservedWidths,
     substituteWidthsAllowed: false,
-    exact390Observed: true,
-    observedCss: viewportProof.observations.exact.windowInner,
+    exact390Observed: false,
+    lowerObservedCss: viewportProof.observations.lower.windowInner,
+    upperObservedCss: viewportProof.observations.upper.windowInner,
     horizontalOverflow: false,
-    navigationOpened: true,
-    matrixInternalOverflow: true
+    navigationOpenedAtBothWidths: true,
+    matrixInternalOverflowAtBothWidths: true
   }
 };
 const modelCards = {
@@ -145,12 +150,13 @@ const modelCards = {
   mobile: {
     targetCss: { width: 390, height: 844 },
     evidenceContract: viewportProof.contract,
+    requiredObservedWidths: viewportProof.requiredObservedWidths,
     substituteWidthsAllowed: false,
-    exact390Observed: true,
+    exact390Observed: false,
     gridColumns: 1,
     cardsAndActionsContained: true,
-    horizontalOverflow: false,
-    navigationOpened: true
+    horizontalOverflowAtBothWidths: false,
+    navigationOpenedAtBothWidths: true
   }
 };
 const comparisonCompatibility = {
@@ -159,7 +165,7 @@ const comparisonCompatibility = {
   canonicalHref: "https://thedarknitefalls.github.io/agent-evidence-catalog/",
   selectionStateWorks: true
 };
-assert.equal(browserMeasurements.screenshotsCaptured, 4);
+assert.equal(browserMeasurements.screenshotsCaptured, 6);
 assert.deepEqual(browserMeasurements.discovery, {
   entryPagesWithCatalogJsonAndLlmsAlternates: [
     "/",
@@ -255,10 +261,10 @@ const receipt = {
     cacheBustingVersion: "2026-08-29-sealed-snapshot"
   },
   qaContractAuthor: {
-    workstream: "AEC-QA-PRACTICAL-RESPONSIVE-01-AUTHOR",
+    workstream: "AEC-PUBLISHED-STATUS-2026-08-29-PRACTICAL-QA-01-AUTHOR",
     result: "PASS",
-    scope: "Exact-byte active visitor responsive code review and per-side exact successor/predecessor Browser evidence only",
-    baseHead: "9b457a61aba35cfe5ad48c4e640fac37c868f746",
+    scope: "Exact-byte active visitor responsive code review and per-side practical 389/391 successor/predecessor Browser evidence only",
+    baseHead: "454f2ecec6a89ce0634bb8d4a962a920cae0fb2f",
     exactCodeReviewPerformed: true,
     independentAcceptanceReviewPerformed: false,
     commitOrPublicationPerformed: false
@@ -266,10 +272,10 @@ const receipt = {
   viewportProof,
   controlGates,
   publicationAuthorQa: {
-    workstream: "AEC-CURRENTNESS-2026-08-29-REFRESH-01-AUTHOR",
+    workstream: "AEC-PUBLISHED-STATUS-2026-08-29-PRACTICAL-QA-01-AUTHOR",
     result: "PASS",
     checkedAt,
-    baseHead: "9b457a61aba35cfe5ad48c4e640fac37c868f746",
+    baseHead: "454f2ecec6a89ce0634bb8d4a962a920cae0fb2f",
     browser: "Codex in-app Browser",
     currentness: {
       records: 148,
@@ -291,8 +297,9 @@ const receipt = {
       mobileNavigationOpened: true,
       mobileModelCardsNavigationPassed: true,
       targetCss: { width: 390, height: 844 },
-      exact390Observed: true,
-      adjacentObservationsUsed: false,
+      mandatoryObservedBracket: { lower: 389, upper: 391 },
+      exact390Observed: false,
+      adjacentObservationsAreApprovedOperationalEvidence: true,
       responsiveCodeReviewResult: "PASS"
     },
     screenshotsCaptured: browserMeasurements.screenshotsCaptured,
@@ -329,7 +336,7 @@ const receipt = {
       urlPersistsAcrossReload: rootComparison.urlPersistsAcrossReload,
       maximumSelectedRecords: rootComparison.maximumSelectedRecords,
       activeFourRecordMatrixRows: rootComparison.activeFourRecordMatrixRows,
-      mobileMatrixInternalOverflow: rootComparison.mobile.matrixInternalOverflow,
+      mobileMatrixInternalOverflow: rootComparison.mobile.matrixInternalOverflowAtBothWidths,
       mobileBodyHorizontalOverflow: rootComparison.mobile.horizontalOverflow
     },
     comparisonCompatibility: { result: "PASS", ...comparisonCompatibility },
@@ -353,7 +360,7 @@ const receipt = {
       deterministicallyValidatedRecordIds: buildManifest.researchPreview.recordDetails.records.map((item) => item.recordId),
       changedRecordIds: EXPECTED_SUCCESSOR_RECORD_IDS,
       recordPredecessorPairs: EXPECTED_SUCCESSOR_RECORD_PAIRS,
-      changedRecordPagesRendered: 30,
+      changedRecordPagesRendered: 60,
       representativeUnchangedRenderedRecordIds: REPRESENTATIVE_UNCHANGED_RECORD_IDS,
       desktop: {
         controlViewport: controlGates.desktop.browserViewportControl,
@@ -362,13 +369,23 @@ const receipt = {
         pagesAudited: 30,
         failureRecordIds: []
       },
-      mobileExact: {
+      mobileBracket: {
         targetCss: { width: 390, height: 844 },
-        controlViewport: viewportProof.observations.exact.browserViewportControl,
-        observedCss: viewportProof.observations.exact.windowInner,
-        devicePixelRatio: viewportProof.observations.exact.devicePixelRatio,
-        pagesAudited: 30,
-        failureRecordIds: []
+        requiredObservedWidths: { lower: 389, upper: 391 },
+        lower: {
+          controlViewport: viewportProof.observations.lower.browserViewportControl,
+          observedCss: viewportProof.observations.lower.windowInner,
+          devicePixelRatio: viewportProof.observations.lower.devicePixelRatio,
+          pagesAudited: 30,
+          failureRecordIds: []
+        },
+        upper: {
+          controlViewport: viewportProof.observations.upper.browserViewportControl,
+          observedCss: viewportProof.observations.upper.windowInner,
+          devicePixelRatio: viewportProof.observations.upper.devicePixelRatio,
+          pagesAudited: 30,
+          failureRecordIds: []
+        }
       },
       narrowMobileRepresentative: {
         targetCss: { width: 320, height: 700 },
@@ -393,7 +410,7 @@ const receipt = {
     discoveryMetadata: {
       result: "PASS",
       recordRoutesDeterministicallyValidated: 148,
-      changedRecordPagesRendered: 30,
+      changedRecordPagesRendered: 60,
       representativeUnchangedRecordPagesRendered: REPRESENTATIVE_UNCHANGED_RECORD_IDS.length,
       sitemapHumanReadableRoutes: 151,
       sitemapRecordRoutes: 148,
@@ -427,8 +444,9 @@ const receipt = {
   machineDiscovery: browserMeasurements.discovery,
   console: { errors: 0, warnings: 0 },
   limitations: [
-    "The installed in-app Browser at approximately DPR 0.9 produced a genuine rendered pass at exact 390 by 844 CSS pixels, with exact 320 by 700 and 1440 by 900 controls; adjacent-width substitution was not used.",
+    "The installed in-app Browser at DPR 0.75 cannot produce an observed 390 CSS-pixel viewport in this environment. Genuine rendered passes at exact 389 and 391 by 844 CSS pixels are the approved adjacent operational evidence, with exact 320 by 700 and 1440 by 900 controls. This is practical operational evidence for the unavailable 390 target, not formal proof of arbitrary behavior at exactly 390.",
     "The responsive code-review receipt is valid only for its exact hash-bound AEC visitor bytes. Any active visitor-file addition, removal or byte change requires a fresh explicit human/code review and a new receipt; the validator does not infer arbitrary future JavaScript or CSS semantics.",
+    "The in-app Browser rendered every HTML journey and initiated the machine-readable resource requests, while its client blocked direct non-HTML document display after the loopback server returned HTTP 200. Content types and sitemap counts were verified from the exact served files and the server mapping.",
     "Cursor CLI, Cascade in Windsurf IDE, Copilot Agent Mode for Visual Studio and Zoo Code v3.78.0 are source-only dossiers and are not catalog, mapping, lifecycle or presentation admissions.",
     "The publication-time census proves no newer identity for one comparable live index but cannot prove publication-time currency for 54 surfaces; the Junie update-list probe returned HTTP 406 while its exact official update page passed the full source-link audit.",
     "Rendered local behavior, source reachability and deterministic validation do not establish catalogued product behavior, independent verification, quality, safety, popularity, ranking or suitability."
