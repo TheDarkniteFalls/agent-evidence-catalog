@@ -16,7 +16,7 @@ export const BROWSER_QA_CALIBRATION = Object.freeze({
 
 export const RESPONSIVE_CODE_REVIEW_SCHEMA = "research-preview-responsive-code-review/2.0";
 export const RESPONSIVE_CODE_REVIEW_PATH = "drafts/research-preview-release/currentness-2026-08-29/responsive-width-bracketing-audit.json";
-export const RESPONSIVE_CODE_REVIEW_SHA256 = "f21f417d4bf29b865f3a8c8f5478ffcec9f4111746ed2f8942cc990de85f369f";
+export const RESPONSIVE_CODE_REVIEW_SHA256 = "451b66d330bfcb19ce27699a426b2b12584753dfcf19c1c6674b91c22b816716";
 export const REVIEWED_ACTIVE_SCOPE_SHA256 = "0006b693d3b358222060f2206f39d0eb076318039c15452830f571629d73a7c1";
 export const HISTORICAL_ACTIVE_SCOPE_SHA256 = "d670f720503536098087af15b34dd6bf45286322b63c84cbc2088dc373dc18ec";
 export const BROWSER_EVIDENCE_CONTRACT = "target-390-approved-adjacent-observations-389-391";
@@ -32,7 +32,24 @@ const ACTIVE_SCOPE_INPUTS = Object.freeze([
 ]);
 const STYLESHEET_SHA256 = "8a0701bf1f62b6cd723136fd4641016e3ea6f3bc0bc3accc2da9bae29ad8afd5";
 const BUILD_MANIFEST_SHA256 = "91ee48d15bdd802c4d365b853ff0c8244ac88d4e86fa4b6a9c3582da0c24ff4a";
-const DIST_SHA256 = "8ad907b56ad276d69b33f2161cfa65c2f281ac3a7caaa938bfca48e259d3478f";
+const HISTORICAL_STAGE12_DIST_SHA256 = "8ad907b56ad276d69b33f2161cfa65c2f281ac3a7caaa938bfca48e259d3478f";
+const ROADMAP_ONLY_DIST_SHA256 = "8f9ce81d4802a961d80901fd91af251fbb84eb79431430bd152ab4f2c59ac593";
+const ROADMAP_ONLY_RELEASE_BINDING = Object.freeze({
+  releaseType: "roadmap-only-control-successor",
+  baseHead: "d8e3fd5fd11b2162dd67de088fed5387ec7dd288",
+  baseTree: "ae360b1c4d3777bb04662b919f688432ca6c0af3",
+  changedPaths: Object.freeze(["ROADMAP.md", "dist/ROADMAP.md"]),
+  changedPathInventorySha256: "ea92394a22f9333794a0c2ed5b8c17022c22360ae9ba441f9a2753f19ff16614",
+  workingPatchSha256: "8edbe0686df7ca713eeaba285dcca092270c2976118c5d3e45333b05519b8e6b",
+  roadmapSha256: "53e5313061d46e7b09f782e2b95d83a98668919a8623c2f74662d6d97d8a82f4",
+  priorDeterministicDistSha256: HISTORICAL_STAGE12_DIST_SHA256,
+  deterministicDistSha256: ROADMAP_ONLY_DIST_SHA256,
+  activeVisitorFileCount: 319,
+  activeVisitorSha256: REVIEWED_ACTIVE_SCOPE_SHA256,
+  visitorFacingHtmlCssJsDataEvidenceBytesChanged: false,
+  freshBrowserRunPerformed: false,
+  statement: "The full-dist digest changed solely because ROADMAP.md and dist/ROADMAP.md changed; the exact 319-file active visitor inventory and all visitor-facing HTML, CSS, JavaScript, data and evidence bytes remain unchanged."
+});
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 const serialize = (value) => `${JSON.stringify(value, null, 2)}\n`;
 const iso = (value) => new Date(value).toISOString() === value;
@@ -146,7 +163,7 @@ export const EXPECTED_STAGE12_SUCCESSOR_REVIEW = Object.freeze({
       { path: "dist/research-preview/styles.css", added: 6, deleted: 0 },
       { path: "site/research-preview/styles.css", added: 6, deleted: 0 }
     ],
-    deterministicDistSha256: DIST_SHA256,
+    deterministicDistSha256: HISTORICAL_STAGE12_DIST_SHA256,
     stylesheetSha256: STYLESHEET_SHA256,
     buildManifestSha256: BUILD_MANIFEST_SHA256,
     activeVisitorFileCount: 319,
@@ -304,6 +321,7 @@ export async function buildResponsiveCodeReview(packageRoot = defaultPackageRoot
       htmlFiles: HTML_REVIEW,
       responsiveRules: RESPONSIVE_RULE_REVIEW
     },
+    roadmapOnlyReleaseBinding: ROADMAP_ONLY_RELEASE_BINDING,
     acceptedSuccessorReview: structuredClone(EXPECTED_STAGE12_SUCCESSOR_REVIEW),
     legacyAug29Evidence: LEGACY_OBSERVATION_APPLICABILITY,
     limitations: [
@@ -350,6 +368,7 @@ export function validateResponsiveCodeReviewShape(review) {
     htmlFiles: HTML_REVIEW,
     responsiveRules: RESPONSIVE_RULE_REVIEW
   }, "Responsive behavior review is stale");
+  assert.deepEqual(review.roadmapOnlyReleaseBinding, ROADMAP_ONLY_RELEASE_BINDING, "Roadmap-only release binding is stale");
   assert.deepEqual(review.acceptedSuccessorReview, EXPECTED_STAGE12_SUCCESSOR_REVIEW, "Accepted successor evidence or packet provenance drifted");
   assert.deepEqual(review.legacyAug29Evidence, LEGACY_OBSERVATION_APPLICABILITY, "Historical evidence applicability drifted");
   assert.deepEqual(review.limitations, [
@@ -394,7 +413,11 @@ export async function validateResponsiveCodeReview(review, packageRoot = default
     RESPONSIVE_RULE_REVIEW.comparisonStackedMobileRule
   ]) assert(sourceStyles.includes(excerpt), `Responsive rule is missing: ${excerpt}`);
   assert.equal(sha256(await readFile(path.join(packageRoot, "dist/build-manifest.json"))), BUILD_MANIFEST_SHA256);
-  assert.equal(await distDigest(packageRoot), DIST_SHA256);
+  const sourceRoadmap = await readFile(path.join(packageRoot, "ROADMAP.md"));
+  const shippedRoadmap = await readFile(path.join(packageRoot, "dist/ROADMAP.md"));
+  assert.equal(sha256(sourceRoadmap), ROADMAP_ONLY_RELEASE_BINDING.roadmapSha256, "Source roadmap does not match the exact roadmap-only release binding");
+  assert.deepEqual(shippedRoadmap, sourceRoadmap, "Source and shipped roadmaps differ");
+  assert.equal(await distDigest(packageRoot), ROADMAP_ONLY_DIST_SHA256);
   return true;
 }
 
@@ -493,6 +516,7 @@ export function validateExactBrowserBracketProof(proof) {
     activeScopeSha256: REVIEWED_ACTIVE_SCOPE_SHA256,
     result: "PASS"
   });
+  assert.deepEqual(proof.roadmapOnlyReleaseBinding, ROADMAP_ONLY_RELEASE_BINDING, "Browser proof roadmap-only release binding is stale");
   assert.deepEqual(proof.legacyObservationApplicability, LEGACY_OBSERVATION_APPLICABILITY);
   assert.deepEqual(proof.successorResponsiveReview, EXPECTED_STAGE12_SUCCESSOR_REVIEW);
   assert.equal(proof.rationale, BROWSER_EVIDENCE_RATIONALE);
@@ -511,6 +535,7 @@ export function runResponsiveContractNegativeTests(validReview, validProof) {
     assert.throws(() => validateExactBrowserBracketProof(changed));
   };
   rejectsReview((review) => { review.activeScope.inventorySha256 = "0".repeat(64); });
+  rejectsReview((review) => { review.roadmapOnlyReleaseBinding.deterministicDistSha256 = HISTORICAL_STAGE12_DIST_SHA256; });
   rejectsReview((review) => { review.acceptedSuccessorReview.browserEvidence.exact390Observed = true; });
   rejectsReview((review) => { review.acceptedSuccessorReview.browserEvidence.observedCssViewports.pop(); });
   rejectsReview((review) => { review.acceptedSuccessorReview.browserEvidence.extraBreakpointControl.matrixDisplay = "table"; });
@@ -525,6 +550,7 @@ export function runResponsiveContractNegativeTests(validReview, validProof) {
   rejectsReview((review) => { review.acceptedSuccessorReview.browserEvidence.observedCssViewports[0].facetClientScroll = "284/300"; });
   rejectsReview((review) => { review.activeVisitorFiles.push({ path: "dist/research-preview/unreviewed.js", sha256: "0".repeat(64), bytes: 1 }); });
   rejectsProof((proof) => { proof.exact390Observed = true; });
+  rejectsProof((proof) => { proof.roadmapOnlyReleaseBinding.deterministicDistSha256 = HISTORICAL_STAGE12_DIST_SHA256; });
   rejectsProof((proof) => { proof.successorResponsiveReview.reviewVerdict = "ACCEPT"; });
   rejectsProof((proof) => { proof.legacyObservationApplicability.status = "CURRENT"; });
 }

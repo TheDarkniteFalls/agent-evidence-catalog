@@ -85,10 +85,29 @@
     "substituteWidthsAllowed": false,
     "responsiveCodeReview": {
       "path": "drafts/research-preview-release/currentness-2026-08-29/responsive-width-bracketing-audit.json",
-      "sha256": "f21f417d4bf29b865f3a8c8f5478ffcec9f4111746ed2f8942cc990de85f369f",
+      "sha256": "451b66d330bfcb19ce27699a426b2b12584753dfcf19c1c6674b91c22b816716",
       "schemaVersion": "research-preview-responsive-code-review/2.0",
       "activeScopeSha256": "0006b693d3b358222060f2206f39d0eb076318039c15452830f571629d73a7c1",
       "result": "PASS"
+    },
+    "roadmapOnlyReleaseBinding": {
+      "releaseType": "roadmap-only-control-successor",
+      "baseHead": "d8e3fd5fd11b2162dd67de088fed5387ec7dd288",
+      "baseTree": "ae360b1c4d3777bb04662b919f688432ca6c0af3",
+      "changedPaths": [
+        "ROADMAP.md",
+        "dist/ROADMAP.md"
+      ],
+      "changedPathInventorySha256": "ea92394a22f9333794a0c2ed5b8c17022c22360ae9ba441f9a2753f19ff16614",
+      "workingPatchSha256": "8edbe0686df7ca713eeaba285dcca092270c2976118c5d3e45333b05519b8e6b",
+      "roadmapSha256": "53e5313061d46e7b09f782e2b95d83a98668919a8623c2f74662d6d97d8a82f4",
+      "priorDeterministicDistSha256": "8ad907b56ad276d69b33f2161cfa65c2f281ac3a7caaa938bfca48e259d3478f",
+      "deterministicDistSha256": "8f9ce81d4802a961d80901fd91af251fbb84eb79431430bd152ab4f2c59ac593",
+      "activeVisitorFileCount": 319,
+      "activeVisitorSha256": "0006b693d3b358222060f2206f39d0eb076318039c15452830f571629d73a7c1",
+      "visitorFacingHtmlCssJsDataEvidenceBytesChanged": false,
+      "freshBrowserRunPerformed": false,
+      "statement": "The full-dist digest changed solely because ROADMAP.md and dist/ROADMAP.md changed; the exact 319-file active visitor inventory and all visitor-facing HTML, CSS, JavaScript, data and evidence bytes remain unchanged."
     },
     "observations": {
       "lower": {
