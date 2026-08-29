@@ -222,13 +222,13 @@ function renderRecordDetail(record, preview, lifecycle) {
   const rawJson = `${recordId}.json`;
   const displayRelease = releaseLabel(release);
   const displayTitle = `${summary.name} ${displayRelease}`;
-  const pageTitle = `${displayTitle} Evidence Record · Agent Evidence Catalog`;
-  const pageDescription = `Inspect the exact identity, attributed ${identity.publisher.name} claims, applicability boundaries, version history and unresolved unknowns for ${displayTitle}.`;
+  const pageTitle = `${displayTitle} Publisher Claims and Sources · Agent Evidence Catalog`;
+  const pageDescription = `Review publisher documentation, applicability, sources, and unknowns for ${displayTitle}, covering ${identity.surface.name} ${displayRelease}; independent tests included: 0.`;
   const pageUrl = `${CANONICAL_BASE_URL}research-preview/records/${recordId}.html`;
   const pageStructuredData = serializeJsonLd({
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: `${displayTitle} Evidence Record`,
+    name: `${displayTitle} Publisher Claims and Sources`,
     description: pageDescription,
     url: pageUrl,
     isPartOf: {
@@ -249,27 +249,46 @@ function renderRecordDetail(record, preview, lifecycle) {
     lifecycleChain.push(lifecycleCursor);
     lifecycleCursor = lifecycleCursor.supersededByRecordId ? lifecycleById.get(lifecycleCursor.supersededByRecordId) : null;
   }
-  const lifecycleStepsHtml = lifecycleChain.map((entry, index) => {
-    const entrySummary = preview.previewRecords.find((candidate) => candidate.recordId === entry.recordId);
+  const summaryById = new Map(preview.previewRecords.map((candidate) => [candidate.recordId, candidate]));
+  const selectedLifecycleIndex = lifecycleChain.findIndex((entry) => entry.recordId === recordId);
+  const lifecycleWindow = lifecycleChain.filter((entry, index) => Math.abs(index - selectedLifecycleIndex) <= 1);
+  const renderLifecycleSteps = (entries, summaryWindow = false) => entries.map((entry, index) => {
+    const entrySummary = summaryById.get(entry.recordId);
     if (!entrySummary) throw new Error(`Record detail ${recordId} cannot name lifecycle record ${entry.recordId}`);
+    const chainIndex = lifecycleChain.findIndex((candidate) => candidate.recordId === entry.recordId);
+    const previousSummary = entry.supersedesRecordId ? summaryById.get(entry.supersedesRecordId) : null;
+    const nextSummary = entry.supersededByRecordId ? summaryById.get(entry.supersededByRecordId) : null;
     const relations = [
-      entry.supersedesRecordId ? `<strong>Supersedes:</strong> ${escapeHtml(entry.supersedesRecordId)}` : null,
-      entry.supersededByRecordId ? `<strong>Superseded by:</strong> ${escapeHtml(entry.supersededByRecordId)}` : null
+      previousSummary ? `<strong>Previous:</strong> ${escapeHtml(previousSummary.name)} ${escapeHtml(releaseLabel(previousSummary.release))}` : null,
+      nextSummary ? `<strong>Next:</strong> ${escapeHtml(nextSummary.name)} ${escapeHtml(releaseLabel(nextSummary.release))}` : null
     ].filter(Boolean);
-    const relationship = relations.length ? relations.join(" · ") : "No linked predecessor or successor";
-    const step = `<article class="lifecycle-step${entry.recordId === recordId ? " lifecycle-selected" : ""}" data-lifecycle-record-id="${escapeHtml(entry.recordId)}">
+    const relationship = relations.length ? relations.join(" · ") : "No linked earlier or later record";
+    const position = entry.recordId === recordId
+      ? "Selected record"
+      : chainIndex < selectedLifecycleIndex ? (chainIndex === selectedLifecycleIndex - 1 ? "Previous record" : "Earlier record") : (chainIndex === selectedLifecycleIndex + 1 ? "Next record" : "Later record");
+    const dataAttribute = summaryWindow ? "data-lifecycle-summary-record-id" : "data-lifecycle-record-id";
+    const step = `<article class="lifecycle-step${entry.recordId === recordId ? " lifecycle-selected" : ""}" ${dataAttribute}="${escapeHtml(entry.recordId)}">
+            <p class="lifecycle-position">${position}</p>
             <span class="lifecycle lifecycle-${escapeHtml(entry.status)}">${escapeHtml(entry.status)}</span>
             <h3>${escapeHtml(entrySummary.name)} ${escapeHtml(releaseLabel(entrySummary.release))}</h3>
             <p class="mono-value">${escapeHtml(entry.recordId)}</p>
             <p>${relationship} · reviewed ${escapeHtml(entry.reviewedAt)}</p>
             <p>${escapeHtml(entry.note)}</p>
-            <p class="lifecycle-links"><a data-record-detail-link href="${escapeHtml(entry.recordId)}.html">${entry.recordId === recordId ? "This human-readable record" : "Read human-readable record"}</a> · <a href="${escapeHtml(entry.recordId)}.json">Raw JSON</a></p>
+            <p class="lifecycle-links"><a data-record-detail-link href="${escapeHtml(entry.recordId)}.html">${entry.recordId === recordId ? "This human-readable record" : "Read human-readable record"}</a> · <a href="${escapeHtml(entry.recordId)}.json">Machine-readable record</a></p>
           </article>`;
     return index === 0 ? step : `<div class="lifecycle-arrow" aria-hidden="true">→</div>\n          ${step}`;
   }).join("\n          ");
+  const lifecycleStepsHtml = renderLifecycleSteps(lifecycleChain.length > 3 ? lifecycleWindow : lifecycleChain, lifecycleChain.length > 3);
+  const completeLifecycleHtml = lifecycleChain.length > 3
+    ? `<details class="lifecycle-complete">
+          <summary>Show all ${lifecycleChain.length} records for this surface</summary>
+          <div class="lifecycle-flow">${renderLifecycleSteps(lifecycleChain)}
+          </div>
+        </details>`
+    : "";
   const lifecycleHeading = lifecycleChain.length === 1
     ? "No linked same-surface predecessor or successor"
-    : "Preserved same-surface sequence";
+    : "Earlier and later records for this same surface";
   return `<!doctype html>
 <html lang="en">
   <head>
@@ -289,40 +308,42 @@ function renderRecordDetail(record, preview, lifecycle) {
     <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
     <meta name="twitter:description" content="${escapeHtml(pageDescription)}">
     <script type="application/ld+json">${pageStructuredData}</script>
-    <link rel="stylesheet" href="../styles.css?v=2026-08-22-comparison-fidelity-1">
+    <link rel="stylesheet" href="../styles.css?v=2026-08-29-audience-journeys-2">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to record</a>
     <header class="site-header">
       <a class="brand" href="../../index.html">Agent Evidence Catalog</a>
       <nav aria-label="Primary navigation">
-        <a data-compare-return href="../../index.html">Compare claims</a>
-        <a aria-current="page" data-catalog-return href="../index.html">Model Cards</a>
-        <a href="../how-it-works.html">How it works</a>
+        <a data-compare-return href="../../index.html">Compare records</a>
+        <a aria-current="page" data-catalog-return href="../index.html">Browse records</a>
+        <a href="../how-it-works.html">How to read AEC</a>
       </nav>
       <details class="mobile-nav">
         <summary class="mobile-nav-toggle" aria-label="Open navigation"><span class="mobile-nav-icon" aria-hidden="true"></span></summary>
         <nav aria-label="Mobile primary navigation">
-          <a data-compare-return href="../../index.html">Compare claims</a>
-          <a aria-current="page" data-catalog-return href="../index.html">Model Cards</a>
-          <a href="../how-it-works.html">How it works</a>
+          <a data-compare-return href="../../index.html">Compare records</a>
+          <a aria-current="page" data-catalog-return href="../index.html">Browse records</a>
+          <a href="../how-it-works.html">How to read AEC</a>
         </nav>
       </details>
     </header>
 
     <aside class="preview-banner" aria-label="Catalog snapshot">
-      <span data-snapshot-banner-copy></span> <a href="../how-it-works.html#snapshots">How updates work →</a>
+      <span data-snapshot-banner-copy></span> <a href="../how-it-works.html#snapshots">What this date means →</a>
     </aside>
 
     <main id="main" class="detail-main">
       <section class="detail-hero" aria-labelledby="record-title">
         <p class="eyebrow">${escapeHtml(label(selected.status))} record · reviewed ${escapeHtml(selected.reviewedAt)}</p>
         <h1 id="record-title">${escapeHtml(summary.name)} <span class="mono-value">${escapeHtml(displayRelease)}</span></h1>
+        <p class="detail-identity-sentence">This record covers <strong>${escapeHtml(identity.surface.name)} ${escapeHtml(displayRelease)}</strong>, published through <strong>${escapeHtml(valueOrUnknown(release.channel, "an unresolved channel"))}</strong> and delivered as <strong>${escapeHtml(identity.surface.deliveryModel)}</strong>.</p>
         <dl class="detail-summary" aria-label="Compact record identity">
           <div><dt>Publisher</dt><dd>${escapeHtml(identity.publisher.name)}</dd></div>
           <div><dt>Surface</dt><dd>${escapeHtml(identity.surface.name)} · ${escapeHtml(identity.surface.deliveryModel)}</dd></div>
           <div><dt>Version scope</dt><dd>${escapeHtml(releaseScopeLabel(release))}</dd></div>
-          <div><dt>Record coverage</dt><dd>${escapeHtml(record.claims.length)} publisher claims · ${escapeHtml(record.sources.length)} named sources · 0 independent tests</dd></div>
+          <div><dt>Publisher documentation included</dt><dd>${escapeHtml(record.claims.length)} claims · ${escapeHtml(record.sources.length)} sources</dd></div>
+          <div><dt>Independent tests included</dt><dd>${escapeHtml(record.independentTests.length)}</dd></div>
         </dl>
         <p class="detail-status"><strong>Version status:</strong> ${escapeHtml(selected.note)}</p>
 ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}        <div class="detail-actions">
@@ -336,17 +357,17 @@ ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}  
         <span>Jump to</span>
         <a href="#identity">Identity</a>
         <a href="#publisher-claims">Claims</a>
-        <a href="#boundaries">Boundaries</a>
-        <a href="#unknowns">Unknowns</a>
         <a href="#sources">Sources</a>
+        <a href="#boundaries">Settings</a>
+        <a href="#unknowns">Unknowns</a>
         <a href="#lifecycle">History</a>
-        <a class="secondary-link" href="${rawJson}">Raw JSON</a>
+        <a class="secondary-link" href="${rawJson}">Machine-readable record</a>
       </nav>
 
       <section id="identity" class="detail-section" aria-labelledby="identity-heading">
         <header>
           <p class="eyebrow">Record identity</p>
-          <h2 id="identity-heading">What this record identifies</h2>
+          <h2 id="identity-heading">This record covers</h2>
           <p>The accepted record identifies the release or rolling-service scope below. It does not establish the executable or service state used by any real session.</p>
         </header>
         <dl class="identity-grid">
@@ -374,10 +395,20 @@ ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}  
         </div>
       </section>
 
+      <section id="sources" class="detail-section" aria-labelledby="sources-heading">
+        <header>
+          <p class="eyebrow">Publisher sources</p>
+          <h2 id="sources-heading">Check the publisher sources</h2>
+          <p>These are the ${escapeHtml(record.sources.length)} source entries admitted by the accepted record. Repeated titles identify distinct claim locators, not independent corroboration.</p>
+        </header>
+        <ul class="source-list">${sourcesHtml}
+        </ul>
+      </section>
+
       <section id="boundaries" class="detail-section" aria-labelledby="boundaries-heading">
         <header>
-          <p class="eyebrow">Applicability boundaries</p>
-          <h2 id="boundaries-heading">Configuration choices the record does not collapse</h2>
+          <p class="eyebrow">Where this claim applies</p>
+          <h2 id="boundaries-heading">Settings that can change what a user actually gets</h2>
           <p>${escapeHtml(record.configurationModel.note)}</p>
         </header>
         <div class="boundary-grid">${axesHtml}
@@ -388,21 +419,11 @@ ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}  
 
       <section id="unknowns" class="detail-section" aria-labelledby="unknowns-heading">
         <header>
-          <p class="eyebrow">Unresolved unknowns</p>
-          <h2 id="unknowns-heading">What the admitted sources do not establish</h2>
+          <p class="eyebrow">Source gaps</p>
+          <h2 id="unknowns-heading">What these sources leave unknown</h2>
           <p>Unknown does not mean absent. It means the accepted publisher sources do not establish the fact for an effective session.</p>
         </header>
         <ol class="detail-list">${record.dossier.unknowns.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
-      </section>
-
-      <section id="sources" class="detail-section" aria-labelledby="sources-heading">
-        <header>
-          <p class="eyebrow">Named official sources</p>
-          <h2 id="sources-heading">Open the publisher material</h2>
-          <p>These are the ${escapeHtml(record.sources.length)} source entries admitted by the accepted record. Repeated titles identify distinct claim locators, not independent corroboration.</p>
-        </header>
-        <ul class="source-list">${sourcesHtml}
-        </ul>
       </section>
 
       <section id="lifecycle" class="detail-section" aria-labelledby="lifecycle-heading">
@@ -411,9 +432,9 @@ ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}  
           <h2 id="lifecycle-heading">${escapeHtml(lifecycleHeading)}</h2>
           <p>The catalog preserves the selected status and every same-surface predecessor or successor link. Where links exist, each direction is reciprocal.</p>
         </header>
-        <div class="lifecycle-flow">${lifecycleStepsHtml}
+        <div class="lifecycle-flow lifecycle-window">${lifecycleStepsHtml}
         </div>
-      </section>
+${completeLifecycleHtml ? `        ${completeLifecycleHtml}\n` : ""}      </section>
 
       <section class="detail-section boundary-callout" aria-labelledby="reading-boundary-heading">
         <h2 id="reading-boundary-heading">Reading boundary</h2>
@@ -423,16 +444,16 @@ ${publicationFreshnessNotice ? `        ${publicationFreshnessNotice}\n` : ""}  
 
     <footer>
       <p>Static research artifact. Inclusion is not endorsement; absence is not an adverse finding.</p>
-      <p><a href="../how-it-works.html">How it works</a> · <a href="../../CORRECTIONS.md">Corrections</a></p>
+      <p><a href="../how-it-works.html">How to read AEC</a> · <a href="../../CORRECTIONS.md">Correct a public factual error</a></p>
     </footer>
     <div id="selectionTray" class="selection-tray" hidden>
       <div id="trayChips" class="selection-tray-chips" aria-label="Selected records"></div>
       <p id="trayCount" class="selection-tray-count"></p>
-      <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected claims</button>
+      <button id="compareSelection" class="primary-action" type="button" disabled>Compare selected records</button>
     </div>
     <script src="../data.js?v=2026-08-29-sealed-snapshot"></script>
-    <script src="../comparison-core.js?v=2026-08-16-visitor-ia-1"></script>
-    <script src="../record-detail.js?v=2026-08-29-model-cards-1"></script>
+    <script src="../comparison-core.js?v=2026-08-29-audience-journeys-2"></script>
+    <script src="../record-detail.js?v=2026-08-29-audience-journeys-2"></script>
   </body>
 </html>
 `;

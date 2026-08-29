@@ -14,8 +14,10 @@ maintainer-curated preview. No review or response is promised.
 The following requirements describe a possible later contribution shape; they
 do not open intake today.
 
+- Name the exact publisher, product surface, channel, version or rolling scope, and delivery model. A family-level product name is not enough.
 - For a new profile, add one `catalog/<agent>-<version>.json` file; do not edit another publisher's record.
 - Use public-safe URLs and redact logs before referencing them.
+- Attribute each claim to a named publisher source, record where it applies, and keep source gaps explicit as unknowns.
 - Pin the exact source revision, A2A Agent Card digest, OCI digest, dependency version, and model revision whenever those surfaces exist.
 - Keep `verified`, `observed`, `declared`, `stale`, `unknown`, and `not-applicable` distinct.
 - Use `verified` only with a matching `verificationEvidence` entry containing the exact claim path, inspectable HTTPS source and digest, verification time, verifier, and method.
@@ -32,7 +34,7 @@ do not open intake today.
 
 Maintainers may request narrower claims or more explicit unknowns. Passing validation means the record is structurally coherent; it does not mean its claims are true.
 
-## Corrections and revocations
+## Correct a public factual error
 
 After publication, a public-safe correction may be proposed through an explicit
 pull request if repository contributions are enabled. A revocation removes the

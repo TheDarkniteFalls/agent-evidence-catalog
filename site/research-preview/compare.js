@@ -37,6 +37,7 @@
   let selectionMessages = [...initialSelection.messages];
   const recordCache = new Map();
   let renderVersion = 0;
+  let activeProjection = null;
 
   const pickerSearch = document.querySelector("#pickerSearch");
   const pickerRecords = document.querySelector("#pickerRecords");
@@ -61,6 +62,7 @@
   const trayChips = document.querySelector("#trayChips");
   const trayCount = document.querySelector("#trayCount");
   const compareSelection = document.querySelector("#compareSelection");
+  const changeSelectedRecords = document.querySelector("#changeSelectedRecords");
   core.applySnapshotBanner(data);
 
   pickerSearch.value = initialParams.get("q") ?? "";
@@ -140,6 +142,7 @@
     document.querySelectorAll("[data-catalog-return]").forEach((link) => {
       link.href = `index.html${catalogQuery ? `?${catalogQuery}` : ""}`;
     });
+    changeSelectedRecords.href = `../index.html${catalogQuery ? `?${catalogQuery}` : ""}#compare-exact-records`;
   }
 
   function recordHref(recordId) {
@@ -305,8 +308,9 @@
   }
 
   function renderTray() {
-    selectionTray.hidden = selectedIds.length === 0;
-    document.body.classList.toggle("has-selection-tray", selectedIds.length > 0);
+    const buildingSelection = selectedIds.length === 1;
+    selectionTray.hidden = !buildingSelection;
+    document.body.classList.toggle("has-selection-tray", buildingSelection);
     trayChips.replaceChildren(...selectedIds.map((recordId, index) => {
       const record = summariesById.get(recordId);
       const chip = document.createElement("span");
@@ -347,7 +351,7 @@
     if (!claims.length) {
       const missing = document.createElement("p");
       missing.className = "claim-missing";
-      missing.textContent = "No accepted claim under this exact category. This is not evidence that the capability is absent.";
+      missing.textContent = "No publisher claim documented in this category. That does not show the product lacks the capability.";
       cell.element.append(missing);
       return;
     }
@@ -390,18 +394,87 @@
     }
   }
 
+  function makeStackedAgentHeading(agent, index) {
+    const heading = document.createElement("header");
+    heading.className = "comparison-stack-agent";
+    const title = document.createElement("h4");
+    const link = document.createElement("a");
+    link.href = recordHref(agent.recordId);
+    link.textContent = `${index + 1}. ${agent.summary.name} · ${versionLabel(agent.summary)}`;
+    title.append(link);
+    const identity = document.createElement("p");
+    identity.textContent = `${agent.summary.surface.name} · ${agent.recordId}`;
+    heading.append(title, identity);
+    return heading;
+  }
+
+  function renderStacked(projected, visibleClaimRows) {
+    const stacked = document.createElement("div");
+    stacked.className = "comparison-stacked";
+    stacked.setAttribute("aria-label", "Stacked publisher-documentation comparison");
+
+    for (const row of projected.fixedRows) {
+      if (differencesOnly.checked && row.identical) continue;
+      const section = document.createElement("section");
+      section.className = "comparison-stack-section";
+      section.dataset.fixedSection = row.id;
+      const heading = document.createElement("h3");
+      heading.textContent = row.label;
+      const records = document.createElement("div");
+      records.className = "comparison-stack-records";
+      records.replaceChildren(...projected.agents.map((agent, index) => {
+        const article = document.createElement("article");
+        article.className = "comparison-stack-record";
+        const value = document.createElement("p");
+        value.className = "comparison-stack-value";
+        value.textContent = row.values[index];
+        article.append(makeStackedAgentHeading(agent, index), value);
+        return article;
+      }));
+      section.append(heading, records);
+      stacked.append(section);
+    }
+
+    for (const row of visibleClaimRows) {
+      const section = document.createElement("section");
+      section.className = "comparison-stack-section comparison-stack-claims";
+      section.dataset.claimCategory = row.category;
+      const heading = document.createElement("h3");
+      const readable = document.createElement("span");
+      readable.textContent = row.label;
+      const key = document.createElement("code");
+      key.textContent = row.category;
+      heading.append(readable, key);
+      const records = document.createElement("div");
+      records.className = "comparison-stack-records";
+      records.replaceChildren(...projected.agents.map((agent, index) => {
+        const article = document.createElement("article");
+        article.className = "comparison-stack-record";
+        const content = document.createElement("div");
+        content.className = "comparison-stack-claim-content";
+        article.append(makeStackedAgentHeading(agent, index), content);
+        appendCellContent({ element: content, unavailable: row.cells[index].unavailable }, row, index);
+        return article;
+      }));
+      section.append(heading, records);
+      stacked.append(section);
+    }
+
+    return stacked;
+  }
+
   function renderMatrix(projected) {
     const table = document.createElement("table");
     table.className = "comparison-matrix";
     const caption = document.createElement("caption");
     caption.className = "sr-only";
-    caption.textContent = "Evidence-exact comparison of selected coding-agent records";
+    caption.textContent = "Publisher-documentation comparison of selected coding-agent records";
     const thead = document.createElement("thead");
     const headingRow = document.createElement("tr");
     const headingLabel = document.createElement("th");
     headingLabel.scope = "col";
     headingLabel.className = "matrix-row-label matrix-corner";
-    headingLabel.textContent = "Evidence field";
+    headingLabel.textContent = "Comparison field";
     headingRow.append(headingLabel);
     projected.agents.forEach((agent, index) => {
       const th = document.createElement("th");
@@ -451,7 +524,7 @@
     claimsHeadingRow.className = "matrix-section-row";
     const claimsHeading = document.createElement("th");
     claimsHeading.colSpan = projected.agents.length + 1;
-    claimsHeading.textContent = "Accepted publisher claims · exact category strings only";
+    claimsHeading.textContent = "Publisher-documented topics";
     claimsHeadingRow.append(claimsHeading);
     tbody.append(claimsHeadingRow);
 
@@ -478,8 +551,37 @@
     }
 
     table.append(caption, thead, tbody);
-    comparisonMatrix.replaceChildren(table);
+    comparisonMatrix.replaceChildren(table, renderStacked(projected, visibleClaimRows));
     noClaimMatches.hidden = visibleClaimRows.length !== 0 || projected.claimRows.length === 0;
+  }
+
+  const csvCell = (value) => `"${String(value).replaceAll('"', '""').replaceAll(/\s+/g, " ").trim()}"`;
+
+  function projectionCsv(projected) {
+    const rows = [[
+      "Comparison field",
+      ...projected.agents.map((agent) => `${agent.summary.name} · ${versionLabel(agent.summary)} · ${agent.summary.surface.name}`)
+    ]];
+    rows.push(["At a glance", ...projected.agents.map(() => "")]);
+    for (const row of projected.fixedRows) {
+      if (differencesOnly.checked && row.identical) continue;
+      rows.push([row.label, ...row.values]);
+    }
+    rows.push(["Publisher-documented topics", ...projected.agents.map(() => "")]);
+    for (const row of core.filterClaimRows(projected.claimRows, claimFilter.value, differencesOnly.checked)) {
+      rows.push([row.label, ...row.cells.map((cell) => {
+        if (cell.unavailable) return "Record unavailable. No evidence inference is made.";
+        if (!cell.claims.length) return "No publisher claim documented in this category. That does not show the product lacks the capability.";
+        return cell.claims.map((claim) => [
+          claim.statement,
+          claim.applicabilityText,
+          `Source: ${claim.source.title} (${claim.source.uri})`,
+          claim.limitations.length ? `Limitations: ${claim.limitations.join(" | ")}` : "",
+          claim.unknowns.length ? `Unknowns: ${claim.unknowns.join(" | ")}` : ""
+        ].filter(Boolean).join("\n")).join("\n\n");
+      })]);
+    }
+    return `${rows.map((row) => row.map(csvCell).join(",")).join("\n")}\n`;
   }
 
   function renderRecordBoundaries(projected) {
@@ -487,7 +589,7 @@
       const details = document.createElement("details");
       details.className = "record-boundary-details";
       const summary = document.createElement("summary");
-      summary.textContent = `${index + 1}. ${summariesById.get(boundary.recordId).name}: record limitations and unresolved unknowns`;
+      summary.textContent = `${index + 1}. ${summariesById.get(boundary.recordId).name}: what these sources leave unknown`;
       if (boundary.unavailable) {
         const unavailable = document.createElement("p");
         unavailable.className = "record-unavailable";
@@ -504,7 +606,7 @@
         return li;
       }));
       const unknownsHeading = document.createElement("h3");
-      unknownsHeading.textContent = `Unresolved unknowns (${boundary.unknowns.length})`;
+      unknownsHeading.textContent = `What these sources leave unknown (${boundary.unknowns.length})`;
       const unknowns = document.createElement("ol");
       unknowns.replaceChildren(...boundary.unknowns.map((item) => {
         const li = document.createElement("li");
@@ -522,8 +624,9 @@
     comparisonResults.hidden = !ready;
     comparisonStart.hidden = ready;
     comparisonStageEmpty.hidden = ready;
-    exportComparison.disabled = !ready;
+    exportComparison.disabled = true;
     if (!ready) {
+      activeProjection = null;
       comparisonMatrix.replaceChildren();
       recordBoundaries.replaceChildren();
       renderStatus();
@@ -534,9 +637,11 @@
     if (version !== renderVersion) return;
     const unavailable = loaded.filter((item) => item.unavailable);
     const projected = core.projectComparison(loaded, summariesById, new Map());
+    activeProjection = projected;
     renderMatrix(projected);
     renderRecordBoundaries(projected);
     comparisonMatrix.removeAttribute("aria-busy");
+    exportComparison.disabled = false;
     const loadMessages = unavailable.map((item) => `${summariesById.get(item.recordId).name}: Record unavailable (${item.loadError}).`);
     renderStatus(loadMessages);
   }
@@ -569,11 +674,8 @@
   });
   clearSelection.addEventListener("click", () => setSelection([], "Selection cleared."));
   exportComparison.addEventListener("click", () => {
-    if (exportComparison.disabled) return;
-    const rows = [...comparisonMatrix.querySelectorAll("tr")].map((row) =>
-      [...row.querySelectorAll("th, td")].map((cell) => `"${cell.innerText.replaceAll('"', '""').replaceAll(/\s+/g, " ").trim()}"`).join(",")
-    );
-    const blob = new Blob([`${rows.join("\n")}\n`], { type: "text/csv;charset=utf-8" });
+    if (exportComparison.disabled || !activeProjection) return;
+    const blob = new Blob([projectionCsv(activeProjection)], { type: "text/csv;charset=utf-8" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "agent-evidence-comparison.csv";
@@ -585,6 +687,20 @@
     document.querySelector("#comparisonResults").scrollIntoView({ behavior: "smooth", block: "start" });
     document.querySelector("#claimFilter").focus({ preventScroll: true });
   });
+  changeSelectedRecords.addEventListener("click", (event) => {
+    const canonicalRoot = new URL("../index.html", document.baseURI).pathname;
+    const canonicalDirectory = canonicalRoot.replace(/index\.html$/, "");
+    if (window.location.pathname === canonicalRoot || window.location.pathname === canonicalDirectory) {
+      event.preventDefault();
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#compare-exact-records`);
+      document.querySelector("#compare-exact-records").scrollIntoView({ behavior: "smooth", block: "start" });
+      window.requestAnimationFrame(() => pickerSearch.focus({ preventScroll: true }));
+    }
+  });
+
+  if (window.location.hash === "#compare-exact-records") {
+    window.requestAnimationFrame(() => pickerSearch.focus({ preventScroll: true }));
+  }
 
   updateNavigationLinks();
   renderAll();
